@@ -1,0 +1,23 @@
+{
+  "protocol": "ledger_status",
+  "C_BORN_RULE_TIER2_STATUS": {
+    "task_id": "born_rule_closure",
+    "title": "Born Rule \u2014 Conditional Compatibility via Gleason's Theorem",
+    "input_tier": "Tier 3 \u2014 Conditional compatibility theorem",
+    "closed_tier": "TIER3-CONDITIONAL-COMPATIBILITY",
+    "rationale": "Born Rule is a conditional compatibility theorem via Gleason's Theorem under GCT's Selection Operator construction. The executable does not prove the projection-lattice hypotheses needed before Gleason can be invoked: countable additivity (O.40a) and noncontextuality / basis-independence (O.40b).",
+    "falsification_condition": "If future work shows that the RT acceptance-window measure is incompatible with the Born Rule (i.e., yields systematically different probabilities for any observable over the GCT Hilbert space), then GCT is falsified at the quantum measurement level.",
+    "status": "TIER3-CONDITIONAL-COMPATIBILITY (Gleason representation conditional on O.40a countable additivity + O.40b noncontextuality; executable proof NOT IMPLEMENTED)"
+  },
+  "C_HVP_STANCE_STATUS": {
+    "task_id": "hvp_resolution_stance",
+    "title": "HVP Resolution Stance",
+    "gct_correction_value": "\u0394a_\u03bc = 250.65 \u00d7 10\u207b\u00b9\u00b9  (3-loop phason vertex)",
+    "experimental_gap": "WP2025 \u0394a_\u03bc_exp-SM \u2248 37.5 \u00d7 10\u207b\u00b9\u00b9  (~0.6\u03c3; no significant anomaly)",
+    "gct_stance": "The GCT 3-loop phason vertex correction (derived in protocol_qed_audit.py) is a Tier 2 geometric mechanism, with the equal-weight 1/5 vertex coefficient and measured low-energy alpha input carried as Tier 3/A3 provenance inputs. Under the WP2025 lattice-HVP synthesis there is no significant SM-experiment anomaly to close. The correction therefore sits in tension with the consolidated SM total and is carried as a Tier 4 calibration-survival conjecture conditional on long-term HVP-synthesis arbitration.",
+    "prediction": "The channel is reinstated as a decisive empirical test only if R-ratio and lattice-HVP reconciliation opens a >3\u03c3 experiment-theory gap close to the GCT correction scale. Otherwise the correction remains a structural mechanism without current validation status.",
+    "falsification_condition": "If the consolidated HVP synthesis remains lattice-dominant with a sub-1\u03c3 SM-experiment gap, the muon g-2 channel is not load-bearing evidence for GCT. A restored >3\u03c3 gap near \u0394a_\u03bc = 250.65 \u00d7 10\u207b\u00b9\u00b9 is required for validation.",
+    "status": "CLOSED \u2014 WP2025 tension stance recorded; arbitration condition explicit."
+  },
+  "pass": true
+}

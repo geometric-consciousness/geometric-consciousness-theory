@@ -1,0 +1,23 @@
+{
+  "name": "higgs_vev",
+  "app_r_label": "Higgs VEV (v)",
+  "formula": "v = m_e \u00b7 \u03c6^11 \u00b7 (1 + 5\u03b1_A3 + \u03c6^8 \u03b1_A3^2) \u00b7 1440 \u00b7 \u03c6",
+  "tier": "Tier 2 mechanism + A3 measured alpha input + Tier 3 calibrated-handle residual",
+  "predicted": 246.1755405431677,
+  "observed": 246.21965,
+  "unit": "GeV",
+  "app_r_predicted": 246.1754,
+  "app_r_precision_str": "181 ppm",
+  "app_r_precision_ppm": 181.0,
+  "independent_precision_ppm": 179.14677740912387,
+  "status": "OPEN_CONDITIONAL",
+  "tolerance_ppm": 500.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "m_mu_intermediate_MeV": 105.65614670455236,
+    "alpha_codata_A3": 0.0072973525643,
+    "alpha_anchor": "A3 measured low-energy alpha inherited from the muon precision-comparison row.",
+    "saturation_factor_1440": 1440,
+    "saturation_provenance": "144 (F_12 Fibonacci cage) \u00d7 10 (RT 3-fold axes)"
+  }
+}

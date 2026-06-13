@@ -1,0 +1,1403 @@
+{
+  "protocol": "W4b",
+  "status": "PASS",
+  "pass_condition": "N=11 and N=17 are not the first two phason-vector activation ordinals",
+  "cage": {
+    "N_nodes": 152,
+    "N_dof": 456,
+    "construction": "cage_builder.build_canonical_cage(size=152)"
+  },
+  "operator": {
+    "sector": "phason",
+    "type": "central-force spring Hessian",
+    "bond_convention": {
+      "sqrt0.5": {
+        "stiffness": 1.0,
+        "tolerance": 0.05
+      },
+      "1.0": {
+        "stiffness": 1.0,
+        "tolerance": 0.05
+      },
+      "1/phi": {
+        "stiffness": 1.618033988749895,
+        "tolerance": 0.05
+      }
+    },
+    "bond_census": {
+      "sqrt0.5_k1": 1410,
+      "1.0_k1": 90,
+      "1/phi_kphi": 1650
+    }
+  },
+  "group": {
+    "name": "I_h",
+    "order": 120,
+    "class_names": [
+      "E",
+      "C2",
+      "C3",
+      "C5",
+      "C5^2",
+      "i",
+      "i*C2",
+      "i*C3",
+      "i*C5",
+      "i*C5^2"
+    ],
+    "class_sizes": {
+      "E": 1,
+      "C2": 15,
+      "C3": 20,
+      "C5": 12,
+      "C5^2": 12,
+      "i": 1,
+      "i*C2": 15,
+      "i*C3": 20,
+      "i*C5": 12,
+      "i*C5^2": 12
+    },
+    "order5_class_split": "trace(R_perp)=phi for C5; trace(R_perp)=1-phi for C5^2"
+  },
+  "rho_star": {
+    "rho_star_label": "T1u",
+    "rho_star_designation": "phason-vector channel",
+    "chi_vec_per_class": {
+      "E": 3.0,
+      "C2": -1.0,
+      "C3": 0.0,
+      "C5": 1.61803398875,
+      "C5^2": -0.61803398875,
+      "i": -3.0,
+      "i*C2": 1.0,
+      "i*C3": -0.0,
+      "i*C5": -1.61803398875,
+      "i*C5^2": 0.61803398875
+    },
+    "chi_parallel_per_class": {
+      "E": 3.0,
+      "C2": -1.0,
+      "C3": 0.0,
+      "C5": -0.61803398875,
+      "C5^2": 1.61803398875,
+      "i": -3.0,
+      "i*C2": 1.0,
+      "i*C3": -0.0,
+      "i*C5": 0.61803398875,
+      "i*C5^2": -1.61803398875
+    },
+    "gamma_vec_multiplicities": {
+      "Ag": 0.0,
+      "T1g": 0.0,
+      "T2g": 0.0,
+      "Gg": 0.0,
+      "Hg": 0.0,
+      "Au": 0.0,
+      "T1u": 1.0,
+      "T2u": -0.0,
+      "Gu": -0.0,
+      "Hu": -0.0
+    },
+    "parallel_vector_label": "T2u"
+  },
+  "validation_gates": {
+    "class_sizes_pass": true,
+    "projector_idempotency_max_frobenius": 3.2477869225927638e-15,
+    "projector_idempotency_per_irrep": {
+      "Ag": 1.0583273577599759e-15,
+      "T1g": 2.3717702508021633e-15,
+      "T2g": 2.1395014207084826e-15,
+      "Gg": 2.8513892451611715e-15,
+      "Hg": 3.2477869225927638e-15,
+      "Au": 4.953138304402309e-16,
+      "T1u": 2.7526131588786624e-15,
+      "T2u": 2.5634519920130298e-15,
+      "Gu": 3.0690893566603984e-15,
+      "Hu": 2.6709616381498388e-15
+    },
+    "equivariance_max_frobenius": 8.344475305460829e-14,
+    "equivariance_per_irrep": {
+      "Ag": 3.4411330181445956e-14,
+      "T1g": 4.532588883002352e-14,
+      "T2g": 4.455595404109774e-14,
+      "Gg": 7.270090268399146e-14,
+      "Hg": 8.344475305460829e-14,
+      "Au": 7.221379785145739e-15,
+      "T1u": 6.860823505313833e-14,
+      "T2u": 6.677632852454922e-14,
+      "Gu": 7.020613041752141e-14,
+      "Hu": 7.467714383118998e-14
+    },
+    "multiplicities": {
+      "Ag": 6,
+      "T1g": 10,
+      "T2g": 9,
+      "Gg": 15,
+      "Hg": 21,
+      "Au": 1,
+      "T1u": 15,
+      "T2u": 14,
+      "Gu": 15,
+      "Hu": 16
+    },
+    "multiplicity_max_integrality_deviation": 7.105427357601002e-15,
+    "multiplicity_sum_rule": 456,
+    "projector_completeness_frobenius": 6.218607510538318e-15,
+    "character_crosscheck_max_deviation": 3.552713678800501e-15,
+    "zero_mode_census": {
+      "count": 6,
+      "irrep_content": {
+        "T1g": 1,
+        "T1u": 1
+      }
+    },
+    "cluster_degeneracy_equals_irrep_dim_sum": true,
+    "all_gates_pass": true
+  },
+  "spectrum": {
+    "min_eigenvalue": -1.607601845322486e-14,
+    "zero_tolerance": 1e-08,
+    "n_zero_modes": 6,
+    "zero_mode_interpretation": "rigid translations and rotations",
+    "smallest_nonzero_eigenvalue": 3.2245370703980396,
+    "largest_eigenvalue": 72.40678879623124,
+    "n_nonzero_clusters": 120,
+    "degeneracy_tolerance_relative": 1e-06,
+    "max_intracluster_relative_spread": 5.524032965971196e-15,
+    "min_intercluster_relative_gap": 2.6732363883678083e-05
+  },
+  "activation_audit": {
+    "rho_star_channel": "T1u",
+    "rho_star_activation_ordinals": [
+      5,
+      18,
+      26,
+      30,
+      34,
+      52,
+      62,
+      70,
+      80,
+      84,
+      92,
+      98,
+      102,
+      119
+    ],
+    "first_activation_ordinal": 5,
+    "second_activation_ordinal": 18,
+    "third_activation_ordinal": 26,
+    "observed_pair": [
+      5,
+      18
+    ],
+    "excluded_pair": [
+      11,
+      17
+    ],
+    "confirms_negative": true
+  },
+  "activation_table": [
+    {
+      "ordinal": 1,
+      "eigenvalue": 3.2245370703980463,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 0
+    },
+    {
+      "ordinal": 2,
+      "eigenvalue": 3.5047445219684077,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 0
+    },
+    {
+      "ordinal": 3,
+      "eigenvalue": 3.5187140046253735,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 0
+    },
+    {
+      "ordinal": 4,
+      "eigenvalue": 3.778433798554172,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 0
+    },
+    {
+      "ordinal": 5,
+      "eigenvalue": 3.800929629215594,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 1
+    },
+    {
+      "ordinal": 6,
+      "eigenvalue": 3.8163177219774522,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 1
+    },
+    {
+      "ordinal": 7,
+      "eigenvalue": 4.123350942417186,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 1
+    },
+    {
+      "ordinal": 8,
+      "eigenvalue": 4.376494013565404,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 1
+    },
+    {
+      "ordinal": 9,
+      "eigenvalue": 5.972170507192351,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 1
+    },
+    {
+      "ordinal": 10,
+      "eigenvalue": 6.144511490421725,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 1
+    },
+    {
+      "ordinal": 11,
+      "eigenvalue": 6.146358706360461,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 1
+    },
+    {
+      "ordinal": 12,
+      "eigenvalue": 6.504394212477668,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 1
+    },
+    {
+      "ordinal": 13,
+      "eigenvalue": 6.720201421869498,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 1
+    },
+    {
+      "ordinal": 14,
+      "eigenvalue": 6.77342635851069,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 1
+    },
+    {
+      "ordinal": 15,
+      "eigenvalue": 6.8922959152313785,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 1
+    },
+    {
+      "ordinal": 16,
+      "eigenvalue": 6.905110568122161,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 1
+    },
+    {
+      "ordinal": 17,
+      "eigenvalue": 6.907081700407657,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 1
+    },
+    {
+      "ordinal": 18,
+      "eigenvalue": 6.985830355124368,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 2
+    },
+    {
+      "ordinal": 19,
+      "eigenvalue": 7.26096016931061,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 2
+    },
+    {
+      "ordinal": 20,
+      "eigenvalue": 7.308290824213555,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 2
+    },
+    {
+      "ordinal": 21,
+      "eigenvalue": 7.310255285014205,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 2
+    },
+    {
+      "ordinal": 22,
+      "eigenvalue": 7.551483850891081,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 2
+    },
+    {
+      "ordinal": 23,
+      "eigenvalue": 7.653308260573658,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 2
+    },
+    {
+      "ordinal": 24,
+      "eigenvalue": 7.767786884402969,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 2
+    },
+    {
+      "ordinal": 25,
+      "eigenvalue": 7.795090610202219,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 2
+    },
+    {
+      "ordinal": 26,
+      "eigenvalue": 7.913577848240898,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 3
+    },
+    {
+      "ordinal": 27,
+      "eigenvalue": 7.945611360852505,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 3
+    },
+    {
+      "ordinal": 28,
+      "eigenvalue": 8.088602705641122,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 3
+    },
+    {
+      "ordinal": 29,
+      "eigenvalue": 8.267941582507552,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 3
+    },
+    {
+      "ordinal": 30,
+      "eigenvalue": 8.334116680999097,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 4
+    },
+    {
+      "ordinal": 31,
+      "eigenvalue": 8.409197072202558,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 4
+    },
+    {
+      "ordinal": 32,
+      "eigenvalue": 8.527044799035936,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 4
+    },
+    {
+      "ordinal": 33,
+      "eigenvalue": 8.668525234338,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 4
+    },
+    {
+      "ordinal": 34,
+      "eigenvalue": 8.6687569645089,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 35,
+      "eigenvalue": 8.75389421406202,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 36,
+      "eigenvalue": 8.823618215718508,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 37,
+      "eigenvalue": 8.99316792040013,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 38,
+      "eigenvalue": 9.250558722736539,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 39,
+      "eigenvalue": 9.320697701745091,
+      "degeneracy": 1,
+      "irrep_content": {
+        "Au": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 40,
+      "eigenvalue": 9.329147886029396,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 41,
+      "eigenvalue": 9.337515026846516,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 42,
+      "eigenvalue": 9.357190175139438,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 43,
+      "eigenvalue": 9.3759217149297,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 44,
+      "eigenvalue": 9.972957106674325,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 45,
+      "eigenvalue": 10.055719498169918,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 46,
+      "eigenvalue": 10.342108004955586,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 47,
+      "eigenvalue": 10.342700196462303,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 48,
+      "eigenvalue": 10.511130333183592,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 49,
+      "eigenvalue": 10.570884965095422,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 50,
+      "eigenvalue": 10.794235078743451,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 51,
+      "eigenvalue": 10.903067035018386,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 5
+    },
+    {
+      "ordinal": 52,
+      "eigenvalue": 10.904212176291509,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 6
+    },
+    {
+      "ordinal": 53,
+      "eigenvalue": 11.26189918326203,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 6
+    },
+    {
+      "ordinal": 54,
+      "eigenvalue": 11.314866217692579,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 6
+    },
+    {
+      "ordinal": 55,
+      "eigenvalue": 11.385392859355907,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 6
+    },
+    {
+      "ordinal": 56,
+      "eigenvalue": 11.398908756955553,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 6
+    },
+    {
+      "ordinal": 57,
+      "eigenvalue": 11.59390931183433,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 6
+    },
+    {
+      "ordinal": 58,
+      "eigenvalue": 11.599119402370876,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 6
+    },
+    {
+      "ordinal": 59,
+      "eigenvalue": 11.682247560499198,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 6
+    },
+    {
+      "ordinal": 60,
+      "eigenvalue": 11.71863752312006,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 6
+    },
+    {
+      "ordinal": 61,
+      "eigenvalue": 11.72209050960398,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 6
+    },
+    {
+      "ordinal": 62,
+      "eigenvalue": 11.764217373651135,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 7
+    },
+    {
+      "ordinal": 63,
+      "eigenvalue": 11.80488834738744,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 7
+    },
+    {
+      "ordinal": 64,
+      "eigenvalue": 11.897241851510467,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 7
+    },
+    {
+      "ordinal": 65,
+      "eigenvalue": 12.134174634166637,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 7
+    },
+    {
+      "ordinal": 66,
+      "eigenvalue": 12.19752946758897,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 7
+    },
+    {
+      "ordinal": 67,
+      "eigenvalue": 12.281527397125949,
+      "degeneracy": 1,
+      "irrep_content": {
+        "Ag": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 7
+    },
+    {
+      "ordinal": 68,
+      "eigenvalue": 12.520517572702516,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 7
+    },
+    {
+      "ordinal": 69,
+      "eigenvalue": 12.659217435250156,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 7
+    },
+    {
+      "ordinal": 70,
+      "eigenvalue": 12.829742463521148,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 8
+    },
+    {
+      "ordinal": 71,
+      "eigenvalue": 13.220690363806199,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 8
+    },
+    {
+      "ordinal": 72,
+      "eigenvalue": 13.231779943692777,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 8
+    },
+    {
+      "ordinal": 73,
+      "eigenvalue": 13.61910440518146,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 8
+    },
+    {
+      "ordinal": 74,
+      "eigenvalue": 13.888740842469991,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 8
+    },
+    {
+      "ordinal": 75,
+      "eigenvalue": 14.05226612127945,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 8
+    },
+    {
+      "ordinal": 76,
+      "eigenvalue": 14.542536607774327,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 8
+    },
+    {
+      "ordinal": 77,
+      "eigenvalue": 14.620068243616878,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 8
+    },
+    {
+      "ordinal": 78,
+      "eigenvalue": 16.72813276486436,
+      "degeneracy": 1,
+      "irrep_content": {
+        "Ag": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 8
+    },
+    {
+      "ordinal": 79,
+      "eigenvalue": 17.575740558158923,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 8
+    },
+    {
+      "ordinal": 80,
+      "eigenvalue": 22.54292243642426,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 9
+    },
+    {
+      "ordinal": 81,
+      "eigenvalue": 22.924393755280555,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 9
+    },
+    {
+      "ordinal": 82,
+      "eigenvalue": 24.028750125516765,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 9
+    },
+    {
+      "ordinal": 83,
+      "eigenvalue": 26.707337367023875,
+      "degeneracy": 1,
+      "irrep_content": {
+        "Ag": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 9
+    },
+    {
+      "ordinal": 84,
+      "eigenvalue": 30.715288635047077,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 10
+    },
+    {
+      "ordinal": 85,
+      "eigenvalue": 31.305620423437453,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 10
+    },
+    {
+      "ordinal": 86,
+      "eigenvalue": 31.35312280783569,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 10
+    },
+    {
+      "ordinal": 87,
+      "eigenvalue": 32.39967639803145,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 10
+    },
+    {
+      "ordinal": 88,
+      "eigenvalue": 32.49995164880352,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 10
+    },
+    {
+      "ordinal": 89,
+      "eigenvalue": 33.69633598805903,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 10
+    },
+    {
+      "ordinal": 90,
+      "eigenvalue": 33.85657240356892,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 10
+    },
+    {
+      "ordinal": 91,
+      "eigenvalue": 34.87326967652844,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 10
+    },
+    {
+      "ordinal": 92,
+      "eigenvalue": 34.890768039379076,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 11
+    },
+    {
+      "ordinal": 93,
+      "eigenvalue": 35.1997779707224,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 11
+    },
+    {
+      "ordinal": 94,
+      "eigenvalue": 35.42515701303042,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 11
+    },
+    {
+      "ordinal": 95,
+      "eigenvalue": 35.94106458722784,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 11
+    },
+    {
+      "ordinal": 96,
+      "eigenvalue": 35.96132619011086,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 11
+    },
+    {
+      "ordinal": 97,
+      "eigenvalue": 36.28442186624992,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 11
+    },
+    {
+      "ordinal": 98,
+      "eigenvalue": 36.63487595529569,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 12
+    },
+    {
+      "ordinal": 99,
+      "eigenvalue": 36.67101677224045,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 12
+    },
+    {
+      "ordinal": 100,
+      "eigenvalue": 36.67231024218943,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 12
+    },
+    {
+      "ordinal": 101,
+      "eigenvalue": 37.05183738773381,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 12
+    },
+    {
+      "ordinal": 102,
+      "eigenvalue": 37.79967954669758,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 103,
+      "eigenvalue": 37.851207287833034,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 104,
+      "eigenvalue": 37.99149891143394,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 105,
+      "eigenvalue": 38.0858610231014,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2g": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 106,
+      "eigenvalue": 38.30309071637485,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 107,
+      "eigenvalue": 39.285472689906804,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 108,
+      "eigenvalue": 39.29266633152282,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 109,
+      "eigenvalue": 39.78517165303823,
+      "degeneracy": 1,
+      "irrep_content": {
+        "Ag": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 110,
+      "eigenvalue": 39.91905711803648,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 111,
+      "eigenvalue": 40.31404624015349,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 112,
+      "eigenvalue": 40.67159037139925,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 113,
+      "eigenvalue": 41.654126265735016,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T2u": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 114,
+      "eigenvalue": 41.697573095385906,
+      "degeneracy": 1,
+      "irrep_content": {
+        "Ag": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 115,
+      "eigenvalue": 42.737035192622116,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 116,
+      "eigenvalue": 43.6335262020694,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gu": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 117,
+      "eigenvalue": 44.273220893595166,
+      "degeneracy": 5,
+      "irrep_content": {
+        "Hg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 118,
+      "eigenvalue": 45.61774702285608,
+      "degeneracy": 4,
+      "irrep_content": {
+        "Gg": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 13
+    },
+    {
+      "ordinal": 119,
+      "eigenvalue": 50.544751218936575,
+      "degeneracy": 3,
+      "irrep_content": {
+        "T1u": 1
+      },
+      "rho_star_present": true,
+      "cumulative_rho_star": 14
+    },
+    {
+      "ordinal": 120,
+      "eigenvalue": 72.40678879623124,
+      "degeneracy": 1,
+      "irrep_content": {
+        "Ag": 1
+      },
+      "rho_star_present": false,
+      "cumulative_rho_star": 14
+    }
+  ],
+  "runtime_s": 1.102
+}

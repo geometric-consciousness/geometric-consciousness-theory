@@ -1,0 +1,103 @@
+{
+  "Cube": {
+    "axes": 3,
+    "dimension": 2,
+    "target": 2,
+    "match": true,
+    "note": "Cartesian face normals span only the Cartan subalgebra (dim=2)."
+  },
+  "Octahedron": {
+    "axes": 0,
+    "dimension": 0,
+    "note": "Vertices are 4-fold, expecting 0 axes."
+  },
+  "RhombicTriacontahedron": {
+    "axes": 10,
+    "dimension": 8,
+    "target": 8,
+    "match": true,
+    "gram_null_vectors": [
+      [
+        -0.6650566346758371,
+        -0.2006656813854016,
+        0.200665681385402,
+        9.712213478052553e-17,
+        -0.13203392362488836,
+        0.13203392362488844,
+        2.0794301837546018e-17,
+        5.607704999022332e-17,
+        2.8321474374594405e-17,
+        0.665056634675837
+      ],
+      [
+        0.20397041186400608,
+        -0.2664819583662468,
+        0.2664819583662468,
+        -5.727071871420034e-17,
+        -0.6224013471621971,
+        0.6224013471621971,
+        -1.75956748294252e-18,
+        1.9201905005220996e-16,
+        -3.002555487282134e-17,
+        -0.20397041186400616
+      ],
+      [
+        -0.12686900235155196,
+        0.6234746588109434,
+        -0.6234746588109437,
+        -1.4556083794437378e-17,
+        -0.3085184047393273,
+        0.3085184047393272,
+        6.871064305244937e-17,
+        9.723969402906946e-17,
+        -1.8031606212721967e-16,
+        0.12686900235155218
+      ],
+      [
+        -0.0,
+        -1.1964139315916964e-16,
+        1.84173475295708e-16,
+        6.3530850043334904e-18,
+        1.4917242620572577e-16,
+        -1.4940929683440914e-16,
+        6.2108038909532014e-18,
+        0.7071067811865476,
+        -0.7071067811865476,
+        1.3257689427789717e-17
+      ]
+    ],
+    "rank_reduction_explicit": "PASS"
+  },
+  "Cuboctahedron": {
+    "axes": 4,
+    "dimension": 8,
+    "match": true,
+    "cartan_A2_match": false,
+    "note": "Rejected as a full RT witness: lacks the 10-axis RT orbit and rank-reduction structure."
+  },
+  "PerturbedRT": {
+    "axes": 10,
+    "dimension": 8,
+    "match": true,
+    "note": "Failed to produce the correct integer Cartan Matrix (filled with floating-point noise)."
+  },
+  "MonteCarlo_Control": {
+    "n_trials": 1000,
+    "n_alternatives_tested": 1000,
+    "sampling": "random spherical points -> ConvexHull -> 3-fold-axis extraction",
+    "n_points_per_polyhedron": 32,
+    "n_trials_with_10_threefold_axes": 0,
+    "n_trials_with_dim8_algebra": 0,
+    "n_trials_with_exact_A2_cartan": 0,
+    "n_trials_with_full_rt_witness": 0,
+    "n_alternatives_with_full_rt_witness": 0,
+    "monte_carlo_success_rate": 0.0,
+    "success_criterion": "n_trials > 0 and n_success == 0",
+    "edge_case_policy": "n_trials=0 is reported FAIL/unevaluated, not PASS by vacuous truth",
+    "pass": true,
+    "verdict": "PASS"
+  },
+  "pass": true,
+  "verdict": "PASS_NUMERICAL_CONTROL",
+  "framing": "PASS (numerical control): RT-icosahedral substrate generates SU(3) candidate gauge group; full theorem-grade uniqueness over the Cartan-Killing classification remains O.39."
+}

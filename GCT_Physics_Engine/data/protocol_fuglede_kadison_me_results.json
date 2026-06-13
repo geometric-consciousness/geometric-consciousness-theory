@@ -1,0 +1,13 @@
+{
+ "formalism": "Type II_1 von Neumann Algebra",
+ "operator": "D_GCT",
+ "domain_contains_n144_boundary": true,
+ "large_matrix_mode": false,
+ "is_algebraic_verification": true,
+ "trace_bulk_term_analytic": 0.0,
+ "aps_index_N": 107,
+ "tau_analytical_value": -51.48966528137757,
+ "fuglede_kadison_determinant": 4.348329974529337e-23,
+ "direct_evaluation": 4.348329974529321e-23,
+ "pass": true
+}

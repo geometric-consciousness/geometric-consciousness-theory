@@ -1,0 +1,14 @@
+{
+  "protocol": "protocol_phi_selection.py",
+  "phi_gap": 0.2775145514257755,
+  "silver_gap": 0.18570914195646387,
+  "is_optimal": true,
+  "all_gaps": {
+    "phi_gap": 0.2775145514257755,
+    "silver_gap": 0.18570914195646387,
+    "bronze_gap": 0.15878244403122801,
+    "pi_gap": 0.07806412130350082,
+    "rational_gap": 0.0
+  },
+  "pass": true
+}

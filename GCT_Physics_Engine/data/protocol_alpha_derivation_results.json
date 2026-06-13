@@ -1,0 +1,14 @@
+{
+  "alpha_bare_inv": 137.50776405003785,
+  "alpha_obs_inv": 137.035999,
+  "ppm_error": 3442.635902102231,
+  "derivation": "Tree-Level Bare Geometric Impedance (360 * phi^-2)",
+  "residual_target": "Phason Anti-Screening (0.34%)",
+  "status": "OPEN_CONDITIONAL",
+  "tree_level_within_0p5pct_band": true,
+  "precision_validation_pass": false,
+  "status_note": "Tree-level residual 3442.6 ppm; Tier 3 numerical residual pending O.5 (1/(2N) integer-factor closure) and O.19 (phason 1-loop magnitude closure). Within 0.5% tolerance band but NOT a precision validation.",
+  "verdict": "OPEN_CONDITIONAL",
+  "pass": false,
+  "pass_interpretation": "False by design: the bare 360*phi^-2 alpha result is within the tree-level 0.5% band but remains OPEN_CONDITIONAL until the phason anti-screening magnitude closes."
+}

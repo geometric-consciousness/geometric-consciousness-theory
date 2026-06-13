@@ -1,0 +1,14 @@
+{
+ "l_P_m": 1.61625502392855e-35,
+ "xi_m": 7.251632774485038e-09,
+ "wavefunction_overlap_jacobian": 1.1071902535921019e-80,
+ "jacobian_log10": -79.95577774589111,
+ "F_bio_pN_estimate": 1.1669785272860754e-88,
+ "jacobian_derived": true,
+ "derivation": "Identity_Polaron_Wavefunction_Overlap",
+ "provenance": {
+  "xi_source": "verify_independent/results/polaron_healing_length.json",
+  "jacobian_source": "verify_independent/results/fbio_jacobian.json"
+ },
+ "pass": true
+}

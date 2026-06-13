@@ -1,0 +1,84 @@
+{
+  "test_target": "Evaluate the N_coh robustness reference from N=144 cage geometry + phi^-18 phason stiffness for the Polaron Persistence audit (App H O.16).",
+  "tubulin_substrate": {
+    "g_single_eff_pre_overlap_Hz": 38000000.0,
+    "f_overlap_operational": 0.01,
+    "g_single_eff_operational_Hz": 380000.0,
+    "N_cage": 144,
+    "omega_d_Hz": 112000000.0,
+    "kappa_geom_Hz": 134.61021133174165,
+    "eta_F": 1.0,
+    "N_bio_central": 0.0,
+    "N_bio_typical": 125000000.0,
+    "N_bio_basis": "beta-Trp n_rp=1 sensitivity branch; central n_rp=0 pending O.21; hydration shell is bath/environment per Ch13:633",
+    "N_bio_range": [
+      0.0,
+      125000000.0
+    ],
+    "N_coh_reference_pre_overlap": 1.2548413431285423e-11,
+    "N_coh_reference_operational": 1.254841343128542e-07,
+    "eta_Zeno_sensitivity_pre_overlap": 3156171523.1092424,
+    "eta_Zeno_sensitivity_operational": 31561715.231092423,
+    "sensitivity_branch_orders_above_operational_reference": 14.998321194091048
+  },
+  "NV_surrogate": {
+    "g_single_eff_Hz": 27000000.0,
+    "kappa_Hz": 1000000.0,
+    "N_bio": 1,
+    "N_coh_reference": 0.0013717421124828531,
+    "eta_Zeno": 27.0
+  },
+  "anaesthesia_scan": [
+    {
+      "suppression_factor": 1.0,
+      "g_eff_reduced_Hz": 380000.0,
+      "eta_Zeno_reduced": 31561715.231092423,
+      "polaron_intact": true
+    },
+    {
+      "suppression_factor": 10.0,
+      "g_eff_reduced_Hz": 38000.0,
+      "eta_Zeno_reduced": 3156171.5231092423,
+      "polaron_intact": true
+    },
+    {
+      "suppression_factor": 100.0,
+      "g_eff_reduced_Hz": 3800.0,
+      "eta_Zeno_reduced": 315617.15231092426,
+      "polaron_intact": true
+    },
+    {
+      "suppression_factor": 1000.0,
+      "g_eff_reduced_Hz": 380.0,
+      "eta_Zeno_reduced": 31561.715231092425,
+      "polaron_intact": true
+    },
+    {
+      "suppression_factor": 10000.0,
+      "g_eff_reduced_Hz": 38.0,
+      "eta_Zeno_reduced": 3156.171523109242,
+      "polaron_intact": true
+    },
+    {
+      "suppression_factor": 100000.0,
+      "g_eff_reduced_Hz": 3.8,
+      "eta_Zeno_reduced": 315.6171523109242,
+      "polaron_intact": true
+    },
+    {
+      "suppression_factor": 1000000.0,
+      "g_eff_reduced_Hz": 0.38,
+      "eta_Zeno_reduced": 31.561715231092425,
+      "polaron_intact": true
+    }
+  ],
+  "F_critical_pre_overlap": 3156171523.1092424,
+  "F_critical_operational": 31561715.231092423,
+  "F_critical_operational_log10": 7.499160597045524,
+  "geometric_closure_match": true,
+  "N_coh_formula": "N_coh = (phi^-18 * omega_d / (N_cage * g_single^eff))^2",
+  "test_outcome": "FORMULA EVALUATION PASS",
+  "interpretation": "N_coh IS derivable from N=144 + phi^-18 + g_single^eff + omega_d via the cooperativity criterion. The formula reduces to: N_coh = (phi^-18 * omega_d / (N_cage * g_single^eff))^2. For canonical tubulin parameters N_coh = 1.25e-07 after overlap propagation (pre-overlap audit value 1.25e-11); the operative central cooperative branch remains n_rp=0 pending O.21, while the beta-Trp n_rp=1 sensitivity branch N_bio = 1.25e8 exceeds the robustness reference by 15.0 orders of magnitude. This shows that the sensitivity branch would be highly robust if the O.21 witness is established; it is not a central biological sufficiency result. Anaesthesia and related interventions are reported as suppression-margin diagnostics by reducing g_single^eff by a factor of 3.16e+07 on the sensitivity branch, in the same range as the eta_Zeno robustness margin for Trp-pocket binding.",
+  "tier_impact": "FORMULA-EVALUATION AUDIT. The N_coh robustness reference is derivable from the stated framework parameters (cooperativity criterion + V3 \u00a713.5.4 geometric kappa + Trp coupling), but it is not an independent Level-II pass/fail threshold. The formula N_coh = (phi^-18 * omega_d / (N_cage * g_single^eff))^2 is geometry-constrained (phi, N_cage) and depends on overlap-propagated g_single^eff (Tier 3 calibrated) and omega_d (Tier 3 specific value, O.12). V1 Ch17 \u00a717.1.4b items (ii) and (iii) remain Tier 3 pending microtubule biology plus coherence assumptions, while the cooperativity mechanism itself remains Tier 2. The sensitivity-branch suppression-margin diagnostic reports F_crit = 3.16e+07 as the factor in g_single^eff needed to cross the cooperativity robustness line; the testable anaesthesia observable remains the EC50 scaling with Trp-pocket-binding strength.",
+  "remaining_open": "Two parameters in the formula remain Tier 3: g_single^eff (calibrated to ~38.3 MHz pre-overlap, overlap-propagated in the operational branch) and omega_d (~100 MHz, pending O.12 frequency-scale renormalization). Closure of these two would elevate the entire N_coh derivation to Tier 2. Closure of g_single^eff requires the cavity-polariton avoided-crossing mechanism (bundled with B3); closure of omega_d requires O.12. The N_coh formula structure itself is now Tier 2."
+}

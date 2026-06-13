@@ -1,0 +1,18 @@
+{
+  "phi_neg_18": 0.00017307027171223924,
+  "c_SI": 299792458.0,
+  "hbar_SI": 1.054571817e-34,
+  "G_CODATA_SI": 6.6743e-11,
+  "M_P_SI": 2.176434342051127e-08,
+  "ell_P_SI": 1.61625502392855e-35,
+  "a_6_SI": 3.2325100478570994e-35,
+  "a_6_over_ell_P": 1.9999999999999998,
+  "G_1_SI": 6.674299999999997e-11,
+  "G_2_naive_SI": 3.714225194951088e-51,
+  "G_2_tree_level_SI": 3.7142251949510865e-51,
+  "G_2_over_G_1_naive": 5.564965906463734e-41,
+  "G_2_over_G_1_tree_level": 5.564965906463731e-41,
+  "lattice_unit_residual_phi_neg_18_over_16pi": 3.4431236556575373e-06,
+  "explicit_G2_G1_ratio_with_ell_P_residual": 5.56496590646373e-41,
+  "closure_text": "Route 1 closes cleanly to G = hbar c / M_P^2. Routes 2/3 reduce to Route 1 only in the tree-level limit, with G_2/G_1 = phi^(-18) ell_P / (16 pi). The residual ell_P factor identifies as the dimensional bridging between the phason-elasticity 3D lattice volume (Route 2's K_perp formula) and the Jacobson area-law 2D horizon (Route 1's basis). The three-route algebraic identity is a tree-level identity with explicit ell_P bookkeeping; the 2274 ppm CODATA agreement derives from Route 1 alone and is unaffected. Closure direction (b): Routes 2/3 reduce to Route 1 only in the specific limit identified."
+}

@@ -1,0 +1,436 @@
+{
+  "pass": true,
+  "verdict": "PASS",
+  "tier": "Tier 1 (Derived Necessity)",
+  "theorem": "T-McKay",
+  "h4_coxeter": {
+    "h4_coxeter_number": 30,
+    "exponents": [
+      1,
+      11,
+      19,
+      29
+    ],
+    "phi_verified": true
+  },
+  "n_2I": 120,
+  "n_e8": 240,
+  "h4_shell_a_vertices": 120,
+  "h4_shell_b_vertices": 120,
+  "h4_expected_per_shell": 120,
+  "mckay_equivalence_verified": true,
+  "mckay_correspondence": {
+    "pass": true,
+    "group_order": 120,
+    "products_checked": 14400,
+    "conjugacy_class_count": 9,
+    "conjugacy_classes": [
+      {
+        "size": 1,
+        "quaternion": [
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "su2_trace": -2.0
+      },
+      {
+        "size": 12,
+        "quaternion": [
+          -0.8090169944,
+          -0.5,
+          -0.3090169944,
+          0.0
+        ],
+        "su2_trace": -1.6180339888
+      },
+      {
+        "size": 20,
+        "quaternion": [
+          -0.5,
+          -0.8090169944,
+          0.0,
+          -0.3090169944
+        ],
+        "su2_trace": -1.0
+      },
+      {
+        "size": 12,
+        "quaternion": [
+          -0.3090169944,
+          -0.8090169944,
+          -0.5,
+          0.0
+        ],
+        "su2_trace": -0.6180339888
+      },
+      {
+        "size": 30,
+        "quaternion": [
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "su2_trace": 0.0
+      },
+      {
+        "size": 12,
+        "quaternion": [
+          0.3090169944,
+          -0.8090169944,
+          -0.5,
+          0.0
+        ],
+        "su2_trace": 0.6180339888
+      },
+      {
+        "size": 20,
+        "quaternion": [
+          0.5,
+          -0.8090169944,
+          0.0,
+          -0.3090169944
+        ],
+        "su2_trace": 1.0
+      },
+      {
+        "size": 12,
+        "quaternion": [
+          0.8090169944,
+          -0.5,
+          -0.3090169944,
+          0.0
+        ],
+        "su2_trace": 1.6180339888
+      },
+      {
+        "size": 1,
+        "quaternion": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "su2_trace": 2.0
+      }
+    ],
+    "irrep_dimensions": [
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5,
+      6
+    ],
+    "expected_affine_e8_marks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      4,
+      2,
+      3
+    ],
+    "character_table": [
+      [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        -2.0,
+        -1.6180339887,
+        -1.0,
+        -0.6180339887,
+        -0.0,
+        0.6180339887,
+        1.0,
+        1.6180339887,
+        2.0
+      ],
+      [
+        -2.0,
+        0.6180339887,
+        -1.0,
+        1.6180339887,
+        -0.0,
+        -1.6180339887,
+        1.0,
+        -0.6180339887,
+        2.0
+      ],
+      [
+        3.0,
+        -0.6180339887,
+        0.0,
+        1.6180339887,
+        -1.0,
+        1.6180339887,
+        0.0,
+        -0.6180339887,
+        3.0
+      ],
+      [
+        3.0,
+        1.6180339887,
+        0.0,
+        -0.6180339887,
+        -1.0,
+        -0.6180339887,
+        0.0,
+        1.6180339887,
+        3.0
+      ],
+      [
+        -4.0,
+        -1.0,
+        1.0,
+        1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        1.0,
+        4.0
+      ],
+      [
+        4.0,
+        -1.0,
+        1.0,
+        -1.0,
+        0.0,
+        -1.0,
+        1.0,
+        -1.0,
+        4.0
+      ],
+      [
+        5.0,
+        -0.0,
+        -1.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.0,
+        -0.0,
+        5.0
+      ],
+      [
+        -6.0,
+        1.0,
+        -0.0,
+        -1.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.0,
+        6.0
+      ]
+    ],
+    "character_orthogonality_max_error": 1.731947918415244e-15,
+    "defining_irrep_index": 1,
+    "defining_character": [
+      -2.0,
+      -1.6180339888,
+      -1.0,
+      -0.6180339888,
+      0.0,
+      0.6180339888,
+      1.0,
+      1.6180339888,
+      2.0
+    ],
+    "fusion_adjacency": [
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ]
+    ],
+    "fusion_edge_count": 8,
+    "fusion_graph_connected": true,
+    "fusion_graph_simple_symmetric": true,
+    "dimension_vector_is_affine_null_root": true,
+    "affine_e8_graph_match": true,
+    "affine_e8_node_mapping": {
+      "affine_e8_node_0": 0,
+      "affine_e8_node_1": 1,
+      "affine_e8_node_2": 4,
+      "affine_e8_node_3": 5,
+      "affine_e8_node_4": 7,
+      "affine_e8_node_5": 8,
+      "affine_e8_node_6": 6,
+      "affine_e8_node_7": 2,
+      "affine_e8_node_8": 3
+    },
+    "canonical_affine_e8_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        5,
+        8
+      ]
+    ],
+    "method": "2I conjugacy classes -> irreducible characters -> tensor fusion by defining SU(2) irrep -> affine E8 graph isomorphism"
+  },
+  "dark_sector": {
+    "dark_sector_candidates": [
+      {
+        "E6_rep": 78,
+        "SU3_rep": 1,
+        "description": "E6 Adjoint (Sterile Gauge Bosons / Dark Matter)"
+      },
+      {
+        "E6_rep": 1,
+        "SU3_rep": 8,
+        "description": "SU(3) Color Octet (Gluons)"
+      },
+      {
+        "E6_rep": 27,
+        "SU3_rep": 3,
+        "description": "SM Fermion generation"
+      }
+    ],
+    "conclusion": "E6(78) sub-algebra shelters the Dark Sector in the GCT E8 branching."
+  },
+  "cyclic_check": {
+    "status": "Cyclic/Dihedral groups excluded by spin-structure cohomology (see App_U \u00a7U.6)."
+  },
+  "lemma_iii": {
+    "lemma_iii_proven": true,
+    "unique_group": "2I (Binary Icosahedral)",
+    "method": "McKay correspondence + H^2 spin obstruction theorem"
+  }
+}

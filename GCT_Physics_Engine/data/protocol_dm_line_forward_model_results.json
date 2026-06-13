@@ -1,0 +1,192 @@
+{
+  "energy_rest_kev": 3.5486,
+  "energy_observed_kev": 3.547479539242073,
+  "z_gravitational": 0.0003158469965880459,
+  "instrument_fwhm_ev": 5.0,
+  "models": {
+    "CDM": {
+      "profile_shape": "Gaussian",
+      "velocity_kms": 1300.0,
+      "sigma_kin_ev": 15.383053435636112,
+      "fwhm_total_ev": 36.57050875769286
+    },
+    "GCT": {
+      "profile_shape": "Voigt",
+      "velocity_kms": 300.0,
+      "sigma_inst_eff_ev": 4.136396308207112,
+      "width_intrinsic_fwhm_baseline_ev": 0.01,
+      "fwhm_voigt_baseline_ev": 9.74581605261418,
+      "voigt_locus_width_intrinsic_fwhm_ev": [
+        {
+          "width_intrinsic_fwhm_ev": 0.0,
+          "fwhm_voigt_ev": 9.740468940758124
+        },
+        {
+          "width_intrinsic_fwhm_ev": 0.5,
+          "fwhm_voigt_ev": 10.010548184557022
+        },
+        {
+          "width_intrinsic_fwhm_ev": 1.0,
+          "fwhm_voigt_ev": 10.286181163374156
+        },
+        {
+          "width_intrinsic_fwhm_ev": 1.5,
+          "fwhm_voigt_ev": 10.567353660013634
+        },
+        {
+          "width_intrinsic_fwhm_ev": 2.0,
+          "fwhm_voigt_ev": 10.854042113487253
+        },
+        {
+          "width_intrinsic_fwhm_ev": 2.5,
+          "fwhm_voigt_ev": 11.146213817735646
+        },
+        {
+          "width_intrinsic_fwhm_ev": 3.0,
+          "fwhm_voigt_ev": 11.443827194366571
+        },
+        {
+          "width_intrinsic_fwhm_ev": 3.5,
+          "fwhm_voigt_ev": 11.746832134169784
+        },
+        {
+          "width_intrinsic_fwhm_ev": 4.0,
+          "fwhm_voigt_ev": 12.055170400986082
+        },
+        {
+          "width_intrinsic_fwhm_ev": 4.5,
+          "fwhm_voigt_ev": 12.36877609053919
+        },
+        {
+          "width_intrinsic_fwhm_ev": 5.0,
+          "fwhm_voigt_ev": 12.687576136106495
+        },
+        {
+          "width_intrinsic_fwhm_ev": 5.5,
+          "fwhm_voigt_ev": 13.011490852420266
+        },
+        {
+          "width_intrinsic_fwhm_ev": 6.0,
+          "fwhm_voigt_ev": 13.340434508955216
+        },
+        {
+          "width_intrinsic_fwhm_ev": 6.5,
+          "fwhm_voigt_ev": 13.674315923761206
+        },
+        {
+          "width_intrinsic_fwhm_ev": 7.0,
+          "fwhm_voigt_ev": 14.01303906922281
+        },
+        {
+          "width_intrinsic_fwhm_ev": 7.5,
+          "fwhm_voigt_ev": 14.356503681543447
+        },
+        {
+          "width_intrinsic_fwhm_ev": 8.0,
+          "fwhm_voigt_ev": 14.70460586633035
+        },
+        {
+          "width_intrinsic_fwhm_ev": 8.5,
+          "fwhm_voigt_ev": 15.0572386933624
+        },
+        {
+          "width_intrinsic_fwhm_ev": 9.0,
+          "fwhm_voigt_ev": 15.41429277442122
+        },
+        {
+          "width_intrinsic_fwhm_ev": 9.5,
+          "fwhm_voigt_ev": 15.775656818921616
+        },
+        {
+          "width_intrinsic_fwhm_ev": 10.0,
+          "fwhm_voigt_ev": 16.141218162958715
+        },
+        {
+          "width_intrinsic_fwhm_ev": 10.5,
+          "fwhm_voigt_ev": 16.51086326826661
+        },
+        {
+          "width_intrinsic_fwhm_ev": 11.0,
+          "fwhm_voigt_ev": 16.884478188433096
+        },
+        {
+          "width_intrinsic_fwhm_ev": 11.5,
+          "fwhm_voigt_ev": 17.261949000516132
+        },
+        {
+          "width_intrinsic_fwhm_ev": 12.0,
+          "fwhm_voigt_ev": 17.64316220094607
+        },
+        {
+          "width_intrinsic_fwhm_ev": 12.5,
+          "fwhm_voigt_ev": 18.028005065261468
+        },
+        {
+          "width_intrinsic_fwhm_ev": 13.0,
+          "fwhm_voigt_ev": 18.416365971810116
+        },
+        {
+          "width_intrinsic_fwhm_ev": 13.5,
+          "fwhm_voigt_ev": 18.80813469004703
+        },
+        {
+          "width_intrinsic_fwhm_ev": 14.0,
+          "fwhm_voigt_ev": 19.203202634479073
+        },
+        {
+          "width_intrinsic_fwhm_ev": 14.5,
+          "fwhm_voigt_ev": 19.60146308564326
+        },
+        {
+          "width_intrinsic_fwhm_ev": 15.0,
+          "fwhm_voigt_ev": 20.002811379768694
+        },
+        {
+          "width_intrinsic_fwhm_ev": 15.5,
+          "fwhm_voigt_ev": 20.407145068965846
+        },
+        {
+          "width_intrinsic_fwhm_ev": 16.0,
+          "fwhm_voigt_ev": 20.814364053919057
+        },
+        {
+          "width_intrinsic_fwhm_ev": 16.5,
+          "fwhm_voigt_ev": 21.22437069113616
+        },
+        {
+          "width_intrinsic_fwhm_ev": 17.0,
+          "fwhm_voigt_ev": 21.63706987684045
+        },
+        {
+          "width_intrinsic_fwhm_ev": 17.5,
+          "fwhm_voigt_ev": 22.05236910958263
+        },
+        {
+          "width_intrinsic_fwhm_ev": 18.0,
+          "fwhm_voigt_ev": 22.470178533610415
+        },
+        {
+          "width_intrinsic_fwhm_ev": 18.5,
+          "fwhm_voigt_ev": 22.890410964968247
+        },
+        {
+          "width_intrinsic_fwhm_ev": 19.0,
+          "fwhm_voigt_ev": 23.3129819022145
+        },
+        {
+          "width_intrinsic_fwhm_ev": 19.5,
+          "fwhm_voigt_ev": 23.737809523543838
+        },
+        {
+          "width_intrinsic_fwhm_ev": 20.0,
+          "fwhm_voigt_ev": 24.164814671993142
+        }
+      ]
+    }
+  },
+  "fwhm_difference_cdm_minus_gct_ev": 26.824692705078682,
+  "discrimination_delta_ev": 26.824692705078682,
+  "verdict": "DISTINGUISHABLE",
+  "pass": true,
+  "expected_fwhm_ev": 9.74581605261418
+}

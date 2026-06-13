@@ -1,0 +1,33 @@
+{
+  "rt_face_graph": {
+    "vertices": 30,
+    "edges": 60,
+    "valency": 4,
+    "is_distance_regular": true,
+    "matches_icosidodecahedron": true
+  },
+  "dirac_operator": {
+    "construction": "doubled-space chiral, [[0,C^T],[C,0]] with signed incidence",
+    "dim": 90,
+    "weighting": "integer (\u00b11 on edges)"
+  },
+  "spectrum": {
+    "n_eigenvalues": 90,
+    "n_kernel": 32,
+    "n_positive": 29,
+    "n_negative": 29,
+    "eigenvalue_min": -2.449489742783181,
+    "eigenvalue_max": 2.449489742783181
+  },
+  "eta_computed": 0.0,
+  "eta_is_integer": true,
+  "alpha_inv_CODATA": 137.035999177,
+  "alpha_inv_tree": 137.50776405003785,
+  "alpha_inv_bilayer": 137.03030653597523,
+  "target_eta_pre_bilayer": -0.9435297460756829,
+  "target_eta_post_bilayer": 0.011385282049559464,
+  "pre_bilayer_pass": false,
+  "post_bilayer_pass": false,
+  "structural_failure_reason": "\u03b7 is integer-valued for integer-weighted Dirac; the \u03b1 residual targets are non-integer (0.012 post-bilayer, -0.944 pre-bilayer). Integer \u03b7 cannot match non-integer target.",
+  "test_outcome": "FAIL \u2014 \u03b7 integer-valued; non-integer target unreachable without manuscript-unspecified couplings"
+}

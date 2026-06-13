@@ -1,0 +1,106 @@
+{
+  "behavioral_class_summary": {
+    "nonspectral": {
+      "chose_sugar": 2931,
+      "experiments": 13,
+      "n_hits": 4665,
+      "raw_correct_fraction": 0.6282958199356913
+    },
+    "null": {
+      "chose_sugar": 361,
+      "experiments": 4,
+      "n_hits": 747,
+      "raw_correct_fraction": 0.48326639892904955
+    },
+    "spectral": {
+      "chose_sugar": 365,
+      "experiments": 2,
+      "n_hits": 604,
+      "raw_correct_fraction": 0.6043046357615894
+    }
+  },
+  "data_source": {
+    "canonical_trial_rows": 418,
+    "experiment_count": 19,
+    "fallback": "bundled Stoddard 2020 experiment aggregate is used if network retrieval is unavailable",
+    "github_commit": "d9e9091ebbe7bf726b201b887274a6081ebf82b2",
+    "primary_table_url": "https://raw.githubusercontent.com/dylanhmorris/nonspectral-hummingbird-vision/d9e9091ebbe7bf726b201b887274a6081ebf82b2/dat/cleaned/CleanedDataTable.csv",
+    "reported_quantities_url": "https://raw.githubusercontent.com/dylanhmorris/nonspectral-hummingbird-vision/d9e9091ebbe7bf726b201b887274a6081ebf82b2/out/reported_quantities.csv",
+    "total_visits": 6016
+  },
+  "interpretation": "The Stoddard data support avian tetrachromatic sensor discrimination, including nonspectral stimuli. Under intensity normalization, the four sensor channels map to a 3-D tetrahedral chromaticity simplex; categorical nonspectral/axis labels are not favored beyond receptor-space distance by BIC. This is behavioral compatibility with the GCT T_2 (E_perp) 3-D substrate-ceiling claim, while leaving both the anatomical compression locus and any extra phenomenal-color-axis interpretation empirical.",
+  "model_comparison": {
+    "base_receptor_distance_model": {
+      "aic": 8009.283389390756,
+      "bic_experiment_level": 8012.1167063282555,
+      "bic_visit_level": 8029.389922987645,
+      "features": [
+        "euclid",
+        "null_control"
+      ],
+      "k_parameters": 3,
+      "log_likelihood": -4001.641694695378,
+      "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "optimizer_success": true,
+      "standardized_coefficients": [
+        0.39060328766212077,
+        0.007737917228667289,
+        -0.23112013883734667
+      ]
+    },
+    "categorical_label_extension_model": {
+      "aic": 8012.5281263944435,
+      "bic_experiment_level": 8018.194760269442,
+      "bic_visit_level": 8052.741193588222,
+      "features": [
+        "euclid",
+        "null_control",
+        "nonspectral_extra",
+        "uv_green_axis_extra",
+        "uv_red_axis_extra"
+      ],
+      "k_parameters": 6,
+      "log_likelihood": -4000.2640631972217,
+      "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+      "optimizer_success": true,
+      "standardized_coefficients": [
+        0.38438750564683644,
+        0.05196454151582447,
+        -0.1385162515227456,
+        0.08152068033722215,
+        0.009078503429453476,
+        0.002114754705641396
+      ]
+    },
+    "decision_rule": "COMPATIBLE if BIC_extended - BIC_base >= 2; TENSION if the categorical extension is weakly favored but Delta BIC < 10; FAIL if the categorical extension is strongly favored with Delta BIC <= -10. COMPATIBLE is a behavioral compatibility flag, not a physical PASS on the phenomenal-axis question.",
+    "delta_aic_extension_minus_base": 3.244737003687078,
+    "delta_bic_extension_minus_base": 6.078053941186226
+  },
+  "open_problem": "O.29",
+  "pass": true,
+  "protocol": "psychophysics_color_dimensionality",
+  "question": "Does the Stoddard behavioral table remain compatible with the 3-D T_2 (E_perp) apperceptive color-substrate ceiling after receptor-space distance is modeled?",
+  "sensor_stage_compression": {
+    "compression_statement": "Four cone-class catches are sensor variables; after intensity normalization, chromaticities lie on the 3-D avian tetrahedral simplex.",
+    "intensity_normalized_chromaticity_rank": 3,
+    "raw_cone_class_count": 4,
+    "raw_cone_design_rank": 4,
+    "singular_values_normalized_chromaticity": [
+      3.168126143277559,
+      2.754449588099196,
+      1.3564073766223976,
+      5.970150572381572e-16
+    ],
+    "tetrahedral_cartesian_rank": 3
+  },
+  "status": "COMPATIBLE_O29_STODDARD_MODEL_COMPARISON",
+  "stoddard_reported_quantities": {
+    "main_nonspec_mean_mean_correctness": 0.827208097902808,
+    "main_nonspec_q05_mean_correctness": 0.773217637000298,
+    "main_null_mean_mean_correctness": 0.578225251583396,
+    "main_null_q95_mean_correctness": 0.637444052329473,
+    "main_spec_mean_mean_correctness": 0.788209817471735
+  },
+  "tier": "Tier 3 behavioral model comparison for the T_2 (E_perp) color-ceiling claim; anatomical compression locus remains empirical.",
+  "verdict": "COMPATIBLE"
+}

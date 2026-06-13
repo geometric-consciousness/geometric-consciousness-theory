@@ -1,0 +1,10 @@
+{
+  "c_phason": 0.23694611100356366,
+  "c_phonon": 0.72,
+  "N_optimal": null,
+  "N_optimal_assumed": 144,
+  "cage_status": "ASSUMED_NOT_COMPUTED",
+  "defect_verdict": "ASSUMED_NOT_COMPUTED_O38_PENDING",
+  "tier": "Tier 3 structural posit pending FULL_LATTICE_MODE minimization closure (O.38)",
+  "pass": false
+}

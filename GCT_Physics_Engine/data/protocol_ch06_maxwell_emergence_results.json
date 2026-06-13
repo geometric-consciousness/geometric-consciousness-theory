@@ -1,0 +1,127 @@
+{
+  "protocol": "Ch06 \u00a76.1.2 Maxwell-from-supersolid four-ingredient derivation",
+  "tier": "Tier 3 consistency check pending O.15 tile-dynamics closure",
+  "ingredient_I": {
+    "ingredient": "I \u2014 Euler-Lagrange residuals from supersolid Lagrangian",
+    "residuals": {
+      "A0": "0",
+      "A1": "0",
+      "A2": "0",
+      "A3": "0"
+    },
+    "pass": true
+  },
+  "ingredient_II": {
+    "ingredient": "II \u2014 Gauge fixing: Lorenz condition gives covariant wave equation",
+    "residuals": {
+      "box_A0": "0",
+      "box_A1": "0",
+      "box_A2": "0",
+      "box_A3": "0"
+    },
+    "lorenz_propagation": {
+      "box_div_A_expression": "-Derivative(A1(t, x, y, z), (x, 3)) - Derivative(A2(t, x, y, z), (y, 3)) - Derivative(A3(t, x, y, z), (z, 3)) - Derivative(A0(t, x, y, z), t, (x, 2)) - Derivative(A0(t, x, y, z), t, (y, 2)) - Derivative(A0(t, x, y, z), t, (z, 2)) - Derivative(A1(t, x, y, z), x, (y, 2)) - Derivative(A1(t, x, y, z), x, (z, 2)) - Derivative(A2(t, x, y, z), (x, 2), y) - Derivative(A2(t, x, y, z), y, (z, 2)) - Derivative(A3(t, x, y, z), (x, 2), z) - Derivative(A3(t, x, y, z), (y, 2), z) + rho_eff*Derivative(A0(t, x, y, z), (t, 3))/K_perp + rho_eff*Derivative(A1(t, x, y, z), (t, 2), x)/K_perp + rho_eff*Derivative(A2(t, x, y, z), (t, 2), y)/K_perp + rho_eff*Derivative(A3(t, x, y, z), (t, 2), z)/K_perp",
+      "expected_box_div_A_on_shell": "Derivative(J0(t, x, y, z), t)/K_perp + Derivative(J1(t, x, y, z), x)/K_perp + Derivative(J2(t, x, y, z), y)/K_perp + Derivative(J3(t, x, y, z), z)/K_perp",
+      "consistency": "Lorenz condition d_mu A^mu = 0 is preserved by the wave equation when d_mu J^mu = 0 (current conservation). Verified by inspection: box(d_mu A^mu) = d_mu(box A^mu) = (1/K_perp) d_mu J^mu."
+    },
+    "pass": true
+  },
+  "ingredient_III_homogeneous": {
+    "subcheck": "III.a \u2014 Homogeneous Maxwell pair (Bianchi identities from F_munu definition)",
+    "residuals": {
+      "div_B": "0",
+      "curl_E_plus_dt_B_x": "0",
+      "curl_E_plus_dt_B_y": "0",
+      "curl_E_plus_dt_B_z": "0"
+    },
+    "pass": true
+  },
+  "ingredient_III_inhomogeneous": {
+    "subcheck": "III.b \u2014 Inhomogeneous Maxwell pair (Gauss + Ampere-Maxwell from EOM in Lorenz gauge)",
+    "residuals": {
+      "gauss_div_E_minus_EOM_form": "0",
+      "ampere_x_residual": "0",
+      "ampere_y_residual": "0",
+      "ampere_z_residual": "0"
+    },
+    "identification": {
+      "rho_EM": "J_0 / K_perp     (charge density from temporal current component, normalized by phason stiffness)",
+      "J_EM_i": "J_i / K_perp     (spatial current density)",
+      "epsilon_0_equivalent": "K_perp     (vacuum permittivity = phason stiffness in lattice units; SI anchor in App M \u00a7M.6)"
+    },
+    "pass": true
+  },
+  "ingredient_IV_static_coulomb": {
+    "ingredient": "IV \u2014 Static Coulomb limit from temporal phason phase constraint",
+    "static_eom": "-K_perp*nabla^2 A0 = J0",
+    "gauss_limit": "div E = J0/K_perp",
+    "green_function": "A0(x) = integral J0(x')/(4*pi*K_perp*|x-x'|) d^3x'",
+    "residual_divE_minus_poisson_form": "0",
+    "pass": true
+  },
+  "ingredient_V": {
+    "ingredient": "V \u2014 Lorentz invariance of F_munu F^munu under boost",
+    "boost_axis": "x",
+    "boost_parameter": "beta = v / c",
+    "metric_signature": "(+, -, -, -)",
+    "c_emergent": "sqrt(K_perp)/sqrt(rho_eff)",
+    "F_scalar_invariant": true,
+    "F_scalar_minus_boosted": "0",
+    "pass": true
+  },
+  "u1_gauge_invariance": {
+    "bonus": "U(1) gauge invariance of E and B under A_mu -> A_mu + d_mu Lambda",
+    "residuals": {
+      "E1": "0",
+      "E2": "0",
+      "E3": "0",
+      "B1": "0",
+      "B2": "0",
+      "B3": "0"
+    },
+    "pass": true
+  },
+  "sensitivity_sweep": {
+    "sweep": "K_perp / K_parallel = phi^-D across defensible range of D",
+    "points": [
+      {
+        "D_exponent": 14,
+        "K_perp_over_K_parallel": 0.0011862412896422262,
+        "c_hat_lattice": 0.03444185374863302,
+        "ingredients_pass": true,
+        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App K \u00a7K.4) gives c_hat = phi^-9 \u2248 0.013156."
+      },
+      {
+        "D_exponent": 16,
+        "K_perp_over_K_parallel": 0.0004531038537848218,
+        "c_hat_lattice": 0.02128623625220818,
+        "ingredients_pass": true,
+        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App K \u00a7K.4) gives c_hat = phi^-9 \u2248 0.013156."
+      },
+      {
+        "D_exponent": 18,
+        "K_perp_over_K_parallel": 0.00017307027171223924,
+        "c_hat_lattice": 0.013155617496424835,
+        "ingredients_pass": true,
+        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App K \u00a7K.4) gives c_hat = phi^-9 \u2248 0.013156."
+      },
+      {
+        "D_exponent": 20,
+        "K_perp_over_K_parallel": 6.610696135189592e-05,
+        "c_hat_lattice": 0.008130618755783347,
+        "ingredients_pass": true,
+        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App K \u00a7K.4) gives c_hat = phi^-9 \u2248 0.013156."
+      },
+      {
+        "D_exponent": 22,
+        "K_perp_over_K_parallel": 2.5250612343448544e-05,
+        "c_hat_lattice": 0.005024998740641488,
+        "ingredients_pass": true,
+        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App K \u00a7K.4) gives c_hat = phi^-9 \u2248 0.013156."
+      }
+    ],
+    "structural_conclusion": "The four-ingredient Maxwell-from-supersolid closure is structural in the phason-sector Lagrangian and does not depend on the numerical value of the stiffness ratio. The ratio enters only as the squared emergent speed c^2 = K_perp/rho_eff, fixed empirically by the SI anchor of App M \u00a7M.6.",
+    "pass": true
+  },
+  "all_checks_pass": true
+}

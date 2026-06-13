@@ -1,0 +1,83 @@
+{
+  "protocol": "Lepton Coupling Coefficients (A5 Representation Theory)",
+  "D1_muon_drag": {
+    "group": "A5 (Icosahedral Group I)",
+    "group_order": 60,
+    "conjugacy_classes": {
+      "C_e": {
+        "size": 1,
+        "chi_perm": 6
+      },
+      "C_5": {
+        "size": 12,
+        "chi_perm": 1
+      },
+      "C_5_2": {
+        "size": 12,
+        "chi_perm": 1
+      },
+      "C_3": {
+        "size": 20,
+        "chi_perm": 0
+      },
+      "C_2": {
+        "size": 15,
+        "chi_perm": 2
+      }
+    },
+    "chi_perm_vector": [
+      6,
+      1,
+      1,
+      0,
+      2
+    ],
+    "multiplicities": {
+      "A": 1,
+      "T1": 0,
+      "T2": 0,
+      "G": 0,
+      "H": 1
+    },
+    "decomposition_array": [
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "decomposition_string": "1A + 1H",
+    "n_locked_channels": 1,
+    "n_free_channels": 5,
+    "mu_drag_coefficient": 5,
+    "d1_pass": true
+  },
+  "D2_tau_screening": {
+    "RT_faces": 30,
+    "D_position": 6,
+    "D_momentum": 6,
+    "D_face_internal": 6,
+    "D_total": 18,
+    "N_symmetry": 5,
+    "screening_coefficient_exact": "-18/5",
+    "screening_coefficient_float": -3.6,
+    "tau_drag_coefficient": -3.6,
+    "d2_pass": true
+  },
+  "summary": {
+    "decomposition_array_A_T1_T2_G_H": [
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "decomposition": "1A + 1H",
+    "n_free_channels": 5,
+    "mu_drag_coefficient_5alpha": 5,
+    "tau_screening_ratio": "-18/5",
+    "tau_screening_float": -3.6
+  },
+  "pass": true,
+  "verdict": "PASS"
+}

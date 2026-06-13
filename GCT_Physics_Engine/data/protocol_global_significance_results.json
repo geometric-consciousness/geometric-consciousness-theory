@@ -1,0 +1,67 @@
+{
+  "protocol": "protocol_global_significance.py",
+  "cross_base_monte_carlo": {
+    "n_samples": 100000,
+    "base_range": [
+      1.05,
+      4.0
+    ],
+    "phi_exclusion_radius": 0.01,
+    "tolerances": {
+      "lepton_frac": 0.001,
+      "proton_frac": 0.005,
+      "alpha_frac": 0.003
+    },
+    "phi_bare_target_fractional_errors": {
+      "muon": 0.03754569799380795,
+      "tau": 0.026926991845467357,
+      "proton": 0.00015492075253383753,
+      "alpha": 4.154052995431573e-05
+    },
+    "phi_bare_target_hits": {
+      "muon": false,
+      "tau": false,
+      "proton": true,
+      "alpha": true
+    },
+    "phi_bare_passes_all_four_targets": false,
+    "phi_corrected_target_fractional_errors": {
+      "muon": 2.110331151675923e-05,
+      "tau": 5.086211521008978e-05,
+      "proton": 0.00015492075253383753,
+      "alpha": 4.154052995431573e-05
+    },
+    "phi_corrected_target_hits": {
+      "muon": true,
+      "tau": true,
+      "proton": true,
+      "alpha": true
+    },
+    "phi_corrected_passes_all_four_targets": true,
+    "n_non_phi_bases_hitting_all_four": 0,
+    "p_null_joint": 5e-06,
+    "sigma_joint_two_sided": 4.56478773027951,
+    "pass": false,
+    "verdict": "EXPECTED-NONPASS \u2014 0 non-phi bases hit all four bare targets, but bare phi misses the muon and tau targets under the same sparse test. Corrected phi formulae pass the four physical comparison bands. The cross-base p_null bound is auxiliary and not a unique-base proof."
+  },
+  "lepton_lea": {
+    "lepton_exponent_pair": {
+      "search_space_expanded": true,
+      "total_combinations": 179276811435,
+      "valid_combinations": 6,
+      "lea_corrected_p": 3.34677973797822e-11,
+      "lea_corrected_sigma": 6.522748703865083,
+      "canonical": true,
+      "note": "Global combinatorial Monte Carlo computing exact fraction of valid combinations in the expanded (N, C1, C2) space at 21 ppm."
+    },
+    "joint_4param_monte_carlo": {
+      "raw_sigma": "auxiliary_only",
+      "trial_factor": 1,
+      "lea_corrected_sigma": "not_claimed",
+      "note": "Cross-base bare-control test is auxiliary: no sampled non-phi base hits all four bare targets, but bare phi itself misses the lepton targets. Corrected phi formulae pass; uniqueness remains pending an exhaustive base/formula sweep.",
+      "canonical": false
+    }
+  },
+  "headline_significance": "Canonical lepton-pair LEA only; cross-base bare-control p_null is auxiliary and not a unique-base proof. Expanded combinatorial LEA significance = 6.52-sigma.",
+  "pass": false
+}

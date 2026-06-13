@@ -1,0 +1,32 @@
+{
+  "name": "g2_electron",
+  "app_r_label": "Electron g-2 GCT contribution (kinematic-threshold null)",
+  "formula": "\u0394a_e^lattice = 0 at this loop order (electron at N=0; threshold E_res = m_e\u00b7\u03c6^11 \u2248 101.69 MeV; m_e \u226a E_res; N=11 threshold exponent Tier 3)",
+  "tier": "Tier 2 kinematic-threshold mechanism + Tier 3 threshold exponent N=11; \u03b1-input contingent",
+  "predicted": 0.0,
+  "observed": -2.7999998153394046e-13,
+  "unit": "(dimensionless)",
+  "app_r_predicted": 0.0,
+  "app_r_precision_str": "Cs-\u03b1: |gap| = 0.28 \u00d7 10\u207b\u00b9\u00b2 (0.96\u03c3); Rb-\u03b1: |gap| = 1.15 \u00d7 10\u207b\u00b9\u00b2 (3.94\u03c3 \u2014 \u03b1-input contingent)",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": 1000000.0,
+  "status": "PENDING-\u03b1-RESOLUTION",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "threshold_e_res_MeV": 101.69135895639373,
+    "electron_mass_MeV": 0.51099895069,
+    "safety_factor_phi11": 199.0050249987407,
+    "electron_below_threshold": true,
+    "delta_a_e_gct_lattice_x_10_15": 0.0,
+    "experimental_gap_Cs_alpha_x_10_12": -0.27999998153394046,
+    "experimental_gap_Rb_alpha_x_10_12": -1.1500000170888702,
+    "combined_uncertainty_x_10_12": 0.2920616373302046,
+    "gap_Cs_alpha_sigmas": 0.9587016771304775,
+    "gap_Rb_alpha_sigmas": 3.9375250635491073,
+    "Cs_alpha_consistent_with_zero_within_2sigma": true,
+    "Rb_alpha_consistent_with_zero_within_2sigma": false,
+    "alpha_input_caveat": "Cs-based \u03b1 (Parker et al. 2018) gives \u0394a_e^obs \u2248 -0.3\u00d710\u207b\u00b9\u00b2 (1\u03c3). Rb-based \u03b1 (Morel et al. 2020) gives \u0394a_e^obs \u2248 -1.15\u00d710\u207b\u00b9\u00b2 (4\u03c3 tension). The \u03b1-input ambiguity is itself a 5\u03c3 discrepancy at the \u03b1 level and keeps this row in PENDING-\u03b1-RESOLUTION until both \u03b1-input branches agree with the null prediction or the external \u03b1 discord resolves. Binary gate: next-gen atom-interferometry \u03b1 measurements (Rb-\u03b12 / Cs-\u03b12 / matter-wave gradiometry).",
+    "interpretation": "GCT predicts no activated lattice vertex correction for a_e at this loop order because the electron's rest mass (0.511 MeV) is well below the cage-depinning threshold E_res = m_e\u00b7\u03c6^11 \u2248 101.69 MeV (safety factor \u2248 \u03c6^11 \u2248 199). Only leptons at N \u2265 11 (muon N=11, tau N=17) activate the geometric 1/5 phason vertex correction. The observed (a_e^exp \u2212 a_e^QED) gap is consistent with zero within combined CODATA 2022 + 5-loop QED uncertainty, supporting the threshold-null prediction. Falsifier: any future measurement establishing |\u0394a_e^anom| > 10\u207b\u00b9\u00b2 at >3\u03c3 would challenge the kinematic threshold mechanism."
+  }
+}

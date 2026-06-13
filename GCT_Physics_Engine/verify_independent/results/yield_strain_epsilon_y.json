@@ -1,0 +1,27 @@
+{
+  "name": "yield_strain_epsilon_y",
+  "app_r_label": "Yield strain \u03b5_y = \u03c6\u207b\u2075 (Tier 2, Ch11 \u00a711.1.3 AKN tiling-flip derivation)",
+  "formula": "\u03b5_y = \u0394u_\u22a5 / \u03be = (\u03c6\u207b\u00b9 a_\u22a5) / (\u03c6\u2074 a_\u22a5) = \u03c6\u207b\u2075",
+  "tier": "Tier 2 candidate derivation + Tier 3 registered stress-gate prior",
+  "predicted": 0.09016994374947422,
+  "observed": 0.0902,
+  "unit": "(dimensionless)",
+  "app_r_predicted": 0.0902,
+  "app_r_precision_str": "\u03b5_y = \u03c6\u207b\u2075 = 0.090170; Ch11 \u00a711.1.3 cites 0.0902 (0.033% match); Parameter Ledger reports the Tier 2 candidate \u03c6\u207b\u2075 \u2248 0.0902 and the Tier 3 registered stress-gate value 0.1 (9.8% offset).",
+  "app_r_precision_ppm": 333.2178550530067,
+  "independent_precision_ppm": 333.21785505300664,
+  "status": "PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "phi": 1.618033988749895,
+    "epsilon_y_derived_phi_minus_5": 0.09016994374947422,
+    "epsilon_y_stated_in_Ch11_section_11_1_3": 0.0902,
+    "epsilon_y_registered_engine_stress_gate_value": 0.1,
+    "error_vs_Ch11_pct": 0.03332178550530067,
+    "error_vs_Ledger_pct": 9.830056250525784,
+    "matches_Ch11_derivation": true,
+    "matches_Ledger_rounded_value": true,
+    "note": "Ch11 \u00a711.1.3 derives \u03b5_y = \u03c6\u207b\u2075 \u2248 0.0902 from the AKN tiling-flip condition with no fitted local parameter. The engine stress gate currently uses 0.1 as a Tier 3 alloy-like prior pending AKN-action/phason-elastic closure or direct Protocol C stress-threshold calibration."
+  }
+}

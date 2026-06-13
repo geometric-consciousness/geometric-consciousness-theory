@@ -1,0 +1,98 @@
+{
+  "search_total_consistent": 24,
+  "ko6_spinor_solutions": [
+    {
+      "K": "I",
+      "gamma_spin": "sy",
+      "D_spin": "sx",
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "ko_dim6": true
+    },
+    {
+      "K": "I",
+      "gamma_spin": "sy",
+      "D_spin": "sz",
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "ko_dim6": true
+    },
+    {
+      "K": "sx",
+      "gamma_spin": "sz",
+      "D_spin": "sx",
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "ko_dim6": true
+    },
+    {
+      "K": "sx",
+      "gamma_spin": "sz",
+      "D_spin": "sy",
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "ko_dim6": true
+    },
+    {
+      "K": "sz",
+      "gamma_spin": "sx",
+      "D_spin": "sy",
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "ko_dim6": true
+    },
+    {
+      "K": "sz",
+      "gamma_spin": "sx",
+      "D_spin": "sz",
+      "signs": [
+        1,
+        1,
+        -1
+      ],
+      "ko_dim6": true
+    }
+  ],
+  "chosen_solution": {
+    "K": "I",
+    "gamma_spin": "sy",
+    "D_spin": "sx",
+    "signs": [
+      1,
+      1,
+      -1
+    ],
+    "ko_dim6": true
+  },
+  "full_dim_H": 304,
+  "full_signs": [
+    1,
+    1,
+    -1
+  ],
+  "full_axiom_checks": {
+    "gamma_sq_1": true,
+    "gamma_D_anticommute": true,
+    "D_self_adjoint": true,
+    "P_commutes_D_F": true
+  },
+  "ko_dimension_mod8": 6,
+  "pass_ko6": true,
+  "verdict": "POSITIVE (scoped): tensoring the cage with the 2-component spinor (2I double-cover / H factor) yields a real OPERATOR DATUM (H,D,J,gamma) with the KO-dim-6 SIGN structure (+1,+1,-1) -- the uniform spinor chirality supplies eps''=-1 with no bipartiteness requirement, lifting the bare-cage obstruction of protocol_o32. NOT yet a spectral triple (A_F unrepresented). OPEN (bundle with O.5): uniqueness/forcing by the projection; full A_F representation; first-order + order-zero conditions; dressed (non-product) Dirac.",
+  "scope_open": "uniqueness/forcing by projection + full A_F representation + first-order condition + dressed Dirac (bundles with O.5)"
+}

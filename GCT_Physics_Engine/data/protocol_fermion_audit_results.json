@@ -1,0 +1,38 @@
+{
+  "lepton": {
+    "representation": "1",
+    "dimension": 1,
+    "su3_charge": 0,
+    "name": "Lepton (SU(3) Singlet)",
+    "note": "Vertex is on the 3-fold axis. Z3-invariant => no color charge.",
+    "berry_phase_pi": 0.0,
+    "su3_coupling": 0,
+    "verdict": "Lepton Confirmed"
+  },
+  "quark": {
+    "representation": "3",
+    "dimension": 3,
+    "su3_charge": 1,
+    "name": "Quark (SU(3) Triplet)",
+    "note": "Face-center orbit under Z3 has 3 images => color triplet.",
+    "berry_phase_pi": 0.6648148148148146,
+    "su3_coupling": 1,
+    "verdict": "Quark Confirmed"
+  },
+  "gauge_invariance": {
+    "n_sites_tested": 5,
+    "n_invariant": 5,
+    "max_delta_E": 0.0,
+    "mean_delta_E": 0.0,
+    "all_invariant": true,
+    "verdict": "Gluon Redundancy Confirmed"
+  },
+  "spin_statistics": {
+    "berry_phase_lepton": 0.9999999999999927,
+    "expected_fermion_phase": 1.0,
+    "is_fermion": true,
+    "note": "ID-Tether (Spinor Argument): Phase = \u03c0 under 2\u03c0 rotation => Fermionic.",
+    "verdict": "Fermion Confirmed"
+  },
+  "pass": true
+}

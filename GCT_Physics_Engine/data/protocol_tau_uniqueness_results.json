@@ -1,0 +1,33 @@
+{
+  "protocol": "tau_uniqueness_6D_tangent_bundle_proof",
+  "primary_anchor": "H_3_Shephard_Todd_invariant_degree_sum",
+  "consistency_check": "6D_tangent_bundle_dimension_counting",
+  "group": "I_h",
+  "group_order": 120,
+  "ambient_dim": 6,
+  "face_dim": 2,
+  "normal_dim": 4,
+  "D_position": 6,
+  "D_momentum": 6,
+  "D_face_int": 6,
+  "D_face_int_breakdown": {
+    "in_plane": 2,
+    "normal_tilts": 4
+  },
+  "D_total": 18,
+  "N_symmetry": 5,
+  "screening_coefficient": -3.6,
+  "supplementary_Ih_decomp": {
+    "Ag": 1,
+    "T1u": 1,
+    "T2u": 1,
+    "Gg": 1,
+    "Gu": 1,
+    "Hg": 2,
+    "Hu": 1
+  },
+  "tier2_integer_identification": true,
+  "tier3_combination_rule_pending": true,
+  "status": "TIER_2_INTEGER_PAIR_PLUS_TIER_3_COMBINATION_RULE",
+  "proof_statement": "The load-bearing D=18 integer anchor is the H_3 Shephard-Todd invariant-degree sum. D_face_int = face_dim + (ambient_dim - face_dim) = ambient_dim = 6. A 2D surface in R^6 has exactly 6 independent deformation modes as a 6D tangent-bundle consistency check. The headline coefficient c = -D/N = -3.6 is Tier 3 pending O.26b."
+}

@@ -1,0 +1,34 @@
+name: GCT Master Audit
+
+on: [push, pull_request]
+
+jobs:
+  verify-engine:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        # pyphi 1.2.0 (the latest published release) imports
+        # `from collections import Iterable` which was removed in
+        # Python 3.10. Pin to 3.9 for engine compatibility until a
+        # newer pyphi release lands on PyPI.
+        python-version: '3.9'
+
+    - name: Install Dependencies
+      run: |
+        pip install --upgrade pip
+        pip install -r GCT_Physics_Engine/requirements.txt
+
+    - name: Run Master Verifier
+      run: |
+        python3 -X utf8 GCT_Physics_Engine/src/verify_engine.py
+
+    - name: Upload Engine Data Directory
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: engine-data
+        path: GCT_Physics_Engine/data/

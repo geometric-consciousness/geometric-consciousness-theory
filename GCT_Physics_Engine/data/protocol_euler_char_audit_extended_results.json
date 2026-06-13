@@ -1,0 +1,104 @@
+{
+  "claim": "\u03c7(Z\u2076/H_3) = -107 in Ch07 \u00a77.2.2",
+  "audit_scope": "extended_stringy_hodge_invariants",
+  "results_per_combination": {
+    "I\u00d7T1\u2295T1": {
+      "group": "I",
+      "rep": "T1\u2295T1",
+      "cohomology": {
+        "betti_numbers": [
+          1,
+          0,
+          1,
+          4,
+          1,
+          0,
+          1
+        ],
+        "rational_euler_char": 0,
+        "total_betti": 8
+      },
+      "equivariant_signature": 0.0,
+      "weighted_betti_sum": 24,
+      "weighted_betti_sum_sq": 92,
+      "hypercube": {
+        "preserves_lattice": false,
+        "comment": "I-action on this 6D rep does not preserve Z\u2076 lattice; orbit counts undefined."
+      }
+    },
+    "I\u00d7T1\u2295T2": {
+      "group": "I",
+      "rep": "T1\u2295T2",
+      "cohomology": {
+        "betti_numbers": [
+          1,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1
+        ],
+        "rational_euler_char": 0,
+        "total_betti": 4
+      },
+      "equivariant_signature": 0.0,
+      "weighted_betti_sum": 12,
+      "weighted_betti_sum_sq": 54,
+      "hypercube": {
+        "preserves_lattice": false,
+        "comment": "I-action on this 6D rep does not preserve Z\u2076 lattice; orbit counts undefined."
+      }
+    },
+    "I_h\u00d7T1\u2295T1": {
+      "group": "I_h",
+      "rep": "T1\u2295T1",
+      "cohomology": {
+        "betti_numbers": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "rational_euler_char": 4,
+        "total_betti": 4
+      },
+      "equivariant_signature": 1.5083333333333333,
+      "weighted_betti_sum": 12,
+      "weighted_betti_sum_sq": 56,
+      "hypercube": {
+        "preserves_lattice": false,
+        "comment": "I-action on this 6D rep does not preserve Z\u2076 lattice; orbit counts undefined."
+      }
+    },
+    "I_h\u00d7T1\u2295T2": {
+      "group": "I_h",
+      "rep": "T1\u2295T2",
+      "cohomology": {
+        "betti_numbers": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "rational_euler_char": 2,
+        "total_betti": 2
+      },
+      "equivariant_signature": 0.9555469288332912,
+      "weighted_betti_sum": 6,
+      "weighted_betti_sum_sq": 36,
+      "hypercube": {
+        "preserves_lattice": false,
+        "comment": "I-action on this 6D rep does not preserve Z\u2076 lattice; orbit counts undefined."
+      }
+    }
+  },
+  "matches_to_pm_107": [],
+  "verdict": "NO MATCH \u2014 extended-invariant sweep exhaustive across stringy / Hodge / orbifold combinations"
+}

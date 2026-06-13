@@ -1,0 +1,256 @@
+{
+  "name": "f_bound_conservative_geometry",
+  "app_r_label": "Bound-water fraction f_bound (O.21/O.33 conservative geometry)",
+  "formula": "f_bound = N_bound / N_water = (n_rp \u00d7 n_contact \u00d7 12) / (\u03c0 r_lumen\u00b2 \u2113 / \u03bd_H2O); operative central n_rp=0; sensitivity sweep over n_rp \u2208 {1,2}, n_contact \u2208 {4,6,8,12}",
+  "tier": "Tier 3 biological substrate value (O.21/O.33 conservative geometry; Nuclear Overhauser transfer is not the lock mechanism)",
+  "predicted": 0.0,
+  "observed": 0.0,
+  "unit": "(dimensionless)",
+  "app_r_predicted": 0.0,
+  "app_r_precision_str": "N_water = 4.728e+04 (geometry, integer-form 47281); operative central (n_rp=0): f_bound = 0; sensitivity central (n_rp=1, n_contact=6): 0.001523; sensitivity range [0.001, 0.002], structural stress test 0.006091",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": null,
+  "status": "PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "geometry": {
+      "r_lumen_nm": 7.5,
+      "ell_dimer_nm": 8.0,
+      "water_vol_nm3": 0.0299,
+      "n_faces": 12,
+      "N_water": 47281,
+      "N_water_exact": 47281.49478646846
+    },
+    "canonical_point": {
+      "n_rp": 0,
+      "n_contact": 6,
+      "n_bound": 0,
+      "f_bound": 0.0,
+      "f_bound_predicted": 0.0,
+      "delta_pct": 0.0,
+      "pass": true
+    },
+    "sensitivity_sweep": [
+      {
+        "n_rp": 0,
+        "n_contact": 4,
+        "n_bound": 0,
+        "f_bound": 0.0,
+        "f_bound_int_form": "0 / 47281"
+      },
+      {
+        "n_rp": 0,
+        "n_contact": 6,
+        "n_bound": 0,
+        "f_bound": 0.0,
+        "f_bound_int_form": "0 / 47281"
+      },
+      {
+        "n_rp": 0,
+        "n_contact": 8,
+        "n_bound": 0,
+        "f_bound": 0.0,
+        "f_bound_int_form": "0 / 47281"
+      },
+      {
+        "n_rp": 0,
+        "n_contact": 12,
+        "n_bound": 0,
+        "f_bound": 0.0,
+        "f_bound_int_form": "0 / 47281"
+      },
+      {
+        "n_rp": 1,
+        "n_contact": 4,
+        "n_bound": 48,
+        "f_bound": 0.001015196330335503,
+        "f_bound_int_form": "48 / 47281"
+      },
+      {
+        "n_rp": 1,
+        "n_contact": 6,
+        "n_bound": 72,
+        "f_bound": 0.0015227944955032546,
+        "f_bound_int_form": "72 / 47281"
+      },
+      {
+        "n_rp": 1,
+        "n_contact": 8,
+        "n_bound": 96,
+        "f_bound": 0.002030392660671006,
+        "f_bound_int_form": "96 / 47281"
+      },
+      {
+        "n_rp": 1,
+        "n_contact": 12,
+        "n_bound": 144,
+        "f_bound": 0.003045588991006509,
+        "f_bound_int_form": "144 / 47281"
+      },
+      {
+        "n_rp": 2,
+        "n_contact": 4,
+        "n_bound": 96,
+        "f_bound": 0.002030392660671006,
+        "f_bound_int_form": "96 / 47281"
+      },
+      {
+        "n_rp": 2,
+        "n_contact": 6,
+        "n_bound": 144,
+        "f_bound": 0.003045588991006509,
+        "f_bound_int_form": "144 / 47281"
+      },
+      {
+        "n_rp": 2,
+        "n_contact": 8,
+        "n_bound": 192,
+        "f_bound": 0.004060785321342012,
+        "f_bound_int_form": "192 / 47281"
+      },
+      {
+        "n_rp": 2,
+        "n_contact": 12,
+        "n_bound": 288,
+        "f_bound": 0.006091177982013018,
+        "f_bound_int_form": "288 / 47281"
+      }
+    ],
+    "operative_central_f_bound": 0.0,
+    "sensitivity_branch_f_bound": [
+      0.001,
+      0.002
+    ],
+    "sensitivity_branch_central": 0.0015227944955032546,
+    "structural_upper_bound": 0.0061,
+    "n_rp_values_swept": [
+      0,
+      1,
+      2
+    ],
+    "n_contact_values_swept": [
+      4,
+      6,
+      8,
+      12
+    ],
+    "derivation_note": "Pure arithmetic check on the manuscript's own \u00a717.1.2c derivation chain. The geometry inputs (microtubule lumen radius, tubulin dimer length, water molecular volume, Trp-radical-pair cage-occupancy count range, N=144 dodecahedron face count) are accepted as inputs; the arithmetic is verified across the disclosed central branch and joint sensitivity range over (n_rp, n_contact). PASS-gating keys off the central O.21-pending branch (n_rp = 0) while checking the conditional n_rp = 1 sensitivity band. If the geometry inputs change, this verifier should be re-run."
+  },
+  "canonical_point": {
+    "n_rp": 0,
+    "n_contact": 6,
+    "n_bound": 0,
+    "f_bound": 0.0,
+    "f_bound_predicted": 0.0,
+    "delta_pct": 0.0,
+    "pass": true
+  },
+  "sensitivity_sweep": [
+    {
+      "n_rp": 0,
+      "n_contact": 4,
+      "n_bound": 0,
+      "f_bound": 0.0,
+      "f_bound_int_form": "0 / 47281"
+    },
+    {
+      "n_rp": 0,
+      "n_contact": 6,
+      "n_bound": 0,
+      "f_bound": 0.0,
+      "f_bound_int_form": "0 / 47281"
+    },
+    {
+      "n_rp": 0,
+      "n_contact": 8,
+      "n_bound": 0,
+      "f_bound": 0.0,
+      "f_bound_int_form": "0 / 47281"
+    },
+    {
+      "n_rp": 0,
+      "n_contact": 12,
+      "n_bound": 0,
+      "f_bound": 0.0,
+      "f_bound_int_form": "0 / 47281"
+    },
+    {
+      "n_rp": 1,
+      "n_contact": 4,
+      "n_bound": 48,
+      "f_bound": 0.001015196330335503,
+      "f_bound_int_form": "48 / 47281"
+    },
+    {
+      "n_rp": 1,
+      "n_contact": 6,
+      "n_bound": 72,
+      "f_bound": 0.0015227944955032546,
+      "f_bound_int_form": "72 / 47281"
+    },
+    {
+      "n_rp": 1,
+      "n_contact": 8,
+      "n_bound": 96,
+      "f_bound": 0.002030392660671006,
+      "f_bound_int_form": "96 / 47281"
+    },
+    {
+      "n_rp": 1,
+      "n_contact": 12,
+      "n_bound": 144,
+      "f_bound": 0.003045588991006509,
+      "f_bound_int_form": "144 / 47281"
+    },
+    {
+      "n_rp": 2,
+      "n_contact": 4,
+      "n_bound": 96,
+      "f_bound": 0.002030392660671006,
+      "f_bound_int_form": "96 / 47281"
+    },
+    {
+      "n_rp": 2,
+      "n_contact": 6,
+      "n_bound": 144,
+      "f_bound": 0.003045588991006509,
+      "f_bound_int_form": "144 / 47281"
+    },
+    {
+      "n_rp": 2,
+      "n_contact": 8,
+      "n_bound": 192,
+      "f_bound": 0.004060785321342012,
+      "f_bound_int_form": "192 / 47281"
+    },
+    {
+      "n_rp": 2,
+      "n_contact": 12,
+      "n_bound": 288,
+      "f_bound": 0.006091177982013018,
+      "f_bound_int_form": "288 / 47281"
+    }
+  ],
+  "operative_central_f_bound": 0.0,
+  "sensitivity_branch_f_bound": [
+    0.001,
+    0.002
+  ],
+  "sensitivity_branch_central": 0.0015227944955032546,
+  "disclosed_range_f_bound": [
+    0.001,
+    0.002
+  ],
+  "structural_upper_bound": 0.0061,
+  "geometry": {
+    "r_lumen_nm": 7.5,
+    "ell_dimer_nm": 8.0,
+    "water_vol_nm3": 0.0299,
+    "n_faces": 12,
+    "N_water": 47281,
+    "N_water_exact": 47281.49478646846
+  },
+  "pass": true,
+  "verdict": "PASS"
+}

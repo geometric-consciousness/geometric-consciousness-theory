@@ -1,0 +1,17 @@
+{
+  "protocol": "CISS parity audit",
+  "question": "Does the manuscript keep DNA-scale CISS polarization separate from protein/peptide defaults?",
+  "protein_peptide_default_band": [
+    0.05,
+    0.2
+  ],
+  "dna_ordered_helix_stress_edge": 0.6,
+  "registered_tubulin_default_band": [
+    0.05,
+    0.2
+  ],
+  "dna_edge_promoted_to_tubulin_default": false,
+  "interpretation": "Protein/peptide CISS magnitudes are the operative default for tubulin-style substrate claims. The DNA ~0.6 value is a stress edge and must not be silently promoted to the protein/tubulin default band.",
+  "status": "PASS",
+  "pass": true
+}

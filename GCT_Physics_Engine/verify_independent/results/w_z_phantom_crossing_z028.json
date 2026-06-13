@@ -1,0 +1,34 @@
+{
+  "name": "w_z_phantom_crossing_z028",
+  "app_r_label": "Biogenic dark energy CPL parameterisation (V2 Ch14 \u00a714.5 / \u00a714.6.3): CPL extrapolation z_cross^CPL \u2248 0.39 from precise pipeline fit (artifact; rounding sensitive); operative Class-2 envelope |Delta w(0.28)| in [2,5]e-5 (broad logistic z \u2248 0.28 marker is noncanonical)",
+  "formula": "w(a) = w_0 + w_a(1-a); CPL extrapolation crosses w=-1 at z_cross^CPL = 1/[1 + (1+w_0)/w_a] \u2212 1",
+  "tier": "Tier 3 (biogenic model, calibrated; CPL extrapolation = linear-fit artifact, not physical crossing)",
+  "predicted": 0.3889399003344034,
+  "observed": 0.389,
+  "unit": "(redshift z)",
+  "app_r_predicted": 0.389,
+  "app_r_precision_str": "CPL params (w_0=-1.0037973296449392, w_a=0.013560610917121069) give linear-extrapolation z_cross^CPL = 0.3889 (matches manuscript 0.389 to +0.02%). The underlying w(z) asymptotes to -1 from below; z_cross_direct_brentq = NaN confirms no physical crossing. The z\u22480.28 marker belongs to the broad logistic reference, not the operative Class-2 envelope; the registered current envelope is |Delta w(0.28)| in [2e-05, 5e-05]. Registered lag-kernel w_0 = -1.005 vs CPL intercept w_0 = -1.0037973296449392 disagree by 0.0012, within the 0.01 non-linearity tolerance of \u00a714.5.3.",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": 154.49785500414782,
+  "status": "INTERNAL_ARITHMETIC_PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "w_0_lag_kernel": -1.005,
+    "w_0_CPL_intercept": -1.0037973296449392,
+    "w_a_CPL": 0.013560610917121069,
+    "w_0_disagreement": 0.0012026703550607198,
+    "w_0_tolerance_per_section_14_5_3": 0.01,
+    "a_cross_CPL_computed": 0.7199735566378634,
+    "z_cross_CPL_computed": 0.3889399003344034,
+    "z_cross_CPL_stated_in_manuscript": 0.389,
+    "z_cross_CPL_disagreement_pct": 0.015449785500414783,
+    "z_broad_logistic_reference_marker": 0.28,
+    "class2_delta_w_band_at_z_0_28": [
+      2e-05,
+      5e-05
+    ],
+    "falsification_target": "Stage-V/Roman Year-10 single-bin precision below 5e-5 or multi-channel O.13 fingerprint; DESI DR2 CPL amplitude is sign-opposite and cannot be sourced by the biogenic channel alone.",
+    "derivation_note": "This verifier confirms internal arithmetic consistency of the \u00a714.5.3 / \u00a714.6.3 CPL fit. The CPL extrapolation z_cross^CPL \u2248 0.39 (precise pipeline fit) is a linear-fit artifact, NOT a physical phantom crossing \u2014 the underlying w(z) asymptotes to -1 from below and z_cross_direct_brentq = NaN. The z \u2248 0.28 marker belongs to the broad logistic reference (|w+1| >= 1e-3), a separate noncanonical illustration from the CPL crossing. Tier 3 calibrated; the operative Class-2 envelope per \u00a714.6.3 is |Delta w(0.28)| in [2,5]e-5, below Roman + DESI Year-5 joint-bin precision."
+  }
+}

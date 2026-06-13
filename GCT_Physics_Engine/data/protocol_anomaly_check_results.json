@@ -1,0 +1,20 @@
+{
+  "U1_Grav": {
+    "value": 0.0,
+    "verdict": "PASS"
+  },
+  "SU2_SU2_U1": {
+    "value": 0.0,
+    "verdict": "PASS"
+  },
+  "SU3_SU3_U1": {
+    "value": 0.0,
+    "verdict": "PASS"
+  },
+  "U1_cubed": {
+    "value": 1.7763568394002505e-15,
+    "verdict": "PASS"
+  },
+  "overall_verdict": "PASS",
+  "pass": true
+}

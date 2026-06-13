@@ -1,0 +1,952 @@
+# =============================================================================
+# GCT CONSTANTS — SINGLE SOURCE OF TRUTH (SSOT)
+# =============================================================================
+# Document: Geometric Consciousness Theory
+# Governance: Any new numerical term introduced into the manuscript MUST be
+# added here. Usage of 'hidden' coefficients not listed here is a
+# violation of GCT Rigor protocols.
+#
+# Schema:
+# math — Mathematical primitives (Tier 1). Code must import these;
+# never compute np.sqrt(5) inline again.
+# fundamental — Tier 1/2 structural/geometric invariants derived from the
+# 6D icosahedral lattice postulate.
+# derived — Tier 2 GCT predictions (analytic consequences of fundamentals).
+# calibrated — Tier 3 phenomenological fits, empirical anchors, and
+# imported observational benchmarks.
+# anchors — Physical convention anchors (SI constants used as mapping
+# constants or imported CODATA values).
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# MATH — Mathematical primitives
+# Code must import these; never compute inline.
+# -----------------------------------------------------------------------------
+math:
+ PI:
+ value: 3.141592653589793
+ units: dimensionless
+ tier: Tier 1
+ notes: "Mathematical constant. Used throughout (solid angles, phase windings, G expressions)."
+
+ PHI:
+ value: 1.6180339887498949
+ units: dimensionless
+ tier: Tier 1
+ formula: "(1 + sqrt(5)) / 2"
+ notes: "Golden Ratio. The fundamental projection slope of the GCT icosahedral lattice. Justified by Hurwitz's Theorem. Used as the Inflation Operator eigenvalue."
+
+ SQRT2:
+ value: 1.4142135623730951
+ units: dimensionless
+ tier: Tier 1
+ formula: "sqrt(2)"
+ notes: "D6 face-diagonal length. Appears in top quark relation m_t = m_H * sqrt(2)."
+
+ SQRT5:
+ value: 2.23606797749979
+ units: dimensionless
+ tier: Tier 1
+ formula: "sqrt(5)"
+ notes: "Governs golden-field arithmetic Q(sqrt(5)). Appears in Omega_RT solid angle expression (1/sqrt(5)) and projection matrix normalizations."
+
+ LN2:
+ value: 0.6931471805599453
+ units: dimensionless
+ tier: Tier 1
+ formula: "ln(2)"
+ notes: "Used for Landauer cost per bit: E_bit = k_B * T * ln(2)."
+
+ LN6:
+ value: 1.791759469228055
+ units: dimensionless
+ tier: Tier 1
+ formula: "ln(6)"
+ notes: "Used in Protocol D anesthetic shift estimate via spin-entropy: S = k_B * ln(6) for 17O (I=5/2)."
+
+
+# -----------------------------------------------------------------------------
+# FUNDAMENTAL — Tier 1/2 Structural & Geometric Invariants
+# Derived from the 6D icosahedral lattice postulate. These are not free
+# parameters; they are consequences of the geometry.
+# -----------------------------------------------------------------------------
+fundamental:
+ N:
+ value: 144
+ unit: dimensionless
+ description: "Dodecahedral cage node count (12th Fibonacci number)."
+
+ N_BARYON:
+ value: 15
+ units: dimensionless
+ tier: Tier 2
+ formula: "3 (quarks, Z_3 homotopy) * 5 (five-fold axis, Z_5 homotopy)"
+ notes: "Proton strong winding number. The fundamental group generator pi_1(Triad) = Z_15. Combined with weak Berry phase R = phi^{-1}, total exponent is 15 + phi^{-1}."
+
+ N_MU:
+ value: 11
+ units: dimensionless
+ tier: Tier 2 mechanism + Tier 3 specific exponent
+ formula: "2 * S_oct - 1 = 2*6 - 1"
+ notes: "Muon harmonic exponent. The 11th harmonic of the inflation operator phi. phi^11 ~ 199.005. Tier 2 mechanism (harmonic-ladder + 6N+/-1 symmetry-octave selection rule) + Tier 3 specific integer (Linear Hessian does not produce N=11 spontaneously; postulated from A_5 representation count, per Parameter Ledger §0.1 P4)."
+
+ N_TAU:
+ value: 17
+ units: dimensionless
+ tier: Tier 2 mechanism + Tier 3 specific exponent
+ formula: "N_mu + S_oct = 11 + 6"
+ notes: "Tau harmonic exponent. The 17th harmonic. phi^17 * m_e ~ 1824.87 MeV (bare mass before screening). Tier 2 mechanism (harmonic-ladder + 6N+/-1 symmetry-octave; next octave above N_mu=11 is 17) + Tier 3 specific integer (same postulational status as P4; integer-side closure shared with the muon's N=11, per Parameter Ledger §0.1 P5)."
+
+ N_NU:
+ value: -36
+ units: dimensionless
+ tier: Tier 2
+ formula: "-2 * D_phase = -2 * 18"
+ notes: "Neutrino suppression exponent. Second-order phason coupling: (K_perp/K_parallel)^2 = phi^{-36} ~ 2.995e-8."
+
+ S_OCT:
+ value: 6
+ units: dimensionless
+ tier: Tier 1
+ notes: "Symmetry Octave. Corresponds to the six five-fold rotational axes of the parent lattice. Used to derive generational scaling."
+
+ D_PHASE:
+ value: 18
+ units: dimensionless
+ tier: Tier 2 integer-identification (H_3 Shephard-Todd anchor; load-bearing) + Tier 3 RG-running/physical-link status pending O.15(b)
+ formula: "H_3 invariant-degree sum = 2 + 6 + 10 = 18; 6D tangent-bundle count 6 + 6 + 6 is a consistency check"
+ notes: "Phase-space stiffness dimension. Used in: (1) phason stiffness exponent phi^{-18}; (2) tau screening coefficient -D_phase/N_fivefold * alpha = -3.6*alpha."
+
+ D_PARALLEL:
+ value: 3
+ units: dimensionless
+ tier: Tier 1
+ notes: "Physical manifold dimension. Derived necessity for stable knotting (knot-theoretic D=3 bound)."
+
+ D_PARENT:
+ value: 6
+ units: dimensionless
+ tier: Tier 1
+ notes: "Parent lattice embedding dimension. Declared as structural postulate / minimal embedding argument."
+
+ N_AXES:
+ value: 10
+ units: dimensionless
+ tier: Tier 1
+ notes: "Icosahedral 3-fold axis count. RT window has exactly 10 three-fold rotation axes. Rank-reduction gives an 8-dimensional operator span; its A2 root-system fingerprint identifies the registered SU(3) candidate (su(3) has Lie rank 2, dimension 8). Theorem-grade uniqueness remains O.39."
+
+ ALPHA_FACTOR_360:
+ value: 360
+ units: dimensionless
+ tier: Tier 2 mechanism / Tier 3 specific multiplier pending O.19/O.5
+ formula: "N_600cell_edges / 2 = 720 / 2"
+ notes: "Alpha geometric factor. Half the edge count of the 600-Cell; the 360 multiplier is the current canonical choice, not a closed first-principles derivation. Used as primary multiplier in alpha^{-1} formula pending O.19/O.5 anti-screening and multiplier closure."
+
+ ALPHA_RESIDUAL_PPM:
+ value: 3442
+ units: ppm
+ tier: Tier 2 mechanism / Tier 3 magnitude
+ notes: "Phason anti-screening direction from the bare impedance mechanism; the 3442 ppm specific magnitude is pending O.19/QLQCD-1L closure."
+
+N_PHASON_CHANNELS:
+ value: 5
+ units: dimensionless
+ tier: Tier 2 A5 channel-count anchor + Tier 3 equal-weight coefficient use pending O.26/O.5
+ notes: "Phason drag channel count. The five-channel count is the A5 representation/RT channel anchor used by the muon correction; using it as an equal-weight 5*alpha vertex coefficient remains a Tier 3 coefficient assumption pending O.26/O.5."
+
+TAU_SCREEN_COEFF:
+ value: -3.6
+ units: dimensionless
+ tier: Tier 2 mechanism + Tier 2 integer-pair (D=18, N=5) + Tier 3 combination rule c = -D/N pending O.26b; headline coefficient is Tier 3
+ formula: "-(D_phase / N_fivefold) = -(18/5)"
+ notes: "Tau alpha shielding coefficient. Tau oscillates above transparency frequency causing diamagnetic screening. Sign flip from muon is Kramers-Kronig dispersion."
+
+ LAMBDA_H:
+ value: 0.125
+ units: dimensionless
+ tier: Tier 2
+ formula: "1/8"
+ notes: "Higgs quartic coupling (bare geometric). Derived from packing efficiency of icosahedral tiles. Implies m_H = v/2 = 123.11 GeV."
+
+ N_DODECA_FACES:
+ value: 12
+ units: dimensionless
+ tier: Tier 2
+ notes: "Dodecahedron face count (dual to icosahedron). Used in N=144 saturation counting: 12 faces * 12 sub-nodes."
+
+ Z_COORD:
+ value: 12
+ units: dimensionless
+ tier: Tier 2
+ notes: "6D hypercubic lattice coordination number. Mapped to 12 icosahedral vertex directions in the projection narrative."
+
+ N_RT_FACES:
+ value: 30
+ units: dimensionless
+ tier: Tier 2
+ notes: "Rhombic Triacontahedron face count. Acceptance window geometry parameter."
+
+ N_RT_THREEFOLD_AXES:
+ value: 10
+ units: dimensionless
+ tier: Tier 2
+ notes: "RT three-fold symmetry axes. Core integer in the SU(3) candidate-identification construction."
+
+ ORDER_I:
+ value: 60
+ units: dimensionless
+ tier: Tier 2
+ notes: "Icosahedral rotation group order."
+
+ ORDER_2I:
+ value: 120
+ units: dimensionless
+ tier: Tier 2
+ notes: "Binary icosahedral group order. Weak-sector discrete subgroup of SU(2)."
+
+ N_600CELL_EDGES:
+ value: 720
+ units: dimensionless
+ tier: Tier 2
+ notes: "600-cell edge count. Used to motivate the 360 factor in the alpha derivation."
+
+ F_INDEX_144:
+ value: 12
+ units: dimensionless
+ tier: Tier 2
+ notes: "Fibonacci index for node count 144. N=144 is the 12th Fibonacci number F_12."
+
+
+# -----------------------------------------------------------------------------
+# DERIVED — Tier 2 GCT Predictions
+# Analytic consequences of the fundamental geometric invariants.
+# These are computed values, not free parameters.
+# -----------------------------------------------------------------------------
+derived:
+ ETA_STIFFNESS:
+ value: 1.73068e-4
+ units: dimensionless
+ tier: "Tier 1/2"
+ formula: "phi^{-18}"
+ derivation: "RG_counting_D18_theorem"
+ exponent_tier: 1
+ identification_tier: 2
+ notes: "Phason stiffness ratio K_perp/K_parallel. Exponent D=18 is a Tier-2 anchor from the unique H_3 Shephard-Todd invariant-degree sum {2,6,10} (Parameter Ledger §P3). The 6D-tangent decomposition 6·3=18 is a consistency cross-check, not an independent derivation. See the D_PHASE block for the canonical phrasing."
+
+ C_HAT:
+ value: 0.013155617496425476
+ units: "dimensionless (lattice speed units a6/t6)"
+ tier: Tier 2
+ formula: "phi^{-9}"
+ notes: "Lattice speed of light in lattice units. Interpreted as speed of causal organization relative to bare lattice bonding."
+
+ PHI_INV:
+ value: 0.6180339887498948
+ units: dimensionless
+ tier: Tier 2
+ formula: "phi^{-1}"
+ notes: "Golden Ratio inverse. Used as projection ratio R = |e_perp|/|e_parallel| and as weak Berry-phase correction in proton mass formula."
+
+ PHI_POW_M3:
+ value: 0.2360679774997897
+ units: dimensionless
+ tier: Tier 2
+ formula: "phi^{-3}"
+ notes: "Bare Weinberg-angle volume-coupling input. The separate Gram boundary scalar is phi^{-2}; the Z-pole endpoint is observational and requires RGE running."
+
+ PHI_POW_M36:
+ value: 2.995e-8
+ units: dimensionless
+ tier: Tier 2
+ formula: "phi^{-36}"
+ notes: "Second-order phason suppression for neutrinos. (K_perp/K_parallel)^2."
+
+ PHI_POW_P8:
+ value: 46.97871376374779
+ units: dimensionless
+ tier: Tier 2
+ formula: "phi^8"
+ notes: "Used in the muon single 1-loop GCT self-energy correction term: phi^8 * alpha^2."
+
+ PHI8_ALPHA2_CORRECTION:
+ value: 0.0025016
+ units: dimensionless
+ tier: Tier 2
+ formula: "phi^8 * alpha^2"
+ notes: "Single 1-loop GCT correction for the muon; ppm residual remains conditional on SM-equivalent higher-loop discipline."
+
+ PHI_POW_P11:
+ value: 199.00502499874064
+ units: dimensionless
+ tier: "Tier 2 mechanism + Tier 3 SM-equivalent radiative discipline"
+ formula: "phi^11"
+ notes: "Primary geometric harmonic for the muon relative to electron scale."
+
+ PHI_POW_P17:
+ value: 3571.0002800335825
+ units: dimensionless
+ tier: Tier 2
+ formula: "phi^17"
+ notes: "Primary geometric harmonic for the tau relative to electron scale."
+
+ ALPHA_INV_GEOM:
+ value: 137.50776405003785
+ units: dimensionless
+ tier: Tier 2
+ formula: "360 * phi^{-2}"
+ notes: "Bare geometric inverse fine-structure constant (pre-screening). Intermediate value before applying 1/288 cage correction."
+
+ ALPHA_INV_GCT:
+ value: 137.50776405
+ units: dimensionless
+ tier: Tier 2
+ formula: "360 * phi^{-2}"
+ notes: "GCT predicted inverse fine-structure constant (Tree-Level Bare Baseline)."
+
+ N_PROTON_TOTAL:
+ value: 15.618033988749895
+ units: dimensionless
+ tier: Tier 2
+ formula: "N_baryon + phi^{-1} = 15 + 1/phi"
+ notes: "Proton total resonance exponent. Additive phi^{-1} term is the weak Berry-phase correction."
+
+ E_VAC_KEV:
+ value: 3.5486
+ units: keV
+ tier: Tier 2
+ formula: "m_e * c^2 / 144"
+ notes: "Vacuum binding energy / dark matter line prediction. E_vac = 511 keV / 144. Matches observed 3.55 ± 0.03 keV X-ray line to 0.04%."
+
+ E_VAC_EV:
+ value: 3548.6
+ units: eV
+ tier: Tier 2
+ formula: "m_e_keV * 1000 / 144"
+ notes: "Vacuum quantum in eV form (used in Engine protocols). Derived from m_e/144."
+
+ XI_NM:
+ value: 7.25
+ units: nm
+ tier: Tier 2
+ formula: "hbar*c / (alpha^2 * m_e*c^2) = a_0/alpha"
+ notes: "Electron polaron healing length (Tier 1 textbook Bohr-Compton formula xi = a0/alpha, App K §K.5). Computed canonically by protocol_healing_length.py. Identification with microtubule lumen geometry (2*xi ≈ 14.5 nm vs lumen ID ~15 nm, ~3% match) is Tier 3 biological correlation."
+
+ D_POLARON_NM:
+ value: 14.5
+ units: nm
+ tier: Tier 2
+ formula: "2 * XI_NM"
+ notes: "Electron polaron effective holographic diameter. Compared to microtubule lumen of ~15 nm (~3% Tight Fit / Zeno Lock mechanism — Tier 3 biological correlation)."
+
+ M_MU_GCT:
+ value: 105.656
+ units: "MeV/c^2"
+ tier: Tier 2
+ formula: "m_e * phi^11 * (1 + 5*alpha + phi^8*alpha^2)"
+ notes: "GCT predicted muon mass from tree plus single 1-loop GCT correction; 21 ppm residual conditional on SM-equivalent higher-loop discipline."
+
+ M_TAU_GCT:
+ value: 1776.84
+ units: "MeV/c^2"
+ tier: "Tier 2 mechanism + Tier 3 ratio-combination pending O.26b"
+ formula: "m_e * phi^17 * (1 - 3.6*alpha)"
+ notes: "50.85 ppm tension vs PDG 1776.93 ± 0.09 MeV; see App R lepton row."
+
+ M_P_GCT:
+ value: 938.417
+ units: "MeV/c^2"
+ tier: Tier 2
+ formula: "m_e * phi^(15 + 1/phi)"
+ notes: "GCT predicted proton mass (analytic protocol output from protocol_absolute_scale.py). The canonical pipeline figure is 938.417 MeV at 155 ppm vs CODATA 938.272 MeV. V3 Ch10 prose figure 938.25 MeV is a separate intermediate-precision estimate; the protocol output is the canonical SSOT value."
+
+ M_T_GCT_BARE:
+ value: 177.1
+ units: "GeV/c^2"
+ tier: Tier 2
+ formula: "m_H_obs * sqrt(2)"
+ notes: "Top quark bare lattice mass prediction. Bare value prior to QCD dressing; expected to run down to ~173 GeV."
+
+ M_NU1_FLOOR:
+ value: 0.0153
+ units: "eV/c^2"
+ tier: Tier 2
+ formula: "m_e * phi^{-36}"
+ notes: "Neutrino mass floor (lightest eigenstate). Primary risky prediction for neutrino absolute scale. Falsifiable by the next KATRIN analysis stage."
+
+ SUM_MNU_GCT:
+ value: 0.086
+ units: "eV/c^2"
+ tier: Tier 2
+ notes: "Neutrino mass sum (GCT predicted, normal ordering). In tension with Planck + DESI DR2 LambdaCDM bound <0.064 eV; historic Planck-only bound <0.12 eV retained only as context."
+
+ SIN2_THETA_W_GEOM:
+ value: 0.2360679774997897
+ units: dimensionless
+ tier: Tier 2
+ formula: "phi^{-3}"
+ notes: "Bare electroweak mixing angle (geometric). GUT/crystallization-scale attractor."
+
+ G_OVER_GPRIME:
+ value: 1.8027756377319946
+ units: dimensionless
+ tier: Tier 2
+ formula: "sqrt(2 * phi)"
+ notes: "Coupling ratio g/g'. Derived from sin^2(theta_W) = phi^{-3} using identity phi^3 - 1 = 2*phi."
+
+ OMEGA_RT:
+ value: 6.919
+ units: steradians
+ tier: Tier 2
+ formula: "4 * pi * (1 - 1/sqrt(5))"
+ notes: "RT solid angle subtended by the Rhombic Triacontahedron acceptance window. Used in geometric derivation of fine-structure constant."
+
+ E_GUT:
+ value: 1.0e15
+ units: GeV
+ tier: Tier 2
+ formula: "M_Planck * phi^{-18} ~ 10^19 GeV * 1.733e-4"
+ notes: "GUT / phason stiffness scale. Identifies K_perp with the Grand Unification Scale."
+
+
+# -----------------------------------------------------------------------------
+# CALIBRATED — Tier 3 Phenomenological & Empirical
+# Calibrated fits, imported observational benchmarks, and biophysics parameters.
+# These are NOT derived from GCT geometry; they are inputs or consistency checks.
+# -----------------------------------------------------------------------------
+calibrated:
+ # --- Observed particle masses (PDG / CODATA benchmarks) ---
+ M_E_OBS:
+ value: 0.5109989
+ units: "MeV/c^2"
+ tier: Tier 3
+ notes: "Electron mass (CODATA 2022). Primary mass anchor. All lepton and hadron masses are derived as multiples of m_e."
+
+ M_U_OBS:
+ value: 2.16
+ units: "MeV/c^2"
+ tier: Tier 3
+ notes: "Up quark mass (PDG 2024 Central Value). Used for Protocol E mismatch analysis."
+
+ M_D_OBS:
+ value: 4.70
+ units: "MeV/c^2"
+ tier: Tier 3
+ notes: "Down quark mass (PDG 2024 Central Value). Used for Protocol E mismatch analysis."
+
+ M_S_OBS:
+ value: 93.5
+ units: "MeV/c^2"
+ tier: Tier 3
+ notes: "Strange quark mass (PDG 2024 Central Value). Used for Protocol E mismatch analysis."
+
+ M_MU_OBS:
+ value: 105.6583755
+ units: "MeV/c^2"
+ tier: Tier 3
+ notes: "Muon mass (PDG observed). GCT predicts 105.656 MeV through the tree plus single 1-loop GCT correction (21 ppm residual conditional on SM-equivalent higher-loop discipline)."
+
+ MUON_G2_EXP_VALUE:
+ value: 116592070.5e-11
+ uncertainty: 14.8e-11
+ units: dimensionless
+ tier: Tier 1 (PDG anchor)
+ notes: "Muon anomalous magnetic moment anchor used by protocol_qed_audit.py. Value field stores the Fermilab E989 Run 1-6 combined central value; combined FNAL+BNL world average is 116592071.5 +/- 14.5 e-11 and is tracked as comparison metadata, not the value field."
+
+ MUON_G2_EXP_UNCERTAINTY:
+ value: 14.8e-11
+ units: dimensionless
+ tier: Tier 1
+ notes: "FNAL E989 Run 1-6 combined stat+syst+ext uncertainty."
+
+ MUON_G2_SM_WP2025:
+ value: 116592033e-11
+ units: dimensionless
+ tier: Tier 3 (SM baseline)
+ notes: "Muon anomalous magnetic moment Standard Model baseline from the 2025 White Paper synthesis; used as the single source of truth for WP2025 muon-g-2 tension protocols."
+
+ MUON_G2_SM_WP2025_UNCERT:
+ value: 62e-11
+ units: dimensionless
+ tier: Tier 3 (SM baseline uncertainty)
+ notes: "Uncertainty on MUON_G2_SM_WP2025; used by protocol_qed_audit.py and gct_precision_qed.py."
+
+ M_TAU_OBS:
+ value: 1776.93
+ units: "MeV/c^2"
+ tier: Tier 1 (PDG 2024 anchor)
+ notes: "Tau mass (PDG 2024; includes BES-III + Belle II updates). GCT predicts 1776.84 MeV (~51 ppm residual against PDG 2024)."
+
+ M_P_OBS:
+ value: 938.272088
+ units: "MeV/c^2"
+ tier: Tier 3
+ notes: "Proton mass (CODATA/PDG observed). GCT predicts 938.417 MeV (155 ppm error)."
+
+ M_H_OBS:
+ value: 125.1
+ units: "GeV/c^2"
+ tier: Tier 3
+ notes: "Higgs boson mass (LHC observed). GCT bare prediction 123.11 GeV (1.6% discrepancy attributed to radiative corrections)."
+
+ M_T_THRESHOLD:
+ value: 172.76
+ units: GeV
+ tier: Tier 3
+ notes: "Top quark mass (observed threshold used in RGE protocol). Imported PDG benchmark."
+
+ M_Z:
+ value: 91.1876
+ units: GeV
+ tier: Tier 3
+ notes: "Z boson mass. Imported benchmark used as RGE starting point."
+
+ M_W:
+ value: 80.379
+ units: GeV
+ tier: Tier 3
+ notes: "W boson mass (threshold used in RGE protocol). Imported benchmark."
+
+ # --- Observed coupling constants ---
+ ALPHA_INV_OBS:
+ value: 137.035999
+ units: dimensionless
+ tier: Tier 3
+ notes: "Observed inverse fine-structure constant (CODATA). Used for ppm error calculation."
+
+ ALPHA_OBS:
+ value: 7.2973525693e-3
+ units: dimensionless
+ tier: Tier 3
+ formula: "1 / 137.035999"
+ notes: "Observed fine-structure constant (CODATA)."
+
+ ALPHA_EM_INV_MZ:
+ value: 127.94
+ units: dimensionless
+ tier: Tier 3
+ notes: "Electromagnetic coupling at Z pole (inverse). Imported benchmark for RGE audit."
+
+ SIN2_THETA_W_OBS:
+ value: 0.23122
+ units: dimensionless
+ tier: Tier 3
+ notes: "Observed effective electroweak mixing angle at Z pole (LEP/SLD). GCT predicts 0.23115 after 2-loop RGE running (3e-4 precision)."
+
+ ALPHA2_INV_GUT_A2:
+ value: 24.0
+ units: dimensionless
+ tier: Tier 3
+ notes: "Parameter Ledger A2 gauge-flow boundary alpha_2^{-1}(M_GUT) used by protocol_rge_native.py; endpoint anchor, not a hidden hardcoded constant."
+
+ ALPHA_S_MZ:
+ value: 0.118
+ units: dimensionless
+ tier: Tier 3
+ notes: "Strong coupling at Z pole (PDG). Used as input in electroweak Sirlin formula audit."
+
+ # --- Electroweak particle thresholds (for RGE protocol) ---
+ M_BOTTOM:
+ value: 4.18
+ units: GeV
+ tier: Tier 3
+ notes: "Bottom quark mass threshold for RGE beta function activation."
+
+ M_CHARM:
+ value: 1.275
+ units: GeV
+ tier: Tier 3
+ notes: "Charm quark mass threshold for RGE beta function activation."
+
+ M_TAU_GEV:
+ value: 1.77686
+ units: GeV
+ tier: Tier 3
+ notes: "Tau lepton mass in GeV (threshold for RGE protocol)."
+
+ M_MUON_GEV:
+ value: 0.10566
+ units: GeV
+ tier: Tier 3
+ notes: "Muon mass in GeV (threshold for RGE protocol)."
+
+ M_UP_DOWN:
+ value: 0.0035
+ units: GeV
+ tier: Tier 3
+ notes: "Light quark (up/down) mass threshold for RGE protocol."
+
+ M_ELECTRON_GEV:
+ value: 0.000511
+ units: GeV
+ tier: Tier 3
+ notes: "Electron mass in GeV (threshold for RGE protocol)."
+
+ V_EW:
+ value: 246.22
+ units: GeV
+ tier: Tier 3
+ notes: "Higgs vacuum expectation value. Explicitly classified Tier 3 (absolute scale not yet derived)."
+
+ # --- Neutrino oscillation parameters ---
+ DELTA_M2_21:
+ value: 7.42e-5
+ units: "eV^2"
+ tier: Tier 3
+ notes: "Solar neutrino mass-squared splitting (NuFit 5.0 input). Minor variant 7.5e-5 appears in prose."
+
+ DELTA_M2_31:
+ value: 2.51e-3
+ units: "eV^2"
+ tier: Tier 3
+ notes: "Atmospheric neutrino mass-squared splitting (NuFit 5.0 input). Minor variant 2.5e-3 appears in prose."
+
+ SUM_MNU_BOUND_PLANCK:
+ value: 0.12
+ units: eV
+ tier: Tier 3
+ notes: "Historic Planck-only cosmological neutrino mass-sum upper bound; current App V/FM rows use Planck + DESI DR2 LambdaCDM <0.064 eV and Planck + DESI 2024 LambdaCDM <0.072 eV."
+
+ # --- Cosmological parameters ---
+ H0_PLANCK:
+ value: 67.4
+ units: "km/s/Mpc"
+ tier: Tier 3
+ notes: "Hubble constant (Planck CMB value). Primary value used in dark energy protocol."
+
+ H0_SHOES:
+ value: 73.0
+ units: "km/s/Mpc"
+ tier: Tier 3
+ notes: "Hubble constant (SHOES local measurement). Referenced in Hubble-tension discussion."
+
+ H0_PROTOCOL:
+ value: 70.0
+ units: "km/s/Mpc"
+ tier: Tier 3
+ notes: "Hubble constant (protocol sanity-check value). Used only for rough LNH sanity check."
+
+ OMEGA_M:
+ value: 0.315
+ units: dimensionless
+ tier: Tier 3
+ notes: "Matter density fraction (flat LCDM). Imported cosmological parameter for t(z) inversion."
+
+ OMEGA_LAMBDA:
+ value: 0.685
+ units: dimensionless
+ tier: Tier 3
+ notes: "Dark energy density fraction (flat LCDM). Imported cosmological parameter for t(z) inversion."
+
+ T_UNIVERSE:
+ value: 13.8
+ units: Gyr
+ tier: Tier 3
+ notes: "Age of universe. Imported cosmological benchmark."
+
+ T_CMB:
+ value: 2.725
+ units: K
+ tier: Tier 3
+ notes: "CMB temperature (observed). Imported observational benchmark."
+
+ Z_PHANTOM:
+ value: 0.11
+ units: dimensionless
+ tier: Tier 3
+ notes: "Phantom-direction diagnostic redshift (DESI DR2 comparison). GCT biogenic dark energy model is calibrated to reproduce this feature."
+
+ RHO_DE_OBS:
+ value: 5.4e-10
+ units: "J/m^3"
+ tier: Tier 3
+ notes: "Observed dark-energy density in SI units (CODATA-consistent value derived from rho_crit * Omega_Lambda at H0_PLANCK = 67.4 km/s/Mpc; ~5.4e-10 J/m^3). Imported as the empirical comparison target for the holographic rho_Lambda derivation in protocol_dark_energy.py."
+
+ # --- Biogenic dark energy parameters ---
+ LAMBDA_BIO:
+ value: 0.007
+ units: dimensionless
+ tier: Tier 3
+ notes: "Biogenic dark-energy coupling at the GCT saddle point: lambda_bio = alpha = 1/ALPHA_INV_GCT to within YAML rounding. Couples the biological information generation rate to the phason field kinetic term. Compared against DESI DR2 w(z) data."
+
+ TAU_LAG:
+ value: 5.0
+ units: Gyr
+ tier: Tier 3
+ notes: "Complexity lag timescale. Integration timescale for biogenic dark energy model. Sets delay between biological information generation and vacuum relaxation response."
+
+ TAU_BIO_DELAY:
+ value: 4.5
+ units: Gyr
+ tier: Tier 3
+ notes: "Biological delay before complexity driving. Delay between star formation and emergence of high-order selection operators."
+
+ TAU_TECH:
+ value: 3.0
+ units: Gyr
+ tier: Tier 3
+ notes: "Technological multiplier timescale. Protocol-specific parameter for tech exponential growth."
+
+ # --- Madau-Dickinson SFR parameters ---
+ SFR_A:
+ value: 0.015
+ units: "Msun/yr/Mpc^3"
+ tier: Tier 3
+ notes: "Madau-Dickinson SFR coefficient."
+
+ SFR_ALPHA:
+ value: 2.7
+ units: dimensionless
+ tier: Tier 3
+ notes: "Madau-Dickinson SFR exponent (numerator)."
+
+ SFR_Z0:
+ value: 2.9
+ units: dimensionless
+ tier: Tier 3
+ notes: "Madau-Dickinson SFR redshift scale."
+
+ SFR_BETA:
+ value: 5.6
+ units: dimensionless
+ tier: Tier 3
+ notes: "Madau-Dickinson SFR exponent (denominator)."
+
+ # --- Dark matter parameters ---
+ EPSILON_Y:
+ value: 0.1
+ units: dimensionless
+ tier: Tier 3
+ notes: "Dark matter yield strain. Tier 3 alloy-like prior used to define vacuum yield strength: sigma_crit = 0.1 * K_perp. Closure target: derive epsilon_y from the AKN tiling-flip/phason-elastic action or replace this prior with a directly calibrated Protocol C stress-gate threshold."
+
+ E_LINE_OBS:
+ value: 3.55
+ units: keV
+ tier: Tier 3
+ notes: "Observed 3.55 keV X-ray line centroid (Perseus cluster, Coma, M31). GCT E_vac = 3.5486 keV matches to 0.04%."
+
+ E_LINE_OBS_SIGMA:
+ value: 0.03
+ units: keV
+ tier: Tier 3
+ notes: "Observed 3.55 keV line uncertainty."
+
+ XRISM_FWHM_INSTR:
+ value: 5.0
+ units: eV
+ tier: Tier 3
+ notes: "XRISM Resolve instrument energy resolution (FWHM) at 3.55 keV per Ishisaki et al. 2022 Proc. SPIE 12181:121811S (Status of Resolve instrument onboard XRISM, doi:10.1117/12.2630654). Used for Protocol C line-shape test."
+
+ XRISM_WIDTH_CONFIRM:
+ value: 5.0
+ units: eV
+ tier: Tier 3
+ notes: "GCT Confirmation threshold for the intrinsic Lorentzian width after deconvolving instrument + kinematic broadening (Ch15 §15.2). W_int <~5 eV (within Resolve floor) confirms the topological-glass narrow-line prediction."
+
+ XRISM_WIDTH_FALSIFY:
+ value: 20.0
+ units: eV
+ tier: Tier 3
+ notes: "XRISM GCT intrinsic-width threshold inside the full Protocol C preregistration: terminal no-line non-detection at the Bulbul-level empirical-derived floor Gamma <= 2.0e-28 s^-1 in >=94 Ms equivalent exposure, W_int > 20 eV after instrument and registered kinematic/turbulence deconvolution, or morphology Delta chi^2 < 9 vs smooth rho/rho^2 at decisive sensitivity falsifies the registered branch. The 26 Ms / Gamma <= 3.8e-28 s^-1 stack remains a morphology-linewidth milestone. Background-limited Gamma <= 1.2e-30 s^-1 is theoretical, not operative."
+
+ # --- Biophysics parameters ---
+ # T_BODY canonical definition lives in the Biophysics / Consciousness
+ # section below (search "T_BODY").
+
+ KBT_BODY:
+ value: 0.026
+ units: eV
+ tier: Tier 3
+ notes: "Thermal energy scale at body temperature (k_B * 310 K). Used to highlight energy gap vs E_vac."
+
+ E_ATP:
+ value: 0.52
+ units: eV
+ tier: Tier 3
+ notes: "ATP hydrolysis energy. Metabolic fuel for the Zeno Drive winding. Sets thermodynamic budget for Polaron nucleation."
+
+ # TAU_RAW_DECOHERENCE canonical definition is in the Biophysics /
+ # Consciousness section below.
+
+ TAU_TARGET_COHERENCE:
+ value: 0.001
+ units: s
+ tier: Tier 3
+ notes: "Target coherence time for conscious gating (millisecond regime). Requirement for Zeno Drive plausibility."
+
+ S_SHIELD_FACTOR:
+ value: 1.0e5
+ units: dimensionless
+ tier: Tier 3
+ notes: "Coherence extension shielding factor (sparse network feasibility). Required to extend coherence from femtoseconds to nanoseconds."
+
+ S_REQUIRED:
+ value: 1.0e10
+ units: dimensionless
+ tier: Tier 3
+ notes: "Required shielding factor for millisecond coherence. Primary falsification point for Zeno Drive."
+
+ # DELTA_BIO canonical definition is in the Biophysics / Consciousness
+ # section below.
+
+ D_MT_LUMEN:
+ value: 15.0
+ units: nm
+ tier: Tier 3
+ notes: "Microtubule inner lumen diameter (biological empirical). Used in tight-fit argument vs polaron diameter 2*xi ≈ 14.5 nm."
+
+ V_BIAS:
+ value: 0.002
+ units: V
+ tier: Tier 3
+ notes: "Zeno steering bias voltage. Calibrated steering signal for the Zeno Drive."
+
+ NU_LEAK:
+ value: 380.0
+ units: GHz
+ tier: Tier 3
+ notes: "Predicted THz leakage frequency (Zeno Drive shadow pulse). Target for Protocol A."
+
+ NU_LEAK_SIGMA:
+ value: 20.0
+ units: GHz
+ tier: Tier 3
+ notes: "THz leakage frequency uncertainty (stated ±20 GHz)."
+
+ F_BOUND_MIN:
+ value: 0.001
+ units: dimensionless
+ tier: Tier 3
+ notes: "Bound water fraction lower bound (Protocol D), O.21/O.33 conservative operative band."
+
+ F_BOUND_MAX:
+ value: 0.002
+ units: dimensionless
+ tier: Tier 3
+ notes: "Bound water fraction upper bound (Protocol D), O.21/O.33 conservative operative band."
+
+ # --- MOND / Gravity ---
+ A0_MOND:
+ value: 1.2e-10
+ units: "m/s^2"
+ tier: Tier 3
+ notes: "MOND critical acceleration scale. Presented as derived from boundary conditions, but numeric value uses observed H0 and c."
+
+ # --- Observed targets for precision audit ---
+ SIN2_THETA_W_OBS_PRECISION:
+ value: 0.23122
+ units: dimensionless
+ tier: Tier 3
+ notes: "Weinberg angle at Z-pole (LEP/SLD). GCT predicts 0.23115 after 2-loop RGE running."
+
+ THETA_12_OBS:
+ value: 33.4
+ units: degrees
+ tier: Tier 3
+ notes: "Solar mixing angle (observed). GCT bare prediction is arctan(1/phi) = 31.7 degrees; 1.7 degree deviation attributed to phason drag."
+
+ SIN_THETA_C_OBS:
+ value: 0.225
+ units: dimensionless
+ tier: Tier 3
+ notes: "Cabibbo angle (PDG observed). GCT predicts sin(theta_C) = phi^{-3}*(1 - 5*alpha) = 0.227."
+
+ E_GZK:
+ value: 5.0e19
+ units: eV
+ tier: Tier 3
+ notes: "GZK energy cutoff. Threshold above which ultra-high-energy cosmic rays probe the icosahedral lattice structure."
+
+ CHI_SUSCEPTIBILITY:
+ value: 1.0e121
+ units: dimensionless
+ tier: Tier 3
+ notes: "Dark energy susceptibility (holographic capacity). Order-of-magnitude estimate at 10^121 — the manuscript carries both 10^121 and 10^122 in different prose contexts; the value here is the canonical 10^121 baseline pending formal derivation under Open Problem O.6 (dS/CFT boundary state) and O.4 (H_0 first-principles)."
+
+
+# -----------------------------------------------------------------------------
+# ANCHORS — Physical Convention Anchors (SI / CODATA)
+# These are imported SI constants used as mapping constants between lattice
+# units and SI units. They are NOT free parameters of GCT.
+# -----------------------------------------------------------------------------
+anchors:
+ M_E:
+ value: 0.5109989
+ units: "MeV/c^2"
+ tier: "Tier 3 import (A1 dimensional anchor)"
+ notes: "CODATA electron-mass dimensional anchor used to map lattice units into SI/MeV. The Planck-link phi^-107 chain is a closure audit, not an independent derivation of this anchor."
+
+ C:
+ value: 299792458
+ units: "m/s"
+ tier: Anchor
+ notes: "Speed of light (SI convention). GCT derives the dimensionless ratio c/c_P. The SI value is a convention."
+
+ G_SI:
+ value: 6.67430e-11
+ units: "m^3 kg^{-1} s^{-2}"
+ tier: Anchor
+ notes: "Newtonian gravitational constant (CODATA 2022 official value). Anchored throughout the engine against CODATA-2022 inputs; the canonical precision of the GCT G postdiction against this anchor is 2274 ppm."
+
+ HBAR_SI:
+ value: 1.054571817e-34
+ units: "J*s"
+ tier: Anchor
+ notes: "Reduced Planck constant (CODATA 2022 exact-by-definition value: h/(2π) with h = 6.62607015e-34 J·s). Lattice uses hbar_hat = 1."
+
+ # K_B canonical definition is below ("Boltzmann constant (CODATA 2018, exact)").
+
+ L_P:
+ value: 1.6e-35
+ units: m
+ tier: Anchor
+ notes: "Planck length (SI mapping). Approximate value; used as mapping for lattice spacing a6."
+
+ T_P:
+ value: 5.4e-44
+ units: s
+ tier: Anchor
+ notes: "Planck time (SI mapping). Approximate value; used as mapping for lattice update time."
+
+ E_P:
+ value: 1.0e19
+ units: GeV
+ tier: Anchor
+ notes: "Planck energy scale (order-of-magnitude). Used in narrative scaling."
+
+ EV_TO_J:
+ value: 1.602176634e-19
+ units: "J/eV"
+ tier: Anchor
+ notes: "eV to Joules conversion factor (CODATA 2019 exact-by-definition value of elementary charge e in coulombs)."
+
+ K_B:
+ value: 1.380649e-23
+ units: "J/K"
+ tier: Anchor
+ notes: "Boltzmann constant (CODATA 2018, exact). Used in Landauer principle and thermal energy computations."
+
+ # ── Biophysics / Consciousness ────────────────────────────────────────────
+ T_BODY:
+ value: 310.0
+ units: K
+ tier: Tier 3
+ notes: "Human body temperature (37 °C = 310 K). Thermal bath for all biological quantum computations."
+
+ TAU_RAW_DECOHERENCE:
+ value: 1.0e-13
+ units: s
+ tier: Tier 3
+ notes: "Bare decoherence time for a single tubulin dipole in a warm, wet biological environment. From Tegmark (2000) and subsequent studies. This is the UNPROTECTED baseline; the GCT Arrhenius shield must extend it."
+
+ DELTA_BIO:
+ value: 0.1
+ units: eV
+ tier: Tier 3
+ notes: "Single-unit topological gap per tubulin dimer. Estimated from GCT crystal-field splitting of the RT acceptance window projected onto the bio-mechanical mode spectrum. Tier 3 — pending direct spectroscopic measurement."
+
+ NU_ZENO_MHZ:
+ value: 112.0e6
+ units: Hz
+ tier: Tier 3
+ notes: "Primary post-O.12-positive Zeno operating branch target for Protocol A-Prime. The fallback branch is 42 MHz if O.12 closes negatively; the canonical bare Trp singlet-triplet variance remains Delta_ST/h = 30 MHz."

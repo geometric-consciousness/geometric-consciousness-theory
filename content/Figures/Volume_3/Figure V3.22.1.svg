@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 1150" width="100%" height="100%">
+  <title>The Gauntlet - Four Binary Falsification Gates</title>
+  <metadata>Generated programmatically from Volume 3 Chapter 22 roadmap; no AI image generation.</metadata>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2c5d8a"/>
+    </marker>
+    <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <pattern id="diagHatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#cbd5e1" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1140" height="1150" fill="#ffffff"/>
+  <text x="570.000" y="58.000" text-anchor="middle" style="font-family:'Times New Roman', Times, serif;font-size:32px;fill:#0f172a;font-weight:bold;">Geometric Consciousness Theory</text>
+  <text x="570.000" y="90.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:16px;fill:#475569;">Figure V3.22.1: The Gauntlet - Four Binary Falsification Gates</text>
+  <line x1="140.000" y1="155.000" x2="140.000" y2="980.000" stroke="#2c5d8a" stroke-width="3"/>
+  <path d="M 130 980 L 150 980 L 140 997 Z" fill="#2c5d8a" stroke="#2c5d8a" stroke-width="0"/>
+  <circle cx="140.000" cy="230.000" r="8.000" fill="#ffffff" stroke="#2c5d8a" stroke-width="3"/>
+  <text x="112.000" y="228.000" text-anchor="end" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#2c5d8a;font-weight:bold;">Gate 1</text>
+  <text x="112.000" y="246.000" text-anchor="end" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#475569;">KATRIN / Euclid</text>
+  <line x1="148.000" y1="230.000" x2="180.000" y2="230.000" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowMuted)"/>
+  <rect x="190.000" y="190.000" width="275.000" height="82.000" fill="#f8fafc" stroke="#475569" stroke-width="1.4" rx="4"/>
+  <text x="327.000" y="216.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;fill:#0f172a;font-weight:bold;">Neutrino mass band</text>
+  <text x="327.000" y="238.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">Sigma m_nu exclusion</text>
+  <text x="327.000" y="257.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#2c5d8a;">binary preregistered readout</text>
+  <path d="M 465 230 L 500 230 L 500 205 L 525 205" fill="none" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arrowMuted)"/>
+  <path d="M 465 230 L 500 230 L 500 255 L 525 255" fill="none" stroke="#8c3b3b" stroke-width="1.5" marker-end="url(#arrowMuted)"/>
+  <rect x="535.000" y="178.000" width="280.000" height="54.000" fill="#ecfdf5" stroke="#0f766e" stroke-width="1.4" rx="4"/>
+  <text x="550.000" y="202.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#0f766e;font-weight:bold;">PASS: 0.10 &lt;= Sigma m_nu &lt;= 0.15 eV</text>
+  <text x="550.000" y="219.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#0f766e;">registered support branch</text>
+  <rect x="535.000" y="242.000" width="280.000" height="54.000" fill="#fef2f2" stroke="#8c3b3b" stroke-width="1.4" rx="4"/>
+  <text x="550.000" y="266.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#8c3b3b;font-weight:bold;">FAIL: &lt;0.075 eV or &gt;0.15 eV</text>
+  <text x="550.000" y="283.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#8c3b3b;">registered falsification branch</text>
+  <text x="840.000" y="207.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-style:italic;">phason geometric</text>
+  <text x="840.000" y="226.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-style:italic;">seesaw supported</text>
+  <text x="840.000" y="271.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#8c3b3b;font-weight:bold;">mass route falsified</text>
+  <circle cx="140.000" cy="410.000" r="8.000" fill="#ffffff" stroke="#2c5d8a" stroke-width="3"/>
+  <text x="112.000" y="408.000" text-anchor="end" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#2c5d8a;font-weight:bold;">Gate 2</text>
+  <text x="112.000" y="426.000" text-anchor="end" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#475569;">Protocol A</text>
+  <line x1="148.000" y1="410.000" x2="180.000" y2="410.000" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowMuted)"/>
+  <rect x="190.000" y="370.000" width="275.000" height="82.000" fill="#f8fafc" stroke="#475569" stroke-width="1.4" rx="4"/>
+  <text x="327.000" y="396.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;fill:#0f172a;font-weight:bold;">THz leakage signature</text>
+  <text x="327.000" y="418.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">coherent 380 GHz transient</text>
+  <text x="327.000" y="437.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#2c5d8a;">binary preregistered readout</text>
+  <path d="M 465 410 L 500 410 L 500 385 L 525 385" fill="none" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arrowMuted)"/>
+  <path d="M 465 410 L 500 410 L 500 435 L 525 435" fill="none" stroke="#8c3b3b" stroke-width="1.5" marker-end="url(#arrowMuted)"/>
+  <rect x="535.000" y="358.000" width="280.000" height="54.000" fill="#ecfdf5" stroke="#0f766e" stroke-width="1.4" rx="4"/>
+  <text x="550.000" y="382.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#0f766e;font-weight:bold;">PASS: coherent 380 GHz pulse</text>
+  <text x="550.000" y="399.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#0f766e;">registered support branch</text>
+  <rect x="535.000" y="422.000" width="280.000" height="54.000" fill="#fef2f2" stroke="#8c3b3b" stroke-width="1.4" rx="4"/>
+  <text x="550.000" y="446.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#8c3b3b;font-weight:bold;">FAIL: no signal detected</text>
+  <text x="550.000" y="463.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#8c3b3b;">registered falsification branch</text>
+  <text x="840.000" y="387.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-style:italic;">quantum Zeno drive</text>
+  <text x="840.000" y="406.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-style:italic;">macro-coherence supported</text>
+  <text x="840.000" y="451.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#8c3b3b;font-weight:bold;">biophysical extension falsified</text>
+  <circle cx="140.000" cy="590.000" r="8.000" fill="#ffffff" stroke="#2c5d8a" stroke-width="3"/>
+  <text x="112.000" y="588.000" text-anchor="end" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#2c5d8a;font-weight:bold;">Gate 3</text>
+  <text x="112.000" y="606.000" text-anchor="end" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#475569;">XRISM</text>
+  <line x1="148.000" y1="590.000" x2="180.000" y2="590.000" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowMuted)"/>
+  <rect x="190.000" y="550.000" width="275.000" height="82.000" fill="#f8fafc" stroke="#475569" stroke-width="1.4" rx="4"/>
+  <text x="327.000" y="576.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;fill:#0f172a;font-weight:bold;">3.55 keV line shape</text>
+  <text x="327.000" y="598.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">stress-gated cluster aperture</text>
+  <text x="327.000" y="617.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#2c5d8a;">binary preregistered readout</text>
+  <path d="M 465 590 L 500 590 L 500 565 L 525 565" fill="none" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arrowMuted)"/>
+  <path d="M 465 590 L 500 590 L 500 615 L 525 615" fill="none" stroke="#8c3b3b" stroke-width="1.5" marker-end="url(#arrowMuted)"/>
+  <rect x="535.000" y="538.000" width="280.000" height="54.000" fill="#ecfdf5" stroke="#0f766e" stroke-width="1.4" rx="4"/>
+  <text x="550.000" y="562.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#0f766e;font-weight:bold;">PASS: Lorentzian profile</text>
+  <text x="550.000" y="579.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#0f766e;">registered support branch</text>
+  <rect x="535.000" y="602.000" width="280.000" height="54.000" fill="#fef2f2" stroke="#8c3b3b" stroke-width="1.4" rx="4"/>
+  <text x="550.000" y="626.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#8c3b3b;font-weight:bold;">FAIL: Gaussian or smooth rho^2 profile</text>
+  <text x="550.000" y="643.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#8c3b3b;">registered falsification branch</text>
+  <text x="840.000" y="567.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-style:italic;">topological glass</text>
+  <text x="840.000" y="586.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-style:italic;">vacuum channel supported</text>
+  <text x="840.000" y="631.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#8c3b3b;font-weight:bold;">topological glass falsified</text>
+  <circle cx="140.000" cy="770.000" r="8.000" fill="#ffffff" stroke="#2c5d8a" stroke-width="3"/>
+  <text x="112.000" y="768.000" text-anchor="end" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#2c5d8a;font-weight:bold;">Gate 4</text>
+  <text x="112.000" y="786.000" text-anchor="end" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#475569;">Roman 2028+</text>
+  <line x1="148.000" y1="770.000" x2="180.000" y2="770.000" stroke="#475569" stroke-width="1.5" marker-end="url(#arrowMuted)"/>
+  <rect x="190.000" y="730.000" width="275.000" height="82.000" fill="#f8fafc" stroke="#475569" stroke-width="1.4" rx="4"/>
+  <text x="327.000" y="756.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;fill:#0f172a;font-weight:bold;">Dynamic dark energy</text>
+  <text x="327.000" y="778.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">w(z) distinguishability</text>
+  <text x="327.000" y="797.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#2c5d8a;">binary preregistered readout</text>
+  <path d="M 465 770 L 500 770 L 500 745 L 525 745" fill="none" stroke="#0f766e" stroke-width="1.5" marker-end="url(#arrowMuted)"/>
+  <path d="M 465 770 L 500 770 L 500 795 L 525 795" fill="none" stroke="#8c3b3b" stroke-width="1.5" marker-end="url(#arrowMuted)"/>
+  <rect x="535.000" y="718.000" width="280.000" height="54.000" fill="#ecfdf5" stroke="#0f766e" stroke-width="1.4" rx="4"/>
+  <text x="550.000" y="742.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#0f766e;font-weight:bold;">PASS: sustained phantom phase w &lt; -1</text>
+  <text x="550.000" y="759.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#0f766e;">registered support branch</text>
+  <rect x="535.000" y="782.000" width="280.000" height="54.000" fill="#fef2f2" stroke="#8c3b3b" stroke-width="1.4" rx="4"/>
+  <text x="550.000" y="806.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#8c3b3b;font-weight:bold;">FAIL: static w = -1</text>
+  <text x="550.000" y="823.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#8c3b3b;">registered falsification branch</text>
+  <text x="840.000" y="747.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-style:italic;">dynamic vacuum</text>
+  <text x="840.000" y="766.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-style:italic;">relaxation supported</text>
+  <text x="840.000" y="811.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#8c3b3b;font-weight:bold;">biogenic expansion falsified</text>
+  <rect x="170.000" y="948.000" width="800.000" height="120.000" fill="#f1f5f9" stroke="#2c5d8a" stroke-width="2" rx="5"/>
+  <text x="570.000" y="984.000" text-anchor="middle" style="font-family:'Times New Roman', Times, serif;font-size:18px;fill:#0f172a;font-weight:bold;">Epistemic commitment</text>
+  <text x="570.000" y="1012.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;">GCT rejects outcome-fit rescue parameters: every row above has a visible PASS and FAIL branch.</text>
+  <text x="570.000" y="1034.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;">A failure at a Tier 2 gate forces revision of the quasicrystalline geometry, not a new fitted coefficient.</text>
+  <text x="570.000" y="1056.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;">Tier 3 biophysical and cosmological branches remain explicitly conditional until their protocols close.</text>
+</svg>

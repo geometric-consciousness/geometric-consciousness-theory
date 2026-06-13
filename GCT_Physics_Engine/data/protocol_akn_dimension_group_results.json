@@ -1,0 +1,67 @@
+{
+  "perron_frobenius": {
+    "spectral_radius": 1.618033988749895,
+    "log_PF_eigenvalue_beta": 0.48121182505960347,
+    "left_PF_eigvec_normalised": [
+      1.6180339887498951,
+      1.0
+    ],
+    "uniqueness_remark": "Cuntz-Krieger Perron-Frobenius theorem (Kerr-Pinzari, Olesen-Pedersen, Exel-Laca): for an irreducible {0,1}-matrix A, \ud835\udcaa_A has a UNIQUE KMS state at \u03b2 = log(spectral radius). This UNIQUENESS is of the STATE, not of any specific projection \u2014 there are infinitely many projections in \ud835\udcaa_A with various K_0 labels, all of which the unique trace evaluates consistently. So this theorem does NOT pick a single distinguished label like -107 from the family. The framework gives the trace function \u03c4 : K_0 \u2192 \u211d unambiguously; the SPECIFIC label of the electron projection remains a separate question requiring additional physical input."
+  },
+  "labels_at_levels": {
+    "0": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "5": [
+      [
+        8,
+        5
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "10": [
+      [
+        89,
+        55
+      ],
+      [
+        55,
+        34
+      ]
+    ],
+    "15": [
+      [
+        987,
+        610
+      ],
+      [
+        610,
+        377
+      ]
+    ],
+    "20": [
+      [
+        10946,
+        6765
+      ],
+      [
+        6765,
+        4181
+      ]
+    ]
+  },
+  "minus_107_labels_count": 36,
+  "minus_107_valid_idos_count": 0,
+  "minus_107_valid_idos_first_10": [],
+  "verdict": "Framework validated; specific integer not uniquely picked."
+}

@@ -1,0 +1,15 @@
+{
+  "protocol": "McKay_Tier1",
+  "verdict": "PASS",
+  "tier": "Tier 1",
+  "h4_coxeter": {
+    "h4_coxeter_number": 30,
+    "exponents": [
+      1,
+      11,
+      19,
+      29
+    ],
+    "phi_verified": true
+  }
+}

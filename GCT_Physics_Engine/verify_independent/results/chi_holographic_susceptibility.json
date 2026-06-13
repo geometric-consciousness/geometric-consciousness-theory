@@ -1,0 +1,29 @@
+{
+  "name": "chi_holographic_susceptibility",
+  "app_r_label": "Critical susceptibility \u03c7 = \u03c0(c/H_0 \u2113_P)\u00b2 (holographic de Sitter entropy)",
+  "formula": "\u03c7 \u2261 S_ent = \u03c0 \u00b7 (c / (H_0 \u00b7 \u2113_P))\u00b2",
+  "tier": "Tier 2 (de Sitter Bekenstein-Hawking entropy; no fitted Friedmann-expression parameter after observational cosmology anchors are supplied)",
+  "predicted": 2.2654741487096146e+122,
+  "observed": 2.27e+122,
+  "unit": "(dimensionless area ratio)",
+  "app_r_predicted": 2.27e+122,
+  "app_r_precision_str": "H_0 = 67.4 km/s/Mpc \u2192 H_0/s = 2.1843e-18; \u2113_P = 1.6163e-35 m; \u03c7 = 2.265e+122 vs stated 2.27e122 (+0.199%)",
+  "app_r_precision_ppm": 1993.7670882754317,
+  "independent_precision_ppm": 1993.7670882754317,
+  "status": "PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "c_m_per_s": 299792458.0,
+    "hbar_J_s": 1.054571817e-34,
+    "G_SI": 6.6743e-11,
+    "l_P_meters": 1.61625502392855e-35,
+    "H_0_km_per_s_per_Mpc": 67.4,
+    "H_0_per_second": 2.1842693716174612e-18,
+    "inner_ratio_c_over_H0_lP": 8.491895067816592e+60,
+    "chi_computed": 2.2654741487096146e+122,
+    "chi_stated_in_manuscript": 2.27e+122,
+    "relative_error_pct": 0.19937670882754316,
+    "derivation_note": "Standard de Sitter horizon area = 4\u03c0 R_H\u00b2 with R_H = c/H_0. Bekenstein-Hawking entropy = area / (4 \u2113_P\u00b2) = \u03c0(R_H/\u2113_P)\u00b2 = \u03c0(c/(H_0 \u2113_P))\u00b2. No GCT-specific input \u2014 this is the standard holographic identity. Manuscript identifies the Tier 2 substance not in the formula (which is standard Bekenstein-Hawking) but in the IDENTIFICATION of this horizon entropy with the critical susceptibility of the 6D \u2192 3D projection \u2014 that identification is the load-bearing Tier 2 claim, while the numerical value follows from CODATA + Planck-2018 H_0."
+  }
+}

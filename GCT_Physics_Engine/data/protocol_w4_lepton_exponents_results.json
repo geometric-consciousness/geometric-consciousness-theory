@@ -1,0 +1,74 @@
+{
+  "h3_exponents": [
+    1,
+    5,
+    9
+  ],
+  "h3_degrees": [
+    2,
+    6,
+    10
+  ],
+  "coxeter_h": 10,
+  "power_sums_exponents": {
+    "1": 15,
+    "2": 107,
+    "3": 855
+  },
+  "power_sums_degrees": {
+    "1": 18,
+    "2": 140,
+    "3": 1224
+  },
+  "T1_is_power_sum_invariant": {
+    "11": false,
+    "17": false,
+    "18": true,
+    "107": true
+  },
+  "T2_formula_hit_counts": {
+    "11": 10,
+    "17": 4,
+    "18": 3,
+    "107": 2
+  },
+  "T2_formulas": {
+    "11": [
+      "sum degs(10,)+1",
+      "sum exps(1, 9)+1",
+      "sum degs(2, 10)-1",
+      "h+1",
+      "deg10+1",
+      "icosa_V-1",
+      "1*10+1",
+      "1*12-1",
+      "2*5+1",
+      "2*6-1"
+    ],
+    "17": [
+      "sum d_i^1-1",
+      "sum degs(6, 10)+1",
+      "sum degs(2, 6, 10)-1",
+      "2*9-1"
+    ],
+    "18": [
+      "sum d_i^1",
+      "sum degs(2, 6, 10)",
+      "2*9"
+    ],
+    "107": [
+      "sum m_i^2",
+      "9*12-1"
+    ]
+  },
+  "T3_ladder_6k_minus_1": true,
+  "T3_hook_11_is_h_plus_1": true,
+  "T3_hook_17_is_sumdeg_minus_1": true,
+  "T3_underived_handles": [
+    "generator 6=d_2",
+    "-1 Decoupling Unit offset",
+    "generation indexing k in {2,3}"
+  ],
+  "verdict": "N=11 and N=17 do NOT admit a 107-style canonical-invariant identification. (T1) Neither is a power sum of the H_3 exponent or degree multisets (those are [15, 18, 107, 140, 855, 1224]: 15,107 and 18,140), whereas 107 IS sum m_i^2 and 18 IS sum d_i. (T2) 107 is hit by very few canonical formulas (2), while 11 and 17 are each hit by many (10, 4) -- small integers are not distinctive. (T3) The operative 6k-1 ladder is real (11=h+1, 17=sum d_i -1, spacing d_2=6) but its generator choice, -1 offset, and generation indexing are un-derived handles. So N=11,17 cannot be promoted via a canonical invariant the way 107 was; the Tier-3 status stands, and the residual is the non-perturbative lepton-eigenvalue extraction (O.5).",
+  "promotable_via_canonical_invariant": false
+}

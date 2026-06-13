@@ -1,0 +1,10 @@
+{
+  "optimal_N_assumed": 144,
+  "min_E_form_analytic_branch": -0.00497,
+  "full_lattice_mode": false,
+  "status": "ASSUMED_NOT_COMPUTED",
+  "tier": "Tier 3 structural posit pending FULL_LATTICE_MODE minimization closure (O.38)",
+  "open_problem": "O.38 full R>=10 lattice minimization",
+  "pass_interpretation": "Expected non-PASS until the full lattice scan is executed and N=144 is computed as the ground-state minimum.",
+  "pass": false
+}

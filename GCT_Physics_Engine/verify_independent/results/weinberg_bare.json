@@ -1,0 +1,19 @@
+{
+  "name": "weinberg_bare",
+  "app_r_label": "sin\u00b2\u03b8_W (bare, low-energy comparison)",
+  "formula": "sin\u00b2\u03b8_W = \u03c6^-3",
+  "tier": "Tier 1 algebraic identity at GUT scale (Uniqueness Theorem U.9); Tier 2 empirical anchor at Z-pole (2.1% bare-tree-level vs CODATA, expected from RGE running)",
+  "predicted": 0.23606797749978967,
+  "observed": 0.23122,
+  "unit": "(dimensionless)",
+  "app_r_predicted": 0.23607,
+  "app_r_precision_str": "2.1% (expected at tree level)",
+  "app_r_precision_ppm": 21000.0,
+  "independent_precision_ppm": 20966.947062493113,
+  "status": "PASS",
+  "tolerance_ppm": 30000.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "percent_error": 2.0966947062493113
+  }
+}

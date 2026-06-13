@@ -1,0 +1,45 @@
+{
+  "N_nodes": 152,
+  "eta_scalar_measured": -14.0,
+  "n_positive_eigvals": 69,
+  "n_negative_eigvals": 83,
+  "permutations_found": 60,
+  "permutations_failed": 0,
+  "irrep_decomposition": {
+    "1": {
+      "dim_rho": 1,
+      "mult": 5.0,
+      "sign_sum_in_isotypic": 1.0,
+      "n_pos": 3,
+      "n_neg": 2
+    },
+    "T_1": {
+      "dim_rho": 3,
+      "mult": 7.0,
+      "sign_sum_in_isotypic": -9.0,
+      "n_pos": 39,
+      "n_neg": 48
+    },
+    "T_2": {
+      "dim_rho": 3,
+      "mult": 7.0,
+      "sign_sum_in_isotypic": -9.0,
+      "n_pos": 39,
+      "n_neg": 48
+    },
+    "G": {
+      "dim_rho": 4,
+      "mult": 10.0,
+      "sign_sum_in_isotypic": 8.0,
+      "n_pos": 24,
+      "n_neg": 16
+    },
+    "H": {
+      "dim_rho": 5,
+      "mult": 13.0,
+      "sign_sum_in_isotypic": -5.0,
+      "n_pos": 30,
+      "n_neg": 35
+    }
+  }
+}

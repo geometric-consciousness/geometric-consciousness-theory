@@ -1,0 +1,28 @@
+{
+  "name": "g2_muon",
+  "app_r_label": "Muon g-2 GCT contribution",
+  "formula": "\u0394a_\u03bc = (1/5) \u00b7 (\u03b1_CODATA/\u03c0)^3",
+  "tier": "Tier 2 mechanism + Tier 3 1/5 coefficient + A3 + Tier 4 calibration-survival conjecture (HVP arbitration); Tension under WP2025; falsification conditional on long-term HVP-synthesis arbitration",
+  "predicted": 2.5065499604358394e-09,
+  "observed": 3.75000000019457e-10,
+  "unit": "(dimensionless)",
+  "app_r_predicted": 2.5065e-09,
+  "app_r_precision_str": "WP2025 gap (a_exp \u2212 a_SM) = +37.5\u00d710\u207b\u00b9\u00b9 at 0.59\u03c3 (no significant anomaly); GCT prediction overshoots the gap by ~6.7\u00d7 and sits 3.34\u03c3 above SM under lattice-QCD HVP. Channel disposition: Tension under WP2025; falsification conditional on long-term HVP-synthesis arbitration (Ch08 \u00a78.7.3 / App G / App R \u00a7R.2).",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": 5684133.227482096,
+  "status": "TENSION",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "delta_a_mu_GCT_x_10_11": 250.65499604358394,
+    "a_mu_sm_wp2025_x_10_11": 116592033.0,
+    "a_mu_sm_wp2025_sigma_x_10_11": 62.0,
+    "a_mu_exp_fermilab_final_x_10_11": 116592070.5,
+    "a_mu_exp_sigma_x_10_11": 14.8,
+    "wp2025_gap_x_10_11": 37.5000000019457,
+    "wp2025_gap_sigma_x_10_11": 63.741979887669004,
+    "wp2025_gap_in_sigmas": 0.5883093068026921,
+    "gct_prediction_in_sigmas_above_wp2025_sm": 3.344028478834142,
+    "hvp_synthesis": "WP2025 (Aliberti et al. arXiv:2505.21476) adopts the lattice-QCD-dominated HVP average. Under this synthesis the SM-vs-experiment gap is ~0.6\u03c3 \u2014 no significant anomaly. The GCT 250.65\u00d710\u207b\u00b9\u00b9 phason-loop correction sits ~3.4\u03c3 above the WP2025 SM central value under the lattice synthesis. Channel disposition: Tension under WP2025; falsification conditional on long-term HVP-synthesis arbitration \u2014 validated-postdiction status is conditional on the HVP-Survival Condition (App V row P.5) holding under future R-ratio resolution."
+  }
+}

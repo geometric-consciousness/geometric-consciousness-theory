@@ -1,0 +1,124 @@
+{
+  "results": {
+    "age_today_gyr": 13.80050322340608,
+    "t_origin_gyr": 9.0,
+    "tau_evolve_gyr": 2.0,
+    "tau_lag_gyr": 5.0,
+    "tau_bio_gyr": 4.5,
+    "lambda_bio": 0.0072973525205055605,
+    "delta_w_cosmic_z0": -0.004999999999999893,
+    "H0_SH0ES_obs": 73.04,
+    "H0_Planck_obs": 67.4,
+    "observed_tension_fractional": 0.08367952522255193,
+    "H0_SH0ES_linear_cosmic_over_global": 0.9983108950165952,
+    "H0_SH0ES_kinematic_cosmic_over_global": 0.9999850559618035,
+    "H0_Planck_inferred_cosmic_over_global": 1.000094656465868,
+    "implied_SH0ES_minus_Planck_bias_cosmic": -0.00010960050406438882,
+    "implied_SH0ES_minus_Planck_bias_fraction_of_tension": -0.0013097648889964196,
+    "anchors": {
+      "void": {
+        "delta_bio": -0.7,
+        "H0_SH0ES_linear_over_H0_global": 0.9983315291983115,
+        "H0_SH0ES_kinematic_over_H0_global": 0.9999873312788417,
+        "delta_H_local_linear_percent": 0.0020634181716272515,
+        "delta_H_local_kinematic_percent": 0.0002275317038114011,
+        "fraction_of_tension_linear": 0.00024658578859517154,
+        "fraction_of_tension_kinematic": 2.7190845455475945e-05,
+        "w_local_z0": -1.0015,
+        "w_local_z_075": -1.0008778224509016,
+        "w_local_z_05": -1.0000053793611745,
+        "w_local_z_10": -1.0000000006948606
+      },
+      "cosmic_mean": {
+        "delta_bio": 0.0,
+        "H0_SH0ES_linear_over_H0_global": 0.9983108950165952,
+        "H0_SH0ES_kinematic_over_H0_global": 0.9999850559618035,
+        "delta_H_local_linear_percent": 0.0,
+        "delta_H_local_kinematic_percent": 0.0,
+        "fraction_of_tension_linear": 0.0,
+        "fraction_of_tension_kinematic": 0.0,
+        "w_local_z0": -1.005,
+        "w_local_z_075": -1.0029260748363384,
+        "w_local_z_05": -1.0000179312039148,
+        "w_local_z_10": -1.000000002316202
+      },
+      "local_sheet": {
+        "delta_bio": 1.5,
+        "H0_SH0ES_linear_over_H0_global": 0.9982666706882081,
+        "H0_SH0ES_kinematic_over_H0_global": 0.99998018230753,
+        "delta_H_local_linear_percent": -0.004422432838713242,
+        "delta_H_local_kinematic_percent": -0.0004873654273485073,
+        "fraction_of_tension_linear": -0.0005284964066121853,
+        "fraction_of_tension_kinematic": -5.8241896814342894e-05,
+        "w_local_z0": -1.0124999999999997,
+        "w_local_z_075": -1.007315187090846,
+        "w_local_z_05": -1.000044828009787,
+        "w_local_z_10": -1.0000000057905047
+      },
+      "laniakea": {
+        "delta_bio": 3.5,
+        "H0_SH0ES_linear_over_H0_global": 0.9982076871751338,
+        "H0_SH0ES_kinematic_over_H0_global": 0.9999736883287101,
+        "delta_H_local_linear_percent": -0.010320784146145012,
+        "delta_H_local_kinematic_percent": -0.001136763309339539,
+        "fraction_of_tension_linear": -0.00123337030398967,
+        "fraction_of_tension_kinematic": -0.00013584724654163994,
+        "w_local_z0": -1.0224999999999995,
+        "w_local_z_075": -1.013167336763523,
+        "w_local_z_05": -1.0000806904176165,
+        "w_local_z_10": -1.0000000104229085
+      },
+      "filament": {
+        "delta_bio": 7.5,
+        "H0_SH0ES_linear_over_H0_global": 0.9980896584657846,
+        "H0_SH0ES_kinematic_over_H0_global": 0.9999607144884362,
+        "delta_H_local_linear_percent": -0.022123655081063287,
+        "delta_H_local_kinematic_percent": -0.0024341473367384125,
+        "fraction_of_tension_linear": -0.002643855234864655,
+        "fraction_of_tension_kinematic": -0.00029088923846838475,
+        "w_local_z0": -1.042499999999999,
+        "w_local_z_075": -1.0248716361088768,
+        "w_local_z_05": -1.0001524152332757,
+        "w_local_z_10": -1.0000000196877161
+      },
+      "cluster_core": {
+        "delta_bio": 30.0,
+        "H0_SH0ES_linear_over_H0_global": 0.9974241435471368,
+        "H0_SH0ES_kinematic_over_H0_global": 0.9998880813849997,
+        "delta_H_local_linear_percent": -0.088675146945838,
+        "delta_H_local_kinematic_percent": -0.009697457680379884,
+        "fraction_of_tension_linear": -0.010596994510903335,
+        "fraction_of_tension_kinematic": -0.001158880580953199,
+        "w_local_z0": -1.1549999999999967,
+        "w_local_z_075": -1.0907083199264918,
+        "w_local_z_05": -1.0005558673213588,
+        "w_local_z_10": -1.0000000718022588
+      }
+    }
+  },
+  "verdict": {
+    "direction": "Biogenic-driving action does not account for the Hubble tension",
+    "framing": "At realistic SH0ES-volume-average overdensity (delta_bio ~ 1-3), the local-cosmography channel of biogenic-DE shifts the SH0ES inferred H_0 by [-0.0005%, -0.0011%] of H_0 (kinematic-fit channel); the Planck-bias channel contributes -0.13% of the observed tension. Combined upper bound is at most 0.16% of the observed ~8.4% tension. Local-cosmography channel has WRONG sign relative to the SH0ES > Planck tension framing. Planck-bias channel has WRONG sign relative to the SH0ES > Planck tension framing. The Hubble tension is not among the framework's predictions; this diagnostic is a quantitative non-closure bound for the local biogenic-DE channel.",
+    "channels": {
+      "local_cosmography_kinematic": {
+        "realistic_overdensity_range_fraction": [
+          -0.00013584724654163994,
+          -5.8241896814342894e-05
+        ],
+        "filament_extreme_fraction": -0.00029088923846838475,
+        "sign_consistent_with_tension": false
+      },
+      "local_cosmography_linear": {
+        "realistic_overdensity_range_fraction": [
+          -0.00123337030398967,
+          -0.0005284964066121853
+        ]
+      },
+      "planck_bias_cosmic_mean": {
+        "fraction_of_tension": -0.0013097648889964196,
+        "sign_consistent_with_tension": false
+      }
+    },
+    "total_explained_upper_bound": 0.0016006541274648043
+  }
+}

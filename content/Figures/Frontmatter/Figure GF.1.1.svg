@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040" role="img" aria-labelledby="title desc">
+<title id="title">Figure GF.1.1 - Epistemic staircase</title>
+<desc id="desc">Programmatic vector figure generated for the GCT frontmatter.</desc>
+<defs>
+<marker id="arrow-blue" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9 z" fill="#2c5d8a"/></marker>
+<marker id="arrow-gray" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9 z" fill="#555555"/></marker>
+<marker id="arrow-red" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9 z" fill="#b03a2e"/></marker>
+</defs>
+<rect x="0" y="0" width="1600" height="1040" fill="#ffffff"/>
+<text x="70" y="70" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#1f1f1f" text-anchor="start">GF.1.1  Epistemic staircase</text>
+<text x="70" y="102" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#555555" text-anchor="start">Claim status is tiered; foundational certainty cannot leak into downstream hypotheses.</text>
+<rect x="110" y="140" width="800" height="150" rx="6" fill="#fbfbfb" stroke="#444444" stroke-width="1.6"/>
+<rect x="110" y="140" width="12" height="150" rx="6" fill="#1f4e79" stroke="#1f4e79" stroke-width="0"/>
+<circle cx="152" cy="215.0" r="20" fill="#ffffff" stroke="#1f4e79" stroke-width="2.2"/>
+<text x="152" y="222.0" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#1f4e79" text-anchor="middle">1</text>
+<text x="188" y="171" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1f1f1f" text-anchor="start">Tier 1</text>
+<text x="188" y="195.0" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#333333" text-anchor="start">Structural axioms or logical necessities that anchor the framework.</text>
+<text x="188" y="230.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#555555" text-anchor="start">Example: Wheeler-DeWitt constraint H Psi equals zero; lattice action</text>
+<text x="188" y="245.34" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#555555" text-anchor="start">postulate hbar hat equals one.</text>
+<path d="M882,290 L936,324 L936,358" fill="none" stroke="#777777" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+<rect x="164" y="304" width="800" height="150" rx="6" fill="#fbfbfb" stroke="#444444" stroke-width="1.6"/>
+<rect x="164" y="304" width="12" height="150" rx="6" fill="#2c5d8a" stroke="#2c5d8a" stroke-width="0"/>
+<path d="M206,357.0 L228,379.0 L206,401.0 L184,379.0 Z" fill="#ffffff" stroke="#2c5d8a" stroke-width="2.2"/>
+<text x="206" y="386.0" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#2c5d8a" text-anchor="middle">1/2</text>
+<text x="242" y="335" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1f1f1f" text-anchor="start">Tier 1/2</text>
+<text x="242" y="359.0" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#333333" text-anchor="start">Uniqueness-justified structural postulates: architectural</text>
+<text x="242" y="376.08" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#333333" text-anchor="start">commitments plus uniqueness arguments.</text>
+<text x="242" y="394.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#555555" text-anchor="start">Example: Icosahedral projection from E8 to Z6 to H3, pending the</text>
+<text x="242" y="409.34" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#555555" text-anchor="start">remaining analytic gap.</text>
+<path d="M936,454 L990,488 L990,522" fill="none" stroke="#777777" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+<rect x="218" y="468" width="800" height="150" rx="6" fill="#fbfbfb" stroke="#444444" stroke-width="1.6"/>
+<rect x="218" y="468" width="12" height="150" rx="6" fill="#4f6d7a" stroke="#4f6d7a" stroke-width="0"/>
+<rect x="241" y="524.0" width="38" height="38" rx="2" fill="#ffffff" stroke="#4f6d7a" stroke-width="2.2"/>
+<text x="260" y="550.0" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#4f6d7a" text-anchor="middle">2</text>
+<text x="296" y="499" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1f1f1f" text-anchor="start">Tier 2</text>
+<text x="296" y="523.0" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#333333" text-anchor="start">Geometric consequences derived inside the 6D -&gt; 3D icosahedral cut-</text>
+<text x="296" y="540.08" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#333333" text-anchor="start">and-project ansatz.</text>
+<text x="296" y="558.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#555555" text-anchor="start">Example: Bare Weinberg angle: sine squared theta W equals inverse cubic</text>
+<text x="296" y="573.34" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#555555" text-anchor="start">phi; endpoint audit uses A2 separately.</text>
+<path d="M990,618 L1044,652 L1044,686" fill="none" stroke="#777777" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+<rect x="272" y="632" width="800" height="150" rx="6" fill="#fbfbfb" stroke="#444444" stroke-width="1.6"/>
+<rect x="272" y="632" width="12" height="150" rx="6" fill="#8a6d3b" stroke="#8a6d3b" stroke-width="0"/>
+<path d="M314,685.0 L336,707.0 L314,729.0 L292,707.0 Z" fill="#ffffff" stroke="#8a6d3b" stroke-width="2.2"/>
+<text x="314" y="714.0" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#8a6d3b" text-anchor="middle">3</text>
+<text x="350" y="663" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1f1f1f" text-anchor="start">Tier 3</text>
+<text x="350" y="687.0" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#333333" text-anchor="start">Phenomenological or calibrated rows whose first-principles closure</text>
+<text x="350" y="704.08" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#333333" text-anchor="start">remains open.</text>
+<text x="350" y="722.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#555555" text-anchor="start">Example: Biological lag tau lag; PMNS mixing angles carried as a 4.09</text>
+<text x="350" y="737.34" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#555555" text-anchor="start">sigma tension.</text>
+<path d="M1044,782 L1098,816 L1098,850" fill="none" stroke="#777777" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+<rect x="326" y="796" width="800" height="150" rx="6" fill="#fbfbfb" stroke="#444444" stroke-width="1.6"/>
+<rect x="326" y="796" width="12" height="150" rx="6" fill="#9b2f2f" stroke="#9b2f2f" stroke-width="0"/>
+<circle cx="368" cy="871.0" r="20" fill="#ffffff" stroke="#9b2f2f" stroke-width="2.2"/>
+<text x="368" y="878.0" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#9b2f2f" text-anchor="middle">4</text>
+<text x="404" y="827" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1f1f1f" text-anchor="start">Tier 4</text>
+<text x="404" y="851.0" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#333333" text-anchor="start">Exploratory calculations or ontological extensions outside the core</text>
+<text x="404" y="868.08" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#333333" text-anchor="start">falsifiable theory.</text>
+<text x="404" y="886.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#555555" text-anchor="start">Example: Identity persistence across bodies; absolute neutrino mass</text>
+<text x="404" y="901.34" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#555555" text-anchor="start">normalization.</text>
+<line x1="1180" y1="910" x2="1180" y2="218" stroke="#b03a2e" stroke-width="4" fill="none" stroke-dasharray="10 7"/>
+<path d="M1180,196 L1164,222 L1196,222 Z" fill="#b03a2e" stroke="#b03a2e" stroke-width="1"/>
+<text x="1208" y="245" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#9b2f2f" text-anchor="start">No upward promotion</text>
+<text x="1208" y="273" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#9b2f2f" text-anchor="start">without closure</text>
+<line x1="1144" y1="789" x2="1216" y2="789" stroke="#b03a2e" stroke-width="2.2" fill="none" stroke-dasharray="6 5"/>
+<text x="1230" y="794" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#555555" text-anchor="start">OOM bound</text>
+<line x1="1144" y1="625" x2="1216" y2="625" stroke="#b03a2e" stroke-width="2.2" fill="none" stroke-dasharray="6 5"/>
+<text x="1230" y="630" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#555555" text-anchor="start">calibration to derivation</text>
+<line x1="1144" y1="461" x2="1216" y2="461" stroke="#b03a2e" stroke-width="2.2" fill="none" stroke-dasharray="6 5"/>
+<text x="1230" y="466" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#555555" text-anchor="start">proof obligation</text>
+<line x1="1144" y1="297" x2="1216" y2="297" stroke="#b03a2e" stroke-width="2.2" fill="none" stroke-dasharray="6 5"/>
+<text x="1230" y="302" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#555555" text-anchor="start">axiom-level closure</text>
+<text x="70" y="1010" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#666666" text-anchor="start">Source: content/00_Global_Frontmatter/01_Epistemic_Tier_System.md</text>
+</svg>

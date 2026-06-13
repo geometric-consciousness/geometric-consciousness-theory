@@ -1,0 +1,21 @@
+{
+    "status": "LSS_L6_SPECIFICATION_AVAILABLE",
+    "prediction_type": "LSS_Angular_Power_Spectrum_Anisotropy",
+    "multipole": 6,
+    "predicted_c6_c0": 2.895419285097678e-08,
+    "icosahedral_mask_deg": [
+        0,
+        36,
+        60,
+        72,
+        90,
+        108,
+        120,
+        144,
+        180
+    ],
+    "mechanism": "Icosahedral vacuum anisotropy imprint on LSS 2-point correlation",
+    "dataset": "SDSS DR16 Quasar Catalog",
+    "alignment": "Same vacuum root as PTA (phi^-18 scaling)",
+    "pass": true
+}

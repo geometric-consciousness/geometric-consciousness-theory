@@ -1,0 +1,20 @@
+{
+  "phi": 1.618033988749895,
+  "stiffness_ratio": 0.00017307027171223924,
+  "delta_c_over_c": 0.00017307027171223924,
+  "epsilon_l6": 0.00017307027171223924,
+  "delta_gamma_max": 0.00017307027171223924,
+  "delta_gamma_max_note": "Peak deviation over spatial correlation function theta |epsilon * P6(cos th)|",
+  "formula": "linear_phason_graviton",
+  "normalization_scope": "Peak-deviation form; squared angular-power form reported separately.",
+  "C6_over_C0": 2.895419285097678e-08,
+  "C6_over_C0_note": "Angular Power Spectrum coefficient (4pi / 13) * epsilon^2. Typically used by experimental groups.",
+  "delta_gamma_rms": 6.958007556593739e-05,
+  "peak_angle_deg": 180.0,
+  "ska_precision": 0.0001,
+  "detectable_by_ska": true,
+  "detectable_nanograv": false,
+  "nanograv_tension_status": "NO_TENSION",
+  "verdict": "PASS",
+  "pass": true
+}

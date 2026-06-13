@@ -1,0 +1,21 @@
+{
+  "group_order": 60,
+  "W6a_order_histogram": {
+    "1": 1,
+    "2": 15,
+    "3": 20,
+    "5": 24
+  },
+  "W6a_orders_subset_1235": true,
+  "W6a_all_g_pow_order_identity_tol1e-6": true,
+  "W6b_n_distinct_commutators": 60,
+  "W6b_commutator_subgroup_order": 60,
+  "W6b_is_perfect_set_equality": true,
+  "W6b_abelianization_trivial": true,
+  "W6b_no_geometric_cp_character": true,
+  "full_theta_bar_zero_proven": false,
+  "full_theta_bar_residual": "theta_bare insertion + chiral-anomaly arg(det M_q) bridge",
+  "theorem_grade_proof_bundles_with": "O.5 (QLQCD-1L)",
+  "P32_tier": "Tier 3 (mechanism + finite no-CP-character necessary condition; full proof O.5)",
+  "verdict": "The icosahedral symmetry admits NO non-trivial CP character -- it cannot source a geometric strong-CP phase. (W6-a) all 5/3/2-fold rotations close at 2pi multiples (orders in {1,2,3,5}, g^order = I to 1e-6 tolerance), the literal P.32 statement. (W6-b, load-bearing, theorem-grade as a finite-group fact) the icosahedral rotation group I ~ A_5 is PERFECT ([I,I] = I, verified by set-equality closure of all commutators), so its abelianization is trivial and the only homomorphism I -> U(1) is the trivial character; the icosahedral holonomy can carry no non-trivial CP phase. SCOPE: this is a NECESSARY condition, not a proof of the full QCD theta-bar = theta_bare + arg(det M_q) = 0 -- it excludes a geometrically-sourced theta-phase but not a bare insertion or the chiral-anomaly quark-mass phase. The bridge identifying the physical theta-bar with the trivial icosahedral character remains O.5, so P.32 stays Tier 3."
+}

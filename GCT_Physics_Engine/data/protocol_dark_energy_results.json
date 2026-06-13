@@ -1,0 +1,87 @@
+{
+  "tier_2_holographic_lambda": {
+    "rho_holographic_J_m3": 5.253229222631071e-10,
+    "rho_observed_J_m3": 5.4e-10,
+    "ratio_holographic_to_observed": 0.9728202264131613,
+    "suppression_vs_planck": 1.1338850757228342e-123,
+    "chi_horizon_area_ratio": 2.265441229449521e+122,
+    "l_P_m": 1.61625502392855e-35,
+    "R_H_m": 1.37249683472327e+26,
+    "derivation": "Ryu-Takayanagi on cosmic event horizon of 6D->3D projection",
+    "tier": 2
+  },
+  "tier_2_phason_vacuum": {
+    "w_baseline": -1.0,
+    "m_phason_ev": 1.7e-05
+  },
+  "tier_3_biogenic_correlation": {
+    "diagnostic_scope": "Diagnostic single-channel shape proxy only. The registered DESI-facing state-level menu arbitration lives in protocol_de_multichannel.py; no covariance-aware likelihood or physical multi-fluid density evolution is claimed by this protocol.",
+    "canonical_branch": "ssot",
+    "ssot": {
+      "name": "IMP-01 canonical headline run",
+      "lambda": 0.007,
+      "min_w": -1.0049666310906789,
+      "z_at_min": 0.001,
+      "crossing_z": null,
+      "z_cross_CPL_fit": 0.3889399003344034,
+      "w0": -1.0037973296449392,
+      "wa": 0.013560610917121069,
+      "w_at_z_0": -1.0049666310906789,
+      "w_at_z_028": -1.0004541912243154,
+      "w_at_z_05": -1.000017982260574,
+      "source": "protocol_imp01_pipeline_results.json::headline_run",
+      "interpretation": "canonical continuous-phantom IMP-01 curve; no literal direct crossing"
+    },
+    "noncanonical_diagnostics": {
+      "scope": "Stress-test illustrations only. These branches are not canonical DESI-facing outputs, not physical crossing claims, and must not be used as the registered P.6 CPL-sign comparison.",
+      "reference_shape_proxy": {
+        "name": "SSOT diagnostic (0.007)",
+        "lambda": 0.007,
+        "min_w": -1.007,
+        "z_at_min": 1.2373165742622745,
+        "crossing_z": 0.27680453428884766,
+        "w0": -1.0005151887631665,
+        "wa": -0.27194857340438,
+        "w_final": -1.0005151887631665,
+        "canonical": false,
+        "use_for_p6_desi_claim": false
+      },
+      "alt_strong_stress_test": {
+        "name": "Alt-strong (0.08)",
+        "lambda": 0.08,
+        "min_w": -1.08,
+        "z_at_min": 1.2373165742622745,
+        "crossing_z": 0.27680453428884766,
+        "w0": -1.0058878715790458,
+        "wa": -3.1079836960502254,
+        "w_final": -1.0058878715790458,
+        "canonical": false,
+        "use_for_p6_desi_claim": false
+      }
+    }
+  },
+  "pass": true,
+  "physical_no_crossing": true,
+  "m_phason_ev": 1.7e-05,
+  "lambda_bio_derivation": {
+    "lambda_bio_yaml_value": 0.007,
+    "alpha_yaml_value": 0.007272316635418377,
+    "equals_alpha_within_5pct": true,
+    "relative_difference_pct": 3.744565165000001,
+    "key_assumption": "Phi_0 = hbar/e (phason condensate VEV normalization)",
+    "assumption_verified_by": "App_M Berry connection definition (V3 Ch1)",
+    "tier_if_assumption_holds": "Tier 2",
+    "tier_if_assumption_fails": "Tier 3",
+    "check_type": "YAML-constants consistency, not first-principles derivation",
+    "derivation_reference": "V3 Ch1 / App M (GCT action saddle-point, analytical)",
+    "physical_interpretation": "The biological information coupling to the metric equals the fine-structure constant because information processing requires electromagnetic bond formation (EM coupling alpha), and the phason field mediating both EM and biological coupling is the same field."
+  },
+  "growth_rate_ratio_z028": {
+    "z_target": 0.28,
+    "growth_derivative_lcdm": 0.4588486916202881,
+    "growth_derivative_gct": 0.45892243082135725,
+    "growth_rate_ratio": 1.0001607048301888,
+    "percent_delta": 0.01607048301888181,
+    "diagnostic_note": "Diagnostic-only growth-rate derivative ratio; no sigma8 normalization and not directly comparable to Planck/DESI f_sigma8 measurements."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "strong_cp_theta_bar",
+  "app_r_label": "Strong CP / \u03b8\u0304 (icosahedral matching-rule null)",
+  "formula": "\u03b8\u0304 \u2261 0 (mod 2\u03c0) \u2192 \u03b8\u0304_physical = 0 from chirality-preserving icosahedral cycle closure",
+  "tier": "Tier 3 (mechanism-stated; theorem-grade promotion bundled with QLQCD-1L)",
+  "predicted": 0.0,
+  "observed": 0.0,
+  "unit": "(rad)",
+  "app_r_predicted": 0.0,
+  "app_r_precision_str": "|\u03b8\u0304|^GCT = 0 exactly; nEDM bound |\u03b8\u0304| < 10\u207b\u00b9\u2070 (consistent); theorem-grade promotion path = QLQCD-1L closure",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": null,
+  "status": "PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "theta_bar_gct_prediction": 0.0,
+    "neutron_edm_bound_e_cm": 1.8e-26,
+    "theta_bar_bound_implied": 1e-10,
+    "mechanism": "On the AKN icosahedral lattice, all chirality-preserving cycles (5-fold, 3-fold, 2-fold rotations of I_h) close at multiples of 2\u03c0 exactly. The cut-and-project from Z\u2076 preserves this discrete closure, forcing the topological charge of any consistent gauge configuration to integer multiples of 2\u03c0. Modulo 2\u03c0, the physical \u03b8\u0304 angle is in the trivial topological class: \u03b8\u0304 = 0.",
+    "tier_1_promotion_path": "QLQCD-1L closure (Open Problem O.5). Requires showing (a) anomaly-free topological quantisation under phason quantum corrections; (b) cut-and-project preserves discrete closure exactly (not up to O(\u03b1) corrections). Both are non-perturbative statements bundled with the QLQCD-1L research programme.",
+    "falsifier": "Next-gen nEDM measurements (SNS, n2EDM) reaching |d_n| < 10\u207b\u00b2\u2078 e\u00b7cm \u2192 |\u03b8\u0304| < 10\u207b\u00b9\u00b2 without detection: consistent with GCT mechanism. A POSITIVE detection of |\u03b8\u0304| > 10\u207b\u00b9\u2070 at >3\u03c3 would falsify the icosahedral matching-rule mechanism."
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "shells": {
+    "icosahedron_12": {
+      "laplacian_0.01": {
+        "N": 12,
+        "sum_offdiag_Gij_sq": 9128.009657873139,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.9127475296443532,
+        "diag2_over_trG_sq": 0.08333333333333334,
+        "one_over_N": 0.08333333333333333,
+        "diag_const": true
+      },
+      "laplacian_0.1": {
+        "N": 12,
+        "sum_offdiag_Gij_sq": 87.997279245675,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.8751082780574114,
+        "diag2_over_trG_sq": 0.08333333333333331,
+        "one_over_N": 0.08333333333333333,
+        "diag_const": true
+      },
+      "laplacian_1.0": {
+        "N": 12,
+        "sum_offdiag_Gij_sq": 0.6689460383529062,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.492587727528617,
+        "diag2_over_trG_sq": 0.08333333333333336,
+        "one_over_N": 0.08333333333333333,
+        "diag_const": true
+      },
+      "adjacency_1.1": {
+        "N": 12,
+        "sum_offdiag_Gij_sq": 3.0654843561572394,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.6888612204293347,
+        "diag2_over_trG_sq": 0.08333333333333333,
+        "one_over_N": 0.08333333333333333,
+        "diag_const": true
+      },
+      "adjacency_2.0": {
+        "N": 12,
+        "sum_offdiag_Gij_sq": 0.013285410132551967,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.08790809277975743,
+        "diag2_over_trG_sq": 0.08333333333333334,
+        "one_over_N": 0.08333333333333333,
+        "diag_const": true
+      }
+    },
+    "dodecahedron_20": {
+      "laplacian_0.01": {
+        "N": 20,
+        "sum_offdiag_Gij_sq": 9412.218765780815,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.9405676130771736,
+        "diag2_over_trG_sq": 0.04999999999999998,
+        "one_over_N": 0.05,
+        "diag_const": true
+      },
+      "laplacian_0.1": {
+        "N": 20,
+        "sum_offdiag_Gij_sq": 88.73402376738082,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.8384694124910193,
+        "diag2_over_trG_sq": 0.05000000000000001,
+        "one_over_N": 0.05,
+        "diag_const": true
+      },
+      "laplacian_1.0": {
+        "N": 20,
+        "sum_offdiag_Gij_sq": 0.8356290174471988,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.282499029879705,
+        "diag2_over_trG_sq": 0.04999999999999998,
+        "one_over_N": 0.05,
+        "diag_const": true
+      },
+      "adjacency_1.1": {
+        "N": 20,
+        "sum_offdiag_Gij_sq": 9.443540298162983,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.6166535172716476,
+        "diag2_over_trG_sq": 0.050000000000000024,
+        "one_over_N": 0.05,
+        "diag_const": true
+      },
+      "adjacency_2.0": {
+        "N": 20,
+        "sum_offdiag_Gij_sq": 0.07045323158746664,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.0951163784440857,
+        "diag2_over_trG_sq": 0.05000000000000001,
+        "one_over_N": 0.05,
+        "diag_const": true
+      }
+    },
+    "icosidodeca_30": {
+      "laplacian_0.01": {
+        "N": 30,
+        "sum_offdiag_Gij_sq": 9598.551144724453,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.9591613622858215,
+        "diag2_over_trG_sq": 0.03333333333333334,
+        "one_over_N": 0.03333333333333333,
+        "diag_const": true
+      },
+      "laplacian_0.1": {
+        "N": 30,
+        "sum_offdiag_Gij_sq": 92.59057372210998,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.8726947397607245,
+        "diag2_over_trG_sq": 0.03333333333333333,
+        "one_over_N": 0.03333333333333333,
+        "diag_const": true
+      },
+      "laplacian_1.0": {
+        "N": 30,
+        "sum_offdiag_Gij_sq": 1.0586461398149707,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.33479522416070906,
+        "diag2_over_trG_sq": 0.033333333333333354,
+        "one_over_N": 0.03333333333333333,
+        "diag_const": true
+      },
+      "adjacency_1.1": {
+        "N": 30,
+        "sum_offdiag_Gij_sq": 5.993235441488674,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.590217394623099,
+        "diag2_over_trG_sq": 0.03333333333333331,
+        "one_over_N": 0.03333333333333333,
+        "diag_const": true
+      },
+      "adjacency_2.0": {
+        "N": 30,
+        "sum_offdiag_Gij_sq": 0.05199617368628917,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.08669502096186543,
+        "diag2_over_trG_sq": 0.03333333333333334,
+        "one_over_N": 0.03333333333333333,
+        "diag_const": true
+      }
+    },
+    "cage_inner_12": {
+      "laplacian_0.01": {
+        "N": 12,
+        "sum_offdiag_Gij_sq": 9128.009657873283,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.9127475296443534,
+        "diag2_over_trG_sq": 0.0833333333333333,
+        "one_over_N": 0.08333333333333333,
+        "diag_const": true
+      },
+      "laplacian_0.1": {
+        "N": 12,
+        "sum_offdiag_Gij_sq": 87.99727924567534,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.8751082780574114,
+        "diag2_over_trG_sq": 0.08333333333333331,
+        "one_over_N": 0.08333333333333333,
+        "diag_const": true
+      },
+      "laplacian_1.0": {
+        "N": 12,
+        "sum_offdiag_Gij_sq": 0.6689460383529059,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.4925877275286169,
+        "diag2_over_trG_sq": 0.08333333333333337,
+        "one_over_N": 0.08333333333333333,
+        "diag_const": true
+      },
+      "adjacency_1.1": {
+        "N": 12,
+        "sum_offdiag_Gij_sq": 3.0654843561571927,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.6888612204293331,
+        "diag2_over_trG_sq": 0.08333333333333333,
+        "one_over_N": 0.08333333333333333,
+        "diag_const": true
+      },
+      "adjacency_2.0": {
+        "N": 12,
+        "sum_offdiag_Gij_sq": 0.013285410132551856,
+        "offdiag_vanishes": false,
+        "offdiag_over_total": 0.08790809277975684,
+        "diag2_over_trG_sq": 0.08333333333333334,
+        "one_over_N": 0.08333333333333333,
+        "diag_const": true
+      }
+    }
+  },
+  "bilayer": {
+    "laplacian_0.01": {
+      "N": 144,
+      "sum_offdiag_Gij_sq": 99250320.69750567,
+      "offdiag_vanishes": false,
+      "offdiag_over_total": 0.992387006416837,
+      "diag2_over_trG_sq": 0.006944444444444442,
+      "one_over_N": 0.006944444444444444,
+      "diag_const": true
+    },
+    "laplacian_0.1": {
+      "N": 144,
+      "sum_offdiag_Gij_sq": 9953.765795564626,
+      "offdiag_vanishes": false,
+      "offdiag_over_total": 0.9844020577902152,
+      "diag2_over_trG_sq": 0.006944444444444443,
+      "one_over_N": 0.006944444444444444,
+      "diag_const": true
+    },
+    "laplacian_1.0": {
+      "N": 144,
+      "sum_offdiag_Gij_sq": 1.369400970780156,
+      "offdiag_vanishes": false,
+      "offdiag_over_total": 0.742532785745427,
+      "diag2_over_trG_sq": 0.006944444444444444,
+      "one_over_N": 0.006944444444444444,
+      "diag_const": true
+    },
+    "adjacency_1.1": {
+      "N": 144,
+      "sum_offdiag_Gij_sq": 17.88607857447837,
+      "offdiag_vanishes": false,
+      "offdiag_over_total": 0.9031926598472768,
+      "diag2_over_trG_sq": 0.006944444444444447,
+      "one_over_N": 0.006944444444444444,
+      "diag_const": true
+    },
+    "adjacency_2.0": {
+      "N": 144,
+      "sum_offdiag_Gij_sq": 0.0038391036497045644,
+      "offdiag_vanishes": false,
+      "offdiag_over_total": 0.16808835278334022,
+      "diag2_over_trG_sq": 0.006944444444444445,
+      "one_over_N": 0.006944444444444444,
+      "diag_const": true
+    }
+  },
+  "verdicts": {
+    "T1_literal_offdiag_vanishing": "REFUTED",
+    "T2_one_over_N_diagonal_identity": "CONFIRMED",
+    "T3_bilayer_tensor_gives": "1/N (= 1/144), not 1/(2N)",
+    "implication": "S M.7's single-shell vanishing claim does not hold as literally written (sum of squares); the rigorous core is the vertex-transitivity identity sum G_ii^2/(Tr G)^2 = 1/N. The bilayer factor 2 does not follow from the stated tensor decomposition - it is a Tier 3 handle pending O.5, as the IMPORTANT box states."
+  }
+}

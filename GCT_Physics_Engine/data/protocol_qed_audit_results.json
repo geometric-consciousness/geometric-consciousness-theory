@@ -1,0 +1,42 @@
+{
+  "pass": false,
+  "pass_compatible": false,
+  "muon_g2": {
+    "experiment": 0.001165920705,
+    "sm_theory": 0.00116592033,
+    "gap": 3.75000000019457e-10,
+    "sigma_before": 0.5883093068026921,
+    "gct_correction": 2.5065499655881543e-09,
+    "gct_total": 0.0011659228365499656,
+    "residual": -2.1315499656136827e-09,
+    "sigma_after": -3.344028486987795,
+    "N_channels": 5,
+    "formula": "SM_WP2025 + (1/5)\u00b7(\u03b1_A3/\u03c0)\u00b3  [A3 measured alpha; N_channels as A5-averaged RT incidence mnemonic: (4\u00b730\u22123\u00b720)/12]",
+    "alpha_anchor": "A3 measured low-energy alpha; bare GCT alpha remains O.19/O.5.",
+    "verdict": "TENSION"
+  },
+  "electron_g2": {
+    "gct_correction": 0.0,
+    "kinematic_threshold_mev": 101.69134886882901,
+    "electron_deficit_ratio": 198.0050249987407,
+    "tier": "Tier 2 kinematic-threshold mechanism + Tier 3 threshold exponent; alpha-input contingent",
+    "verdict": "CONSISTENT",
+    "explanation": "Kinematically forbidden (requires >101.2 MeV gap to depin N=11 resonance). Electron is ~198x too light to activate lattice loops."
+  },
+  "tau_g2": {
+    "gct_correction": 2.5065499655881543e-09,
+    "above_threshold_mev_ratio": 17.473757795189147,
+    "form_factor_assumption": "Assumes the same (1/5)(alpha/pi)^3 form-factor as the muon prediction; channel-count universality across leptons is Tier 3, candidate sub-problem of O.26",
+    "current_pdg_bound": 0.1,
+    "fcc_ee_target_sensitivity": 1e-06,
+    "verdict": "UNDETECTABLE-AT-CURRENT-SENSITIVITY",
+    "explanation": "Tau (1776.93 MeV) is ~17.5x above the N=11 activation threshold (101.7 MeV), so the closed-phason-loop correction applies. Predicted Delta_a_tau equals the muon value under 5-channel A_5 form-factor universality (Tier 3 assumption). Current PDG bound (~1e-1) is 8 OOM weaker than the prediction; even the FCC-ee tau-g-2 program target sensitivity (~1e-6) is 3 OOM short. Prediction is real but currently unfalsifiable on operational grounds."
+  },
+  "lamb_shift": {
+    "standard_lamb_MHz": 1057.845,
+    "gct_correction_MHz": 3.012219394410474e-71,
+    "suppression_factor": 2.8475054421115325e-74,
+    "verdict": "NEGLIGIBLE",
+    "note": "Correction \u221d (l_Planck / a_Bohr)\u00b3 \u2248 2.9e-74. GCT makes no measurable prediction for the ordinary Lamb Shift."
+  }
+}

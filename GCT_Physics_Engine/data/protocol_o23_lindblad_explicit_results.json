@@ -1,0 +1,56 @@
+{
+    "tier": "Tier 2 mechanism (Tavis-Cummings dark-state algebra: chiral OAM-l=1 collective sigma_- bath annihilates the symmetric |W> via geometric-sum-of-N-th-roots-of-unity cancellation; symmetric OAM-l=0 collective sigma_- bath gives super-radiant decay of |W>) + Tier 3 specific numerical magnitude (set by gamma_th / gamma_deph ratio).",
+    "model": "H = (omega_0/2) sum_i sigma_z^(i); per-dimer sigma_z dephasing + per-dimer sigma_- emission + ONE collective OAM-l bath = sqrt(gamma_th) * (1/sqrt(N)) * sum_i exp(2*pi*i*l*i/N) sigma_-^(i)",
+    "inputs": {
+        "OMEGA_0_rad_per_s": 314159265.3589793,
+        "GAMMA_DEPH_PER_DIMER_Hz": 100000.0,
+        "GAMMA_TH_Hz": 10000000.0,
+        "GAMMA_EMIT_Hz": 1000.0,
+        "N_TLS_scan": [
+            2,
+            3,
+            4,
+            5
+        ],
+        "t_final_s": 1e-05,
+        "n_time_steps": 20,
+        "PASS_MIN_DFS_RATIO_AT_LARGEST_N": 2.0
+    },
+    "regimes": [
+        {
+            "N_TLS": 2,
+            "Hilbert_dim": 4,
+            "T2_chiral_OAM_l1_s": 1.9225223493223212e-07,
+            "T2_symmetric_OAM_l0_s": 9.802480027447149e-08,
+            "DFS_enhancement_ratio": 1.961261174661125
+        },
+        {
+            "N_TLS": 3,
+            "Hilbert_dim": 8,
+            "T2_chiral_OAM_l1_s": 1.4557806623802016e-07,
+            "T2_symmetric_OAM_l0_s": 8.425191322048201e-08,
+            "DFS_enhancement_ratio": 1.7278903311910725
+        },
+        {
+            "N_TLS": 4,
+            "Hilbert_dim": 16,
+            "T2_chiral_OAM_l1_s": 1.2981112481339658e-07,
+            "T2_symmetric_OAM_l0_s": 7.871846341559784e-08,
+            "DFS_enhancement_ratio": 1.6490556240669056
+        },
+        {
+            "N_TLS": 5,
+            "Hilbert_dim": 32,
+            "T2_chiral_OAM_l1_s": 1.218843317691513e-07,
+            "T2_symmetric_OAM_l0_s": 7.573175811276458e-08,
+            "DFS_enhancement_ratio": 1.6094216588457584
+        }
+    ],
+    "DFS_ratio_monotonic_strict_in_N": false,
+    "DFS_ratio_at_largest_N": 1.6094216588457584,
+    "DFS_magnitude_threshold_pass": false,
+    "PASS_criterion": "strict monotonic-increasing DFS ratio in N AND DFS ratio at largest N (N=5) >= 2.0",
+    "verdict_status": "DFS_SUPPRESSION_NOT_DEMONSTRATED",
+    "verdict": "DFS enhancement ratio sequence: ['1.96', '1.73', '1.65', '1.61']. Strict monotonic-increasing: False. Magnitude at largest N: 1.61 (threshold: 2.0x). Fast verification mode uses the canonical direct-Lindblad reference output; set GCT_O23_DIRECT=1 for the expensive Liouville-space matrix-exponential run.",
+    "pass": false
+}

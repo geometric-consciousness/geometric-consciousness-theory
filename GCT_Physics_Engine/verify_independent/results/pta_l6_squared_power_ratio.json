@@ -1,0 +1,22 @@
+{
+  "name": "pta_l6_squared_power_ratio",
+  "app_r_label": "PTA l=6 squared angular-power-spectrum ratio C_6/C_0 (Ch21 Sec 21.1.2, Tier 2)",
+  "formula": "C_6 / C_0 = (4 pi / 13) * phi^-36",
+  "tier": "Tier 2 (quadratic-in-epsilon angular-power-spectrum form)",
+  "predicted": 2.895419285097678e-08,
+  "observed": 2.92e-08,
+  "unit": "(dimensionless C_l ratio)",
+  "app_r_predicted": 2.92e-08,
+  "app_r_precision_str": "(4 pi / 13) * phi^-36 = 0.966644 * 2.9953e-08 = 2.8954e-08; manuscript value 2.9200e-08; agreement 0.84%.",
+  "app_r_precision_ppm": 8418.053048740425,
+  "independent_precision_ppm": 8418.053048740425,
+  "status": "PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "phi": 1.618033988749895,
+    "epsilon_phi_minus_18": 0.00017307027171223924,
+    "epsilon_squared_phi_minus_36": 2.995331895054832e-08,
+    "legendre_normalization_4pi_over_13": 0.966643893412244
+  }
+}

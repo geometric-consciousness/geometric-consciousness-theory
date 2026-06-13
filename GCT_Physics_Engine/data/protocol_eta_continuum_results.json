@@ -1,0 +1,116 @@
+{
+  "schema_version": "0.1",
+  "group": "2I = SL(2,5)",
+  "manifold": "S\u00b2 with binary icosahedral action",
+  "classes": [
+    {
+      "name": "e",
+      "size": 1,
+      "order": 1,
+      "theta": 0.0,
+      "spinor_sign": 1
+    },
+    {
+      "name": "-e",
+      "size": 1,
+      "order": 2,
+      "theta": 0.0,
+      "spinor_sign": -1
+    },
+    {
+      "name": "C5_a",
+      "size": 12,
+      "order": 5,
+      "theta": 1.2566370614359172,
+      "spinor_sign": 1
+    },
+    {
+      "name": "C5_b",
+      "size": 12,
+      "order": 5,
+      "theta": 2.5132741228718345,
+      "spinor_sign": 1
+    },
+    {
+      "name": "C10_a",
+      "size": 12,
+      "order": 10,
+      "theta": 1.2566370614359172,
+      "spinor_sign": -1
+    },
+    {
+      "name": "C10_b",
+      "size": 12,
+      "order": 10,
+      "theta": 2.5132741228718345,
+      "spinor_sign": -1
+    },
+    {
+      "name": "C3",
+      "size": 20,
+      "order": 3,
+      "theta": 2.0943951023931953,
+      "spinor_sign": 1
+    },
+    {
+      "name": "C6",
+      "size": 20,
+      "order": 6,
+      "theta": 2.0943951023931953,
+      "spinor_sign": -1
+    },
+    {
+      "name": "C4",
+      "size": 30,
+      "order": 4,
+      "theta": 3.141592653589793,
+      "spinor_sign": 1
+    }
+  ],
+  "eta_table": [
+    {
+      "n": -3,
+      "conv_A_avg": -0.125,
+      "conv_B_alt": -0.25,
+      "conv_C_over_60": -0.25
+    },
+    {
+      "n": -2,
+      "conv_A_avg": 0.125,
+      "conv_B_alt": 0.25,
+      "conv_C_over_60": 0.25
+    },
+    {
+      "n": -1,
+      "conv_A_avg": -0.125,
+      "conv_B_alt": -0.25,
+      "conv_C_over_60": -0.25
+    },
+    {
+      "n": 0,
+      "conv_A_avg": 0.125,
+      "conv_B_alt": 0.25,
+      "conv_C_over_60": 0.25
+    },
+    {
+      "n": 1,
+      "conv_A_avg": -0.125,
+      "conv_B_alt": -0.25,
+      "conv_C_over_60": -0.25
+    },
+    {
+      "n": 2,
+      "conv_A_avg": 0.125,
+      "conv_B_alt": 0.25,
+      "conv_C_over_60": 0.25
+    },
+    {
+      "n": 3,
+      "conv_A_avg": -0.125,
+      "conv_B_alt": -0.25,
+      "conv_C_over_60": -0.25
+    }
+  ],
+  "matches_to_engine_minus_one": [],
+  "scope_disposition": "This script is the smooth-manifold companion to protocol_aps_index_proof.py. It attempts the Connes\u2013Moscovici Theorem 4.1 character-theoretic evaluation of the equivariant \u03b7-invariant on S\u00b2/2I with line-bundle twist. The conventions surveyed do not all land on -1 cleanly; the closure of Lemma T-McK.1b (App U \u00a7U.7.6.3) requires fixing the precise convention chain matching the AKN C*-algebra's gap-label definition. Numerical evidence on the discrete cage (protocol_aps_index_proof.py) remains stronger than this smooth route, but the smooth route is conceptually closer to the formal Tier 1 target."
+}

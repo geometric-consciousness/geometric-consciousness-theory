@@ -1,0 +1,16 @@
+{
+  "detfk_centre_0p9976_phiphi": 2.1732292697745494,
+  "formA_phiphi": 2.1784575679375995,
+  "formA_transcendental": true,
+  "formA_in_Zphi": false,
+  "formA_pct_vs_centre": 0.24057738572573253,
+  "formB_value": 2.2399865019002134,
+  "formB_algebraic_degree2_over_Q": 100,
+  "formB_algebraic_degree3_over_Q": 20,
+  "formB_transcendental": false,
+  "formB_algebraic": true,
+  "formB_in_Zphi": false,
+  "formB_pct_vs_centre": 3.0717988688137523,
+  "formB_algebraic_degree_gt2_not_transcendental": true,
+  "verdict": "W5: det_FK closed-form classification. (A) phi^phi is TRANSCENDENTAL (Gelfond-Schneider) and excluded from Z[phi] -- indeed from every algebraic-number module; it is an emergent spectral constant, not a Bellissard gap label (consistent with the multiplicative-FK vs additive-K0 distinction). (B) phi*2^(39/100)*3^(5/100) is ALGEBRAIC of degree > 2 over Q (rational powers of integers are algebraic); it lies outside Z[phi] by its algebraic degree, not by transcendence. Both forms therefore lie outside Z[phi] for distinct reasons, as recorded in App TP item 2b. Numerically phi^phi (2.1785) matches the det_FK centre to 0.24%, closer than form (B) (2.2400, 3.07%); (A) is the adopted primary closed form and (B) the finite-cage secondary algebraic diagnostic."
+}

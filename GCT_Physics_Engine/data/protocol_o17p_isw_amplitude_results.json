@@ -1,0 +1,65 @@
+{
+  "results": {
+    "age_today_gyr": 13.80050322340608,
+    "t_origin_gyr": 9.0,
+    "tau_evolve_gyr": 2.0,
+    "tau_lag_gyr": 5.0,
+    "tau_bio_gyr": 4.5,
+    "lambda_bio": 0.0072973525205055605,
+    "delta_w_cosmic_z0": -0.004999999999999893,
+    "ISW_LCDM_amplitude_proxy": 0.5786582183521991,
+    "ISW_cosmic_biogenic_amplitude_proxy": 0.578691588247806,
+    "ISW_perturbation_cosmic_fractional": 5.766771221515987e-05,
+    "ISW_perturbation_cosmic_percent": 0.005766771221515987,
+    "delta_D_over_D_at_z_ISW_peak": 2.1248133747793487e-05,
+    "delta_D_over_D_at_z_ISW_peak_percent": 0.0021248133747793487,
+    "isw_local_by_anchor": {
+      "void": {
+        "delta_bio": -0.7,
+        "ISW_perturbation_local_fractional": 1.7431948811562995e-05,
+        "ISW_perturbation_local_percent": 0.0017431948811562994
+      },
+      "cosmic_mean": {
+        "delta_bio": 0.0,
+        "ISW_perturbation_local_fractional": 5.766771221515987e-05,
+        "ISW_perturbation_local_percent": 0.005766771221515987
+      },
+      "local_sheet": {
+        "delta_bio": 1.5,
+        "ISW_perturbation_local_fractional": 0.00014459797904980284,
+        "ISW_perturbation_local_percent": 0.014459797904980285
+      },
+      "laniakea": {
+        "delta_bio": 3.5,
+        "ISW_perturbation_local_fractional": 0.00026049238296396477,
+        "ISW_perturbation_local_percent": 0.026049238296396476
+      },
+      "filament": {
+        "delta_bio": 7.5,
+        "ISW_perturbation_local_fractional": 0.0004916777763559343,
+        "ISW_perturbation_local_percent": 0.049167777635593435
+      },
+      "cluster_core": {
+        "delta_bio": 30.0,
+        "ISW_perturbation_local_fractional": 0.0017934652999045818,
+        "ISW_perturbation_local_percent": 0.1793465299904582
+      }
+    },
+    "differential_cross_correlation_low_bias_pct": 0.0005766771221515987,
+    "differential_cross_correlation_high_bias_pct": 0.001730031366454796,
+    "current_planck_isw_precision": 0.2,
+    "current_planck_detectability_threshold": 0.2,
+    "cmbs4_spherex_detectability_threshold": 0.04,
+    "detectable_with_current_planck": false,
+    "detectable_with_cmbs4_spherex": false,
+    "differential_detectable_with_cmbs4_spherex": false,
+    "sign_consistent_with_standard_isw": true
+  },
+  "verdict": {
+    "direction": "(ii) MAGNITUDE_DISCLOSURE_BELOW_NEAR_FUTURE_SENSITIVITY",
+    "framing": "Cosmic-mean ISW amplitude shift is 0.01% of LambdaCDM, with biogenic-vs-gravitational differential up to 0.00% of standard ISW under realistic bias differences. Both numbers are below the CMB-S4 + SPHEREx detectability threshold (~4%). V3 Ch12 Sec 12.4.2 carries these explicit magnitudes and the smallest experiment that could detect the signal identified (likely post-CMB-S5 / 30m-class radio + IR spectroscopic surveys, or via population-averaged stacking on stellar-mass-weighted galaxy samples). Sign is CONSISTENT with standard ISW direction -- no sign issue, unlike O.17 closure.",
+    "cosmic_perturbation_pct": 0.005766771221515987,
+    "differential_max_pct": 0.001730031366454796,
+    "sign_consistent": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "top_quark",
+  "app_r_label": "Top quark (m_t)",
+  "formula": "m_t = (v / 2) \u00b7 sqrt(2)",
+  "tier": "Tier 2 mechanism + Tier 3 state-level/QCD-pole residual",
+  "predicted": 174.10358417637832,
+  "observed": 172.57,
+  "unit": "GeV",
+  "app_r_predicted": 174.1,
+  "app_r_precision_str": "0.89%; Tier 2 mechanism + Tier 3 state-level/QCD-pole residual",
+  "app_r_precision_ppm": 8900.0,
+  "independent_precision_ppm": 8886.736839417781,
+  "status": "PASS",
+  "tolerance_ppm": 20000.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "percent_error": 0.8886736839417781,
+    "qcd_correction_note": "Bare value, QCD pole-mass running expected to close residual"
+  }
+}

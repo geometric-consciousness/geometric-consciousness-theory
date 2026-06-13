@@ -1,0 +1,163 @@
+[
+  {
+    "id": "V1.1.1",
+    "volume": 1,
+    "description": "Logic of Being Diagram",
+    "path": "content\\Figures\\Volume_1\\Figure V1.1.1.svg",
+    "status": "\u2713 Available"
+  },
+  {
+    "id": "V1.1.3",
+    "volume": 1,
+    "description": "Triadic Distinction Framework",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V1.1.4",
+    "volume": 1,
+    "description": "Being-Nothingness Continuum",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V1.1.5",
+    "volume": 1,
+    "description": "Epistemic Tier Structure",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V1.7.1",
+    "volume": 1,
+    "description": "Bundle Cohomology",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V1.8.1",
+    "volume": 1,
+    "description": "Time Crystallography",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V1.12.1",
+    "volume": 1,
+    "description": "Experience Lattice",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V2.1.1",
+    "volume": 2,
+    "description": "Cosmic Symmetry Breaking",
+    "path": "content\\Figures\\Volume_2\\Figure V2.1.1.svg",
+    "status": "\u2713 Available"
+  },
+  {
+    "id": "V2.2.1",
+    "volume": 2,
+    "description": "Inflation Potential",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V2.8.1",
+    "volume": 2,
+    "description": "Graviton Spectrum",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V2.12.1",
+    "volume": 2,
+    "description": "CMB Power Spectrum",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V2.14.1",
+    "volume": 2,
+    "description": "Dark Energy Phase Diagram",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V3.1.1",
+    "volume": 3,
+    "description": "Matter Spectrum Hierarchy",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V3.2.1",
+    "volume": 3,
+    "description": "Quark Flavor Symmetry",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V3.3.1",
+    "volume": 3,
+    "description": "Electron Structure Function",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V3.3.4",
+    "volume": 3,
+    "description": "Fine Structure Splitting",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V3.3.5",
+    "volume": 3,
+    "description": "Anomalous Magnetic Moment",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V3.8.1",
+    "volume": 3,
+    "description": "Fractal Resonance Spectrum",
+    "path": "content\\Figures\\Volume_3\\Figure V3.8.1.png",
+    "status": "\u2713 Available"
+  },
+  {
+    "id": "V3.10.1",
+    "volume": 3,
+    "description": "Lepton Mass Ratios",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V3.11.1",
+    "volume": 3,
+    "description": "CKM Matrix Structure",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V3.13.1",
+    "volume": 3,
+    "description": "Neutrino Oscillation Pattern",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V3.21.1",
+    "volume": 3,
+    "description": "Collider Signatures",
+    "path": null,
+    "status": "\u23f3 In Development"
+  },
+  {
+    "id": "V3.22.1",
+    "volume": 3,
+    "description": "Experimental Roadmap",
+    "path": "content\\Figures\\Volume_3\\Figure V3.22.1.svg",
+    "status": "\u2713 Available"
+  }
+]

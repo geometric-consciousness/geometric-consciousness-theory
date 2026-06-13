@@ -1,0 +1,104 @@
+{
+    "tier": "Tier 2 mechanism (Hill-equation C50 estimator on bootstrap synthetic data, with parametric Gaussian z-test gate at Bonferroni-corrected significance) + Tier 3 specific systematic-variance values (calibrated from V3 Ch16 sec 16.3.4)",
+    "inputs": {
+        "N_flies_per_point": 250,
+        "N_concentration_points": 5,
+        "N_F2_generations": 3,
+        "N_anaesthetics": 3,
+        "C50_ref_iso": 0.4,
+        "Hill_slope_ref": 8.0,
+        "dose_grid_frac": [
+            0.5,
+            0.7,
+            1.0,
+            1.4,
+            2.0
+        ],
+        "delta_C50_lower_band": 0.001,
+        "delta_C50_upper_band": 0.002,
+        "delta_C50_gate_C2": 0.002,
+        "p_threshold_per_anaesthetic": 0.0003333333333333333,
+        "systematic_budgets_registered": {
+            "S1_scorer_variance": 0.005,
+            "S2_17O_enrichment": 0.025,
+            "S3_multi_generation": 0.003,
+            "S4_atmosphere_uniformity": 0.02,
+            "S5_curve_fit_method": 0.01,
+            "S6_pharmacokinetics": 0.015
+        },
+        "systematic_budgets_C1": {
+            "S1_scorer_variance": 0.005,
+            "S2_17O_enrichment": 0.0125,
+            "S3_multi_generation": 0.003,
+            "S4_atmosphere_uniformity": 0.01,
+            "S5_curve_fit_method": 0.01,
+            "S6_pharmacokinetics": 0.015
+        },
+        "N_MC_trials": 10000,
+        "pass_target_power": 0.8,
+        "pass_max_false_positive_rate": 0.05
+    },
+    "registered_budget": {
+        "null_distribution": {
+            "n_valid": 10000,
+            "mean": -0.0019438480948129509,
+            "sd": 0.05765386123781631,
+            "p5_p95": [
+                -0.0998835563319791,
+                0.09093326040140152
+            ]
+        },
+        "lower_band_distribution": {
+            "n_valid": 10000,
+            "mean": -0.0010712442974420546,
+            "sd": 0.05808962402796958,
+            "p5_p95": [
+                -0.0990612909135326,
+                0.09254365643809354
+            ]
+        },
+        "upper_band_distribution": {
+            "n_valid": 10000,
+            "mean": -0.0008426381592495446,
+            "sd": 0.05819428676897745,
+            "p5_p95": [
+                -0.0987108353192594,
+                0.09254844250932155
+            ]
+        },
+        "false_positive_rate_at_confidence_99pct_gate_under_null_naive": 0.985,
+        "systematic_only_SD_total": 0.05765386123781631,
+        "systematic_only_SD_relative_to_gate": 57.65386123781631,
+        "statistical_power_at_0p10pct_effect_confidence_99pct_gaussian_gate": 0.0007,
+        "statistical_power_at_0p20pct_effect_confidence_99pct_gaussian_gate": 0.001,
+        "target_met_at_0p10pct_effect": false
+    },
+    "closure_path_C1_halve_S2_S4": {
+        "null_distribution": {
+            "n_valid": 10000,
+            "mean": -0.0007297242088898571,
+            "sd": 0.048012388375582964,
+            "p5_p95": [
+                -0.08131395151352354,
+                0.07517797764724969
+            ]
+        },
+        "systematic_only_SD_total": 0.048012388375582964,
+        "systematic_only_SD_reduction_factor_vs_registered": 1.2008121901125124,
+        "statistical_power_at_0p10pct_effect": 0.0002,
+        "statistical_power_at_0p20pct_effect": 0.0007,
+        "target_met_at_0p10pct_effect": false,
+        "target_met_at_0p20pct_effect": false
+    },
+    "closure_path_C2_widen_gate_to_020_pct": {
+        "false_positive_rate_at_0p20pct_gate_under_null_registered_budget": 0.9712,
+        "statistical_power_at_0p10pct_effect_with_0p20pct_gate_empirical": 0.9716,
+        "statistical_power_at_0p20pct_effect_with_0p20pct_gate_empirical": 0.974,
+        "target_met_at_0p20pct_effect": true,
+        "target_met_at_0p20pct_effect_with_false_positive_gate": false
+    },
+    "closure_path_pass_at_least_one_of_C1_C2": false,
+    "verdict_status": "BELOW_TARGET_POWER_AT_010_PCT_EFFECT_UNDER_BONFERRONI_CORRECTION",
+    "verdict": "Under the \u00a716.3.4 registered systematic-error budget, the empirical statistical power at the predicted lower-bound effect 0.10% under Bonferroni-corrected per-anaesthetic significance (p < 0.0003, parametric Gaussian z-test) is 0.00; at 0.20% true effect it is 0.00. The systematic-only SD = 0.0577 sits at 57.65x the naive 0.10% gate, and the naive 0.10% gate has a 0.98 false-positive rate under the null hypothesis \u2014 the gate is below the noise floor. The C1 closure path (halve S2 + S4 budgets) reduces the systematic SD by 1.20x and recovers power 0.00 at 0.10% and 0.00 at 0.20%. The C2 closure path (widen gate to 0.20%) reports empirical-gate power 0.97 at the 0.20% effect under the registered budget, but its null false-positive rate is 0.97; because the allowed false-positive rate is 0.05, C2 is not a valid closure path unless that gate is also satisfied. No closure path achieves the target with false-positive control.",
+    "pass": false
+}

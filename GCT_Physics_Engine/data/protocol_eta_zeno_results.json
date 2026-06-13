@@ -1,0 +1,351 @@
+{
+  "protocol": "eta_Zeno Formal Calculation Procedure (V3 \u00a713.5)",
+  "chain_definition": "eta_Zeno = (g_single * sqrt(N_bio) / kappa) * eta_F   [V3 \u00a713.1.2 + \u00a713.4.4]",
+  "reference_line": "Apperception verdict = necessary DMC gate (I != 0 AND chiral) + O.21 cooperative radical-pair/Polaron witness + O.23 protected subspace + O.34 ATP-Trp redox regeneration; the eta_Zeno unit line is a robustness reporting line for eligible branches, not an independent phase threshold. [V1 \u00a716.2.6, V1 \u00a717.1.4b, V3 \u00a713.5]",
+  "substrates": [
+    {
+      "substrate_name": "canonical_tubulin",
+      "substrate_inputs": {
+        "name": "canonical_tubulin",
+        "epistemic_note": "V3 \u00a713.1.2 biological substrate; tubulin-Trp radical pair.",
+        "nuclear_spin_I": 0.5,
+        "chirality": "L",
+        "mu_dipole_Debye": 5.0,
+        "m_eff_kg": 9.1093837015e-31,
+        "omega_drive_Hz": 112000000.0,
+        "a_lattice_m": 5e-10,
+        "geom_exponent_phi": -9.0,
+        "f_overlap": 0.01,
+        "f_overlap_plausible_range": [
+          0.0001,
+          0.01
+        ],
+        "f_overlap_provenance": "upper_edge_estimate_pending_O.16_dipole_cage_overlap_calculation",
+        "f_overlap_downstream_impact": "linear on the n_rp=1 beta-Trp sensitivity branch; central n_rp=0 remains pending O.21 (DMC-gate verdict preserved)",
+        "N_dipoles_cooperative": 0.0,
+        "N_dipoles_cooperative_central": 0.0,
+        "N_dipoles_cooperative_sensitivity_branch": 125000000.0,
+        "N_dipoles_cooperative_range": [
+          0.0,
+          125000000.0
+        ],
+        "f_bound_operational_range": [
+          0.0,
+          0.001
+        ],
+        "N_bio_scaling_note": "Ch13:633 canonical separation: central cooperative branch is n_rp=0 pending O.21 assembled-MT lumen-axis closure; the n_rp=1 sensitivity branch uses 1.25e8 beta-Trp radical-pair hosts only. Hydration-shell OH/proton dipoles are bath/environment and are not counted in the cooperative oscillator basis.",
+        "kappa_mode": "geometric",
+        "N_cage_eff": 144,
+        "stiffness_exponent": -18.0,
+        "T2_s": 1e-05,
+        "gamma_phi_Hz": 100000.0,
+        "drive_detuning_Hz": 0.0,
+        "bare_resonance_Hz": 30000000.0,
+        "protected_subspace_resonance_Hz": 112000000.0,
+        "Delta_ST_Hz": 112000000.0,
+        "Delta_ST_effective_Hz": 112000000.0
+      },
+      "chain": {
+        "step1_g_single": {
+          "nuclear_spin_I": 0.5,
+          "chirality": "l",
+          "spin_ok": true,
+          "chiral_ok": true,
+          "chiral_sign": 1.0,
+          "mu_dipole_Cm": 1.66782e-29,
+          "E_phason_V_m": 201.82619392254904,
+          "omega_coupling_rad_s": 31919093.353497587,
+          "u_zpf_m": 2.8680032507318864e-07,
+          "dS_du_inv_m": 26311234.992849667,
+          "f_overlap": 0.01,
+          "g_single_rad_s": 2408637.3669026922,
+          "g_single_Hz": 383346.54305841064
+        },
+        "step2_sqrt_N_bio": {
+          "N_dipoles_cooperative": 0.0,
+          "N_dipoles_cooperative_central": 0.0,
+          "N_dipoles_cooperative_sensitivity_branch": 125000000.0,
+          "sqrt_N": 0.0,
+          "cooperative_basis_note": "Ch13:633 canonical separation: central cooperative branch is n_rp=0 pending O.21 assembled-MT lumen-axis closure; the n_rp=1 sensitivity branch uses 1.25e8 beta-Trp radical-pair hosts only. Hydration-shell OH/proton dipoles are bath/environment and are not counted in the cooperative oscillator basis."
+        },
+        "step3_kappa_cav": {
+          "mode": "geometric",
+          "K_perp_dimless": 0.00017307027171223924,
+          "stiffness_exponent": -18.0,
+          "N_cage_eff": 144.0,
+          "omega_drive_rad_s": 703716754.4041137,
+          "kappa_cav_rad_s": 845.780902035938,
+          "kappa_cav_Hz": 134.61021133174162,
+          "disambiguation_note": "This kappa_cav (~ phi^-18 * omega_drive / N_cage) is the Tavis-Cummings cavity decay rate for the biological substrate. It is a Tier 3 geometric linewidth proxy rather than an experimentally measured operational kappa. It is DISTINCT from the radical-pair recombination rate Gamma_rec (~ 100 MHz) used as the Misra-Sudarshan measurement rate in protocol_decoherence_audit.py. The two protocols answer different physical questions: kappa_cav is the cavity-cooperativity channel, while Gamma_rec is the recombination substrate channel; see step3_kappa docstring."
+        },
+        "step4_eta_TC": {
+          "g_coll_rad_s": 0.0,
+          "kappa_rad_s": 845.780902035938,
+          "eta_TC": 0.0
+        },
+        "step5_eta_F": {
+          "mode": "formula",
+          "T2_s": 1e-05,
+          "gamma_phi_Hz": 100000.0,
+          "drive_detuning_Hz": 0.0,
+          "Delta_ST_Hz": 112000000.0,
+          "bare_resonance_Hz": 30000000.0,
+          "protected_subspace_resonance_Hz": 112000000.0,
+          "protected_subspace_resonance_label": "assumed protected-subspace branch resonance (O.12/O.23 conditional; not an independently verified biological resonance)",
+          "Delta_ST_effective_Hz": 112000000.0,
+          "Delta_ST_convention": "Delta_ST_Hz is the declared input gap for the selected branch; bare_resonance_Hz records the radical-pair hyperfine reference; Delta_ST_effective_Hz/protected_subspace_resonance_Hz are the assumed protected-subspace branch values used for detuning, conditional on O.12/O.23.",
+          "f_detune": 0.0,
+          "eta_F": 1.0
+        }
+      },
+      "eta_TC": 0.0,
+      "eta_TC_range": [
+        0.0,
+        31839669.54429808
+      ],
+      "eta_F": 1.0,
+      "eta_Zeno": 0.0,
+      "eta_Zeno_range": [
+        0.0,
+        31839669.54429808
+      ],
+      "sqrt_N_bio_range": [
+        0.0,
+        11180.339887498949
+      ],
+      "g_single_Hz_plausible_range": [
+        3833.465430584106,
+        383346.54305841064
+      ],
+      "f_overlap_plausible_range_applied": [
+        0.0001,
+        0.01
+      ],
+      "range_propagation_note": "eta_Zeno_range propagates both N_dipoles_cooperative_range and f_overlap_plausible_range where supplied; it is not only an N-range.",
+      "reference_line": 1.0,
+      "dmc_material_pass": true,
+      "cooperative_central_inventory_present": false,
+      "level_II_gate_basis": "Level-II substrate closure requires material DMC pass plus explicit O.21 cooperative radical-pair/Polaron witness, O.23 protected-subspace coherence closure, and O.34 ATP-Trp redox regeneration closure. The eta_Zeno scalar is a robustness reporting line only.",
+      "closure_flags": {
+        "O21_cooperative_radical_pair_closed": false,
+        "O23_protected_subspace_closed": false,
+        "O34_ATP_Trp_redox_regeneration_closed": false
+      },
+      "level_II_closure_flags_met": false,
+      "verdict": "DMC_PASS_O21_PENDING",
+      "cross_engine_verdict_alignment": "eta_Zeno is the robustness margin across the upstream Dual Material Constraint gate (V1 \u00a716.2.6); it represents the Tavis-Cummings cavity-QED cooperativity ratio g_coll / kappa_cav. DMC-positive branches still require the O.21 cooperative radical-pair/Polaron witness, O.23 protected subspace, and O.34 ATP-Trp redox-regeneration condition before Level-II substrate status is assigned; eta_Zeno is reported as a robustness margin rather than an independent Level-II threshold. The Apperception verdict (DMC material pass with O.21/O.23/O.34 pending vs TURING_NULL for material-DMC failure) is DISTINCT from the bare Misra-Sudarshan extension verdict in protocol_decoherence_audit.py, which at canonical biological parameters returns BARE_MS_EXTENSION_INSUFFICIENT (~110 ns diagnostic scale vs the 100 us-0.87 ms conditional band; the 10 ms conservative target remains unreached). The positive branch is therefore a candidate protected-subspace branch conditional on Open Problem O.23 closure (chiral phonon-polariton DFS providing a route toward the conditional operative band used by the Tavis-Cummings framing).",
+      "tier_notes": {
+        "chain_formal": "Tier 2 (V3 \u00a713.1.2 + \u00a713.4.4 + V1 \u00a716.2.6)",
+        "substrate_inputs": "Tier 3 (empirical molecular/lattice parameters)",
+        "dmc_gate_verdict": "material DMC is necessary; Level-II sufficiency is gated by explicit O.21/O.23/O.34 closure flags",
+        "experimental_status": "Tractable on substrate parameters; bench validation via Protocol A-Prime (V3 \u00a713.3.5) pending."
+      }
+    },
+    {
+      "substrate_name": "silicon_28",
+      "substrate_inputs": {
+        "name": "silicon_28",
+        "epistemic_note": "Standard digital silicon; V1 \u00a717.10 Turing Null case.",
+        "nuclear_spin_I": 0.0,
+        "chirality": "achiral",
+        "mu_dipole_Debye": 0.5,
+        "m_eff_kg": 9.1093837015e-31,
+        "omega_drive_Hz": 112000000.0,
+        "a_lattice_m": 5.43e-10,
+        "geom_exponent_phi": -9.0,
+        "f_overlap": 1.0,
+        "N_dipoles_cooperative": 1000000000.0,
+        "kappa_mode": "geometric",
+        "N_cage_eff": 144,
+        "stiffness_exponent": -18.0,
+        "T2_s": 1e-06,
+        "gamma_phi_Hz": 1000000.0,
+        "drive_detuning_Hz": 0.0,
+        "bare_resonance_Hz": 30000000.0,
+        "protected_subspace_resonance_Hz": 112000000.0,
+        "Delta_ST_Hz": 112000000.0,
+        "Delta_ST_effective_Hz": 112000000.0
+      },
+      "chain": {
+        "step1_g_single": {
+          "nuclear_spin_I": 0.0,
+          "chirality": "achiral",
+          "spin_ok": false,
+          "chiral_ok": false,
+          "chiral_sign": 0.0,
+          "mu_dipole_Cm": 1.66782e-30,
+          "E_phason_V_m": 0.0,
+          "omega_coupling_rad_s": 0.0,
+          "u_zpf_m": 0.0,
+          "g_single_rad_s": 0.0,
+          "g_single_Hz": 0.0,
+          "gate_reason": "I=0"
+        },
+        "step2_sqrt_N_bio": {
+          "N_dipoles_cooperative": 1000000000.0,
+          "N_dipoles_cooperative_central": 1000000000.0,
+          "N_dipoles_cooperative_sensitivity_branch": null,
+          "sqrt_N": 31622.776601683792,
+          "cooperative_basis_note": null
+        },
+        "step3_kappa_cav": {
+          "mode": "geometric",
+          "K_perp_dimless": 0.00017307027171223924,
+          "stiffness_exponent": -18.0,
+          "N_cage_eff": 144.0,
+          "omega_drive_rad_s": 703716754.4041137,
+          "kappa_cav_rad_s": 845.780902035938,
+          "kappa_cav_Hz": 134.61021133174162,
+          "disambiguation_note": "This kappa_cav (~ phi^-18 * omega_drive / N_cage) is the Tavis-Cummings cavity decay rate for the biological substrate. It is a Tier 3 geometric linewidth proxy rather than an experimentally measured operational kappa. It is DISTINCT from the radical-pair recombination rate Gamma_rec (~ 100 MHz) used as the Misra-Sudarshan measurement rate in protocol_decoherence_audit.py. The two protocols answer different physical questions: kappa_cav is the cavity-cooperativity channel, while Gamma_rec is the recombination substrate channel; see step3_kappa docstring."
+        },
+        "step4_eta_TC": {
+          "g_coll_rad_s": 0.0,
+          "kappa_rad_s": 845.780902035938,
+          "eta_TC": 0.0
+        },
+        "step5_eta_F": {
+          "mode": "gated_zero",
+          "eta_F": 0.0,
+          "note": "g_single=0 (Dual Material Constraint failure)"
+        }
+      },
+      "eta_TC": 0.0,
+      "eta_TC_range": null,
+      "eta_F": 0.0,
+      "eta_Zeno": 0.0,
+      "eta_Zeno_range": null,
+      "sqrt_N_bio_range": null,
+      "g_single_Hz_plausible_range": null,
+      "f_overlap_plausible_range_applied": null,
+      "range_propagation_note": null,
+      "reference_line": 1.0,
+      "dmc_material_pass": false,
+      "cooperative_central_inventory_present": true,
+      "level_II_gate_basis": "Level-II substrate closure requires material DMC pass plus explicit O.21 cooperative radical-pair/Polaron witness, O.23 protected-subspace coherence closure, and O.34 ATP-Trp redox regeneration closure. The eta_Zeno scalar is a robustness reporting line only.",
+      "closure_flags": {
+        "O21_cooperative_radical_pair_closed": false,
+        "O23_protected_subspace_closed": false,
+        "O34_ATP_Trp_redox_regeneration_closed": false
+      },
+      "level_II_closure_flags_met": false,
+      "verdict": "TURING_NULL",
+      "cross_engine_verdict_alignment": "eta_Zeno is the robustness margin across the upstream Dual Material Constraint gate (V1 \u00a716.2.6); it represents the Tavis-Cummings cavity-QED cooperativity ratio g_coll / kappa_cav. DMC-positive branches still require the O.21 cooperative radical-pair/Polaron witness, O.23 protected subspace, and O.34 ATP-Trp redox-regeneration condition before Level-II substrate status is assigned; eta_Zeno is reported as a robustness margin rather than an independent Level-II threshold. The Apperception verdict (DMC material pass with O.21/O.23/O.34 pending vs TURING_NULL for material-DMC failure) is DISTINCT from the bare Misra-Sudarshan extension verdict in protocol_decoherence_audit.py, which at canonical biological parameters returns BARE_MS_EXTENSION_INSUFFICIENT (~110 ns diagnostic scale vs the 100 us-0.87 ms conditional band; the 10 ms conservative target remains unreached). The positive branch is therefore a candidate protected-subspace branch conditional on Open Problem O.23 closure (chiral phonon-polariton DFS providing a route toward the conditional operative band used by the Tavis-Cummings framing).",
+      "tier_notes": {
+        "chain_formal": "Tier 2 (V3 \u00a713.1.2 + \u00a713.4.4 + V1 \u00a716.2.6)",
+        "substrate_inputs": "Tier 3 (empirical molecular/lattice parameters)",
+        "dmc_gate_verdict": "material DMC is necessary; Level-II sufficiency is gated by explicit O.21/O.23/O.34 closure flags",
+        "experimental_status": "Tractable on substrate parameters; bench validation via Protocol A-Prime (V3 \u00a713.3.5) pending."
+      }
+    },
+    {
+      "substrate_name": "nv_centre_diamond",
+      "substrate_inputs": {
+        "name": "nv_centre_diamond",
+        "epistemic_note": "Protocol A-Prime surrogate (V3 \u00a713.3.5); single NV center in isotopically pure 12C diamond with chiral h-BN cap.",
+        "nuclear_spin_I": 1.0,
+        "chirality": "L",
+        "mu_dipole_Debye": 2.5,
+        "m_eff_kg": 9.1093837015e-31,
+        "omega_drive_Hz": 112000000.0,
+        "a_lattice_m": 3.57e-10,
+        "geom_exponent_phi": -9.0,
+        "f_overlap": 1.0,
+        "N_dipoles_cooperative": 1.0,
+        "kappa_mode": "direct",
+        "kappa_Hz": 1000000.0,
+        "T2_s": 0.001,
+        "gamma_phi_Hz": 1000.0,
+        "drive_detuning_Hz": 0.0,
+        "bare_resonance_Hz": 30000000.0,
+        "protected_subspace_resonance_Hz": 112000000.0,
+        "Delta_ST_Hz": 112000000.0,
+        "Delta_ST_effective_Hz": 112000000.0
+      },
+      "chain": {
+        "step1_g_single": {
+          "nuclear_spin_I": 1.0,
+          "chirality": "l",
+          "spin_ok": true,
+          "chiral_ok": true,
+          "chiral_sign": 1.0,
+          "mu_dipole_Cm": 8.3391e-30,
+          "E_phason_V_m": 201.82619392254904,
+          "omega_coupling_rad_s": 15959546.676748794,
+          "u_zpf_m": 2.8680032507318864e-07,
+          "dS_du_inv_m": 36850469.1776606,
+          "f_overlap": 1.0,
+          "g_single_rad_s": 168672084.51699528,
+          "g_single_Hz": 26844996.012493744
+        },
+        "step2_sqrt_N_bio": {
+          "N_dipoles_cooperative": 1.0,
+          "N_dipoles_cooperative_central": 1.0,
+          "N_dipoles_cooperative_sensitivity_branch": null,
+          "sqrt_N": 1.0,
+          "cooperative_basis_note": null
+        },
+        "step3_kappa_cav": {
+          "mode": "direct",
+          "kappa_cav_Hz": 1000000.0,
+          "kappa_cav_rad_s": 6283185.307179586,
+          "disambiguation_note": "This is the Tavis-Cummings cavity decay rate, NOT the Misra-Sudarshan measurement rate (Gamma_rec) used in protocol_decoherence_audit.py."
+        },
+        "step4_eta_TC": {
+          "g_coll_rad_s": 168672084.51699528,
+          "kappa_rad_s": 6283185.307179586,
+          "eta_TC": 26.844996012493745
+        },
+        "step5_eta_F": {
+          "mode": "formula",
+          "T2_s": 0.001,
+          "gamma_phi_Hz": 1000.0,
+          "drive_detuning_Hz": 0.0,
+          "Delta_ST_Hz": 112000000.0,
+          "bare_resonance_Hz": 30000000.0,
+          "protected_subspace_resonance_Hz": 112000000.0,
+          "protected_subspace_resonance_label": "assumed protected-subspace branch resonance (O.12/O.23 conditional; not an independently verified biological resonance)",
+          "Delta_ST_effective_Hz": 112000000.0,
+          "Delta_ST_convention": "Delta_ST_Hz is the declared input gap for the selected branch; bare_resonance_Hz records the radical-pair hyperfine reference; Delta_ST_effective_Hz/protected_subspace_resonance_Hz are the assumed protected-subspace branch values used for detuning, conditional on O.12/O.23.",
+          "f_detune": 0.0,
+          "eta_F": 1.0
+        }
+      },
+      "eta_TC": 26.844996012493745,
+      "eta_TC_range": null,
+      "eta_F": 1.0,
+      "eta_Zeno": 26.844996012493745,
+      "eta_Zeno_range": null,
+      "sqrt_N_bio_range": null,
+      "g_single_Hz_plausible_range": null,
+      "f_overlap_plausible_range_applied": null,
+      "range_propagation_note": null,
+      "reference_line": 1.0,
+      "dmc_material_pass": true,
+      "cooperative_central_inventory_present": true,
+      "level_II_gate_basis": "Level-II substrate closure requires material DMC pass plus explicit O.21 cooperative radical-pair/Polaron witness, O.23 protected-subspace coherence closure, and O.34 ATP-Trp redox regeneration closure. The eta_Zeno scalar is a robustness reporting line only.",
+      "closure_flags": {
+        "O21_cooperative_radical_pair_closed": false,
+        "O23_protected_subspace_closed": false,
+        "O34_ATP_Trp_redox_regeneration_closed": false
+      },
+      "level_II_closure_flags_met": false,
+      "verdict": "DMC_PASS_COOPERATIVE_INVENTORY_PRESENT_O21_CLOSURE_PENDING",
+      "cross_engine_verdict_alignment": "eta_Zeno is the robustness margin across the upstream Dual Material Constraint gate (V1 \u00a716.2.6); it represents the Tavis-Cummings cavity-QED cooperativity ratio g_coll / kappa_cav. DMC-positive branches still require the O.21 cooperative radical-pair/Polaron witness, O.23 protected subspace, and O.34 ATP-Trp redox-regeneration condition before Level-II substrate status is assigned; eta_Zeno is reported as a robustness margin rather than an independent Level-II threshold. The Apperception verdict (DMC material pass with O.21/O.23/O.34 pending vs TURING_NULL for material-DMC failure) is DISTINCT from the bare Misra-Sudarshan extension verdict in protocol_decoherence_audit.py, which at canonical biological parameters returns BARE_MS_EXTENSION_INSUFFICIENT (~110 ns diagnostic scale vs the 100 us-0.87 ms conditional band; the 10 ms conservative target remains unreached). The positive branch is therefore a candidate protected-subspace branch conditional on Open Problem O.23 closure (chiral phonon-polariton DFS providing a route toward the conditional operative band used by the Tavis-Cummings framing).",
+      "tier_notes": {
+        "chain_formal": "Tier 2 (V3 \u00a713.1.2 + \u00a713.4.4 + V1 \u00a716.2.6)",
+        "substrate_inputs": "Tier 3 (empirical molecular/lattice parameters)",
+        "dmc_gate_verdict": "material DMC is necessary; Level-II sufficiency is gated by explicit O.21/O.23/O.34 closure flags",
+        "experimental_status": "Tractable on substrate parameters; bench validation via Protocol A-Prime (V3 \u00a713.3.5) pending."
+      }
+    }
+  ],
+  "all_self_tests_pass": true,
+  "verdict": "PASS",
+  "pass_": true,
+  "tier_notes": {
+    "chain": "Tier 2 formal structure (no fitted numerical knob once Tier 3 substrate inputs are supplied)",
+    "inputs": "Tier 3 (empirical substrate molecular parameters)",
+    "experiment": "Bench validation via Protocol A-Prime (V3 \u00a713.3.5) pending."
+  },
+  "comparison_to_IIT_phi": "IIT Phi is NP-hard over 2^N-1 system bipartitions (intractable for non-trivial systems). eta_Zeno is closed-form on substrate variables (nuclear-spin lattice, chirality, Tavis-Cummings cavity parameters) that GCT picks out as physically measurable. Tractability is the GCT advantage; substrate-coupling empirical dependence (Tier 3 inputs) is the cost."
+}

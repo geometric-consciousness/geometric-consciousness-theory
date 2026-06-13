@@ -1,0 +1,17 @@
+{
+  "R1_so3_covariant": true,
+  "R2_alpha_R_in_range": true,
+  "R3_coupling_ratio": 11.230178827306762,
+  "R3_pass": true,
+  "R4_step4_zero_cost": true,
+  "alpha_R_typical_eV_Ang": 0.3,
+  "E_RP_eV": 0.3,
+  "E_bio_phason_eV": 0.0267137331126495,
+  "T_body_K": 310.0,
+  "kBT_310K_eV": 0.0267137331126495,
+  "thermal_margin_E_RP_over_kBT": 11.230178827306762,
+  "R3_thermal_margin_min": 10.0,
+  "falsification_threshold_alpha_R": 0.01,
+  "hamiltonian_form": "H_RP = alpha_R * sum_j (d_j Phi_perp) * eps_jkl * k_k * sigma_l",
+  "pass": true
+}

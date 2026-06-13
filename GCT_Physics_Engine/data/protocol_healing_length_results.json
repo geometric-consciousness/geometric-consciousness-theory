@@ -1,0 +1,11 @@
+{
+  "xi_codata_nm": 7.251632774451052,
+  "xi_gct_bare_nm": 7.301648172652302,
+  "target_nm_codata": 7.25,
+  "error_vs_target_pct": 0.022521026911056393,
+  "alpha_branch_spread_pct": 0.6897122311193832,
+  "alpha_codata_used": 0.0072973525692838015,
+  "alpha_gct_bare_used": 0.007272316635418377,
+  "formula": "xi = hbar c / (alpha^2 m_e c^2) = a_0/alpha  [Tier 1 textbook Bohr-Compton formula; Tier 3 lumen-scale match, App K \u00a7K.5]",
+  "pass": true
+}

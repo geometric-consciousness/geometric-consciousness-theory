@@ -1,0 +1,290 @@
+{
+  "target": 1440,
+  "icosahedral_dictionary": {
+    "Order_I_rotational": 60,
+    "Order_Ih_full": 120,
+    "Icosa_vertices": 12,
+    "Icosa_edges": 30,
+    "Icosa_faces": 20,
+    "Dodeca_vertices": 20,
+    "Dodeca_edges": 30,
+    "Dodeca_faces": 12,
+    "Coxeter_h3": 10,
+    "Rank_H3": 3,
+    "Irrep_dim_5": 5,
+    "Irrep_dim_4": 4,
+    "Irrep_dim_3a": 3,
+    "Irrep_dim_3b": 3,
+    "Irrep_dim_1": 1,
+    "N_cage_GCT": 144,
+    "N_C3_GCT": 10,
+    "Inversion_pairs": 2,
+    "Tetrahedral_subgroup_T": 12,
+    "Dihedral_subgroup_D5": 10,
+    "Dihedral_subgroup_D3": 6,
+    "C5_axes": 6,
+    "C3_axes": 10,
+    "C2_axes": 15,
+    "Total_rotation_axes": 31,
+    "EulerC_S2": 2,
+    "Vertices_24cell": 24,
+    "Edges_24cell": 96,
+    "Faces_24cell": 96
+  },
+  "n_factor_pairs": 18,
+  "factor_pairs": [
+    {
+      "a": 1,
+      "b": 1440,
+      "a_icosahedral_names": [
+        "Irrep_dim_1"
+      ],
+      "b_icosahedral_names": [],
+      "verdict": "TRIVIAL",
+      "rationale": "Factor of 1; no topology"
+    },
+    {
+      "a": 2,
+      "b": 720,
+      "a_icosahedral_names": [
+        "Inversion_pairs",
+        "EulerC_S2"
+      ],
+      "b_icosahedral_names": [],
+      "verdict": "PRIME",
+      "rationale": "Factor not in icosahedral dictionary; arithmetic accident"
+    },
+    {
+      "a": 3,
+      "b": 480,
+      "a_icosahedral_names": [
+        "Rank_H3",
+        "Irrep_dim_3a",
+        "Irrep_dim_3b"
+      ],
+      "b_icosahedral_names": [],
+      "verdict": "PRIME",
+      "rationale": "Factor not in icosahedral dictionary; arithmetic accident"
+    },
+    {
+      "a": 4,
+      "b": 360,
+      "a_icosahedral_names": [
+        "Irrep_dim_4"
+      ],
+      "b_icosahedral_names": [],
+      "verdict": "PRIME",
+      "rationale": "Factor not in icosahedral dictionary; arithmetic accident"
+    },
+    {
+      "a": 5,
+      "b": 288,
+      "a_icosahedral_names": [
+        "Irrep_dim_5"
+      ],
+      "b_icosahedral_names": [],
+      "verdict": "PRIME",
+      "rationale": "Factor not in icosahedral dictionary; arithmetic accident"
+    },
+    {
+      "a": 6,
+      "b": 240,
+      "a_icosahedral_names": [
+        "Dihedral_subgroup_D3",
+        "C5_axes"
+      ],
+      "b_icosahedral_names": [],
+      "verdict": "PRIME",
+      "rationale": "Factor not in icosahedral dictionary; arithmetic accident"
+    },
+    {
+      "a": 8,
+      "b": 180,
+      "a_icosahedral_names": [],
+      "b_icosahedral_names": [],
+      "verdict": "PRIME",
+      "rationale": "Factor not in icosahedral dictionary; arithmetic accident"
+    },
+    {
+      "a": 9,
+      "b": 160,
+      "a_icosahedral_names": [],
+      "b_icosahedral_names": [],
+      "verdict": "PRIME",
+      "rationale": "Factor not in icosahedral dictionary; arithmetic accident"
+    },
+    {
+      "a": 10,
+      "b": 144,
+      "a_icosahedral_names": [
+        "Coxeter_h3",
+        "N_C3_GCT",
+        "Dihedral_subgroup_D5",
+        "C3_axes"
+      ],
+      "b_icosahedral_names": [
+        "N_cage_GCT"
+      ],
+      "verdict": "CANONICAL",
+      "rationale": "GCT (N_cage) x (N_C3) = 144 x 10 -- the registered Tier 2 mechanism with Tier 3 integer-handle residual"
+    },
+    {
+      "a": 12,
+      "b": 120,
+      "a_icosahedral_names": [
+        "Icosa_vertices",
+        "Dodeca_faces",
+        "Tetrahedral_subgroup_T"
+      ],
+      "b_icosahedral_names": [
+        "Order_Ih_full"
+      ],
+      "verdict": "INDEPENDENT",
+      "rationale": "Distinct icosahedral structures: Icosa_vertices x Order_Ih_full (provides a dimensional cross-check of the Higgs VEV scale)"
+    },
+    {
+      "a": 15,
+      "b": 96,
+      "a_icosahedral_names": [
+        "C2_axes"
+      ],
+      "b_icosahedral_names": [
+        "Edges_24cell",
+        "Faces_24cell"
+      ],
+      "verdict": "INDEPENDENT",
+      "rationale": "Distinct icosahedral structures: C2_axes x Edges_24cell (provides a dimensional cross-check of the Higgs VEV scale)"
+    },
+    {
+      "a": 16,
+      "b": 90,
+      "a_icosahedral_names": [],
+      "b_icosahedral_names": [],
+      "verdict": "PRIME",
+      "rationale": "Factor not in icosahedral dictionary; arithmetic accident"
+    },
+    {
+      "a": 18,
+      "b": 80,
+      "a_icosahedral_names": [],
+      "b_icosahedral_names": [],
+      "verdict": "PRIME",
+      "rationale": "Factor not in icosahedral dictionary; arithmetic accident"
+    },
+    {
+      "a": 20,
+      "b": 72,
+      "a_icosahedral_names": [
+        "Icosa_faces",
+        "Dodeca_vertices"
+      ],
+      "b_icosahedral_names": [],
+      "verdict": "PRIME",
+      "rationale": "Factor not in icosahedral dictionary; arithmetic accident"
+    },
+    {
+      "a": 24,
+      "b": 60,
+      "a_icosahedral_names": [
+        "Vertices_24cell"
+      ],
+      "b_icosahedral_names": [
+        "Order_I_rotational"
+      ],
+      "verdict": "INDEPENDENT",
+      "rationale": "Distinct icosahedral structures: Vertices_24cell x Order_I_rotational (provides a dimensional cross-check of the Higgs VEV scale)"
+    },
+    {
+      "a": 30,
+      "b": 48,
+      "a_icosahedral_names": [
+        "Icosa_edges",
+        "Dodeca_edges"
+      ],
+      "b_icosahedral_names": [],
+      "verdict": "PRIME",
+      "rationale": "Factor not in icosahedral dictionary; arithmetic accident"
+    },
+    {
+      "a": 32,
+      "b": 45,
+      "a_icosahedral_names": [],
+      "b_icosahedral_names": [],
+      "verdict": "PRIME",
+      "rationale": "Factor not in icosahedral dictionary; arithmetic accident"
+    },
+    {
+      "a": 36,
+      "b": 40,
+      "a_icosahedral_names": [],
+      "b_icosahedral_names": [],
+      "verdict": "PRIME",
+      "rationale": "Factor not in icosahedral dictionary; arithmetic accident"
+    }
+  ],
+  "verdict_breakdown": {
+    "TRIVIAL": 1,
+    "PRIME": 13,
+    "CANONICAL": 1,
+    "INDEPENDENT": 3
+  },
+  "canonical_factorisations": [
+    {
+      "a": 10,
+      "b": 144,
+      "a_icosahedral_names": [
+        "Coxeter_h3",
+        "N_C3_GCT",
+        "Dihedral_subgroup_D5",
+        "C3_axes"
+      ],
+      "b_icosahedral_names": [
+        "N_cage_GCT"
+      ],
+      "verdict": "CANONICAL",
+      "rationale": "GCT (N_cage) x (N_C3) = 144 x 10 -- the registered Tier 2 mechanism with Tier 3 integer-handle residual"
+    }
+  ],
+  "independent_factorisations": [
+    {
+      "a": 12,
+      "b": 120,
+      "a_icosahedral_names": [
+        "Icosa_vertices",
+        "Dodeca_faces",
+        "Tetrahedral_subgroup_T"
+      ],
+      "b_icosahedral_names": [
+        "Order_Ih_full"
+      ],
+      "verdict": "INDEPENDENT",
+      "rationale": "Distinct icosahedral structures: Icosa_vertices x Order_Ih_full (provides a dimensional cross-check of the Higgs VEV scale)"
+    },
+    {
+      "a": 15,
+      "b": 96,
+      "a_icosahedral_names": [
+        "C2_axes"
+      ],
+      "b_icosahedral_names": [
+        "Edges_24cell",
+        "Faces_24cell"
+      ],
+      "verdict": "INDEPENDENT",
+      "rationale": "Distinct icosahedral structures: C2_axes x Edges_24cell (provides a dimensional cross-check of the Higgs VEV scale)"
+    },
+    {
+      "a": 24,
+      "b": 60,
+      "a_icosahedral_names": [
+        "Vertices_24cell"
+      ],
+      "b_icosahedral_names": [
+        "Order_I_rotational"
+      ],
+      "verdict": "INDEPENDENT",
+      "rationale": "Distinct icosahedral structures: Vertices_24cell x Order_I_rotational (provides a dimensional cross-check of the Higgs VEV scale)"
+    }
+  ],
+  "closure_text": "1440 admits 18 factor pairs (a <= b). Of these, 1 matches the canonical GCT-derived (N_cage, N_C3) = (144, 10) pathway; 3 represent INDEPENDENT icosahedral combinatorial pathways with both factors in the icosahedral dictionary; 1 are trivial (one factor = 1); 13 involve arithmetic-coincidence factors. The Higgs VEV derivation is non-unique in factorisation; the canonical muon-defect-saturation pathway is the registered Tier 2 mechanism, while the 1440 handle remains Tier 3 until upstream uniqueness problems close. Other factorisations are dimensional cross-checks at the order-of-magnitude level."
+}

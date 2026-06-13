@@ -1,0 +1,85 @@
+{
+  "pass": true,
+  "a5_ratio": 1.25,
+  "b_quark_coefficient_tier": 2,
+  "b_quark_coefficient_deployment_tier": 3,
+  "b_quark_coefficient_derivation": "Exact A5 representation ratio; absolute bottom-mass deployment inherits Tier 3 quark-sector closure",
+  "pdg_tolerance_gates_percent": {
+    "d": 11.0,
+    "s": 10.0,
+    "c": 5.0,
+    "b": 2.0,
+    "t": 1.0
+  },
+  "per_quark_status": {
+    "u": "DIAGNOSTIC_NO_REGISTERED_GATE",
+    "d": "PASS",
+    "s": "PASS",
+    "c": "PASS",
+    "b": "PASS",
+    "t": "PASS"
+  },
+  "verdict": "PASS",
+  "down_quark_canonical_tuple": {
+    "m_d_MeV": 4.715546058820198,
+    "error_percent": 0.3307672089403852,
+    "gate_percent": 11.0,
+    "status": "PASS"
+  },
+  "predictions_mev": {
+    "u": 2.1646260768276173,
+    "d": 4.715546058820198,
+    "s": 92.78641735750661,
+    "c": 1263.4483681193663,
+    "b": 4134.688463458862,
+    "t": 174103.54882103927
+  },
+  "targets_mev": {
+    "u": 2.16,
+    "d": 4.7,
+    "s": 93.5,
+    "c": 1273.0,
+    "b": 4183.0,
+    "t": 172570.0
+  },
+  "errors_percent": {
+    "u": 0.21417022350079515,
+    "d": 0.3307672089403852,
+    "s": 0.7631899919715427,
+    "c": 0.7503245782116064,
+    "b": 1.1549494750451275,
+    "t": 0.8886531964068292
+  },
+  "down_quark_fk_info": {
+    "status": "POSTDICTION_CONSISTENT_CONDITIONAL",
+    "fk_limit_closed_form": "phi^phi",
+    "fk_limit_value": 2.1784575679375995,
+    "mass_relation": "m_d = m_u * phi^phi",
+    "computed_from_operator": true,
+    "mechanism_implemented": true,
+    "primary_protocol_role": "primary FK-determinant source value for the down-quark numerical gate",
+    "source_branch": "FK-determinant infinite-volume-limit closed form",
+    "engine_refs": [
+      "protocol_quark_mismatch.py",
+      "protocol_md_fk_ih_closed_cages.py"
+    ],
+    "closed_cage_deep_tail": {
+      "N_min": 2000,
+      "cage_count": 17,
+      "mean_det_FK_over_phi_phi": 0.9976,
+      "sample_std": 0.0253,
+      "mean_signed_error_vs_PDG_percent": 0.09
+    },
+    "single_cage_behavior": "single-cage values oscillate within the 11% shell-resonance band; the m_d match is the central tendency of the sequence",
+    "convergence_caveat": "empirical decaying envelope toward phi^phi; rigorous infinite-volume proof open, bundles with O.5",
+    "derived_mass_scorecard_inclusion": "Included with Tier 3 conditional note: postdiction-consistent under the phi^phi infinite-volume-limit identification conditional on O.5.",
+    "tier": "Tier 2 FK-determinant mechanism + Tier 3 phi^phi infinite-volume-limit identification conditional on O.5"
+  },
+  "down_quark_primary_protocol_role": "primary FK-determinant source value for the down-quark numerical gate",
+  "strange_quark_geometry": {
+    "n_channels_dodecahedral": 12,
+    "correction_12alpha": 0.08756823083160001,
+    "geometric_argument": "Strange quark (face defect) couples to 12 surrounding dodecahedral channels. Analogous to muon's 5alpha from A5 H-representation.",
+    "tier": "Tier 2 mechanism + Tier 3 specific coefficient (12) pending O.43 closure"
+  }
+}

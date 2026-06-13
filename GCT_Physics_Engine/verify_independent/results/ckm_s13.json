@@ -1,0 +1,20 @@
+{
+  "name": "ckm_s13",
+  "app_r_label": "CKM s13",
+  "formula": "s13 = phi^-(11 + phi^-1)",
+  "tier": "Tier 3 (ansatz pending QLQCD-1L K-theoretic gap label)",
+  "predicted": 0.003732282361359376,
+  "observed": 0.003732,
+  "unit": "(dimensionless)",
+  "app_r_predicted": 0.00373,
+  "app_r_precision_str": "0.01%",
+  "app_r_precision_ppm": 76.0,
+  "independent_precision_ppm": 75.65952823577233,
+  "status": "PASS",
+  "tolerance_ppm": 5000.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "percent_error": 0.007565952823577233,
+    "precision_gate_percent": 0.5
+  }
+}

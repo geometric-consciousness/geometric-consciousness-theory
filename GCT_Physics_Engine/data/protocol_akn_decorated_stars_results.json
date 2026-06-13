@@ -1,0 +1,30 @@
+{
+  "convention": "radius-2 local patches / I_h; window-sampling exact enumeration (every positive-volume window cell sampled)",
+  "ih_group_order": 120,
+  "grid_scan": [
+    {
+      "grid_axis": 90,
+      "window_pts": 418928,
+      "bare": 9,
+      "decorated": 101
+    },
+    {
+      "grid_axis": 130,
+      "window_pts": 1272560,
+      "bare": 9,
+      "decorated": 101
+    },
+    {
+      "grid_axis": 170,
+      "window_pts": 2858312,
+      "bare": 9,
+      "decorated": 101
+    }
+  ],
+  "bare_star_count": 9,
+  "bare_crosscheck_ok": true,
+  "V_AKN_radius2_Ih": 101,
+  "saturated_under_refinement": true,
+  "cited_penrose_figure": "~30-40 (App Z Z.3)",
+  "verdict": "V_AKN closed: |V_AKN| = 101 radius-2 decorated stars under I_h (bare-9 cross-check OK), saturated under grid refinement. This EXCEEDS the cited Penrose-style ~30-40: the 6D-AKN radius-2 I_h-reduced acceptance set is larger than the 2D-Penrose figure. It is the nearest-neighbour Metropolis acceptance-set size for the App Z Z.3.1 viability check (the QLQCD-1L update locality); larger-radius decorations refine it further."
+}

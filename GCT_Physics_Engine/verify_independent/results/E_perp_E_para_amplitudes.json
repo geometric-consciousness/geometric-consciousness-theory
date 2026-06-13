@@ -1,0 +1,30 @@
+{
+  "name": "E_perp_E_para_amplitudes",
+  "app_r_label": "E_\u2225 / E_\u22a5 projection amplitudes (Tier 1 \u2014 cut-and-project algebra)",
+  "formula": "|E_\u2225|\u00b2 = (1+\u03c6\u00b2)/5; |E_\u22a5|\u00b2 = (1+\u03c6\u207b\u00b2)/5; |E_\u22a5|\u00b2/|E_\u2225|\u00b2 = \u03c6\u207b\u00b2",
+  "tier": "Tier 1 (algebraic identity from \u03c6 minimal polynomial)",
+  "predicted": 0.38196601125010515,
+  "observed": 0.38196601125010515,
+  "unit": "(dimensionless)",
+  "app_r_predicted": 0.38196601125010515,
+  "app_r_precision_str": "|E_\u2225|\u00b2 = 0.723607 (vs stated 0.7236, +0.0009%); |E_\u22a5|\u00b2 = 0.276393 (vs stated 0.2764, +0.0025%); ratio = 0.3819660113 (vs expected \u03c6\u207b\u00b2 = 0.3819660113, 0.00e+00%)",
+  "app_r_precision_ppm": 0.0,
+  "independent_precision_ppm": 0.0,
+  "status": "PASS",
+  "tolerance_ppm": 1.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "phi": 1.618033988749895,
+    "E_para_sq_computed": 0.7236067977499789,
+    "E_para_sq_stated": 0.7236,
+    "E_perp_sq_computed": 0.276393202250021,
+    "E_perp_sq_stated": 0.2764,
+    "ratio_computed": 0.38196601125010515,
+    "ratio_expected_phi_minus_2": 0.38196601125010515,
+    "sum_amplitudes": 1.0,
+    "err_para_pct": 0.000939434767677603,
+    "err_perp_pct": 0.002459388559685473,
+    "err_ratio_pct": 0.0,
+    "derivation_note": "Standard H_4/H_3 cut-and-project amplitudes from the icosahedral projection R^6 \u2192 E_\u2225 \u2295 E_\u22a5. The ratio E_\u22a5\u00b2/E_\u2225\u00b2 = \u03c6\u207b\u00b2 is the algebraic source of: (a) sin\u00b2\u03b8_W^bare = \u03c6\u207b\u00b3 via volume cube (V3 Ch04 \u00a74.3.1, Theorem U.9), (b) the App ZN gauge-sector coupling weights Z_1 = 41/6 / (120\u00b7|E_\u22a5|\u00b2) and Z_2 = 19/6 / (18\u00b7|E_\u2225|\u00b2). Tier 1: pure algebraic identity from \u03c6\u00b2 = \u03c6 + 1."
+  }
+}

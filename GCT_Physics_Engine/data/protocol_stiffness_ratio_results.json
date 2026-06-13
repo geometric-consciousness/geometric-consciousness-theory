@@ -1,0 +1,11 @@
+{
+  "protocol": "protocol_stiffness_ratio.py",
+  "pass": true,
+  "tier_discipline": "Tier 2 canonical Coxeter integer + Tier 3 RG-map link pending O.15",
+  "tier_2_integer_anchor_check": "PASS",
+  "d18_rg_counting": 18,
+  "det_ratio": 0.05572809000084119,
+  "stiffness_ratio": 0.0001730702717122391,
+  "target_ratio": 0.00017307027171223924,
+  "phi": 1.618033988749895
+}

@@ -1,0 +1,35 @@
+{
+  "algebra_c_dim": 2,
+  "algebra_h_dim": 4,
+  "algebra_m3c_dim": 18,
+  "total_gct_dim": 24,
+  "total_connes_dim": 24,
+  "tier": "Tier 3 structural framework + necessary 24-dimensional algebra count; full spectral-triple identification requires O.32 full closure and O.5",
+  "ko_dimension_check_performed": false,
+  "ko_dimension_check_scope": "This protocol does not compute the KO signs; see protocol_o32_ko_dimension.py, protocol_o32b_ko6_chiral_doubling.py, and protocol_o32c_cage_spinor_ko6.py.",
+  "ko_dimension_load_bearing_invariant": "KO-dim(A_F) = 6 mod 8 for SM: bare-cage diagonal route eliminated; cage x spinor realizes the (+,+,-) sign datum; full A_F spectral-triple closure bundles with O.5.",
+  "necessary_condition_pass": true,
+  "spectral_triple_identification_pass": false,
+  "spectral_triple_identification_status": "partial_ko_sign_datum__full_af_representation_first_order_order_zero_and_dressed_dirac_open",
+  "dirac_operator_physical": "152-node I_h-closed cage adjacency (deterministic orbit-union cut-and-project lattice)",
+  "dirac_operator_construction": "cage_builder.build_canonical_cage(size=152) plus golden-weighted perp-space adjacency",
+  "dirac_operator_deviation_from_144": "The top-144-by-perp-norm cage is asymmetric under I_h; D_F uses the 152-node orbit-union cage for exact I_h closure.",
+  "d_f_eigenvalues_top3": [
+    37.15487519493043,
+    17.457356156876937,
+    14.047129703963504
+  ],
+  "d_f_computed_ratios": {
+    "ratio_12": 2.128322001398482,
+    "ratio_23": 1.2427703399044725
+  },
+  "physical_mass_ratios": {
+    "m_tau_over_m_mu": 16.81743327654742,
+    "m_mu_over_m_e": 206.77103718199606
+  },
+  "bare_adjacency_reproduces_mass_ratios": false,
+  "d_f_status": "TIER3_BARE_ADJACENCY_NOT_DRESSED_DIRAC__DRESSED_DIRAC_BUNDLES_WITH_O.5",
+  "verdict": "NECESSARY_CONDITION_PASS__FULL_SPECTRAL_TRIPLE_OPEN",
+  "pass_24dim_necessary_condition_only": true,
+  "pass": false
+}

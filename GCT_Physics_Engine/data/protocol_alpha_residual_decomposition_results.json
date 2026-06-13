@@ -1,0 +1,33 @@
+{
+  "N_cage": 144,
+  "R_eff_mean_parallel_norm": 2.8353864324575593,
+  "perp_shell_radii": [
+    0.1669,
+    0.284,
+    0.3979,
+    0.4595,
+    0.4889
+  ],
+  "perp_shell_vertex_counts": {
+    "0.1669": 12,
+    "0.2840": 30,
+    "0.3979": 20,
+    "0.4595": 30,
+    "0.4889": 52
+  },
+  "bilayer_72_plus_72_found": false,
+  "S_discrete": 3170.4085615073304,
+  "S_uniform_continuous_shell": 1815.6255320506675,
+  "shape_factor_ratio": 1.7461797631400877,
+  "shape_deviation_fractional": 0.7461797631400877,
+  "shape_deviation_ppm": 746179.7631400877,
+  "alpha_inv_bare": 137.50776405003785,
+  "alpha_inv_with_eta_analytic": 137.03030653597523,
+  "alpha_inv_with_shape_factor": 239.27954821000284,
+  "shape_factor_shift_ppm_NAIVE": 746148.7614497476,
+  "target_residual_ppm_per_App_M_3_1": 41.6,
+  "implied_1_loop_QLQCD_target_ppm_NAIVE": -746190.3026583276,
+  "diagnostic_outcome": "UNRESOLVED -- naive Madelung diagnostic overshoots; structural mismatch identified (engine cage is not App M Sec M.7 bilayer).",
+  "classification": "The engine 144-node cage built by the GCTLattice(R=2, perp_cutoff=2.0) pipeline + top-144-by-perp-norm selection produces 5 perp-space shells with vertex counts that do NOT admit a (72, 72) bilayer split. App M Sec M.7 derives eta_analytic = 1 - 1/(2N) by assuming a clean 2-shell bilayer structure; the O.19 shape-factor calculation therefore requires an explicit map between the analytic bilayer and the engine cage construction.",
+  "tier": "Tier 3 diagnostic (structural mismatch, magnitude unresolved)."
+}

@@ -1,0 +1,21 @@
+{
+  "name": "cabibbo_angle",
+  "app_r_label": "Cabibbo angle (\u03b8_C)",
+  "formula": "sin(\u03b8_C) = \u03c6^-3 \u00b7 (1 - 5\u03b1); \u03b8_C = arcsin(\u00b7)",
+  "tier": "Tier 2 bare + Tier 3 lepton-to-hadron transfer correction pending O.5",
+  "predicted": 13.1472608283522,
+  "observed": 13.04,
+  "unit": "degrees",
+  "app_r_predicted": 13.147,
+  "app_r_precision_str": "0.82%",
+  "app_r_precision_ppm": 8200.0,
+  "independent_precision_ppm": 8225.523646641195,
+  "status": "TENSION",
+  "tolerance_ppm": 5000.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "sin_theta_C_pred": 0.22745462119500365,
+    "percent_error": 0.8225523646641195,
+    "precision_gate_percent": 0.5
+  }
+}

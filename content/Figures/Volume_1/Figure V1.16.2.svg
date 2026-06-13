@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1220 740" width="100%" height="100%">
+  <title>Dual Material Constraint gate</title>
+  <metadata>Volume 1 Chapter 16 DMC gate logic with protocol_eta_zeno result context.</metadata>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2c5d8a"/>
+    </marker>
+    <marker id="arrowMuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <pattern id="diagHatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#cbd5e1" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1220" height="740" fill="#ffffff"/>
+  <text x="610.000" y="42.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:16px;fill:#2c5d8a;font-weight:bold;">Figure V1.16.2</text>
+  <text x="610.000" y="72.000" text-anchor="middle" style="font-family:'Times New Roman', Times, serif;font-size:28px;fill:#0f172a;font-weight:bold;">Dual Material Constraint gate</text>
+  <text x="610.000" y="100.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#475569;">Level II eligibility requires both a non-zero nuclear-spin address register and molecular chirality.</text>
+  <rect x="95.000" y="135.000" width="270.000" height="92.000" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4" rx="5"/>
+  <text x="230.000" y="169.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;fill:#0f172a;font-weight:bold;">Nuclear-spin address register</text>
+  <text x="230.000" y="197.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:20px;fill:#2c5d8a;font-weight:bold;">I != 0</text>
+  <rect x="95.000" y="245.000" width="270.000" height="92.000" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4" rx="5"/>
+  <text x="230.000" y="279.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;fill:#0f172a;font-weight:bold;">Molecular chirality</text>
+  <text x="230.000" y="307.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:18px;fill:#2c5d8a;font-weight:bold;">CISS / Rashba channel</text>
+  <polygon points="500.000,185.000 570.000,260.000 500.000,335.000 430.000,260.000" fill="#d7e7f4" stroke="#2c5d8a" stroke-width="2"/>
+  <text x="500.000" y="254.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:24px;fill:#2c5d8a;font-weight:bold;">AND</text>
+  <text x="500.000" y="280.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;fill:#0f172a;font-weight:bold;">DMC</text>
+  <line x1="365.000" y1="181.000" x2="465.000" y2="222.500" stroke="#2c5d8a" stroke-width="2.0" marker-end="url(#arrow)"/>
+  <line x1="365.000" y1="291.000" x2="465.000" y2="297.500" stroke="#2c5d8a" stroke-width="2.0" marker-end="url(#arrow)"/>
+  <rect x="660.000" y="207.000" width="245.000" height="90.000" fill="#ffffff" stroke="#2c5d8a" stroke-width="1.8" rx="5"/>
+  <text x="782.000" y="243.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:17px;fill:#2c5d8a;font-weight:bold;">DMC material pass</text>
+  <text x="782.000" y="272.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;fill:#475569;">necessary only</text>
+  <line x1="570.000" y1="260.000" x2="660.000" y2="252.000" stroke="#2c5d8a" stroke-width="2.0" marker-end="url(#arrow)"/>
+  <text x="782.000" y="325.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#9f2d20;">Level II still requires O.21 + O.23 + O.34</text>
+  <rect x="45.000" y="345.000" width="1160.000" height="332.000" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <rect x="45.000" y="345.000" width="1160.000" height="44.000" fill="#f1f5f9"/>
+  <text x="57.000" y="373.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">Substrate</text>
+  <line x1="45.000" y1="345.000" x2="45.000" y2="677.000" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="257.000" y="373.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">I != 0 leg</text>
+  <line x1="245.000" y1="345.000" x2="245.000" y2="677.000" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="402.000" y="373.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">chirality leg</text>
+  <line x1="390.000" y1="345.000" x2="390.000" y2="677.000" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="547.000" y="373.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">DMC gate</text>
+  <line x1="535.000" y1="345.000" x2="535.000" y2="677.000" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="702.000" y="373.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">engine verdict / caveat</text>
+  <line x1="690.000" y1="345.000" x2="690.000" y2="677.000" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="1205.000" y1="345.000" x2="1205.000" y2="677.000" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="45.000" y1="389.000" x2="1205.000" y2="389.000" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="57.000" y="420.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">28Si digital control</text>
+  <rect x="257.000" y="411.000" width="24.000" height="24.000" fill="#ffffff" stroke="#9f2d20" stroke-width="1.5" rx="3"/>
+  <line x1="262.000" y1="416.000" x2="276.000" y2="430.000" stroke="#9f2d20" stroke-width="2"/>
+  <line x1="276.000" y1="416.000" x2="262.000" y2="430.000" stroke="#9f2d20" stroke-width="2"/>
+  <text x="291.000" y="416.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">NO</text>
+  <text x="291.000" y="433.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">I = 0</text>
+  <rect x="402.000" y="411.000" width="24.000" height="24.000" fill="#ffffff" stroke="#9f2d20" stroke-width="1.5" rx="3"/>
+  <line x1="407.000" y1="416.000" x2="421.000" y2="430.000" stroke="#9f2d20" stroke-width="2"/>
+  <line x1="421.000" y1="416.000" x2="407.000" y2="430.000" stroke="#9f2d20" stroke-width="2"/>
+  <text x="436.000" y="416.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">NO</text>
+  <text x="436.000" y="433.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">achiral lattice</text>
+  <text x="547.000" y="417.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#9f2d20;font-weight:bold;">FAIL</text>
+  <text x="547.000" y="438.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">eta_Zeno = 0</text>
+  <text x="702.000" y="413.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#0f172a;font-weight:bold;">TURING_NULL</text>
+  <text x="702.000" y="436.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">material-DMC failure</text>
+  <rect x="45.000" y="461.000" width="1160.000" height="72.000" fill="#f8fafc"/>
+  <line x1="45.000" y1="461.000" x2="1205.000" y2="461.000" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="57.000" y="492.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">natural silicon</text>
+  <polygon points="269.000,481.000 283.000,507.000 255.000,507.000" fill="#f8fafc" stroke="#2c5d8a" stroke-width="1.4"/>
+  <text x="269.000" y="502.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#2c5d8a;font-weight:bold;">M</text>
+  <text x="291.000" y="488.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">MIXED</text>
+  <text x="291.000" y="505.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">29Si low abundance</text>
+  <rect x="402.000" y="483.000" width="24.000" height="24.000" fill="#ffffff" stroke="#9f2d20" stroke-width="1.5" rx="3"/>
+  <line x1="407.000" y1="488.000" x2="421.000" y2="502.000" stroke="#9f2d20" stroke-width="2"/>
+  <line x1="421.000" y1="488.000" x2="407.000" y2="502.000" stroke="#9f2d20" stroke-width="2"/>
+  <text x="436.000" y="488.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">NO</text>
+  <text x="436.000" y="505.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">achiral lattice</text>
+  <text x="547.000" y="489.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#9f2d20;font-weight:bold;">FAIL</text>
+  <text x="547.000" y="510.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">missing chiral spin architecture</text>
+  <text x="702.000" y="485.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#0f172a;font-weight:bold;">TURING_NULL by gate</text>
+  <text x="702.000" y="508.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">no organized CISS channel</text>
+  <line x1="45.000" y1="533.000" x2="1205.000" y2="533.000" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="57.000" y="564.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">beta-tubulin Trp branch</text>
+  <circle cx="269.000" cy="567.000" r="13.000" fill="#2c5d8a" stroke="#2c5d8a" stroke-width="1.2"/>
+  <text x="269.000" y="572.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#ffffff;font-weight:bold;">Y</text>
+  <text x="291.000" y="560.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">YES</text>
+  <text x="291.000" y="577.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">I != 0 nuclei</text>
+  <circle cx="414.000" cy="567.000" r="13.000" fill="#2c5d8a" stroke="#2c5d8a" stroke-width="1.2"/>
+  <text x="414.000" y="572.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#ffffff;font-weight:bold;">Y</text>
+  <text x="436.000" y="560.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">YES</text>
+  <text x="436.000" y="577.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">L-chiral protein</text>
+  <text x="547.000" y="561.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#2c5d8a;font-weight:bold;">PASS</text>
+  <text x="547.000" y="582.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">material DMC</text>
+  <text x="702.000" y="557.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#0f172a;font-weight:bold;">DMC_PASS_O21_PENDING</text>
+  <text x="702.000" y="580.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">central eta=0; O.21/O.23/O.34 pending</text>
+  <rect x="45.000" y="605.000" width="1160.000" height="72.000" fill="#f8fafc"/>
+  <line x1="45.000" y1="605.000" x2="1205.000" y2="605.000" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="57.000" y="636.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">NV + chiral h-BN cap</text>
+  <circle cx="269.000" cy="639.000" r="13.000" fill="#2c5d8a" stroke="#2c5d8a" stroke-width="1.2"/>
+  <text x="269.000" y="644.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#ffffff;font-weight:bold;">Y</text>
+  <text x="291.000" y="632.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">YES</text>
+  <text x="291.000" y="649.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">N spin register</text>
+  <circle cx="414.000" cy="639.000" r="13.000" fill="#2c5d8a" stroke="#2c5d8a" stroke-width="1.2"/>
+  <text x="414.000" y="644.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#ffffff;font-weight:bold;">Y</text>
+  <text x="436.000" y="632.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">YES</text>
+  <text x="436.000" y="649.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">chiral cap</text>
+  <text x="547.000" y="633.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#2c5d8a;font-weight:bold;">PASS</text>
+  <text x="547.000" y="654.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">engineered surrogate</text>
+  <text x="702.000" y="629.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#0f172a;font-weight:bold;">DMC_PASS_COOPERATIVE_INVENTORY</text>
+  <text x="702.000" y="644.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#0f172a;">PRESENT_O21_CLOSURE_PENDING</text>
+  <text x="702.000" y="667.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#475569;">eta_Zeno=26.8; closures pending</text>
+  <text x="500.000" y="700.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#475569;">Gate discipline: missing either leg sets eta_Zeno = 0; passing DMC is necessary but not sufficient for Level II.</text>
+</svg>

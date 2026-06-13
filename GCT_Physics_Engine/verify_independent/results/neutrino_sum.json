@@ -1,0 +1,27 @@
+{
+  "name": "neutrino_sum",
+  "app_r_label": "\u03a3 m_\u03bd (NO)",
+  "formula": "\u03a3m_\u03bd = m_1 + sqrt(m_1\u00b2 + \u0394m\u00b2_21) + sqrt(m_1\u00b2 + \u0394m\u00b2_31)",
+  "tier": "Tier 2 / Tier 3 (consistency check)",
+  "predicted": 0.08525548062002636,
+  "observed": null,
+  "unit": "eV",
+  "app_r_predicted": 0.0853,
+  "app_r_precision_str": "< 0.12 (Planck 2018) CONSISTENT; < 0.072 (Planck+DESI 2024) ~2\u03c3 TENSION",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": null,
+  "status": "TENSION",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "m1_eV": 0.015306114553413084,
+    "m2_eV": 0.017563517378993417,
+    "m3_eV": 0.05238584868761986,
+    "planck_2018_bound_eV": 0.12,
+    "planck_2018_status": "PASS (\u03a3 < 0.12)",
+    "desi_2024_bound_eV": 0.072,
+    "desi_2024_status": "TENSION (\u03a3 > 0.072)",
+    "desi_excess_eV": 0.013255480620026364,
+    "note": "\u03a3m_\u03bd > 0.072 eV puts GCT in 2\u03c3 tension with Planck+DESI 2024. App R notes this is the most urgent active falsification risk."
+  }
+}

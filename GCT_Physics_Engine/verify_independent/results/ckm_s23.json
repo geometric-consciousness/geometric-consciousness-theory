@@ -1,0 +1,20 @@
+{
+  "name": "ckm_s23",
+  "app_r_label": "CKM s23",
+  "formula": "s23 = phi^-(6 + phi^-1)",
+  "tier": "Tier 3 (ansatz pending QLQCD-1L K-theoretic gap label)",
+  "predicted": 0.04139164566553407,
+  "observed": 0.0418,
+  "unit": "(dimensionless)",
+  "app_r_predicted": 0.0414,
+  "app_r_precision_str": "0.98%",
+  "app_r_precision_ppm": 9800.0,
+  "independent_precision_ppm": 9769.242451337963,
+  "status": "TENSION",
+  "tolerance_ppm": 5000.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "percent_error": 0.9769242451337963,
+    "precision_gate_percent": 0.5
+  }
+}

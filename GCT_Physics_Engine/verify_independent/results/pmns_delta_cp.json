@@ -1,0 +1,23 @@
+{
+  "name": "pmns_delta_cp",
+  "app_r_label": "PMNS delta_cp",
+  "formula": "delta_CP = 2 pi * phi^-1 (= 360 deg / phi)",
+  "tier": "Tier 2 parametric phase mechanism + Tier 3 PMNS-sector magnitude/disposition pending O.7 and theta_23 tension resolution",
+  "predicted": 222.49223594996212,
+  "observed": 232.0,
+  "unit": "degrees",
+  "app_r_predicted": 222.5,
+  "app_r_precision_str": "4.10%",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": 40981.74159499085,
+  "status": "OPEN_CONDITIONAL",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "percent_error": 4.098174159499085,
+    "gap_deg": 9.507764050037878,
+    "pdg_tolerance_deg": 35.0,
+    "sigma_vs_pdg_tolerance": 0.27165040142965363,
+    "status_rule": "PASS if within 1 sigma PDG/NuFit-scale tolerance; otherwise TENSION; delta_CP is downgraded to OPEN_CONDITIONAL because the phase mechanism is Tier 2 but PMNS-sector magnitude/disposition remains Tier 3 pending O.7 and theta_23 tension resolution"
+  }
+}

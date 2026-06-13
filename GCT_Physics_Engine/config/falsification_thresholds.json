@@ -1,0 +1,153 @@
+{
+    "meta": {
+        "theory_name": "Geometric Consciousness Theory (GCT)",
+        "claim": "5-postulate (P1-P5) + A1 m_e dimensional anchor for the bare topology/exponent sub-sector, A2 alpha_2^{-1}(M_GUT) Tier-3 calibrated native-RGE boundary, and A3 measured low-energy alpha for corrected precision-comparison rows; the zero-continuous-free-parameter claim applies only to the bare topology/exponent sub-sector."
+    },
+    "fine_structure_constant": {
+        "prediction": 137.0303,
+        "formula": "360\u00b7phi^-2\u00b7(1 \u2212 1/(2\u00b7N))",
+        "experiment": 137.035999178,
+        "tolerance_ppm": 50,
+        "verdict_rule": "|pred \u2212 obs| / obs < 50e-6",
+        "status": "LOCKED"
+    },
+    "electron_mass_mev": {
+        "prediction": 0.5115131004209055,
+        "formula": "M_Planck \u00b7 phi^-107 \u00b7 (1 \u2212 5\u00b7alpha)",
+        "experiment": 0.51099895069,
+        "residual_ppm": 1006.1659230634663,
+        "tolerance_ppm": 1000,
+        "verdict_rule": "|pred \u2212 obs| / obs < 1000e-6",
+        "status": "LOCKED"
+    },
+    "muon_g_minus_2": {
+        "prediction_correction": 2.5065499655881543e-09,
+        "formula": "(1/5)\u00b7(alpha_A3/pi)^3",
+        "alpha_anchor": "A3 measured low-energy alpha; bare GCT alpha remains O.19/O.5.",
+        "experiment_gap": 3.75000000019457e-10,
+        "wp2025_gap": 3.75000000019457e-10,
+        "target_gap": 3.75000000019457e-10,
+        "tolerance_1sigma": 6.3741979887669e-10,
+        "verdict_rule": "WP2025 arbitration: no anomaly-gap closure; report pred_correction vs wp2025_gap and HVP-synthesis disposition",
+        "disposition_text": "Tier 2 mechanism + Tier 3 1/5 coefficient + A3 + Tier 4 calibration-survival conjecture (HVP arbitration); Tension under WP2025; falsification conditional on long-term HVP-synthesis arbitration",
+        "wp2025_precision_summary": "WP2025 gap (a_exp \u2212 a_SM) = +37.5\u00d710\u207b\u00b9\u00b9 at 0.59\u03c3 (no significant anomaly); GCT prediction overshoots the gap by ~6.7\u00d7 and sits 3.34\u03c3 above SM under lattice-QCD HVP. Channel disposition: Tension under WP2025; falsification conditional on long-term HVP-synthesis arbitration (Ch08 \u00a78.7.3 / App G / App R \u00a7R.2).",
+        "bmw_contingency": "Tension under WP2025; falsification conditional on long-term HVP-synthesis arbitration",
+        "status": "LOCKED"
+    },
+    "lamb_shift_correction": {
+        "prediction_MHz": 0.0,
+        "formula": "Suppressed by (l_Planck / a_Bohr)^3 ~ 2.9e-74",
+        "verdict_rule": "GCT contribution < 1 Hz (unmeasurable)",
+        "status": "LOCKED"
+    },
+    "xrism_line_fwhm_ev": {
+        "prediction": 9.7,
+        "formula": "sqrt((E0\u00b7v_turb/c)^2 + sigma_inst^2) \u00b7 2.355",
+        "contrast_fwhm": 36.6,
+        "falsification": "Full Protocol C package: terminal no-line non-detection at the Bulbul-level empirical-derived floor Gamma <= 2.0e-28 s^-1 in >=94 Ms equivalent stacked exposure, OR deconvolved intrinsic line-width residual W_int > 20 eV after instrument and registered kinematic/turbulence deconvolution, OR morphology failing stress-gated rho_above_sigma_crit^2 by Delta chi^2 >= 9 vs smooth rho and smooth rho^2 templates inside the numerically frozen sigma_crit = 0.53 keV cm^-3 aperture. The 26 Ms / Gamma <= 3.8e-28 s^-1 stack remains a morphology-linewidth milestone; background-limited Gamma <= 1.2e-30 s^-1 is theoretical, not operative.",
+        "status": "LOCKED"
+    },
+    "chirality": {
+        "prediction": "Net chirality = 1 per generation",
+        "mechanism": "Domain-wall fermion at quasicrystal boundary",
+        "simulation_result": "N_L \u2212 N_R = 1 (Fibonacci chain N=89)",
+        "status": "LOCKED"
+    },
+    "imp01_pipeline_gate": {
+        "claim_registry_claim_id": "C_IMP01_PIPELINE_GATE",
+        "prediction_w_behavior": "continuous phantom-side IMP-01 curve; no literal direct crossing in the scanned window",
+        "diagnostic_cpl_target": "headline_run (w0_CPL_fit, wa_CPL_fit, z_cross_CPL_fit) is a projection diagnostic, not a DESI support gate",
+        "tier": 3,
+        "falsification": "DESI DR2 + Euclid DR1 produce a 3sigma+ CPL detection of w_0 > -1 AND w_a < 0 with no GCT-native biogenic-channel likelihood or fingerprint closure",
+        "status": "ACTIVE_TENSION_PENDING_NATIVE_LIKELIHOOD"
+    },
+    "shapley_biogenic_dipole": {
+        "prediction_delta_w_w": 0.0002,
+        "alignment_l_deg": 311.0,
+        "alignment_b_deg": 30.0,
+        "alignment_tolerance_deg": 30.0,
+        "amplitude_basis": "V7' Class-2 envelope cosmic-mean |Delta w(z=0.28)| in [2, 5] x 10^-5 (Ch14 \u00a714.6.3) x realistic biogenic-overdensity factor delta_bio in [1, 3] at Shapley scale (Local Sheet to Laniakea)",
+        "mechanism": "Biogenic phason vacuum strain Shapley orientation",
+        "tier": 3,
+        "falsification": "Post-Roman successor mission (or DESI Y10+ extended spatial-mapping program) finds no dipole amplitude >= 2e-4 aligned within +/-30 deg of Shapley at > 3sigma",
+        "experiment": "Post-Roman successor (or DESI Y10+ extended spatial-w(z) mapping)",
+        "timeframe": "Post-Roman successor",
+        "status": "SHAPLEY_DIPOLE_SPECIFICATION_AVAILABLE"
+    },
+    "pta_l6_anisotropy": {
+        "prediction_delta_gamma_max": 0.00017307,
+        "prediction_c6_c0": 2.92e-08,
+        "mechanism": "Icosahedral vacuum anisotropy (phason-graviton limit)",
+        "verdict_rule": "IMMEDIATE ACTION \u2014 Joint Bayesian analysis of NANOGrav 15yr + PPTA DR3 + EPTA DR2 using 15-angle icosahedral mask and spherical harmonic decomposition. Positive detection: combined C_6/sigma(C_6) >= 3.0.",
+        "immediate_datasets": [
+            "NANOGrav 15yr",
+            "PPTA DR3",
+            "EPTA DR2"
+        ],
+        "immediate_sensitivity": "sigma(C_6) ~ 3e-3 (~8000 pulsar pairs combined)",
+        "preregistration_required": true,
+        "preregistration_status": "PTA anisotropy protocol specified for external deposit",
+        "decision_criterion": "C6 / sigma(C6) >= 3.0",
+        "status": "PTA anisotropy analysis specification available",
+        "priority": "HIGHEST_LEVERAGE_NEAR_TERM"
+    },
+    "neutrino_mass_sum": {
+        "prediction": 0.0853,
+        "falsification": "Fork A canonical registered band: the phason coupling mechanism (m\u2081 = m\u2091\u00b7\u03c6\u207b\u00b3\u2076) is definitively excluded if a pre-registered CMB+BAO+LSS likelihood finds \u03a3m\u03bd < 0.075 eV at definitive precision or \u03a3m\u03bd > 0.15 eV. The lower edge sits deliberately above the normal-ordering oscillation floor near 0.059 eV, so the gate fires on NO-allowed values that still definitively exclude the 0.0853 eV floor; the upper edge brackets the inverted/high-mass branch. DESI 2024 \u03a3m\u03bd < 0.072 eV and DESI DR2 \u03a3m\u03bd < 0.064 eV are TENSION, not falsification, under this band.",
+        "falsification_band_eV_lower": 0.075,
+        "falsification_band_eV_upper": 0.15,
+        "survival_gate_eV": 0.1,
+        "desi_2024_disposition": "TENSION under the registered 0.075/0.15 eV band",
+        "status": "LOCKED",
+        "euclid_dr1_pre_registration_rule": "Public pre-registration must occur before first Euclid DR1 weak-lensing power spectrum unblinding.",
+        "osf_template": {
+            "a": "prediction: \u03a3m\u03bd = 0.0853\u00b10.0003 eV, Normal Ordering",
+            "b": "primary analysis: Euclid weak-lensing + galaxy clustering joint analysis",
+            "c": "falsification: \u03a3m\u03bd < 0.075 eV at definitive precision OR \u03a3m\u03bd > 0.15 eV",
+            "d": "blinding: pre-registration before data release",
+            "e": "secondary: \u03a3m\u03bd > 0.10 eV at 3\u03c3 keeps the biogenic-DE survival branch active; DESI 2024 <0.072 eV is tension only"
+        }
+    },
+    "nv_center_chiral_proxy": {
+        "authoritative_preregistration_source": "App V P.8 + Ch13 \u00a713.3.5",
+        "engine_config_mirror": "This entry mirrors App V P.8 and Ch13 \u00a713.3.5. The F1 decision rule is the joint Branch A + Branch B null after the required scan, controls, chirality comparison, and per-cap P_CISS acceptance.",
+        "readout_context": "T2_chiral / T2_achiral is an O.23/O.24 peak-amplitude readout context, not the Protocol A-Prime falsification threshold.",
+        "readout_reference": {
+            "observable": "T2_chiral / T2_achiral",
+            "context": "O.23/O.24 protected-subspace amplitude readout only",
+            "falsification_role": "NONE"
+        },
+        "prediction_branch_A_MHz": 112.0,
+        "prediction_branch_A_window_MHz": [
+            102.0,
+            122.0
+        ],
+        "prediction_branch_B_MHz": 42.0,
+        "prediction_branch_B_window_MHz": [
+            32.0,
+            52.0
+        ],
+        "required_scan_band_MHz": [
+            32.0,
+            200.0
+        ],
+        "max_scan_spacing_kHz": 5.0,
+        "anti_zeno_control_MHz": 150.0,
+        "chirality_control": "R-vs-S enantiomer measurement required",
+        "per_cap_P_CISS_requirement": "P_CISS^net measured pre-unblinding on each cap; >=0.1 at >=5sigma across all 50 caps for clean F1, 0.025-0.1 sensitivity-limited, <0.025 not falsifying.",
+        "mechanism": "CISS-dependent protected-subspace Zeno lock; chirality requirement of GCT biophysics",
+        "verdict_rule": "F1 = joint Branch A + B null. Protocol A-Prime F1 is falsified only if BOTH no peak is detected in the Branch A 112 +/- 10 MHz window and no peak is detected in the Branch B 42 +/- 10 MHz window across the required 32-200 MHz scan with <=5 kHz spacing, S0-S7 acceptance checks, no 150 MHz anti-Zeno sign, no R-vs-S chirality contrast, measured pre-unblinding per-cap P_CISS, and post-transfer CISS retention on the h-BN/NV process flow meeting the clean-falsification floor. A single-branch null does not falsify. Peak-amplitude magnitude is O.23/O.24 readout context, not a falsification threshold.",
+        "evaluation_function": "evaluate_protocol_a_prime_f1",
+        "dataset": "NV centres in diamond with controlled h-BN chirality capping",
+        "timeline": "2-5 years (established nanofabrication technology)",
+        "status": "TIER_2_PREDICTION \u2014 execution protocol specified",
+        "priority": "HIGH \u2014 non-biological validation of core CISS mechanism"
+    },
+    "directional_bell_inequality": {
+        "prediction": "Icosahedral violation of rotational isotropy",
+        "mechanism": "Anisotropic entanglement collapse due to 10 three-fold vacuum axes and c-anisotropy at phi^-18",
+        "alignment_mask": "15-angle icosahedral mask (identical to PTA l=6 prediction)",
+        "falsification": "Isotropic Bell inequality violation across all baselines -> GCT excluded",
+        "status": "BELL_TEST_SPECIFICATION_AVAILABLE"
+    }
+}

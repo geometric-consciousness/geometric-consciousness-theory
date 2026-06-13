@@ -1,0 +1,47 @@
+{
+  "name": "cage_node_count_N144",
+  "app_r_label": "Dodecahedral cage node count N = 144",
+  "formula": "N = 12 x 12 = F_12 = 144 (Gauss-Bonnet closure + Fibonacci resonance)",
+  "tier": "Tier 2 (Gauss-Bonnet closure + Fibonacci resonance)",
+  "predicted": 144,
+  "observed": 144,
+  "unit": "(integer)",
+  "app_r_predicted": 144,
+  "app_r_precision_str": "exact integer identity (F_12 = 144 = 12^2; unique Fibonacci-square in [F_10, F_13])",
+  "app_r_precision_ppm": 0.0,
+  "independent_precision_ppm": 0.0,
+  "status": "PASS",
+  "tolerance_ppm": 0.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "F_12_computed": 144,
+    "F_12_equals_144": true,
+    "144_equals_12_squared": true,
+    "fibonacci_in_range_F10_to_F13": [
+      [
+        10,
+        55
+      ],
+      [
+        11,
+        89
+      ],
+      [
+        12,
+        144
+      ],
+      [
+        13,
+        233
+      ]
+    ],
+    "perfect_square_fibonacci_in_range": [
+      [
+        12,
+        144
+      ]
+    ],
+    "uniqueness_holds": true,
+    "derivation_note": "Two independent structural anchors converge on 144: (a) Gauss-Bonnet closure with 5-fold angle deficits requires 12 outer faces x 12 inner sub-nodes per face = 144 (Sub-Proof A); (b) the Fibonacci resonance condition for cage-size stability in a phi-based quasicrystal requires N to be both a Fibonacci number AND a perfect square; F_12 = 144 = 12^2 is the unique such number in the cage-relevant range. The integer identity is trivially verifiable; the Tier 2 epistemic substance is in the two structural arguments themselves (Sub-Proofs A and B), which are mathematical consequences of the icosahedral cut-and-project setup."
+  }
+}

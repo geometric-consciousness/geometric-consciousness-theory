@@ -1,0 +1,65 @@
+{
+  "name": "p13c_nmr_polarity",
+  "app_r_label": "P.13c NMR polarity gate",
+  "formula": "99% bootstrap sign-positive Delta T2 gate powered for 5% active-state polarity reversal; design target only, no observed NMR data yet",
+  "tier": "Tier 2 mechanism + Tier 3 active-state Delta T2 calibration anchor pending O.21/O.33",
+  "predicted": 0.05,
+  "observed": null,
+  "unit": "fractional Delta T2/T2",
+  "app_r_predicted": 0.05,
+  "app_r_precision_str": "OPEN_CONDITIONAL executable preregistration: n=24 per isotope, 3 repeated acquisitions, 99% bootstrap CI [0.0136, 0.0861], systematic floor 0.2 ppm, primary power 0.800, simulated beta 0.201, replication-pair power 0.638",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": null,
+  "status": "OPEN_CONDITIONAL",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "registry_id": "P.13c",
+    "status": "OPEN_CONDITIONAL",
+    "pass": true,
+    "verdict": "OPEN_CONDITIONAL_PREREGISTRATION_DESIGN",
+    "parameters": {
+      "sample_size_per_isotope_condition": 24,
+      "repeated_nmr_acquisitions_per_preparation": 3,
+      "alpha_two_sided": 0.01,
+      "beta": 0.2,
+      "target_power": 0.8,
+      "active_state_polarity_reversal_power_target_fraction": 0.05,
+      "dominant_systematic_sigma_ppm_max": 0.2
+    },
+    "power_statistic": {
+      "effect_fraction": 0.05,
+      "effect_ppm": 50000.0,
+      "zcrit_two_sided_alpha": 2.5758293035489,
+      "zbeta_target": 0.8416212335729144,
+      "max_total_per_preparation_sigma_fraction_for_80pct_power": 0.05068254211010805,
+      "pilot_variance_acceptance_threshold": "Accept decisive 5% confirmation/falsification only if pilot total per-preparation sigma fraction is <= max_total_per_preparation_sigma_fraction_for_80pct_power.",
+      "statistical_sigma_fraction_budget_after_systematic_floor": 0.05068254210971344,
+      "systematic_sigma_fraction": 2e-07,
+      "systematic_sigma_ppm": 0.2,
+      "systematic_fraction_of_effect": 4e-06,
+      "standard_error_fraction_at_budget": 0.014630789665242713,
+      "noncentrality_at_effect_target": 3.4174505371218147,
+      "achieved_primary_power_at_budget": 0.8000000010282526
+    },
+    "bootstrap_ci": {
+      "n_resamples": 10000,
+      "ci_level": 0.99,
+      "ci_low_fraction": 0.013564731299556376,
+      "ci_high_fraction": 0.08613661895699731,
+      "ci_excludes_zero": true,
+      "ci_sign_positive": true
+    },
+    "alpha_beta_replication_simulation": {
+      "n_simulations": 50000,
+      "alpha_false_positive_rate_two_sided": 0.00992,
+      "primary_sign_positive_power": 0.799,
+      "primary_false_negative_beta": 0.20099999999999996,
+      "replication_pair_sign_positive_power": 0.63796,
+      "zcrit_two_sided_alpha": 2.5758293035489,
+      "noncentrality_at_effect_target": 3.4174505371218147
+    },
+    "decision_rule": "Decisive sign-positive gate requires the 99% bootstrap CI for Delta T2 = T2(17O)-T2(16O) to exclude zero, exceed the measurement floor, have positive sign, and pass the pilot variance gate for the 5% powered target. Significant negative polarity fails P.13c. Sign-positive significant effects below 5% are positive-sensitivity / effect-size revision, not confirmation or failure.",
+    "scope": "Executable preregistration design audit. Lab-data status remains open until blinded active-state NMR measurements are acquired."
+  }
+}

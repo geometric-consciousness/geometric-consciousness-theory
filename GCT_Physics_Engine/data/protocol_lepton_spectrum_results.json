@@ -1,0 +1,55 @@
+{
+    "muon_mass_analytic_mev": 105.65613622658009,
+    "tau_mass_analytic_mev": 1776.839461283127,
+    "muon_error_analytic_ppm": 21.193524974432847,
+    "tau_error_analytic_ppm": 50.9523261315698,
+    "muon_mass_graph_mev": 124.41110944468936,
+    "tau_mass_graph_mev": 1776.839461283127,
+    "muon_error_graph_ppm": 177484.59462817837,
+    "tau_error_graph_ppm": 50.9523261315698,
+    "graph_pass_tolerance_ppm": 1000,
+    "graph_passed": false,
+    "graph_gate_basis": "finite-N graph extracted mass residual in ppm, not index proximity",
+    "verdict": "ANALYTIC_PASS_GRAPH_TENSION",
+    "depinning_prior_sigma_note": "No hard-coded 4.4 sigma headline is emitted. The LEA block reports p_global=1.0 when pairs_matching=0; nonzero matches use pairs_matching * p_per_pair under the current search space.",
+    "muon_first_order": {
+        "description": "First-order precision using only (1 + 5*alpha) \u2014 Tier 2 GCT drag postulate",
+        "tier": 2,
+        "correction_term": "1 + 5*alpha",
+        "m_mu_pred_mev": 105.40173699854667,
+        "error_ppm": 2428.9461222441196
+    },
+    "muon_second_order": {
+        "description": "Tier 2 mechanism + A3 + Tier 3 closed-form precision; bare phi^N residuals are large",
+        "tier": "Tier 2 mechanism + A3 measured alpha + Tier 3 closed-form precision",
+        "correction_term": "1 + 5*alpha_A3 + phi^8 * alpha_A3^2",
+        "note": "The phi^8*alpha^2 term is a Tier 3 closed-form handle pending O.5/O.15/O.19; bare phi^N residuals are large.",
+        "m_mu_pred_mev": 105.65613622658009,
+        "error_ppm": 21.193524974432847
+    },
+    "alpha_anchor": "A3 measured low-energy alpha is used in corrected lepton precision comparisons; bare GCT alpha is audited separately under O.19/O.5.",
+    "look_elsewhere": {
+        "search_space_min": 8,
+        "search_space_max": 25,
+        "search_space_size": 18,
+        "trial_factor": 153,
+        "pairs_matching": 0,
+        "match_threshold_fraction": 2e-05,
+        "p_per_pair": 4e-08,
+        "global_p_value": 1.0,
+        "sigma_lea_corrected": null,
+        "galois_search_space": "integer exponents N in [8,25]; not Lucas-restricted",
+        "canonical_non_lucas_headline_sigma": 2.6,
+        "canonical_sigma_note": "Published firewall headline for the full non-Lucas sweep is not inferred from this zero-match diagnostic; recompute from the registered statistic if the search space or threshold changes."
+    },
+    "fourth_generation_audit": {
+        "candidate_exponent": 23,
+        "bare_mass_gev": 32.74429852107454,
+        "lep_exclusion_limit_gev": 100.0,
+        "empirical_status": "EXCLUDED",
+        "geometric_termination_d_bound": 18,
+        "theorem_status": "TERMINATED (23 > 18)",
+        "explanation": "Harmonic mode exceeds the 18D phase-space tangent bundle capacity. Sequence mathematically bound to N=11, 17."
+    },
+    "pass": false
+}

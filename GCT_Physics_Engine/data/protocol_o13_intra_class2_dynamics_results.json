@@ -1,0 +1,132 @@
+{
+  "t_SFR_peak_gyr": 3.3,
+  "tau_bio_gyr": 4.5,
+  "tau_intel_gyr": 4.5,
+  "tau_lag_gyr": 5.0,
+  "t_intel_cosmic_gyr": 12.3,
+  "V6r_baseline_no_tech": 3.551620229647057e-05,
+  "V1_empirical_reference": 0.00045637170461554355,
+  "tau_tech_match_for_V1": 10.0,
+  "kardashev_band_range_tau_tech_gyr": [
+    1.0,
+    2.0
+  ],
+  "kardashev_band_envelope_dw_z028": [
+    1.4741713909804943e-05,
+    2.4787414507398964e-05
+  ],
+  "v7_sweep_cosmic_time": [
+    {
+      "tau_tech_gyr": 0.3,
+      "w_at_z_0": -1.0047823729134695,
+      "w_at_z_028": -1.0000065669549587,
+      "abs_delta_w_at_z_028": 6.566954958708848e-06
+    },
+    {
+      "tau_tech_gyr": 0.5,
+      "w_at_z_0": -1.0048753758645492,
+      "w_at_z_028": -1.000017273660337,
+      "abs_delta_w_at_z_028": 1.7273660336991625e-05
+    },
+    {
+      "tau_tech_gyr": 0.75,
+      "w_at_z_0": -1.0049103874932481,
+      "w_at_z_028": -1.000023958082697,
+      "abs_delta_w_at_z_028": 2.395808269706201e-05
+    },
+    {
+      "tau_tech_gyr": 1.0,
+      "w_at_z_0": -1.0049239455407195,
+      "w_at_z_028": -1.0000272087431936,
+      "abs_delta_w_at_z_028": 2.7208743193618545e-05
+    },
+    {
+      "tau_tech_gyr": 1.5,
+      "w_at_z_0": -1.0049349717252227,
+      "w_at_z_028": -1.0000302562510144,
+      "abs_delta_w_at_z_028": 3.025625101438223e-05
+    },
+    {
+      "tau_tech_gyr": 2.0,
+      "w_at_z_0": -1.004939614992462,
+      "w_at_z_028": -1.0000316821204869,
+      "abs_delta_w_at_z_028": 3.1682120486875576e-05
+    },
+    {
+      "tau_tech_gyr": 3.0,
+      "w_at_z_0": -1.0049437325308277,
+      "w_at_z_028": -1.0000330356328244,
+      "abs_delta_w_at_z_028": 3.303563282441857e-05
+    },
+    {
+      "tau_tech_gyr": 5.0,
+      "w_at_z_0": -1.0049466777222233,
+      "w_at_z_028": -1.0000340644154309,
+      "abs_delta_w_at_z_028": 3.40644154308567e-05
+    },
+    {
+      "tau_tech_gyr": 10.0,
+      "w_at_z_0": -1.0049486982485067,
+      "w_at_z_028": -1.0000348040319755,
+      "abs_delta_w_at_z_028": 3.480403197553272e-05
+    }
+  ],
+  "v7prime_sweep_biosphere_age": [
+    {
+      "tau_tech_gyr": 0.3,
+      "w_at_z_0": -1.0047875500385337,
+      "w_at_z_028": -1.000000095032895,
+      "abs_delta_w_at_z_028": 9.50328951088153e-08
+    },
+    {
+      "tau_tech_gyr": 0.5,
+      "w_at_z_0": -1.004875323762605,
+      "w_at_z_028": -1.0000027711770134,
+      "abs_delta_w_at_z_028": 2.771177013416448e-06
+    },
+    {
+      "tau_tech_gyr": 0.75,
+      "w_at_z_0": -1.0049122145270906,
+      "w_at_z_028": -1.0000093181442304,
+      "abs_delta_w_at_z_028": 9.318144230441305e-06
+    },
+    {
+      "tau_tech_gyr": 1.0,
+      "w_at_z_0": -1.0049263438924565,
+      "w_at_z_028": -1.0000147417139098,
+      "abs_delta_w_at_z_028": 1.4741713909804943e-05
+    },
+    {
+      "tau_tech_gyr": 1.5,
+      "w_at_z_0": -1.0049371730117471,
+      "w_at_z_028": -1.0000212733685052,
+      "abs_delta_w_at_z_028": 2.1273368505214663e-05
+    },
+    {
+      "tau_tech_gyr": 2.0,
+      "w_at_z_0": -1.0049414401816317,
+      "w_at_z_028": -1.0000247874145074,
+      "abs_delta_w_at_z_028": 2.4787414507398964e-05
+    },
+    {
+      "tau_tech_gyr": 3.0,
+      "w_at_z_0": -1.0049450383835015,
+      "w_at_z_028": -1.0000283726071366,
+      "abs_delta_w_at_z_028": 2.837260713661749e-05
+    },
+    {
+      "tau_tech_gyr": 5.0,
+      "w_at_z_0": -1.0049474923281296,
+      "w_at_z_028": -1.0000312494999153,
+      "abs_delta_w_at_z_028": 3.1249499915286805e-05
+    },
+    {
+      "tau_tech_gyr": 10.0,
+      "w_at_z_0": -1.0049491139996405,
+      "w_at_z_028": -1.0000333939987023,
+      "abs_delta_w_at_z_028": 3.3393998702280214e-05
+    }
+  ],
+  "principled_sweep_used_for_closure": "V7prime (biosphere-age, per Sec 14.6.2 'technological advancement' reading)",
+  "closure_text": "V6r baseline (no intra-Class-2 dynamics) = 3.55e-05; V1 empirical level = 4.56e-04. The Sec 14.6.2 intra-Class-2 technological-exp axiom yields V7 = V6r * exp((t-t_intel_cosmic)/tau_tech). Kardashev-band tau_tech in [1, 2] Gyr gives |Dw(z=0.28)| in [1.47e-05, 2.48e-05] (Kardashev-band envelope). V1's empirical level matches V7 at tau_tech = 10.00 Gyr -- OUTSIDE the physically-anchored Kardashev band. The principled load-bearing closure of O.13 under the combined Class-2 axiom (Sec 14.5.2) + technological-exp axiom (Sec 14.6.2) is the Kardashev-band envelope; the pre-F-prime V6r-to-V1 envelope (13x width) is narrowed to 2x in the principled band."
+}

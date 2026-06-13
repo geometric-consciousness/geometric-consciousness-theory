@@ -1,0 +1,28 @@
+{
+  "name": "ckm_jarlskog",
+  "app_r_label": "CKM Jarlskog invariant |J|",
+  "formula": "|J_GCT| = \u03c6\u207b\u00b2\u00b2 (V3 Ch09 \u00a79.4.3, '22-step volumetric displacement')",
+  "tier": "OPEN RESEARCH (O.7) \u2014 awaiting first-principles closure",
+  "predicted": 2.5250612343448544e-05,
+  "observed": 3.12e-05,
+  "unit": "(dimensionless)",
+  "app_r_predicted": 2.5250612343448544e-05,
+  "app_r_precision_str": "literal \u03c6\u207b\u00b2\u00b2 = 2.525\u00d710\u207b\u2075 \u2192 -19.1% vs PDG (4.6\u03c3); manuscript-stated value 3.19\u00d710\u207b\u2075 would give +2.2% (0.5\u03c3); it differs from the literal formula value by 26.3%",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": 190685.50181254666,
+  "status": "OPEN_RESEARCH",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "j_gct_literal_phi_minus_22": 2.5250612343448544e-05,
+    "j_gct_manuscript_stated": 3.19e-05,
+    "manuscript_value_vs_literal_formula_pct": 26.33356991945065,
+    "j_pdg_2024": 3.12e-05,
+    "j_pdg_uncertainty": 1.3e-06,
+    "literal_gap_vs_pdg_pct": -19.068550181254665,
+    "literal_gap_sigmas": 4.576452043501119,
+    "stated_gap_vs_pdg_pct": 2.2435897435897547,
+    "stated_gap_sigmas": 0.5384615384615411,
+    "candidate_ansatz_status": "The literal \u03c6\u207b\u00b2\u00b2 candidate ansatz catalogued under O.7 evaluates to 2.525\u00d710\u207b\u2075, 19% (4.6\u03c3) below the PDG value 3.12\u00d710\u207b\u2075. A Wolfenstein-form alternative A\u00b2\u03bb\u2076\u03b7 \u2248 3.24\u00d710\u207b\u2075 sits closer to PDG (+5%) but is not a \u03c6-power form. The Jarlskog invariant is held under OPEN RESEARCH (O.7) with no current Tier 2 GCT prediction; the eEDM derivation in Ch09 \u00a79.6.3 is explicitly decoupled via the J-independent Tier 2 bounded form."
+  }
+}

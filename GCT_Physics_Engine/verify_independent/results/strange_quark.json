@@ -1,0 +1,22 @@
+{
+  "name": "strange_quark",
+  "app_r_label": "Strange quark (m_s)",
+  "formula": "m_s = m_u \u00b7 \u03c6^8 \u00b7 (1 - 12\u03b1)",
+  "tier": "Tier 3 (12\u03b1 drag coefficient; geometric scaling formula retained as the mechanism)",
+  "predicted": 92.78642656782262,
+  "observed": 93.5,
+  "unit": "MeV",
+  "app_r_predicted": 92.79,
+  "app_r_precision_str": "0.76%; the 12\u03b1 drag coefficient is a Tier 3 state-level handle per the Ledger",
+  "app_r_precision_ppm": 7632.0,
+  "independent_precision_ppm": 7631.801413661859,
+  "status": "PASS",
+  "tolerance_ppm": 10000.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "percent_error_vs_pdg_2024_93p5": 0.763180141366186,
+    "appr_comparison_target_MeV": 93.5,
+    "pdg_2024_central_value_MeV": 93.5,
+    "comparison_note": "App R anchor: PDG 2024 central 93.5 MeV. Precision against 93.5: 0.76%. This remains within the registered quark-sector envelope, with the 12\u03b1 drag coefficient retained as Tier 3."
+  }
+}

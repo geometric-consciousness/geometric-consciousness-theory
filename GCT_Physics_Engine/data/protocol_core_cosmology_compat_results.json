@@ -1,0 +1,12 @@
+{
+    "rho_crit": 9.201950822334168e-27,
+    "hubble_time_gyr": 13.977715372769273,
+    "lnh_log10": 60.912608696799644,
+    "h0_conditional_chain": {
+        "o1_o4_equivalence_proven": false,
+        "section_14A3_uses_ssot_formula": true,
+        "kz_self_consistency": "xi_KZ -> R_H confirmed via epsilon_lock = H0/omega_P",
+        "message": "O.1 (derive V_lock curvature and m_phason_operative) and O.4 (derive H0/dark-energy density scale) are coupled cosmology closure problems, but not a direct scale identity. The direct H0/phason-mass shortcut is outside the registered closure path; O.37 tracks the separate Weinberg-candidate ansatz."
+    },
+    "pass": true
+}

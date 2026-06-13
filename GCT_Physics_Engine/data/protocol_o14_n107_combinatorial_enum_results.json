@@ -1,0 +1,125 @@
+{
+  "icosahedral_primitives": {
+    "I_order": 60,
+    "Ih_order": 120,
+    "icosa_vertices": 12,
+    "icosa_edges": 30,
+    "icosa_faces": 20,
+    "dodeca_vertices": 20,
+    "dodeca_edges": 30,
+    "dodeca_faces": 12,
+    "Coxeter_h3": 10,
+    "rank_H3": 3,
+    "irrep_5": 5,
+    "irrep_4": 4,
+    "irrep_3a": 3,
+    "irrep_1": 1,
+    "N_cage_GCT": 144,
+    "tetrahedral_subgroup": 12,
+    "dihedral_D5": 10,
+    "dihedral_D3": 6,
+    "C5_axes": 6,
+    "C3_axes": 10,
+    "C2_axes": 15,
+    "24_cell_vertices": 24,
+    "24_cell_edges": 96,
+    "24_cell_faces": 96,
+    "Cox_pol_index": 32,
+    "I_x_Z2": 120
+  },
+  "target_integer": 107,
+  "max_value_enumerated": 250,
+  "n_distinct_integers_reached": 215,
+  "is_107_reached": true,
+  "expressions_for_107": [
+    "icosa_vertices + 24_cell_edges - irrep_1",
+    "icosa_vertices + 24_cell_faces - irrep_1",
+    "dodeca_faces + 24_cell_edges - irrep_1",
+    "dodeca_faces + 24_cell_faces - irrep_1",
+    "tetrahedral_subgroup + 24_cell_edges - irrep_1",
+    "tetrahedral_subgroup + 24_cell_faces - irrep_1",
+    "C2_axes + 24_cell_edges - irrep_4",
+    "C2_axes + 24_cell_faces - irrep_4",
+    "24_cell_edges + icosa_vertices - irrep_1",
+    "24_cell_edges + dodeca_faces - irrep_1"
+  ],
+  "reachable_integers_near_107": {
+    "100": [
+      "Ih_order - icosa_faces",
+      "Ih_order - dodeca_vertices",
+      "icosa_faces * irrep_5"
+    ],
+    "101": [
+      "irrep_5 + 24_cell_edges",
+      "irrep_5 + 24_cell_faces",
+      "24_cell_edges + irrep_5"
+    ],
+    "102": [
+      "dihedral_D3 + 24_cell_edges",
+      "dihedral_D3 + 24_cell_faces",
+      "C5_axes + 24_cell_edges"
+    ],
+    "103": [
+      "Ih_order + rank_H3 - icosa_faces",
+      "Ih_order + rank_H3 - dodeca_vertices",
+      "Ih_order + irrep_3a - icosa_faces"
+    ],
+    "104": [
+      "Ih_order + irrep_4 - icosa_faces",
+      "Ih_order + irrep_4 - dodeca_vertices",
+      "icosa_vertices + 24_cell_edges - irrep_4"
+    ],
+    "105": [
+      "Ih_order - C2_axes",
+      "I_x_Z2 - C2_axes",
+      "I_order + I_order - C2_axes"
+    ],
+    "106": [
+      "Coxeter_h3 + 24_cell_edges",
+      "Coxeter_h3 + 24_cell_faces",
+      "dihedral_D5 + 24_cell_edges"
+    ],
+    "107": [
+      "icosa_vertices + 24_cell_edges - irrep_1",
+      "icosa_vertices + 24_cell_faces - irrep_1",
+      "dodeca_faces + 24_cell_edges - irrep_1"
+    ],
+    "108": [
+      "Ih_order - icosa_vertices",
+      "Ih_order - dodeca_faces",
+      "Ih_order - tetrahedral_subgroup"
+    ],
+    "109": [
+      "Ih_order + irrep_4 - C2_axes",
+      "Ih_order + irrep_1 - icosa_vertices",
+      "Ih_order + irrep_1 - dodeca_faces"
+    ],
+    "110": [
+      "Ih_order - Coxeter_h3",
+      "Ih_order - dihedral_D5",
+      "Ih_order - C3_axes"
+    ],
+    "111": [
+      "C2_axes + 24_cell_edges",
+      "C2_axes + 24_cell_faces",
+      "24_cell_edges + C2_axes"
+    ],
+    "112": [
+      "N_cage_GCT - Cox_pol_index",
+      "Ih_order + icosa_vertices - icosa_faces",
+      "Ih_order + icosa_vertices - dodeca_vertices"
+    ],
+    "113": [
+      "Ih_order + rank_H3 - Coxeter_h3",
+      "Ih_order + rank_H3 - dihedral_D5",
+      "Ih_order + rank_H3 - C3_axes"
+    ],
+    "114": [
+      "Ih_order - dihedral_D3",
+      "Ih_order - C5_axes",
+      "N_cage_GCT - icosa_edges"
+    ]
+  },
+  "verdict_text": "(positive direction) 107 is reached via 16 icosahedral combinatorial expression(s). However, REACHABILITY does not establish UNIQUENESS; many integers in [1, 250] are reachable from the icosahedral primitives. The empirical anchor at n=-107 needs additional structural justification to be uniquely distinguished from other reachable integers by a first-principles argument.",
+  "status": "COMPLEMENTARY -- not a new closure; supports App H O.14 'uniqueness open' status"
+}

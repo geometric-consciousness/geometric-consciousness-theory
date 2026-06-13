@@ -1,0 +1,32 @@
+{
+  "name": "nu_zeno_van_Hove",
+  "app_r_label": "Zeno Drive frequency \u03bd_Zeno (magnon-polaron avoided crossing)",
+  "formula": "\u03bd_vH \u2248 \u0394_ST/h with operative tryptophan indole band \u0394_ST/h \u2248 10\u201320 MHz (Ch13 \u00a713.1.2b)",
+  "tier": "Tier 2 mechanism reference + Tier 3 protected-branch value pending O.12/O.23",
+  "predicted": 20000000.0,
+  "observed": 112000000.0,
+  "unit": "Hz",
+  "app_r_predicted": 112000000.0,
+  "app_r_precision_str": "Mechanism reference: magnon-polaron avoided crossing \u03bd \u2248 \u0394_ST/h. Operative \u03b2-tubulin tryptophan indole band \u0394_ST/h \u2248 10\u201320 MHz. Registered \u03bd_c = 112 \u00b1 10 MHz requires a chiral phonon-polariton enhancement factor of ~6\u201311\u00d7 (Open Problems O.12/O.23). The FAD reference gap (30 MHz) would naively imply only ~3.73\u00d7 and is not operative.",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": 821428.5714285714,
+  "status": "OPEN_CONDITIONAL",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "operative_indole_band_lo_MHz": 10.0,
+    "operative_indole_band_hi_MHz": 20.0,
+    "operative_enhancement_factor_lo": 5.6,
+    "operative_enhancement_factor_hi": 11.2,
+    "reference_A_N5_MHz": 42.0,
+    "reference_A_N10_MHz": 28.0,
+    "reference_A_H5_MHz": 12.0,
+    "reference_A_other_MHz": 7.0,
+    "reference_hyperfine_RMS_FAD_MHz": 21.75239450420727,
+    "reference_Delta_ST_over_h_FAD_MHz": 30.0,
+    "reference_naive_FAD_enhancement_factor": 3.7333333333333334,
+    "nu_Zeno_target_MHz": 112.0,
+    "phonon_polariton_enhancement_factor_for_coupling_App_Q": 41.0,
+    "derivation_note": "Magnon-polaron avoided crossing: solving v_ph k = \u0394_ST/\u210f + Jk\u00b2 in the small-J regime gives k_c \u2248 \u0394_ST/(\u210f v_ph), and the avoided-crossing frequency on the lower branch is \u03bd \u2248 \u0394_ST/h. The operative \u03b2-tubulin tryptophan indole hyperfine band is \u0394_ST/h \u2248 10\u201320 MHz (one indole N1 \u2248 14\u201317 MHz plus weaker ring protons), so the registered 112 \u00b1 10 MHz peak requires a chiral phonon-polariton renormalization of ~6\u201311\u00d7 (Open Problems O.12/O.23; analogous to the ~41\u00d7 coupling renormalization that lifts g_single^bare = 931 kHz to g_single^eff = 38.3 MHz per App Q). The FAD\u2022\u207b semiquinone values (\u0394_ST/h \u2248 30 MHz) are a literature order-of-magnitude reference only; naive substitution would understate the burden as ~3.7\u00d7."
+  }
+}

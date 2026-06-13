@@ -1,0 +1,185 @@
+C:\Users\pablo\Documents\Spark\GCT\Geometric Consciousness Theory\build_scripts\compile_latex.py:307: SyntaxWarning: invalid escape sequence '\e'
+  """
+C:\Users\pablo\Documents\Spark\GCT\Geometric Consciousness Theory\build_scripts\compile_latex.py:353: SyntaxWarning: invalid escape sequence '\e'
+  """
+C:\Users\pablo\Documents\Spark\GCT\Geometric Consciousness Theory\build_scripts\compile_latex.py:440: SyntaxWarning: invalid escape sequence '\`'
+  """
+C:\Users\pablo\Documents\Spark\GCT\Geometric Consciousness Theory\build_scripts\compile_latex.py:505: SyntaxWarning: invalid escape sequence '\('
+  """
+C:\Users\pablo\Documents\Spark\GCT\Geometric Consciousness Theory\build_scripts\compile_latex.py:603: SyntaxWarning: invalid escape sequence '\c'
+  """
+C:\Users\pablo\Documents\Spark\GCT\Geometric Consciousness Theory\build_scripts\compile_latex.py:732: SyntaxWarning: invalid escape sequence '\s'
+  """
+C:\Users\pablo\Documents\Spark\GCT\Geometric Consciousness Theory\build_scripts\compile_latex.py:924: SyntaxWarning: invalid escape sequence '\c'
+  """
+C:\Users\pablo\Documents\Spark\GCT\Geometric Consciousness Theory\build_scripts\compile_latex.py:954: SyntaxWarning: invalid escape sequence '\c'
+  """
+C:\Users\pablo\Documents\Spark\GCT\Geometric Consciousness Theory\build_scripts\compile_latex.py:987: SyntaxWarning: invalid escape sequence '\p'
+  """
+C:\Users\pablo\Documents\Spark\GCT\Geometric Consciousness Theory\build_scripts\compile_latex.py:1037: SyntaxWarning: invalid escape sequence '\p'
+  """
+============================================================
+GCT LaTeX Compiler — Full Manuscript
+============================================================
+  pandoc   : C:\Users\pablo\AppData\Local\Pandoc\pandoc.EXE
+  pdflatex : C:\Program Files\MiKTeX\miktex\bin\x64\pdflatex.EXE
+------------------------------------------------------------
+Resetting output directory...
+  Output dir: C:\Users\pablo\Documents\Spark\GCT\Geometric Consciousness Theory\output
+
+Assembling source files (full manuscript)...
+  [READ] content\00_Global_Frontmatter\00_Global_Abstract.md
+  [READ] content\00_Global_Frontmatter\01_Epistemic_Tier_System.md
+  [READ] content\00_Global_Frontmatter\02_Axiom_and_Postulate_Ledger.md
+  [READ] content\00_Global_Frontmatter\03_Parameter_Ledger.md
+  [READ] content\00_Global_Frontmatter\04_Prediction_Postdiction_Firewall.md
+  [READ] content\01_Volume_1_Operating_System\00_Frontmatter\00_Abstract.md
+  [READ] content\01_Volume_1_Operating_System\00_Frontmatter\01_Preface.md
+  [READ] content\01_Volume_1_Operating_System\00_Frontmatter\02_Notation.md
+  [READ] content\01_Volume_1_Operating_System\01_Part_I_Logic_of_Being\Ch01_Staircase_of_Certainty.md
+  [READ] content\01_Volume_1_Operating_System\01_Part_I_Logic_of_Being\Ch02_Axiomatic_Foundation.md
+  [READ] content\01_Volume_1_Operating_System\01_Part_I_Logic_of_Being\Ch03_Ontological_Fork.md
+  [READ] content\01_Volume_1_Operating_System\01_Part_I_Logic_of_Being\Ch04_Discrete_Geometry.md
+  [READ] content\01_Volume_1_Operating_System\01_Part_I_Logic_of_Being\Ch05_Cosmology_of_Zero.md
+  [READ] content\01_Volume_1_Operating_System\02_Part_II_Identity\Ch06_Tripartite_Ontology.md
+  [READ] content\01_Volume_1_Operating_System\02_Part_II_Identity\Ch07_Universal_Tree_Bundle.md
+  [READ] content\01_Volume_1_Operating_System\03_Part_III_Rendering\Ch08_Simultaneous_Time.md
+  [READ] content\01_Volume_1_Operating_System\03_Part_III_Rendering\Ch09_Rendering_Engine.md
+  [READ] content\01_Volume_1_Operating_System\03_Part_III_Rendering\Ch10_Russellian_Causation.md
+  [READ] content\01_Volume_1_Operating_System\03_Part_III_Rendering\Ch11_Consensus_Protocol.md
+  [READ] content\01_Volume_1_Operating_System\04_Part_IV_Physics_Bridge\Ch12_Fundamental_Constraint.md
+  [READ] content\01_Volume_1_Operating_System\04_Part_IV_Physics_Bridge\Ch13_Geometric_Constants.md
+  [READ] content\01_Volume_1_Operating_System\04_Part_IV_Physics_Bridge\Ch14_Topology_to_Fields.md
+  [READ] content\01_Volume_1_Operating_System\04_Part_IV_Physics_Bridge\Ch15_Spin_Statistics.md
+  [READ] content\01_Volume_1_Operating_System\05_Part_V_Experience\Ch16_Time_and_Qualia.md
+  [READ] content\01_Volume_1_Operating_System\05_Part_V_Experience\Ch17_Physical_Substrate.md
+  [READ] content\01_Volume_1_Operating_System\06_Part_VI_Applications_and_Extensions\00_Part_VI_Introduction.md
+  [READ] content\01_Volume_1_Operating_System\06_Part_VI_Applications_and_Extensions\Ch20_Social_Systems.md
+  [READ] content\01_Volume_1_Operating_System\06_Part_VI_Applications_and_Extensions\Ch21_Aesthetics.md
+  [READ] content\01_Volume_1_Operating_System\06_Part_VI_Applications_and_Extensions\Ch22_Contemplative_Practice.md
+  [READ] content\01_Volume_1_Operating_System\06_Part_VI_Applications_and_Extensions\Ch23_Theology.md
+  [READ] content\01_Volume_1_Operating_System\06_Part_VI_Applications_and_Extensions\Ch24_Strange_Loops.md
+  [READ] content\01_Volume_1_Operating_System\06_Part_VI_Applications_and_Extensions\Ch25_Philosophy_of_Science.md
+  [READ] content\01_Volume_1_Operating_System\99_Backmatter\01_Glossary.md
+  [READ] content\01_Volume_1_Operating_System\99_Backmatter\02_Notation_Ref.md
+  [READ] content\01_Volume_1_Operating_System\99_Backmatter\03_Bibliography.md
+  [READ] content\01_Volume_1_Operating_System\99_Backmatter\04_Index.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\00_Frontmatter\00_Abstract.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\00_Frontmatter\01_Preface.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\00_Frontmatter\02_Notation.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\01_Part_I_Crystallography\Ch01_6D_Parent_Lattice.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\01_Part_I_Crystallography\Ch02_Projective_Geometry.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\01_Part_I_Crystallography\Ch03_Supersolid_Transition.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\02_Part_II_Light\Ch04_00_Effective_Action_Bridge.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\02_Part_II_Light\Ch04_Lattice_Dynamics.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\02_Part_II_Light\Ch05_Vacuum_Hydrodynamics.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\02_Part_II_Light\Ch06_Electrodynamics_Derivation.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\02_Part_II_Light\Ch07_Thermodynamics_of_Creation.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\03_Part_III_Gravity\Ch08_Acoustic_Metric.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\03_Part_III_Gravity\Ch09_Entropic_Gravity.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\03_Part_III_Gravity\Ch10_Singularities_Gravastars.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\04_Part_IV_Dark_Sector\Ch11_Dark_Matter_I_Glass.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\04_Part_IV_Dark_Sector\Ch12_Dark_Matter_II_Galactic.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\04_Part_IV_Dark_Sector\Ch13_Dark_Matter_III_Clusters.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\04_Part_IV_Dark_Sector\Ch14_Dark_Energy_Lagrangian.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\99_Backmatter\01_Glossary.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\99_Backmatter\02_Notation_Ref.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\99_Backmatter\03_Bibliography.md
+  [READ] content\02_Volume_2_Cosmic_Architecture\99_Backmatter\04_Index.md
+  [READ] content\03_Volume_3_Matter_Spectrum\00_Frontmatter\00_Abstract.md
+  [READ] content\03_Volume_3_Matter_Spectrum\00_Frontmatter\01_Preface.md
+  [READ] content\03_Volume_3_Matter_Spectrum\00_Frontmatter\02_Notation.md
+  [READ] content\03_Volume_3_Matter_Spectrum\01_Part_I_Forces\Ch01_Phase_Sector_U1.md
+  [READ] content\03_Volume_3_Matter_Spectrum\01_Part_I_Forces\Ch02_Rotation_Sector_SU2.md
+  [READ] content\03_Volume_3_Matter_Spectrum\01_Part_I_Forces\Ch03_Color_Force_SU3.md
+  [READ] content\03_Volume_3_Matter_Spectrum\01_Part_I_Forces\Ch04_Electroweak_Unification.md
+  [READ] content\03_Volume_3_Matter_Spectrum\01_Part_I_Forces\Ch05_Higgs_Mechanism.md
+  [READ] content\03_Volume_3_Matter_Spectrum\01_Part_I_Forces\Ch06_Product_Structure.md
+  [READ] content\03_Volume_3_Matter_Spectrum\02_Part_II_Matter\Ch07_Fundamental_Knot_Electron.md
+  [READ] content\03_Volume_3_Matter_Spectrum\02_Part_II_Matter\Ch08_Fractal_Resonance_Leptons.md
+  [READ] content\03_Volume_3_Matter_Spectrum\02_Part_II_Matter\Ch09_Neutrinos_Ghostly_Resonances.md
+  [READ] content\03_Volume_3_Matter_Spectrum\02_Part_II_Matter\Ch10_Extended_Spectrum_Quarks.md
+  [READ] content\03_Volume_3_Matter_Spectrum\03_Part_III_Astrophysics\Ch11_355keV_Anomaly.md
+  [READ] content\03_Volume_3_Matter_Spectrum\03_Part_III_Astrophysics\Ch12_Dynamic_Dark_Energy.md
+  [READ] content\03_Volume_3_Matter_Spectrum\04_Part_IV_Experiments\Ch13_Protocol_A_Zeno_Drive.md
+  [READ] content\03_Volume_3_Matter_Spectrum\04_Part_IV_Experiments\Ch14_Protocol_B_Mass_Spectrum.md
+  [READ] content\03_Volume_3_Matter_Spectrum\04_Part_IV_Experiments\Ch15_Protocol_C_XRISM.md
+  [READ] content\03_Volume_3_Matter_Spectrum\04_Part_IV_Experiments\Ch16_Protocol_D_Isotope.md
+  [READ] content\03_Volume_3_Matter_Spectrum\04_Part_IV_Experiments\Ch17_Protocol_E_Quark_Mismatch.md
+  [READ] content\03_Volume_3_Matter_Spectrum\04_Part_IV_Experiments\Ch18_Protocol_F_Proton_Mass.md
+  [READ] content\03_Volume_3_Matter_Spectrum\04_Part_IV_Experiments\Ch19_Protocol_G_Neutrinos.md
+  [READ] content\03_Volume_3_Matter_Spectrum\04_Part_IV_Experiments\Ch20_Protocol_H_Lattice_Fracture.md
+  [READ] content\03_Volume_3_Matter_Spectrum\04_Part_IV_Experiments\Ch21_Protocol_I_Pulsar_Timing.md
+  [READ] content\03_Volume_3_Matter_Spectrum\04_Part_IV_Experiments\Ch22_Conclusion_Roadmap.md
+  [READ] content\03_Volume_3_Matter_Spectrum\99_Backmatter\01_Glossary.md
+  [READ] content\03_Volume_3_Matter_Spectrum\99_Backmatter\02_Notation_Ref.md
+  [READ] content\03_Volume_3_Matter_Spectrum\99_Backmatter\03_Bibliography.md
+  [READ] content\03_Volume_3_Matter_Spectrum\99_Backmatter\04_Index.md
+  [READ] content\98_Global_Appendices\App_A_Measure_Theory.md
+  [READ] content\98_Global_Appendices\App_B_Solenoid_Topology.md
+  [READ] content\98_Global_Appendices\App_C_Collective_Coordinates.md
+  [READ] content\98_Global_Appendices\App_D_Born_Rule.md
+  [READ] content\98_Global_Appendices\App_E_Foundational_Theorems.md
+  [READ] content\98_Global_Appendices\App_F_Nuclear_Spin.md
+  [READ] content\98_Global_Appendices\App_FM_Falsifiability_Matrix.md
+  [READ] content\98_Global_Appendices\App_G_Tier_Classification.md
+  [READ] content\98_Global_Appendices\App_H_Research_Questions.md
+  [READ] content\98_Global_Appendices\App_I_Ontology_Block_Universe.md
+  [READ] content\98_Global_Appendices\App_J_Crystallography.md
+  [READ] content\98_Global_Appendices\App_K_Phason_Stiffness.md
+  [READ] content\98_Global_Appendices\App_L_Thermodynamics.md
+  [READ] content\98_Global_Appendices\App_M_The_Unified_Action.md
+  [READ] content\98_Global_Appendices\App_N_Transparency_Proof.md
+  [READ] content\98_Global_Appendices\App_NS_Neutrino_Sum_Contingency.md
+  [READ] content\98_Global_Appendices\App_O_Math_Foundations.md
+  [READ] content\98_Global_Appendices\App_P_Quasicrystal_Theory.md
+  [READ] content\98_Global_Appendices\App_Q_Physics_Engine.md
+  [READ] content\98_Global_Appendices\App_R2_Independent_Verification.md
+  [READ] content\98_Global_Appendices\App_R_Precision_Scorecard.md
+  [READ] content\98_Global_Appendices\App_S_Engine_Reports.md
+  [READ] content\98_Global_Appendices\App_T_Tier_Audit.md
+  [READ] content\98_Global_Appendices\App_TP_Tier_Promotion_Roadmap.md
+  [READ] content\98_Global_Appendices\App_U_Uniqueness_and_Search_Space.md
+  [READ] content\98_Global_Appendices\App_V_Prediction_Registry.md
+  [READ] content\98_Global_Appendices\App_W_Selection_NoSignalling_Energy.md
+  [READ] content\98_Global_Appendices\App_X_Decoherence_and_Energy.md
+  [READ] content\98_Global_Appendices\App_Y_Polaron_Unity_Proof.md
+  [READ] content\98_Global_Appendices\App_Z_QLQCD_Algorithm.md
+  [READ] content\98_Global_Appendices\App_ZN_Native_RG_Flow.md
+  [READ] content\99_Global_Backmatter\01_Master_Glossary.md
+  [READ] content\99_Global_Backmatter\02_Master_Bibliography.md
+  [READ] content\99_Global_Backmatter\03_Master_Index.md
+  [READ] content\99_Global_Backmatter\04_Acknowledgments.md
+  [READ] content\99_Global_Backmatter\05_Colophon.md
+  Total markdown size: 2699.9 KB
+Running double-backslash-in-math normalizer...
+Running math-adjacency pre-processor...
+Running inline figure pre-processor...
+Running alert pre-processor...
+
+Running pandoc → Geometric_Consciousness_Theory.tex ...
+  [OK] .tex written: C:\Users\pablo\Documents\Spark\GCT\Geometric Consciousness Theory\output\Geometric_Consciousness_Theory.tex (3107.8 KB)
+
+Running pdflatex (pass 1/2)...
+  [FAIL] pdflatex pass 1: 2 LaTeX error(s) detected.
+  ---- First errors ----
+  ! Paragraph ended before \text@command was complete.
+  <to be read again> 
+                     \par 
+  ! Extra }, or forgotten \endgroup.
+  <recently read> \egroup 
+                          
+  ----------------------
+  [WARN] Continuing to pass 2 to see if these resolve.
+
+Running pdflatex (pass 2/2)...
+  [FAIL] pdflatex pass 2: 2 LaTeX error(s) detected.
+  ---- First errors ----
+  ! Paragraph ended before \text@command was complete.
+  <to be read again> 
+                     \par 
+  ! Extra }, or forgotten \endgroup.
+  <recently read> \egroup 
+                          
+  ----------------------
+[ERROR] Build failed. See C:\Users\pablo\Documents\Spark\GCT\Geometric Consciousness Theory\output\Geometric_Consciousness_Theory.log for details.

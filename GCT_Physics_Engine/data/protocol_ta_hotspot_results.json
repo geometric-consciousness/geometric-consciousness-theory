@@ -1,0 +1,21 @@
+{
+    "protocol": "protocol_ta_hotspot",
+    "description": "Alignment of icosahedral vacuum against TA UHECR Hotspot (CMB Rest Frame)",
+    "cmb_dipole": {
+        "ra": 167.9,
+        "dec": -6.9
+    },
+    "ta_hotspot": {
+        "ra": 146.7,
+        "dec": 43.2
+    },
+    "predicted_axis": {
+        "ra": 139.57133481516755,
+        "dec": 51.708208259245616
+    },
+    "min_separation_deg": 9.76797203275332,
+    "hotspot_radius_deg": 20.0,
+    "azimuth_offset_deg": 56.15598885793872,
+    "verdict": "PASS",
+    "pass": true
+}

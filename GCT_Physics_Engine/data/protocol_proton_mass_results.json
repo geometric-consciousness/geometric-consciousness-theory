@@ -1,0 +1,9 @@
+{
+    "mass_ratio": 1836.4371455950823,
+    "mass_ratio_mev": 938.417361318227,
+    "mass_abs_mev": 939.3616580931844,
+    "ratio_error_ppm": 154.83069366009022,
+    "abs_error_ppm": 1161.2517382956687,
+    "m_e_derived": 0.511513100432736,
+    "pass": true
+}

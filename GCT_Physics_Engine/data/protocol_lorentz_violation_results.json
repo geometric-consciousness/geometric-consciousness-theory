@@ -1,0 +1,15 @@
+{
+  "scenario_energy_gev": 100.0,
+  "scenario_distance_ly": 1000000000.0,
+  "E_planck_ev": 1.2208901282098642e+28,
+  "gct_n_order": 2,
+  "gct_xi": 1.0,
+  "dt_linear_s": 0.12923971463625028,
+  "dt_quadratic_s": 1.0585695768197308e-18,
+  "fermi_lat_linear_xi_bound": 0.84,
+  "linear_prediction_excluded": true,
+  "quadratic_safe": true,
+  "verdict": "MARGINAL",
+  "pass": true,
+  "key_note": "GCT predicts n=2 (quadratic) LIV \u2014 well within all bounds. n=1 would be excluded: RT inversion symmetry must cancel it."
+}

@@ -1,0 +1,29 @@
+{
+  "name": "higgs_mass_bare",
+  "app_r_label": "Higgs mass (bare, from \u03bb = 1/8)",
+  "formula": "m_H^bare = v \u00b7 \u221a(2\u03bb_bare) = v \u00b7 \u221a(2 \u00b7 1/8) = v/2",
+  "tier": "Tier 2 bare lambda = 1/8 geometric packing identity + Tier 3 physical m_H pending TP-E 1-loop closure",
+  "predicted": 123.109825,
+  "observed": 125.1,
+  "unit": "GeV",
+  "app_r_predicted": 123.11,
+  "app_r_precision_str": "+1.59% gap (14.2\u03c3 vs PDG unc; consistent with expected SM 1-loop radiative correction sign and rough magnitude)",
+  "app_r_precision_ppm": 15908.673061550708,
+  "independent_precision_ppm": 15908.673061550708,
+  "status": "OPEN_CONDITIONAL",
+  "tolerance_ppm": 50000.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "lambda_bare_geometric": 0.125,
+    "v_GeV_input": 246.21965,
+    "m_H_bare_GeV": 123.109825,
+    "m_H_observed_GeV": 125.1,
+    "gap_GeV": 1.9901749999999936,
+    "gap_pct": 1.5908673061550709,
+    "gap_in_sigmas_vs_pdg_unc": 14.215535714285668,
+    "matches_registered_5pct_tree_level_band": true,
+    "closure_condition": "GCT-native one-loop/spectral-action correction must account for the +1.6% gap without importing the SM correction as a fit.",
+    "radiative_framing": "The +1.6% gap (+1.99 GeV) is consistent with the standard SM 1-loop radiative correction in sign and rough magnitude: running lambda from GCT's geometric scale (M_GUT ~ 3.2e16 GeV) down to the EW scale via the SM beta function generates corrections of order few percent (top-Yukawa dominant). The precise GCT 1-loop computation requires the modified beta functions of App ZN (GCT-Native RG Flow) with phason loop contributions; this is research-level work bundled with the QLQCD-1L closure programme. Manuscript V3 Ch05 5.2.3 acknowledges this contingency as 'consistent with standard radiative corrections' without quantitative validation; this verifier registers the prediction explicitly with the disclosure.",
+    "tier_1_closure_path": "TP-E (roadmap A.3): full 1-loop spectral-action computation in the GCT framework, replacing the manuscript's qualitative 'standard radiative corrections' attribution with a first-principles GCT-specific value. Requires App ZN beta functions + Connes spectral action evaluated on the N=144 cage, following QLQCD-1L closure."
+  }
+}

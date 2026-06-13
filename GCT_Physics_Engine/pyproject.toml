@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gct-physics-engine"
+version = "1.0.0"
+description = "Numerical engine accompanying the Geometric Consciousness Theory monograph. Re-derives mass spectrum, gauge couplings, mixing angles, and selected cosmological observables from a single 6D icosahedral cut-and-project lattice plus CODATA / PDG anchors."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "All rights reserved" }
+authors = [
+    { name = "Pablo González Acosta" },
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+    "PyYAML>=6.0",
+    "sympy>=1.12",
+    "biopython>=1.81",
+    "pyphi==1.2.0",
+]
+
+[project.urls]
+Documentation = "see ../content/98_Global_Appendices/App_Q_Physics_Engine.md"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

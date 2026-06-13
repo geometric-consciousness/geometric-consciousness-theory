@@ -1,0 +1,30 @@
+{
+  "phi_neg_18": 0.00017307027171223924,
+  "omega_d_rad_per_s": 703716754.4041137,
+  "N_cage": 144,
+  "g_single_eff_pre_overlap_angular_per_s": 240645997.26497814,
+  "g_single_eff_pre_overlap_Hz": 38300000.0,
+  "f_overlap_operational": 0.01,
+  "g_single_eff_overlap_angular_per_s": 2406459.9726497815,
+  "g_single_eff_overlap_Hz": 383000.0,
+  "eta_F": 1.0,
+  "N_coh_pre_overlap_computed": 1.235260244106657e-11,
+  "N_coh_overlap_propagated_computed": 1.2352602441066568e-07,
+  "N_coh_angular_consistent_reference": 1.235260244106657e-11,
+  "relative_agreement": 0.0,
+  "matches_angular_consistent_reference_within_5pct": true,
+  "F_crit_N_coh_eq_1_threshold": 284525.2200489541,
+  "F_crit_21_orders_threshold": 31622776601.683792,
+  "F_crit_reference_value": 31561715.231092423,
+  "F_crit_source": "protocol_polaron_Ncoh_derivation_results.json",
+  "F_crit_interpretation_ambiguous": false,
+  "status": "FORMULA AUDIT -- regression-style verification of formula evaluation only",
+  "audited": [
+    "N_coh = 1.24e-11 pre-overlap and 1.24e-7 at f_overlap=0.01 under consistent angular-rate convention",
+    "Delta C_50 ~ F_disrupt/F_crit uses the branch-specific F_crit diagnostic"
+  ],
+  "not_closed": [
+    "First-principles g_single^eff derivation (still calibrated pre-overlap plus overlap propagation)",
+    "First-principles omega_d derivation (still O.12-pending)"
+  ]
+}

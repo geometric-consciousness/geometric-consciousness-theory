@@ -1,0 +1,46 @@
+{
+  "protocol": "McKay_Tier1",
+  "pass": true,
+  "verdict": "PASS",
+  "tier": "Tier 1",
+  "6d_lattice_tier": "Tier 1 (Derived)",
+  "mckay_correspondence": {
+    "irrep_dimensions": [
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5,
+      6
+    ],
+    "expected_affine_e8_marks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      4,
+      2,
+      3
+    ],
+    "defining_irrep_index": 1,
+    "fusion_edge_count": 8,
+    "affine_e8_graph_match": true,
+    "dimension_vector_is_affine_null_root": true,
+    "method": "2I conjugacy classes -> irreducible characters -> tensor fusion by defining SU(2) irrep -> affine E8 graph isomorphism"
+  },
+  "h4_coxeter": {
+    "h4_coxeter_number": 30,
+    "exponents": [
+      1,
+      11,
+      19,
+      29
+    ],
+    "phi_verified": true
+  }
+}

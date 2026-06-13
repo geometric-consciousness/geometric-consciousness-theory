@@ -1,0 +1,26 @@
+{
+  "name": "electron_mass",
+  "app_r_label": "Electron mass (m_e)",
+  "formula": "m_e = M_P_std * phi^(-107) * (1 - 5 alpha)",
+  "tier": "Tier 2",
+  "predicted": 0.5115131004460082,
+  "observed": 0.51099895069,
+  "unit": "MeV",
+  "app_r_predicted": 0.5115131,
+  "app_r_precision_str": "1006.2 ppm on CODATA-2022 inputs (App R canonical: 1006 ppm)",
+  "app_r_precision_ppm": 1006.166,
+  "independent_precision_ppm": 1006.1659721882202,
+  "status": "PASS",
+  "tolerance_ppm": 1200.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "M_P_std_kg": 2.176434342051127e-08,
+    "alpha_used": 0.0072973525643,
+    "alpha_source": "CODATA 2022",
+    "N_geom": -107,
+    "drag_factor_5alpha": 0.0364867628215,
+    "alpha_gct_branch_ppm": 1136.2166980960903,
+    "alpha_gct_branch_m_e_MeV": 0.5115795562304836,
+    "alpha_branch_note": "Branch precision on GCT-bare alpha = phi^2/360 reported for transparency; the canonical App R value uses CODATA-2022 alpha throughout."
+  }
+}

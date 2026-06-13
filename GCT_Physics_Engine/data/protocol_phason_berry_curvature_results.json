@@ -1,0 +1,73 @@
+{
+  "vertices_perp_first_norm": 0.7071067811865476,
+  "H0_spectrum_real": [
+    -5.000000000000002,
+    -2.236067977499791,
+    -2.236067977499788,
+    -2.2360679774997876,
+    0.9999999999999972,
+    0.9999999999999993,
+    0.9999999999999999,
+    1.0000000000000002,
+    1.0000000000000004,
+    2.23606797749979,
+    2.23606797749979,
+    2.2360679774997902
+  ],
+  "H0_gap_real": 2.7639320225002106,
+  "F_real_eigenvector_case": {
+    "F_xy": -0.0,
+    "F_yz": -0.0,
+    "F_zx": -0.0,
+    "F_Frob_norm": 0.0,
+    "note": "T-symmetric: F = 0 (real eigenvectors have no Berry phase)"
+  },
+  "H0_spectrum_flux": [
+    -4.999583349536778,
+    -2.285841878212781,
+    -2.2359561759643185,
+    -2.185846878098199,
+    0.955031210365095,
+    0.9776397860695855,
+    1.0000833339118556,
+    1.0223602139304167,
+    1.044468805259828,
+    2.235594386141547,
+    2.2359561759643176,
+    2.236094370169433
+  ],
+  "H0_gap_flux": 2.7137414713239965,
+  "F_flux_case_flux_quanta_0p1": {
+    "F_xy": -0.003159862621218,
+    "F_yz": -1.5369087706261444e-17,
+    "F_zx": 7.53721205498788e-18,
+    "F_Frob_norm": 0.004468720574162294,
+    "non_zero": true
+  },
+  "F_norm_sensitivity_to_flux": {
+    "0.000": 0.0,
+    "0.010": 0.0004465242819959323,
+    "0.050": 0.0022330427794771137,
+    "0.100": 0.004468720574162294,
+    "0.200": 0.00895856547269372,
+    "0.500": 0.022771100531606272
+  },
+  "chirality_flux_conversion": {
+    "k_5_fold_flux_quanta": 0.1,
+    "k_3_fold_flux_quanta": 0.16666666666666666,
+    "k_2_fold_flux_quanta": 0.25,
+    "principal_estimate_5_fold": 0.1,
+    "derivation": "theta_k = pi / k from chiral half-rotation per k-fold-axis loop; flux_quanta = theta_k / (2 pi) = 1/(2k). The 5-fold axis is the principal AKN-defining rotation; k=5 gives flux_quanta = 0.10.",
+    "tier": "Tier 3 (geometric heuristic; full derivation requires the explicit chirality -> Peierls phase map on RT plaquettes from the GCT action App M Sec M.5)."
+  },
+  "alpha_residual_estimate_at_principal_5fold": {
+    "F_Frob_squared": 1.996946356994138e-05,
+    "normalization_factor": 1.0,
+    "estimated_delta_alpha_inv_absolute": 1.5891194190248488e-06,
+    "estimated_delta_alpha_inv_ppm": 0.011596364597805312,
+    "target_ppm_O19_residual": 41.6,
+    "ratio_estimate_over_target": 0.00027875876437032,
+    "tier": "Tier 3 (order-of-magnitude estimate; full bubble integration with explicit gauge-coupling normalisation is the remaining O.19 magnitude work)."
+  },
+  "status": "Berry curvature NON-ZERO at I_h-symmetric reference under TRB element. Chirality-induced |F|^2 at the principal 5-fold flux setting yields a delta(alpha^-1) estimate ~ 0.01 ppm at the 12-site toy level, 2-3 decades below the 41.6 ppm O.19 residual target. The gap admits three possible readings (12-site->N=144 scaling, App M Sec M.3.1 shape-factor decomposition of the 41.6 ppm, gauge-coupling normalisation); sign and structural class are confirmed; full magnitude closure remains O.19 open."
+}

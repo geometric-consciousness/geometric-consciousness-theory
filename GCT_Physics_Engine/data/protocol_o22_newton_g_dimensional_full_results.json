@@ -1,0 +1,13 @@
+{
+  "phi_neg_18": 0.00017307027171223924,
+  "G_CODATA": 6.6743e-11,
+  "G_1_SI": 6.674299999999997e-11,
+  "G_2_single_a6_SI_numerical_only": 3.714225194951088e-51,
+  "G_2_dimensionally_corrected_SI": 1.1490220107477555e-16,
+  "G_2_corrected_over_G_1": 1.7215618278287702e-06,
+  "expected_residual_phi_neg_18_over_32pi": 1.7215618278287687e-06,
+  "residual_matches_expected": true,
+  "dimensional_status_route_2_single_a6": "L^4 M^(-1) T^(-2) -- INCONSISTENT",
+  "dimensional_status_route_2_corrected_with_a_6_squared": "L^3 M^(-1) T^(-2) -- CORRECT",
+  "closure_text": "Route 2 with a single a_6 factor in App K Sec K.7 is dimensionally inconsistent (L^4 M^(-1) T^(-2) instead of L^3 M^(-1) T^(-2); extra factor of L). The corrected form G_2 = c_hat^4 / (8 pi K_perp a_6^2) is dimensionally correct but gives G_2 = [phi^(-18)/(32 pi)] G_1 = 1.7e-6 * G_1, differing from Route 1 by 6 orders of magnitude. The framework does not absorb the phi^(-18)/(32 pi) residual; Routes 2/3 are structural scaling cross-checks only, NOT standalone SI-unit G formulas. The 2274 ppm CODATA agreement derives from Route 1 alone."
+}

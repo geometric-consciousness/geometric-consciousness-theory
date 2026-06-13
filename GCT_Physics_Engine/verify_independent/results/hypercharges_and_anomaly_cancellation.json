@@ -1,0 +1,49 @@
+{
+  "name": "hypercharges_and_anomaly_cancellation",
+  "app_r_label": "Right-handed hypercharges Y_R = 2Q + four-anomaly SM cancellation",
+  "formula": "Y_R = 2Q (right-handed singlets); [SU(3)]^2 U(1), [SU(2)]^2 U(1), grav^2 U(1), [U(1)]^3 anomalies all vanish",
+  "tier": "Tier 1 algebraic identity (anomaly cancellation is the standard SM textbook identity check per Bilal 2008 \u00a77.3 given the L/R-asymmetric hypercharge assignment) + Tier 2 GCT-specific L/R-asymmetric assignment Y_R = 2Q (App R \u00a7R.2.2)",
+  "predicted": 8.881784197001252e-16,
+  "observed": 0.0,
+  "unit": "(L_inf residual across right-handed identity + four anomaly traces)",
+  "app_r_predicted": 0.0,
+  "app_r_precision_str": "Right-handed singlet identity Y_R = 2Q exact; four SM anomaly conditions all evaluate to 0 to machine precision with Y_Q=+1/3, Y_u=+4/3, Y_d=-2/3, Y_L=-1, Y_e=-2 (Q = T_3 + Y/2 convention). Anomaly values: [SU(3)]^2 U(1) = 0.00e+00, [SU(2)]^2 U(1) = 0.00e+00, grav^2 U(1) = 0.00e+00, [U(1)]^3 = 8.88e-16.",
+  "app_r_precision_ppm": 0.0,
+  "independent_precision_ppm": null,
+  "status": "PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "right_handed_singlet_check": {
+      "Y_uR_predicted": 1.3333333333333333,
+      "Y_dR_predicted": -0.6666666666666666,
+      "Y_eR_predicted": -2.0,
+      "residuals": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "L_inf_residual": 0.0,
+      "exact_match": true
+    },
+    "anomaly_cancellation_check": {
+      "convention": "Q = T_3 + Y/2 (Connes-Chamseddine / NCG-SM)",
+      "hypercharges": {
+        "Y_Q_LH_quark_doublet": 0.3333333333333333,
+        "Y_u_uR_singlet": 1.3333333333333333,
+        "Y_d_dR_singlet": -0.6666666666666666,
+        "Y_L_LH_lepton_doublet": -1.0,
+        "Y_e_eR_singlet": -2.0
+      },
+      "anomaly_traces": {
+        "[SU(3)]^2 U(1)_Y": 0.0,
+        "[SU(2)]^2 U(1)_Y": 0.0,
+        "grav^2 U(1)_Y": 0.0,
+        "[U(1)_Y]^3": 8.881784197001252e-16
+      },
+      "L_inf_residual": 8.881784197001252e-16,
+      "all_anomalies_cancel": true
+    },
+    "derivation_note": "Two checks: (1) for RH singlets I_3 = 0 forces Y_R = 2Q (trivial algebraic identity); (2) the four SM gauge-anomaly conditions on the full L/R-asymmetric one-generation hypercharge assignment all vanish to machine precision. The L/R-asymmetric assignment with three colors and the doublet multiplicity is the load-bearing structure; the anomaly cancellation is the standard textbook consistency of the SM particle content, here verified explicitly on GCT's identified hypercharges (App R \u00a7R.6)."
+  }
+}

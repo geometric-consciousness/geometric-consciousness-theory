@@ -1,0 +1,71 @@
+{
+  "jacobi_max_violation": 2.7755575615628914e-16,
+  "jacobi_pass": true,
+  "cartan_matrix": [
+    [
+      2,
+      -1
+    ],
+    [
+      -1,
+      2
+    ]
+  ],
+  "cartan_matrix_raw": [
+    [
+      2.0,
+      -1.0
+    ],
+    [
+      -1.0,
+      2.0
+    ]
+  ],
+  "cartan_pass": true,
+  "killing_eigenvalues": [
+    -6.000000000000005,
+    -6.000000000000003,
+    -6.000000000000002,
+    -6.000000000000002,
+    -6.000000000000002,
+    -6.000000000000001,
+    -5.999999999999999,
+    -5.99999999999999
+  ],
+  "killing_all_negative": true,
+  "csa_info": {
+    "csa_indices": [
+      0,
+      7
+    ],
+    "fundamental_weights": [
+      [
+        -0.408248,
+        -0.707107
+      ],
+      [
+        -0.408248,
+        0.707107
+      ],
+      [
+        0.816497,
+        -0.0
+      ]
+    ],
+    "n_positive_roots": 3,
+    "n_nonzero_roots": 6,
+    "simple_root_1": [
+      0.0,
+      1.4142135623730951
+    ],
+    "simple_root_2": [
+      1.224744871391589,
+      -0.7071067811865476
+    ]
+  },
+  "basis_dimension": 8,
+  "gram_max_off_diag": 2.220446049250313e-16,
+  "identification_status": "Tier 2 generator inventory plus Tier 3 A2/su(3) candidate identification pending O.39 gauge-uniqueness theorem",
+  "verdict": "su3_candidate_identified",
+  "pass": true
+}

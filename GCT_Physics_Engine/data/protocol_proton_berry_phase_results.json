@@ -1,0 +1,29 @@
+{
+  "n_holonomy_steps": 10000,
+  "U_weak_trace": -2.000000000000817,
+  "U_weak_det": 1.0000000000008171,
+  "U_weak_is_minus_identity": true,
+  "holonomy_deviation": 5.777940427564824e-13,
+  "N_weak": 0.5,
+  "R_projection": 1.2360679774997896,
+  "phi_inv": 0.6180339887498948,
+  "phi_correction": 0.6180339887498948,
+  "N_strong": 15.0,
+  "Phi_total": 15.618033988749895,
+  "Phi_total_target": 15.618033988749895,
+  "phi_total_deviation": 0.0,
+  "verdict": "PASS",
+  "pass": true,
+  "ckm_berry_extension": {
+    "berry_correction": 0.6180339887498948,
+    "s23_bare": 0.0557280900008412,
+    "s23_berry": 0.04139164566553407,
+    "s23_pdg": 0.04108,
+    "s13_bare": 0.005024998740641488,
+    "s13_berry": 0.003732282361359376,
+    "s13_pdg": 0.003735,
+    "berry_improves_s23": true,
+    "berry_improves_s13": true,
+    "physical_interpretation": "Each generation-changing off-diagonal CKM element acquires one SU(2) holonomy step."
+  }
+}

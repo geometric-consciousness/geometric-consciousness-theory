@@ -1,0 +1,41 @@
+{
+  "protocol_version": "alpha_1loop",
+  "method_primary": "discrete_feynman_30face_summation",
+  "discrete_feynman_result": {
+    "mechanism": "Discrete Feynman Loop \u2014 30-Face RT Summation",
+    "n_reciprocal_lattice_vectors": 30,
+    "n_dodecahedral_core_faces": 12,
+    "geometric_correction_factor": 0.12,
+    "face_ratio": 0.6,
+    "c_ico_from_30face_summation": 1.072,
+    "expected_c_ico_A5": 1.12,
+    "residual_error_ppm": 42857.14285714289,
+    "physics_interpretation": "Anti-screening from bosonic phason loop in discrete momentum space",
+    "status": "SIGN_AND_TOPOLOGY_CHECK_ONLY: 30-face summation gives the correct anti-screening direction but does not close the C_ico magnitude."
+  },
+  "heat_kernel_backup": {
+    "C_ico_derived": 1.2956920876149858,
+    "hk_coefficients": {
+      "a0": 151.99964652302063,
+      "a2": -627.8720218786267,
+      "a4": 2351.647190671474
+    },
+    "status": "backup / validation"
+  },
+  "C_ico_final": 1.072,
+  "C_ico_icosahedral_target": 1.12,
+  "residual_ppm": 42857.14285714289,
+  "ln_xi_over_lambda_c": 9.996971112718963,
+  "agreement_with_target": true,
+  "topology_pathway_identified": true,
+  "correction_sign": "anti-screening (bosonic phason loop)",
+  "computational_status": "QLQCD-1L sign/topology check: 30-face summation reproduces 96% of icosahedral target C_ico, but 1-loop magnitude closure is incomplete (residual ~4.3% > 0.34% bare gap; full QLQCD-1L closure remains Open Problem per App Z). C_ico_final=1.0720 is reported as a Tier 3 numerical-control value, not a Tier 2 magnitude closure.",
+  "tier_topology": 2,
+  "tier_C_ico_value": 3,
+  "C_ico_final_tier_disposition": "Tier 3 numerical-control value pending QLQCD-1L magnitude closure",
+  "sign_topology_consistency_pass": true,
+  "magnitude_closure_pass": false,
+  "pass_interpretation": "False by design: sign/topology consistency is recorded separately, while Tier 2 magnitude closure remains open.",
+  "large_matrix_mode": false,
+  "pass": false
+}

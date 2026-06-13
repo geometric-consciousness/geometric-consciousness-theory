@@ -1,0 +1,307 @@
+{
+  "bare_gct_phi_neg_18": 0.00017307027171223924,
+  "K_phonon_iAlPdMn_Pa": 85731000000.0,
+  "K_phonon_iAlPdMn_eV_per_A3": 0.535090808079,
+  "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+  "E_flip_range_meV": [
+    100.0,
+    700.0
+  ],
+  "V_atom_range_A3": [
+    12.0,
+    20.0
+  ],
+  "observation_de_boissieu_1995": 0.01,
+  "observation_francoual_2006": 0.1,
+  "sweep": [
+    {
+      "E_flip_meV": 100.0,
+      "V_atom_A3": 12.0,
+      "K_PT_eV_per_A3": 0.008333333333333333,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.008425941644878287,
+      "K_PT_over_K_phonon": 0.015573680593113481,
+      "K_phason_total_over_K_phonon": 0.015746750864825722
+    },
+    {
+      "E_flip_meV": 100.0,
+      "V_atom_A3": 14.0,
+      "K_PT_eV_per_A3": 0.0071428571428571435,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.0072354654544020975,
+      "K_PT_over_K_phonon": 0.013348869079811558,
+      "K_phason_total_over_K_phonon": 0.013521939351523796
+    },
+    {
+      "E_flip_meV": 100.0,
+      "V_atom_A3": 16.0,
+      "K_PT_eV_per_A3": 0.00625,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.006342608311544954,
+      "K_PT_over_K_phonon": 0.011680260444835113,
+      "K_phason_total_over_K_phonon": 0.011853330716547351
+    },
+    {
+      "E_flip_meV": 100.0,
+      "V_atom_A3": 18.0,
+      "K_PT_eV_per_A3": 0.005555555555555556,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.00564816386710051,
+      "K_PT_over_K_phonon": 0.010382453728742322,
+      "K_phason_total_over_K_phonon": 0.01055552400045456
+    },
+    {
+      "E_flip_meV": 100.0,
+      "V_atom_A3": 20.0,
+      "K_PT_eV_per_A3": 0.005,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.005092608311544954,
+      "K_PT_over_K_phonon": 0.00934420835586809,
+      "K_phason_total_over_K_phonon": 0.009517278627580329
+    },
+    {
+      "E_flip_meV": 220.0,
+      "V_atom_A3": 12.0,
+      "K_PT_eV_per_A3": 0.018333333333333333,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.018425941644878287,
+      "K_PT_over_K_phonon": 0.034262097304849665,
+      "K_phason_total_over_K_phonon": 0.0344351675765619
+    },
+    {
+      "E_flip_meV": 220.0,
+      "V_atom_A3": 14.0,
+      "K_PT_eV_per_A3": 0.015714285714285715,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.01580689402583067,
+      "K_PT_over_K_phonon": 0.029367511975585427,
+      "K_phason_total_over_K_phonon": 0.029540582247297664
+    },
+    {
+      "E_flip_meV": 220.0,
+      "V_atom_A3": 16.0,
+      "K_PT_eV_per_A3": 0.01375,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.013842608311544954,
+      "K_PT_over_K_phonon": 0.025696572978637245,
+      "K_phason_total_over_K_phonon": 0.025869643250349485
+    },
+    {
+      "E_flip_meV": 220.0,
+      "V_atom_A3": 18.0,
+      "K_PT_eV_per_A3": 0.012222222222222223,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.012314830533767177,
+      "K_PT_over_K_phonon": 0.02284139820323311,
+      "K_phason_total_over_K_phonon": 0.023014468474945347
+    },
+    {
+      "E_flip_meV": 220.0,
+      "V_atom_A3": 20.0,
+      "K_PT_eV_per_A3": 0.011,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.011092608311544953,
+      "K_PT_over_K_phonon": 0.020557258382909796,
+      "K_phason_total_over_K_phonon": 0.020730328654622033
+    },
+    {
+      "E_flip_meV": 340.0,
+      "V_atom_A3": 12.0,
+      "K_PT_eV_per_A3": 0.028333333333333335,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.02842594164487829,
+      "K_PT_over_K_phonon": 0.05295051401658584,
+      "K_phason_total_over_K_phonon": 0.05312358428829808
+    },
+    {
+      "E_flip_meV": 340.0,
+      "V_atom_A3": 14.0,
+      "K_PT_eV_per_A3": 0.02428571428571429,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.024378322597259243,
+      "K_PT_over_K_phonon": 0.045386154871359295,
+      "K_phason_total_over_K_phonon": 0.045559225143071536
+    },
+    {
+      "E_flip_meV": 340.0,
+      "V_atom_A3": 16.0,
+      "K_PT_eV_per_A3": 0.02125,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.021342608311544956,
+      "K_PT_over_K_phonon": 0.039712885512439386,
+      "K_phason_total_over_K_phonon": 0.03988595578415162
+    },
+    {
+      "E_flip_meV": 340.0,
+      "V_atom_A3": 18.0,
+      "K_PT_eV_per_A3": 0.01888888888888889,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.018981497200433843,
+      "K_PT_over_K_phonon": 0.035300342677723896,
+      "K_phason_total_over_K_phonon": 0.03547341294943613
+    },
+    {
+      "E_flip_meV": 340.0,
+      "V_atom_A3": 20.0,
+      "K_PT_eV_per_A3": 0.017,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.017092608311544955,
+      "K_PT_over_K_phonon": 0.03177030840995151,
+      "K_phason_total_over_K_phonon": 0.03194337868166375
+    },
+    {
+      "E_flip_meV": 460.0,
+      "V_atom_A3": 12.0,
+      "K_PT_eV_per_A3": 0.03833333333333334,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.038425941644878295,
+      "K_PT_over_K_phonon": 0.07163893072832203,
+      "K_phason_total_over_K_phonon": 0.07181200100003428
+    },
+    {
+      "E_flip_meV": 460.0,
+      "V_atom_A3": 14.0,
+      "K_PT_eV_per_A3": 0.032857142857142856,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.03294975116868781,
+      "K_PT_over_K_phonon": 0.06140479776713316,
+      "K_phason_total_over_K_phonon": 0.0615778680388454
+    },
+    {
+      "E_flip_meV": 460.0,
+      "V_atom_A3": 16.0,
+      "K_PT_eV_per_A3": 0.02875,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.028842608311544955,
+      "K_PT_over_K_phonon": 0.053729198046241516,
+      "K_phason_total_over_K_phonon": 0.05390226831795376
+    },
+    {
+      "E_flip_meV": 460.0,
+      "V_atom_A3": 18.0,
+      "K_PT_eV_per_A3": 0.025555555555555557,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.02564816386710051,
+      "K_PT_over_K_phonon": 0.04775928715221468,
+      "K_phason_total_over_K_phonon": 0.04793235742392692
+    },
+    {
+      "E_flip_meV": 460.0,
+      "V_atom_A3": 20.0,
+      "K_PT_eV_per_A3": 0.023,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.023092608311544954,
+      "K_PT_over_K_phonon": 0.04298335843699321,
+      "K_phason_total_over_K_phonon": 0.04315642870870545
+    },
+    {
+      "E_flip_meV": 580.0,
+      "V_atom_A3": 12.0,
+      "K_PT_eV_per_A3": 0.04833333333333333,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.04842594164487829,
+      "K_PT_over_K_phonon": 0.0903273474400582,
+      "K_phason_total_over_K_phonon": 0.09050041771177045
+    },
+    {
+      "E_flip_meV": 580.0,
+      "V_atom_A3": 14.0,
+      "K_PT_eV_per_A3": 0.041428571428571426,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.04152117974011638,
+      "K_PT_over_K_phonon": 0.07742344066290702,
+      "K_phason_total_over_K_phonon": 0.07759651093461926
+    },
+    {
+      "E_flip_meV": 580.0,
+      "V_atom_A3": 16.0,
+      "K_PT_eV_per_A3": 0.03625,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.036342608311544955,
+      "K_PT_over_K_phonon": 0.06774551058004365,
+      "K_phason_total_over_K_phonon": 0.0679185808517559
+    },
+    {
+      "E_flip_meV": 580.0,
+      "V_atom_A3": 18.0,
+      "K_PT_eV_per_A3": 0.03222222222222222,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.03231483053376718,
+      "K_PT_over_K_phonon": 0.06021823162670546,
+      "K_phason_total_over_K_phonon": 0.06039130189841771
+    },
+    {
+      "E_flip_meV": 580.0,
+      "V_atom_A3": 20.0,
+      "K_PT_eV_per_A3": 0.028999999999999998,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.029092608311544952,
+      "K_PT_over_K_phonon": 0.054196408464034916,
+      "K_phason_total_over_K_phonon": 0.054369478735747157
+    },
+    {
+      "E_flip_meV": 700.0,
+      "V_atom_A3": 12.0,
+      "K_PT_eV_per_A3": 0.05833333333333334,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.0584259416448783,
+      "K_PT_over_K_phonon": 0.1090157641517944,
+      "K_phason_total_over_K_phonon": 0.10918883442350663
+    },
+    {
+      "E_flip_meV": 700.0,
+      "V_atom_A3": 14.0,
+      "K_PT_eV_per_A3": 0.05,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.05009260831154496,
+      "K_PT_over_K_phonon": 0.0934420835586809,
+      "K_phason_total_over_K_phonon": 0.09361515383039315
+    },
+    {
+      "E_flip_meV": 700.0,
+      "V_atom_A3": 16.0,
+      "K_PT_eV_per_A3": 0.043750000000000004,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.04384260831154496,
+      "K_PT_over_K_phonon": 0.08176182311384579,
+      "K_phason_total_over_K_phonon": 0.08193489338555804
+    },
+    {
+      "E_flip_meV": 700.0,
+      "V_atom_A3": 18.0,
+      "K_PT_eV_per_A3": 0.03888888888888889,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.03898149720043385,
+      "K_PT_over_K_phonon": 0.07267717610119626,
+      "K_phason_total_over_K_phonon": 0.0728502463729085
+    },
+    {
+      "E_flip_meV": 700.0,
+      "V_atom_A3": 20.0,
+      "K_PT_eV_per_A3": 0.035,
+      "K_perp_bare_eV_per_A3": 9.260831154495419e-05,
+      "K_phason_total_eV_per_A3": 0.03509260831154496,
+      "K_PT_over_K_phonon": 0.06540945849107663,
+      "K_phason_total_over_K_phonon": 0.06558252876278887
+    }
+  ],
+  "verdict": {
+    "direction": "(i) CLOSURE: Penrose-Toner dominates i-AlPdMn measurements; bare phi^(-18) below chemical-bonding floor",
+    "framing": "Bare GCT prediction K_perp/K_phonon = phi^(-18) = 1.731e-04. Penrose-Toner correction sweep over E_flip in [100.0, 700.0] meV (Trambly+ 2013 DFT for i-AlPdMn Al-Pd swap) and V_atom in [12.0, 20.0] A^3 yields K_PT/K_phonon in [9.344e-03, 1.090e-01] -- covering the de Boissieu 1995 value 1.0e-02 (IN range) and approaching the Francoual 2006 value 1.0e-01 (IN range). Bare phi^(-18) is 58x below de Boissieu and 578x below Francoual -- below the chemical-bonding floor by 2-3 orders of magnitude. i-AlPdMn measurements cannot in principle resolve the bare phi^(-18) prediction below this floor; direct test requires chemically clean analog systems (synthetic photonic quasicrystals, charge-density-wave systems, or atomic-physics simulators where E_flip -> 0).",
+    "K_PT_over_K_phonon_range": [
+      0.00934420835586809,
+      0.1090157641517944
+    ],
+    "K_phason_total_over_K_phonon_range": [
+      0.009517278627580329,
+      0.10918883442350663
+    ],
+    "observation_de_boissieu_1995": 0.01,
+    "observation_francoual_2006": 0.1,
+    "covers_de_boissieu": true,
+    "covers_francoual": true,
+    "covers_full_observed_range": true,
+    "bare_phi_18_over_de_boissieu": 0.017307027171223923,
+    "bare_phi_18_over_francoual": 0.0017307027171223923
+  }
+}

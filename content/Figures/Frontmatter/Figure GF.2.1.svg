@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="1040" viewBox="0 0 1460 1040" role="img" aria-labelledby="title desc">
+<title id="title">Figure GF.2.1 - Axioms, postulates, and anchors map</title>
+<desc id="desc">Programmatic vector figure generated for the GCT frontmatter.</desc>
+<defs>
+<marker id="arrow-blue" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9 z" fill="#2c5d8a"/></marker>
+<marker id="arrow-gray" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9 z" fill="#555555"/></marker>
+<marker id="arrow-red" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9 z" fill="#b03a2e"/></marker>
+</defs>
+<rect x="0" y="0" width="1460" height="1040" fill="#ffffff"/>
+<text x="60" y="62" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#1f1f1f" text-anchor="start">GF.2.1  Axioms, postulates, and anchors map</text>
+<text x="60" y="96" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#555555" text-anchor="start">Two ontological axioms define the root; the current numerical architecture adds declared P/A inputs and tracked closures.</text>
+<rect x="70" y="135" width="250" height="124" rx="6" fill="#f7f7f7" stroke="#222222" stroke-width="1.8"/>
+<rect x="70" y="135" width="250" height="28" rx="6" fill="#222222" stroke="#222222" stroke-width="0"/>
+<text x="82" y="155" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="start">Ontological root</text>
+<text x="82" y="185.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">Axiom of Presence:</text>
+<text x="82" y="200.86" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">experience exists.</text>
+<text x="82" y="216.72" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">Axiom of Intelligibility:</text>
+<text x="82" y="232.57999999999998" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">experience is structured.</text>
+<rect x="380" y="135" width="260" height="124" rx="6" fill="#f8fbfd" stroke="#2c5d8a" stroke-width="1.8"/>
+<rect x="380" y="135" width="260" height="28" rx="6" fill="#2c5d8a" stroke="#2c5d8a" stroke-width="0"/>
+<text x="392" y="155" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="start">Architecture rule</text>
+<text x="392" y="185.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">Structural postulates are adopted</text>
+<text x="392" y="200.86" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">for parsimony, empirical adequacy,</text>
+<text x="392" y="216.72" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">and falsifiability; they do not</text>
+<text x="392" y="232.57999999999998" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">deductively follow from the axioms.</text>
+<line x1="320" y1="197" x2="380" y2="197" stroke="#555555" stroke-width="2" fill="none" marker-end="url(#arrow-gray)"/>
+<rect x="100" y="330" width="218" height="78" rx="5" fill="#fbfbfb" stroke="#2c5d8a" stroke-width="1.5"/>
+<text x="110" y="352" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2c5d8a" text-anchor="start">P1</text>
+<text x="110" y="372.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Icosahedral cut-and-</text>
+<text x="110" y="386.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">project ansatz</text>
+<path d="M510,259 C510,292 209,292 209,330" fill="none" stroke="#2c5d8a" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+<rect x="350" y="330" width="218" height="78" rx="5" fill="#fbfbfb" stroke="#2c5d8a" stroke-width="1.5"/>
+<text x="360" y="352" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2c5d8a" text-anchor="start">P2</text>
+<text x="360" y="372.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">n = -107 electron gap-</text>
+<text x="360" y="386.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">label exponent</text>
+<path d="M510,259 C510,292 459,292 459,330" fill="none" stroke="#2c5d8a" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+<rect x="600" y="330" width="218" height="78" rx="5" fill="#fbfbfb" stroke="#2c5d8a" stroke-width="1.5"/>
+<text x="610" y="352" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2c5d8a" text-anchor="start">P3</text>
+<text x="610" y="372.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">D_H3 = 18 stiffness /</text>
+<text x="610" y="386.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">invariant handle</text>
+<path d="M510,259 C510,292 709,292 709,330" fill="none" stroke="#2c5d8a" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+<rect x="850" y="330" width="218" height="78" rx="5" fill="#fbfbfb" stroke="#2c5d8a" stroke-width="1.5"/>
+<text x="860" y="352" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2c5d8a" text-anchor="start">P4</text>
+<text x="860" y="372.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">N = 11 muon harmonic</text>
+<text x="860" y="386.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">exponent</text>
+<path d="M510,259 C510,292 959,292 959,330" fill="none" stroke="#2c5d8a" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+<rect x="1100" y="330" width="218" height="78" rx="5" fill="#fbfbfb" stroke="#2c5d8a" stroke-width="1.5"/>
+<text x="1110" y="352" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2c5d8a" text-anchor="start">P5</text>
+<text x="1110" y="372.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">N = 17 tau harmonic</text>
+<text x="1110" y="386.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">exponent</text>
+<path d="M510,259 C510,292 1209,292 1209,330" fill="none" stroke="#2c5d8a" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+<rect x="900" y="180" width="140" height="78" rx="5" fill="#fbfbfb" stroke="#666666" stroke-width="1.5"/>
+<text x="910" y="202" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#666666" text-anchor="start">A1</text>
+<text x="910" y="222.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">m_e dimensional SI</text>
+<text x="910" y="236.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">anchor</text>
+<rect x="1055" y="180" width="140" height="78" rx="5" fill="#fbfbfb" stroke="#666666" stroke-width="1.5"/>
+<text x="1065" y="202" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#666666" text-anchor="start">A2</text>
+<text x="1065" y="222.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">alpha_2^-1(M_GUT)</text>
+<text x="1065" y="236.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">endpoint anchor</text>
+<rect x="1210" y="180" width="140" height="78" rx="5" fill="#fbfbfb" stroke="#666666" stroke-width="1.5"/>
+<text x="1220" y="202" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#666666" text-anchor="start">A3</text>
+<text x="1220" y="222.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">alpha(0)_CODATA</text>
+<text x="1220" y="236.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">precision anchor</text>
+<rect x="95" y="560" width="220" height="94" rx="5" fill="#fbfbfb" stroke="#4f4f4f" stroke-width="1.5"/>
+<text x="105" y="582" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#4f4f4f" text-anchor="start">Gauge + chirality</text>
+<text x="105" y="602.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">SM gauge/chirality</text>
+<text x="105" y="616.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">sector from P1</text>
+<text x="105" y="630.32" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">architecture</text>
+<rect x="345" y="560" width="220" height="94" rx="5" fill="#fbfbfb" stroke="#4f4f4f" stroke-width="1.5"/>
+<text x="355" y="582" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#4f4f4f" text-anchor="start">Lepton masses</text>
+<text x="355" y="602.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">electron, muon, tau</text>
+<text x="355" y="616.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">hierarchy from P2/P4/P5</text>
+<text x="355" y="630.32" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">+ A1</text>
+<rect x="595" y="560" width="220" height="94" rx="5" fill="#fbfbfb" stroke="#4f4f4f" stroke-width="1.5"/>
+<text x="605" y="582" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#4f4f4f" text-anchor="start">Native RGE endpoint</text>
+<text x="605" y="602.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Z-pole flow audit using</text>
+<text x="605" y="616.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">A2 boundary</text>
+<rect x="845" y="560" width="220" height="94" rx="5" fill="#fbfbfb" stroke="#4f4f4f" stroke-width="1.5"/>
+<text x="855" y="582" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#4f4f4f" text-anchor="start">Precision comparisons</text>
+<text x="855" y="602.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">corrected lepton, Higgs,</text>
+<text x="855" y="616.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">QED rows using A3 where</text>
+<text x="855" y="630.32" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">disclosed</text>
+<rect x="1095" y="560" width="220" height="94" rx="5" fill="#fbfbfb" stroke="#4f4f4f" stroke-width="1.5"/>
+<text x="1105" y="582" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#4f4f4f" text-anchor="start">Hadronic / down quark</text>
+<text x="1105" y="602.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">FK mechanism remains</text>
+<text x="1105" y="616.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">open; current P.20 row</text>
+<text x="1105" y="630.32" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">postdiction-consistent</text>
+<path d="M209,408 C209,485 205,485 205,560" fill="none" stroke="#2c5d8a" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+<path d="M209,408 C295,470 455,488 455,560" fill="none" stroke="#2c5d8a" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+<path d="M359,408 C405,470 455,492 455,560" fill="none" stroke="#2c5d8a" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+<path d="M859,408 C785,470 455,492 455,560" fill="none" stroke="#2c5d8a" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+<path d="M1109,408 C990,470 455,492 455,560" fill="none" stroke="#2c5d8a" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+<path d="M609,408 C690,470 705,492 705,560" fill="none" stroke="#2c5d8a" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+<path d="M970,258 C920,290 834,300 834,330 L834,460 C834,500 705,500 705,560" fill="none" stroke="#666666" stroke-width="1.6" marker-end="url(#arrow-gray)"/>
+<path d="M1125,258 C1100,288 1084,300 1084,330 L1084,475 C1084,515 955,510 955,560" fill="none" stroke="#666666" stroke-width="1.6" marker-end="url(#arrow-gray)"/>
+<path d="M1280,258 C1320,295 1334,300 1334,330 L1334,490 C1334,530 955,525 955,560" fill="none" stroke="#666666" stroke-width="1.6" marker-end="url(#arrow-gray)"/>
+<path d="M209,408 C260,500 1180,505 1205,560" fill="none" stroke="#2c5d8a" stroke-width="1.6" marker-end="url(#arrow-blue)"/>
+<rect x="80" y="742" width="1270" height="154" rx="6" fill="#fffdfb" stroke="#b03a2e" stroke-width="1.8" stroke-dasharray="8 6"/>
+<text x="105" y="777" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#9b2f2f" text-anchor="start">Named closure targets kept separate from current inputs</text>
+<rect x="110" y="810" width="210" height="58" rx="5" fill="#ffffff" stroke="#9b2f2f" stroke-width="1.3" stroke-dasharray="4 4"/>
+<text x="120" y="833" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#9b2f2f" text-anchor="start">O.5</text>
+<text x="120" y="851.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">QLQCD / non-perturbative</text>
+<text x="120" y="863.1" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">spectrum closure</text>
+<rect x="355" y="810" width="210" height="58" rx="5" fill="#ffffff" stroke="#9b2f2f" stroke-width="1.3" stroke-dasharray="4 4"/>
+<text x="365" y="833" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#9b2f2f" text-anchor="start">O.14</text>
+<text x="365" y="851.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">electron gap-label</text>
+<text x="365" y="863.1" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">physical-link chain</text>
+<rect x="600" y="810" width="210" height="58" rx="5" fill="#ffffff" stroke="#9b2f2f" stroke-width="1.3" stroke-dasharray="4 4"/>
+<text x="610" y="833" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#9b2f2f" text-anchor="start">O.15</text>
+<text x="610" y="851.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">D=18 stiffness-ratio RG</text>
+<text x="610" y="863.1" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">derivation</text>
+<rect x="845" y="810" width="210" height="58" rx="5" fill="#ffffff" stroke="#9b2f2f" stroke-width="1.3" stroke-dasharray="4 4"/>
+<text x="855" y="833" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#9b2f2f" text-anchor="start">A2 bridge</text>
+<text x="855" y="851.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">derive the native-RGE</text>
+<text x="855" y="863.1" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">endpoint boundary</text>
+<rect x="1090" y="810" width="210" height="58" rx="5" fill="#ffffff" stroke="#9b2f2f" stroke-width="1.3" stroke-dasharray="4 4"/>
+<text x="1100" y="833" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#9b2f2f" text-anchor="start">A3 bridge</text>
+<text x="1100" y="851.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">bare-to-physical alpha</text>
+<text x="1100" y="863.1" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">bridge for precision rows</text>
+<path d="M455,654 C455,698 215,698 215,742" fill="none" stroke="#b03a2e" stroke-width="1.4" stroke-dasharray="6 5" marker-end="url(#arrow-red)"/>
+<path d="M705,654 C705,698 705,698 705,742" fill="none" stroke="#b03a2e" stroke-width="1.4" stroke-dasharray="6 5" marker-end="url(#arrow-red)"/>
+<path d="M955,654 C955,698 1195,698 1195,742" fill="none" stroke="#b03a2e" stroke-width="1.4" stroke-dasharray="6 5" marker-end="url(#arrow-red)"/>
+<path d="M1205,654 C1205,698 215,698 215,742" fill="none" stroke="#b03a2e" stroke-width="1.4" stroke-dasharray="6 5" marker-end="url(#arrow-red)"/>
+<rect x="70" y="925" width="1270" height="42" rx="5" fill="#f7f7f7" stroke="#dddddd" stroke-width="1"/>
+<text x="90" y="952" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#333333" text-anchor="start">Reading rule: the root enables the architecture; it does not directly imply every numerical row.</text>
+<text x="60" y="1005" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#666666" text-anchor="start">Sources: content/00_Global_Frontmatter/02_Axiom_and_Postulate_Ledger.md; content/00_Global_Frontmatter/03_Parameter_Ledger.md</text>
+</svg>

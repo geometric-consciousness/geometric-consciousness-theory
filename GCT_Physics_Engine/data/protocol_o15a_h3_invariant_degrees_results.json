@@ -1,0 +1,85 @@
+{
+  "coxeter_data": {
+    "A_3": {
+      "rank": 3,
+      "order": 24,
+      "Coxeter_h": 4,
+      "positive_roots_N": 6,
+      "degrees": [
+        2,
+        3,
+        4
+      ],
+      "description": "S_4 = symmetric group on 4 elements"
+    },
+    "B_3": {
+      "rank": 3,
+      "order": 48,
+      "Coxeter_h": 6,
+      "positive_roots_N": 9,
+      "degrees": [
+        2,
+        4,
+        6
+      ],
+      "description": "Symmetries of the cube/octahedron"
+    },
+    "H_3": {
+      "rank": 3,
+      "order": 120,
+      "Coxeter_h": 10,
+      "positive_roots_N": 15,
+      "degrees": [
+        2,
+        6,
+        10
+      ],
+      "description": "Icosahedral group (non-crystallographic)"
+    },
+    "H_4": {
+      "rank": 4,
+      "order": 14400,
+      "Coxeter_h": 30,
+      "positive_roots_N": 60,
+      "degrees": [
+        2,
+        12,
+        20,
+        30
+      ],
+      "description": "600-cell symmetry (4D non-crystallographic)"
+    }
+  },
+  "H_3_invariant_degree_sum": 18,
+  "shephard_todd_identity_check": {
+    "A_3": {
+      "sum_degrees": 9,
+      "N_plus_r": 9,
+      "matches": true
+    },
+    "B_3": {
+      "sum_degrees": 12,
+      "N_plus_r": 12,
+      "matches": true
+    },
+    "H_3": {
+      "sum_degrees": 18,
+      "N_plus_r": 18,
+      "matches": true
+    },
+    "H_4": {
+      "sum_degrees": 64,
+      "N_plus_r": 64,
+      "matches": true
+    }
+  },
+  "rank_3_invariant_sums": {
+    "A_3": 9,
+    "B_3": 12,
+    "H_3": 18
+  },
+  "H_3_is_largest_rank_3_sum": true,
+  "structural_identification": "18 in phi^(-18) is the sum of H_3 fundamental degrees = 2 + 6 + 10 = N_pos_roots + rank = 15 + 3. This is the canonical Shephard-Todd invariant of the icosahedral H_3 Coxeter group, NOT an ad-hoc rank*Galois*dim count.",
+  "status": "Tier 2 structural sharpening; full first-principles RG derivation still open",
+  "remaining_open": "The symmetry-adapted phason-elasticity RG flow mapping the Coxeter invariant-degree sum to the K_perp/K_parallel exponent. Research-level LRT-style calculation with explicit H_3 symmetry-breaking."
+}

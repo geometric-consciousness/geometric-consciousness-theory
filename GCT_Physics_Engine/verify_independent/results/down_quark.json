@@ -1,0 +1,26 @@
+{
+  "name": "down_quark",
+  "app_r_label": "Down quark (m_d)",
+  "formula": "m_d = m_u \u00b7 \u03c6^\u03c6 (FK-determinant infinite-volume-limit closed form)",
+  "tier": "Tier 2 FK-determinant mechanism + Tier 3 phi^phi infinite-volume-limit identification conditional on O.5",
+  "predicted": 4.7155465265923,
+  "observed": 4.7,
+  "unit": "MeV",
+  "app_r_predicted": 4.716,
+  "app_r_precision_str": "0.33% (3308 ppm), inside the 11% shell-resonance gate; conditional on O.5",
+  "app_r_precision_ppm": 3307.7716153829883,
+  "independent_precision_ppm": 3307.771615382989,
+  "status": "PASS",
+  "tolerance_ppm": 110000.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "engine_branch_value_MeV": 4.7155465265923,
+    "engine_branch_error_pct": 0.33077716153829884,
+    "fk_limit_closed_form": "phi^phi",
+    "closed_cage_deep_tail_mean_det_FK_over_phi_phi": 0.9976,
+    "closed_cage_deep_tail_sample_std": 0.0253,
+    "closed_cage_deep_tail_mean_signed_error_vs_PDG_percent": 0.09,
+    "convergence_caveat": "empirical decaying envelope toward phi^phi; rigorous infinite-volume proof open, bundles with O.5",
+    "branch_note": "Canonical computation: FK-determinant infinite-volume-limit branch m_u\u00b7\u03c6^\u03c6. Single-cage values oscillate inside the 11% shell-resonance band; the match is a central-tendency result conditional on O.5."
+  }
+}

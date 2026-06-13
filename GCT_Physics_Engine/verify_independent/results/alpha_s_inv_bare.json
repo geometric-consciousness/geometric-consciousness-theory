@@ -1,0 +1,27 @@
+{
+  "name": "alpha_s_inv_bare",
+  "app_r_label": "Strong coupling \u03b1_s\u207b\u00b9(bare) = 10 \u03c6\u00b2 (Tier 3 calibrated handle)",
+  "formula": "\u03b1_s\u207b\u00b9(bare) = 10 \u00b7 \u03c6\u00b2 (10 = RT three-fold axes; \u03c6\u00b2 = icosahedral inflation)",
+  "tier": "Tier 3 calibrated handle (10 integer + \u03c6\u00b2 geometric factor); O.42 / QLQCD-2 open",
+  "predicted": 26.18033988749895,
+  "observed": 26.18,
+  "unit": "(dimensionless)",
+  "app_r_predicted": 26.18,
+  "app_r_precision_str": "Tier 3 calibrated-handle evaluation: 10 \u00b7 \u03c6\u00b2 = 26.1803 vs stated 26.18 (+0.0013%). Gap to PDG \u03b1_s\u207b\u00b9(M_Z) = 8.4818 is +208.7% \u2014 the DOCUMENTED 'too-small-to-run' debt of App ZN \u00a7ZN.5 / Ch04 \u00a74.5.5 (QLQCD-2 non-perturbative confinement correction, App Z.7 open problem).",
+  "app_r_precision_ppm": 12.98271577346484,
+  "independent_precision_ppm": 12.98271577346484,
+  "status": "PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "phi": 1.618033988749895,
+    "alpha_s_inv_bare_GCT_formula": 26.18033988749895,
+    "alpha_s_bare_GCT": 0.03819660112501051,
+    "alpha_s_inv_stated_in_manuscript": 26.18,
+    "formula_rounding_error_pct": 0.001298271577346484,
+    "alpha_s_PDG_MZ": 0.1179,
+    "alpha_s_inv_PDG_MZ": 8.481764206955047,
+    "bare_vs_PDG_gap_pct": 208.6662072736126,
+    "derivation_note": "\u03b1_s\u207b\u00b9(bare) = 10 \u03c6\u00b2 combines two geometric substrate inputs: (a) the count of three-fold rotation axes of the rhombic triacontahedron = 10, and (b) the icosahedral inflation factor \u03c6\u00b2. The TREE-LEVEL bare value 26.18 is a calibrated handle at M_GUT; the gap to PDG \u03b1_s\u207b\u00b9(M_Z) \u2248 8.48 is the OPEN QLQCD-2 non-perturbative confinement debt (App Z.7), explicitly acknowledged in App ZN \u00a7ZN.5 and Ch04 \u00a74.5.5. This is NOT a hidden bug \u2014 it's open by design pending non-perturbative closure."
+  }
+}

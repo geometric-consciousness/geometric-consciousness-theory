@@ -1,0 +1,131 @@
+{
+  "tier": "Tier 2 framework (Sapone-Kunz 2009 + Creminelli 2010 clustering-DE perturbation equations) + Tier 3 specific c_{s,bio}^2 input + Tier 3 framework requirement (the c_{s,bio}^2 << 1 commitment is load-bearing for the App H O.13 fingerprint (iv) angular cross-power test)",
+  "gct_inputs": {
+    "w_bio_z0": -1.005,
+    "Omega_bio_frac": 0.05,
+    "c_s_bio_sq_benchmark": 0.001
+  },
+  "cosmological_inputs": {
+    "H0_km_s_Mpc": 67.4,
+    "k_lss_window_h_per_mpc": [
+      0.01,
+      0.5
+    ]
+  },
+  "regime_check_at_benchmark": {
+    "c_s_sq": 0.001,
+    "k_jeans_h_per_mpc": 0.010547957505564977,
+    "k_lss_window_h_per_mpc": [
+      0.01,
+      0.5
+    ],
+    "delta_de_suppression_at_k_lo": 0.5266482985784078,
+    "delta_de_suppression_at_k_hi": 0.00044483965976883477,
+    "clustering_active_across_window": false,
+    "interpretation": "Clustering regime requires the delta_DE suppression factor to stay close to 1 across the LSS k-window. If suppression drops below 0.5, the clustering signature is washed out and the angular cross-power fingerprint is unobservable for this c_s_sq."
+  },
+  "c_s_sq_sweep_regime_boundary": [
+    {
+      "c_s_sq": 1e-09,
+      "k_jeans_h_per_mpc": 10.547957505564975,
+      "clustering_active": true
+    },
+    {
+      "c_s_sq": 1e-08,
+      "k_jeans_h_per_mpc": 3.33555703802535,
+      "clustering_active": true
+    },
+    {
+      "c_s_sq": 1e-07,
+      "k_jeans_h_per_mpc": 1.0547957505564973,
+      "clustering_active": true
+    },
+    {
+      "c_s_sq": 1e-06,
+      "k_jeans_h_per_mpc": 0.333555703802535,
+      "clustering_active": false
+    },
+    {
+      "c_s_sq": 1e-05,
+      "k_jeans_h_per_mpc": 0.10547957505564973,
+      "clustering_active": false
+    },
+    {
+      "c_s_sq": 0.0001,
+      "k_jeans_h_per_mpc": 0.0333555703802535,
+      "clustering_active": false
+    },
+    {
+      "c_s_sq": 0.001,
+      "k_jeans_h_per_mpc": 0.010547957505564977,
+      "clustering_active": false
+    },
+    {
+      "c_s_sq": 0.01,
+      "k_jeans_h_per_mpc": 0.00333555703802535,
+      "clustering_active": false
+    },
+    {
+      "c_s_sq": 0.05,
+      "k_jeans_h_per_mpc": 0.0014917064559705068,
+      "clustering_active": false
+    },
+    {
+      "c_s_sq": 0.1,
+      "k_jeans_h_per_mpc": 0.0010547957505564975,
+      "clustering_active": false
+    },
+    {
+      "c_s_sq": 0.5,
+      "k_jeans_h_per_mpc": 0.000471719000124448,
+      "clustering_active": false
+    },
+    {
+      "c_s_sq": 1.0,
+      "k_jeans_h_per_mpc": 0.000333555703802535,
+      "clustering_active": false
+    }
+  ],
+  "c_s_sq_activation_threshold_for_full_lss_window": 4.45037630156818e-07,
+  "activation_window_disclosure": "Clustering-DE activation across the full LSS window k in [0.01, 0.5] h/Mpc requires c_s_sq < 4.45e-07 (so k_Jeans > k_LSS_max). The representative benchmark c_s_sq = 0.001 sits ABOVE this activation threshold; at the benchmark, clustering is active only on the largest LSS scales (k near k_LSS_min). Full coverage of the LSS window requires c_s_sq below the activation threshold. This is the canonical Sapone-Kunz clustering-DE regime structure and is the load-bearing Tier 3 framework requirement that the biogenic-channel realisation must satisfy.",
+  "parametric_fingerprint_check": {
+    "k_eff_h_per_mpc": 0.07071067811865475,
+    "amplitude_vs_c_s_sq_sweep": [
+      {
+        "c_s_sq": 1e-05,
+        "fingerprint_amplitude": 0.68994056989919
+      },
+      {
+        "c_s_sq": 0.0001,
+        "fingerprint_amplitude": 0.1820166792804225
+      },
+      {
+        "c_s_sq": 0.001,
+        "fingerprint_amplitude": 0.0217675133794021
+      },
+      {
+        "c_s_sq": 0.01,
+        "fingerprint_amplitude": 0.002220247681950406
+      },
+      {
+        "c_s_sq": 0.1,
+        "fingerprint_amplitude": 0.0002224693114708291
+      },
+      {
+        "c_s_sq": 1.0,
+        "fingerprint_amplitude": 2.225138637262794e-05
+      }
+    ],
+    "structural_check": "Cross-power fingerprint amplitude decreases monotonically with c_s_sq across the swept range, consistent with the Sapone-Kunz / Creminelli sub-horizon-suppression form."
+  },
+  "framework_level_closure": {
+    "perturbation_equations_catalogued": true,
+    "sub_horizon_jeans_threshold_identified": true,
+    "parametric_dependence_matches_canonical_form": true,
+    "benchmark_clustering_activation_status": false
+  },
+  "residual_research_target": "Full numerical evaluation of the angular cross-power C_l^{bio x gal-hab} between biogenic-DE perturbations and habitable-zone galactic large-scale structure under the GCT-canonical clustering-DE realisation. This requires Boltzmann-code-level integration (CAMB or CLASS extension with explicit DE-perturbation modules carrying the GCT-derived w_bio(z) curve from `protocol_imp01_pipeline.py`). Registered as App H Open Problem O.13 fingerprint (iv) bridge sub-item; bundles with O.13's residual GCT-derivable thawing-quintessence channel construction.",
+  "verdict_status": "FRAMEWORK_BRIDGE_CATALOGUED_ACTIVATION_THRESHOLD_IDENTIFIED",
+  "verdict": "The clustering-DE perturbation framework (Sapone-Kunz 2009; Creminelli 2010; Batista 2022) is CATALOGUED at the framework level: perturbation equations exposed, sub-horizon Jeans-length activation threshold for the LSS window k in [0.01, 0.5] h/Mpc identified at c_s_sq < 4.45e-07, parametric dependence of the cross-power fingerprint on c_{s,bio}^2 confirmed to match the canonical sub-horizon-suppression form. The Tier 3 framework requirement c_{s,bio}^2 << 1 is the load-bearing commitment for the App H O.13 fingerprint (iv) angular cross-power test; the activation threshold identified here tightens the required value to c_{s,bio}^2 < 4.45e-07 for clustering activation across the full LSS window. Full numerical closure is registered as App H Open Problem O.13 fingerprint (iv) sub-item, requiring CAMB/CLASS-style Boltzmann-code integration of the perturbation equations on the GCT biogenic-channel kernel.",
+  "pass": true
+}

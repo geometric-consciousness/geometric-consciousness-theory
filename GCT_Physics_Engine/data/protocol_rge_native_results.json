@@ -1,0 +1,115 @@
+{
+  "protocol": "GCT-Native RG Flow (App ZN)",
+  "substrate": {
+    "phi": 1.618033988749895,
+    "K_perp_over_K_par": 0.00017307027171223924,
+    "E_par_sq": 0.7236067977499789,
+    "E_perp_sq": 0.276393202250021,
+    "icosahedral_irreps": {
+      "A_g": {
+        "dim": 1,
+        "parity": 1
+      },
+      "T_1g": {
+        "dim": 3,
+        "parity": 1
+      },
+      "T_2g": {
+        "dim": 3,
+        "parity": 1
+      },
+      "G_g": {
+        "dim": 4,
+        "parity": 1
+      },
+      "H_g": {
+        "dim": 5,
+        "parity": 1
+      },
+      "A_u": {
+        "dim": 1,
+        "parity": -1
+      },
+      "T_1u": {
+        "dim": 3,
+        "parity": -1
+      },
+      "T_2u": {
+        "dim": 3,
+        "parity": -1
+      },
+      "G_u": {
+        "dim": 4,
+        "parity": -1
+      },
+      "H_u": {
+        "dim": 5,
+        "parity": -1
+      }
+    },
+    "sum_dim_sq_total": 120,
+    "sum_dim_sq_gerade": 60,
+    "sum_dim_sq_ungerade": 60,
+    "Z_1_icosahedral_norm": 0.20602693547048012,
+    "Z_2_icosahedral_norm": 0.2431236501273333,
+    "Z_3_icosahedral_norm": 0.7
+  },
+  "scales": {
+    "M_Z_GeV": 91.1876,
+    "M_GUT_GeV": 3.203844296328604e+16,
+    "T_GUT": 33.49279399635455
+  },
+  "beta_coefficients_saturated": {
+    "b1_GCT_at_T_GUT": 6.833333333333333,
+    "b2_GCT_at_T_GUT": -3.1666666666666665,
+    "b3_GCT_at_T_GUT": -7.0,
+    "b1_SM_full_content": 6.833333333333333,
+    "b2_SM_full_content": -3.1666666666666665,
+    "b3_SM_full_content": -7.0,
+    "note": "GCT saturated values match SM by Z_i calibration. Tier-2 *shape* of flow comes from icosahedral irrep activation schedule; Z_i absorbs the substrate-to-PDG absolute normalization (one anchor per coupling)."
+  },
+  "alpha": {
+    "low_energy_CODATA": 137.035999,
+    "M_Z_GCT_native": 136.81682587469876,
+    "M_Z_SM_1loop": 126.68999837383915,
+    "M_Z_PDG": 127.94,
+    "err_GCT_vs_PDG_pct": 6.938272529856782,
+    "err_SM_vs_PDG_pct": -0.9770217493831892,
+    "err_GCT_vs_SM_pct": 7.993391452241709,
+    "tier": "Tier 3 (open)"
+  },
+  "sin2_theta_W": {
+    "M_GUT_BC_phi_minus_2": 0.38196601125010515,
+    "M_Z_GCT_native": 0.27428874901997896,
+    "M_Z_SM_1loop": 0.17352909384178233,
+    "M_Z_PDG": 0.23122,
+    "err_GCT_vs_PDG_pct": 18.62674034252182,
+    "err_SM_vs_PDG_pct": -24.950655721052538,
+    "err_GCT_vs_SM_pct": 58.064992415661266,
+    "tier": "Tier 3 (open)"
+  },
+  "alpha_s": {
+    "bare_inv_10_phi2": 26.18033988749895,
+    "M_Z_GCT_native": 0.05204482909211381,
+    "M_Z_PDG": 0.118,
+    "err_GCT_vs_PDG_pct": -55.89421263380186,
+    "tier": "Tier 3 (bare 10 phi^2 calibrated handle) + Tier 3 (RGE running) \u2014 QLQCD-2 closure required (App Z.7)",
+    "note": "Bare value 10 phi^2 is a Tier 3 calibrated handle pending O.42 / QLQCD-2. Running uses Z_3-calibrated b_3 coefficient. The flow does not reproduce PDG alpha_s(M_Z) because the bare GUT-scale value (0.038) is too small to sustain 33.5 e-folds of asymptotic-free running \u2014 the documented 67.6% gap of Ch04 \u00a74.5.5. QLQCD-2 closure (App Z.7) is the canonical path; non-perturbative confinement corrections to the bare value are required."
+  },
+  "uv_fixed_point_analysis": {
+    "verdict": "no non-trivial UV fixed point",
+    "comment": "GCT-native b_i(t) saturate at t = T_GUT once all 10 irreps of I_h are active. Beyond M_GUT the coefficients are constant. This is structurally distinct from Asymptotic Safety: GCT has a combinatorial UV cutoff set by the finite content of the icosahedral group, NOT a Weinberg-Reuter non-Gaussian fixed point. The substrate IS the UV completion; no further scaling solution required."
+  },
+  "closure_summary": {
+    "alpha": "Tier 3 (open)",
+    "sin2_W": "Tier 3 (open)",
+    "alpha_s": "Tier 3 (bare calibrated handle) / Tier 3 (running, QLQCD-2 pending)",
+    "overall_status": "Partial structural closure. The shape of alpha, sin^2(theta_W) running is now derived from icosahedral I_h irrep activation + Gram weights with no fitted shape parameter; one Z_i anchor per coupling absorbs absolute normalization, and Parameter Ledger A2 alpha_2^-1(M_GUT)=24.0 anchors the sin^2(theta_W) endpoint/magnitude. alpha_s remains an open problem pending QLQCD-2 (App Z.7)."
+  },
+  "open_research_debt_v3_section_22_8": {
+    "baseline_dependency": "SM RGE coefficients remain the Tier 3 comparison target",
+    "current_status": "Tier 2 shape for U(1)/SU(2), Tier 3 magnitude anchors including A2 alpha_2^-1(M_GUT); Tier 3 bare handle for SU(3), Tier 3 running",
+    "what_was_replaced": "Free-Gaussian phason kernel of Ch04 \u00a74.5.3",
+    "what_remains_open": "QLQCD-2 non-perturbative SU(3) closure"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "alpha_inverse",
+  "app_r_label": "Fine-structure constant inverse (\u03b1^-1)",
+  "formula": "\u03b1^-1 = 360 \u00b7 \u03c6^-2",
+  "tier": "Tier 2 mechanism + Tier 3 specific multiplier (O.19/O.5 pending)",
+  "predicted": 137.50776405003785,
+  "observed": 137.035999177,
+  "unit": "(dimensionless)",
+  "app_r_predicted": 137.5077,
+  "app_r_precision_str": "3442 ppm (Tree-Level Base)",
+  "app_r_precision_ppm": 3442.0,
+  "independent_precision_ppm": 3442.634606024181,
+  "status": "OPEN_CONDITIONAL",
+  "tolerance_ppm": 5000.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "phi_squared_inv": 0.38196601125010515,
+    "alpha_factor_360_provenance": "600-cell antipodal edge-count selection; Tier 3 specific multiplier pending O.19/O.5",
+    "actual_ppm_residual": 3442.634606024181,
+    "status_note": "Tree-level residual 3442.6 ppm; Tier 3 numerical residual pending O.5 (1/(2N) integer-factor closure) and O.19 (phason 1-loop magnitude closure). Within 0.5% tolerance band but NOT a precision validation."
+  }
+}

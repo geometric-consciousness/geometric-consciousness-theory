@@ -1,0 +1,1537 @@
+{
+  "winner_subset_idx": 17,
+  "winner_orbit_indices": [
+    0,
+    8,
+    11,
+    13
+  ],
+  "winner_metrics": {
+    "orbit_indices": [
+      0,
+      8,
+      11,
+      13
+    ],
+    "orbit_sizes_used": [
+      12,
+      12,
+      60,
+      60
+    ],
+    "orbit_min_norms_used": [
+      0.1669252677110946,
+      0.4888861452328024,
+      0.5401815134754528,
+      0.5653849241897518
+    ],
+    "eta_scalar": -8.0,
+    "n_orbits_used": 4,
+    "total_perp_norm": 71.74154553959184,
+    "max_perp_norm": 0.5653849241897523,
+    "min_perp_norm_in_cage": 0.1669252677110946,
+    "n_long_bonds": 1350,
+    "n_short_bonds": 1410,
+    "total_bond_weight": 3631.4279241373515,
+    "n_components": 1,
+    "spectrum_min": -16.601667879357187,
+    "spectrum_max": 52.93596632775012,
+    "n_pos_eigvals": 68,
+    "n_neg_eigvals": 76,
+    "subset_idx": 17
+  },
+  "all_42_cages_metrics": [
+    {
+      "orbit_indices": [
+        0,
+        3,
+        5,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.32941538291476796,
+        0.4016228317724543,
+        0.5401815134754528
+      ],
+      "eta_scalar": 6.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 52.34757425547193,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 0,
+      "n_short_bonds": 1620,
+      "total_bond_weight": 2621.21506177483,
+      "n_components": 1,
+      "spectrum_min": -23.441595180350866,
+      "spectrum_max": 40.81106930449022,
+      "n_pos_eigvals": 71,
+      "n_neg_eigvals": 65,
+      "subset_idx": 0
+    },
+    {
+      "orbit_indices": [
+        0,
+        3,
+        6,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.32941538291476796,
+        0.43493096463846515,
+        0.5401815134754528
+      ],
+      "eta_scalar": 4.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 54.34606222743258,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 60,
+      "n_short_bonds": 1500,
+      "total_bond_weight": 2487.0509831248423,
+      "n_components": 1,
+      "spectrum_min": -19.849683356851834,
+      "spectrum_max": 35.95977897034934,
+      "n_pos_eigvals": 74,
+      "n_neg_eigvals": 70,
+      "subset_idx": 1
+    },
+    {
+      "orbit_indices": [
+        0,
+        3,
+        8,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.32941538291476796,
+        0.4888861452328024,
+        0.5401815134754528
+      ],
+      "eta_scalar": 0.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 57.583373063092814,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 150,
+      "n_short_bonds": 1290,
+      "total_bond_weight": 2237.263845487364,
+      "n_components": 1,
+      "spectrum_min": -16.252914559918274,
+      "spectrum_max": 31.137212706455017,
+      "n_pos_eigvals": 72,
+      "n_neg_eigvals": 72,
+      "subset_idx": 2
+    },
+    {
+      "orbit_indices": [
+        0,
+        3,
+        10,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.32941538291476796,
+        0.5401815134754528,
+        0.5401815134754528
+      ],
+      "eta_scalar": -10.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 60.66109515765183,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 420,
+      "n_short_bonds": 1440,
+      "total_bond_weight": 2749.9689437998486,
+      "n_components": 1,
+      "spectrum_min": -15.751954102198248,
+      "spectrum_max": 39.050419621267736,
+      "n_pos_eigvals": 67,
+      "n_neg_eigvals": 77,
+      "subset_idx": 3
+    },
+    {
+      "orbit_indices": [
+        0,
+        3,
+        11,
+        12
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.32941538291476796,
+        0.5401815134754528,
+        0.5653849241897516
+      ],
+      "eta_scalar": 2.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 62.17329980050978,
+      "max_perp_norm": 0.5653849241897522,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 360,
+      "n_short_bonds": 1680,
+      "total_bond_weight": 3078.2971010998235,
+      "n_components": 1,
+      "spectrum_min": -16.61788918506809,
+      "spectrum_max": 44.96043556021108,
+      "n_pos_eigvals": 73,
+      "n_neg_eigvals": 71,
+      "subset_idx": 4
+    },
+    {
+      "orbit_indices": [
+        0,
+        3,
+        11,
+        13
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.32941538291476796,
+        0.5401815134754528,
+        0.5653849241897518
+      ],
+      "eta_scalar": 6.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 62.17329980050978,
+      "max_perp_norm": 0.5653849241897523,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 600,
+      "n_short_bonds": 1380,
+      "total_bond_weight": 2832.886904474855,
+      "n_components": 1,
+      "spectrum_min": -17.609907608657256,
+      "spectrum_max": 42.967875440469435,
+      "n_pos_eigvals": 75,
+      "n_neg_eigvals": 69,
+      "subset_idx": 5
+    },
+    {
+      "orbit_indices": [
+        0,
+        5,
+        6,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.4016228317724543,
+        0.43493096463846515,
+        0.5401815134754528
+      ],
+      "eta_scalar": 0.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 58.67850915889377,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 60,
+      "n_short_bonds": 1320,
+      "total_bond_weight": 2195.804865149861,
+      "n_components": 1,
+      "spectrum_min": -16.040032634312663,
+      "spectrum_max": 31.11187095825454,
+      "n_pos_eigvals": 72,
+      "n_neg_eigvals": 72,
+      "subset_idx": 6
+    },
+    {
+      "orbit_indices": [
+        0,
+        5,
+        8,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.4016228317724543,
+        0.4888861452328024,
+        0.5401815134754528
+      ],
+      "eta_scalar": -10.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 61.915819994554,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 150,
+      "n_short_bonds": 1230,
+      "total_bond_weight": 2140.181806162371,
+      "n_components": 1,
+      "spectrum_min": -12.94167934981325,
+      "spectrum_max": 30.03601288257307,
+      "n_pos_eigvals": 67,
+      "n_neg_eigvals": 77,
+      "subset_idx": 7
+    },
+    {
+      "orbit_indices": [
+        0,
+        5,
+        10,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.4016228317724543,
+        0.5401815134754528,
+        0.5401815134754528
+      ],
+      "eta_scalar": -22.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 64.99354208911302,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 420,
+      "n_short_bonds": 1320,
+      "total_bond_weight": 2555.804865149861,
+      "n_components": 1,
+      "spectrum_min": -11.532798718214792,
+      "spectrum_max": 36.91246090617493,
+      "n_pos_eigvals": 61,
+      "n_neg_eigvals": 83,
+      "subset_idx": 8
+    },
+    {
+      "orbit_indices": [
+        0,
+        5,
+        11,
+        12
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.4016228317724543,
+        0.5401815134754528,
+        0.5653849241897516
+      ],
+      "eta_scalar": 24.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 66.50574673197096,
+      "max_perp_norm": 0.5653849241897522,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 480,
+      "n_short_bonds": 1260,
+      "total_bond_weight": 2518.7228258248674,
+      "n_components": 1,
+      "spectrum_min": -11.791278740202035,
+      "spectrum_max": 37.6354630027681,
+      "n_pos_eigvals": 84,
+      "n_neg_eigvals": 60,
+      "subset_idx": 9
+    },
+    {
+      "orbit_indices": [
+        0,
+        5,
+        11,
+        13
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.4016228317724543,
+        0.5401815134754528,
+        0.5653849241897518
+      ],
+      "eta_scalar": -14.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 66.50574673197096,
+      "max_perp_norm": 0.5653849241897523,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 900,
+      "n_short_bonds": 1320,
+      "total_bond_weight": 3035.804865149861,
+      "n_components": 1,
+      "spectrum_min": -12.544949871953724,
+      "spectrum_max": 46.05791432778037,
+      "n_pos_eigvals": 65,
+      "n_neg_eigvals": 79,
+      "subset_idx": 10
+    },
+    {
+      "orbit_indices": [
+        0,
+        6,
+        8,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.43493096463846515,
+        0.4888861452328024,
+        0.5401815134754528
+      ],
+      "eta_scalar": -12.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 63.91430796651464,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 210,
+      "n_short_bonds": 1290,
+      "total_bond_weight": 2297.263845487364,
+      "n_components": 1,
+      "spectrum_min": -14.484612380061494,
+      "spectrum_max": 33.069083094510106,
+      "n_pos_eigvals": 66,
+      "n_neg_eigvals": 78,
+      "subset_idx": 11
+    },
+    {
+      "orbit_indices": [
+        0,
+        6,
+        10,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.43493096463846515,
+        0.5401815134754528,
+        0.5401815134754528
+      ],
+      "eta_scalar": -14.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 66.99203006107366,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 720,
+      "n_short_bonds": 1320,
+      "total_bond_weight": 2855.804865149861,
+      "n_components": 1,
+      "spectrum_min": -12.538533542957218,
+      "spectrum_max": 40.945541512843064,
+      "n_pos_eigvals": 65,
+      "n_neg_eigvals": 79,
+      "subset_idx": 12
+    },
+    {
+      "orbit_indices": [
+        0,
+        6,
+        11,
+        12
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.43493096463846515,
+        0.5401815134754528,
+        0.5653849241897516
+      ],
+      "eta_scalar": -6.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 68.50423470393162,
+      "max_perp_norm": 0.5653849241897522,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 780,
+      "n_short_bonds": 1200,
+      "total_bond_weight": 2721.6407864998737,
+      "n_components": 1,
+      "spectrum_min": -10.810754959095778,
+      "spectrum_max": 39.83898412377438,
+      "n_pos_eigvals": 69,
+      "n_neg_eigvals": 75,
+      "subset_idx": 13
+    },
+    {
+      "orbit_indices": [
+        0,
+        6,
+        11,
+        13
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.43493096463846515,
+        0.5401815134754528,
+        0.5653849241897518
+      ],
+      "eta_scalar": -10.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 68.50423470393162,
+      "max_perp_norm": 0.5653849241897523,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 1080,
+      "n_short_bonds": 1380,
+      "total_bond_weight": 3312.886904474855,
+      "n_components": 1,
+      "spectrum_min": -13.64655449826865,
+      "spectrum_max": 49.355154757102696,
+      "n_pos_eigvals": 67,
+      "n_neg_eigvals": 77,
+      "subset_idx": 14
+    },
+    {
+      "orbit_indices": [
+        0,
+        8,
+        10,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.4888861452328024,
+        0.5401815134754528,
+        0.5401815134754528
+      ],
+      "eta_scalar": -16.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 70.2293408967339,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 1230,
+      "n_short_bonds": 1170,
+      "total_bond_weight": 3123.099766837377,
+      "n_components": 1,
+      "spectrum_min": -15.019101503747757,
+      "spectrum_max": 44.229251931237,
+      "n_pos_eigvals": 64,
+      "n_neg_eigvals": 80,
+      "subset_idx": 15
+    },
+    {
+      "orbit_indices": [
+        0,
+        8,
+        11,
+        12
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.4888861452328024,
+        0.5401815134754528,
+        0.5653849241897516
+      ],
+      "eta_scalar": 2.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 71.74154553959184,
+      "max_perp_norm": 0.5653849241897522,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 1290,
+      "n_short_bonds": 1230,
+      "total_bond_weight": 3280.181806162371,
+      "n_components": 1,
+      "spectrum_min": -14.154835804458235,
+      "spectrum_max": 46.93599787332238,
+      "n_pos_eigvals": 73,
+      "n_neg_eigvals": 71,
+      "subset_idx": 16
+    },
+    {
+      "orbit_indices": [
+        0,
+        8,
+        11,
+        13
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.4888861452328024,
+        0.5401815134754528,
+        0.5653849241897518
+      ],
+      "eta_scalar": -8.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 71.74154553959184,
+      "max_perp_norm": 0.5653849241897523,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 1350,
+      "n_short_bonds": 1410,
+      "total_bond_weight": 3631.4279241373515,
+      "n_components": 1,
+      "spectrum_min": -16.601667879357187,
+      "spectrum_max": 52.93596632775012,
+      "n_pos_eigvals": 68,
+      "n_neg_eigvals": 76,
+      "subset_idx": 17
+    },
+    {
+      "orbit_indices": [
+        0,
+        10,
+        11,
+        12
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.5401815134754528,
+        0.5401815134754528,
+        0.5653849241897516
+      ],
+      "eta_scalar": -10.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 74.81926763415086,
+      "max_perp_norm": 0.5653849241897522,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 1440,
+      "n_short_bonds": 1380,
+      "total_bond_weight": 3672.886904474855,
+      "n_components": 1,
+      "spectrum_min": -12.767514119686222,
+      "spectrum_max": 51.18789605482306,
+      "n_pos_eigvals": 67,
+      "n_neg_eigvals": 77,
+      "subset_idx": 18
+    },
+    {
+      "orbit_indices": [
+        0,
+        10,
+        11,
+        13
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.5401815134754528,
+        0.5401815134754528,
+        0.5653849241897518
+      ],
+      "eta_scalar": -6.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 74.81926763415086,
+      "max_perp_norm": 0.5653849241897523,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 1500,
+      "n_short_bonds": 1440,
+      "total_bond_weight": 3829.9689437998486,
+      "n_components": 1,
+      "spectrum_min": -14.497793538511484,
+      "spectrum_max": 54.24594644243462,
+      "n_pos_eigvals": 69,
+      "n_neg_eigvals": 75,
+      "subset_idx": 19
+    },
+    {
+      "orbit_indices": [
+        0,
+        11,
+        12,
+        13
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        60,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.5401815134754528,
+        0.5653849241897516,
+        0.5653849241897518
+      ],
+      "eta_scalar": 0.0,
+      "n_orbits_used": 4,
+      "total_perp_norm": 76.3314722770088,
+      "max_perp_norm": 0.5653849241897523,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 1140,
+      "n_short_bonds": 1380,
+      "total_bond_weight": 3372.886904474855,
+      "n_components": 1,
+      "spectrum_min": -12.84482194233901,
+      "spectrum_max": 47.62279254842161,
+      "n_pos_eigvals": 72,
+      "n_neg_eigvals": 72,
+      "subset_idx": 20
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        2,
+        3,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.28399022782564654,
+        0.32941538291476796,
+        0.5401815134754528
+      ],
+      "eta_scalar": 0.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 42.03537958196633,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 0,
+      "n_short_bonds": 780,
+      "total_bond_weight": 1262.066511224918,
+      "n_components": 1,
+      "spectrum_min": -17.847596505898252,
+      "spectrum_max": 22.271701007142056,
+      "n_pos_eigvals": 57,
+      "n_neg_eigvals": 57,
+      "subset_idx": 21
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        2,
+        5,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.28399022782564654,
+        0.4016228317724543,
+        0.5401815134754528
+      ],
+      "eta_scalar": -10.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 46.36782651342752,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 0,
+      "n_short_bonds": 900,
+      "total_bond_weight": 1456.2305898749055,
+      "n_components": 1,
+      "spectrum_min": -15.09277337306924,
+      "spectrum_max": 25.24196870174417,
+      "n_pos_eigvals": 50,
+      "n_neg_eigvals": 60,
+      "subset_idx": 22
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        2,
+        6,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.28399022782564654,
+        0.43493096463846515,
+        0.5401815134754528
+      ],
+      "eta_scalar": -1.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 48.366314485388166,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 60,
+      "n_short_bonds": 1260,
+      "total_bond_weight": 2098.722825824868,
+      "n_components": 1,
+      "spectrum_min": -16.177111202118798,
+      "spectrum_max": 31.420665764258118,
+      "n_pos_eigvals": 62,
+      "n_neg_eigvals": 63,
+      "subset_idx": 23
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        2,
+        8,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.28399022782564654,
+        0.4888861452328024,
+        0.5401815134754528
+      ],
+      "eta_scalar": -1.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 51.6036253210484,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 150,
+      "n_short_bonds": 1470,
+      "total_bond_weight": 2528.5099634623457,
+      "n_components": 1,
+      "spectrum_min": -22.44909853705044,
+      "spectrum_max": 36.352726490861045,
+      "n_pos_eigvals": 66,
+      "n_neg_eigvals": 67,
+      "subset_idx": 24
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        2,
+        10,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.28399022782564654,
+        0.5401815134754528,
+        0.5401815134754528
+      ],
+      "eta_scalar": 0.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 54.68134741560741,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 420,
+      "n_short_bonds": 1440,
+      "total_bond_weight": 2749.9689437998486,
+      "n_components": 1,
+      "spectrum_min": -16.687696541742035,
+      "spectrum_max": 41.752844402129234,
+      "n_pos_eigvals": 69,
+      "n_neg_eigvals": 69,
+      "subset_idx": 25
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        2,
+        11,
+        12
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.28399022782564654,
+        0.5401815134754528,
+        0.5653849241897516
+      ],
+      "eta_scalar": 8.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 56.193552058465364,
+      "max_perp_norm": 0.5653849241897522,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 360,
+      "n_short_bonds": 1680,
+      "total_bond_weight": 3078.2971010998235,
+      "n_components": 1,
+      "spectrum_min": -20.30706203161095,
+      "spectrum_max": 46.11392512905692,
+      "n_pos_eigvals": 56,
+      "n_neg_eigvals": 48,
+      "subset_idx": 26
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        2,
+        11,
+        13
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.28399022782564654,
+        0.5401815134754528,
+        0.5653849241897518
+      ],
+      "eta_scalar": 0.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 56.193552058465364,
+      "max_perp_norm": 0.5653849241897523,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 600,
+      "n_short_bonds": 1920,
+      "total_bond_weight": 3706.6252583997984,
+      "n_components": 1,
+      "spectrum_min": -20.5207633202396,
+      "spectrum_max": 55.926321922609944,
+      "n_pos_eigvals": 69,
+      "n_neg_eigvals": 69,
+      "subset_idx": 27
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        3,
+        7,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.32941538291476796,
+        0.45950584109472237,
+        0.5401815134754528
+      ],
+      "eta_scalar": 6.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 47.300847980038604,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 60,
+      "n_short_bonds": 1050,
+      "total_bond_weight": 1758.9356881873896,
+      "n_components": 1,
+      "spectrum_min": -16.6636761119078,
+      "spectrum_max": 27.522878554848063,
+      "n_pos_eigvals": 73,
+      "n_neg_eigvals": 67,
+      "subset_idx": 28
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        5,
+        7,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.4016228317724543,
+        0.45950584109472237,
+        0.5401815134754528
+      ],
+      "eta_scalar": 6.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 51.63329491149979,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 60,
+      "n_short_bonds": 930,
+      "total_bond_weight": 1564.7716095374021,
+      "n_components": 1,
+      "spectrum_min": -13.116850075622667,
+      "spectrum_max": 23.52273670863307,
+      "n_pos_eigvals": 71,
+      "n_neg_eigvals": 65,
+      "subset_idx": 29
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        6,
+        7,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.43493096463846515,
+        0.45950584109472237,
+        0.5401815134754528
+      ],
+      "eta_scalar": -2.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 53.63178288346043,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 120,
+      "n_short_bonds": 1170,
+      "total_bond_weight": 2013.099766837377,
+      "n_components": 1,
+      "spectrum_min": -15.493493811622862,
+      "spectrum_max": 28.536804350945488,
+      "n_pos_eigvals": 69,
+      "n_neg_eigvals": 71,
+      "subset_idx": 30
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        7,
+        8,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.45950584109472237,
+        0.4888861452328024,
+        0.5401815134754528
+      ],
+      "eta_scalar": -16.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 56.86909371912067,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 210,
+      "n_short_bonds": 1380,
+      "total_bond_weight": 2442.886904474855,
+      "n_components": 1,
+      "spectrum_min": -19.054839349604492,
+      "spectrum_max": 34.61626015457574,
+      "n_pos_eigvals": 64,
+      "n_neg_eigvals": 80,
+      "subset_idx": 31
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        7,
+        10,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.45950584109472237,
+        0.5401815134754528,
+        0.5401815134754528
+      ],
+      "eta_scalar": -12.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 59.946815813679684,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 660,
+      "n_short_bonds": 1590,
+      "total_bond_weight": 3232.674042112333,
+      "n_components": 1,
+      "spectrum_min": -15.106715581609768,
+      "spectrum_max": 45.83817157698487,
+      "n_pos_eigvals": 66,
+      "n_neg_eigvals": 78,
+      "subset_idx": 32
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        7,
+        11,
+        12
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.45950584109472237,
+        0.5401815134754528,
+        0.5653849241897516
+      ],
+      "eta_scalar": 4.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 61.45902045653764,
+      "max_perp_norm": 0.5653849241897522,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 600,
+      "n_short_bonds": 1530,
+      "total_bond_weight": 3075.592002787339,
+      "n_components": 1,
+      "spectrum_min": -17.209542292352292,
+      "spectrum_max": 45.04665169363608,
+      "n_pos_eigvals": 74,
+      "n_neg_eigvals": 70,
+      "subset_idx": 33
+    },
+    {
+      "orbit_indices": [
+        0,
+        1,
+        7,
+        11,
+        13
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.1755156132690755,
+        0.45950584109472237,
+        0.5401815134754528,
+        0.5653849241897518
+      ],
+      "eta_scalar": -12.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 61.45902045653764,
+      "max_perp_norm": 0.5653849241897523,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 960,
+      "n_short_bonds": 1590,
+      "total_bond_weight": 3532.6740421123327,
+      "n_components": 1,
+      "spectrum_min": -17.81574743009856,
+      "spectrum_max": 52.54539776914598,
+      "n_pos_eigvals": 66,
+      "n_neg_eigvals": 78,
+      "subset_idx": 34
+    },
+    {
+      "orbit_indices": [
+        0,
+        2,
+        3,
+        7,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.28399022782564654,
+        0.32941538291476796,
+        0.45950584109472237,
+        0.5401815134754528
+      ],
+      "eta_scalar": 2.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 50.55508641673573,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 60,
+      "n_short_bonds": 1380,
+      "total_bond_weight": 2292.886904474855,
+      "n_components": 1,
+      "spectrum_min": -19.168780426156125,
+      "spectrum_max": 33.03210165405284,
+      "n_pos_eigvals": 71,
+      "n_neg_eigvals": 69,
+      "subset_idx": 35
+    },
+    {
+      "orbit_indices": [
+        0,
+        2,
+        5,
+        7,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.28399022782564654,
+        0.4016228317724543,
+        0.45950584109472237,
+        0.5401815134754528
+      ],
+      "eta_scalar": -6.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 54.887533348196925,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 60,
+      "n_short_bonds": 1440,
+      "total_bond_weight": 2389.9689437998486,
+      "n_components": 1,
+      "spectrum_min": -16.658833469914356,
+      "spectrum_max": 34.25150159526039,
+      "n_pos_eigvals": 69,
+      "n_neg_eigvals": 75,
+      "subset_idx": 36
+    },
+    {
+      "orbit_indices": [
+        0,
+        2,
+        6,
+        7,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.28399022782564654,
+        0.43493096463846515,
+        0.45950584109472237,
+        0.5401815134754528
+      ],
+      "eta_scalar": -16.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 56.88602132015757,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 120,
+      "n_short_bonds": 1380,
+      "total_bond_weight": 2352.886904474855,
+      "n_components": 1,
+      "spectrum_min": -16.82800512565516,
+      "spectrum_max": 33.87483514788454,
+      "n_pos_eigvals": 64,
+      "n_neg_eigvals": 80,
+      "subset_idx": 37
+    },
+    {
+      "orbit_indices": [
+        0,
+        2,
+        7,
+        8,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.28399022782564654,
+        0.45950584109472237,
+        0.4888861452328024,
+        0.5401815134754528
+      ],
+      "eta_scalar": -18.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 60.12333215581779,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 210,
+      "n_short_bonds": 1410,
+      "total_bond_weight": 2491.4279241373515,
+      "n_components": 1,
+      "spectrum_min": -18.586396707147443,
+      "spectrum_max": 35.55262054164517,
+      "n_pos_eigvals": 63,
+      "n_neg_eigvals": 81,
+      "subset_idx": 38
+    },
+    {
+      "orbit_indices": [
+        0,
+        2,
+        7,
+        10,
+        11
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.28399022782564654,
+        0.45950584109472237,
+        0.5401815134754528,
+        0.5401815134754528
+      ],
+      "eta_scalar": -4.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 63.201054250376814,
+      "max_perp_norm": 0.5401815134754532,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 660,
+      "n_short_bonds": 1440,
+      "total_bond_weight": 2989.9689437998486,
+      "n_components": 1,
+      "spectrum_min": -16.384131929217855,
+      "spectrum_max": 42.35294721817738,
+      "n_pos_eigvals": 70,
+      "n_neg_eigvals": 74,
+      "subset_idx": 39
+    },
+    {
+      "orbit_indices": [
+        0,
+        2,
+        7,
+        11,
+        12
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.28399022782564654,
+        0.45950584109472237,
+        0.5401815134754528,
+        0.5653849241897516
+      ],
+      "eta_scalar": 10.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 64.71325889323477,
+      "max_perp_norm": 0.5653849241897522,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 600,
+      "n_short_bonds": 1500,
+      "total_bond_weight": 3027.0509831248423,
+      "n_components": 1,
+      "spectrum_min": -17.68236117839832,
+      "spectrum_max": 42.94187176343123,
+      "n_pos_eigvals": 77,
+      "n_neg_eigvals": 67,
+      "subset_idx": 40
+    },
+    {
+      "orbit_indices": [
+        0,
+        2,
+        7,
+        11,
+        13
+      ],
+      "orbit_sizes_used": [
+        12,
+        12,
+        30,
+        30,
+        60
+      ],
+      "orbit_min_norms_used": [
+        0.1669252677110946,
+        0.28399022782564654,
+        0.45950584109472237,
+        0.5401815134754528,
+        0.5653849241897518
+      ],
+      "eta_scalar": -10.0,
+      "n_orbits_used": 5,
+      "total_perp_norm": 64.71325889323477,
+      "max_perp_norm": 0.5653849241897523,
+      "min_perp_norm_in_cage": 0.1669252677110946,
+      "n_long_bonds": 960,
+      "n_short_bonds": 1620,
+      "total_bond_weight": 3581.2150617748293,
+      "n_components": 1,
+      "spectrum_min": -18.017744810277705,
+      "spectrum_max": 52.11858908350779,
+      "n_pos_eigvals": 67,
+      "n_neg_eigvals": 77,
+      "subset_idx": 41
+    }
+  ],
+  "unique_single_criteria": []
+}

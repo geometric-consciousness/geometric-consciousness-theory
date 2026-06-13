@@ -1,0 +1,26 @@
+{
+  "phi": 1.618033988749895,
+  "phi_squared": 2.618033988749895,
+  "phi_neg_2": 0.38196601125010515,
+  "bulk_isometry_group": "SO(4,1)",
+  "boundary_conformal_group": "SO(4,1)",
+  "spin_cover": "Spin(4,1) ~= USp(2,2)",
+  "non_cover_note": "SL(2,C) covers SO^+(3,1), not SO(4,1).",
+  "m_phason_operative_eV": 1.7e-05,
+  "m_weinberg_candidate_m2L2": 1.0,
+  "Delta_plus_weinberg_candidate": 3.302775637731995,
+  "Delta_minus_weinberg_candidate": -0.30277563773199456,
+  "Delta_plus_equals_phi_squared": false,
+  "Delta_minus_equals_phi_neg_2": false,
+  "mass_dimension_relation_used": "Delta(Delta - d) = m^2 L^2",
+  "root_formula": "Delta = (d +/- sqrt(d^2 + 4 m^2 L^2)) / 2",
+  "phi_power_identification_diagnostic_only": true,
+  "alternate_sign_diagnostic": "Delta(d - Delta) = m^2 L^2 gives phi^(+/-2) at m^2L^2=1, but that is not the written relation.",
+  "series_classification": "outside standard series classification",
+  "remaining_open_in_theoretical_physics": [
+    "Hilbert-space unitarity for general matter in dS",
+    "Bunch-Davies vacuum non-Hermitian inner-product structure (Maldacena 2003)",
+    "Complete operator-algebra dictionary beyond free-scalar mode (Anninos-Hartman-Strominger 2017 higher-spin partial)"
+  ],
+  "status": "Tier 1 partial + sign-corrected symmetry-level diagnostic; phi^(+/-2) identification is an alternate-sign diagnostic under Delta(d - Delta) = m^2 L^2, not the written relation; Hilbert-space unitarity remains conjectural at the theoretical-physics level (NOT GCT-specific)"
+}

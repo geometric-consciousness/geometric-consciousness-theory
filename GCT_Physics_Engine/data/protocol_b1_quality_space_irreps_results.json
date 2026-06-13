@@ -1,0 +1,69 @@
+{
+  "object": "Sym^2(R^6), 21-DOF symmetric stress tensor, icosahedral group",
+  "chi_V": [
+    6,
+    -2,
+    0,
+    1.0,
+    1.0
+  ],
+  "chi_Sym2": [
+    21.0,
+    5.0,
+    0.0,
+    1.0,
+    1.0
+  ],
+  "correct_decomposition": {
+    "A": 2,
+    "T_1": 0,
+    "T_2": 0,
+    "G": 1,
+    "H": 3
+  },
+  "correct_decomposition_str": "2 A_g + G_g + 3 H_g",
+  "linear_sector_R6": {
+    "A": 0,
+    "T_1": 1,
+    "T_2": 1,
+    "G": 0,
+    "H": 0
+  },
+  "linear_sector_R6_str": "T_1 (E_par) + T_2 (E_perp)",
+  "graded_quality_space_str": "R^6 (+) Sym^2(R^6) = 6 + 21 = 27 DOF",
+  "graded_quality_space_dof": 27.0,
+  "n_3D_irreps_in_linear_R6": 2,
+  "crosscheck_sym2_T1": {
+    "A": 1,
+    "T_1": 0,
+    "T_2": 0,
+    "G": 0,
+    "H": 1
+  },
+  "crosscheck_sym2_T2": {
+    "A": 1,
+    "T_1": 0,
+    "T_2": 0,
+    "G": 0,
+    "H": 1
+  },
+  "crosscheck_T1xT2": {
+    "A": 0,
+    "T_1": 0,
+    "T_2": 0,
+    "G": 1,
+    "H": 1
+  },
+  "manuscript_claim": {
+    "A": 2,
+    "T_1": 0,
+    "T_2": 0,
+    "G": 1,
+    "H": 3
+  },
+  "manuscript_claim_str": "Sym^2(R^6) = 2 A_g + G_g + 3 H_g (quadratic); R^6 = T_1 + T_2 (linear)",
+  "manuscript_claim_correct": true,
+  "n_3D_irreps_in_Sym2": 0,
+  "n_Ag_in_Sym2": 2,
+  "verdict": "CONFIRMED: Sym^2(R^6) under the icosahedral group decomposes as 2 A_g (+) G_g (+) 3 H_g (2+4+15 = 21), verified two ways (direct Sym^2 character and the Sym^2 T_1 (+) Sym^2 T_2 (+) T_1(x)T_2 cross-check), in agreement with the manuscript's quadratic-sector claim (Ch16 \u00a716.2.2c / \u00a716.4). The symmetric stress tensor contains NO 3-D irrep (T_1, T_2 multiplicity 0); the two 3-D irreps occur in the linear coordinate sector R^6 = E_parallel (+) E_perp = T_1 (+) T_2, so the graded Quality Space is R^6 (+) Sym^2(R^6) = 6 + 21 = 27 DOF. Color/spatial-auditory attach to the linear coordinate irreps (T_2 = E_perp, T_1 = E_parallel); valence/intensity and olfaction/chemical attach to the quadratic stress irreps (2 A_g, G_g + 3 H_g). The modality-to-irrep assignment is Tier 3."
+}

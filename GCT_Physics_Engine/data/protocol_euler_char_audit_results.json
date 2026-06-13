@@ -1,0 +1,87 @@
+{
+  "claim": "\u03c7(Z\u2076/H_3) = -107 in Ch07 \u00a77.2.2",
+  "candidates_surveyed": [
+    "I  (60 rotations) | T1 \u2295 T1",
+    "I  (60 rotations) | T1 \u2295 T2 (Galois)",
+    "I  (60 rotations) | T1g \u2295 T1u (signed)",
+    "I_h (120 incl. reflections) | T1 \u2295 T1",
+    "I_h (120 incl. reflections) | T1 \u2295 T2 (Galois)",
+    "I_h (120 incl. reflections) | T1g \u2295 T1u (signed)"
+  ],
+  "invariants_per_candidate": {
+    "I  (60 rotations) | T1 \u2295 T1": {
+      "orbifold_chi": 0.0,
+      "signed_orbifold_chi": 0.0,
+      "lefschetz_avg": 0.0,
+      "signed_lefschetz": 0.0,
+      "fixed_point_count": 0.0,
+      "improper_count": 0.0,
+      "lefschetz_sum": 0.0,
+      "signed_lef_sum": 0.0,
+      "alt_signature_sum": 0.0,
+      "G": 60.0
+    },
+    "I  (60 rotations) | T1 \u2295 T2 (Galois)": {
+      "orbifold_chi": 0.0,
+      "signed_orbifold_chi": 0.0,
+      "lefschetz_avg": 0.0,
+      "signed_lefschetz": 0.0,
+      "fixed_point_count": 0.0,
+      "improper_count": 0.0,
+      "lefschetz_sum": 0.0,
+      "signed_lef_sum": 0.0,
+      "alt_signature_sum": 0.0,
+      "G": 60.0
+    },
+    "I  (60 rotations) | T1g \u2295 T1u (signed)": {
+      "orbifold_chi": 0.0,
+      "signed_orbifold_chi": 0.0,
+      "lefschetz_avg": 0.0,
+      "signed_lefschetz": 0.0,
+      "fixed_point_count": 0.0,
+      "improper_count": 0.0,
+      "lefschetz_sum": 0.0,
+      "signed_lef_sum": 0.0,
+      "alt_signature_sum": 0.0,
+      "G": 60.0
+    },
+    "I_h (120 incl. reflections) | T1 \u2295 T1": {
+      "orbifold_chi": 4.0,
+      "signed_orbifold_chi": 4.0,
+      "lefschetz_avg": 3.9999999999999996,
+      "signed_lefschetz": 3.9999999999999996,
+      "fixed_point_count": 45.0,
+      "improper_count": 0.0,
+      "lefschetz_sum": 479.99999999999994,
+      "signed_lef_sum": 479.99999999999994,
+      "alt_signature_sum": 480.0,
+      "G": 120.0
+    },
+    "I_h (120 incl. reflections) | T1 \u2295 T2 (Galois)": {
+      "orbifold_chi": 2.0,
+      "signed_orbifold_chi": 2.0,
+      "lefschetz_avg": 2.0,
+      "signed_lefschetz": 2.0,
+      "fixed_point_count": 45.0,
+      "improper_count": 0.0,
+      "lefschetz_sum": 240.0,
+      "signed_lef_sum": 240.0,
+      "alt_signature_sum": 240.0,
+      "G": 120.0
+    },
+    "I_h (120 incl. reflections) | T1g \u2295 T1u (signed)": {
+      "orbifold_chi": 0.0,
+      "signed_orbifold_chi": 0.0,
+      "lefschetz_avg": 0.0,
+      "signed_lefschetz": 0.0,
+      "fixed_point_count": 0.0,
+      "improper_count": 60.0,
+      "lefschetz_sum": 0.0,
+      "signed_lef_sum": 0.0,
+      "alt_signature_sum": 0.0,
+      "G": 120.0
+    }
+  },
+  "any_match_to_pm_107": false,
+  "conclusion": "No candidate Euler-char-like invariant matches \u00b1107"
+}

@@ -1,0 +1,45 @@
+{
+  "N_total": 132,
+  "orbit_composition": [
+    [
+      0.1669252677110946,
+      12
+    ],
+    [
+      0.1755156132690755,
+      30
+    ],
+    [
+      0.28399022782564654,
+      30
+    ],
+    [
+      0.329415382914768,
+      60
+    ]
+  ],
+  "n_edges": 540,
+  "is_bipartite": false,
+  "bipartite_color_partition": [
+    45,
+    47
+  ],
+  "eigenvalue_range": [
+    -17.847596505898267,
+    21.59827690925164
+  ],
+  "n_positive_evals": 45,
+  "n_negative_evals": 45,
+  "n_zero_evals": 42,
+  "eta_scalar": 0,
+  "eta_eff": 0.0,
+  "irrep_decomp": {
+    "deferred": true
+  },
+  "overlap_with_canonical_152": {
+    "n_shared": 42,
+    "only_in_132": 90,
+    "only_in_152": 110,
+    "n132_is_subcage_of_152": false
+  }
+}

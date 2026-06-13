@@ -1,0 +1,50 @@
+{
+  "H_3_fundamental_degrees": [
+    2,
+    6,
+    10
+  ],
+  "H_3_degree_sum_per_O15a": 18,
+  "V_lock_canonical_form": "polynomial in {I_2, I_6, I_10} per Chevalley-Shephard-Todd",
+  "H0_SI": 2.1842693716174612e-18,
+  "Omega_Lambda": 0.685,
+  "rho_Lambda_SI_J_per_m3": 5.253152888756676e-10,
+  "m_phason_operative_eV": 1.7e-05,
+  "m_weinberg_candidate_kg": 3.993799443594576e-39,
+  "m_weinberg_candidate_meV": 2.2406042027258715,
+  "M_P_SI_kg": 2.176434342051127e-08,
+  "phi_power_exponent": 147.07261769707483,
+  "nearest_icosahedral_integers": [
+    {
+      "name": "h * N = 10 * 15 = 150",
+      "value": 150,
+      "distance": 2.9273823029251673
+    },
+    {
+      "name": "N_cage = 144",
+      "value": 144,
+      "distance": 3.0726176970748327
+    },
+    {
+      "name": "|I_h| + N: 120+15=135",
+      "value": 135,
+      "distance": 12.072617697074833
+    },
+    {
+      "name": "(h-1) * N = 9*15 = 135",
+      "value": 135,
+      "distance": 12.072617697074833
+    },
+    {
+      "name": "h * (N + 1) = 10 * 16 = 160",
+      "value": 160,
+      "distance": 12.927382302925167
+    }
+  ],
+  "status": "Structural identification of V_lock (Tier 2); m_phason_operative retained at 1.7e-5 eV; Weinberg candidate 2.2 meV is Tier 3 O.37 ansatz; coupling constants REMAIN OPEN",
+  "remaining_open_research_level": [
+    "First-principles derivation of (mu^2, g_6, g_10) coupling constants",
+    "O.37 reconcile-or-discard of phi^(-~146) Weinberg candidate",
+    "Explicit Mexican-hat symmetry-breaking on H_3 / stabilizer coset"
+  ]
+}

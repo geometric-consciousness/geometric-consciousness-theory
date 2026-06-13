@@ -1,0 +1,22 @@
+{
+  "muon": {
+    "verdict": "ANALYTIC_PASS",
+    "degeneracy": 1,
+    "harmonic": 11
+  },
+  "tau": {
+    "verdict": "ANALYTIC_PASS",
+    "chi_imag": -2.14531944221452e-06,
+    "harmonic": 17
+  },
+  "proton": {
+    "verdict": "ANALYTIC_PASS",
+    "base_winding": 15,
+    "geometric_correction": 0.6180339887498948,
+    "total": 15.618033988749895
+  },
+  "full_lattice_mode": false,
+  "status": "Analytic verification (R=1 Hessian): [ANALYTIC_PASS]. Set FULL_LATTICE_MODE=True for full R>=2 Hessian verification of 5-fold degeneracy and negative susceptibility from first principles.",
+  "pass": true,
+  "verification_mode": "Tier 2 Analytic (R=1)"
+}

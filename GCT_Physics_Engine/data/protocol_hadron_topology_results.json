@@ -1,0 +1,91 @@
+{
+  "protocol": "protocol_hadron_topology",
+  "tier": 2,
+  "pass": true,
+  "verdict": "PASS",
+  "theorem_I_z6_coordination": {
+    "lattice": "Z\u2076 hypercubic bulk",
+    "dimension": 6,
+    "nn_directions_count": 12,
+    "analytic_formula": "2 \u00d7 dim = 2 \u00d7 6 = 12",
+    "analytic_Z": 12,
+    "all_directions_unit": true,
+    "analytic_match": true,
+    "PASS": true
+  },
+  "theorem_II_ckm_phi_inv": {
+    "U_weak_trace": -2.000000000000817,
+    "holonomy_deviation": 5.777940427564824e-13,
+    "U_weak_is_minus_I2": true,
+    "Berry_phase_rad": 3.141592653589793,
+    "N_weak": 0.5,
+    "R_projection": 1.2360679774997896,
+    "phi_correction": 0.6180339887498948,
+    "phi_inv_reference": 0.6180339887498948,
+    "phi_correction_matches_phi_inv": true,
+    "s23_exponent": 6.618033988749895,
+    "s13_exponent": 11.618033988749895,
+    "s23_predicted": 0.04139164566553407,
+    "s23_target_PDG": 0.0418,
+    "s23_error_pct": 0.9769242451337963,
+    "s13_predicted": 0.003732282361359376,
+    "s13_target_PDG": 0.00369,
+    "s13_error_pct": 1.1458634514736,
+    "PASS": true
+  },
+  "theorem_III_strange_drag": {
+    "Z6_coordination_number": 12,
+    "icosahedral_channels_muon": 5,
+    "drag_channel_ratio": 2.4,
+    "drag_channel_ratio_formula": "Z_bulk / Z_icosahedral = 12 / 5 = 2.4",
+    "alpha": 0.0072973525693,
+    "12_alpha_value": 0.08756823083160001,
+    "5_alpha_value": 0.0364867628465,
+    "suppression_strange_quark": 0.9124317691684,
+    "suppression_muon_lepton": 0.9635132371535,
+    "coord_number_exact_12": true,
+    "PASS": true
+  },
+  "theorem_IV_cp_phase": {
+    "phi_inv": 0.6180339887498948,
+    "formula_radians": "2\u03c0 \u00d7 \u03c6\u207b\u00b9",
+    "formula_degrees": "360 \u00d7 \u03c6\u207b\u00b9",
+    "delta_cp_rad": 3.8832220774509327,
+    "delta_cp_deg": 222.49223594996212,
+    "delta_cp_PDG_deg": 222.0,
+    "delta_cp_PDG_range_low_deg": 108.0,
+    "delta_cp_PDG_range_high_deg": 404.0,
+    "within_PDG_1sigma_range": true,
+    "error_from_PDG_central_pct": 0.22172790538834336,
+    "jackiw_rebbi_mechanism": "Full dodecahedral boundary winding (2\u03c0) \u00d7 \u03c6\u207b\u00b9 holonomy (Theorem II SU(2) projection ratio) = \u03b4_CP",
+    "radian_degree_consistent": true,
+    "PASS": true
+  },
+  "auxiliary_projection_check": {
+    "M_para_shape": [
+      3,
+      6
+    ],
+    "M_perp_shape": [
+      3,
+      6
+    ],
+    "completeness_max_err": 1.1102230246251565e-16,
+    "completeness_I6_verified": true,
+    "orthogonality_max_err": 1.894229344338786e-17,
+    "orthogonality_verified": true,
+    "PASS": true
+  },
+  "summary": {
+    "z6_coordination_number": 12,
+    "phi_inv_holonomy": 0.6180339887498948,
+    "12_alpha_value": 0.08756823083160001,
+    "5_alpha_value": 0.0364867628465,
+    "drag_ratio_12_over_5": 2.4,
+    "delta_cp_rad": 3.8832220774509327,
+    "delta_cp_deg": 222.49223594996212,
+    "ckm_s23_exponent": 6.618033988749895,
+    "ckm_s13_exponent": 11.618033988749895,
+    "all_theorems_pass": true
+  }
+}

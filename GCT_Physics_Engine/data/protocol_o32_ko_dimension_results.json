@@ -1,0 +1,28 @@
+{
+  "N": 152,
+  "n_bonds": 1740,
+  "inversion_well_defined": true,
+  "P_commutes_with_D_F": true,
+  "eps_Jsq": 1,
+  "eps_p_JD": 1,
+  "eps_pp_Jgamma": null,
+  "bond_graph_bipartite": false,
+  "odd_cycle_certificate_triangle": [
+    0,
+    14,
+    50
+  ],
+  "triangle_count": 1880,
+  "n_components": 1,
+  "inversion_odd_2coloring_exists": false,
+  "ko_dimension_mod8": null,
+  "ko_dimension_check_performed": true,
+  "signs_required_for_ko6": [
+    1,
+    1,
+    -1
+  ],
+  "pass_ko6": false,
+  "verdict": "NEGATIVE RESULT (scoped): the bare cage adjacency with a real DIAGONAL grading does NOT admit a KO-dim-6 structure (eps''=-1 unrealisable: bond graph non-bipartite). This eliminates the bare-cage / commutative-grading route only; it does NOT refute KO-dim 6 for the full noncommutative A_F triple, whose positive resolution requires the dressed (bimodule) D_F and bundles with O.5.",
+  "method": "J = central-inversion . conjugation; gamma = inversion-odd real diagonal grading; eps,eps' forced by D_F real + inversion-symmetric; eps'' reduced to inversion-odd proper 2-coloring of the cage bond graph."
+}

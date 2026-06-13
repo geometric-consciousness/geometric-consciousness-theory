@@ -1,0 +1,20 @@
+{
+  "name": "neutrino_m1_floor",
+  "app_r_label": "Neutrino m_1 floor",
+  "formula": "m_1 = m_e \u00b7 \u03c6^-36",
+  "tier": "Tier 2",
+  "predicted": 0.015306114553413084,
+  "observed": null,
+  "unit": "eV",
+  "app_r_predicted": 0.0153,
+  "app_r_precision_str": "m_1 = 1.5306e-02 eV; KATRIN upper bound 0.8 eV \u2192 within bound",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": null,
+  "status": "PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "katrin_upper_bound_eV": 0.8,
+    "predicted_is_below_bound": true
+  }
+}

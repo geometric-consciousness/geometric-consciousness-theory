@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "space_size": 840,
+  "search_pair_trials": 352380.0,
+  "muon_20ppm_hits": 0,
+  "tau_20ppm_hits": 0,
+  "local_pair_probability": 1.6000000000000003e-09,
+  "global_p_value": 0.0005638080000000001,
+  "significance_sigma": 3.2565839000824877
+}

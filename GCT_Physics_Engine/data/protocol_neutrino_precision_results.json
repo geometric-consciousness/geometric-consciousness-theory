@@ -1,0 +1,32 @@
+{
+  "m1_ev": 0.015306113035079347,
+  "m2_ev": 0.017563516055808012,
+  "m3_ev": 0.05238584824399263,
+  "sigma_mv_ev": 0.08525547733487998,
+  "sigma_mv_mev": 85.25547733487998,
+  "uncertainty_ev": 0.00027290907628516227,
+  "lower_3sigma": 0.0844367501060245,
+  "upper_3sigma": 0.08607420456373546,
+  "planck_bound_ev": 0.12,
+  "verdict": "PASS",
+  "pass": true,
+  "prediction_string": "Sigma_m_nu = 0.085 +/- 0.000 eV  (3-sigma internal precision window: [0.084, 0.086] eV; registered App V P.4 cosmology gate: Sigma_m_nu < 0.075 eV OR > 0.15 eV)",
+  "registered_app_v_p4_gate": "Sigma_m_nu < 0.075 eV OR Sigma_m_nu > 0.15 eV",
+  "theta23_audit": {
+    "bare_prediction_deg": 45.0,
+    "observed_deg": 49.5,
+    "observed_err_deg": 1.1,
+    "gap_deg": 4.5,
+    "tension_sigma_bare": 4.090909090909091,
+    "msw_correction_deg": 4e-05,
+    "candidate_mechanism": "Itinerant Volume Drag (excluded diagnostic)",
+    "candidate_formula": "theta23 = pi/4 + phi^(-3)/3",
+    "theta23_candidate_rad": 0.8640874892307115,
+    "theta23_candidate_deg": 49.50856626297575,
+    "candidate_residual_deg": 0.008566262975747918,
+    "candidate_tension_sigma": 0.00778751179613447,
+    "status": "TENSION_GT_4SIGMA",
+    "epistemic_tier": "Tier 3 (theta23 octant audit; Itinerant Volume Drag excluded)",
+    "mechanism_formalism": "Excluded diagnostic only; Delta_H_drag coupling is not derived from the phason elastic action"
+  }
+}

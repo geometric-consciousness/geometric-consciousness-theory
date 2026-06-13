@@ -1,0 +1,20 @@
+{
+  "name": "bottom_quark",
+  "app_r_label": "Bottom quark (m_b)",
+  "formula": "m_b = m_c \u00b7 \u03c6^2 \u00b7 (5/4)",
+  "tier": "Tier 3 absolute prediction (5/4 coefficient Tier 2; imports Tier 3 m_c input; state-level residual conditional on O.5)",
+  "predicted": 4134.688873611131,
+  "observed": 4183.0,
+  "unit": "MeV",
+  "app_r_predicted": 4134.69,
+  "app_r_precision_str": "1.15%; Tier 2 5/4 coefficient + Tier 3 m_c input \u2192 Tier 3 absolute prediction",
+  "app_r_precision_ppm": 11549.0,
+  "independent_precision_ppm": 11549.396698271245,
+  "status": "PASS",
+  "tolerance_ppm": 30000.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "percent_error": 1.1549396698271244,
+    "coefficient_5_over_4_provenance": "A5 representation theorem dim(5E)/dim(4D) = 5/4"
+  }
+}

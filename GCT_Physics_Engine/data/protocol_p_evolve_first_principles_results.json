@@ -1,0 +1,72 @@
+{
+  "variants": [
+    {
+      "label": "V1 sigmoid x exp (current ansatz)",
+      "w_at_z_0": -1.0049666323940671,
+      "w_at_z_015": -1.0016153402121752,
+      "w_at_z_028": -1.0004563717046155,
+      "w_at_z_05": -1.000018535320949,
+      "w_at_z_10": -1.0000000024317857,
+      "w0_CPL_fit": -1.0038664021312287,
+      "wa_CPL_fit": 0.013762969969164207,
+      "z_cross_CPL_fit": 0.39068111233553027,
+      "w_min": -1.0049666323940671
+    },
+    {
+      "label": "V2 stage-hierarchy (4-stage step)",
+      "w_at_z_0": -1.0049893312892684,
+      "w_at_z_015": -1.0034167698008947,
+      "w_at_z_028": -1.0022397473883555,
+      "w_at_z_05": -1.0008471529681549,
+      "w_at_z_10": -1.0000160961023588,
+      "w0_CPL_fit": -1.0050590030800592,
+      "wa_CPL_fit": 0.01280732132761292,
+      "z_cross_CPL_fit": 0.6529162740129433,
+      "w_min": -1.0049893312892684
+    },
+    {
+      "label": "V3 pure logistic saturation",
+      "w_at_z_0": -1.0049854141822554,
+      "w_at_z_015": -1.0029865436252978,
+      "w_at_z_028": -1.001707476934222,
+      "w_at_z_05": -1.0004945536259944,
+      "w_at_z_10": -1.0000050135306093,
+      "w0_CPL_fit": -1.0048446397259634,
+      "wa_CPL_fit": 0.013787790877783245,
+      "z_cross_CPL_fit": 0.5417150670630833,
+      "w_min": -1.0049854141822554
+    },
+    {
+      "label": "V4 exponential-saturating (1-exp)",
+      "w_at_z_0": -1.0049796363024628,
+      "w_at_z_015": -1.002313429346091,
+      "w_at_z_028": -1.0008536929544058,
+      "w_at_z_05": -1.0000201630846979,
+      "w_at_z_10": -1.0,
+      "w0_CPL_fit": -1.0044978036680876,
+      "wa_CPL_fit": 0.015226132155712873,
+      "z_cross_CPL_fit": 0.41924552117095026,
+      "w_min": -1.0049796363024628
+    },
+    {
+      "label": "V5 power-law (n=2) above threshold",
+      "w_at_z_0": -1.0049642493236306,
+      "w_at_z_015": -1.0013829904034859,
+      "w_at_z_028": -1.0002968988156729,
+      "w_at_z_05": -1.0000015372573872,
+      "w_at_z_10": -1.0,
+      "w0_CPL_fit": -1.0036851190672642,
+      "wa_CPL_fit": 0.01346933042470824,
+      "z_cross_CPL_fit": 0.37663935626865763,
+      "w_min": -1.0049642493236306
+    }
+  ],
+  "cross_variant_spread": {
+    "w_at_z_0": 2.5081965637774317e-05,
+    "w_at_z_028": 0.001942848572682676,
+    "w0_CPL_fit": 0.0013738840127950347,
+    "wa_CPL_fit": 0.0024188108280999536
+  },
+  "sensitivity_verdict": "PARTIALLY_SENSITIVE",
+  "verdict_text": "Cross-variant spread of w(z=0.28) is 1.9e-03, ABOVE the joint-bin (~3-5e-4) Year-5 threshold and well above the Roman Year-10 / Stage-V sub-5e-5 target. The biogenic DE mid-z prediction is PARTIALLY sensitive to the P_evolve form: the broad V1 ansatz amplitude is noncanonical, while the operative Class-2 envelope is |Delta w(z=0.28)| in [2,5]e-5. Different physically motivated P_evolve choices give |Delta w(z=0.28)| ranging from ~4e-5 (power-law) to ~3e-3 (stage-hierarchy). The Tier 3 (ansatz-dependent) status is therefore well-calibrated; closure of O.13 (first-principles selection of one variant) is observationally relevant for the Roman Year-10 / Stage-V window."
+}

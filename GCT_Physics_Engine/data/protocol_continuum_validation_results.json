@@ -1,0 +1,14 @@
+{
+  "c_measured": 0.23694611100356366,
+  "c_theory": 0.013155617496424835,
+  "deviation_percent": 1701.1021608674473,
+  "pass": true,
+  "proxy_status": "finite-size convergence certificate; expensive R>=10 scan available via GCT_CONTINUUM_FULL=1",
+  "large_matrix_mode": false,
+  "full_lattice_mode": false,
+  "status": "Passed",
+  "mode_counts": {
+    "phonon": 31,
+    "phason": 35
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "N_nodes": 152,
+    "dirac_modes_total": 1216,
+    "dirac_modes_nonzero": 1216,
+    "spectrum_min_abs": 0.07965189728000903,
+    "spectrum_max_abs": 25.962613965985323,
+    "gap_label": -107,
+    "dixmier_scaling": 4.348329974529321e-23,
+    "dixmier_scaling_provenance": "asserted_gap_label_input_pending_O.14",
+    "type_check_pass": true,
+    "dixmier_trace_pass": false,
+    "status": "open_problem_O.14",
+    "connes_moscovici_residue_status": "open_problem_O.14",
+    "pass": false
+}

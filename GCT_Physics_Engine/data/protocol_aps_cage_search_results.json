@@ -1,0 +1,287 @@
+{
+  "search_R": 3,
+  "search_perp_cutoff": 3.5,
+  "n_Ih_orbits_enumerated": 762,
+  "cage_sweep_results": [
+    {
+      "n_orbits_included": 1,
+      "N_total": 12,
+      "outer_orbit_perp_norm": 0.1669252677110946,
+      "eta_scalar": 0,
+      "eta_eff": 0.0,
+      "bulk_required_for_n_minus_107": -107.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    },
+    {
+      "n_orbits_included": 2,
+      "N_total": 42,
+      "outer_orbit_perp_norm": 0.1755156132690755,
+      "eta_scalar": 0,
+      "eta_eff": 0.0,
+      "bulk_required_for_n_minus_107": -107.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    },
+    {
+      "n_orbits_included": 3,
+      "N_total": 72,
+      "outer_orbit_perp_norm": 0.28399022782564654,
+      "eta_scalar": 0,
+      "eta_eff": 0.0,
+      "bulk_required_for_n_minus_107": -107.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    },
+    {
+      "n_orbits_included": 4,
+      "N_total": 132,
+      "outer_orbit_perp_norm": 0.329415382914768,
+      "eta_scalar": 0,
+      "eta_eff": 0.0,
+      "bulk_required_for_n_minus_107": -107.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    },
+    {
+      "n_orbits_included": 5,
+      "N_total": 152,
+      "outer_orbit_perp_norm": 0.39794373157536506,
+      "eta_scalar": -4,
+      "eta_eff": -0.5,
+      "bulk_required_for_n_minus_107": -106.5,
+      "eta_scalar_mod_8_zero": false,
+      "bulk_required_is_integer": false,
+      "is_aps_recovery_candidate": false
+    },
+    {
+      "n_orbits_included": 6,
+      "N_total": 212,
+      "outer_orbit_perp_norm": 0.40162283177245434,
+      "eta_scalar": 6,
+      "eta_eff": 0.75,
+      "bulk_required_for_n_minus_107": -107.75,
+      "eta_scalar_mod_8_zero": false,
+      "bulk_required_is_integer": false,
+      "is_aps_recovery_candidate": false
+    },
+    {
+      "n_orbits_included": 7,
+      "N_total": 272,
+      "outer_orbit_perp_norm": 0.4349309646384655,
+      "eta_scalar": 13,
+      "eta_eff": 1.625,
+      "bulk_required_for_n_minus_107": -108.625,
+      "eta_scalar_mod_8_zero": false,
+      "bulk_required_is_integer": false,
+      "is_aps_recovery_candidate": false
+    },
+    {
+      "n_orbits_included": 8,
+      "N_total": 302,
+      "outer_orbit_perp_norm": 0.45950584109472237,
+      "eta_scalar": 12,
+      "eta_eff": 1.5,
+      "bulk_required_for_n_minus_107": -108.5,
+      "eta_scalar_mod_8_zero": false,
+      "bulk_required_is_integer": false,
+      "is_aps_recovery_candidate": false
+    },
+    {
+      "n_orbits_included": 9,
+      "N_total": 362,
+      "outer_orbit_perp_norm": 0.4888861452328024,
+      "eta_scalar": 14,
+      "eta_eff": 1.75,
+      "bulk_required_for_n_minus_107": -108.75,
+      "eta_scalar_mod_8_zero": false,
+      "bulk_required_is_integer": false,
+      "is_aps_recovery_candidate": false
+    },
+    {
+      "n_orbits_included": 10,
+      "N_total": 382,
+      "outer_orbit_perp_norm": 0.4918855034470804,
+      "eta_scalar": 4,
+      "eta_eff": 0.5,
+      "bulk_required_for_n_minus_107": -107.5,
+      "eta_scalar_mod_8_zero": false,
+      "bulk_required_is_integer": false,
+      "is_aps_recovery_candidate": false
+    },
+    {
+      "n_orbits_included": 11,
+      "N_total": 442,
+      "outer_orbit_perp_norm": 0.5401815134754528,
+      "eta_scalar": 14,
+      "eta_eff": 1.75,
+      "bulk_required_for_n_minus_107": -108.75,
+      "eta_scalar_mod_8_zero": false,
+      "bulk_required_is_integer": false,
+      "is_aps_recovery_candidate": false
+    },
+    {
+      "n_orbits_included": 12,
+      "N_total": 454,
+      "outer_orbit_perp_norm": 0.5401815134754528,
+      "eta_scalar": 10,
+      "eta_eff": 1.25,
+      "bulk_required_for_n_minus_107": -108.25,
+      "eta_scalar_mod_8_zero": false,
+      "bulk_required_is_integer": false,
+      "is_aps_recovery_candidate": false
+    },
+    {
+      "n_orbits_included": 13,
+      "N_total": 514,
+      "outer_orbit_perp_norm": 0.5653849241897518,
+      "eta_scalar": -6,
+      "eta_eff": -0.75,
+      "bulk_required_for_n_minus_107": -106.25,
+      "eta_scalar_mod_8_zero": false,
+      "bulk_required_is_integer": false,
+      "is_aps_recovery_candidate": false
+    },
+    {
+      "n_orbits_included": 14,
+      "N_total": 574,
+      "outer_orbit_perp_norm": 0.565384924189752,
+      "eta_scalar": 8,
+      "eta_eff": 1.0,
+      "bulk_required_for_n_minus_107": -108.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    },
+    {
+      "n_orbits_included": 15,
+      "N_total": 634,
+      "outer_orbit_perp_norm": 0.6078690907590996,
+      "eta_scalar": 6,
+      "eta_eff": 0.75,
+      "bulk_required_for_n_minus_107": -107.75,
+      "eta_scalar_mod_8_zero": false,
+      "bulk_required_is_integer": false,
+      "is_aps_recovery_candidate": false
+    },
+    {
+      "n_orbits_included": 16,
+      "N_total": 754,
+      "outer_orbit_perp_norm": 0.6102839642339405,
+      "eta_scalar": -24,
+      "eta_eff": -3.0,
+      "bulk_required_for_n_minus_107": -104.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    }
+  ],
+  "aps_recovery_candidates_all": [
+    {
+      "n_orbits_included": 1,
+      "N_total": 12,
+      "outer_orbit_perp_norm": 0.1669252677110946,
+      "eta_scalar": 0,
+      "eta_eff": 0.0,
+      "bulk_required_for_n_minus_107": -107.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    },
+    {
+      "n_orbits_included": 2,
+      "N_total": 42,
+      "outer_orbit_perp_norm": 0.1755156132690755,
+      "eta_scalar": 0,
+      "eta_eff": 0.0,
+      "bulk_required_for_n_minus_107": -107.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    },
+    {
+      "n_orbits_included": 3,
+      "N_total": 72,
+      "outer_orbit_perp_norm": 0.28399022782564654,
+      "eta_scalar": 0,
+      "eta_eff": 0.0,
+      "bulk_required_for_n_minus_107": -107.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    },
+    {
+      "n_orbits_included": 4,
+      "N_total": 132,
+      "outer_orbit_perp_norm": 0.329415382914768,
+      "eta_scalar": 0,
+      "eta_eff": 0.0,
+      "bulk_required_for_n_minus_107": -107.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    },
+    {
+      "n_orbits_included": 14,
+      "N_total": 574,
+      "outer_orbit_perp_norm": 0.565384924189752,
+      "eta_scalar": 8,
+      "eta_eff": 1.0,
+      "bulk_required_for_n_minus_107": -108.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    },
+    {
+      "n_orbits_included": 16,
+      "N_total": 754,
+      "outer_orbit_perp_norm": 0.6102839642339405,
+      "eta_scalar": -24,
+      "eta_eff": -3.0,
+      "bulk_required_for_n_minus_107": -104.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    }
+  ],
+  "aps_recovery_candidates_non_trivial": [
+    {
+      "n_orbits_included": 4,
+      "N_total": 132,
+      "outer_orbit_perp_norm": 0.329415382914768,
+      "eta_scalar": 0,
+      "eta_eff": 0.0,
+      "bulk_required_for_n_minus_107": -107.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    },
+    {
+      "n_orbits_included": 14,
+      "N_total": 574,
+      "outer_orbit_perp_norm": 0.565384924189752,
+      "eta_scalar": 8,
+      "eta_eff": 1.0,
+      "bulk_required_for_n_minus_107": -108.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    },
+    {
+      "n_orbits_included": 16,
+      "N_total": 754,
+      "outer_orbit_perp_norm": 0.6102839642339405,
+      "eta_scalar": -24,
+      "eta_eff": -3.0,
+      "bulk_required_for_n_minus_107": -104.0,
+      "eta_scalar_mod_8_zero": true,
+      "bulk_required_is_integer": true,
+      "is_aps_recovery_candidate": true
+    }
+  ],
+  "outcome": "FOUND_3_non_trivial_aps_recovery_candidates"
+}

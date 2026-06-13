@@ -1,0 +1,94 @@
+{
+    "graph": {
+        "k_full": 12,
+        "edges": 30,
+        "degree": 5,
+        "topology": "icosahedron (canonical AKN nearest-neighbour shell)"
+    },
+    "update_rule": "noisy majority-vote of in-neighbours (epsilon = 0.05)",
+    "tier": "Tier 2 mechanism + Tier 3 specific numeric values (depend on noise floor)",
+    "pyphi_dependency_status": "available",
+    "subsystem_phi": [
+        {
+            "k": 2,
+            "subset_indices": [
+                0,
+                1
+            ],
+            "initial_state": [
+                1,
+                0
+            ],
+            "phi": 0.81,
+            "elapsed_seconds": null,
+            "tag": "k2_edge",
+            "computation_mode": "direct_pyphi"
+        },
+        {
+            "k": 3,
+            "subset_indices": [
+                0,
+                1,
+                2
+            ],
+            "initial_state": [
+                1,
+                1,
+                0
+            ],
+            "phi": 0.203523,
+            "elapsed_seconds": null,
+            "tag": "k3_triangle",
+            "computation_mode": "direct_pyphi"
+        },
+        {
+            "k": 4,
+            "subset_indices": [
+                0,
+                1,
+                2,
+                5
+            ],
+            "initial_state": [
+                1,
+                1,
+                0,
+                0
+            ],
+            "phi": 0.478679,
+            "elapsed_seconds": null,
+            "tag": "k4_kite",
+            "computation_mode": "direct_pyphi"
+        },
+        {
+            "k": 5,
+            "subset_indices": [
+                0,
+                1,
+                2,
+                3,
+                4
+            ],
+            "initial_state": [
+                1,
+                1,
+                1,
+                0,
+                0
+            ],
+            "phi": 1.1249,
+            "elapsed_seconds": null,
+            "tag": "k5_apex_pentagon",
+            "computation_mode": "direct_pyphi"
+        }
+    ],
+    "phi_max_tractable": 1.1249,
+    "phi_selected_subgraph_positive_k2_to_k5": true,
+    "phi_selected_subgraph_witness_k2_to_k5_positive": true,
+    "phi_monotone_in_k": false,
+    "phi_selected_subgraph_witness_k2_to_k5_positive_witness": true,
+    "status": "SELECTED_SUBGRAPH_POSITIVE__O28_PENDING",
+    "k12_full_status": "Full k=12 Phi_max requires HPC (combinatorial cost of pyphi.compute.sia scales as N! over bipartitions and 2^N over cause-effect repertoires). The tractable sub-network values establish Phi > 0 on the chosen induced sub-graphs at k <= 5. The IIT 3.0 Exclusion Postulate (Oizumi-Albantakis-Tononi 2014) and the IIT 4.0 principle of maximal existence (Albantakis et al. 2023) forbid extending these sub-graph values as a monotone lower bound to the global Phi_max(k=12) \u2014 a strict superset can carry strictly lower Phi_max than its complex. The exact k=12 numeric value is registered as Open Problem O.28 with three closure paths (direct HPC; major-complex localisation; vertex-transitive-regular-graph lower bound).",
+    "verdict": "Tier 2 mechanism + Tier 3 sub-graph values: max_k Phi(k <= 5) = 1.124900 > 0 on chosen induced sub-graphs of the canonical icosahedron under the noisy majority-vote TPM. These sub-graph values DO NOT extend to a global Phi_max(k=12) > 0 bound under the IIT Exclusion Postulate; the full k=12 numerical computation is the residual of Open Problem O.28.",
+    "pass": true
+}

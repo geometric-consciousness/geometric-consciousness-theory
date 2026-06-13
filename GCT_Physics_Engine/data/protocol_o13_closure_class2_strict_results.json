@@ -1,0 +1,79 @@
+{
+  "tau_intel_gyr": 4.5,
+  "tau_bio_gyr": 4.5,
+  "tau_lag_gyr": 5.0,
+  "variants_run": [
+    {
+      "label": "V1 sigmoid x exp (single-channel pipeline)",
+      "w_at_z_0": -1.0049666323940671,
+      "w_at_z_015": -1.0016153402121752,
+      "w_at_z_028": -1.0004563717046155,
+      "w_at_z_05": -1.000018535320949,
+      "w_at_z_10": -1.0000000024317857,
+      "w0_CPL_fit": -1.0038664021312287,
+      "wa_CPL_fit": 0.013762969969164207,
+      "z_cross_CPL_fit": 0.39068111233553027,
+      "w_min": -1.0049666323940671
+    },
+    {
+      "label": "V2 stage-hierarchy (pre-Class 2 weighted -- VIOLATES Sec 14.5.2)",
+      "w_at_z_0": -1.0049893312892684,
+      "w_at_z_015": -1.0034167698008947,
+      "w_at_z_028": -1.0022397473883555,
+      "w_at_z_05": -1.0008471529681549,
+      "w_at_z_10": -1.0000160961023588,
+      "w0_CPL_fit": -1.0050590030800592,
+      "wa_CPL_fit": 0.01280732132761292,
+      "z_cross_CPL_fit": 0.6529162740129433,
+      "w_min": -1.0049893312892684
+    },
+    {
+      "label": "V6 Class-2-strict step (PRINCIPLED Tier 2)",
+      "w_at_z_0": -1.0049893312890894,
+      "w_at_z_015": -1.003416769775476,
+      "w_at_z_028": -1.0022397473460989,
+      "w_at_z_05": -1.0008471529114875,
+      "w_at_z_10": -1.0000160960631792,
+      "w0_CPL_fit": -1.0050590030922322,
+      "wa_CPL_fit": 0.012807321588002483,
+      "z_cross_CPL_fit": 0.6529162546678748,
+      "w_min": -1.0049893312890894
+    },
+    {
+      "label": "V6r Class-2 + SFR-age convolution (RIGOROUS)",
+      "w_at_z_0": -1.0049505577169116,
+      "w_at_z_015": -1.0006814816503764,
+      "w_at_z_028": -1.000035387541067,
+      "w_at_z_05": -1.0,
+      "w_at_z_10": -1.0,
+      "w0_CPL_fit": -1.0030296546924713,
+      "wa_CPL_fit": 0.011659413945237632,
+      "z_cross_CPL_fit": 0.35107059232273663,
+      "w_min": -1.0049505577169116
+    }
+  ],
+  "delta_w_z028_by_variant": {
+    "V1_sigmoid_exp": 0.00045637170461554355,
+    "V2_stage_hierarchy_violates_Class2": 0.0022397473883555286,
+    "V6_Class2_strict_step": 0.002239747346098886,
+    "V6r_Class2_SFR_convolved": 3.5387541067022354e-05
+  },
+  "diagnostic_v1_v6_v6r_envelope_not_registered": {
+    "min": 3.5387541067022354e-05,
+    "max": 0.002239747346098886,
+    "geometric_mean": 0.00033071663646981977,
+    "spread_max_over_min": 63.291974479292264
+  },
+  "registered_class2_intra_dynamics_envelope": {
+    "min": 2e-05,
+    "max": 5e-05,
+    "geometric_mean": 3.1622776601683795e-05,
+    "source": "protocol_o13_intra_class2_dynamics.py",
+    "status": "registered load-bearing O.13 envelope; V1/V6/V6r envelope is diagnostic only"
+  },
+  "V2_relative_to_class2_envelope": {
+    "V2_over_geometric_mean": 6.77240616699342,
+    "V2_over_V6": 1.0000000188667006
+  },
+  "tier_2_closure": "Sec 14.5.2 Class-2-only axiom excludes V2 stage-hierarchy as principled Tier 2 selection. The V1/V6/V6r span is retained as a diagnostic broad-reference envelope only. The registered load-bearing Class-2 + intra-Class-2 O.13 envelope is delegated to protocol_o13_intra_class2_dynamics.py and is |Delta w(z=0.28)| in [2.00e-05, 5.00e-05]. V2's 2e-3 value over-estimates that registered envelope by two orders of magnitude."
+}

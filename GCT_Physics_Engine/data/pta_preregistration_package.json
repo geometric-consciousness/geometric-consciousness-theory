@@ -1,0 +1,25 @@
+{
+  "prediction_id": "P.I.PTA",
+  "target": "PTA l=6 Icosahedral Anisotropy",
+  "datasets": [
+    "NANOGrav 15yr",
+    "PPTA DR3",
+    "EPTA DR2"
+  ],
+  "predicted_c6_c0": 2.92e-08,
+  "predicted_delta_gamma_max": 0.00017307,
+  "decision_criterion": "C6 / sigma(C6) >= 3.0",
+  "mask_angles_deg": [
+    0,
+    36,
+    60,
+    72,
+    90,
+    108,
+    120,
+    144,
+    180
+  ],
+  "blinding_status": "LOCKED",
+  "falsification_threshold": 0.0001
+}

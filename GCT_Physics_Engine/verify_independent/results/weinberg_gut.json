@@ -1,0 +1,19 @@
+{
+  "name": "weinberg_gut",
+  "app_r_label": "rho_G Gram/Cartan boundary scalar (GUT scale)",
+  "formula": "rho_G = \u03c6^-2; rho_G/(1+rho_G) = 0.27639320225",
+  "tier": "Tier 1",
+  "predicted": 0.38196601125010515,
+  "observed": null,
+  "unit": "(dimensionless)",
+  "app_r_predicted": 0.38197,
+  "app_r_precision_str": "Tier 1 exact Gram scalar; normalized Cartan share = 0.27639320225",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": null,
+  "status": "TIER1_EXACT",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "normalized_cartan_share": 0.27639320225002106
+  }
+}

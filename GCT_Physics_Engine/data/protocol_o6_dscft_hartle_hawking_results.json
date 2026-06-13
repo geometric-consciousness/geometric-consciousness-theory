@@ -1,0 +1,17 @@
+{
+  "H0_km_per_s_per_Mpc": 67.4,
+  "H0_SI": 2.1842693716174612e-18,
+  "c_light_SI": 299792458.0,
+  "G_Newton_SI": 6.6743e-11,
+  "hbar_SI": 1.054571817e-34,
+  "ell_P_SI": 1.61625502392855e-35,
+  "R_dS_SI": 1.372506806603264e+26,
+  "R_dS_over_ell_P": 8.491895067816592e+60,
+  "S_Hartle_Hawking_S3_equator": 2.265474148709614e+122,
+  "S_Gibbons_Hawking_horizon": 2.2654741487096146e+122,
+  "chi_critical_susceptibility_section_14_4_3": 2.2654741487096146e+122,
+  "relative_diff_HH_vs_GH": 3.2395847797903773e-16,
+  "relative_diff_chi_vs_GH": 0.0,
+  "closed_at_semiclassical_level": true,
+  "verdict": "(i-partial) CLOSURE at semi-classical Hartle-Hawking level: S_HH = S_GH = chi identification confirmed numerically. Full dS_4/CFT_3 operator dictionary remains conjectural (Strominger 2001, Maldacena 2003) but does not affect the semi-classical area-law derivation. V2 \u00a714.1.5 carries Tier 2 standing (Gibbons-Hawking area-law) with a Tier 1 partial from the Hartle-Hawking boundary-state construction with explicit entanglement-entropy derivation."
+}

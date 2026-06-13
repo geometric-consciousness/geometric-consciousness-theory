@@ -1,0 +1,125 @@
+{
+  "wirtinger_presentation": "<a, b | aba = bab>",
+  "rho_a": [
+    [
+      1.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "rho_b": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      -1.0,
+      1.0
+    ]
+  ],
+  "wirtinger_relation_holds": true,
+  "polaron_unity_identity_holds_for_all_test_cases": true,
+  "conjugation_invariance_holds": true,
+  "n_test_cases": 13,
+  "n_conjugation_checks": 20,
+  "trace_identity_test_results": [
+    {
+      "name": "a",
+      "tau_X": "(1+0j)",
+      "tau_E_X": "(1+0j)",
+      "abs_difference": 0.0,
+      "identity_holds": true
+    },
+    {
+      "name": "b",
+      "tau_X": "(1+0j)",
+      "tau_E_X": "(1+0j)",
+      "abs_difference": 0.0,
+      "identity_holds": true
+    },
+    {
+      "name": "ab",
+      "tau_X": "(0.5+0j)",
+      "tau_E_X": "(0.5+0j)",
+      "abs_difference": 0.0,
+      "identity_holds": true
+    },
+    {
+      "name": "ba",
+      "tau_X": "(0.5+0j)",
+      "tau_E_X": "(0.5+0j)",
+      "abs_difference": 0.0,
+      "identity_holds": true
+    },
+    {
+      "name": "aba",
+      "tau_X": "0j",
+      "tau_E_X": "0j",
+      "abs_difference": 0.0,
+      "identity_holds": true
+    },
+    {
+      "name": "bab",
+      "tau_X": "0j",
+      "tau_E_X": "0j",
+      "abs_difference": 0.0,
+      "identity_holds": true
+    },
+    {
+      "name": "a + b",
+      "tau_X": "(2+0j)",
+      "tau_E_X": "(2+0j)",
+      "abs_difference": 0.0,
+      "identity_holds": true
+    },
+    {
+      "name": "ab - ba",
+      "tau_X": "0j",
+      "tau_E_X": "0j",
+      "abs_difference": 0.0,
+      "identity_holds": true
+    },
+    {
+      "name": "random_0",
+      "tau_X": "(0.6226408980728226-1.1336388904987094j)",
+      "tau_E_X": "(0.6226408980728226-1.1336388904987094j)",
+      "abs_difference": 0.0,
+      "identity_holds": true
+    },
+    {
+      "name": "random_1",
+      "tau_X": "(0.38049538896232976-0.3966308826610111j)",
+      "tau_E_X": "(0.38049538896232976-0.3966308826610111j)",
+      "abs_difference": 0.0,
+      "identity_holds": true
+    },
+    {
+      "name": "random_2",
+      "tau_X": "(0.15941243654812298-0.16969592280703136j)",
+      "tau_E_X": "(0.15941243654812298-0.16969592280703136j)",
+      "abs_difference": 0.0,
+      "identity_holds": true
+    },
+    {
+      "name": "random_3",
+      "tau_X": "(-0.03144187889951444+0.0031587976056864087j)",
+      "tau_E_X": "(-0.03144187889951444+0.0031587976056864087j)",
+      "abs_difference": 0.0,
+      "identity_holds": true
+    },
+    {
+      "name": "random_4",
+      "tau_X": "(0.30836478182467714+0.268322665084913j)",
+      "tau_E_X": "(0.30836478182467714+0.268322665084913j)",
+      "abs_difference": 0.0,
+      "identity_holds": true
+    }
+  ],
+  "trace_surrogate_verified": true,
+  "verdict_closed": false,
+  "closure_status": "TRACE_SURROGATE_ONLY__O18_REMAINS_OPEN",
+  "verdict_text": "(i) TRACE SURROGATE verified only: tau o E = tau holds on the finite M_2(C) matrix model, whose displayed SL(2,Z) matrices are not unitary C*-algebra generators. Trefoil-case Polaron Unity remains Tier 3 conditional pending construction of a unitary finite-dimensional faithful meridian quotient, resolution of the App Y finite-level 4-manifold knot-complement clarification (registered as a sub-closure of Open Problem O.18), and the Y.4.2 direct-product/operator-factor closure; the general-prime extension remains Tier 3 conditional on Anderson-Putnam-to-knot-complement extension, canonicity of K -> A_K, finite-quotient meridian trace construction, and KO-dim-6 sign verification (O.32)."
+}

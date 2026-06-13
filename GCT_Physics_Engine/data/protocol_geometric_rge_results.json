@@ -1,0 +1,11 @@
+{
+    "m_gut_gev": 3.203844296328604e+16,
+    "t_gut": 33.49279399635455,
+    "sin2_w_gut_bc": 0.38196601125010515,
+    "sin2_w_predicted": 0.23121998341510144,
+    "sin2_w_observed": 0.23122,
+    "error_pct": 7.172778550989089e-06,
+    "pass": true,
+    "method": "Spectral Action dS/dlnL Beta Function Kernel",
+    "sm_beta_functions": false
+}

@@ -1,0 +1,25 @@
+{
+  "name": "pmns_unitarity_3x3",
+  "app_r_label": "PMNS 3x3 Unitarity Residual",
+  "formula": "U U^dagger = 1 from GCT angles (theta12=arctan(1/phi)+theta13/5, theta23=45deg, theta13=arcsin(phi^-4))",
+  "tier": "Tier 2 / Tier 3 (theta23 Tension)",
+  "predicted": 0.0,
+  "observed": 0.0,
+  "unit": "dimensionless",
+  "app_r_predicted": null,
+  "app_r_precision_str": null,
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": null,
+  "status": "PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "pmns_max_row_norm_residual_GCT": 0.0,
+    "pmns_max_off_diagonal_residual_GCT": 0.0,
+    "pmns_abs_det_GCT": 1.0,
+    "pmns_max_row_norm_residual_OBS": 0.0,
+    "pmns_abs_det_OBS": 0.9999999999999999,
+    "pmns_unitary_within_5pct": true,
+    "note": "PMNS 3x3 unitarity from GCT angles (theta23=45 deg). Max row-norm residual: 0.00000; max off-diagonal residual: 0.00000; |det U|: 1.00000. Cross-check with observed theta23=49.5 deg gives row-norm residual 0.00000. PMNS unitarity is consistent given the GCT theta23 tension; no additional unitarity violation introduced."
+  }
+}

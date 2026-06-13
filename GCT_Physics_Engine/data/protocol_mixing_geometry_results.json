@@ -1,0 +1,45 @@
+{
+  "pass": false,
+  "ckm": {
+    "predictions": {
+      "s12": 0.22745462118910195,
+      "s23": 0.04139164566553407,
+      "s13": 0.003732282361359376,
+      "J": 2.5250612343448544e-05
+    },
+    "targets": {
+      "s12": 0.225,
+      "s23": 0.0418,
+      "s13": 0.00369
+    }
+  },
+  "pmns": {
+    "predictions": {
+      "theta12": 33.39533441146101,
+      "theta23": 45.0,
+      "theta13": 8.389285785792312,
+      "delta_cp": 222.49223594996212
+    },
+    "targets": {
+      "theta12": 33.4,
+      "theta23": 49.5,
+      "theta13": 8.58,
+      "delta_cp": 232.0
+    },
+    "theta23_tension_sigma": 4.090909090909091,
+    "theta23_status": "TENSION_GT_4SIGMA",
+    "theta23_tier": "Tier 3 (Tension)",
+    "resolution_path": "Lattice-Hamiltonian derivation of neutrino propagation through discrete icosahedral vacuum (Ch09 \u00a79.4.2 pre-registered discriminant)"
+  },
+  "cp_violation_derivation": {
+    "s12": 0.22745462118910195,
+    "s23": 0.04139164566553407,
+    "s13": 0.003732282361359376,
+    "J_gct_phi_22": 2.5250612343448544e-05,
+    "sin_delta_cp": 197.88965884692809,
+    "delta_cp_deg_derived": null,
+    "delta_cp_manuscript_claim": 222.49223594996215,
+    "status": "UNPHYSICAL - sin(delta) > 1",
+    "match_precision_pct": null
+  }
+}

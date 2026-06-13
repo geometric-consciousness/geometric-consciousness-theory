@@ -1,0 +1,32 @@
+{
+  "name": "newton_g",
+  "app_r_label": "Newton's G (Jacobson horizon chain)",
+  "formula": "a_6 = (2 \u0127 / (m_e c)) \u00b7 \u03c6^-107 \u00b7 (1 - 5\u03b1); G = c^3 a_6^2 / (4 \u0127)",
+  "tier": "Tier 2 thermodynamic mechanism + Tier 4 Planck-link conjecture (inherits O.14) + Tier 3 dimensional anchor",
+  "predicted": 6.689475518614076e-11,
+  "observed": 6.6743e-11,
+  "unit": "m^3 kg^-1 s^-2",
+  "app_r_predicted": 6.68948e-11,
+  "app_r_precision_str": "2274 ppm postdiction; Tier 2 thermodynamic mechanism + Tier 4 Planck-link conjecture (inherits O.14) + Tier 3 dimensional anchor",
+  "app_r_precision_ppm": 2274.0,
+  "independent_precision_ppm": 2273.7243776990726,
+  "status": "PASS",
+  "tolerance_ppm": 5000.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "branch_A_alpha_gct_codata_anchors": {
+      "alpha": 0.007272316635416375,
+      "a_6_m": 3.2361828797391343e-35,
+      "G_pred": 6.689475518614076e-11,
+      "ppm_vs_CODATA_G": 2273.7243776990726,
+      "note": "GCT-bare \u03b1 with CODATA-2022 m_e, hbar, c. True independent re-derivation."
+    },
+    "branch_B_alpha_codata_codata_anchors": {
+      "alpha": 0.0072973525643,
+      "a_6_m": 3.235762489460908e-35,
+      "G_pred": 6.687737663911304e-11,
+      "ppm_vs_CODATA_G": 2013.3443074636255,
+      "note": "CODATA \u03b1 throughout \u2014 alt branch for sensitivity to \u03b1."
+    }
+  }
+}

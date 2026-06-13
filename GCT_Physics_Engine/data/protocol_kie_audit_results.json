@@ -1,0 +1,11 @@
+{
+  "protocol": "Protocol D solvent-KIE calibration audit",
+  "registered_kie_bound_fraction": 0.004,
+  "registered_kie_bound_percent": 0.4,
+  "direct_H2_16O_to_H2_17O_radical_pair_verifier_available": false,
+  "provenance": "Tier 3 literature-prior control from general heavy-atom solvent/substrate isotope-effect and anaesthesia mechanism literature; not a direct H2^16O/H2^17O radical-pair solvent-KIE calibration.",
+  "closure_target": "O.33 requires a direct assembled-substrate H2^16O/H2^17O radical-pair solvent-KIE calibration before the LORR magnitude comparison can become an operative quantitative gate.",
+  "interpretation": "Protocol D LORR remains a pilot/systematics study under the registered budget. The NMR polarity gate is the operative spin-entropy discriminator.",
+  "status": "OPEN_CONDITIONAL",
+  "pass": false
+}

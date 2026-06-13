@@ -1,0 +1,37 @@
+{
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "title": "Geometric Consciousness Theory: A 6D-to-3D Projective Framework",
+  "version": "1.2.0",
+  "language": "eng",
+  "access_right": "open",
+  "license": "CC-BY-4.0",
+  "creators": [
+    {
+      "name": "González Acosta, Pablo",
+      "affiliation": "Independent researcher",
+      "orcid": "0009-0006-6613-3721"
+    }
+  ],
+  "description": "A consciousness-first theoretical framework deriving physical reality from a 6D icosahedral cut-and-project quasicrystalline lattice. The Standard Model gauge structure, charged-lepton mass hierarchy, and selected cosmological predictions follow from five postulates plus three anchors with the electron mass as the sole dimensional input. Includes an accompanying open-source Python verification engine (62/62 protocols PASS) and pre-registered falsifiable experimental protocols.",
+  "keywords": [
+    "consciousness",
+    "geometric consciousness theory",
+    "quasicrystal",
+    "icosahedral",
+    "cut-and-project",
+    "Standard Model",
+    "phason field",
+    "Identity Polaron",
+    "Zeno Drive",
+    "falsifiable",
+    "quantum biology",
+    "microtubule",
+    "dark matter",
+    "dark energy",
+    "phantom crossing",
+    "panpsychism",
+    "integrated information theory",
+    "noncommutative geometry"
+  ]
+}

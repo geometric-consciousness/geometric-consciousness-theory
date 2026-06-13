@@ -1,0 +1,50 @@
+{
+  "gap_label_form": "(p*phi^-1 + q) mod 1",
+  "targets": {
+    "s_23": {
+      "obs": 0.0418,
+      "abs_err": 0.0008,
+      "rel_err": 0.019138755980861247,
+      "E1_n_real": 6.597632838840119,
+      "E1_bracket": [
+        6,
+        7
+      ],
+      "E1_on_integer_power": false,
+      "E1_nearest_integer_power_off_pct": 17.60322069705019,
+      "E2_min_abs_p_for_match": 42,
+      "E2_validated_max_p": 7,
+      "E2_labels_within_err_at_p8": 0,
+      "E2_labels_within_err_at_scan": 1,
+      "E2_scan_bound": 126,
+      "E3_ansatz_exponent": 6.618033988749895,
+      "E3_ansatz_value": 0.04139164566553407,
+      "E3_ansatz_vs_obs_pct": -0.9769242451337964,
+      "E3_transcendental_not_in_Zphi": true
+    },
+    "s_13": {
+      "obs": 0.003732,
+      "abs_err": 0.00018,
+      "rel_err": 0.048231511254019296,
+      "E1_n_real": 11.618191209878425,
+      "E1_bracket": [
+        11,
+        12
+      ],
+      "E1_on_integer_power": false,
+      "E1_nearest_integer_power_off_pct": 16.784029604987747,
+      "E2_min_abs_p_for_match": 466,
+      "E2_validated_max_p": 7,
+      "E2_labels_within_err_at_p8": 0,
+      "E2_labels_within_err_at_scan": 2,
+      "E2_scan_bound": 1398,
+      "E3_ansatz_exponent": 11.618033988749895,
+      "E3_ansatz_value": 0.003732282361359376,
+      "E3_ansatz_vs_obs_pct": 0.007565952823577234,
+      "E3_transcendental_not_in_Zphi": true
+    }
+  },
+  "verdict": "TP-F gap-label route does NOT close s23/s13. (E1) Neither value sits on an integer-power phi^-n label; both fall strictly between consecutive powers. (E2) A general Z[phi] label matches only at |p| far beyond the validated/accessible range, and many labels co-fit at that scale (under-determined, no selection rule) - the same obstruction as the open -107 uniqueness (O.14a). (E3) The literal phi^-(n+phi^-1) ansaetze are transcendental (Gelfond-Schneider) and lie outside Z[phi] entirely. Hence the K-theoretic gap-label framing cannot supply a unique, physically-bounded label for either CKM angle; closure remains with the QLQCD dressed-Dirac extraction (O.5 core), not gap-label enumeration.",
+  "any_on_integer_power": false,
+  "any_bounded_unique_match": false
+}

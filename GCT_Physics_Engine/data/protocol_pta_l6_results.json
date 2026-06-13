@@ -1,0 +1,15 @@
+{
+ "prediction_id": "P.I.PTA",
+ "parameters": {
+  "epsilon": 0.00017307027171223924,
+  "l": 6
+ },
+ "max_deviation": 0.00017307027171223924,
+ "template_summary": {
+  "theta_min_deg": 0,
+  "theta_max_deg": 180,
+  "num_points": 1000
+ },
+ "status": "EXECUTABLE",
+ "pass": true
+}

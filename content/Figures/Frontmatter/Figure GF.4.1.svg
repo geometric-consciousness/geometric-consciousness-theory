@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1540" height="1160" viewBox="0 0 1540 1160" role="img" aria-labelledby="title desc">
+<title id="title">Figure GF.4.1 - Prediction/postdiction firewall dashboard</title>
+<desc id="desc">Programmatic vector figure generated for the GCT frontmatter.</desc>
+<defs>
+<marker id="arrow-blue" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9 z" fill="#2c5d8a"/></marker>
+<marker id="arrow-gray" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9 z" fill="#555555"/></marker>
+<marker id="arrow-red" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9 z" fill="#b03a2e"/></marker>
+</defs>
+<rect x="0" y="0" width="1540" height="1160" fill="#ffffff"/>
+<text x="60" y="62" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#1f1f1f" text-anchor="start">GF.4.1  Prediction/postdiction firewall dashboard</text>
+<text x="60" y="96" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#555555" text-anchor="start">Numerical matches are sorted by provenance before interpretation; App FM status pills carry the empirical reading.</text>
+<rect x="65" y="132" width="440" height="112" rx="6" fill="#ffffff" stroke="#2c5d8a" stroke-width="2"/>
+<text x="85" y="164" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#2c5d8a" text-anchor="start">Detected empirical rows</text>
+<text x="85" y="205" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#222222" text-anchor="start">0</text>
+<text x="85" y="230" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#555555" text-anchor="start">TIGHT + MARGINAL</text>
+<rect x="555" y="132" width="440" height="112" rx="6" fill="#ffffff" stroke="#2c5d8a" stroke-width="2"/>
+<text x="575" y="164" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#2c5d8a" text-anchor="start">P.20 down-quark mass</text>
+<text x="575" y="205" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#222222" text-anchor="start">4.716 MeV</text>
+<text x="575" y="230" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#555555" text-anchor="start">postdiction-consistent (+0.33%)</text>
+<rect x="1045" y="132" width="440" height="112" rx="6" fill="#ffffff" stroke="#555555" stroke-width="2"/>
+<text x="1065" y="164" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#555555" text-anchor="start">Registered FAIL rows</text>
+<text x="1065" y="205" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#222222" text-anchor="start">0</text>
+<text x="1065" y="230" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#555555" text-anchor="start">none in displayed set</text>
+<rect x="60" y="285" width="1450" height="44" rx="4" fill="#222222" stroke="#222222" stroke-width="0"/>
+<text x="70" y="314" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="start">ID</text>
+<text x="150" y="314" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="start">Registry type</text>
+<text x="320" y="314" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="start">Target</text>
+<text x="560" y="314" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="start">Short reading</text>
+<text x="830" y="314" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="start">Tier / provenance</text>
+<text x="1100" y="314" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="start">App FM status</text>
+<text x="1330" y="314" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="start">Evidence class</text>
+<rect x="60" y="329" width="1450" height="64" rx="0" fill="#f5faff" stroke="#e2e2e2" stroke-width="1"/>
+<text x="70" y="351.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2c5d8a" text-anchor="start">P.1</text>
+<text x="150" y="351.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Postdiction</text>
+<text x="320" y="351.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Muon mass</text>
+<text x="560" y="351.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">settled alignment; not</text>
+<text x="560" y="363.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">detection evidence</text>
+<text x="830" y="351.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Tier 2 mechanism + Tier 3</text>
+<text x="830" y="363.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">integer/residual</text>
+<text x="1100" y="351.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#2c5d8a" text-anchor="start">POSTDICTION</text>
+<text x="1330" y="351.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">not in-favor detection</text>
+<rect x="60" y="393" width="1450" height="64" rx="0" fill="#f5faff" stroke="#e2e2e2" stroke-width="1"/>
+<text x="70" y="415.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2c5d8a" text-anchor="start">P.2</text>
+<text x="150" y="415.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Postdiction</text>
+<text x="320" y="415.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Proton mass</text>
+<text x="560" y="415.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">postdictive tree-level residual</text>
+<text x="830" y="415.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Tier 2 mechanism + Tier 3</text>
+<text x="830" y="427.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">handle</text>
+<text x="1100" y="415.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#2c5d8a" text-anchor="start">POSTDICTION</text>
+<text x="1330" y="415.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">not in-favor detection</text>
+<rect x="60" y="457" width="1450" height="64" rx="0" fill="#f7f7f7" stroke="#e2e2e2" stroke-width="1"/>
+<text x="70" y="479.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="start">P.3</text>
+<text x="150" y="479.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Conditional</text>
+<text x="150" y="491.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">protocol design</text>
+<text x="320" y="479.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">XRISM 3.55 keV</text>
+<text x="560" y="479.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">sensitivity-limited until per-</text>
+<text x="560" y="491.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">cell table</text>
+<text x="830" y="479.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Tier 2 linewidth/morphology</text>
+<text x="830" y="491.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">mechanism; centroid context is</text>
+<text x="830" y="504.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Tier 3 postdiction</text>
+<text x="1100" y="479.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#555555" text-anchor="start">OPEN</text>
+<text x="1330" y="479.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">not in-favor detection</text>
+<rect x="60" y="521" width="1450" height="64" rx="0" fill="#fff8e8" stroke="#e2e2e2" stroke-width="1"/>
+<text x="70" y="543.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#8a6d3b" text-anchor="start">P.4</text>
+<text x="150" y="543.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Prediction</text>
+<text x="320" y="543.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Neutrino floor</text>
+<text x="560" y="543.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">tension under generic cosmology</text>
+<text x="560" y="555.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">bounds</text>
+<text x="830" y="543.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Tier 2 mechanism + Tier 3</text>
+<text x="830" y="555.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">conditional remapping</text>
+<text x="1100" y="543.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#8a6d3b" text-anchor="start">TENSION</text>
+<text x="1330" y="543.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">not in-favor detection</text>
+<rect x="60" y="585" width="1450" height="64" rx="0" fill="#fff8e8" stroke="#e2e2e2" stroke-width="1"/>
+<text x="70" y="607.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#8a6d3b" text-anchor="start">P.5</text>
+<text x="150" y="607.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Tension</text>
+<text x="320" y="607.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Muon g-2</text>
+<text x="560" y="607.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">adverse under WP2025 HVP</text>
+<text x="560" y="619.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">synthesis</text>
+<text x="830" y="607.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Tier 3 fitted/equal-weight 1/5</text>
+<text x="830" y="619.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">coefficient + A3 on top of a</text>
+<text x="830" y="632.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">geometric mechanism class;</text>
+<text x="1100" y="607.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#8a6d3b" text-anchor="start">WP2025 TENSION</text>
+<text x="1330" y="607.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">not in-favor detection</text>
+<rect x="60" y="649" width="1450" height="64" rx="0" fill="#fff8e8" stroke="#e2e2e2" stroke-width="1"/>
+<text x="70" y="671.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#8a6d3b" text-anchor="start">P.6</text>
+<text x="150" y="671.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Diagnostic /</text>
+<text x="150" y="683.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">conditional</text>
+<text x="150" y="696.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">prediction</text>
+<text x="320" y="671.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Dark-energy direction</text>
+<text x="560" y="671.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">DESI registered-menu closure</text>
+<text x="560" y="683.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">tension</text>
+<text x="830" y="671.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Tier 3 registered-menu caveat</text>
+<text x="1100" y="671.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#8a6d3b" text-anchor="start">CURRENT-DATA TENSION</text>
+<text x="1330" y="671.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">not in-favor detection</text>
+<rect x="60" y="713" width="1450" height="64" rx="0" fill="#f7f7f7" stroke="#e2e2e2" stroke-width="1"/>
+<text x="70" y="735.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="start">P.8</text>
+<text x="150" y="735.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Prediction</text>
+<text x="320" y="735.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Anti-Zeno frequency</text>
+<text x="560" y="735.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">four-conjunct joint-null gate</text>
+<text x="560" y="747.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">pending</text>
+<text x="830" y="735.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Tier 2 mechanism + Tier 3</text>
+<text x="830" y="747.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">specific branch values (Branch</text>
+<text x="830" y="760.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">A 112 MHz, Branch B 42 MHz)</text>
+<text x="1100" y="735.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#555555" text-anchor="start">OPEN PENDING-VERIFIER</text>
+<text x="1330" y="735.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">not in-favor detection</text>
+<rect x="60" y="777" width="1450" height="64" rx="0" fill="#f7f7f7" stroke="#e2e2e2" stroke-width="1"/>
+<text x="70" y="799.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="start">P.13c</text>
+<text x="150" y="799.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Prediction</text>
+<text x="320" y="799.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">NMR polarity gate</text>
+<text x="560" y="799.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">open conditional sign-aware</text>
+<text x="560" y="811.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">protocol</text>
+<text x="830" y="799.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Tier 2 mechanism + Tier 3</text>
+<text x="830" y="811.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">active-state Delta T_2</text>
+<text x="830" y="824.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">calibration anchor pending</text>
+<text x="1100" y="799.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#555555" text-anchor="start">OPEN</text>
+<text x="1330" y="799.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">not in-favor detection</text>
+<rect x="60" y="841" width="1450" height="64" rx="0" fill="#f7f7f7" stroke="#e2e2e2" stroke-width="1"/>
+<text x="70" y="863.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="start">P.17</text>
+<text x="150" y="863.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Postdiction</text>
+<text x="320" y="863.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Higgs VEV scale</text>
+<text x="560" y="863.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">open conditional precision row</text>
+<text x="830" y="863.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Tier 2 mechanism + Tier 3</text>
+<text x="830" y="875.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">calibrated handle</text>
+<text x="1100" y="863.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#555555" text-anchor="start">OPEN</text>
+<text x="1330" y="863.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">not in-favor detection</text>
+<rect x="60" y="905" width="1450" height="64" rx="0" fill="#f5faff" stroke="#e2e2e2" stroke-width="1"/>
+<text x="70" y="927.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2c5d8a" text-anchor="start">P.20</text>
+<text x="150" y="927.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">n/a</text>
+<text x="320" y="927.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Down-quark mass</text>
+<text x="560" y="927.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">postdiction-consistent: 4.716</text>
+<text x="560" y="939.6" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">MeV (+0.33%)</text>
+<text x="830" y="927.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">see App FM</text>
+<text x="1100" y="927.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#2c5d8a" text-anchor="start">POSTDICTION</text>
+<text x="1330" y="927.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">not in-favor detection</text>
+<rect x="60" y="1004" width="1430" height="86" rx="6" fill="#f7f7f7" stroke="#d0d0d0" stroke-width="1.4"/>
+<text x="82" y="1036" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#333333" text-anchor="start">Firewall reading</text>
+<text x="82" y="1061.0" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#444444" text-anchor="start">Postdiction-consistent, consistent, algebraic, open, pending, and tension rows do not count as in-favor empirical detection evidence. P.20 is postdiction-consistent</text>
+<text x="82" y="1077.8" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#444444" text-anchor="start">conditional on O.5: m_d = m_u phi^phi = 4.716 MeV (+0.33%); P.3 is sensitivity-limited, not resolved.</text>
+<text x="60" y="1120.0" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#666666" text-anchor="start">Sources: content/00_Global_Frontmatter/04_Prediction_Postdiction_Firewall.md; content/98_Global_Appendices/App_V_Prediction_Registry.md;</text>
+<text x="60" y="1132.1" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#666666" text-anchor="start">content/98_Global_Appendices/App_FM_Falsifiability_Matrix.md</text>
+</svg>

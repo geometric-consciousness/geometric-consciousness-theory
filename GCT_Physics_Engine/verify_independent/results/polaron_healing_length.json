@@ -1,0 +1,31 @@
+{
+  "name": "polaron_healing_length",
+  "app_r_label": "Polaron healing length \u03be = \u210fc/(\u03b1\u00b2 m_e c\u00b2)",
+  "formula": "\u03be = \u210fc/(\u03b1\u00b2 m_e c\u00b2) = a_0/\u03b1 (single value; no manuscript-derivable O(1) prefactor)",
+  "tier": "Tier 1 textbook (Bohr-Compton \u03be = a_0/\u03b1); GCT-internal Route 2 closed negatively under O.25; lumen identification = Tier 3",
+  "predicted": 7.251632774485038,
+  "observed": 7.25,
+  "unit": "nm",
+  "app_r_predicted": 7.25,
+  "app_r_precision_str": "\u03be(CODATA \u03b1) = 7.252 nm (+0.02% vs stated 7.25 nm); \u03be(GCT bare \u03b1) = 7.302 nm (+0.71%); inter-branch agreement 0.69%",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": 225.21027379830838,
+  "status": "PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "alpha_CODATA": 0.0072973525643,
+    "alpha_GCT_bare": 0.007272316635416375,
+    "xi_CODATA_alpha_nm": 7.251632774485038,
+    "xi_GCT_alpha_nm": 7.301648162717074,
+    "xi_stated_in_ledger_nm": 7.25,
+    "error_CODATA_pct": 0.022521027379830836,
+    "error_GCT_pct": 0.7123884512699825,
+    "inter_branch_agreement_pct": 0.6897120936407009,
+    "alpha_ratio_squared": 1.006897120936407,
+    "polaron_diameter_nm": 14.503265548970075,
+    "microtubule_lumen_ID_nm": 15.0,
+    "diameter_vs_lumen_match_pct": 3.3115630068661637,
+    "derivation_note": "Standard Gross-Pitaevskii healing-length formula applied to the Compton-Bohr lengthscale: \u03be = \u210fc/(\u03b1\u00b2m_ec\u00b2) = a_0/\u03b1. The formula has no manuscript-derivable O(1) prefactor; both CODATA \u03b1 and GCT bare \u03b1 = \u03c6\u00b2/360 inputs give the same \u03be \u2248 7.25 nm to within ~0.7% (the formula is \u03b1-input-insensitive at the percent level since the two \u03b1 values differ by ~0.35% and the difference enters \u03be as a square). Microtubule lumen identification: 2\u03be = 14.5 nm vs lumen ID 15 nm = 3% match (Tier 3 biological correlation per Ch07 \u00a77.3.3)."
+  }
+}

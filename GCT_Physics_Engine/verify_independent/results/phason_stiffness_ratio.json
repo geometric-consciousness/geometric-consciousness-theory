@@ -1,0 +1,28 @@
+{
+  "name": "phason_stiffness_ratio",
+  "app_r_label": "Phason stiffness ratio \u03b7_stiff = K_\u22a5/K_\u2225",
+  "formula": "K_\u22a5/K_\u2225 = (det(G_\u22a5)/det(G_\u2225))\u00b3 = (\u03c6\u207b\u2076)\u00b3 = \u03c6\u207b\u00b9\u2078",
+  "tier": "Tier 2 postulate + Tier 3 specific exponent (D=18)",
+  "predicted": 0.0001730702717122391,
+  "observed": 0.00017307027171223924,
+  "unit": "(dimensionless)",
+  "app_r_predicted": 0.00017307027171223924,
+  "app_r_precision_str": "det ratio = 5.5728090001e-02 (expected \u03c6\u207b\u2076 = 5.5728090001e-02); cubed = 1.7307027171e-04 (= \u03c6\u207b\u00b9\u2078); c_lattice = 1.3155617496e-02 (= \u03c6\u207b\u2079)",
+  "app_r_precision_ppm": 7.830649956222605e-10,
+  "independent_precision_ppm": 7.830649956222605e-10,
+  "status": "PASS",
+  "tolerance_ppm": 1.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "det_G_para_raw": 378.88543819998324,
+    "det_G_perp_raw": 21.11456180001682,
+    "det_ratio_computed": 0.05572809000084119,
+    "det_ratio_expected_phi_minus_6": 0.0557280900008412,
+    "det_ratio_match_relative_error": 2.490267979326938e-16,
+    "K_ratio_phi_minus_18": 0.0001730702717122391,
+    "K_ratio_expected": 0.00017307027171223924,
+    "lattice_speed_of_light_phi_minus_9": 0.01315561749642483,
+    "all_three_machine_precision_match": true,
+    "derivation_note": "The Gram-determinant ratio det(G_perp)/det(G_para) = phi^-6 is the algebraic identity following from the cut-and-project lattice basis. The cube relationship K ~ det^3 arises from the 3-dimensional projected continuum (elastic stiffness is energy density per unit volume in 3D). Composition gives K_perp/K_para = phi^-18 with no free parameters. The exponent 18 is the H_3 invariant-degree sum (App K \u00a7K.4; real dimension of the Q(sqrt 5) representation = 18), a Tier 2 geometric input; the Tier 2 identification with the physical phason elastic sector is the substantive claim."
+  }
+}

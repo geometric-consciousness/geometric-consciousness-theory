@@ -1,0 +1,23 @@
+{
+  "name": "pmns_theta13",
+  "app_r_label": "PMNS theta13",
+  "formula": "theta_13 = arcsin(phi^-4)",
+  "tier": "Tier 3",
+  "predicted": 8.389285785792312,
+  "observed": 8.58,
+  "unit": "degrees",
+  "app_r_predicted": 8.39,
+  "app_r_precision_str": "2.22%",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": 22227.763893669915,
+  "status": "TENSION",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "percent_error": 2.222776389366991,
+    "gap_deg": 0.19071421420768786,
+    "pdg_tolerance_deg": 0.12,
+    "sigma_vs_pdg_tolerance": 1.5892851183973988,
+    "status_rule": "PASS if within 1 sigma PDG/NuFit-scale tolerance; otherwise TENSION; delta_CP is downgraded to OPEN_CONDITIONAL because the phase mechanism is Tier 2 but PMNS-sector magnitude/disposition remains Tier 3 pending O.7 and theta_23 tension resolution"
+  }
+}

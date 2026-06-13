@@ -1,0 +1,178 @@
+{
+  "protocol": "Protocol D -- H2^16O vs H2^17O LORR/NMR isotope substitution",
+  "implementation_scope": "Ch16 Protocol D, not xenon MAC",
+  "isotopes": {
+    "H2_16O": {
+      "key": "H2_16O",
+      "label": "H2^16O control",
+      "oxygen_mass_u": 15.99491461957,
+      "oxygen_spin": 0.0,
+      "enrichment_fraction": 0.99757
+    },
+    "H2_17O": {
+      "key": "H2_17O",
+      "label": "H2^17O test",
+      "oxygen_mass_u": 16.9991317565,
+      "oxygen_spin": 2.5,
+      "enrichment_fraction": 0.95
+    }
+  },
+  "n_rp_operative_central": 0,
+  "n_rp_sensitivity_branch": 1,
+  "f_bound_operative_central": 0.0,
+  "f_bound_sensitivity_range": [
+    0.001,
+    0.002
+  ],
+  "f_bound_sensitivity_central": 0.0015,
+  "f_bound_range": [
+    0.001,
+    0.002
+  ],
+  "f_bound_central": 0.0,
+  "spin_entropy_H2_16O_kB": 0.0,
+  "spin_entropy_H2_17O_kB": 1.791759469228055,
+  "normalized_entropy_load": 1.0,
+  "lorr_gate": {
+    "observable": "(C50_H2_17O - C50_H2_16O) / C50_H2_16O",
+    "operative_central_shift": -0.0,
+    "reported_lorr_shift_convention": "pure-endpoint/enrichment-normalized; multiply by verified enrichment for cohort-level decision statistics",
+    "verified_H2_17O_enrichment_fraction": 0.95,
+    "sensitivity_branch_signed_shift_range": [
+      -0.002,
+      -0.001
+    ],
+    "sensitivity_branch_signed_shift_central": -0.0015,
+    "sensitivity_branch_signed_shift_range_at_verified_enrichment": [
+      -0.0019,
+      -0.00095
+    ],
+    "sensitivity_branch_signed_shift_central_at_verified_enrichment": -0.001425,
+    "predicted_signed_shift_central": -0.0,
+    "prediction_percent_range": [
+      -0.2,
+      -0.1
+    ],
+    "prediction_percent_central": -0.0,
+    "prediction_percent_range_at_verified_enrichment": [
+      -0.19,
+      -0.095
+    ],
+    "prediction_percent_central_at_verified_enrichment": -0.14250000000000002,
+    "decision_rule": "Central branch is n_rp=0 -> no LORR signal while O.21 is open. The n_rp=1 Trp21 branch is a sensitivity branch only; LORR remains a no-gate mechanism probe under the registered systematic budget."
+  },
+  "nmr_quadrupole_gate": {
+    "primary_readout": "baseline-subtracted H2^17O bound-water quadrupolar R2/T2",
+    "predicted_polarity": "active-state H2^17O R2 decreases relative to H2^16O control",
+    "tier_scope": "Tier 2 mechanism + Tier 3 active-state Delta T2 calibration anchor pending O.21/O.33",
+    "executable_preregistration": {
+      "registry_id": "P.13c",
+      "status": "OPEN_CONDITIONAL",
+      "pass": true,
+      "verdict": "OPEN_CONDITIONAL_PREREGISTRATION_DESIGN",
+      "parameters": {
+        "sample_size_per_isotope_condition": 24,
+        "repeated_nmr_acquisitions_per_preparation": 3,
+        "alpha_two_sided": 0.01,
+        "beta": 0.2,
+        "target_power": 0.8,
+        "active_state_polarity_reversal_power_target_fraction": 0.05,
+        "dominant_systematic_sigma_ppm_max": 0.2
+      },
+      "power_statistic": {
+        "effect_fraction": 0.05,
+        "effect_ppm": 50000.0,
+        "zcrit_two_sided_alpha": 2.5758293035489,
+        "zbeta_target": 0.8416212335729144,
+        "max_total_per_preparation_sigma_fraction_for_80pct_power": 0.05068254211010805,
+        "pilot_variance_acceptance_threshold": "Accept decisive 5% confirmation/falsification only if pilot total per-preparation sigma fraction is <= max_total_per_preparation_sigma_fraction_for_80pct_power.",
+        "statistical_sigma_fraction_budget_after_systematic_floor": 0.05068254210971344,
+        "systematic_sigma_fraction": 2e-07,
+        "systematic_sigma_ppm": 0.2,
+        "systematic_fraction_of_effect": 4e-06,
+        "standard_error_fraction_at_budget": 0.014630789665242713,
+        "noncentrality_at_effect_target": 3.4174505371218147,
+        "achieved_primary_power_at_budget": 0.8000000010282526
+      },
+      "bootstrap_ci": {
+        "n_resamples": 10000,
+        "ci_level": 0.99,
+        "ci_low_fraction": 0.013564731299556376,
+        "ci_high_fraction": 0.08613661895699731,
+        "ci_excludes_zero": true,
+        "ci_sign_positive": true
+      },
+      "alpha_beta_replication_simulation": {
+        "n_simulations": 50000,
+        "alpha_false_positive_rate_two_sided": 0.00992,
+        "primary_sign_positive_power": 0.799,
+        "primary_false_negative_beta": 0.20099999999999996,
+        "replication_pair_sign_positive_power": 0.63796,
+        "zcrit_two_sided_alpha": 2.5758293035489,
+        "noncentrality_at_effect_target": 3.4174505371218147
+      },
+      "decision_rule": "Decisive sign-positive gate requires the 99% bootstrap CI for Delta T2 = T2(17O)-T2(16O) to exclude zero, exceed the measurement floor, have positive sign, and pass the pilot variance gate for the 5% powered target. Significant negative polarity fails P.13c. Sign-positive significant effects below 5% are positive-sensitivity / effect-size revision, not confirmation or failure.",
+      "scope": "Executable preregistration design audit. Lab-data status remains open until blinded active-state NMR measurements are acquired."
+    },
+    "power_statistic": {
+      "effect_fraction": 0.05,
+      "effect_ppm": 50000.0,
+      "zcrit_two_sided_alpha": 2.5758293035489,
+      "zbeta_target": 0.8416212335729144,
+      "max_total_per_preparation_sigma_fraction_for_80pct_power": 0.05068254211010805,
+      "pilot_variance_acceptance_threshold": "Accept decisive 5% confirmation/falsification only if pilot total per-preparation sigma fraction is <= max_total_per_preparation_sigma_fraction_for_80pct_power.",
+      "statistical_sigma_fraction_budget_after_systematic_floor": 0.05068254210971344,
+      "systematic_sigma_fraction": 2e-07,
+      "systematic_sigma_ppm": 0.2,
+      "systematic_fraction_of_effect": 4e-06,
+      "standard_error_fraction_at_budget": 0.014630789665242713,
+      "noncentrality_at_effect_target": 3.4174505371218147,
+      "achieved_primary_power_at_budget": 0.8000000010282526
+    },
+    "bootstrap_ci_design_check": {
+      "n_resamples": 10000,
+      "ci_level": 0.99,
+      "ci_low_fraction": 0.013564731299556376,
+      "ci_high_fraction": 0.08613661895699731,
+      "ci_excludes_zero": true,
+      "ci_sign_positive": true
+    },
+    "alpha_beta_replication_simulation": {
+      "n_simulations": 50000,
+      "alpha_false_positive_rate_two_sided": 0.00992,
+      "primary_sign_positive_power": 0.799,
+      "primary_false_negative_beta": 0.20099999999999996,
+      "replication_pair_sign_positive_power": 0.63796,
+      "zcrit_two_sided_alpha": 2.5758293035489,
+      "noncentrality_at_effect_target": 3.4174505371218147
+    },
+    "null_control": "H2^16O has oxygen spin I=0 and no ^17O quadrupole line",
+    "systematic_controls": [
+      "S1 matched osmolarity",
+      "S2 locked ^17O enrichment assay",
+      "S3 matched anesthetic concentration ladder",
+      "S4 blinded LORR scoring",
+      "S5 temperature and pH lock",
+      "S6 viscosity/osmotic-pressure covariates",
+      "S7 NMR baseline subtraction",
+      "S8 enrichment-label blind maintained through analysis"
+    ]
+  },
+  "kie_controls": {
+    "raw_vibrational_mass_diagnostic": 0.029986914220441196,
+    "raw_vibrational_mass_diagnostic_percent": 2.9986914220441196,
+    "registered_solvent_kie_bound": 0.004,
+    "registered_solvent_kie_bound_percent": 0.4,
+    "registered_solvent_kie_bound_status": "Tier 3 literature-prior control; no direct H2^16O-to-H2^17O radical-pair solvent-KIE verifier",
+    "registered_solvent_kie_bound_provenance": "Heavy-atom solvent/substrate isotope-effect control imported from the anaesthesia solvent-KIE literature; registered as a conservative control bound, not as a GCT-derived constant.",
+    "registered_solvent_kie_bound_closure_target": "O.21/O.33: direct assembled-substrate and solvent-KIE calibration for the H2^16O/H2^17O radical-pair and NMR-polarity protocol.",
+    "interpretation": "The raw oxygen-mass diagnostic is a bulk-solvent control, not the registered spin-entropy endpoint. Protocol D requires the signed LORR shift plus the ^17O NMR polarity gate to separate spin entropy from ordinary isotope chemistry."
+  },
+  "recommendation": "Run LORR as the behavioral endpoint and treat the ^17O NMR polarity gate as mandatory. A LORR-only shift is not sufficient for GCT closure because solvent isotope systematics can be sign-ambiguous.",
+  "pass": true,
+  "self_consistency_check": {
+    "entropy_load_is_unity_for_17O_vs_16O": true,
+    "central_shift_equals_minus_f_bound": true,
+    "signed_band_is_negative": true
+  }
+}

@@ -1,0 +1,531 @@
+{
+  "target_integer": 107,
+  "claim": "n_electron = -107 is identified with the sum of squared Coxeter exponents of the icosahedral H_3 group: 1^2 + 5^2 + 9^2 = 107",
+  "tier": "Tier 1 Coxeter arithmetic/classification check + Tier 3 electron integer anchor + Tier 4 AKN physical-link conjecture pending O.14",
+  "electron_mass_chain_tier": "Tier 2 K-theoretic framework + Tier 3 dimensional/integer anchor + Tier 4 K-theoretic physical-link conjecture pending O.14",
+  "physical_link_closed": false,
+  "groups_swept": {
+    "A_1": {
+      "rank": 1,
+      "degrees": [
+        2
+      ],
+      "exponents_m_i": [
+        1
+      ],
+      "sum_m_i": 1,
+      "sum_m_i_squared": 1,
+      "coxeter_h": 2,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "A_2": {
+      "rank": 2,
+      "degrees": [
+        2,
+        3
+      ],
+      "exponents_m_i": [
+        1,
+        2
+      ],
+      "sum_m_i": 3,
+      "sum_m_i_squared": 5,
+      "coxeter_h": 3,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "A_3": {
+      "rank": 3,
+      "degrees": [
+        2,
+        3,
+        4
+      ],
+      "exponents_m_i": [
+        1,
+        2,
+        3
+      ],
+      "sum_m_i": 6,
+      "sum_m_i_squared": 14,
+      "coxeter_h": 4,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "A_4": {
+      "rank": 4,
+      "degrees": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "exponents_m_i": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "sum_m_i": 10,
+      "sum_m_i_squared": 30,
+      "coxeter_h": 5,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "A_5": {
+      "rank": 5,
+      "degrees": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "exponents_m_i": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "sum_m_i": 15,
+      "sum_m_i_squared": 55,
+      "coxeter_h": 6,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "B_2": {
+      "rank": 2,
+      "degrees": [
+        2,
+        4
+      ],
+      "exponents_m_i": [
+        1,
+        3
+      ],
+      "sum_m_i": 4,
+      "sum_m_i_squared": 10,
+      "coxeter_h": 4,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "B_3": {
+      "rank": 3,
+      "degrees": [
+        2,
+        4,
+        6
+      ],
+      "exponents_m_i": [
+        1,
+        3,
+        5
+      ],
+      "sum_m_i": 9,
+      "sum_m_i_squared": 35,
+      "coxeter_h": 6,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "B_4": {
+      "rank": 4,
+      "degrees": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "exponents_m_i": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "sum_m_i": 16,
+      "sum_m_i_squared": 84,
+      "coxeter_h": 8,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "D_4": {
+      "rank": 4,
+      "degrees": [
+        2,
+        4,
+        4,
+        6
+      ],
+      "exponents_m_i": [
+        1,
+        3,
+        3,
+        5
+      ],
+      "sum_m_i": 12,
+      "sum_m_i_squared": 44,
+      "coxeter_h": 6,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "D_5": {
+      "rank": 5,
+      "degrees": [
+        2,
+        4,
+        5,
+        6,
+        8
+      ],
+      "exponents_m_i": [
+        1,
+        3,
+        4,
+        5,
+        7
+      ],
+      "sum_m_i": 20,
+      "sum_m_i_squared": 100,
+      "coxeter_h": 8,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "E_6": {
+      "rank": 6,
+      "degrees": [
+        2,
+        5,
+        6,
+        8,
+        9,
+        12
+      ],
+      "exponents_m_i": [
+        1,
+        4,
+        5,
+        7,
+        8,
+        11
+      ],
+      "sum_m_i": 36,
+      "sum_m_i_squared": 276,
+      "coxeter_h": 12,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "E_7": {
+      "rank": 7,
+      "degrees": [
+        2,
+        6,
+        8,
+        10,
+        12,
+        14,
+        18
+      ],
+      "exponents_m_i": [
+        1,
+        5,
+        7,
+        9,
+        11,
+        13,
+        17
+      ],
+      "sum_m_i": 63,
+      "sum_m_i_squared": 735,
+      "coxeter_h": 18,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "E_8": {
+      "rank": 8,
+      "degrees": [
+        2,
+        8,
+        12,
+        14,
+        18,
+        20,
+        24,
+        30
+      ],
+      "exponents_m_i": [
+        1,
+        7,
+        11,
+        13,
+        17,
+        19,
+        23,
+        29
+      ],
+      "sum_m_i": 120,
+      "sum_m_i_squared": 2360,
+      "coxeter_h": 30,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "F_4": {
+      "rank": 4,
+      "degrees": [
+        2,
+        6,
+        8,
+        12
+      ],
+      "exponents_m_i": [
+        1,
+        5,
+        7,
+        11
+      ],
+      "sum_m_i": 24,
+      "sum_m_i_squared": 196,
+      "coxeter_h": 12,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "G_2": {
+      "rank": 2,
+      "degrees": [
+        2,
+        6
+      ],
+      "exponents_m_i": [
+        1,
+        5
+      ],
+      "sum_m_i": 6,
+      "sum_m_i_squared": 26,
+      "coxeter_h": 6,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "H_3": {
+      "rank": 3,
+      "degrees": [
+        2,
+        6,
+        10
+      ],
+      "exponents_m_i": [
+        1,
+        5,
+        9
+      ],
+      "sum_m_i": 15,
+      "sum_m_i_squared": 107,
+      "coxeter_h": 10,
+      "matches_TARGET_107": true,
+      "solomon_check": true
+    },
+    "H_4": {
+      "rank": 4,
+      "degrees": [
+        2,
+        12,
+        20,
+        30
+      ],
+      "exponents_m_i": [
+        1,
+        11,
+        19,
+        29
+      ],
+      "sum_m_i": 60,
+      "sum_m_i_squared": 1324,
+      "coxeter_h": 30,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "I2_5": {
+      "rank": 2,
+      "degrees": [
+        2,
+        5
+      ],
+      "exponents_m_i": [
+        1,
+        4
+      ],
+      "sum_m_i": 5,
+      "sum_m_i_squared": 17,
+      "coxeter_h": 5,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    },
+    "I2_7": {
+      "rank": 2,
+      "degrees": [
+        2,
+        7
+      ],
+      "exponents_m_i": [
+        1,
+        6
+      ],
+      "sum_m_i": 7,
+      "sum_m_i_squared": 37,
+      "coxeter_h": 7,
+      "matches_TARGET_107": false,
+      "solomon_check": true
+    }
+  },
+  "match_summary": {
+    "groups_matching_107": [
+      "H_3"
+    ],
+    "is_unique_match": true
+  },
+  "icosahedral_uniqueness": {
+    "rank3_groups": [
+      "A_3",
+      "B_3",
+      "H_3"
+    ],
+    "rank3_groups_matching_107": [
+      "H_3"
+    ],
+    "unique_in_rank3": true,
+    "interpretation": "Among rank-3 finite Coxeter groups, only H_3 (the unique non-crystallographic case with 5-fold symmetry) has Sigma m_i^2 = 107. GCT's icosahedral 5-fold symmetry forces W = H_3."
+  },
+  "adjacent_integers_check": {
+    "group_giving_105": [],
+    "group_giving_106": [],
+    "group_giving_107": [
+      "H_3"
+    ],
+    "group_giving_108": [],
+    "group_giving_109": []
+  },
+  "infinite_family_closed_form_sweeps": {
+    "A_n": {
+      "family": "A",
+      "target": 107,
+      "matches": [],
+      "bracket_below_target": {
+        "n": 6,
+        "value": 91
+      },
+      "bracket_above_target": {
+        "n": 7,
+        "value": 140
+      },
+      "monotonicity_proof": "f_A(n+1) - f_A(n) = (n+1)^2 > 0 for n >= 1",
+      "search_capped_at": 200,
+      "no_match_at_any_rank_up_to_cap": true
+    },
+    "B_n": {
+      "family": "B",
+      "target": 107,
+      "matches": [],
+      "bracket_below_target": {
+        "n": 4,
+        "value": 84
+      },
+      "bracket_above_target": {
+        "n": 5,
+        "value": 165
+      },
+      "monotonicity_proof": "f_B(n+1) - f_B(n) = (2n+1)^2 > 0 for n >= 2",
+      "search_capped_at": 200,
+      "no_match_at_any_rank_up_to_cap": true
+    },
+    "D_n": {
+      "family": "D",
+      "target": 107,
+      "matches": [],
+      "bracket_below_target": {
+        "n": 5,
+        "value": 100
+      },
+      "bracket_above_target": {
+        "n": 6,
+        "value": 190
+      },
+      "monotonicity_proof": "f_D(n+1) - f_D(n) = (2n-1)^2 + 2n - 1 > 0 for n >= 4",
+      "search_capped_at": 200,
+      "no_match_at_any_rank_up_to_cap": true
+    },
+    "I_2_p": {
+      "family": "I2",
+      "target": 107,
+      "matches": [],
+      "bracket_below_target": {
+        "p": 11,
+        "value": 101
+      },
+      "bracket_above_target": {
+        "p": 12,
+        "value": 122
+      },
+      "monotonicity_proof": "f_I2(p+1) - f_I2(p) = 2p - 1 > 0 for p >= 3",
+      "search_capped_at": 200,
+      "no_match_at_any_rank_up_to_cap": true
+    }
+  },
+  "exceptional_groups_check": {
+    "values": {
+      "F_4": 196,
+      "G_2": 26,
+      "E_6": 276,
+      "E_7": 735,
+      "E_8": 2360,
+      "H_3": 107,
+      "H_4": 1324
+    },
+    "matches_TARGET_107": [
+      "H_3"
+    ]
+  },
+  "all_ranks_uniqueness": {
+    "infinite_family_matches": [],
+    "exceptional_matches": [
+      "H_3"
+    ],
+    "all_finite_irreducible_coxeter_groups_with_sum_sq_107": [
+      {
+        "family": "exceptional",
+        "group": "H_3"
+      }
+    ],
+    "h3_is_unique_across_all_ranks": true,
+    "argument": "Closed-form monotonicity of Sigma m_i^2 on each of {A_n, B_n, D_n, I_2(p)} (f(n+1) - f(n) > 0 verified symbolically per family in solve_family_for_target) establishes that the absence of 107 in the small-rank search extends to ALL ranks. Combined with the finite exceptional check {F_4, G_2, E_6, E_7, E_8, H_3, H_4}, H_3 is the unique finite irreducible Coxeter group at any rank with Sigma m_i^2 = 107."
+  },
+  "functional_choice_audit": {
+    "h3_invariant_alternatives": {
+      "Sigma m_i": 15,
+      "Sigma m_i^2": 107,
+      "Sigma m_i^3": 855,
+      "Sigma m_i^4": 7187,
+      "Sigma d_i": 18,
+      "Sigma d_i^2": 140,
+      "Sigma d_i^3": 1224,
+      "Sigma (m_i + 1)^2": 140,
+      "h * r": 30,
+      "|W|^(1/r) rounded": 5,
+      "N (positive roots)": 15,
+      "prod m_i": 45,
+      "prod d_i / |W|": 1,
+      "Sigma m_i^2 + N": 122
+    },
+    "alternatives_landing_in_window_100_115": {
+      "Sigma m_i^2": 107
+    },
+    "selection_rationale": "p_2 = Sigma m_i^2 is the lowest non-trivial exponent moment after p_1 (p_1 = N = root-count is dimensional, not spectrally invariant; p_3+ are additional symmetric data at rank 3+, not derivable from {p_1, p_2} alone). EXPONENTS over DEGREES is forced by the Coxeter-element spectral convention (eigenvalues exp(2 pi i m_j / h), not exp(2 pi i d_j / h)).",
+    "tier_disposition_under_audit": "The exponent multiset {1,5,9} for H3 is Tier 2 group-theoretic; the choice of the second power-sum p2 = sum m_j^2 as the physical electron gap-label is Tier 3 functional anchor pending O.14 V->K0 closure."
+  },
+  "closure_status": {
+    "tier": "Tier 1 Coxeter arithmetic/classification check + Tier 3 electron integer anchor + Tier 4 physical-link chain pending O.14",
+    "electron_mass_chain_tier": "Tier 2 mechanism + Tier 3 dimensional/integer anchor + Tier 4 K-theoretic physical-link conjecture pending O.14",
+    "what_is_closed": "The integer 107 appearing in the electron gap-label n_electron = -107 is identified as a canonical Coxeter-group invariant of H_3: the sum of squared Coxeter exponents. The all-ranks closed-form sweep (infinite_family_closed_form_sweeps + exceptional_groups_check) shows that 107 occurs as Sigma m_i^2 for EXACTLY ONE finite irreducible Coxeter group across ALL ranks: H_3 itself. The strictly-increasing closed-form Sigma m_i^2(n) on each of {A_n, B_n, D_n, I_2(p)} extends the small-rank sweep to an all-ranks uniqueness statement. Integer-identification side is a Tier 1 Coxeter arithmetic/classification check. This does not close the electron mass/gap-label physical-link chain.",
+    "what_remains_open": "Full physical-link closure requires the EXPLICIT verification that the electron sub-band of the AKN spectrum corresponds to the H_3 second-exponent-power-sum invariant -- i.e., that the AF-core trace-image projection (not the full Cuntz-Krieger K_0(O_A), which is trivial for A=[[1,1],[1,0]]) associated with the electron has gap-label equal to -p_2, where p_2(m_1, m_2, m_3) = sum m_j^2 = 107 is the second Coxeter-exponent power-sum for H_3. This requires the full non-perturbative AKN spectral calculation, bundling with O.5 QLQCD-1L.",
+    "physical_interpretation": "The Coxeter element c of H_3 acts on the reflection representation V with eigenvalues exp(2*pi*i*m_j/h) for j = 1, 2, 3, defining the Coxeter exponents m_j. The second power-sum of those exponents, Sigma m_j^2 = 107, is a canonical Coxeter-exponent invariant of H_3. It is not the trace of c on V, which is exp(2*pi*i/10)+exp(10*pi*i/10)+exp(18*pi*i/10)=2*cos(pi/5)-1=phi-1=1/phi; H_3 is a finite reflection group with no Lie-algebraic Casimir. The electron gap-label is conjecturally identified with -p_2 = -107 via the physical-interpretation chain (Tier 4, Open Problem O.14)."
+  },
+  "pass": true
+}

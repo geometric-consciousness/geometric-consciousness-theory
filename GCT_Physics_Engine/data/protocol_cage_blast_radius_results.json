@@ -1,0 +1,96 @@
+{
+  "asymmetric_144": {
+    "name": "asymmetric_144",
+    "N": 144,
+    "shell_counts": {
+      "0.1669": 12,
+      "0.2840": 30,
+      "0.3979": 20,
+      "0.4595": 30,
+      "0.4889": 52
+    },
+    "perp_norm_min": 0.1669252677110946,
+    "perp_norm_max": 0.4888861452328026,
+    "par_norm_min": 1.6857166981731755,
+    "par_norm_max": 3.5722528377761016,
+    "par_norm_mean": 2.8353864324575593,
+    "pair_distance_min": 0.7071067811865475,
+    "pair_distance_mean": 3.9138124739469227,
+    "pair_distance_max": 7.144505675552203,
+    "coulomb_sum": 3170.4085615073304,
+    "coulomb_sum_per_node": 22.016726121578685,
+    "edge_count_unit_edge_rule": 112,
+    "valency_mean": 1.5555555555555556,
+    "valency_min": 0,
+    "valency_max": 3,
+    "adjacency_eval_min": -2.449489742783178,
+    "adjacency_eval_max": 2.4494897427831774,
+    "adjacency_eval_gap_0_to_1": 0.16124413151244044,
+    "adjacency_eval_top_5": [
+      2.000000000000003,
+      2.2882456112707366,
+      2.2882456112707374,
+      2.288245611270738,
+      2.4494897427831774
+    ],
+    "adjacency_eval_bottom_5": [
+      -2.449489742783178,
+      -2.2882456112707374,
+      -2.288245611270737,
+      -2.2882456112707357,
+      -2.0000000000000013
+    ]
+  },
+  "Ih_closed_152": {
+    "name": "Ih_closed_152",
+    "N": 152,
+    "shell_counts": {
+      "0.1669": 12,
+      "0.2840": 30,
+      "0.3979": 20,
+      "0.4595": 30,
+      "0.4889": 60
+    },
+    "perp_norm_min": 0.1669252677110946,
+    "perp_norm_max": 0.4888861452328026,
+    "par_norm_min": 1.6857166981731755,
+    "par_norm_max": 3.5722528377761016,
+    "par_norm_mean": 2.8741688748427463,
+    "pair_distance_min": 0.7071067811865475,
+    "pair_distance_mean": 3.964608392464284,
+    "pair_distance_max": 7.144505675552203,
+    "coulomb_sum": 3487.700735099696,
+    "coulomb_sum_per_node": 22.945399573024314,
+    "edge_count_unit_edge_rule": 120,
+    "valency_mean": 1.5789473684210527,
+    "valency_min": 0,
+    "valency_max": 3,
+    "adjacency_eval_min": -2.4494897427831788,
+    "adjacency_eval_max": 2.4494897427831757,
+    "adjacency_eval_gap_0_to_1": 0.16124413151244177,
+    "adjacency_eval_top_5": [
+      2.0000000000000027,
+      2.2882456112707357,
+      2.2882456112707366,
+      2.288245611270737,
+      2.4494897427831757
+    ],
+    "adjacency_eval_bottom_5": [
+      -2.4494897427831788,
+      -2.288245611270737,
+      -2.2882456112707366,
+      -2.2882456112707357,
+      -1.9999999999999998
+    ]
+  },
+  "deltas_percent": {
+    "N": 5.555555555555555,
+    "coulomb_sum": 10.007926973346079,
+    "coulomb_sum_per_node": 4.2180360800120615,
+    "adjacency_eval_gap": 8.262425534831943e-13,
+    "par_norm_mean": 1.3678009438583827
+  },
+  "scorecard_impact": "NONE -- verify_independent verifiers re-derive each claim from CODATA inputs and do not import any cage-using protocol.",
+  "manuscript_impact": "SMALL -- prose claims citing cage-spectrum intermediates (App U, Ch07, App M Sec M.7, App R Sec R.9) reference the I_h-closed 152 cage; numerical deltas between variants are at the single-digit-percent scale.",
+  "engineering_impact": "MODEST -- 9 cage-using engine protocols ingest the I_h-closed 152 cage as their geometric source; the asymmetric 144 variant is retained only for the structural comparison computed here."
+}

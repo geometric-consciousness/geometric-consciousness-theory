@@ -1,0 +1,23 @@
+{
+  "name": "pmns_theta12",
+  "app_r_label": "PMNS theta12",
+  "formula": "theta_12 = arctan(1/phi) + theta_13/5",
+  "tier": "Tier 3",
+  "predicted": 33.39533156861947,
+  "observed": 33.4,
+  "unit": "degrees",
+  "app_r_predicted": 33.4,
+  "app_r_precision_str": "0.01%",
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": 139.77339462664912,
+  "status": "PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "percent_error": 0.013977339462664912,
+    "gap_deg": 0.00466843138053008,
+    "pdg_tolerance_deg": 0.8,
+    "sigma_vs_pdg_tolerance": 0.0058355392256626,
+    "status_rule": "PASS if within 1 sigma PDG/NuFit-scale tolerance; otherwise TENSION; delta_CP is downgraded to OPEN_CONDITIONAL because the phase mechanism is Tier 2 but PMNS-sector magnitude/disposition remains Tier 3 pending O.7 and theta_23 tension resolution"
+  }
+}

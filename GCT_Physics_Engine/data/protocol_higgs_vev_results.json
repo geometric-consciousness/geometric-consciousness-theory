@@ -1,0 +1,29 @@
+{
+  "m_mu_geom_GeV": 0.10565613622658009,
+  "n_cage_saturation": 144,
+  "n_cage_proof": "F_12 = 12th Fibonacci; Fibonacci resonance",
+  "rt_C3_axes": 10,
+  "rt_C3_axes_proof": "|C3_class(I_h)| / 2 = 20 / 2 = 10 (exact from I_h character table)",
+  "saturation_factor": 1440,
+  "saturation_factor_disposition": "1440 = 144 x 10 is the canonical muon-defect-saturation pathway; O.20 closes the enumeration of factorisations, not a unique first-principles selection of 1440. The VEV row remains a Tier 2 mechanism with A3 and a Tier 3 integer-handle residual.",
+  "factorisation_cross_checks": [
+    "12 x 120",
+    "15 x 96",
+    "24 x 60"
+  ],
+  "saturation_uniqueness": "Not claimed. O.20 is closed at the enumeration level: the three independent factorizations are order-of-magnitude consistency cross-checks, not competing derivations; uniqueness load-bearing factors remain upstream in O.5/O.14/O.15.",
+  "phi_projection": 1.618033988749895,
+  "alpha_codata_A3": 0.0072973525693,
+  "alpha_anchor": "A3 measured low-energy alpha inherited from the muon precision-comparison row.",
+  "v_derived_GeV": 246.17551612981774,
+  "v_obs_GeV": 246.22,
+  "residual_error_ppm": 180.6671683139544,
+  "method": "Macroscopic Saturation (Absolute Pipeline): M_P \u2192 m_e \u2192 m_\u03bc \u2192 v",
+  "dependency_inversion": "VEV identified from the A3-corrected lattice muon resonance, not vice versa.",
+  "circular": false,
+  "tier": "Tier 2 mechanism + A3 measured alpha + Tier 3 calibrated 1440-handle residual (~181 ppm); O.20 enumeration-level closure and O.5/O.14/O.15/O.19 remain upstream",
+  "status": "OPEN_CONDITIONAL",
+  "precision_scope": "Higgs VEV precision is inherited from the muon-mass closure times the chosen 1440*phi factorization; it is not an independent geometric closure of v.",
+  "verdict": "OPEN_CONDITIONAL (Tier 2 mechanism + A3 measured alpha + Tier 3 calibrated 1440 handle; 181 ppm residual; precision status inherited from muon closure and O.20/O.5/O.14/O.15/O.19)",
+  "pass": true
+}

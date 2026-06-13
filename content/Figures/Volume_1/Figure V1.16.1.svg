@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 880" width="100%" height="100%">
+  <title>Quality Space irrep decomposition</title>
+  <metadata>Volume 1 Chapter 16 graded Quality Space irrep decomposition and sensory role map.</metadata>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2c5d8a"/>
+    </marker>
+    <pattern id="diagHatch" width="6" height="6" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#cbd5e1" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1000" height="880" fill="#ffffff"/>
+  <text x="500.000" y="42.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:16px;fill:#2c5d8a;font-weight:bold;">Figure V1.16.1</text>
+  <text x="500.000" y="72.000" text-anchor="middle" style="font-family:'Times New Roman', Times, serif;font-size:28px;fill:#0f172a;font-weight:bold;">Graded Quality Space irrep decomposition</text>
+  <text x="500.000" y="100.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#475569;">Linear coordinate sector R^6 (6 DOF) + quadratic stress sector Sym^2(R^6) (21 DOF) = 27 graded DOF under I_h.</text>
+
+  <!-- LEFT: symmetric 6x6 stress tensor (quadratic sector source) -->
+  <rect x="45.000" y="130.000" width="265.000" height="320.000" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.3" rx="4"/>
+  <text x="177.000" y="158.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;fill:#0f172a;font-weight:bold;">symmetric 6x6 stress tensor</text>
+  <rect x="72.000" y="170.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="95.040" y="183.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:9px;fill:#475569;">s11</text>
+  <rect x="104.000" y="170.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="120.000" y="190.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s12</text>
+  <rect x="136.000" y="170.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="152.000" y="190.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s13</text>
+  <rect x="168.000" y="170.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="184.000" y="190.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s14</text>
+  <rect x="200.000" y="170.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="216.000" y="190.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s15</text>
+  <rect x="232.000" y="170.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="248.000" y="190.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s16</text>
+  <rect x="72.000" y="202.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="104.000" y="202.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="127.040" y="215.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:9px;fill:#475569;">s22</text>
+  <rect x="136.000" y="202.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="152.000" y="222.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s23</text>
+  <rect x="168.000" y="202.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="184.000" y="222.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s24</text>
+  <rect x="200.000" y="202.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="216.000" y="222.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s25</text>
+  <rect x="232.000" y="202.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="248.000" y="222.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s26</text>
+  <rect x="72.000" y="234.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="104.000" y="234.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="136.000" y="234.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="159.040" y="247.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:9px;fill:#475569;">s33</text>
+  <rect x="168.000" y="234.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="184.000" y="254.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s34</text>
+  <rect x="200.000" y="234.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="216.000" y="254.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s35</text>
+  <rect x="232.000" y="234.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="248.000" y="254.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s36</text>
+  <rect x="72.000" y="266.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="104.000" y="266.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="136.000" y="266.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="168.000" y="266.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="191.040" y="279.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:9px;fill:#475569;">s44</text>
+  <rect x="200.000" y="266.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="216.000" y="286.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s45</text>
+  <rect x="232.000" y="266.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="248.000" y="286.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s46</text>
+  <rect x="72.000" y="298.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="104.000" y="298.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="136.000" y="298.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="168.000" y="298.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="200.000" y="298.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="223.040" y="311.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:9px;fill:#475569;">s55</text>
+  <rect x="232.000" y="298.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="248.000" y="318.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#475569;">s56</text>
+  <rect x="72.000" y="330.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="104.000" y="330.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="136.000" y="330.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="168.000" y="330.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="200.000" y="330.000" width="32.000" height="32.000" fill="url(#diagHatch)" stroke="#94a3b8" stroke-width="0.9"/>
+  <rect x="232.000" y="330.000" width="32.000" height="32.000" fill="#d7e7f4" stroke="#94a3b8" stroke-width="0.9"/>
+  <text x="255.040" y="343.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:9px;fill:#475569;">s66</text>
+  <text x="177.000" y="392.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#475569;">upper triangle + diagonal = 21 independent components</text>
+  <text x="177.000" y="417.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:16px;fill:#2c5d8a;font-weight:bold;">6 x 7 / 2 = 21</text>
+
+  <!-- RIGHT TOP: quadratic sector decomposition 2A_g + G_g + 3H_g -->
+  <line x1="330.000" y1="225.000" x2="388.000" y2="225.000" stroke="#2c5d8a" stroke-width="2.4" marker-end="url(#arrow)"/>
+  <text x="359.000" y="208.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#2c5d8a;font-weight:bold;">I_h</text>
+  <text x="680.000" y="150.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;fill:#0f172a;font-weight:bold;">Quadratic sector — Sym^2(R^6) irrep decomposition (21 DOF)</text>
+  <rect x="386.000" y="168.000" width="56.000" height="120.000" fill="#64748b" opacity="0.9" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="414.000" y="206.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#ffffff;font-weight:bold;">A_g</text>
+  <text x="414.000" y="232.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:16px;fill:#ffffff;font-weight:bold;">1D</text>
+  <text x="414.000" y="252.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:11px;fill:#ffffff;font-weight:bold;">x2</text>
+  <rect x="442.000" y="168.000" width="112.000" height="120.000" fill="#64748b" opacity="0.9" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="498.000" y="210.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#ffffff;font-weight:bold;">G_g</text>
+  <text x="498.000" y="238.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:18px;fill:#ffffff;font-weight:bold;">4D</text>
+  <text x="498.000" y="262.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#e2e8f0;">Texture coupling</text>
+  <rect x="554.000" y="168.000" width="140.000" height="120.000" fill="#64748b" opacity="0.9" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="624.000" y="210.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#ffffff;font-weight:bold;">H_g¹</text>
+  <text x="624.000" y="238.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:18px;fill:#ffffff;font-weight:bold;">5D</text>
+  <text x="624.000" y="262.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#e2e8f0;">Olfaction &amp; taste</text>
+  <rect x="694.000" y="168.000" width="140.000" height="120.000" fill="#64748b" opacity="0.9" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="764.000" y="210.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#ffffff;font-weight:bold;">H_g²</text>
+  <text x="764.000" y="238.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:18px;fill:#ffffff;font-weight:bold;">5D</text>
+  <text x="764.000" y="262.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#e2e8f0;">Olfaction &amp; taste</text>
+  <rect x="834.000" y="168.000" width="140.000" height="120.000" fill="#64748b" opacity="0.9" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="904.000" y="210.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#ffffff;font-weight:bold;">H_g³</text>
+  <text x="904.000" y="238.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:18px;fill:#ffffff;font-weight:bold;">5D</text>
+  <text x="904.000" y="262.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:8px;fill:#e2e8f0;">Olfaction &amp; taste</text>
+  <rect x="386.000" y="168.000" width="588.000" height="120.000" fill="none" stroke="#0f172a" stroke-width="1.2"/>
+  <text x="680.000" y="312.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:16px;fill:#2c5d8a;font-weight:bold;">Sym^2(R^6) = 2 A_g + G_g + 3 H_g</text>
+  <text x="680.000" y="335.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#475569;">2(1) + 4 + 3(5) = 21   (no 3-D irrep)</text>
+
+  <!-- RIGHT MIDDLE: linear sector R^6 = E_par (+) E_perp -->
+  <text x="680.000" y="372.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:15px;fill:#0f172a;font-weight:bold;">Linear sector — coordinate space R^6 = E_par (+) E_perp (6 DOF)</text>
+  <rect x="386.000" y="384.000" width="294.000" height="88.000" fill="#2c5d8a" opacity="0.9" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="533.000" y="412.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#ffffff;font-weight:bold;">T_1  (E_par)   3D</text>
+  <text x="533.000" y="436.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#e2e8f0;">Spatial / somatosensory</text>
+  <text x="533.000" y="452.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#e2e8f0;">+ auditory</text>
+  <rect x="680.000" y="384.000" width="294.000" height="88.000" fill="#2c5d8a" opacity="0.9" stroke="#ffffff" stroke-width="1.5"/>
+  <text x="827.000" y="412.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#ffffff;font-weight:bold;">T_2  (E_perp)   3D</text>
+  <text x="827.000" y="436.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#e2e8f0;">Color (trichromatic</text>
+  <text x="827.000" y="452.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:10px;fill:#e2e8f0;">substrate)</text>
+  <text x="680.000" y="492.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:16px;fill:#2c5d8a;font-weight:bold;">R^6 = T_1 (+) T_2 = 3 + 3 = 6   (the two 3-D irreps)</text>
+
+  <!-- BOTTOM: full irrep / sector / role table -->
+  <rect x="45.000" y="528.000" width="910.000" height="300.000" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <rect x="45.000" y="528.000" width="910.000" height="38.000" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.0"/>
+  <text x="57.000" y="553.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">Irrep</text>
+  <text x="190.000" y="553.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">Sector</text>
+  <text x="340.000" y="553.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">Dim</text>
+  <text x="430.000" y="553.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">Model role in Ch16</text>
+  <line x1="178.000" y1="528.000" x2="178.000" y2="828.000" stroke="#cbd5e1" stroke-width="1.0"/>
+  <line x1="328.000" y1="528.000" x2="328.000" y2="828.000" stroke="#cbd5e1" stroke-width="1.0"/>
+  <line x1="418.000" y1="528.000" x2="418.000" y2="828.000" stroke="#cbd5e1" stroke-width="1.0"/>
+
+  <text x="57.000" y="591.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">A_g</text>
+  <text x="190.000" y="591.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">quadratic</text>
+  <text x="340.000" y="591.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;">1 (x2)</text>
+  <text x="430.000" y="591.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#475569;">Valence + intensity (two scalar invariants)</text>
+  <rect x="45.000" y="604.000" width="910.000" height="37.000" fill="#f8fafc"/>
+  <line x1="45.000" y1="604.000" x2="955.000" y2="604.000" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="57.000" y="628.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">G_g</text>
+  <text x="190.000" y="628.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">quadratic</text>
+  <text x="340.000" y="628.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;">4</text>
+  <text x="430.000" y="628.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#475569;">Texture coupling (olfaction / taste)</text>
+  <line x1="45.000" y1="641.000" x2="955.000" y2="641.000" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="57.000" y="665.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">H_g¹</text>
+  <text x="190.000" y="665.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">quadratic</text>
+  <text x="340.000" y="665.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;">5</text>
+  <text x="430.000" y="665.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#475569;">Olfaction &amp; taste / point-defect chemistry</text>
+  <rect x="45.000" y="678.000" width="910.000" height="37.000" fill="#f8fafc"/>
+  <line x1="45.000" y1="678.000" x2="955.000" y2="678.000" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="57.000" y="702.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">H_g²</text>
+  <text x="190.000" y="702.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">quadratic</text>
+  <text x="340.000" y="702.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;">5</text>
+  <text x="430.000" y="702.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#475569;">Olfaction &amp; taste / point-defect chemistry</text>
+  <line x1="45.000" y1="715.000" x2="955.000" y2="715.000" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="57.000" y="739.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">H_g³</text>
+  <text x="190.000" y="739.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">quadratic</text>
+  <text x="340.000" y="739.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;">5</text>
+  <text x="430.000" y="739.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#475569;">Olfaction &amp; taste / point-defect chemistry</text>
+  <rect x="45.000" y="752.000" width="910.000" height="37.000" fill="#eef4fb"/>
+  <line x1="45.000" y1="752.000" x2="955.000" y2="752.000" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="57.000" y="776.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">T_1 (E_par)</text>
+  <text x="190.000" y="776.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">linear</text>
+  <text x="340.000" y="776.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;">3</text>
+  <text x="430.000" y="776.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#475569;">Spatial / somatosensory + auditory</text>
+  <rect x="45.000" y="789.000" width="910.000" height="37.000" fill="#eef4fb"/>
+  <line x1="45.000" y1="789.000" x2="955.000" y2="789.000" stroke="#cbd5e1" stroke-width="0.8"/>
+  <text x="57.000" y="813.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;font-weight:bold;">T_2 (E_perp)</text>
+  <text x="190.000" y="813.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">linear</text>
+  <text x="340.000" y="813.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#0f172a;">3</text>
+  <text x="430.000" y="813.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#475569;">Color (trichromatic substrate)</text>
+
+  <text x="500.000" y="858.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#475569;">Footer discipline: modality labels are Tier 3; the graded I_h decomposition (6 linear + 21 quadratic = 27 DOF) is the structural claim.</text>
+</svg>

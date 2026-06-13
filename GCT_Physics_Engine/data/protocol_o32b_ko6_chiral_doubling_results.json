@@ -1,0 +1,19 @@
+{
+  "model": "minimal chiral doubling (one fermion + antiparticle)",
+  "dim_H": 4,
+  "gamma_squared_is_1": true,
+  "gamma_D_anticommute": true,
+  "D_self_adjoint": true,
+  "eps_Jsq": 1,
+  "eps_p_JD": 1,
+  "eps_pp_Jgamma": -1,
+  "signs": [
+    1,
+    1,
+    -1
+  ],
+  "ko_dimension_mod8": 6,
+  "pass_ko6": true,
+  "verdict": "ANCHOR CONFIRMED: chiral doubling yields the KO-dim-6 sign structure (+1,+1,-1). This is the mechanism CCM use for the SM finite triple; the chirality grading (NOT a point-function) supplies eps''=-1, and charge conjugation J flips chirality.",
+  "role": "literature anchor (CCM 2007) for the positive O.32 route; GCT-geometric realization tested in protocol_o32c"
+}

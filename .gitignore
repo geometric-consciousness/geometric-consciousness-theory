@@ -1,0 +1,56 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- LaTeX build artifacts (regenerable from .tex) ---
+output/*.aux
+output/*.log
+output/*.toc
+output/*.out
+output/*.synctex.gz
+output/*.fls
+output/*.fdb_latexmk
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Editor / IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Local environment ---
+.env
+.env.local
+
+# --- Runtime logs ---
+*.log
+!build_scripts/*.log
+
+# --- Note ---
+# GCT_Physics_Engine/data/*.json artifacts are explicitly tracked.
+# They are the immutable proof-state of the verification engine and
+# are part of the citable artifact.

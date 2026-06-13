@@ -1,0 +1,32 @@
+{
+  "name": "alpha_inverse_bilayer_corrected",
+  "app_r_label": "Fine-structure \u03b1\u207b\u00b9 with bilayer 1/288 correction (Ch13 \u00a713.2.4, Tier 2 Motivated)",
+  "formula": "\u03b1\u207b\u00b9_GCT = 360\u03c6\u207b\u00b2 \u00d7 (1 - 1/288) = \u03b1\u207b\u00b9_bare \u00d7 (1 - 1/(2N)), N=144",
+  "tier": "Tier 2 (Motivated Derivation; 1/(2N) correction imported from potential theory; full QLQCD-1L closure pending O.5)",
+  "predicted": 137.03030653597523,
+  "observed": 137.035999177,
+  "unit": "(dimensionless, \u03b1\u207b\u00b9)",
+  "app_r_predicted": 137.0303,
+  "app_r_precision_str": "Bare 360\u00b7\u03c6\u207b\u00b2 = 137.507764 (3442.6 ppm); with bilayer factor (1-1/288) = 0.996528: \u03b1\u207b\u00b9_GCT = 137.030307 (41.54 ppm). Precision improvement: 83\u00d7 (3442\u219241.6 ppm). Matches Ch13 \u00a713.2.4 stated 137.0303 \u2713.",
+  "app_r_precision_ppm": 41.541208579994645,
+  "independent_precision_ppm": 41.541208579994645,
+  "status": "OPEN_CONDITIONAL",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "phi": 1.618033988749895,
+    "N_cage_nodes": 144,
+    "bilayer_2N": 288,
+    "alpha_inv_bare_360_phi_neg_2": 137.50776405003785,
+    "eta_bilayer_1_minus_1_over_288": 0.9965277777777778,
+    "alpha_inv_GCT_corrected": 137.03030653597523,
+    "alpha_inv_CODATA": 137.035999177,
+    "alpha_inv_stated_in_Ch13_13_2_4": 137.0303,
+    "residual_ppm_bare": 3442.634606024181,
+    "residual_ppm_corrected": 41.541208579994645,
+    "precision_improvement_factor": 82.87275993414596,
+    "matches_internal_137_0303_value": true,
+    "closure_condition": "This verifier reproduces the manuscript's bilayer-corrected arithmetic. It does not close the 1/(2N) bilayer correction or the residual 41.6 ppm as a first-principles alpha derivation; that remains O.5/O.19.",
+    "derivation_note": "The bare 360\u03c6\u207b\u00b2 formula yields 137.5077 (3442 ppm residual). The bilayer 1/(2N) = 1/288 correction (N=144 cage nodes; bilayer = 2N=288) tightens the prediction to 137.0303, reducing the residual to 41.6 ppm \u2014 an 83\u00d7 precision improvement. The 1/(2N) factor is acknowledged in Ch13 \u00a713.2.4 as imported from potential theory (Tier 2 Motivated) rather than derived from GCT axioms; the remaining 41.6 ppm is the documented QLQCD-1L research debt (Open Problem O.5)."
+  }
+}

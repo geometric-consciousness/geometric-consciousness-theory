@@ -1,0 +1,13 @@
+{
+ "N_nodes": 144,
+ "eta_scalar": -8.0,
+ "eta_eff": -1.0,
+ "bulk_index": 108,
+ "total_index": 107.0,
+ "scalar_eigenvalues_summary": {
+  "min": -16.895064453732978,
+  "max": 35.75124580378021,
+  "mean_abs": 5.8899195586277635
+ },
+ "pass": true
+}

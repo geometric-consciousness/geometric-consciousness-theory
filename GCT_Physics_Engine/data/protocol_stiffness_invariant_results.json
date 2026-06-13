@@ -1,0 +1,8 @@
+{
+    "pass": true,
+    "eig_para_mean": 7.23606797749979,
+    "eig_perp_mean": 2.76393202250021,
+    "eigenvalue_ratio": 0.38196601125010515,
+    "target_eta_0": 0.38196601125010515,
+    "stiffness_ratio": 0.38196601125010515
+}

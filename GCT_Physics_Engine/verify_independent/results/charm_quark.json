@@ -1,0 +1,20 @@
+{
+  "name": "charm_quark",
+  "app_r_label": "Charm quark (m_c)",
+  "formula": "m_c = m_u \u00b7 \u03c6^(13 + \u03c6^-3)",
+  "tier": "Tier 3 (Mixed-Harmonic ansatz, N=17 second-harmonic)",
+  "predicted": 1263.4484934507473,
+  "observed": 1273.0,
+  "unit": "MeV",
+  "app_r_predicted": 1263.45,
+  "app_r_precision_str": "0.75%",
+  "app_r_precision_ppm": 7503.0,
+  "independent_precision_ppm": 7503.1473285567445,
+  "status": "PASS",
+  "tolerance_ppm": 10000.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "percent_error_manuscript_branch": 0.7503147328556744,
+    "engine_branch_note": "Engine uses FK\u00b2_charm in place of \u03c6^(13+\u03c6^-3). Both branches happen to give ~1263 MeV due to FK calibration. Manuscript branch value is reproducible from the prose formula."
+  }
+}

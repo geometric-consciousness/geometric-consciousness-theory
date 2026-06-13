@@ -1,0 +1,23 @@
+{
+  "title": "Geometric Consciousness Theory",
+  "subtitle": "A 6D-to-3D Projective Framework",
+  "author": "Pablo González Acosta",
+  "email": "pablo@geometric-consciousness.com",
+  "orcid": "0009-0006-6613-3721",
+  "doi_concept": "10.5281/zenodo.20647445",
+  "repo_url": "https://github.com/geometric-consciousness/geometric-consciousness-theory",
+  "website": "https://geometric-consciousness.com",
+  "date": "June 13, 2026",
+  "version": "publication baseline",
+  "output_filename_md": "Geometric_Consciousness_Theory.md",
+  "output_filename_tex": "Geometric_Consciousness_Theory.tex",
+  "output_filename_pdf": "Geometric_Consciousness_Theory.pdf",
+  "ordered_sections": [
+    "00_Global_Frontmatter",
+    "01_Volume_1_Operating_System",
+    "02_Volume_2_Cosmic_Architecture",
+    "03_Volume_3_Matter_Spectrum",
+    "98_Global_Appendices",
+    "99_Global_Backmatter"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "pta_l6_linear_legendre",
+  "app_r_label": "PTA l=6 linear Legendre projection C_hat_6 (Ch21 Sec 21.3.2, Tier 2)",
+  "formula": "C_hat_6 = (4 pi / 13) * phi^-18",
+  "tier": "Tier 2 (linear-in-epsilon Legendre projection)",
+  "predicted": 0.00016729732128183388,
+  "observed": 0.000167,
+  "unit": "(dimensionless Legendre coefficient)",
+  "app_r_predicted": 0.000167,
+  "app_r_precision_str": "(4 pi / 13) * phi^-18 = 0.966644 * 1.7307e-04 = 1.6730e-04; manuscript value 1.6700e-04; agreement 0.18%.",
+  "app_r_precision_ppm": 1780.3669570891495,
+  "independent_precision_ppm": 1780.3669570891495,
+  "status": "PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "phi": 1.618033988749895,
+    "epsilon_phi_minus_18": 0.00017307027171223924,
+    "legendre_normalization_4pi_over_13": 0.966643893412244
+  }
+}

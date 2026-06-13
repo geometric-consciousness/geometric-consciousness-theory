@@ -1,0 +1,11 @@
+{
+  "pass": true,
+  "mean_energy": 3549.92807857869,
+  "discrete": true,
+  "monochromatic": true,
+  "mean_energy_seed_pinned": true,
+  "mean_energy_uncertainty": "single-seed realization; structural verdict robust",
+  "claim_registry_precision_exclusion": "The seed-pinned mean_energy is excluded from precision rows; only the structural discreteness/monochromaticity diagnostic is load-bearing here.",
+  "verdict_scope": "DIAGNOSTIC PASS (constructive - not falsification): toy fracture mechanism only; physical interpretation requires XRISM linewidth, centroid, morphology, and S1-S6 systematics gates",
+  "seed": 42
+}

@@ -1,0 +1,156 @@
+{
+  "alpha_inv_bare": 137.50776405003785,
+  "alpha_inv_obs": 137.036,
+  "delta_alpha_inv": 0.47176405003784794,
+  "delta_ppm_target": 3442.628579627601,
+  "M_Planck_GeV": 1.22089e+19,
+  "M_electron_GeV": 0.000510999,
+  "ln_ratio_UV_IR": 51.527839792576636,
+  "NAGT_factor_11_over_3": 3.6666666666666665,
+  "b_phason_required": 0.05752581438666048,
+  "class_sum_eff_backsolved_required__diagnostic_only": 0.015688858469089222,
+  "icosahedral_estimates": {
+    "SO3_baseline_C2": 2.0,
+    "n_icosahedral_sites_Ih_closed_cage": 152,
+    "icosahedral_irrep_dims": [
+      1,
+      3,
+      3,
+      4,
+      5
+    ],
+    "icosahedral_irrep_dim_sum_sq": 60,
+    "icosahedral_group_order": 60,
+    "class_sum_eff_lower_bound": 0.013157894736842105,
+    "class_sum_eff_upper_bound": 2.0,
+    "class_sum_eff_geometric_mean": 0.16222142113076254
+  },
+  "class_sum_eff_sweep": [
+    {
+      "class_sum_eff": 0.013157894736842105,
+      "b_phason": 0.04824561403508772,
+      "delta_alpha_inv": 0.39565795836927276,
+      "delta_ppm": 2887.2555997640966
+    },
+    {
+      "class_sum_eff": 0.017140373480919464,
+      "b_phason": 0.0628480360967047,
+      "delta_alpha_inv": 0.5154111134632039,
+      "delta_ppm": 3761.1365879272885
+    },
+    {
+      "class_sum_eff": 0.022328222632970948,
+      "b_phason": 0.0818701496542268,
+      "delta_alpha_inv": 0.6714097625541663,
+      "delta_ppm": 4899.513723066685
+    },
+    {
+      "class_sum_eff": 0.02908626970716232,
+      "b_phason": 0.10664965559292851,
+      "delta_alpha_inv": 0.874624270757454,
+      "delta_ppm": 6382.441626707244
+    },
+    {
+      "class_sum_eff": 0.037889763972011214,
+      "b_phason": 0.1389291345640411,
+      "delta_alpha_inv": 1.1393453858757283,
+      "delta_ppm": 8314.204923346628
+    },
+    {
+      "class_sum_eff": 0.049357797624396064,
+      "b_phason": 0.18097859128945223,
+      "delta_alpha_inv": 1.4841892132630938,
+      "delta_ppm": 10830.651896312602
+    },
+    {
+      "class_sum_eff": 0.06429684249631189,
+      "b_phason": 0.23575508915314358,
+      "delta_alpha_inv": 1.9334063648077906,
+      "delta_ppm": 14108.747809391625
+    },
+    {
+      "class_sum_eff": 0.0837574639463286,
+      "b_phason": 0.3071107011365382,
+      "delta_alpha_inv": 2.5185873459226182,
+      "delta_ppm": 18379.019716881827
+    },
+    {
+      "class_sum_eff": 0.10910820025295866,
+      "b_phason": 0.4000634009275151,
+      "delta_alpha_inv": 3.2808841092607857,
+      "delta_ppm": 23941.767924200838
+    },
+    {
+      "class_sum_eff": 0.14213180296466635,
+      "b_phason": 0.5211499442037766,
+      "delta_alpha_inv": 4.273904002506115,
+      "delta_ppm": 31188.184145086805
+    },
+    {
+      "class_sum_eff": 0.18515060616114368,
+      "b_phason": 0.6788855559241934,
+      "delta_alpha_inv": 5.567479622665905,
+      "delta_ppm": 40627.86145732439
+    },
+    {
+      "class_sum_eff": 0.24118984102636795,
+      "b_phason": 0.8843627504300158,
+      "delta_alpha_inv": 7.252579686072567,
+      "delta_ppm": 52924.63065232907
+    },
+    {
+      "class_sum_eff": 0.314190380579661,
+      "b_phason": 1.1520313954587569,
+      "delta_alpha_inv": 9.447706263475423,
+      "delta_ppm": 68943.24311476854
+    },
+    {
+      "class_sum_eff": 0.4092858755108187,
+      "b_phason": 1.5007148768730019,
+      "delta_alpha_inv": 12.307228255943304,
+      "delta_ppm": 89810.18313394512
+    },
+    {
+      "class_sum_eff": 0.5331637702707609,
+      "b_phason": 1.9549338243261232,
+      "delta_alpha_inv": 16.032237150456282,
+      "delta_ppm": 116992.88617922504
+    },
+    {
+      "class_sum_eff": 0.6945355873191351,
+      "b_phason": 2.5466304868368286,
+      "delta_alpha_inv": 20.884688469505445,
+      "delta_ppm": 152402.93404291896
+    },
+    {
+      "class_sum_eff": 0.9047495515454194,
+      "b_phason": 3.317415022333204,
+      "delta_alpha_inv": 27.205823390398155,
+      "delta_ppm": 198530.4838903511
+    },
+    {
+      "class_sum_eff": 1.1785886367338994,
+      "b_phason": 4.321491668024297,
+      "delta_alpha_inv": 35.44016600631929,
+      "delta_ppm": 258619.38473334955
+    },
+    {
+      "class_sum_eff": 1.5353101554629922,
+      "b_phason": 5.629470570030971,
+      "delta_alpha_inv": 46.16678379963146,
+      "delta_ppm": 336895.29612387595
+    },
+    {
+      "class_sum_eff": 2.0,
+      "b_phason": 7.333333333333333,
+      "delta_alpha_inv": 60.14000967212945,
+      "delta_ppm": 438862.85116414266
+    }
+  ],
+  "class_sum_eff_backsolved_interp_to_target_ppm__diagnostic_only": 0.015688858469089222,
+  "class_sum_eff_backsolved_interp_to_target_ppm__diagnostic_note": "Interpolation-on-log-grid diagnostic; not a derived match -- the protocol's verdict is sign-validated-only, the class_sum_eff value here is for inspection of where the target ppm sits in the swept range and should NOT be treated as the magnitude derivation. Magnitude derivation closure is registered under App H O.19; the sweep here gives only the order-of-magnitude bracket.",
+  "backsolved_value_falls_inside_wide_retunable_bracket__not_validation": true,
+  "registry_claim_scope": "Sign-validation only; not a parameter-free magnitude closure.",
+  "verdict": "Sign-validated only. NAGT-style continuous-gauge running framework reproduces the +3442 ppm shift direction with bosonic-anti-screening convention. The magnitude is NOT structurally derived: the icosahedral I_h symmetry is a discrete reflection group without a quadratic Casimir in the Lie-algebraic sense, and the assumed class_sum_eff bracket spans two orders of magnitude -- wide enough to be re-tuned for any output near the +3442 ppm target.",
+  "framing": "Required class_sum_eff = 0.0157; assumed icosahedral bracket [0.0132, 2.0000] (two orders of magnitude wide). Required value is INSIDE bracket. App M \u00a7M.7.1 status: sign-validated mechanism only; magnitude closure remains open under O.19 with two closure paths \u2014 (a) a discrete-lattice analogue of the continuous-gauge running (Kotani-Sunada operator algebra on AKN, or finite-group Bost-Connes), or (b) a first-principles derivation of class_sum_eff from icosahedral irrep theory + AKN bubble integral; bundles with O.5."
+}

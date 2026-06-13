@@ -1,0 +1,17 @@
+{
+    "formalism": "Binet identity arithmetic check",
+    "module": "Z + Z_phi",
+    "large_matrix_mode": false,
+    "is_algebraic_verification": true,
+    "derives_gap_index": false,
+    "assumed_gap_index": -107,
+    "open_problem": "O.14: construct AKN hull PV sequence + IDOS trace + APS index + electron projector",
+    "not_a_k_theoretic_derivation": true,
+    "fibonacci_map": {
+        "F_n": 10284720757613717413913,
+        "F_n_minus_1": -16641027750620563662096
+    },
+    "algebraic_evaluation": 2097152.0,
+    "direct_evaluation": 4.348329974529321e-23,
+    "pass": false
+}

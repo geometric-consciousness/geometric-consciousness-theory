@@ -1,0 +1,21 @@
+{
+  "name": "proton_mass",
+  "app_r_label": "Proton mass (m_p)",
+  "formula": "m_p = m_e \u00b7 \u03c6^(15 + \u03c6^-1)",
+  "tier": "Tier 2 mechanism + Tier 3 sheet-exponent (155 ppm residual; closure pending AKN-action O.32)",
+  "predicted": 938.4174544072258,
+  "observed": 938.27208816,
+  "unit": "MeV",
+  "app_r_predicted": 938.417,
+  "app_r_precision_str": "155 ppm (0.015%)",
+  "app_r_precision_ppm": 155.0,
+  "independent_precision_ppm": 154.92973633153298,
+  "status": "TENSION",
+  "tolerance_ppm": 300.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "exponent_15_plus_phi_inv": 15.618033988749895,
+    "ratio_m_p_over_m_e_pred": 1836.4371455950823,
+    "ratio_m_p_over_m_e_observed": 1836.152670945908
+  }
+}

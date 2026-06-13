@@ -1,0 +1,37 @@
+{
+  "run_type": "scale_comparison",
+  "gram_proof": {
+    "theorem": "GUT Boundary Scalar from Gram Projection [Tier 1]",
+    "e_par_sq": 0.7236067977499789,
+    "e_perp_sq": 0.276393202250021,
+    "gram_ratio": 0.38196601125010515,
+    "phi_inv2_exact": 0.38196601125010515,
+    "algebraic_residual": 0.0,
+    "machine_pass": true,
+    "sin2_W_gut_gram": 0.38196601125010515,
+    "sin2_W_gut_exact": 0.38196601125010515,
+    "gram_boundary_scalar_rho_G": 0.38196601125010515,
+    "canonical_normalized_share": 0.27639320225002106,
+    "volume_coupling_sin2_bare": 0.23606797749978967,
+    "phi_inv3_exact": 0.23606797749978967,
+    "weinberg_residual": 0.0,
+    "epistemic_tier": "Tier 1 (Exact Algebraic Derivation)"
+  },
+  "m_gut_light": 1.606169340138508e+17,
+  "m_gut_stiff": 2113014947334727.2,
+  "m_gut_red": 3.203844296328604e+16,
+  "sin2_light": 0.22745138435177303,
+  "sin2_stiff": 0.2394116523413411,
+  "sin2_red": 0.23176223516999941,
+  "error_light": 0.01629883075956654,
+  "error_stiff": 0.03542795753542551,
+  "error_red": 0.002345104964965857,
+  "degrees_of_freedom": {
+    "phi": "Invariant (Tier 1)",
+    "sin2theta_W_Mz": "Imported BC (Tier 3)",
+    "imported_boundary_conditions": 1,
+    "total_dof": 1,
+    "notes": "Shape is Tier 2 (0 DOF); absolute endpoint requires 1 DOF import."
+  },
+  "pass": true
+}

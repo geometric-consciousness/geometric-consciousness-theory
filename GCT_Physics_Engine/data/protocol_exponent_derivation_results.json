@@ -1,0 +1,100 @@
+{
+  "protocol": "Vacancy Volume Exponent Arithmetic Check (6D Phase-Space Candidate Bookkeeping)",
+  "derivation_argument": "Candidate Vacancy Volume bookkeeping; O.14 physical link open",
+  "derivation": {
+    "step_1_phason_stiffness_ratio": "eta = phi^{-18}",
+    "step_2_6D_unit_cell_suppression": "eta^6 = phi^{-108}",
+    "step_3_vacancy_model": "Topological defect = absence of one 6D lattice node (hole in 6D phase space)",
+    "step_4_vacancy_correction": "Removing one node => add back phi^{+1} (missing volume unit)",
+    "step_5_result": "phi^{-108} x phi^{+1} = phi^{-107}",
+    "volumetric_exponent": -108,
+    "vacancy_exponent": 1,
+    "final_exponent": -107
+  },
+  "C1_volumetric_suppression": {
+    "phi": 1.618033988749895,
+    "eta_phason_stiffness_ratio": 0.00017307027171223924,
+    "eta_log_phi": -18.0,
+    "n_dimensions": 6,
+    "volumetric_factor": 2.687415718559084e-23,
+    "volumetric_exponent": -108,
+    "n_vol": 108.00000000000001
+  },
+  "C2_vacancy_volume": {
+    "defect_model": "Vacancy (absence of one 6D lattice node)",
+    "mechanism": "Phase-space hole: remove one node => add back one phi-volume unit",
+    "vacancy_volume_factor": 1.618033988749895,
+    "n_vac": 1
+  },
+  "C3_closure": {
+    "M_planck_std_kg": 2.176434342051127e-08,
+    "phi_neg_107": 4.348329974529321e-23,
+    "m_raw_kg": 9.463854687135916e-31,
+    "drag_factor_1_minus_5alpha": 0.9635132371535,
+    "m_pred_kg": 9.11854926555265e-31,
+    "m_pred_2nd_order_kg": 9.119809173255342e-31,
+    "m_electron_CODATA_kg": 9.1093837015e-31,
+    "precision_ppm": 1006.1673053842399,
+    "precision_2nd_order_ppm": 1144.4760805964204,
+    "success_threshold_ppm": 1100.0,
+    "c3_pass": true,
+    "final_exponent": -107,
+    "n_geom": 107
+  },
+  "C4_spectral_zeta": {
+    "zeta_values": [
+      {
+        "s": 0.5,
+        "zeta_D_s": 32.729713053360584
+      },
+      {
+        "s": 1.0,
+        "zeta_D_s": 21.738893952559835
+      },
+      {
+        "s": 1.5,
+        "zeta_D_s": 14.653578595691977
+      },
+      {
+        "s": 2.0,
+        "zeta_D_s": 10.02660779531526
+      },
+      {
+        "s": 2.5,
+        "zeta_D_s": 6.965430903498631
+      },
+      {
+        "s": 3.0,
+        "zeta_D_s": 4.9132497540793505
+      },
+      {
+        "s": 4.0,
+        "zeta_D_s": 2.558281494580183
+      },
+      {
+        "s": 5.0,
+        "zeta_D_s": 1.4117693327566732
+      }
+    ],
+    "n_pos_eigs": 50,
+    "lambda_min": 1.4142135623730938,
+    "lambda_max": 3.963357658917419,
+    "effective_index": 2.968,
+    "analytic_limit": 107,
+    "gap_ratio": 0.02774,
+    "status": "COMPUTED",
+    "notes": "I_h-closed boundary cage (152 nodes; 5 orbits)."
+  },
+  "parameters": {
+    "PHI": 1.618033988749895,
+    "M_planck_std_kg": 2.176434342051127e-08,
+    "M_electron_kg": 9.1093837015e-31,
+    "alpha": 0.0072973525693
+  },
+  "arithmetic_consistency_pass": true,
+  "o14_physical_link_closed": false,
+  "status": "open_problem_O.14",
+  "open_problem": "O.14 physical V->K_0 trace-image / Dixmier-residue selection remains open; C4 finite-N spectral-zeta diagnostic does not derive n=107.",
+  "pass": false,
+  "verdict": "ARITHMETIC_PASS__O14_PHYSICAL_LINK_OPEN"
+}

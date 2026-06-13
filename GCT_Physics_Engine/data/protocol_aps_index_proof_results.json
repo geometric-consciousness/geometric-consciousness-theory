@@ -1,0 +1,17 @@
+{
+    "N_nodes": 152,
+    "cage_construction": "I_h-closed 5-orbit (12+30+20+30+60)",
+    "eta_scalar": -14.0,
+    "eta_eff": -1.75,
+    "bulk_index_status": "pending_O14c",
+    "bulk_index_required_for_n107": 108.75,
+    "bulk_required_is_integer": false,
+    "total_index_status": "partial_pending_bulk_derivation",
+    "scalar_eigenvalues_summary": {
+        "min": -17.457356156876937,
+        "max": 37.15487519493043,
+        "mean_abs": 6.031441090736007
+    },
+    "pass": false,
+    "tier_status": "PARTIAL \u2014 cage observables computed, bulk Pontryagin pending O.14c"
+}

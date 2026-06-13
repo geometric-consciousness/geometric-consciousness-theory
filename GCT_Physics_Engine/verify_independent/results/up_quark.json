@@ -1,0 +1,19 @@
+{
+  "name": "up_quark",
+  "app_r_label": "Up quark (m_u)",
+  "formula": "m_u = m_e \u00b7 \u03c6^3",
+  "tier": "Tier 2 geometric motif + Tier 3 QCD scheme/running bridge",
+  "predicted": 2.164626291553903,
+  "observed": 2.16,
+  "unit": "MeV",
+  "app_r_predicted": 2.16,
+  "app_r_precision_str": "0.21%",
+  "app_r_precision_ppm": 2100.0,
+  "independent_precision_ppm": 2141.801645325378,
+  "status": "PASS",
+  "tolerance_ppm": 10000.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "percent_error": 0.21418016453253783
+  }
+}

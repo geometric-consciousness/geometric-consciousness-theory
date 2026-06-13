@@ -1,0 +1,10 @@
+{
+    "k_nodes": 12,
+    "graph_degree": 5,
+    "min_cut_edges": 5,
+    "balanced_bisection_cut_at_k_half": 10,
+    "spectral_gap_normalized": 0.5527864045,
+    "necessary_condition_holds": true,
+    "verdict": "Necessary-condition witness PASSES: graph is connected (min_cut > 0) and spectrally non-trivial (gap > 0). A non-zero IIT 3.0 Phi on the k=12 icosahedral TPM is not excluded by the connectivity/spectral test. Full Phi quantification requires PyPhi integration (O.28).",
+    "phi_full_quantification": "DEFERRED \u2014 requires PyPhi build on the k=12 icosahedral TPM; registered as Open Problem O.28"
+}

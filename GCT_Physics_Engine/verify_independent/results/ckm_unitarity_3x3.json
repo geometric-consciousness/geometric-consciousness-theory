@@ -1,0 +1,24 @@
+{
+  "name": "ckm_unitarity_3x3",
+  "app_r_label": "CKM 3x3 Unitarity Residual",
+  "formula": "V V^dagger = 1 from GCT angles (s12=phi^-3(1-5alpha), s23=phi^-(6+phi^-1), s13=phi^-(11+phi^-1), delta_CP=2pi/phi)",
+  "tier": "Tier 2",
+  "predicted": 0.0,
+  "observed": 0.0,
+  "unit": "dimensionless",
+  "app_r_predicted": null,
+  "app_r_precision_str": null,
+  "app_r_precision_ppm": null,
+  "independent_precision_ppm": null,
+  "status": "PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "ckm_max_row_norm_residual": 0.0,
+    "ckm_max_off_diagonal_residual": 0.0,
+    "ckm_abs_det": 0.9999999999999998,
+    "ckm_det_residual": 0.0,
+    "ckm_unitary_within_1_5pct": true,
+    "note": "CKM 3x3 unitarity from GCT angles. Max row-norm residual: 0.00000; max off-diagonal residual: 0.00000; |det V|: 1.00000. Consistent with unitarity to ~1% (driven by individual angle residuals)."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "tau_mass",
+  "app_r_label": "Tau mass (m_tau)",
+  "formula": "m_tau = m_e \u00b7 \u03c6^17 \u00b7 (1 - 3.6\u03b1), -3.6 = -D/N = -18/5",
+  "tier": "Tier 2 mechanism + Tier 2 integer-pair (D=18, N=5) + Tier 3 combination rule c = -D/N pending O.26b; headline coefficient is Tier 3",
+  "predicted": 1776.8396375746543,
+  "observed": 1776.93,
+  "unit": "MeV",
+  "app_r_predicted": 1776.84,
+  "app_r_precision_str": "~0.25% (Tier 2 bare) | ~51 ppm (Tier 2+3 corrected, vs PDG 2024)",
+  "app_r_precision_ppm": 51.0,
+  "independent_precision_ppm": 50.85311483615109,
+  "status": "TENSION",
+  "tolerance_ppm": 50.0,
+  "discrepancy_notes": [],
+  "extra": {
+    "N_tau": 17,
+    "tau_screen_coeff": -3.6,
+    "alpha_codata": 0.0072973525643
+  }
+}

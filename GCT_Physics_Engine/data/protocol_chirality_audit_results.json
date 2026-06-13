@@ -1,0 +1,120 @@
+{
+  "N_sites": 89,
+  "t_L": 1.0,
+  "t_S": 0.4,
+  "gap_estimate": 0.6,
+  "threshold": 0.21,
+  "N_L": 7,
+  "N_R": 6,
+  "net_chirality": 1,
+  "zero_modes": [
+    {
+      "index": 38,
+      "energy": -0.20311613452954957,
+      "chiral_charge": -1.9567680809018384e-15,
+      "x_mean": 28.569977401299354,
+      "ipr": 0.05938989097890255,
+      "chirality": "-1 (Left-chiral)"
+    },
+    {
+      "index": 39,
+      "energy": -0.17037872155081923,
+      "chiral_charge": -2.824129818890242e-15,
+      "x_mean": 63.72672966053249,
+      "ipr": 0.04163289399905668,
+      "chirality": "-1 (Left-chiral)"
+    },
+    {
+      "index": 40,
+      "energy": -0.16041575450466894,
+      "chiral_charge": -3.191891195797325e-15,
+      "x_mean": 32.885558353493735,
+      "ipr": 0.05861467262900072,
+      "chirality": "-1 (Left-chiral)"
+    },
+    {
+      "index": 41,
+      "energy": -0.15102038088033298,
+      "chiral_charge": -3.9968028886505635e-15,
+      "x_mean": 69.98912177805168,
+      "ipr": 0.04796575781080298,
+      "chirality": "-1 (Left-chiral)"
+    },
+    {
+      "index": 42,
+      "energy": -0.02694868145101137,
+      "chiral_charge": -1.4771116187833888e-14,
+      "x_mean": 27.180248650450316,
+      "ipr": 0.06228523795454418,
+      "chirality": "-1 (Left-chiral)"
+    },
+    {
+      "index": 43,
+      "energy": -0.018829743942614163,
+      "chiral_charge": 4.61452707642418e-14,
+      "x_mean": 29.506576802611086,
+      "ipr": 0.059329558918205696,
+      "chirality": "+1 (Right-chiral)"
+    },
+    {
+      "index": 44,
+      "energy": -8.881784197001252e-16,
+      "chiral_charge": 0.9999999999999992,
+      "x_mean": 65.1699343275201,
+      "ipr": 0.1578643768048686,
+      "chirality": "+1 (Right-chiral)"
+    },
+    {
+      "index": 45,
+      "energy": 0.01882974394261483,
+      "chiral_charge": -5.595242151545943e-14,
+      "x_mean": 29.506576802603302,
+      "ipr": 0.05932955891821146,
+      "chirality": "-1 (Left-chiral)"
+    },
+    {
+      "index": 46,
+      "energy": 0.026948681451012035,
+      "chiral_charge": 1.7673904874337953e-14,
+      "x_mean": 27.180248650457788,
+      "ipr": 0.062285237954537186,
+      "chirality": "+1 (Right-chiral)"
+    },
+    {
+      "index": 47,
+      "energy": 0.15102038088033254,
+      "chiral_charge": 6.647460359943125e-15,
+      "x_mean": 69.98912177805374,
+      "ipr": 0.04796575781080708,
+      "chirality": "+1 (Right-chiral)"
+    },
+    {
+      "index": 48,
+      "energy": 0.16041575450466805,
+      "chiral_charge": 1.1136924715771102e-15,
+      "x_mean": 32.88555835349338,
+      "ipr": 0.05861467262900242,
+      "chirality": "+1 (Right-chiral)"
+    },
+    {
+      "index": 49,
+      "energy": 0.17037872155081968,
+      "chiral_charge": 3.0600522116230877e-15,
+      "x_mean": 63.726729660531575,
+      "ipr": 0.04163289399905604,
+      "chirality": "+1 (Right-chiral)"
+    },
+    {
+      "index": 50,
+      "energy": 0.20311613452955046,
+      "chiral_charge": -5.434021288497348e-16,
+      "x_mean": 28.569977401307344,
+      "ipr": 0.05938989097889499,
+      "chirality": "-1 (Left-chiral)"
+    }
+  ],
+  "gct_verified": true,
+  "pass": true,
+  "gct_implication": "6D\u21923D quasicrystal projection creates a chiral domain wall. One zero mode is physical \u2192 net Chirality = 1. Guaranteed by Atiyah-Singer Index Theorem.",
+  "plot_path": "GCT_Physics_Engine/output/chirality_spectrum.png"
+}
