@@ -99,7 +99,7 @@ def main():
  "lattice basis. The cube relationship K ~ det^3 arises from "
  "the 3-dimensional projected continuum (elastic stiffness "
  "is energy density per unit volume in 3D). Composition gives "
- "K_perp/K_para = phi^-18 with no free parameters. The exponent "
+ "K_perp/K_para = phi^-18 with no additional fitted coefficient. The exponent "
  "18 is the H_3 invariant-degree sum (App K §K.4; real dimension "
  "of the Q(sqrt 5) representation = 18), a Tier 2 geometric "
  "input; the Tier 2 identification with the physical phason "

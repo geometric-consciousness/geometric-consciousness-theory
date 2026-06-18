@@ -139,7 +139,7 @@ The Peierls mechanism is invoked here as a structural analogy: as in 1D electron
 To select the dimension of this crystal, we apply the principle of **Maximum Entropy Packing**. The Field must pack the maximum density of "Information Points" (lattice nodes) into the configuration space.
 1. **$D < 3$:** Insufficient degrees of freedom for stable knotting (Identity). (Knot theory requires ambient dimension $\geq 3$; knots are trivially unknottable in $\mathbb{R}^2$.)
 2. **$D > 6$:** Porous kissing-number geometry leads to informational instability.
-3. **$D = 6$:** The minimal dimension required to support a periodic lattice that can project to a $3D$ structure with icosahedral symmetry.
+3. **$D = 6$:** The minimal dimension required to support a periodic lattice that can project to a $3D$ structure with icosahedral symmetry under the maximal-finite-point-symmetry axiom.
 
 The formal classification is established in §12.6 via the Uniqueness Theorem. The argument here is motivational — the three cases are sketched to build geometric intuition. For the rigorous statement, see §12.6.2–12.6.4.
 
@@ -168,6 +168,8 @@ Section 12.5 established that the physical vacuum must be a 6-dimensional hyper-
 
 > - **Axiom of Isotropic Causality:** The causal structure of consensus reality must reduce to an isotropic, Lorentz-covariant continuum in the appropriate long-wavelength limit. (Note: As established in Chapter 8 via Doubly Special Relativity, the continuous Lorentz group is strictly a low-energy effective limit of the underlying Hopf-algebra deformation, terminating explicitly at the Planck scale via anisotropic GZK recovery).
 > - **Axiom of Intelligibility:** A configuration that is either computationally incompressible or informationally frozen cannot host a Wheeler-DeWitt null state capable of self-referential registration.
+
+Isotropy alone is insufficient for the icosahedral selection: $O_h$ and $T_d$ also give macroscopically isotropic finite point symmetries. The GCT selection adds the maximal-finite-point-symmetry axiom, taking the largest finite rotational order compatible with three-dimensional point symmetry as the substrate symmetry. This keeps the theorem inside the Axiom Ledger's architectural-postulate classification: the icosahedral substrate is not deductively forced by isotropy alone.
 
 We prove by contradiction via three exhaustive case lemmas.
 
@@ -207,11 +209,11 @@ For any finite but large patch, the complexity grows linearly with the patch siz
 
 **Consequence:** Any irrational $\lambda$ defines a Diophantine exponent $\mu(\lambda)$, the supremum of the set of $\mu$ for which $|\lambda - p/q| < q^{-\mu}$ has infinitely many rational solutions $p/q$. By Hurwitz's theorem, $\mu(\phi) = 2$ — the **minimum possible value** — making $\phi$ the *hardest* of all irrationals to approximate by rationals. For all other quadratic irrationals (including $\delta_S$), $\mu \geq 2$, but $\phi$ is uniquely extremal in the specific sense that its continued-fraction expansion $[1;1,1,1,\ldots]$ contains the **smallest possible partial quotients**, whereas $\delta_S = [2;2,2,2,\ldots]$ has larger quotients that enable closer rational resonances at finite resolution.
 
-**Contradiction:** In the 6D phason sector, a rational resonance of the projection slope corresponds to a **phason-locking event**: a configuration where a finite patch of the lattice becomes periodic, freezing the local phason field. A frozen phason field is a **zero-entropy sub-region** of the vacuum — a crystalline island inside the quasicrystal. Within such an island, the Selection Operator cannot distinguish one iteration $n$ from the next: sequential selections map to identical lattice neighbourhoods, and the identity braid closes prematurely into a trivial loop. This constitutes an **information freeze** — the local observer loses the ability to register new distinctions. Furthermore, the dimensional stability of knot invariants in $D=3$ is uniquely secured by the icosahedral group $H_3$ (the compact symmetry of the 120-cell, the densest 3D rational structure). A projection based on $\delta_S$ generates 8-fold symmetry, whose 3D knot algebra (connected to the Kauffman bracket via the cubic Hecke relation) does **not** preserve the topological distinctness of the identity braid under the required $4\pi$ — completing-spinor cycle. The $\phi$-based projection is the unique irrational slope for which:
-1. The Diophantine gap $J(\mathbf{\Omega}_{\phi})$ is globally maximal — eliminating phason-locking.
+**Contradiction:** In the 6D phason sector, a rational resonance of the projection slope corresponds to a **phason-locking event**: a configuration where a finite patch of the lattice becomes periodic, freezing the local phason field. A frozen phason field is a **zero-entropy sub-region** of the vacuum — a crystalline island inside the quasicrystal. Within such an island, the Selection Operator cannot distinguish one iteration $n$ from the next: sequential selections map to identical lattice neighbourhoods, and the identity braid closes prematurely into a trivial loop. This constitutes an **information freeze** — the local observer loses the ability to register new distinctions. Furthermore, the dimensional stability of knot invariants in $D=3$ is uniquely secured by the icosahedral group $H_3$ (the compact symmetry of the 120-cell, the densest 3D rational structure). A projection based on $\delta_S$ generates 8-fold symmetry, whose 3D knot algebra (connected to the Kauffman bracket via the cubic Hecke relation) does **not** preserve the topological distinctness of the identity braid under the required $4\pi$ — completing-spinor cycle. The $\phi$-based projection is distinguished among the classified quasicrystalline competitors as the irrational slope for which:
+1. The Golden Ratio is the Diophantine extremum among these competitors (Hurwitz: $\mu(\phi)=2$, the smallest possible partial quotients), most strongly suppressing phason-locking. Whether this makes the Diophantine gap $J(\mathbf{\Omega}_{\phi})$ the *global* maximum over all real-valued projections is the primary-candidate conjecture, not a settled theorem (§12.6.5).
 2. The resulting 3D tiling group ($H_3$) closes under the spinorial double-cover required for Fermi statistics.
 
-No other irrational slope satisfies both simultaneously. $\square$
+No other classified irrational slope satisfies both simultaneously. $\square$
 
 ---
 
@@ -246,8 +248,8 @@ Only the icosahedral projection ($\lambda = \phi$) lies outside all three contra
 > consistency), the φ-slope is the *unique* solution. It is a proof of
 > **Axiomatic Necessity**. This is distinct from a proof of **Global Maximality**
 > in the continuous space of all real-valued projections (the Diophantine gap problem
-> J(Ω)), which remains an open research question in real analysis. The Tier 1
-> status applies to the internal consistency of the GCT hierarchy, not the external
-> analytic optimization problem.
+> J(Ω)), which remains an open research question in real analysis. The axiomatic-necessity
+> result is internal to the GCT hierarchy; it does not assert the external analytic
+> global-optimization claim, which remains the open primary-candidate question.
 
 ![The emergence of relational time (Page-Wootters mechanism): the static Wheeler-DeWitt block decomposes into clock states and correlated system states, and the ordered sequence of conditional system states constitutes the Agent's temporal experience with no external time parameter. Horizontal axis: ordinal clock index (Zeno Drive tick count); vertical axis: configuration-space amplitude of the system state.](content/Figures/Volume_1/Figure V1.12.1.svg)

@@ -8,7 +8,7 @@ To preserve the integrity of Geometric Consciousness Theory (GCT) and forestall 
 
 ### **A. Prediction (Targeted)**
 A value derived from the theory's internal geometry *before* reference to a specific measurement, or a value that exceeds current experimental precision.
-- **Criteria:** No free parameters adjusted to match the result.
+- **Criteria:** No undisclosed parameter is adjusted to match the result.
 
 **Example — PTA Anisotropy Postulate-Conditional Prediction:** GCT-derivable PTA anisotropy is $\Delta\gamma_{\max} = \phi^{-D}$ where $D=18$ is one of the 5 core integer postulates (Parameter Ledger P3). The $l=6$ harmonic form is a Tier 2 mechanism; the specific $\phi^{-18}$ amplitude is Tier 3 pending the O.15(b) RG-map derivation of $K_\perp/K_\parallel=\phi^{-D}$. The PTA test is therefore a Tier 2 harmonic-form mechanism + Tier 3 specific $\phi^{-18}$ amplitude pending O.15(b) RG-map derivation.
 

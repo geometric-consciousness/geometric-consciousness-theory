@@ -172,7 +172,7 @@ where $\hat{k}$ is the unit wave vector and $\epsilon_{icos}$ is the icosahedral
 **21.5.3 Phase Velocity Dispersion: Observational Test via Binary Pulsar Timing [Tier 2]**
 
 > **Correlated Prediction: Phase Velocity Dispersion**
-> *The l=6 spatial anisotropy alone is necessary but not sufficient to confirm the phason-graviton identification. This section adds a zero-parameter, correlated prediction: the phase velocity dispersion across the NANOGrav frequency band.*
+> *The l=6 spatial anisotropy alone is necessary but not sufficient to confirm the phason-graviton identification. This section adds a correlated prediction without introducing an additional fitted coefficient: the phase velocity dispersion across the NANOGrav frequency band.*
 
 **The Core Argument.** Section §21.1.3 identifies the graviton as a phason of the discrete icosahedral vacuum lattice. For a continuous, isotropic medium, phasons propagate at exactly $c$ with no dispersion. However, the GCT vacuum is **discrete** (lattice spacing $a_{6D}$ at the 6D projected scale) and **anisotropic** (icosahedral symmetry). Both properties introduce frequency-dependent corrections to the phason group velocity. These corrections must be **correlated** with the spatial $l=6$ anisotropy through the same single parameter $\epsilon = \phi^{-18}$: if $l=6$ is present, dispersion must be present at the level predicted below. If dispersion is absent while $l=6$ is confirmed, the phason-graviton identification is falsified.
 
@@ -306,7 +306,7 @@ This is a parameter-accounted geometric prediction within the stated Ledger sect
 > (c) Joint Bayesian combination across three independent noise models
 > (d) p < 0.001 detection threshold (pre-committed)
 
-**Derivation provenance:** The $\Delta\Gamma_{\max} = \phi^{-18}$ amplitude is a Tier-3 anchor: the integer exponent $D=18$ is one of the 5 core integer postulates (P3), and the $K_\perp/K_\parallel = \phi^{-D}$ RG-running claim awaits O.15(b) closure. The $l=6$ harmonic form follows from the icosahedral harmonic fingerprint theorem (§21.2.1) and the emergent graviton identification (Volume 2 Chapter 8). The yield strain derivation (V3 Ch11 §11.1) confirms that the same $\phi^{-18}$ amplitude branch is used consistently across the 3.55 keV threshold and this PTA signal, but the amplitude is not a fully parameter-free continuum prediction until O.15(b) closes.
+**Derivation provenance:** The $\Delta\Gamma_{\max} = \phi^{-18}$ amplitude is a Tier-3 anchor: the integer exponent $D=18$ is one of the 5 core integer postulates (P3), and the $K_\perp/K_\parallel = \phi^{-D}$ RG-running claim awaits O.15(b) closure. The $l=6$ harmonic form follows from the icosahedral harmonic fingerprint theorem (§21.2.1) and the emergent graviton identification (Volume 2 Chapter 8). The yield strain derivation (V3 Ch11 §11.1) confirms that the same $\phi^{-18}$ amplitude branch is used consistently across the 3.55 keV threshold and this PTA signal, but the amplitude is not a fully closed continuum prediction until O.15(b) closes.
 
 ---
 
@@ -411,7 +411,7 @@ A detection of directional bias in macroscopic Bell inequality violations matchi
 ### **21.11 Protocol K: Fast Radio Burst DM/RM Icosahedral Anisotropy [Parametric Closure 3]**
 
 > **Pre-Registered Prediction: Icosahedral $l=6$ Fingerprint in FRB DM/RM**
-> *Pre-registered prediction for the icosahedral l=6 fingerprint in FRB Dispersion Measures and Faraday Rotations. Zero *additional* free parameters within this sector beyond the 5-postulate-plus-1-anchor bare gauge+lepton sub-sector of Parameter Ledger §0.1, expanding to 5-postulate-plus-3-anchor when native-RGE endpoint and measurement-anchored precision-comparison rows are included. Testable now with CHIME/FRB.*
+> *Pre-registered prediction for the icosahedral l=6 fingerprint in FRB Dispersion Measures and Faraday Rotations. This sector is stated within the 5-postulate-plus-1-anchor bare gauge+lepton sub-sector of Parameter Ledger §0.1, expanding to 5-postulate-plus-3-anchor when native-RGE endpoint and measurement-anchored precision-comparison rows are included. Testable now with CHIME/FRB.*
 
 **21.11.1 The Physical Mechanism**
 

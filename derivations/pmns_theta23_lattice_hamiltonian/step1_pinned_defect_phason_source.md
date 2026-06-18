@@ -87,7 +87,7 @@ $$\boxed{\;Q_\perp = \frac{b_\perp\, \xi^2}{K_\perp}\;} \quad [\text{Tier 1}]$$
 
 This is the quantity that enters Step 2: matter density n (electrons per cm³) × Q⊥ gives the saturated background ⟨Φ⊥⟩ in the bulk.
 
-## 1.7 Parameter Inventory — Zero Free Parameters
+## 1.7 Parameter Inventory — No Additional Free Parameters
 
 | Symbol | Value / Source | Tier |
 |---|---|---|

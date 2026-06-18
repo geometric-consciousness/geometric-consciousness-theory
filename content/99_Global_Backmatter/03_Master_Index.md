@@ -214,7 +214,7 @@
 
 * **Icosahedral Plaquette Action:** App.App.Z
 * **Icosahedral Projection:** GFM.Epistemic_Tier_System
-* **Icosahedral Selection Theorem:** App.App.B, V3.Ch04
+* **Icosahedral Selection Theorem:** App.App.U, V3.Ch04
 * **Idealism:** GFM.Global_Abstract
 * **Identity Ribbon:** V3.Ch19
 * **Identity Tether:** V1.Ch15

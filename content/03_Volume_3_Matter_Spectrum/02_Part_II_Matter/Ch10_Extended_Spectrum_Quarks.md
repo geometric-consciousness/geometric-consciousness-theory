@@ -67,7 +67,7 @@ The winding number $N$ of the ground state is determined by the **Topological Cl
 $$ N_{baryon} = 3 \times 5 = 15 \quad \text{[Tier 2]}$$
 This identifies "15" not as a numerological guess, but as the **candidate winding generator** of the baryonic triad sector under the $Z_3 \times Z_5$ closure rule; a full configuration-space proof of $\pi_1(\text{Triad}) \cong \mathbb{Z}_{15}$ remains part of the hadron-sector closure.
 
-The physical proton-mass formula still uses the sheet/exponent handle $15+\phi^{-1}$ as a Tier 3 hadron-sector anchor pending AKN-action / QLQCD closure. The integer 15 is the topological mechanism; the full exponent used in the 155 ppm headline is not a hidden parameter-free derivation.
+The physical proton-mass formula still uses the sheet/exponent handle $15+\phi^{-1}$ as a Tier 3 hadron-sector anchor pending AKN-action / QLQCD closure. The integer 15 is the topological mechanism; the full exponent used in the 155 ppm headline is not a hidden closed derivation from the current postulate set.
 
 **10.3.3 The Weak Berry Phase Correction**
 
@@ -162,7 +162,7 @@ On larger cages the FK pseudo-determinant exhibits **shell-resonance behaviour**
  *Falsification Note: If future lattice QCD places m_b outside 4130–4230 MeV at 5σ, the A₅ dimensional ratio is falsified for the bottom quark sector.*
 6. **Top Quark:** $m_t = (v_{target} / 2) \cdot \sqrt{2}$
 
-These tiered tree-level derivations are **geometric mechanism outputs** from the icosahedral cage, not a blanket parameter-free closure of the hadron sector. The percentage errors against current targets ($u$: $+0.21\%$; $d$: open source-promotion target, with the $R=2$ source-placeholder residual $\sim20\%$ and the $+3.83\%$ closed-form branch retained as a non-primary analytic reference until source promotion; $s$: $+0.23\%$; $c$: $+0.52\%$ heuristic; $b$: $+1.08\%$; $t$: $+0.89\%$) are the raw output of the FK determinant and the Mixed-Harmonic Area Law; they are **not fitted post-hoc**. The dominant remaining residuals are:
+These tiered tree-level derivations are **geometric mechanism outputs** from the icosahedral cage, not a blanket closure of the hadron sector from the current postulate set. The percentage errors against current targets ($u$: $+0.21\%$; $d$: open source-promotion target, with the $R=2$ source-placeholder residual $\sim20\%$ and the $+3.83\%$ closed-form branch retained as a non-primary analytic reference until source promotion; $s$: $+0.23\%$; $c$: $+0.52\%$ heuristic; $b$: $+1.08\%$; $t$: $+0.89\%$) are the raw output of the FK determinant and the Mixed-Harmonic Area Law; they are **not fitted post-hoc**. The dominant remaining residuals are:
 
 1. **Shell-resonance band on $\widetilde{\det}_{FK}$.** The finite cut-and-project window samples a discrete subset of the noncommutative spectral geometry. As the cage size $N$ sweeps natural icosahedral shells, the FK pseudo-determinant oscillates in a $\pm 3\%$ band about its asymptotic value $\approx \phi^{\phi}$. This is a Tier 2 mechanism (FK-pseudo-det closure) + Tier 3 source-branch/state-value issue, not a defect of the mechanism.
 2. **Missing higher-order QCD running.** Loop corrections from QCD running (analogous to the top quark 0.89% QLQCD-2L debt) contribute $\mathcal{O}(1\%)$ at the charm scale.

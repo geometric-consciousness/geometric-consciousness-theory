@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.2.1 — 2026-06-17
+- Reconciled the icosahedral selection result to its proven scope. The icosahedral point-group uniqueness is established (conditional on the maximal-symmetry hypothesis); the claim that the golden-ratio projection slope is the global maximum of the entropy functional is stated as the open primary-candidate (Postulate 2.1). All dependent sites — the electroweak mixing-angle derivation, the abstracts, the glossary, and the tier ledgers — are labeled to that scope.
+- Made the maximal-finite-point-symmetry selection criterion explicit as a stated postulate rather than an implicit assumption.
+- Replaced the "zero free parameters" phrasing with the precise accounting used throughout: five postulates plus three anchors, with the electron mass as the sole dimensional input.
+- Corrected the H₄/φ relationship in the uniqueness appendix and the accompanying engine module. The Coxeter-element eigenvalues are unit-modulus roots of unity; the golden ratio enters through the H₄ Cartan metric and the Elser–Sloane projection slope, not as a Coxeter eigenvalue.
+- Restated the Bullet Cluster discussion as a Tier-2 mechanism with Tier-3 postdiction-consistency, and the Horizon/Flatness discussion as a geometric resolution with the quantitative match left as an open derivation.
+
+No numerical result or engine output changed; the verification suite remains green.
+
 ## v1.2.0 — 2026-06-13
 - Physics Engine timeless-tone (Law 8) pass: removed development- and review-process language from engine docstrings, comments, verdict strings, and JSON output fields. No logic, numerical result, or epistemic-tier assignment changed; the verification suite remains green (62/62 registered protocols).
 - Tier-label discipline: aligned descriptive prose to the audited tier where it overstated confidence — App U lepton exponents (N=11, N=17) and the proton base value now stated as a Tier-2 shell-filling template with Tier-3 specific selection pending Open Problem O.5; engine docstrings for the phason stiffness exponent (D=18 as the Tier-2 Coxeter integer) and the CKM Jarlskog φ⁻²² candidate (Open Problem O.7, not a closure) corrected to match.

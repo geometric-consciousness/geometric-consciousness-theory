@@ -189,7 +189,7 @@ Therefore, a 3.55 keV XRISM X-ray line accompanied by a temporally and spatially
 
 **11.4.8 Weak Lensing Shear Discontinuity: Dark Matter Fracture Morphology Target [Tier 2 mechanism + Tier 3 map implementation]**
 
-GCT makes a mathematically sharp morphology claim for dark matter in merging galaxy clusters: a topological-glass fracture boundary should produce a weak-lensing shear discontinuity co-spatial with the stress-gated 3.55 keV emission region. This is a diagnostic target pending an executable lensing-map pipeline, not yet a binary zero-parameter observational verdict.
+GCT makes a mathematically sharp morphology claim for dark matter in merging galaxy clusters: a topological-glass fracture boundary should produce a weak-lensing shear discontinuity co-spatial with the stress-gated 3.55 keV emission region. This is a diagnostic target pending an executable lensing-map pipeline, not yet a closed observational verdict from the current postulate set.
 
 **Physical Argument.** In GCT, dark matter is the **Topological Glass** of the vacuum supersolid (§11.2.1). Like all glasses, it undergoes a **first-order fracture transition** when the applied stress exceeds the yield strength $\sigma_{crit} = K_\perp \times \phi^{-5}$ (§11.1.3). This fracture is a sharp phase boundary: on one side, the glass is intact (elastic regime, no emission); on the other, it is fractured (post-yield regime, emitting 3.55 keV). Because the vacuum is a supersolid with global phase coherence (§11.2.1), the fracture front propagates coherently, producing a **mathematically sharp phase-transition boundary** in the dark matter distribution.
 

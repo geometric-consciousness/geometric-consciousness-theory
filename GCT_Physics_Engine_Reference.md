@@ -3773,15 +3773,22 @@ def prove_lemma_iii():
     }
 
 def verify_h4_coxeter_phi():
-    """Theorem T-McKay Step 3: Coxeter Eigenvalue Verification."""
+    """Theorem T-McKay Step 3: H4 Cartan/root-metric phi check."""
     # The H4 Coxeter number h = 30.
     # The characteristic exponents are 1, 11, 19, 29.
     # The eigenvalues are exp(2*pi*i * m / h).
     m = np.array([1, 11, 19, 29])
     h = 30
-    # In H4, the spectral radius of the projection is phi-dependent.
-    # This is a Tier 1 mathematical property of the H4 root system.
-    return {"h4_coxeter_number": h, "exponents": m.tolist(), "phi_verified": True}
+    # The Coxeter-element eigenvalues are unit-modulus roots of unity; phi is
+    # not their modulus. Phi enters through the H4 Cartan entry -phi and the
+    # associated root metric that fixes the Elser-Sloane projection slope.
+    phi = (1.0 + np.sqrt(5.0)) / 2.0
+    cartan_phi = 2.0 * np.cos(np.pi / 5.0)                      # |H4 pentagonal Cartan entry| == phi
+    eigenvalue_magnitudes = np.abs(np.exp(2j * np.pi * m / h))  # Coxeter-element eigenvalues, all unit-modulus
+    phi_verified = bool(
+        np.isclose(cartan_phi, phi) and np.allclose(eigenvalue_magnitudes, 1.0)
+    )
+    return {"h4_coxeter_number": h, "exponents": m.tolist(), "phi_verified": phi_verified}
 
 # ── 6. Main Audit ─────────────────────────────────────────────────────────────
 
@@ -21414,7 +21421,7 @@ def compute() -> dict:
     M_R_GUT = M_PLANCK_MEV * PHI_NEG_9
     seesaw_GUT = seesaw_2x2_eigenvalues(m_Dirac_GCT, M_R_GUT)
 
-    # Reconciled scales (Theorem 9.1 form):
+    # Aligned scales (Theorem 9.1 form):
     # Theorem 9.2 gives m_nu = m_e^2 * phi^(-27)/M_red. Setting equal to
     # Theorem 9.1 m_nu = m_e * phi^(-36) forces M_red = m_e * phi^9.
     # The See-Saw matrix M_R entry is M_E_6 = M_red * phi^(-9) = m_e.
@@ -21537,7 +21544,7 @@ def main():
     print(f"T92 (GUT See-Saw form, M_R=GUT):       m_nu = "
           f"{c['m_nu_T92_GUT_MeV']*1e6:.4e} meV "
           f"(={c['T92_GUT_to_T91_ratio']:.3e} x T91; off by 21 orders)")
-    print(f"Reconciled See-Saw (M_R = m_e*phi^9):  -> phase 1 below")
+    print(f"Aligned See-Saw (M_R = m_e*phi^9):  -> phase 1 below")
     print()
     print(f"baseline (2x2 See-Saw):")
     print(f"  light eigenvalue = {p1['light_eigenvalue_MeV']*1e6:.4f} meV")
@@ -22859,7 +22866,7 @@ def derive_strange_drag(z6_data: dict, ckm_data: dict) -> dict:
        → Strange quark correction factor: (1 − 12α)
 
     The ratio of drag coefficients:
-        12 / 5 = 2.4   [pure geometric invariant — no free parameters]
+        12 / 5 = 2.4   [pure geometric invariant — no additional fitted coefficient]
 
     Numerical verification
     ----------------------
@@ -23333,7 +23340,7 @@ where:
       N_C3_axes = |C₃ class| / 2 = 20 / 2 = 10.
   This count is an exact result from the character table of I_h.
   Its use as the VEV saturation handle is the registered canonical pathway,
-  not a standalone parameter-free VEV derivation.
+  not a standalone closed VEV derivation from the current postulate set.
   The model assumes the canonical muon-defect-saturation channel uses the
   full set of three-fold symmetry axes in the projection window.
   The 10 C₃ axes are the full set of three-fold symmetry axes in the window.
@@ -26714,10 +26721,10 @@ def run_protocol():
         print("FAIL: Classification error. Expected Tier 1.")
         sys.exit(1)
         
-    # 3. Must verify H4 Coxeter phi-optimality
+    # 3. Must verify the H4 Cartan/root-metric phi check
     h4 = audit_results.get("h4_coxeter", {})
     if not h4.get("phi_verified"):
-        print("FAIL: H4 Coxeter phi-optimality not verified.")
+        print("FAIL: H4 Cartan/root-metric phi check not verified.")
         sys.exit(1)
         
     print("\n[VERDICT] Tier 1 McKay Derivation: VERIFIED")
@@ -28244,8 +28251,8 @@ Standard MSW cannot close the gap:
 Status - Itinerant Volume Drag excluded:
   An alternative perturbation Δĥ_drag = γ (J · w) (invoked elsewhere to induce a 4.5°
   eigenbasis rotation) is excluded from the registered prediction. Its coupling γ is not derived
-  from the phason elastic action, so it is excluded under zero-free-parameter
-  integrity (see Ch09 §9.4.2).
+  from the phason elastic action, so it is excluded as an undisclosed
+  sector handle (see Ch09 §9.4.2).
 
   The bare 45° prediction is classified Tier 3 (Tension) pending a lattice-
   Hamiltonian derivation of neutrino propagation through the discrete
@@ -33010,7 +33017,7 @@ def run_sign_diagnostic():
         "class_sum_eff_backsolved_interp_to_target_ppm__diagnostic_only": c2_match,
         "class_sum_eff_backsolved_interp_to_target_ppm__diagnostic_note": "Interpolation-on-log-grid diagnostic; not a derived match -- the protocol's verdict is sign-validated-only, the class_sum_eff value here is for inspection of where the target ppm sits in the swept range and should NOT be treated as the magnitude derivation. Magnitude derivation closure is registered under App H O.19; the sweep here gives only the order-of-magnitude bracket.",
         "backsolved_value_falls_inside_wide_retunable_bracket__not_validation": bool(consistent_with_range),
-        "registry_claim_scope": "Sign-validation only; not a parameter-free magnitude closure.",
+        "registry_claim_scope": "Sign-validation only; not a closed magnitude derivation from the current postulate set.",
         "verdict": direction,
         "framing": framing,
     }
@@ -38378,9 +38385,9 @@ def estimate_alpha_residual_ppm(F_Frob_squared: float,
 
         delta(alpha^-1) / alpha^-1 ~ (|F|_Frob^2 / (4 pi)) * (constant of O(1))
 
-    For the present model the constant of O(1) is parameter-free at this
-    order. The estimate below uses constant = normalization_factor (default
-    1).
+    For the present model the constant of O(1) is treated as a canonical
+    normalization at this order. The estimate below uses constant =
+    normalization_factor (default 1).
 
     Returns
     -------
@@ -41528,7 +41535,7 @@ def estimate_top_qcd_correction():
     """
     Estimate the leading-order QCD pole-mass correction to the tree-level GCT top quark.
     Explains why the 0.89% residual is theoretically bounded (QLQCD-2L target).
-    Inputs from first principles (alpha_s PDG, m_t GCT), no free parameters.
+    Inputs from first principles (alpha_s PDG, m_t GCT), with no additional fitted coefficient.
     """
     import math
     phi = float(C.PHI) if hasattr(C, 'PHI') else 1.6180339887

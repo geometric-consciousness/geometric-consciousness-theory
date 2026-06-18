@@ -23,6 +23,6 @@
     "K_ratio_expected": 0.00017307027171223924,
     "lattice_speed_of_light_phi_minus_9": 0.01315561749642483,
     "all_three_machine_precision_match": true,
-    "derivation_note": "The Gram-determinant ratio det(G_perp)/det(G_para) = phi^-6 is the algebraic identity following from the cut-and-project lattice basis. The cube relationship K ~ det^3 arises from the 3-dimensional projected continuum (elastic stiffness is energy density per unit volume in 3D). Composition gives K_perp/K_para = phi^-18 with no free parameters. The exponent 18 is the H_3 invariant-degree sum (App K \u00a7K.4; real dimension of the Q(sqrt 5) representation = 18), a Tier 2 geometric input; the Tier 2 identification with the physical phason elastic sector is the substantive claim."
+    "derivation_note": "The Gram-determinant ratio det(G_perp)/det(G_para) = phi^-6 is the algebraic identity following from the cut-and-project lattice basis. The cube relationship K ~ det^3 arises from the 3-dimensional projected continuum (elastic stiffness is energy density per unit volume in 3D). Composition gives K_perp/K_para = phi^-18 with no additional fitted coefficient. The exponent 18 is the H_3 invariant-degree sum (App K \u00a7K.4; real dimension of the Q(sqrt 5) representation = 18), a Tier 2 geometric input; the Tier 2 identification with the physical phason elastic sector is the substantive claim."
   }
 }

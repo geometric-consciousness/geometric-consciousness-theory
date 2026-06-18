@@ -359,7 +359,7 @@ def run_sign_diagnostic():
         "class_sum_eff_backsolved_interp_to_target_ppm__diagnostic_only": c2_match,
         "class_sum_eff_backsolved_interp_to_target_ppm__diagnostic_note": "Interpolation-on-log-grid diagnostic; not a derived match -- the protocol's verdict is sign-validated-only, the class_sum_eff value here is for inspection of where the target ppm sits in the swept range and should NOT be treated as the magnitude derivation. Magnitude derivation closure is registered under App H O.19; the sweep here gives only the order-of-magnitude bracket.",
         "backsolved_value_falls_inside_wide_retunable_bracket__not_validation": bool(consistent_with_range),
-        "registry_claim_scope": "Sign-validation only; not a parameter-free magnitude closure.",
+        "registry_claim_scope": "Sign-validation only; not a closed magnitude derivation from the current postulate set.",
         "verdict": direction,
         "framing": framing,
     }

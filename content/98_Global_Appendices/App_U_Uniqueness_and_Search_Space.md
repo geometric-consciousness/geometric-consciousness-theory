@@ -72,9 +72,9 @@ The raw combined probability of chance-matching both lepton mass exponents (N=11
 - **Canonical headline (broad internal look-elsewhere): ≈2.6σ** from the full $\mathbb{Z}[\phi]$ multi-base sweep over Lucas-vs-non-Lucas exponent assignments (Firewall §3 Master Statistical Table + App R §R.9.2).
 - **Conditional auxiliary: ≈3.1σ** under the Conservative full-SM-texture window $N \in [4, 50]$ across ~25,000 trial pairs. The window choice is itself a framework-internal prior; citing this figure as headline without naming the window prior is significance laundering under the Firewall governance discipline.
 - **Conditional auxiliary: ≈4.4σ** under the framework's depinning-threshold prior $N \in [8, 25]$ (153 trial pairs; the $N=8$ lower bound is itself a structural postulate per Ch08 §8.1.1). Citing this figure as headline without naming the conditioning prior is significance laundering under the Firewall governance discipline.
-- **No separate $\gtrsim 4.7\sigma$ Postulate-G auxiliary is retained under the corrected Galois search space.** Postulate G restricts admissible exponent arithmetic to Galois-compatible integer powers $N \in \mathbb{Z}$ rather than to Lucas numbers specifically; with that corrected search-space it does not supply an additional narrower trial factor beyond the canonical multi-base / depinning-window disclosures. Postulate G remains a structural postulate of the framework rather than an independently established constraint.
+- **No separate $\gtrsim 4.7\sigma$ Postulate-G auxiliary is retained under the Galois-compatible search space.** Postulate G restricts admissible exponent arithmetic to Galois-compatible integer powers $N \in \mathbb{Z}$ rather than to Lucas numbers specifically; within that search space it does not supply an additional narrower trial factor beyond the canonical multi-base / depinning-window disclosures. Postulate G remains a structural postulate of the framework rather than an independently established constraint.
 
-The canonical headline figure across the manuscript is **≈2.6σ** (broad internal look-elsewhere); the 3.1σ and 4.4σ figures are conditional auxiliaries cited only with their conditioning priors named at the point of citation — **subject also to the search-space disclosure of §U.5.4 below**. A Lucas-only / Postulate-G-only $\gtrsim 4.7\sigma$ auxiliary is not supported after correcting Postulate G to $N \in \mathbb{Z}$.
+The canonical headline figure across the manuscript is **≈2.6σ** (broad internal look-elsewhere); the 3.1σ and 4.4σ figures are conditional auxiliaries cited only with their conditioning priors named at the point of citation — **subject also to the search-space disclosure of §U.5.4 below**. A Lucas-only / Postulate-G-only $\gtrsim 4.7\sigma$ auxiliary is not supported when Postulate G is treated as the integer-exponent condition $N \in \mathbb{Z}$.
 
 ### **U.5.4 Search-Space Disclosure**
 
@@ -96,13 +96,15 @@ If one removes the symmetry-octave + Galois-rationality pre-filters and counts t
 
 ## U.6 Lemma III (Complete Proof): Uniqueness of the Icosahedral Vacuum [Tier 2]
 
+The lemma assumes the maximal-finite-point-symmetry axiom rather than bare isotropy alone. Octahedral $O_h$ and tetrahedral $T_d$ point groups also satisfy macroscopic finite-point isotropy, so isotropy by itself cannot choose the icosahedral substrate. The additional architectural premise is that the discrete vacuum uses the largest finite rotational order compatible with three-dimensional point symmetry; within that premise, the following cohomological and spinorial classification selects the icosahedral branch. This is why the Axiom Ledger classifies the substrate as an architectural postulate rather than a deductive consequence of isotropy alone.
+
 > **Lemma III: Proof Status [Tier 1/2 — Uniqueness-Justified Structural Postulate]**
 >
 > Lemma III is established by two complementary proofs that together cover the logical space of quasicrystalline alternatives, *conditional on* the architectural commitment that the physical vacuum admits a polyhedral 3D point-group symmetry:
 >
 > - **§U.6.1 (Group Cohomology / Schur Multipliers):** Among binary polyhedral candidates ($2T \to E_6$, $2O \to E_7$, $2I \to E_8$), only $A_5$ (Icosahedral) is perfect with $H_1 = 0$, guaranteeing a unique universal central extension ($2I$). Tetrahedral and octahedral alternatives fail this perfectness condition.
 >
-> - **§U.6.2 (Atiyah–Hirzebruch / Stiefel–Whitney $w_2$):** Among non-polyhedral quasicrystalline symmetries (Decagonal $D_{10h}$, Octagonal $D_{8h}$), the classifying spaces carry a topological obstruction $w_2 \neq 0 \in H^2(B\Gamma, \mathbb{Z}_2)$ that prevents a globally consistent Spin structure without introducing a new free parameter.
+> - **§U.6.2 (Atiyah–Hirzebruch / Stiefel–Whitney $w_2$):** Among non-polyhedral quasicrystalline symmetries (Decagonal $D_{10h}$, Octagonal $D_{8h}$), the classifying spaces carry a topological obstruction $w_2 \neq 0 \in H^2(B\Gamma, \mathbb{Z}_2)$ that prevents a globally consistent Spin structure without introducing a new structural handle.
 >
 > Together, §U.6.1 + §U.6.2 eliminate every quasicrystalline competitor — binary polyhedral and non-polyhedral alike — once the vacuum is required to admit a polyhedral 3D symmetry that supports Spin structure. Both proofs invoke standard textbook constructions (group cohomology and the Atiyah–Hirzebruch spectral sequence); the architectural commitment is the *premise*, not the proof. Lemma III is therefore classified **Tier 1/2 (Uniqueness-Justified Structural Postulate)**: the elimination of competitors is unconditional within the postulated class; the elevation to full Tier 1 would require an axiom-level argument that the vacuum must possess polyhedral symmetry rather than, for example, no symmetry at all.
 
@@ -250,7 +252,7 @@ The Elser–Sloane projection (Elser & Sloane 1987, *J. Phys. A* 20: 6161) is th
 $$\pi_{ES}: \mathbb{R}^8 \longrightarrow \mathbb{R}^4$$
 defined by the matrix
 $$P_{ES} = \frac{1}{\sqrt{2(2+\phi)}} \begin{pmatrix} \phi & 0 & 1 & 0 & 0 & 0 & 0 & -1/\phi \\ 0 & \phi & 0 & 1 & 0 & 0 & 1/\phi & 0 \\ 0 & 0 & \phi & 0 & 1 & 1/\phi & 0 & 0 \\ 0 & 0 & 0 & \phi & 1/\phi & -1 & 0 & 0 \end{pmatrix}$$
-which sends the 240 roots of $E_8$ exactly onto the 120 vertices of the 600-cell (the $H_4$ root system), doubly covered. The eigenvalues of the Coxeter element of $H_4$ are $e^{2\pi i j / 30}$ for $j \in \{1, 11, 19, 29\}$; the dominant ratio is $\phi$, which is forced as the projection slope by the $H_4$ Coxeter number $h = 30$ via $\cos(\pi/5) = \phi/2$. The further projection $\mathbb{R}^4 \to \mathbb{R}^3$ from $H_4$ onto its $H_3$ sub-root-system yields the icosahedral 3D quasicrystal, with acceptance window the rhombic triacontahedron $\mathcal{M}_{RT}$. [Tier 1 — closed in Elser & Sloane 1987; verified independently in Moody & Patera 1993, *J. Phys. A* 26: 2829.]
+which sends the 240 roots of $E_8$ exactly onto the 120 vertices of the 600-cell (the $H_4$ root system), doubly covered. The eigenvalues of the Coxeter element of $H_4$ are $e^{2\pi i j / 30}$ for $j \in \{1, 11, 19, 29\}$ and therefore have unit modulus. The Golden Ratio enters instead through the $H_4$ Cartan entry $-\phi$, the associated pentagonal root metric, and the Elser-Sloane cut-and-project geometry via $\phi=2\cos(\pi/5)$; it is not the modulus of a Coxeter-element eigenvalue. The further projection $\mathbb{R}^4 \to \mathbb{R}^3$ from $H_4$ onto its $H_3$ sub-root-system yields the icosahedral 3D quasicrystal, with acceptance window the rhombic triacontahedron $\mathcal{M}_{RT}$. [Tier 1 — closed in Elser & Sloane 1987; verified independently in Moody & Patera 1993, *J. Phys. A* 26: 2829.]
 
 ##### U.7.2.4 The Atiyah–Patodi–Singer framework (standard form)
 
@@ -294,13 +296,13 @@ $$n_{\mathrm{def}} \;=\; -\tfrac{1}{2}\eta(D|_{\partial \mathcal{M}_{RT}}) \;\st
 
 > **Remark T-McK.3.A.** The dimension count is the same as Bak's 1985 "Phenomenological theory of icosahedral incommensurate order" (*Phys. Rev. Lett.* 54: 1517), in which the indexing problem for the icosahedral phase forces a 6-dimensional Miller-index space. The Elser–Sloane projection is the canonical realization; alternative projections (e.g., Kalugin–Kitayev–Levitov 1985, *JETP Lett.* 41: 145) give the same dimension by the same totient argument.
 
-##### Lemma T-McK.4 (φ-slope forcing: the $H_4$ Coxeter eigenvalue) [Tier 1]
+##### Lemma T-McK.4 (φ-slope forcing: the $H_4$ Cartan/root-metric slope) [Tier 1]
 
-*The projection slope of the Elser–Sloane map is exactly $\phi = (1+\sqrt{5})/2$; this slope is forced by the eigenvalue structure of the $H_4$ Coxeter element and admits no free parameter.*
+*The projection slope of the Elser–Sloane map is exactly $\phi = 2\cos(\pi/5)=(1+\sqrt{5})/2$; this slope is forced by the $H_4$ Cartan entry $-\phi$, the golden-ratio root metric, and the cut-and-project geometry, with no continuous adjustable parameter.*
 
-*Proof.* The Coxeter element $c \in H_4$ has order $h = 30$ (the Coxeter number of $H_4$). Its eigenvalues on $\mathbb{R}^4 \otimes \mathbb{C}$ are $e^{2\pi i d_j / h}$ where $d_j \in \{2, 12, 20, 30\}$ are the degrees of $H_4$'s fundamental invariants (Humphreys, *Reflection Groups and Coxeter Groups*, §3.7). The dominant ratio between the two largest moduli of the projection eigenvalues is
+*Proof.* The Coxeter element $c \in H_4$ has order $h = 30$ (the Coxeter number of $H_4$). Its eigenvalues on $\mathbb{R}^4 \otimes \mathbb{C}$ are $e^{2\pi i m_j / h}$ where $m_j \in \{1, 11, 19, 29\}$ are the exponents of $H_4$ (the fundamental-invariant degrees $\{2, 12, 20, 30\}$ minus one; Humphreys, *Reflection Groups and Coxeter Groups*, §3.16). These Coxeter-element eigenvalues lie on the unit circle and do not have magnitude $\phi$. The golden ratio enters instead through the pentagonal Cartan entry and the associated root metric:
 $$\bigl|2 \cos(\pi/5)\bigr| = \phi,$$
-which is the eigenvalue of the inflation operator of the $H_4$ tiling. The Elser–Sloane projector is the orthogonal projection onto the 4-plane spanned by the Coxeter eigenvectors with eigenvalues $e^{\pm 2\pi i / 30}$ and $e^{\pm 11 \cdot 2\pi i / 30}$; the ratio of the eigenvalue moduli is the inflation factor $\phi$. No free real parameter enters the construction: the slope is fixed by the Coxeter spectrum of $H_4$, which is fixed by the Lie-algebraic structure of $E_8$. $\square$
+and this golden metric fixes the irrational cut-and-project slope of the Elser–Sloane map. The Elser–Sloane projector is the orthogonal projection onto the $H_4$-adapted plane determined by the pentagonal simple-root geometry; the slope is the golden-ratio metric of that plane, not the modulus of a Coxeter-element eigenvalue. No continuous real parameter enters the construction: the slope is fixed by the $H_4$ Cartan/root system, which is fixed by the Lie-algebraic structure of $E_8$. $\square$
 
 ---
 
@@ -313,7 +315,7 @@ Assembling the lemmata:
 3. **Lemma T-McK.1b** identifies the Spin-Statistics dependency: persistent fermion knotting at the icosahedral vacuum requires the WZW phase $\pi$ of App C §C.4 to be the *correct* APS defect index. The algebraic step is Tier 1; the quantitative APS computation is Tier 2 with the reduction of §U.7.6.
 4. **Lemma T-McK.2** forces $E_8$ as the unique simply-laced Lie algebra in the McKay correspondence assigned to $2I$. *Tier 1 — closed in McKay 1980.*
 5. **Lemma T-McK.3** forces $\mathbb{Z}^6$ as the unique minimal periodic parent lattice via the Elser–Sloane projection $E_8 \to H_4 \to H_3$. *Tier 1 — closed in Elser–Sloane 1987 and Moody–Patera 1993.*
-6. **Lemma T-McK.4** forces the projection slope to be $\phi$. *Tier 1 — closed in Humphreys §3.7 and the $H_4$ Coxeter spectrum.*
+6. **Lemma T-McK.4** forces the projection slope to be $\phi$. *Tier 1 — closed in Humphreys §3.7 and the $H_4$ Cartan/root metric.*
 
 Composing the chain:
 $$A_5 \;\xrightarrow{\;\text{T-McK.1a}\;}\; 2I \;\xrightarrow{\;\text{T-McK.2 (McKay)}\;}\; E_8 \;\xrightarrow{\;\text{T-McK.3 (Elser–Sloane)}\;}\; \mathbb{Z}^6 \;\xrightarrow{\;\text{cut-and-project}\;}\; H_3,$$
@@ -505,7 +507,7 @@ Therefore $n = 1$, giving
 $$\boxed{A_\theta = \tfrac{1}{2}\sigma_z}$$
 is the **unique** connection compatible with the $2I$ fiber symmetry. $\square$
 
-**Tier:** Tier 1 — pure algebraic theorem; no physical input, no free parameters.
+**Tier:** Tier 1 — pure algebraic theorem; no physical input or continuous adjustable coefficient.
 
 **Corollary (Proton Mass Exponent):** Holonomy $-I_2$ implies Berry phase
 $\gamma = \pi$ (half-winding $N_\mathrm{weak} = 1/2$). Icosahedral projection
@@ -542,7 +544,7 @@ $\|U_\mathrm{weak} + I_2\|_F < 10^{-9}$ for $N_\mathrm{steps} = 10{,}000$.*
 >
 > No other rational power of $\phi$ is consistent with the joint constraint T1.a $\wedge$ T1.b $\wedge$ T1.c. Hence $n = -3$ is uniquely forced. $\square$
 >
-> **Tier 1 disposition.** Given the volumetric identification as the structural definition of the bare angle (Ch04 §4.3.1; the Weinberg angle is the ratio of the 3D projected volumes of $E_\perp$ relative to $E_\parallel$), the *specific value* $\phi^{-3}$ is forced by the composition of three independent Tier 1 inputs (T1.a–T1.c) with no free parameter and no alternative permitted. Theorem U.9 is the corresponding Tier 1 Uniqueness Theorem.
+> **Tier 1 disposition.** Given the volumetric identification as the structural definition of the bare angle (Ch04 §4.3.1; the Weinberg angle is the ratio of the 3D projected volumes of $E_\perp$ relative to $E_\parallel$), the *specific value* $\phi^{-3}$ is forced by the composition of three independent Tier 1 inputs (T1.a–T1.c) with no additional fitted coefficient and no alternative permitted. Theorem U.9 is the corresponding Tier 1 Uniqueness Theorem.
 >
 > **Numerical verification.** `GCT_Physics_Engine/src/protocol_weinberg_uniqueness.py` computes the squared norms from the canonical AKN unnormalised projection matrices, confirms $|E^\parallel_i|^2 = 1+\phi^2$ and $|E^\perp_i|^2 = 1+\phi^{-2}$ to machine precision, verifies the length ratio $\phi^{-1}$, and cubes it to recover $V_\perp/V_\parallel = \phi^{-3} = 0.2360679775$. The certificate is stored at `GCT_Physics_Engine/data/protocol_weinberg_uniqueness_results.json`.
 >

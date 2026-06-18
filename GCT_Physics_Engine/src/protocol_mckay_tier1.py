@@ -49,10 +49,10 @@ def run_protocol():
         print("FAIL: Classification error. Expected Tier 1.")
         sys.exit(1)
         
-    # 3. Must verify H4 Coxeter phi-optimality
+    # 3. Must verify the H4 Cartan/root-metric phi check
     h4 = audit_results.get("h4_coxeter", {})
     if not h4.get("phi_verified"):
-        print("FAIL: H4 Coxeter phi-optimality not verified.")
+        print("FAIL: H4 Cartan/root-metric phi check not verified.")
         sys.exit(1)
         
     print("\n[VERDICT] Tier 1 McKay Derivation: VERIFIED")

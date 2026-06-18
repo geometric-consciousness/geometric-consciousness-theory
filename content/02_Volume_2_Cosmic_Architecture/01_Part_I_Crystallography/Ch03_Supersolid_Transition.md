@@ -85,7 +85,7 @@ Standard cosmology utilizes the **Inflation Hypothesis** (an exponential expansi
 Because our 3D space is a projection of a 6D lattice, points that are billions of light-years apart in $E_\parallel$ (Physical Space) were **adjacent and connected** in the 6D parent space $\mathbb{R}^6$ prior to and during the phase transition. 
 * **Connectivity:** The "Horizon" is a 3D artifact. In 6D, the entire universe was in causal contact through the $E_\perp$ (internal) dimensions.
 * **Flatness:** The universe appears flat because it is a slice of a Euclidean 6D lattice.
-* **Conclusion:** GCT solves the Horizon and Flatness problems through **High-Dimensional Connectivity**, removing the need for the hypothetical "Inflaton" field and the fine-tuning of the expansion rate.
+* **Conclusion:** GCT offers a geometric resolution of the Horizon and Flatness problems through **High-Dimensional Connectivity** [Tier 2 mechanism]; the quantitative match remains an open derivation.
 
 ---
 

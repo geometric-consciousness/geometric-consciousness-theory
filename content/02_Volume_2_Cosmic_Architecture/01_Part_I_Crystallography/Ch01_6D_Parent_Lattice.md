@@ -57,7 +57,7 @@ The relationship between the three lattices is [Tier 2 — the chain of embeddin
 $$D_6 = \{ \mathbf{n} \in \mathbb{Z}^6 : \sum_{i=1}^6 n_i \equiv 0 \pmod{2} \} \subsetneq \mathbb{Z}^6 \hookrightarrow E_8$$
 where $D_6$ is the index-2 sublattice relevant to the SU(3) color sector (V3 Ch03), and $\mathbb{Z}^6$ is the full coordination lattice used for lepton and phason dynamics. The embedding $\mathbb{Z}^6 \hookrightarrow E_8$ is via the Elser-Sloane projection (App_U §U.7). All three notations appear in this monograph; the correct choice is always context-dependent and stated explicitly.
 
-The Icosahedral point group $H_3$ that characterizes our 3D reality is a specific subgroup of these higher-dimensional root systems, selected because it maximizes irrationality and prevents phason-locking (the Icosahedral Selection Theorem, V1 Ch 12).
+The Icosahedral point group $H_3$ that characterizes our 3D reality is a specific subgroup of these higher-dimensional root systems. App U proves its point-group uniqueness conditional on H1; the associated Golden Ratio slope is the primary Diophantine candidate for suppressing phason-locking, with global entropy-functional maximality still open.
 
 **1.2.2 The Voronoi Decomposition**
 

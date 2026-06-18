@@ -29,7 +29,7 @@ The "Bullet Cluster" (1E 0657-56) is often cited as the definitive **Proof of Pa
 * **Phase Separation:** The system separates into two phases with distinct viscosities:
  1. **The Phonon Sector (Baryons):** The gas interacts via the "stiff" phonon modes (electromagnetism/pressure), exhibiting high viscosity and shock fronts. It slows down.
  2. **The Phason Sector (Solenoid Halo):** The shattered vacuum energy forms a cloud of **Unpinned Phason Defects** ($E_\perp$). These defects are decoupled from the phonon metric; they interact only via the acoustic metric (Gravity).
-* **The Result:** The "Solenoid Halo" of phason debris moves ballistically, preserving its momentum like a collisionless fluid. It naturally leads the viscous baryonic gas. The observation confirms **Vacuum Superfluidity**, not a new particle.
+* **The Result:** The "Solenoid Halo" of phason debris moves ballistically, preserving its momentum like a collisionless fluid. It naturally leads the viscous baryonic gas. The observation is consistent with **Vacuum Superfluidity** [Tier 2 mechanism; Tier 3 postdiction-consistency] and does not uniquely favor a new particle, but it does not constitute a decisive confirmation.
 
 **13.1.4 The Rheological Phase Diagram [Tier 2]**
 

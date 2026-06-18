@@ -137,7 +137,7 @@ $$Q_\perp = \int d^3r\, \Phi_\perp(\mathbf{r}) = \frac{\mathcal{F}_\perp}{K_\per
 
 $$\boxed{\;Q_\perp^{\text{primitive}} = a_6^2\, \xi^2\, \sqrt{3 - \varphi}\;} \quad [\text{Tier 1}]$$
 
-**Zero free parameters.** Everything on the right is either fundamental (a₆, ξ) or a pure geometric φ-expression (√(3 − φ)).
+**No additional free parameters within this derivation step.** Everything on the right is either fundamental (a₆, ξ) or a pure geometric φ-expression (√(3 − φ)).
 
 ## 1b.9 Numerical Value (Lattice Units)
 

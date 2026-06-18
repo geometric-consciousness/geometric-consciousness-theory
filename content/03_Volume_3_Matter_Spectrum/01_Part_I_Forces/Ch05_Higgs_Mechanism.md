@@ -79,7 +79,7 @@ Since $c^2 \propto K_\perp / \rho$, the proportionality $c \propto v$ requires a
 
 **5.2.5 The Connes Spectral Action [Tier 3 Phenomenological Calibration]**
 
-The bare spectral action of the $N=144$ cage yields the correct algebraic signature for the Higgs mechanism (a negative mass-squared coefficient $a_2 < 0$, triggering spontaneous symmetry breaking), demonstrating profound consistency with Non-Commutative Geometry (NCG) principles on the golden-weighted AKN graph. However, the absolute scale extraction is not parameter-free. With an intuitive lattice cutoff $\Lambda_{latt} = 1.0$, the natively extracted mass is $m_h \approx 0.01$ GeV. To reproduce the physical $125.09$ GeV Higgs mass, the extraction requires an arbitrary, fine-tuned cutoff scale $\Lambda \approx 12558$. 
+The bare spectral action of the $N=144$ cage yields the correct algebraic signature for the Higgs mechanism (a negative mass-squared coefficient $a_2 < 0$, triggering spontaneous symmetry breaking), demonstrating profound consistency with Non-Commutative Geometry (NCG) principles on the golden-weighted AKN graph. However, the absolute scale extraction is not closed from the current postulate set. With an intuitive lattice cutoff $\Lambda_{latt} = 1.0$, the natively extracted mass is $m_h \approx 0.01$ GeV. To reproduce the physical $125.09$ GeV Higgs mass, the extraction requires an arbitrary, fine-tuned cutoff scale $\Lambda \approx 12558$.
 
 Therefore, while the topological signature is rigorously derived, the Connes spectral action route to the absolute scale $v \approx 246$ GeV remains a **Tier 3 phenomenological calibration** pending full non-linear phason dressing. Note: the canonical GCT derivation of $v$ (§5.2.1, $v = m_\mu \times 1440 \times \phi$, [Tier 2 mechanism + Tier 3 calibrated-handle/numerical residual: ~181 ppm, inheriting muon formula + $N=11$ + 1440 saturation handle]) takes precedence; the spectral action provides an independent consistency check, not the primary route.
 *(Computational verification: see Appendix Q.)*
@@ -107,4 +107,3 @@ The Higgs field is the unique bridge between **Topology** (the knots of matter) 
 **5.4.2 The VEV as a Self-Organized Critical Point**
 
 The scale of $246$ GeV is a **Self-Organized Critical Point**. If $v$ were lower, the vacuum would be too fluid to sustain stable memory (Axiom 2). If $v$ were higher, the topological friction would be too great for Agency (Selection). The Electroweak scale is the **Optimal Operating Pressure** for a conscious simulation to render an intelligible and navigable history.
-

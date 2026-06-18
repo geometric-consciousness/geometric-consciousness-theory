@@ -302,9 +302,9 @@ def estimate_alpha_residual_ppm(F_Frob_squared: float,
 
         delta(alpha^-1) / alpha^-1 ~ (|F|_Frob^2 / (4 pi)) * (constant of O(1))
 
-    For the present model the constant of O(1) is parameter-free at this
-    order. The estimate below uses constant = normalization_factor (default
-    1).
+    For the present model the constant of O(1) is treated as a canonical
+    normalization at this order. The estimate below uses constant =
+    normalization_factor (default 1).
 
     Returns
     -------

@@ -34,7 +34,7 @@ where:
       N_C3_axes = |C₃ class| / 2 = 20 / 2 = 10.
   This count is an exact result from the character table of I_h.
   Its use as the VEV saturation handle is the registered canonical pathway,
-  not a standalone parameter-free VEV derivation.
+  not a standalone closed VEV derivation from the current postulate set.
   The model assumes the canonical muon-defect-saturation channel uses the
   full set of three-fold symmetry axes in the projection window.
   The 10 C₃ axes are the full set of three-fold symmetry axes in the window.

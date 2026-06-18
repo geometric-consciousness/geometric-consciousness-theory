@@ -435,15 +435,22 @@ def prove_lemma_iii():
     }
 
 def verify_h4_coxeter_phi():
-    """Theorem T-McKay Step 3: Coxeter Eigenvalue Verification."""
+    """Theorem T-McKay Step 3: H4 Cartan/root-metric phi check."""
     # The H4 Coxeter number h = 30.
     # The characteristic exponents are 1, 11, 19, 29.
     # The eigenvalues are exp(2*pi*i * m / h).
     m = np.array([1, 11, 19, 29])
     h = 30
-    # In H4, the spectral radius of the projection is phi-dependent.
-    # This is a Tier 1 mathematical property of the H4 root system.
-    return {"h4_coxeter_number": h, "exponents": m.tolist(), "phi_verified": True}
+    # The Coxeter-element eigenvalues are unit-modulus roots of unity; phi is
+    # not their modulus. Phi enters through the H4 Cartan entry -phi and the
+    # associated root metric that fixes the Elser-Sloane projection slope.
+    phi = (1.0 + np.sqrt(5.0)) / 2.0
+    cartan_phi = 2.0 * np.cos(np.pi / 5.0)                      # |H4 pentagonal Cartan entry| == phi
+    eigenvalue_magnitudes = np.abs(np.exp(2j * np.pi * m / h))  # Coxeter-element eigenvalues, all unit-modulus
+    phi_verified = bool(
+        np.isclose(cartan_phi, phi) and np.allclose(eigenvalue_magnitudes, 1.0)
+    )
+    return {"h4_coxeter_number": h, "exponents": m.tolist(), "phi_verified": phi_verified}
 
 # ── 6. Main Audit ─────────────────────────────────────────────────────────────
 

@@ -181,7 +181,7 @@ Each of these is a discrete open research target with its own difficulty class. 
 
 ### ZN.5.2 The IR-side activation schedule
 
-The icosahedral activation schedule has only $d=1$ irreps active for $t \le 0$ (the regime $\mu \le M_Z$), which produces a much shallower running than SM in the low-energy regime. A refined schedule that incorporates the **mass thresholds of the lepton sector** as additional activation depths is a natural extension; it would not introduce free parameters (lepton masses are already Tier 2 derivations in V3 Ch07–09) but would require restructuring the irrep-to-particle assignment.
+The icosahedral activation schedule has only $d=1$ irreps active for $t \le 0$ (the regime $\mu \le M_Z$), which produces a much shallower running than SM in the low-energy regime. A refined schedule that incorporates the **mass thresholds of the lepton sector** as additional activation depths is a natural extension; it would not introduce additional fitted coefficients (lepton masses are already Tier 2 mechanisms with the tier qualifications stated in V3 Ch07–09) but would require restructuring the irrep-to-particle assignment.
 
 ### ZN.5.3 SU(3) strong-coupling closure
 
@@ -205,7 +205,7 @@ The GCT-native β-function as derived here is a 1-loop construction. The Tier-2 
 | $\alpha_s(\mu)$ bare | **Tier 3 calibrated handle** ($10\phi^2$, Ch04 §4.5.5; see App TP §TP-C / §TP.3 — factor trace documented, product closure pending) | Tier 3 (10 integer + $\phi^2$ geometric factor; O.42 / QLQCD-2 pending) | O.42 / QLQCD-2 |
 | $\alpha_s(\mu)$ running | Tier 3 (Z_3 anchor calibrated against $|b_3^{\rm SM}| = 7$ SM target; first-principles closure at QLQCD-2 per App Z.7) | Tier 3 (incomplete) | QLQCD-2 (App Z.7) |
 
-The structural claim of §22.8's roadmap is **partially closed**: the SM β-function *structure* (signs, sector hierarchy, saturated values) is reproduced from icosahedral substrate + Gram weights + irrep counting with no fitted shape parameter. The remaining work is to derive the three $Z_i$ normalisations and A2 endpoint boundary ab initio, at which point the closure becomes total. Until then, the gauge-flow sector retains three Tier-3 magnitude anchors plus the A2 endpoint anchor; this is disclosed in Parameter Ledger §0.1 rather than counted as a parameter-free prediction.
+The structural claim of §22.8's roadmap is **partially closed**: the SM β-function *structure* (signs, sector hierarchy, saturated values) is reproduced from icosahedral substrate + Gram weights + irrep counting with no fitted shape parameter. The remaining work is to derive the three $Z_i$ normalisations and A2 endpoint boundary ab initio, at which point the closure becomes total. Until then, the gauge-flow sector retains three Tier-3 magnitude anchors plus the A2 endpoint anchor; this is disclosed in Parameter Ledger §0.1 rather than counted as a closed prediction from the current postulate set.
 
 The full numerical verification, including the UV fixed-point analysis and Asymptotic-Safety comparison, lives in `GCT_Physics_Engine/src/protocol_rge_native.py` and writes its results to `GCT_Physics_Engine/data/protocol_rge_native_results.json`.
 

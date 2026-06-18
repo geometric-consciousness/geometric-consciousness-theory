@@ -74,7 +74,7 @@ Standard candidates fail:
 
 There is a third option, often overlooked: **The Quasicrystal**.
 A Quasicrystal is a structure that is ordered but not periodic. It lacks translational symmetry but possesses **Long-Range Orientational Order**.
-Crucially, quasicrystals can possess "forbidden" rotational symmetries, such as 5-fold (Pentagonal) or Icosahedral symmetry, which are impossible for periodic crystals. Icosahedral symmetry is the closest a lattice can get to perfect spherical isotropy.
+Crucially, quasicrystals can possess "forbidden" rotational symmetries, such as 5-fold (Pentagonal) or Icosahedral symmetry, which are impossible for periodic crystals. Isotropy by itself is not enough to select the icosahedral case: $O_h$ and $T_d$ also satisfy macroscopic finite-point isotropy. GCT therefore adds the maximal-finite-point-symmetry axiom: among finite three-dimensional point groups compatible with a discrete substrate, the icosahedral group is selected as the largest finite rotational order. This is an architectural postulate rather than a deduction from isotropy alone; it is the closest finite lattice symmetry can get to perfect spherical isotropy.
 
 **Rejecting Randomness (Causal Sets)**
 Why not a Random Graph (Causal Set)? A random graph has **Maximal Kolmogorov Complexity**—it is incompressible noise. To specify the universe, one would need to specify every single link individually.
@@ -95,7 +95,7 @@ $$ \mathbb{R}^6 \xrightarrow{\text{Project}} E_\parallel (\text{Physical Space})
 This projection mechanism is not just a mathematical trick; it is the engine of physics.
 * **The $E_8$ Connection:** The 6D lattice $\mathbb{Z}^6$ has an index-2 sublattice $D_6$ (the checkerboard lattice of even-coordinate-sum points), which satisfies the $SU(3)$ color parity requirement (Volume 3). Both $\mathbb{Z}^6$ and $D_6$ embed naturally as coordinate projections of the **$E_8$ Root Lattice** via the Elser-Sloane map (Appendix U §U.7). The inclusion chain is $D_6 \subsetneq \mathbb{Z}^6 \hookrightarrow E_8$.
 * **Emergence of Gauge Symmetries:** The "hidden" dimensions of the lattice ($E_\perp$) do not disappear. They become the internal spaces of particle physics. The Tier 2 icosahedral-projection ansatz yields the registered $\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$ gauge-product candidate, with the full physical Standard-Model spectral-triple identification conditional on App H O.32.
-* **Topological Necessity:** We do not choose this geometry arbitrarily. We choose it because it is the *only* way to have a discrete, isotropic, algorithmically simple universe. *(See Appendix U.6 for the Uniqueness Theorem, which establishes this specifically for binary polyhedral subgroup classifications).* The constants of nature ($\alpha$, masses) are the eigenvalues of this specific projection.
+* **Topological Necessity:** We do not choose this geometry arbitrarily. We choose it because, once maximal finite point symmetry is added to discreteness, isotropy, spinoriality, and algorithmic simplicity, it is the classified residue of the binary polyhedral subgroup analysis. *(See Appendix U.6 for the Uniqueness Theorem.)* The constants of nature ($\alpha$, masses) are spectral and metric invariants of this specific projection.
 
 ---
 

@@ -257,7 +257,7 @@ def estimate_top_qcd_correction():
     """
     Estimate the leading-order QCD pole-mass correction to the tree-level GCT top quark.
     Explains why the 0.89% residual is theoretically bounded (QLQCD-2L target).
-    Inputs from first principles (alpha_s PDG, m_t GCT), no free parameters.
+    Inputs from first principles (alpha_s PDG, m_t GCT), with no additional fitted coefficient.
     """
     import math
     phi = float(C.PHI) if hasattr(C, 'PHI') else 1.6180339887

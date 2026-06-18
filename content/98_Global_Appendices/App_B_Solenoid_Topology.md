@@ -8,7 +8,7 @@ The identity space $\Sigma_\infty$ is the **Inverse Limit** of a system of circl
 
 **Definition:**
 $$\Sigma_\infty = \varprojlim (S^1, f_{nm}) = \left\{ (z_n) \in \prod S^1 : z_n = (z_m)^{m/n} \right\}$$
-While the universal solenoid covers all primes, the GCT Operating System identifies the **5-adic fiber** ($\mathbb{Z}_5$) as the primary structure of the identity bundle. This is forced by the **Icosahedral Selection Theorem** (Chapter 12); the 5-fold symmetry of the physical projection requires a 5-adic tree to encode the hierarchical addresses of the Agents.
+While the universal solenoid covers all primes, the GCT Operating System identifies the **5-adic fiber** ($\mathbb{Z}_5$) as the primary structure of the identity bundle. This follows from the adopted icosahedral point-group structure: App U proves its uniqueness conditional on H1, and the 5-fold symmetry of the physical projection requires a 5-adic tree to encode the hierarchical addresses of the Agents.
 
 **B.2 Pontryagin Duality: The Rigorous Derivation**
 

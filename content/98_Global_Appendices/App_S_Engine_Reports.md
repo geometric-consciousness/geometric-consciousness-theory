@@ -14,7 +14,7 @@ The verification suite covers forty-six analytic derivations, partitioned across
 * **Cosmological sector.** The compatibility of the GCT vacuum with standard cosmological observables, the dark-energy Lagrangian structure $\mathcal{L}_{DE} \propto \dot{\mathcal{I}}$, the dark-matter lattice-fracture spectrum and its $3.55$ keV signature, the pulsar-timing array anisotropy at $\ell=6$, and the bound on Lorentz violation at the lattice scale.
 * **Mixing and precision sector.** The neutrino mass scale at $m_e\,\phi^{-36}$, the Cabibbo angle from icosahedral fiber geometry, the Fuglede–Kadison determinant route to the remaining mixing angles, the muon anomalous magnetic moment at three-loop closure, and the QED audit at the bare baseline.
 * **Phenomenological and biophysical sector.** The Zeno-drive energy budget, the biological-Polaron Kaluza–Klein reduction, the decoherence-rate audit, the isotope-shift experimental forecast, the psychophysical correspondence audit, and the comparison with integrated information theory.
-* **Closure and extension.** The internal consistency checks, the one-loop phason anti-screening pathway for the fine-structure residual, the predictions ledger close-out, the prediction–postdiction firewall preregistration, the Lee-extended consistency check, the spectral-action match, and the McKay–$E_8$ projection identity.
+* **Closure and extension.** The internal consistency checks, the one-loop phason anti-screening pathway for the fine-structure residual, the predictions-ledger closure, the prediction–postdiction firewall preregistration, the Lee-extended consistency check, the spectral-action match, and the McKay–$E_8$ projection identity.
 
 ## S.2 Status of the Computational Suite
 

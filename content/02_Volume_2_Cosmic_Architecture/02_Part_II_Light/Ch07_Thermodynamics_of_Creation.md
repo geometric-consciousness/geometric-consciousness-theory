@@ -13,7 +13,7 @@ A phase transition from a disordered, symmetric state (the primordial void) to a
 The energy density released during the crystallization of the vacuum is on the order of the bulk stiffness $K_\parallel$, which is anchored to the Planck scale:
 $$\Delta \rho_{vac} \approx \frac{E_P}{\ell_P^3} \approx 10^{113} \text{ J/m}^3 \quad \text{[Tier 4 — Planck-scale order-of-magnitude estimate]}$$
 If this immense energy density were allowed to thermalize directly into the 3D physical manifold $E_\parallel$, the resulting temperature $T$ would be dictated by the Stefan-Boltzmann law for a high-energy photon gas. Calculating this "Naive Temperature" by the Planck-scale balance:
-$$T_{naive} \approx \frac{E_P}{k_B} = \frac{\sqrt{\hbar c^5 / G}}{k_B} \approx 1.4 \times 10^{32} \text{ K} \quad \text{[Tier 1 — dimensional identity } k_B T_P \equiv E_P\text{, no free parameters]}$$
+$$T_{naive} \approx \frac{E_P}{k_B} = \frac{\sqrt{\hbar c^5 / G}}{k_B} \approx 1.4 \times 10^{32} \text{ K} \quad \text{[Tier 1 — dimensional identity } k_B T_P \equiv E_P\text{]}$$
 
 **7.1.2 The Initial Thermal Catastrophe**
 

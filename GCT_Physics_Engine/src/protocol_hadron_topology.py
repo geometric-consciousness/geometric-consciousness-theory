@@ -264,7 +264,7 @@ def derive_strange_drag(z6_data: dict, ckm_data: dict) -> dict:
        → Strange quark correction factor: (1 − 12α)
 
     The ratio of drag coefficients:
-        12 / 5 = 2.4   [pure geometric invariant — no free parameters]
+        12 / 5 = 2.4   [pure geometric invariant — no additional fitted coefficient]
 
     Numerical verification
     ----------------------

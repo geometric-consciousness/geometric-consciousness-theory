@@ -196,7 +196,7 @@ def compute() -> dict:
     M_R_GUT = M_PLANCK_MEV * PHI_NEG_9
     seesaw_GUT = seesaw_2x2_eigenvalues(m_Dirac_GCT, M_R_GUT)
 
-    # Reconciled scales (Theorem 9.1 form):
+    # Aligned scales (Theorem 9.1 form):
     # Theorem 9.2 gives m_nu = m_e^2 * phi^(-27)/M_red. Setting equal to
     # Theorem 9.1 m_nu = m_e * phi^(-36) forces M_red = m_e * phi^9.
     # The See-Saw matrix M_R entry is M_E_6 = M_red * phi^(-9) = m_e.
@@ -319,7 +319,7 @@ def main():
     print(f"T92 (GUT See-Saw form, M_R=GUT):       m_nu = "
           f"{c['m_nu_T92_GUT_MeV']*1e6:.4e} meV "
           f"(={c['T92_GUT_to_T91_ratio']:.3e} x T91; off by 21 orders)")
-    print(f"Reconciled See-Saw (M_R = m_e*phi^9):  -> phase 1 below")
+    print(f"Aligned See-Saw (M_R = m_e*phi^9):  -> phase 1 below")
     print()
     print(f"baseline (2x2 See-Saw):")
     print(f"  light eigenvalue = {p1['light_eigenvalue_MeV']*1e6:.4f} meV")

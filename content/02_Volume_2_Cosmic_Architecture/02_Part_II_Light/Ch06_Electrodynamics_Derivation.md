@@ -98,7 +98,7 @@ The dimensionless ratio $\hat c^2$ here is the postulated stiffness ratio $K_\pe
 
 The result $\hat{c} = \phi^{-9} \approx 1/76.01$ means that the speed of organizational refresh in the vacuum is roughly two orders of magnitude slower than the "bare" lattice bonds. 
 
-* **Dependency Chain:** This value inherits the **Tier 2 postulate + Tier 3 specific exponent** disposition of the underlying phason-stiffness ratio (Parameter Ledger §0.1 P3; uniqueness of $D = 18$ pending Open Problem O.15). It is computed from the Hessian matrix of the icosahedral projection under that postulated ratio, with no additional free parameters once $D = 18$ is fixed.
+* **Dependency Chain:** This value inherits the **Tier 2 postulate + Tier 3 specific exponent** disposition of the underlying phason-stiffness ratio (Parameter Ledger §0.1 P3; uniqueness of $D = 18$ pending Open Problem O.15). It is computed from the Hessian matrix of the icosahedral projection under that postulated ratio, with no additional fitted coefficient once $D = 18$ is fixed.
 * **SI Mapping:** In Section M.6, the conversion of $\hat{c} \to c$ ($2.99 \times 10^8$ m/s) establishes the mapping between the lattice spacing $a_6$ and the experimental time-of-flight standards [Tier 2].
 
 > [!NOTE]

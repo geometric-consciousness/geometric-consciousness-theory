@@ -39,8 +39,8 @@ Standard MSW cannot close the gap:
 Status - Itinerant Volume Drag excluded:
   An alternative perturbation Δĥ_drag = γ (J · w) (invoked elsewhere to induce a 4.5°
   eigenbasis rotation) is excluded from the registered prediction. Its coupling γ is not derived
-  from the phason elastic action, so it is excluded under zero-free-parameter
-  integrity (see Ch09 §9.4.2).
+  from the phason elastic action, so it is excluded as an undisclosed
+  sector handle (see Ch09 §9.4.2).
 
   The bare 45° prediction is classified Tier 3 (Tension) pending a lattice-
   Hamiltonian derivation of neutrino propagation through the discrete

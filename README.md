@@ -3,7 +3,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20647445.svg)](https://doi.org/10.5281/zenodo.20647445)
 [![License (manuscript): CC-BY-4.0](https://img.shields.io/badge/License%20(manuscript)-CC--BY--4.0-green.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![License (engine): MIT](https://img.shields.io/badge/License%20(engine)-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version: v1.1.0](https://img.shields.io/badge/Version-v1.1.0-blue.svg)]()
+[![Version: v1.2.1](https://img.shields.io/badge/Version-v1.2.1-blue.svg)]()
 [![Engine: 62/62 PASS](https://img.shields.io/badge/Engine-62%2F62%20PASS-brightgreen.svg)]()
 
 This repository contains the definitive manuscript and the family of autonomous Python verification protocols (>100 scripts under `GCT_Physics_Engine/src/`, cross-checked by `verify_engine.py`'s ~60 independent consistency assertions) for the GCT derivation program: a 6D icosahedral projective framework whose closure target is to recover the dimensionless Standard Model from geometry alone, with $m_e$ as the unique SI-unit anchor. That target is the final ambition, not the present accounting.

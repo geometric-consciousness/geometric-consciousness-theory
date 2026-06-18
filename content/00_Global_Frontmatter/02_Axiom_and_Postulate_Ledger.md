@@ -14,13 +14,14 @@ These axioms constitute the minimal starting point for any intelligible world-mo
 These postulates are explicitly adopted as an architecture for a concrete physical model. They are justified by **minimum additional complexity** (algorithmic parsimony), **empirical adequacy**, and **falsifiability**. They do not follow deductively from the Axioms alone.
 
 - **Discreteness Postulate [Tier 1/2 — Structural Postulate]:** The information content of any finite volume of the physical universe is finite. Reality is sampled/quantized at the planck scale.
+- **Maximal Finite Point Symmetry [Tier 1/2 — Structural Postulate]:** Isotropy alone is insufficient to select the substrate symmetry: $O_h$ and $T_d$ also satisfy macroscopic finite-point isotropy. The architecture therefore adopts the maximal-finite-point-symmetry axiom, selecting the largest finite rotational order compatible with three-dimensional point symmetry, namely the icosahedral group. This is an architectural axiom, not a deduction from Presence and Intelligibility alone.
 - **6D Euclidean Parent Lattice [Tier 1/2 — Uniqueness-Justified Structural Postulate]:** The 6-dimensional
  parent lattice is a derived necessity, obtained from the Binary Icosahedral Group
  $2I$ via the McKay Correspondence ($2I \to E_8$) and the Elser–Sloane projection
  ($E_8 \to \mathbb{Z}^6$). See **Theorem T-McKay** (Appendix U §U.7), which is now
  established by a modular reduction in which four of five forcing lemmata (T-McK.1a
  Schur cover; T-McK.2 McKay correspondence; T-McK.3 Elser–Sloane projection;
- T-McK.4 $\phi$-slope from the $H_4$ Coxeter spectrum) are closed at Tier 1 in the
+ T-McK.4 $\phi$ from the $H_4$ Cartan/root metric) are closed at Tier 1 in the
  published literature, and the single remaining open step (Lemma T-McK.1b, App U
  §U.7.6.3) is reduced to a finite APS spectral-flow computation of the icosahedral
  $\eta$-invariant on the boundary $\partial \mathcal{M}_{RT}$ of the rhombic-triacontahedron
@@ -31,11 +32,13 @@ These postulates are explicitly adopted as an architecture for a concrete physic
  under premise H1 would elevate the chain to Tier 1; closure of premise H1 itself would
  require an axiom-level derivation of polyhedral symmetry from Intelligibility, which is
  the deeper open problem.*
-- **6D φ-slope [Tier 1 Derived]:** The golden ratio φ is forced as the
- projection angle by the $H_4$ Coxeter geometry embedded in the Elser–Sloane
- map. The Coxeter element of $H_4$ has characteristic eigenvalues
- $e^{2\pi i/h}$ where $h=30$ is the Coxeter number, yielding exactly $\phi$
- as the dominant eigenvalue under the 6D→3D projection. See Theorem T-McKay.
+- **6D φ-slope [Tier 1 Derived]:** The golden ratio $\phi=2\cos(\pi/5)=(1+\sqrt{5})/2$
+ enters the $H_3/H_4$ geometry through the off-diagonal Cartan entry $-\phi$
+ between the pentagonal simple roots, the golden-ratio metric of the
+ icosahedral root system, and the irrational cut-and-project slope in the
+ Elser–Sloane map. The Coxeter-element eigenvalues themselves are roots of
+ unity on the unit circle; $\phi$ is therefore not the magnitude of any Coxeter
+ eigenvalue. See Theorem T-McKay.
 - **Wheeler–DeWitt Constraint Postulate:** The total energy/Hamiltonian of the configuration space of the universe — comprising all matter and gravitational degrees of freedom — is Zero ($\hat{H}|\Psi\rangle = 0$). This is a timeless constraint on the space of all geometries, not a conservation law for a dynamically evolving system. See Chapter 5 for the philosophical motivation.
 - **Born Rule [Tier 3 conditional compatibility theorem]:** The Born Rule ($P = |\psi|^2$) follows from Gleason's Theorem only if the GCT Selection Operator is independently shown to define a countably additive, noncontextual probability measure on the phason projection lattice. Those two proof obligations are App H O.40a and O.40b; Appendix D §D.1–D.6 gives the conditional structure without defining the measure by the Born quadratic in advance.
 - **Postulate G (Galois Observable Constraint):** All physically observable GCT mass predictions must be expressible as elements of $\mathbb{Q}(\sqrt{5})$ that are invariant under the Galois automorphism $\phi \to -1/\phi$. The Prediction/Postdiction Firewall gives the canonical admissibility rule for mass exponents.
