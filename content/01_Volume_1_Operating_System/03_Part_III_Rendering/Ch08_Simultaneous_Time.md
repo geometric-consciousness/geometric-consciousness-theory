@@ -2,53 +2,76 @@
 
 **8.1 The Static Block Geometry**
 
-**8.1.1 Diffeomorphism Invariance and the Block**
+**8.1.1 Field Frame and Agent Frame**
 
-As established in Volume 1, Chapter 5, the Wheeler-DeWitt constraint $\hat{H}\Psi=0$ implies that the universe is a static geometric object. Time ($t$) is a coordinate label within the manifold, not an external evolution parameter. Consequently, all events—past, present, and future—exist simultaneously in the **Field Frame**. [Tier 3 — conditional on the Wheeler-DeWitt Structural Postulate, §5.2.1]
+Under the Wheeler-DeWitt structural postulate $\hat{H}\Psi=0$ (Volume 1, Chapter 5), the global state is represented as a static configuration rather than as an object evolving in an external time. Time ($t$) is a coordinate label for relations inside that configuration, not an external evolution parameter. Past, present, and future coordinates therefore coexist in the **Field Frame**. [Tier 3 — conditional on the Wheeler-DeWitt Structural Postulate, §5.2.1]
 
-The illusion of "flow" arises only within the **Agent Frame** as the Selection Operator iterates through the ordinal sequence $n$. This strictly precludes any model of identity that requires a "soul" to travel *between* times or wait in an unrendered transition state, as such models violate General Covariance by requiring a preferred background clock. *(For speculative phenomenological interpretations of this transition, see Appendix I §I.Spec).* 
+The **Agent Frame** is formally indexed by an ordinal sequence $n$ of conditional physical states along a declared aperture. Identifying that sequence with experienced order, actualization events, or a phenomenal owner requires the open transition, memory, Selection, and psychophysical bridges; no traveling soul or preferred background clock is assumed. *(For speculative phenomenological interpretations, see Appendix TIB §TIB.Spec.)*
 
-**8.1.2 Simultaneous Projection**
+**8.1.2 What the Block Does—and Does Not—Supply**
 
-**Branch and Leaf Topology**
+A static block is compatible with several physical apertures or world-line sectors existing at different coordinate times. It does not, by itself, say that those apertures belong to one identity, one owner, or one Solenoid branch. The universal Solenoid is an address-and-resolution object; no canonical projection from one of its cylinders into a set of physical lives follows from inverse-limit topology.
 
-GCT redefines identity not as a point-particle moving through time, but as a **Topological Branch** in the Solenoid $\Sigma_\infty$.
-* **The Branch:** The invariant p-adic integer string defining the core identity.
-* **The Leaves:** The terminal projections of that branch into specific $(x, t)$ coordinates of the physical manifold.
+To state a multi-life model precisely, one must introduce an additional incidence/projection map such as
 
-**Simultaneous Projection**
+$$
+\Pi_{life}: C_{parent} \longrightarrow \mathcal{P}(E_\parallel \times \tau_{coord}),
+$$
 
-Because the Solenoid is static, a single Branch Node can project multiple Leaf Nodes into the physical manifold at different coordinate times. These projections are simultaneous in the Field Frame. **A single Branch Node projects multiple Leaf Nodes into distinct $(x,t)$ coordinates.** This is a geometric consequence of the static Solenoid, not a dynamical process. [Tier 1/2 — requires the Adelic Solenoid Structural Postulate]
+where $C_{parent}$ is a declared coarse identity sector and the image is a set of physical aperture/world-line sectors. The model must also specify which apertures share one physical unity domain or owner. Neither $\hat{H}\Psi=0$ nor the Solenoid $\Sigma_\infty \cong (\mathbb{R}\times\widehat{\mathbb{Z}})/\mathbb{Z}$ constructs $\Pi_{life}$.
 
-**8.1.3 Epistemic Distinction (The Firewall)**
+The status of each layer is therefore:
 
-**Note:** The geometric structure of simultaneous projection makes no claims about the phenomenology of "past life memory," "soul migration," or related metaphysical traditions. The topology described here is the standard consequence of a timeless block universe with fibered identity; similar structures appear in the many-worlds interpretation and consistent histories framework.
-
-The geometric structure of multi-leaf projection carries no intrinsic claim about subjective phenomenology; the Tier 4 speculative implications of this structure for phenomenal continuity are addressed in Appendix I.
+- coexistence of many spacetime histories in a static block: conditional structural consequence of the block postulate [Tier 3 — conditional on §5.2.1];
+- one parent address sector incident on several physical apertures: **Tier 3 additional model**;
+- one phenomenal subject spanning those apertures, reincarnation, cross-life recall, or migration: **Tier 4**, absent a physical coupling and ownership bridge.
 
 ---
 
-**8.2 The Geometry of Multiple Incarnations**
+**8.2 A Conditional Simultaneous-Aperture Model**
 
-**8.2.1 Field Frame: All Lifetimes Simultaneous**
+**8.2.1 Field-Frame Representation**
 
-In the **Field Frame**, the Adelic Solenoid $\Sigma_\infty$ is a complete, static geometric object. If we examine a specific Branch Node, we see it connected to a multitude of Leaf Nodes. Each leaf is Zeno-locked to a unique lattice address $(x, \tau_{coord})$.
-* Leaf A may be at $\tau_{coord} = 1800$ AD.
-* Leaf B may be at $\tau_{coord} = 2025$ AD.
-* Leaf C may be at $\tau_{coord} = 2150$ AD.
+Suppose $\Pi_{life}$ is supplied and maps one declared parent sector to apertures $A, B, C$ at coordinates such as
 
-[Tier 1/2 — geometric consequence of the Solenoid architecture; phenomenological interpretation is Tier 4]
+$$
+A: (x_A, \tau_A), \qquad B: (x_B, \tau_B), \qquad C: (x_C, \tau_C).
+$$
 
-In the global state vector $\Psi$, all these leaves are active excitations. From the Field-Frame perspective, the Branch Node is the topological intersection of all Leaf Nodes. Each Leaf is a distinct restriction of the same p-adic integer structure to a specific coordinate address $(x, \tau_\text{coord})$. No separate 'knowing' subject mediates between them; the coherence is geometric, not experiential. The Agent Frame perspective — the sequential experience of a single Leaf — is addressed in §8.2.2 and Chapter 9.
+All three can coexist in the static Field Frame. This is not sequential reincarnation: no object must leave $A$ and later enter $B$. It is a simultaneous incidence structure [Tier 3 — conditional model].
 
-[Tier 4 — Speculative Phenomenological Conjecture]: If a mechanism for cross-leaf phenomenal resonance exists within the Agent's Polaron structure, the Agent might, in principle, register attenuated information from non-local Leaf coordinates. This conjecture is not implied by the static block geometry alone and requires a separate derivation of inter-leaf entanglement within the Solenoid.
+The topology alone does not determine whether:
 
-**8.2.2 Visual: The Ice River**
+1. one Level II subject is presented through all three apertures;
+2. three Level II subjects share a coarser address class;
+3. only one aperture is Level II while the others are merely represented possibilities;
+4. no parent Level II subject exists.
 
-Imagine the Solenoid as a tree whose leaves are touching a **Frozen River** (Spacetime). The river does not flow; it is a static block of ice containing all events from "source" to "delta."
-* The **Linear View** sees a single leaf being plucked and moved further down the river to a new spot.
-* The **GCT View** sees a single branch with many leaves frozen into different coordinates of the ice simultaneously.
+Each claimed Level-II unity domain must independently close a spanning physical-unity, Selection-Operator/sector-writing, persistence, ownership, and phenomenal bridge. The **Identity Polaron/DMC/Zeno** stack is one Tier 3 candidate implementation, not an established necessary or sufficient criterion; DMC descriptors and $\eta_\text{Zeno}$ are candidate-control and external-rate diagnostics only. A parent cylinder is not a subject merely because it contains children.
 
-The "Identity" is the branch. The "Experience" is the localized contact of each leaf with the ice (where 'Experience' here denotes Level I Presence — the intrinsic character of the lattice configuration at that coordinate — not the unified Level II Apperception of the Identity Polaron, which requires the DMC gate to pass; $\eta_\text{Zeno} > 1$ is the downstream robustness margin of that DMC-passing Polaron, not the phase-transition discriminator; see §2.4 and Chapter 17). The branch knows the entire span of the river, while each leaf only knows the texture of its local frozen coordinate. The "Flow" of time is merely the movement of the Agent's attention from one leaf to another, or the sequential processing of data within a single leaf.
+**8.2.2 The Finger/Hand Analogy Across Coordinate Time**
 
-![Simultaneous projection: where the sequential view places a single Agent moving along the arrow of time, the GCT view shows one identity branch whose many leaves contact distinct coordinates of the spacetime block at once, so the flow of time is the movement of attention across leaves rather than motion of the branch.](content/Figures/Volume_1/Figure V1.8.1.svg)
+The exact content of the analogy is membership: different aperture sectors can be distinct "fingers" assigned to one declared "hand" sector. The analogy does not grant a finger the complete state of the hand or make the hand a separate observer.
+
+"Experiencing the hand from the finger" would require a downward presentation/global-access channel from the parent physical unity domain to the aperture; no such channel is derived here.
+
+The one-qualified-subject/several-apertures reading can be extended across coordinate sectors only as a Tier 3 hypothesis after $\Pi_{life}$ and the physical unity map are supplied. It is not inferred from the Solenoid.
+
+**8.2.3 The Frozen-River Picture, Corrected**
+
+Imagine spacetime as a frozen river containing every coordinate at once. Several contact points can be marked on the ice. A proposed identity-incidence map may group some contacts under one parent label. The picture does not show, without further physics, whether one subject owns all contacts, whether information passes between them, or whether attention moves from one to another. Within a single aperture, experienced order is supplied by that aperture's own physical clock, state, and transition dynamics.
+
+![Conditional simultaneous-aperture model: several physical apertures coexist at distinct coordinates of a static spacetime block, while an added incidence map—not Solenoid topology alone—assigns them to a declared parent identity sector. Ownership and cross-aperture experience remain separate Tier 3/4 bridges.](content/Figures/Volume_1/Figure V1.8.1.svg)
+
+---
+
+**8.3 Epistemic Firewall**
+
+The canonical claims are deliberately narrow:
+
+- The static-block model removes the need for a sequentially traveling soul [Tier 3 — conditional on the block postulate].
+- A multi-aperture identity relation is mathematically consistent but needs an explicit $\Pi_{life}$ and physical unity map [Tier 3].
+- Common Solenoid cylinders supply address membership, not memory transfer or phenomenal continuity [Tier 1 structural ceiling; Tier 3 application].
+- Past-life memory, cross-life access, post-mortem recoupling, and reincarnation phenomenology remain Tier 4 until a read/write coupling, persistence dynamics, and owner criterion are derived (see Appendix TIB).
+
+Thus "multiple lives happening at the same time" remains a coherent extension that GCT can state as a conditional model, but it is not presented as a theorem of the universal Solenoid.

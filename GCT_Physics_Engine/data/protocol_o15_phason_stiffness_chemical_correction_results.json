@@ -1,4 +1,9 @@
 {
+  "protocol": "protocol_o15_phason_stiffness_chemical_correction.py",
+  "pass": false,
+  "quarantined": true,
+  "status": "QUARANTINED_NOT_EVIDENCE",
+  "quarantine_reason": "Dimensional sweep only: E_flip/V_atom is not a phason elastic constant; the cited DFT DOI 10.1103/PhysRevB.88.144102 is Xiao et al. 2013 (CaIrO3); the i-AlPdMn values are K_2/K_1 anisotropy and relaxation kinetics, not K_perp/K_parallel. No O.15(b) closure, no chemical floor (App DPS \u00a7DPS.4b).",
   "bare_gct_phi_neg_18": 0.00017307027171223924,
   "K_phonon_iAlPdMn_Pa": 85731000000.0,
   "K_phonon_iAlPdMn_eV_per_A3": 0.535090808079,
@@ -286,8 +291,9 @@
     }
   ],
   "verdict": {
-    "direction": "(i) CLOSURE: Penrose-Toner dominates i-AlPdMn measurements; bare phi^(-18) below chemical-bonding floor",
-    "framing": "Bare GCT prediction K_perp/K_phonon = phi^(-18) = 1.731e-04. Penrose-Toner correction sweep over E_flip in [100.0, 700.0] meV (Trambly+ 2013 DFT for i-AlPdMn Al-Pd swap) and V_atom in [12.0, 20.0] A^3 yields K_PT/K_phonon in [9.344e-03, 1.090e-01] -- covering the de Boissieu 1995 value 1.0e-02 (IN range) and approaching the Francoual 2006 value 1.0e-01 (IN range). Bare phi^(-18) is 58x below de Boissieu and 578x below Francoual -- below the chemical-bonding floor by 2-3 orders of magnitude. i-AlPdMn measurements cannot in principle resolve the bare phi^(-18) prediction below this floor; direct test requires chemically clean analog systems (synthetic photonic quasicrystals, charge-density-wave systems, or atomic-physics simulators where E_flip -> 0).",
+    "status": "QUARANTINED_NOT_EVIDENCE",
+    "direction": "QUARANTINED: dimensional sweep only. No O.15(b) closure and no chemical-bonding floor are claimed (App DPS \u00a7DPS.4b).",
+    "framing": "Quarantined arithmetic: E_flip/V_atom over the historical, unsourced box E_flip in [100.0, 700.0] meV and V_atom in [12.0, 20.0] A^3 gives dimensionless numbers in [9.344e-03, 1.090e-01]. The quotient is not a phason elastic constant, the formerly cited DFT source (DOI 10.1103/PhysRevB.88.144102) is a CaIrO3 study, and the de Boissieu 1995 / Francoual 2006 values are K_2/K_1 anisotropy and relaxation kinetics, not K_perp/K_parallel. Nothing here supports or tests the Tier 3 P3b map phi^(-18) = 1.731e-04; reconciliation with alloy data first needs the O.41 observable map.",
     "K_PT_over_K_phonon_range": [
       0.00934420835586809,
       0.1090157641517944

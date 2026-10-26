@@ -2,7 +2,7 @@
 """
 protocol_psychophysics_color_dim.py
 
-Tier 3 protocol for App H O.29: sensor-stage versus apperceptive-stage
+Tier 3 protocol for App ORQ O.29: sensor-stage versus apperceptive-stage
 color-dimensionality arbitration.
 
 The protocol ingests the Stoddard et al. 2020 hummingbird nonspectral-color

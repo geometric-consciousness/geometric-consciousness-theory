@@ -5,7 +5,7 @@ cage_builder.py - Canonical I_h-symmetric cage construction.
 Provides the canonical orbit-union cage construction for the icosahedral
 I_h acceptance window: a cage is I_h-closed iff for every cage node x,
 every I_h image of x is also in the cage. This is the construction
-required by the I_h orthogonality theorem invoked in App M Sec M.7 for
+required by the I_h orthogonality theorem invoked in App ULA Sec ULA.7 for
 the 1/(2N) finite-N correction.
 
 A naive "top-N-by-perp-norm" cage of size 144 truncates the outermost

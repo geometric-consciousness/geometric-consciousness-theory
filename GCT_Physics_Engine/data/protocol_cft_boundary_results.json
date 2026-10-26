@@ -1,10 +1,10 @@
 {
     "alpha_bare_inv": 137.50776405003785,
-    "alpha_obs_inv": 137.035999,
-    "residual_ppm": -3430.824821398227,
+    "alpha_obs_inv": 137.035999177,
+    "residual_ppm": -3430.82353419828,
     "log_span": 102.97933056275514,
-    "C_ico_extracted": -0.04302830880093367,
-    "verdict": "DIAGNOSTIC_EXTRACTION",
-    "pass": true,
+    "C_ico_extracted": -0.04302829271285987,
+    "verdict": "FIT_BY_CONSTRUCTION_DIAGNOSTIC_EXTRACTION",
+    "pass": false,
     "classification": "Verification target (CODATA) plus diagnostic back-solved coefficient; not a core parameter anchor"
 }

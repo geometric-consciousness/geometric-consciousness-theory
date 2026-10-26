@@ -1,5 +1,5 @@
 {
-  "astrobiology_anchors": {
+  "earth_template_assumptions": {
     "stage_times_gyr": [
       0.5,
       2.4,
@@ -19,7 +19,7 @@
       100000000.0
     ],
     "t_anchor_cosmic_gyr": 3.3,
-    "anchor_rationale": "SFR peak at z=2 corresponds to cosmic time ~3.3 Gyr post-Big-Bang."
+    "reference_time_rationale": "SFR peak at z=2 corresponds to cosmic time ~3.3 Gyr post-Big-Bang; this does not define a physical biosphere history."
   },
   "pipeline_runs": {
     "V1_current_ansatz": {
@@ -33,8 +33,8 @@
       "wa_CPL_fit": 0.013762969969164207,
       "z_cross_CPL_fit": 0.39068111233553027
     },
-    "V2A_astrobiology_step": {
-      "label": "V2A astrobiology step (t_anchor=3.3 Gyr)",
+    "V2A_earth_template_step": {
+      "label": "V2A assigned Earth-template step (t_ref=3.3 Gyr)",
       "w_at_z_0": -1.0049855524211828,
       "w_at_z_015": -1.0029206921227882,
       "w_at_z_028": -1.001501061215911,
@@ -44,8 +44,8 @@
       "wa_CPL_fit": 0.015033643950677217,
       "z_cross_CPL_fit": 0.48484227766494925
     },
-    "V2B_astrobiology_convolved": {
-      "label": "V2B astrobiology convolved",
+    "V2B_earth_template_convolved": {
+      "label": "V2B assigned Earth-template convolution",
       "w_at_z_0": -1.0049848346819579,
       "w_at_z_015": -1.0028965983973417,
       "w_at_z_028": -1.001559232840156,
@@ -58,5 +58,5 @@
   },
   "spread_w028_across_V1_V2A_V2B": 0.0011028611355403672,
   "sensitivity_verdict": "PARTIAL_AGREEMENT",
-  "verdict_text": "Astrobiology-anchored P_evolve gives w(z=0.28) differing from the V1 ansatz by 1.1e-03, above the Roman Year-10 / Stage-V sub-5e-5 target. The V1 ansatz is only a broad reference; the operative Class-2 envelope is [2,5]e-5 at z=0.28. Closure of O.13 should select between V1, V2A, V2B based on additional physical arguments (saturation bound, peak alignment with SFR + complexity hierarchy)."
+  "verdict_text": "The manually assigned Earth-template P_evolve references differ from V1 at z=0.28 by 1.1e-03, above the Roman Year-10 / Stage-V sub-5e-5 target. V1, V2A, and V2B remain alternative conditional sensitivity templates; the operative Class-2 envelope is [2,5]e-5 at z=0.28."
 }

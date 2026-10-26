@@ -1,0 +1,209 @@
+{
+  "bare_D_F": {
+    "N_vertices": 152,
+    "N_distinct_clusters": 42,
+    "cluster_summary": [
+      {
+        "bare_lambda": -20.758784940678822,
+        "size": 1
+      },
+      {
+        "bare_lambda": -18.979762703125665,
+        "size": 3
+      },
+      {
+        "bare_lambda": -16.30794761623065,
+        "size": 5
+      },
+      {
+        "bare_lambda": -9.82412072907185,
+        "size": 4
+      },
+      {
+        "bare_lambda": -9.236440155143569,
+        "size": 5
+      },
+      {
+        "bare_lambda": -8.258694928734812,
+        "size": 4
+      },
+      {
+        "bare_lambda": -7.464598751030305,
+        "size": 3
+      },
+      {
+        "bare_lambda": -6.750747189658986,
+        "size": 3
+      },
+      {
+        "bare_lambda": -6.090169943749476,
+        "size": 3
+      },
+      {
+        "bare_lambda": -4.852244856955404,
+        "size": 3
+      },
+      {
+        "bare_lambda": -4.519997193537904,
+        "size": 5
+      },
+      {
+        "bare_lambda": -3.7882067435834132,
+        "size": 5
+      },
+      {
+        "bare_lambda": -3.692300935225831,
+        "size": 3
+      },
+      {
+        "bare_lambda": -3.115032275232782,
+        "size": 1
+      },
+      {
+        "bare_lambda": -2.801391081272856,
+        "size": 4
+      },
+      {
+        "bare_lambda": -2.4789512667735245,
+        "size": 5
+      },
+      {
+        "bare_lambda": -2.346718401528893,
+        "size": 5
+      },
+      {
+        "bare_lambda": -2.1539392645624758,
+        "size": 3
+      },
+      {
+        "bare_lambda": -1.9583183590303823,
+        "size": 4
+      },
+      {
+        "bare_lambda": -1.752427301429695,
+        "size": 3
+      },
+      {
+        "bare_lambda": -0.397956205343008,
+        "size": 4
+      },
+      {
+        "bare_lambda": -0.23771125641919816,
+        "size": 3
+      },
+      {
+        "bare_lambda": 0.40908079079846166,
+        "size": 5
+      },
+      {
+        "bare_lambda": 0.6180339887498945,
+        "size": 3
+      },
+      {
+        "bare_lambda": 1.012173423751431,
+        "size": 5
+      },
+      {
+        "bare_lambda": 1.1267497808539082,
+        "size": 5
+      },
+      {
+        "bare_lambda": 2.176269980268744,
+        "size": 4
+      },
+      {
+        "bare_lambda": 3.138405879031465,
+        "size": 3
+      },
+      {
+        "bare_lambda": 3.626532122609276,
+        "size": 1
+      },
+      {
+        "bare_lambda": 4.090610148815145,
+        "size": 5
+      },
+      {
+        "bare_lambda": 4.323138663197419,
+        "size": 5
+      },
+      {
+        "bare_lambda": 4.73056862455309,
+        "size": 4
+      },
+      {
+        "bare_lambda": 5.545305852939922,
+        "size": 4
+      },
+      {
+        "bare_lambda": 6.307825684396924,
+        "size": 3
+      },
+      {
+        "bare_lambda": 6.411446256704787,
+        "size": 1
+      },
+      {
+        "bare_lambda": 7.636736422070236,
+        "size": 3
+      },
+      {
+        "bare_lambda": 9.11166846078017,
+        "size": 4
+      },
+      {
+        "bare_lambda": 9.547889803603477,
+        "size": 5
+      },
+      {
+        "bare_lambda": 10.314516799528393,
+        "size": 5
+      },
+      {
+        "bare_lambda": 14.620940294910113,
+        "size": 4
+      },
+      {
+        "bare_lambda": 16.092560340409502,
+        "size": 3
+      },
+      {
+        "bare_lambda": 55.870280690346114,
+        "size": 1
+      }
+    ]
+  },
+  "phason_perturbation_V": {
+    "construction": "V = (DF^2 - tr(DF^2)/N * I) / ||...||_op",
+    "hermitian": true,
+    "op_norm_after_normalisation": 0.9999999999999999,
+    "icosahedrally_symmetric": "yes, by inheritance from DF (DF is I_h-invariant; DF^2 and DF^2 - c*I are also I_h-invariant)"
+  },
+  "stability_at_physical_coupling": {
+    "epsilon_phys": 0.00017307027171223924,
+    "N_nonzero_bare": 152,
+    "min_bare_nonzero_lambda": 0.2377112564191949,
+    "max_correction_magnitude_at_phys": 0.00017307027171223883,
+    "max_relative_correction_at_phys": 1.8296520454553775e-05,
+    "median_relative_correction_at_phys": 7.962918809165363e-07,
+    "perturbative_regime_valid": true
+  },
+  "linearity_test": {
+    "test_eigenvalue_bare": 55.870280690346114,
+    "PT_first_order_correction_per_epsilon": 0.9999999999999977,
+    "measured_corrections_per_epsilon": [
+      1.0000000116860974,
+      1.0000000052912128,
+      1.0000000004595222,
+      1.0000000000616183
+    ],
+    "relative_spread_across_epsilons": 1.1624479106182645e-08,
+    "first_order_PT_valid": true
+  },
+  "closure_status": {
+    "tier": "Tier 2-3 perturbative infrastructure",
+    "what_is_closed": "Perturbative phason-dressing infrastructure is implementable. First-order corrections to non-zero eigenvalues of D_F at the physical coupling epsilon ~ phi^(-18) are bounded; perturbation is in linear regime for all non-degenerate D_F eigenvalues.",
+    "what_is_NOT_closed": "Full CKM/PMNS extraction from dressed non-perturbative D_F is bundled with O.5 QLQCD-1L. The physical Fuglede-Kadison determinant requires the orbit-resolved icosahedral character decomposition (Ch10: 100 non-zero eigenvalues + 44 zero modes); the naive adjacency construction does not automatically reproduce the 44-zero-mode structure and is therefore not the load-bearing object for physical mass ratio prediction.",
+    "scope_note": "H.2.1 is bundled with O.5. This protocol establishes the perturbative-stability infrastructure, but the full extraction would need the non-perturbative orbit-resolved spectrum that itself requires O.5."
+  }
+}

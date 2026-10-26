@@ -15,6 +15,7 @@ Canonical companion: protocol_dixmier_trace_scaling.py carries the
 import json
 # GCT Engine Imports
 from gct_utils import PHI, get_output_path, GCTReporter
+from decimal import Decimal, localcontext
 
 def fibonacci_integer_map(n):
     """
@@ -46,7 +47,7 @@ def main():
     print("> This script verifies only the arithmetic identity phi^n = F_n phi + F_{n-1}")
     print("> for the assumed exponent n = -107 in Z[phi]. It does not construct the")
     print("> Pimsner-Voiculescu sequence, IDOS trace, APS index, or electron projector.")
-    print("> Those objects remain App H Open Problem O.14 (Tier 4 unconstructed).")
+    print("> Those objects remain App ORQ Open Problem O.14 (Tier 4 unconstructed).")
     print("======================================================================\n")
 
     report.section("1. Scope")
@@ -54,7 +55,7 @@ def main():
     print("Not computed here: K0(AKN hull), tau_*(K0), IDOS, APS index, spectral projector P_{-107}.")
 
     report.section("2. Assumed Exponent")
-    print("The exponent -107 is consumed as an assumed integer anchor from App H O.14.")
+    print("The exponent -107 is consumed as an assumed integer anchor from App ORQ O.14.")
 
     gap_index = -107
     print(f"Assumed exponent: n = {gap_index}")
@@ -70,15 +71,28 @@ def main():
     print(f"  F_(-107) = {fn}")
     print(f"  F_(-108) = {fn_minus_1}")
 
-    # Evaluate algebraic identity
-    algebraic_value = fn * phi + fn_minus_1
-    direct_pow = phi ** gap_index
+    # Evaluate the algebraic identity in exact decimal arithmetic.
+    #
+    # The two terms are of order 10^22 while their difference is of order
+    # 10^-23, so the subtraction cancels roughly 45 significant digits.
+    # Binary double precision carries about 16 and returns pure rounding
+    # noise; the comparison is therefore carried out at a precision that
+    # exceeds the cancellation.
+    guard_digits = 60
+    with localcontext() as ctx:
+        ctx.prec = 2 * abs(gap_index) + guard_digits
+        phi_exact = (Decimal(1) + Decimal(5).sqrt()) / Decimal(2)
+        algebraic_value = Decimal(fn) * phi_exact + Decimal(fn_minus_1)
+        direct_pow = phi_exact ** gap_index
+        residual = abs(algebraic_value - direct_pow)
 
     print(f"Evaluating Z[φ] module identity: ({fn})*φ + ({fn_minus_1})")
-    report.log_comparison("Volume Fraction Mapping (Module vs Geometric Scaling)", algebraic_value, direct_pow)
+    report.log_comparison("Volume Fraction Mapping (Module vs Geometric Scaling)",
+                          float(algebraic_value), float(direct_pow))
 
-    tolerance = 1e-12
-    passed_validation = abs(algebraic_value - direct_pow) < tolerance
+    # Relative tolerance against the magnitude actually being resolved.
+    tolerance = abs(direct_pow) * Decimal("1e-20")
+    passed_validation = residual < tolerance
 
     if passed_validation:
         print("\nSUCCESS: Binet arithmetic check passes for the assumed exponent n=-107.")
@@ -102,8 +116,8 @@ def main():
             "F_n": fn,
             "F_n_minus_1": fn_minus_1
         },
-        "algebraic_evaluation": algebraic_value,
-        "direct_evaluation": direct_pow,
+        "algebraic_evaluation": float(algebraic_value),
+        "direct_evaluation": float(direct_pow),
         "pass": passed_validation
     }
 

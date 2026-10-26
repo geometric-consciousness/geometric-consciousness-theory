@@ -1,0 +1,30 @@
+{
+  "name": "pta_l6_first_scalar_invariant",
+  "app_psc_label": "First nonconstant rotational-icosahedral scalar harmonic",
+  "formula": "mult_A(H_l)=0 for 1<=l<6; mult_A(H_6)=1",
+  "tier": "Tier 1 exact representation theory",
+  "predicted": 6.0,
+  "observed": 6.0,
+  "reference_class": "PURE_MATHEMATICAL",
+  "band_outcome": "NOT_APPLICABLE",
+  "derivational_closure": "NO_DERIVATIONAL_CLOSURE_FLAG",
+  "unit": "multipole index",
+  "app_psc_predicted": null,
+  "app_psc_precision_str": null,
+  "app_psc_precision_ppm": null,
+  "independent_precision_ppm": 0.0,
+  "status": "TIER1_EXACT",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "trivial_scalar_multiplicities_l0_to_l6": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  }
+}

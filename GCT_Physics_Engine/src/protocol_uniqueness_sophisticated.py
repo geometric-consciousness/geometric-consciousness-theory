@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 protocol_uniqueness_sophisticated.py — sophisticated-invariant route to
-the Tier-1 closure target (Open Problem O.14): test whether more
-sophisticated uniqueness criteria single out the η_scalar = -8 cage among
+Open Problem O.14: test whether more
+sophisticated uniqueness criteria single out the adjacency-sign-sum -8 cage among
 the orbit-unions summing to 144, where the standard geometric/spectral
 metrics do not.
 
@@ -185,7 +185,7 @@ def build_cage_metrics(orbit_indices: list[int], orbits: list[dict]) -> dict:
     return {
         "orbit_indices": orbit_indices,
         "orbit_sizes": sorted(orbit_sizes),
-        "eta_scalar": eta,
+        "adjacency_sign_sum": eta,
         "deg_min": deg_min,
         "deg_max": deg_max,
         "is_regular": bool(is_regular),
@@ -204,7 +204,7 @@ def build_cage_metrics(orbit_indices: list[int], orbits: list[dict]) -> dict:
 
 def main() -> int:
     print("=" * 90)
-    print("  Sophisticated uniqueness criteria search for the η_scalar = -8 cage")
+    print("  Sophisticated uniqueness criteria search for the adjacency-sign-sum -8 cage")
     print("=" * 90)
     orbits = setup_orbits()
     sizes = [o["size"] for o in orbits]
@@ -220,7 +220,7 @@ def main() -> int:
         metrics.append(m)
 
     # Find the unique winner
-    winners = [m for m in metrics if abs(m["eta_scalar"] - (-8)) < 0.5]
+    winners = [m for m in metrics if abs(m["adjacency_sign_sum"] - (-8)) < 0.5]
     if not winners:
         print("  WARN: no winner found")
         return 1
@@ -300,7 +300,8 @@ def main() -> int:
             print(f"    • {c}")
         print()
         print("  These are structural invariants of the cage geometry. Any of them")
-        print("  can serve as the uniqueness criterion for Tier 1 closure.")
+        print("  is a finite weighted-adjacency uniqueness diagnostic only.")
+        print("  No APS operator/domain/index or Tier-1 inference follows.")
         print("  The most natural is likely the one that has a clean physical")
         print("  interpretation (e.g., regular graph = uniform coordination =")
         print("  ground-state-like, or bond-incidence pattern = topological signature).")

@@ -6,7 +6,12 @@
     "tau_lag_gyr": 5.0,
     "tau_bio_gyr": 4.5,
     "lambda_bio": 0.0072973525205055605,
-    "delta_w_cosmic_z0": -0.004999999999999893,
+    "excluded_logistic_delta_w_cosmic_z0": -0.004999999999999893,
+    "operative_class2_envelope_abs_delta_w_z028": [
+      2e-05,
+      5e-05
+    ],
+    "branch_scope": "The O.17 local/Planck arithmetic below belongs to the excluded broad-logistic delta_w_cosmic(0)=-0.005 comparison branch. The operative Class-2 envelope is |Delta w(z=0.28)| in [2,5]e-5; without a normalized z=0 Class-2 history it is not an O.17 input.",
     "H0_SH0ES_obs": 73.04,
     "H0_Planck_obs": 67.4,
     "observed_tension_fractional": 0.08367952522255193,
@@ -97,8 +102,8 @@
     }
   },
   "verdict": {
-    "direction": "Biogenic-driving action does not account for the Hubble tension",
-    "framing": "At realistic SH0ES-volume-average overdensity (delta_bio ~ 1-3), the local-cosmography channel of biogenic-DE shifts the SH0ES inferred H_0 by [-0.0005%, -0.0011%] of H_0 (kinematic-fit channel); the Planck-bias channel contributes -0.13% of the observed tension. Combined upper bound is at most 0.16% of the observed ~8.4% tension. Local-cosmography channel has WRONG sign relative to the SH0ES > Planck tension framing. Planck-bias channel has WRONG sign relative to the SH0ES > Planck tension framing. The Hubble tension is not among the framework's predictions; this diagnostic is a quantitative non-closure bound for the local biogenic-DE channel.",
+    "direction": "Conditional lag-kernel coordinate does not account for the Hubble tension",
+    "framing": "For the excluded broad-logistic reference only, delta_bio=1.5/3.5 gives kinematic fractional H_0 shifts -4.873654e-06/-1.136763e-05 and linear-fit shifts -4.422433e-05/-1.032078e-04. The Planck-bias is -1.096005e-04, or -0.130976% of the observed tension. Linear-max plus Planck is 0.254314% of the observed ~8.4% tension. Local-cosmography channel has WRONG sign relative to the SH0ES > Planck tension framing. Planck-bias channel has WRONG sign relative to the SH0ES > Planck tension framing. The Hubble tension is not among the framework's predictions; this diagnostic is a quantitative non-closure bound for the stipulated lag-kernel coordinate, not evidence for or against a physical biogenic causal mechanism.",
     "channels": {
       "local_cosmography_kinematic": {
         "realistic_overdensity_range_fraction": [
@@ -119,6 +124,7 @@
         "sign_consistent_with_tension": false
       }
     },
-    "total_explained_upper_bound": 0.0016006541274648043
+    "linear_max_plus_planck_fraction_of_tension": 0.0025431351929860895,
+    "kinematic_max_plus_planck_fraction_of_tension": 0.0014456121355380595
   }
 }

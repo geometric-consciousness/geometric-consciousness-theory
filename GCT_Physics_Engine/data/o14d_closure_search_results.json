@@ -1,5 +1,7 @@
 {
-  "n_orbits": 15,
+  "sample_definition": "first 600 Z^6 points sorted by perpendicular norm at R=3 and perp_cutoff=3.0",
+  "n_shell_components": 15,
+  "n_full_i_orbits": 14,
   "orbit_sizes": [
     12,
     30,
@@ -16,6 +18,59 @@
     60,
     60,
     26
+  ],
+  "shell_inventory": [
+    12,
+    30,
+    30,
+    60,
+    20,
+    60,
+    60,
+    30,
+    60,
+    20,
+    12,
+    60,
+    60,
+    60,
+    26
+  ],
+  "full_i_orbit_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "cutoff_truncated_shell_indices": [
+    14
+  ],
+  "shell_classification": [
+    "full_I_orbit",
+    "full_I_orbit",
+    "full_I_orbit",
+    "full_I_orbit",
+    "full_I_orbit",
+    "full_I_orbit",
+    "full_I_orbit",
+    "full_I_orbit",
+    "full_I_orbit",
+    "full_I_orbit",
+    "full_I_orbit",
+    "full_I_orbit",
+    "full_I_orbit",
+    "full_I_orbit",
+    "cutoff_truncated"
   ],
   "orbit_min_perps": [
     0.1669252677110946,
@@ -47,6 +102,29 @@
     12,
     13
   ],
+  "n_pairings": 21,
+  "adjacency_sign_sum_frequencies": {
+    "-22": 1,
+    "-16": 1,
+    "-14": 2,
+    "-12": 1,
+    "-10": 4,
+    "-8": 1,
+    "-6": 2,
+    "0": 3,
+    "2": 2,
+    "4": 1,
+    "6": 2,
+    "24": 1
+  },
+  "single_occurrence_adjacency_sign_sums": [
+    -22,
+    -16,
+    -12,
+    -8,
+    4,
+    24
+  ],
   "results": [
     {
       "sixty_orbit_pair": [
@@ -65,7 +143,7 @@
         0.3294153829147682,
         0.40162283177245445
       ],
-      "eta_scalar": 6.0
+      "adjacency_sign_sum": 6.0
     },
     {
       "sixty_orbit_pair": [
@@ -84,7 +162,7 @@
         0.3294153829147682,
         0.4349309646384653
       ],
-      "eta_scalar": 4.0
+      "adjacency_sign_sum": 4.0
     },
     {
       "sixty_orbit_pair": [
@@ -103,7 +181,7 @@
         0.3294153829147682,
         0.4888861452328026
       ],
-      "eta_scalar": 0.0
+      "adjacency_sign_sum": 0.0
     },
     {
       "sixty_orbit_pair": [
@@ -122,7 +200,7 @@
         0.40162283177245445,
         0.4349309646384653
       ],
-      "eta_scalar": 0.0
+      "adjacency_sign_sum": 0.0
     },
     {
       "sixty_orbit_pair": [
@@ -141,7 +219,7 @@
         0.3294153829147682,
         0.540181513475453
       ],
-      "eta_scalar": -10.0
+      "adjacency_sign_sum": -10.0
     },
     {
       "sixty_orbit_pair": [
@@ -160,7 +238,7 @@
         0.40162283177245445,
         0.4888861452328026
       ],
-      "eta_scalar": -10.0
+      "adjacency_sign_sum": -10.0
     },
     {
       "sixty_orbit_pair": [
@@ -179,7 +257,7 @@
         0.3294153829147682,
         0.5653849241897518
       ],
-      "eta_scalar": 2.0
+      "adjacency_sign_sum": 2.0
     },
     {
       "sixty_orbit_pair": [
@@ -198,7 +276,7 @@
         0.3294153829147682,
         0.5653849241897521
       ],
-      "eta_scalar": 6.0
+      "adjacency_sign_sum": 6.0
     },
     {
       "sixty_orbit_pair": [
@@ -217,7 +295,7 @@
         0.4349309646384653,
         0.4888861452328026
       ],
-      "eta_scalar": -12.0
+      "adjacency_sign_sum": -12.0
     },
     {
       "sixty_orbit_pair": [
@@ -236,7 +314,7 @@
         0.40162283177245445,
         0.540181513475453
       ],
-      "eta_scalar": -22.0
+      "adjacency_sign_sum": -22.0
     },
     {
       "sixty_orbit_pair": [
@@ -255,7 +333,7 @@
         0.40162283177245445,
         0.5653849241897518
       ],
-      "eta_scalar": 24.0
+      "adjacency_sign_sum": 24.0
     },
     {
       "sixty_orbit_pair": [
@@ -274,7 +352,7 @@
         0.40162283177245445,
         0.5653849241897521
       ],
-      "eta_scalar": -14.0
+      "adjacency_sign_sum": -14.0
     },
     {
       "sixty_orbit_pair": [
@@ -293,7 +371,7 @@
         0.4349309646384653,
         0.540181513475453
       ],
-      "eta_scalar": -14.0
+      "adjacency_sign_sum": -14.0
     },
     {
       "sixty_orbit_pair": [
@@ -312,7 +390,7 @@
         0.4349309646384653,
         0.5653849241897518
       ],
-      "eta_scalar": -6.0
+      "adjacency_sign_sum": -6.0
     },
     {
       "sixty_orbit_pair": [
@@ -331,7 +409,7 @@
         0.4349309646384653,
         0.5653849241897521
       ],
-      "eta_scalar": -10.0
+      "adjacency_sign_sum": -10.0
     },
     {
       "sixty_orbit_pair": [
@@ -350,7 +428,7 @@
         0.4888861452328026,
         0.540181513475453
       ],
-      "eta_scalar": -16.0
+      "adjacency_sign_sum": -16.0
     },
     {
       "sixty_orbit_pair": [
@@ -369,7 +447,7 @@
         0.4888861452328026,
         0.5653849241897518
       ],
-      "eta_scalar": 2.0
+      "adjacency_sign_sum": 2.0
     },
     {
       "sixty_orbit_pair": [
@@ -388,7 +466,7 @@
         0.4888861452328026,
         0.5653849241897521
       ],
-      "eta_scalar": -8.0
+      "adjacency_sign_sum": -8.0
     },
     {
       "sixty_orbit_pair": [
@@ -407,7 +485,7 @@
         0.540181513475453,
         0.5653849241897518
       ],
-      "eta_scalar": -10.0
+      "adjacency_sign_sum": -10.0
     },
     {
       "sixty_orbit_pair": [
@@ -426,7 +504,7 @@
         0.540181513475453,
         0.5653849241897521
       ],
-      "eta_scalar": -6.0
+      "adjacency_sign_sum": -6.0
     },
     {
       "sixty_orbit_pair": [
@@ -445,10 +523,10 @@
         0.5653849241897518,
         0.5653849241897521
       ],
-      "eta_scalar": 0.0
+      "adjacency_sign_sum": 0.0
     }
   ],
-  "eta_minus_8_matches": [
+  "adjacency_sign_sum_minus_8_matches": [
     {
       "sixty_orbit_pair": [
         8,

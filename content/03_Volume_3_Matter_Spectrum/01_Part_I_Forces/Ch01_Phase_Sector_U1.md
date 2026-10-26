@@ -2,7 +2,7 @@
 
 ### **Chapter 1: The Phase Sector (U(1))**
 
-The existence of electromagnetism is traditionally treated in the Standard Model as an axiomatic requirement of $U(1)$ local gauge invariance. In Geometric Consciousness Theory (GCT), the electromagnetic field is not an independent entity added to the vacuum, but the direct hydrodynamic consequence of the vacuum's superfluid phase dynamics. This chapter separates the Tier 1 gauge-invariance statement that the bare photon is massless from the GCT-specific phason-sector realization: a Tier 2 mechanism whose full photon-as-second-sound derivation inherits the Tier 3 stiffness / phason-anchor closure described in Ch06 §6.1.2 and Parameter Ledger §0.1.
+The existence of electromagnetism is traditionally treated in the Standard Model as an axiomatic requirement of $U(1)$ local gauge invariance. Geometric Consciousness Theory (GCT) studies whether the electromagnetic field can arise from the vacuum's superfluid phase dynamics. This chapter separates the Tier 1 gauge-invariance statement that the bare photon is massless from an added supersolid/condensate effective branch and from the GCT-specific phason-sector realization, a Tier 3 declared open programme (V2 Ch06 §6.1). The App ULA §ULA.2 lattice Hamiltonian does not itself derive the complex condensate, its broken vacuum, a Berry eigenbundle, or a stable charged defect; those physical links remain Tier 3/open.
 
 ---
 
@@ -10,47 +10,47 @@ The existence of electromagnetism is traditionally treated in the Standard Model
 
 **1.1.1 The Order Parameter: $\Psi = \sqrt{\rho} e^{i\theta}$**
 
-The vacuum ground state is a supersolid condensate described by a macroscopic wavefunction, or order parameter, $\Psi(\mathbf{r})$. This order parameter represents the collective state of the consciousness field $\Psi$ after its crystallization into the 6D hyper-lattice. We express this state in its polar form:
+The supersolid effective completion introduces a macroscopic complex order parameter $\Psi(\mathbf{r})$. In the GCT reading this order parameter is a candidate coarse-grained description of the field $\Psi$ after its crystallization into the 6D hyper-lattice [Tier 3 effective-branch identification]. We express it in polar form:
 $$\Psi(\mathbf{r}) = \sqrt{\rho(\mathbf{r})} e^{i\theta(\mathbf{r})}$$
 where:
-* **$\rho(\mathbf{r})$** is the **Superfluid Density**, corresponding to the amplitude of the lattice projection and the "presence" weight of the vacuum.
-* **$\theta(\mathbf{r})$** is the **Superfluid Phase**, a scalar value $\theta \in [0, 2\pi)$ representing the internal degree of freedom of the phason field.
+* **$\rho(\mathbf{r})$** is the candidate **Superfluid Density**.
+* **$\theta(\mathbf{r})$** is its compact **Superfluid Phase**, $\theta \in [0, 2\pi)$.
+
+This complex field is not automatically identical to the real projected phason triplet $\mathbf{u}_\perp \in \mathbb{R}^3$.
 
 **1.1.2 Global Phase Symmetry**
 
-The fundamental action of the consciousness field is invariant under a global rotation of the phase. If we transform the field by a constant phase $\vartheta$:
+The declared condensate effective action is assumed invariant under a global rotation of the phase. If we transform the field by a constant phase $\vartheta$:
 $$\Psi \to e^{i\vartheta} \Psi$$
-the physical observables—specifically the lattice density $\rho$ and the Hamiltonian constraints—remain unchanged. This invariance constitutes the **Global $U(1)$ Symmetry** of the vacuum. It reflects the fact that the absolute phase of the universal wavefunction is unobservable; only relative phase differences (gradients) generate physical dynamics.
+its density observables remain unchanged. This is the **Global $U(1)$ Symmetry** of the effective branch: the absolute phase is unobservable and only relative phase differences (gradients) generate dynamics. The symmetry is assumed for the effective branch; it is not inferred from the App ULA §ULA.2 lattice Hamiltonian.
 
 **1.1.3 Spontaneous Symmetry Breaking (SSB)**
 
-Crystallization requires the field to select a specific configuration from the manifold of degenerate energy minima. When the consciousness field condenses into the supersolid quasicrystal, it undergoes **Spontaneous Symmetry Breaking**. The vacuum selects a specific phase $\theta_0$ at every point in the manifold. 
-
-This process settles the field into the "rim" of the Landau-Ginzburg potential (the "Mexican Hat"). The broken symmetry transforms the global $U(1)$ invariance into a dynamical degree of freedom: the vacuum acquires the capacity to sustain phase gradients and oscillations.
+If a Landau coefficient is derived in the broken chamber, the condensate may select a phase $\theta_0$ on the degenerate rim of the Landau-Ginzburg ("Mexican Hat") potential and undergo **Spontaneous Symmetry Breaking**; the vacuum would then sustain phase gradients and oscillations. Symmetry alone does not select that chamber. A finite Mexican-hat barrier also leaves zero amplitude accessible, so winding can change through a core event unless a separate hard target or preservation law is supplied [Tier 3/open].
 
 **1.1.4 The Second-Sound Phason Mode**
 
-According to Goldstone's Theorem, the breaking of a continuous global symmetry results in massless excitations. In a standard liquid superfluid, this gives a scalar phonon. In the GCT supersolid, that scalar phase mode is not identified with the Maxwell photon by itself. The electromagnetic mode is the transverse phason displacement sector protected by the unbroken $U(1)$ gauge redundancy of the hydrodynamic description (Ch06 §6.1.2).
+According to Goldstone's Theorem, the breaking of a continuous global symmetry results in massless excitations. In a standard liquid superfluid, this gives a scalar phonon. In the GCT supersolid, that scalar phase mode is not identified with the Maxwell photon by itself. GCT proposes [Tier 3 identification] that the electromagnetic mode is the transverse phason displacement sector, protected by the assumed $U(1)$ gauge redundancy of the gauge-fixed hydrodynamic description (V2 Ch06 §6.1.2 and defect (iv); declared open programme, V2 Ch06 §6.1).
 
-This coupling transforms the scalar phase wave into a **Transverse Vector Mode** known as **Second Sound**. Light is not merely a phase oscillation; it is the wave of phase-lattice synchronization. The "Photon" is the quantized excitation of this hybrid vector mode.
+In that proposal the scalar phase (the scalar potential) and the transverse phason displacement (the vector potential) combine into a **Transverse Vector Mode**, called **Second Sound** in GCT (not $I_h$-equivariant as written; V2 Ch06 §6.1); the coupling between them is posited in the gauge-fixed action, not derived from the App ULA lattice Hamiltonian [Tier 3]. On this reading light is a wave of phase-lattice synchronization rather than a bare phase oscillation, and the "Photon" is the quantized excitation of this hybrid vector mode.
 
 ---
 
 **1.2 The Berry Connection as Electromagnetic Potential**
 
-**1.2.1 Helmholtz Decomposition of the Gauge Potential [Tier 2]**
+**1.2.1 Helmholtz Decomposition of the Gauge Potential [Tier 1 decomposition + Tier 3 physical identification]**
 
-We derive the electromagnetic gauge potential $A_\mu$ by examining the transport of a local Agent. In the GCT supersolid, the potential $A$ admits a **Helmholtz Decomposition**:
+Given a candidate vector potential $A_\mu$, its spatial part admits a **Helmholtz Decomposition**:
 $$ A = A_L + A_T $$
 where:
-* **$A_L = -\frac{\hbar c}{e} \nabla \theta$** is the **Longitudinal component** (pure gradient), representing the hydrodynamic velocity of the phase.
+* **$A_L = -\frac{\hbar}{e} \nabla \theta$** (SI units, used throughout this section; in units with $\hbar/e = 1$ this is $A_L = -\partial_\mu\theta$ below) is the **Longitudinal component** (pure gradient), representing the hydrodynamic velocity of the phase.
 * **$A_T$** is the **Transverse component** satisfying $\nabla \cdot A_T = 0$, representing the elastic phason shear.
 
-The magnetic field is generated solely by the transverse component: $\mathbf{B} = \nabla \times \mathbf{A}_T$. The **two transverse polarizations** of the photon are explicitly tied to the two independent degrees of freedom of $A_T$ within the icosahedral acceptance window. The "Gauge Field" is revealed to be the **Geometric Connection** required to maintain identity-coherence across the phason-lattice interaction.
+The magnetic field is generated by the transverse component: $\mathbf{B} = \nabla \times \mathbf{A}_T$. Identifying the **two transverse polarizations** of the photon with the two independent degrees of freedom of transverse phason shear within the icosahedral acceptance window is the GCT mechanism proposal (not $I_h$-equivariant as written; V2 Ch06 §6.1); a normalized Lorentz-invariant action and matter coupling remain to be derived.
 
-**1.2.2 Theorem 1.1: Berry Connection as Gauge Field**
+**1.2.2 Theorem 1.1: The Berry Connection and the Gauge Potential**
 
-**Theorem 1.1:** *The geometric connection arising from the adiabatic transport of a topological defect through the superfluid vacuum condensate transforms identically to a $U(1)$ gauge potential, and its curvature has the algebraic form of the Maxwell field-strength tensor.*
+**Conditional Theorem 1.1:** *Given a smooth gapped eigenbundle over the relevant parameter space, its Abelian Berry connection transforms as a $U(1)$ gauge potential and has curvature $F = dA$, the algebraic form of the Maxwell field-strength tensor.* The theorem does not derive that eigenbundle, identify it with the projected phason field $\mathbf{u}_\perp$, or supply Maxwell dynamics.
 
 **1.2.3 Proof: Holonomy around a closed loop**
 
@@ -59,7 +59,9 @@ $$\gamma = \oint_{\mathcal{C}} (A_{L,\mu}+A_{T,\mu}) dx^\mu.$$
 On ordinary simply connected patches, $A_L = -\partial_\mu\theta$ is a pure gauge and contributes no local curvature: $dA_L=0$. A nonzero $A_L$ loop integral is restricted to defect-supported patches where $\theta$ is multivalued or singular at the core. The ordinary Maxwell curvature is carried by the non-exact transverse phason connection $A_T$.
 By Stokes’ Theorem, this loop integral is equal to the integral of the curvature over the surface $\mathcal{S}$ enclosed by the path:
 $$\gamma = \iint_{\mathcal{S}} (\partial_\mu A_\nu - \partial_\nu A_\mu) d\sigma^{\mu\nu} = \iint_{\mathcal{S}} F_{\mu\nu} d\sigma^{\mu\nu}$$
-where $F_{\mu\nu}$ is the **Field Strength Tensor**. This proves that the "Magnetic Flux" is the measure of the topological "twist" or phase-mismatch accumulated by an observer traversing the vacuum lattice.
+where $F_{\mu\nu}$ is the **Field Strength Tensor**. This proves the standard holonomy–curvature identity for the supplied connection. Its interpretation as physical magnetic flux, the topological "twist" or phase mismatch accumulated along a path through the vacuum lattice, requires the missing GCT bundle/action map.
+
+> **Berry firewall.** A periodic lock potential is not a quotient by $I_h$, and $\mathbb{R}^3/I_h$ is contractible. A finite point-group quotient does not force Berry curvature. For an Abelian $U(1)$ connection, $A\wedge A=0$; a non-Abelian commutator requires a derived degenerate multiplet and a non-Abelian eigenbundle.
 
 **1.2.4 Connection to Maxwell’s Equations: Curl of A**
 
@@ -71,39 +73,39 @@ Within the gauge-fixed consistency construction, the Maxwell equation pairs are 
 
 **1.3 Charge Quantization from Phase Single-Valuedness**
 
-**1.3.1 The Loop Integral and Topological Winding [Tier 1]**
+**1.3.1 The Loop Integral and Topological Winding [Tier 1 conditional]**
 
 Because the order parameter $\Psi$ must be single-valued ($e^{i\theta} = e^{i(\theta + 2\pi)}$), the phase $\theta$ can only change by integer multiples of $2\pi$ around any closed loop $\mathcal{C}$ that encloses a singularity.
 $$\oint_{\mathcal{C}} \nabla \theta \cdot d\mathbf{l} = 2\pi n, \quad n \in \mathbb{Z}$$
 Substituting our dimensional definition of the potential ($A_\mu$), we find that the magnetic flux is quantized in units of the flux quantum $\Phi_0 = h/e$:
 $$\oint \mathbf{A} \cdot d\mathbf{l} = \frac{h}{e} n$$
-This identifies **Electric Charge** as the **Topological Winding Number** of the vacuum phase.
+This gives integer winding for a declared nonzero $S^1$ order parameter on a punctured domain. GCT proposes to identify **Electric Charge** with this **Topological Winding Number** of the vacuum phase; that identification, and a proof that the winding is preserved in the App ULA field space, are separate Tier 3 bridges, since finite-amplitude zeros permit winding-changing events.
 
-**1.3.2 Theorem 1.2 [Tier 2]: Constraint-Based Fractional Charge**
+**1.3.2 Proposal 1.2 [Tier 3]: Constraint-Based Fractional Charge**
 
-**Theorem 1.2:** *The existence of fractional charges ($e/3, 2e/3$) is a structural requirement of the icosahedral projection, arising from the linear dependence of the 10 three-fold axes in the acceptance window.*
+**Proposal 1.2 [Tier 3]:** *GCT proposes that the fractional charges ($e/3, 2e/3$) reflect the three-fold structure of the acceptance window. The proposal is not derived from the axis geometry (see §1.3.3).*
 
 **1.3.3 The 1/3 Unit from the Geometric Sum Rule**
 
-In the icosahedral projection, the internal space $E_\perp$ is spanned by 10 axes of three-fold symmetry. Due to the icosahedral point group symmetry, these 10 axes are not linearly independent; they satisfy a **Geometric Sum Rule**. Specifically, the basis vectors of the 6D lattice project into the 3D internal space such that they sum to zero in triplets (e.g., $\mathbf{e}_1 + \mathbf{e}_2 + \mathbf{e}_3 = 0$).
+In the icosahedral projection, the internal space $E_\perp$ carries 10 axes of three-fold symmetry; ten vectors in a three-dimensional space are necessarily linearly dependent. The proposal of this section posits a **Geometric Sum Rule** [Tier 3 conjecture] in which projected winding vectors close in triplets (schematically $\mathbf{e}_1 + \mathbf{e}_2 + \mathbf{e}_3 = 0$). The rule is not a property of the axis sets themselves: no three of the ten three-fold axes, and no three of the six projected basis directions, sum to zero under any choice of signs, so the triplet closure requires a separately specified winding lattice.
 
-To form a stable, closed-loop defect in the 6D parent lattice (a color singlet), the total winding must sum to an integer unit of the 6D lattice period. Because the axes are constrained in triplets, a defect winding around a **single** three-fold axis represents exactly **one-third** of the displacement required for loop closure. Consequently, the fundamental unit of winding for a quark (a face defect) is $1/3$ of the unit winding of a lepton (a vertex defect). In the manuscript's $Q=T_3+Y/2$ convention, this supports the standard hypercharge normalization ($Q_L:Y=+1/3$, $L_L:Y=-1$, $u_R:Y=+4/3$, $d_R:Y=-2/3$, $e_R:Y=-2$); the often-seen $+1/6,-1/2,\ldots$ values belong to the alternate $Q=T_3+Y$ convention and are not the convention used here.
+Under this conjecture, a stable, closed-loop defect in the 6D parent lattice (a candidate color singlet) requires the total winding to sum to an integer unit of the 6D lattice period, and a defect winding around a **single** three-fold axis would represent **one-third** of the displacement required for loop closure. The fundamental unit of winding for a quark (a face defect) would then be $1/3$ of the unit winding of a lepton (a vertex defect). In the manuscript's $Q=T_3+Y/2$ convention, this supports the standard hypercharge normalization ($Q_L:Y=+1/3$, $L_L:Y=-1$, $u_R:Y=+4/3$, $d_R:Y=-2/3$, $e_R:Y=-2$); the often-seen $+1/6,-1/2,\ldots$ values belong to the alternate $Q=T_3+Y$ convention and are not the convention used here.
 
 ---
 
 **1.4 The Massless Photon**
 
-**1.4.1 Gauge-Symmetry Protection [Tier 1]**
+**1.4.1 Gauge-Symmetry Protection [Tier 1 gauge-theory consequence; Tier 3 phason realization]**
 
-The photon is exactly massless in this construction as a consequence of unbroken $U(1)$ gauge symmetry in the underlying phason hydrodynamics (Ch06 §6.1.2). The broken global phase supplies the scalar second-sound degree of freedom, but the Maxwell photon is the transverse gauge-protected phason mode, not the scalar Nambu-Goldstone mode of a broken global symmetry.
+Within the declared unbroken-$U(1)$ gauge action the photon is exactly massless [Tier 1]. Realizing that action in the underlying phason hydrodynamics (V2 Ch06 §6.1.2; declared open programme, V2 Ch06 §6.1) is the Tier 3 part: the broken global phase supplies the scalar second-sound degree of freedom, and the Maxwell photon is identified with the transverse gauge-protected phason mode, not with the scalar Nambu-Goldstone mode of a broken global symmetry [Tier 3 identification].
 
 **1.4.2 Gauge Invariance Protection**
 
-Mass corresponds to a term in the Lagrangian of the form $m^2 A_\mu A^\mu$. In GCT, such a term would be proportional to $m^2 (\partial_\mu \theta)^2$. This would imply that the vacuum energy depends on the absolute value of the phase, which violates the **Axiom of Intelligibility** (which requires laws to be independent of the arbitrary internal "clock" of the vacuum).
+An explicit Proca term $\tfrac{1}{2}m_\gamma^2 A_\mu A^\mu$ is not invariant under the unbroken local transformation $A_\mu \mapsto A_\mu + \partial_\mu\lambda$. In a gauge theory a photon mass therefore requires additional structure, such as Higgs or Stückelberg fields, rather than following from a potential for the absolute condensate phase. Within the declared unbroken-$U(1)$ effective action, the Ward identity forbids the bare mass term [Tier 1 gauge-theory control; Tier 3 GCT phason realization, declared open programme, V2 Ch06 §6.1].
 
-**1.4.3 The Topological Necessity of $m_\gamma = 0$**
+**1.4.3 Compactness Is Not a Flatness Theorem [Tier 1 control]**
 
-The masslessness of the photon is further protected by the **Compactness** of the identity fiber $\Sigma_\infty$. The identity fiber is the universal solenoid, a compact topological group formed as an inverse limit of circles (App B §B.1). A mass term ($m \neq 0$) requires a **parabolic potential** $V(\theta) \sim \theta^2$, which is non-compact and extends to infinity. Gauge invariance, however, requires a **periodic potential** consistent with the solenoidal topology of the fiber. Since the identity space is compact, the potential must be flat in the angular direction, forcing $m_\gamma = 0$ as a topological identity within the gauge-protected construction.
+Compactness alone does **not** force a potential to be flat. A compact angular variable admits non-constant periodic potentials such as $V(\theta)=\Lambda^4[1-\cos\theta]$, whose curvature at a minimum gives the corresponding phase mode a mass. Nor does the compact universal Solenoid $\Sigma_\infty$ (App TAS §TAS.1), used elsewhere as a candidate identity address space, identify itself with the electromagnetic gauge fiber. Photon masslessness in this chapter rests on the unbroken local $U(1)$ gauge redundancy and its Ward identity (§1.4.1–§1.4.2), not on compactness of $\Sigma_\infty$. Any proposed relation between a physical gauge state and a Solenoid address would require a separate map and would not replace the gauge-symmetry argument.
 
 ---
 
@@ -111,47 +113,47 @@ The masslessness of the photon is further protected by the **Compactness** of th
 
 **1.5.1 The Coupling Constant $e$ and Superfluid Density**
 
-We identify the square of the elementary charge $e^2$ as the measure of the **Superfluid Stiffness** of the vacuum. A "Charge" is a point that acts as a topological sink or source for the phase current. The strength of the electromagnetic interaction is the measure of the work required to deform the vacuum phase against its own coherence density $\rho_s$.
+The effective interpretation associates the square of the elementary charge $e^2$ with a normalized **Superfluid Stiffness** of the vacuum, and a "Charge" with a topological sink or source for the phase current; deriving that normalization, the charged sector, and the bare-to-physical coupling remains open under O.19/O.5. On this interpretation the strength of the electromagnetic interaction is the measure of the work required to deform the vacuum phase against its own coherence density $\rho_s$.
 
 **1.5.2 Electromagnetic Force as Gradient Minimization**
 
-The electromagnetic force is the phenomenological registration of the vacuum seeking to minimize its **Total Gradient Energy** [Tier 2]:
+On the GCT reading, the electromagnetic force is the phenomenological registration of the vacuum seeking to minimize its **Total Gradient Energy** [Tier 3 interpretation: the gradient-energy interaction of phase vortices is standard for a declared phase field, but identifying the vortices with charges rests on the Tier 3 charge-winding bridge of §1.3.1]:
 $$E_{\text{phase}} \propto \int (\nabla \theta)^2 dV$$
 When two vortices approach, their phase gradients interact via interference:
 * **Repulsion:** Two electrons possess the same winding sign ($n, n$). Between them, the phase gradients add **constructively**. This increases the local energy density. The system exerts a pressure to push the vortices apart, reducing the high-energy overlap.
 * **Attraction:** An electron and positron possess opposite winding signs ($n, -n$). Between them, the gradients add **destructively**, canceling the phase strain. The system pulls them together to maximize this cancellation, eventually leading to the total "healing" of the lattice (annihilation).
 
-The phason-stiffness derivation of $c$ (Ch06 §6.1.2) makes $K_\perp$ and $e$ two views of the same material constant: $K_\perp$ sets the **Propagation Speed** of the phase wave, while $e$ sets the **Interaction Strength** of the phase vortex. The unity of $c$ and $e$ in the Fine-Structure Constant $\alpha$ (Ch07 §7.2) is therefore a tiered structural interpretation of light and matter as two aspects of a single supersolid medium, conditional on the Ch06 Maxwell bridge and the O.19/O.5 bare-to-physical $\alpha$ closure rather than a final theorem-grade proof.
+The proposed phason-stiffness account of $c$ (V2 Ch06 §6.1; the photon-as-second-sound construction is a Tier 3 declared open programme) would make $K_\perp$ and $e$ two views of the same material constant [Tier 3 interpretation]: $K_\perp$ sets the **Propagation Speed** of the phase wave, while $e$ sets the **Interaction Strength** of the phase vortex. The unity of $c$ and $e$ in the Fine-Structure Constant $\alpha$ (V3 Ch07 §7.2.3–§7.2.4) is therefore a tiered structural interpretation of light and matter as two aspects of a single supersolid medium, conditional on the V2 Ch06 Maxwell bridge and the O.19/O.5 bare-to-physical $\alpha$ closure rather than a final theorem-grade proof.
 
 ---
 
-**1.6 Dynamical Consistency of the Gauge Action [Tier 3 consistency check pending O.15]**
+**1.6 Dynamical Consistency of the Gauge Action [Tier 3 declared open programme, V2 Ch06 §6.1; pending O.15]**
 
 **1.6.1 The Kinetic Term from Phason Hydrodynamics**
 
-In standard Quantum Field Theory (QFT), the Yang-Mills kinetic term $-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}$ is postulated to enforce gauge invariance. In GCT, the gauge kinetic term is shown to be **consistent with** the bilinear map $u_\perp \leftrightarrow A$ from phason hydrodynamics (Tier 3 consistency check; full Tier 2 derivation requires tile-dynamics derivation of the antisymmetric Maxwell kinetic term, the two-polarization gauge redundancy, and a Lorentz-invariant action with specified $c$ — pending O.15).
+In standard Quantum Field Theory (QFT), the Maxwell kinetic term $-\frac{1}{4}F_{\mu\nu}F^{\mu\nu}$ (the Abelian case of the Yang-Mills term) is postulated to enforce gauge invariance. In GCT, the gauge kinetic term is posited in a gauge-fixed form together with the map $u_\perp \leftrightarrow A$ from phason hydrodynamics (Tier 3 declared open programme, V2 Ch06 §6.1: the map is not $I_h$-equivariant, the written kinetic term has the ghost sign, and the locking potential gaps the mode; a derivation requires tile-dynamics derivation of the antisymmetric Maxwell kinetic term, the two-polarization gauge redundancy, and a Lorentz-invariant action with specified $c$ — pending O.15).
 
 Consider the internal displacement field $\mathbf{u}_\perp(x)$ of the quasicrystal. The energy density of this field is dominated by the **Elastic Stiffness** of the tiling rearrangements. The strain energy density $\mathcal{E}$ is proportional to the square of the gradient of the displacement:
 $$\mathcal{E} \propto K_\perp (\nabla \mathbf{u}_\perp)^2$$
 
 **1.6.2 The Identification of Curvature**
 
-Section 1.2 defines the gauge potential $A_\mu$ as the Berry connection generated by the local twist of the icosahedral frame and its transverse phason component. The field strength tensor $F_{\mu\nu}$ is the **Curvature** of this connection, representing the **Vorticity** of the phason fluid:
+Conditionally on the missing gapped eigenbundle and physical map, Section 1.2 uses a Berry connection associated with the local twist of the icosahedral frame and its transverse phason component. Its Abelian curvature, the **Vorticity** of the phason fluid, would be
 $$F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu \propto \nabla \times \mathbf{u}_\perp$$
 
-The elastic energy of the phason condensate, when expressed in terms of this curvature, gives the registered Tier 3 consistency form of the Maxwell Lagrangian:
+If the elastic variables map to this antisymmetric curvature with the required normalization and gauge redundancy, their energy would take the registered Tier 3 consistency form of the Maxwell Lagrangian (as written, the phason form has the ghost sign, as stated above):
 $$\mathcal{L}_{kinetic} = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu}$$
 
 **1.6.3 Physical Interpretation of the Fields**
 
-This identification provides a rigorous mechanical definition for the electric and magnetic fields:
+This supplies a conditional mechanical analogy, not yet a derivation of the physical electric and magnetic fields:
 * **Magnetic Field ($B$):** The curl of the phason displacement ($\nabla \times \mathbf{u}_\perp$).
 * **Electric Field ($E$):** The time derivative of the phason strain ($\partial_t \mathbf{u}_\perp$).
  
-![The gauge lift carries 6D icosahedral lattice strain to the 4D electromagnetic field tensor `F_munu`; the photon emerges as the transverse phason vector mode, massless under unbroken `U(1)` protection and spin-1 by construction.](content/Figures/Volume_3/Figure V3.1.1.svg)
+![Conditional gauge lift (Tier 3): 6D icosahedral lattice strain is mapped to the 4D electromagnetic field tensor $F_{\mu\nu}$; in this proposal the photon is identified with the transverse phason vector mode, massless under unbroken $U(1)$ protection and spin-1 by construction of the assumed gauge action.](content/Figures/Volume_3/Figure V3.1.1.svg)
  
-This identification is not merely formal; it explains *why* the photon is massless (unbroken $U(1)$ gauge protection in the phason hydrodynamic sector) and *why* it has spin-1 (it is the transverse vector mode of $A_T$). An electric field represents the rate at which the phason nodes are flipping states to accommodate a charge imbalance.
+Within the supplied gauge action, the Ward identity protects a massless spin-1 transverse mode (the transverse vector mode of $A_T$). Whether the App ULA phason variables realize that action, and whether an electric field measures the rate at which phason nodes flip states to accommodate a charge imbalance, remain Tier 3 physical questions.
 
-Thus, the "Movement" of the gauge field ($F_{\mu\nu}$) is simply the **Isotropic Elasticity** of the 6D lattice projected into the internal space. The "Force" is the back-reaction of the lattice trying to unwind its topological defects.
+On this conditional reading [Tier 3 interpretation], the "Movement" of the gauge field ($F_{\mu\nu}$) would be the **Isotropic Elasticity** of the 6D lattice projected into the internal space, and the "Force" the back-reaction of the lattice against the unwinding of its topological defects; neither statement is derived here.
 
-![Opposite-charge phase vortices in the superfluid order parameter: the `U(1)` phase winds by `+2pi` and `-2pi` around the two cores, with the wrapped phase field and its gradient flow illustrating quantized winding number as the topological origin of electric charge.](content/Figures/Volume_3/Figure V3.1.2.svg)
+![Opposite-charge phase vortices in the superfluid order parameter: the $U(1)$ phase winds by $+2\pi$ and $-2\pi$ around the two cores, with the wrapped phase field and its gradient flow illustrating quantized winding number, which GCT proposes (Tier 3) as the topological origin of electric charge.](content/Figures/Volume_3/Figure V3.1.2.svg)

@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 """
-nmr_polarity_power.py -- Protocol D P.13c executable preregistration helper.
+nmr_polarity_power.py -- Protocol D P.13c design-sketch helper.
 
 The helper is imported by both the Protocol D engine path and the independent
-P.13c verifier so the preregistration parameters remain single-sourced from
+P.13c verifier so the design-sketch parameters remain single-sourced from
 falsifiability_registry.json.
+
+GATE STATUS: P.13c is HELD PENDING REDESIGN. As written the gate rejected by
+construction (17O shortens water-1H T2 by scalar relaxation). The power
+arithmetic below is a design sketch only; no decision output of this module is
+operative, and until the redesign no outcome supports or rejects the branch.
 """
 
 from __future__ import annotations
@@ -19,6 +24,7 @@ import numpy as np
 
 ENGINE_ROOT = Path(__file__).resolve().parents[1]
 REGISTRY_PATH = ENGINE_ROOT / "falsifiability_registry.json"
+GATE_STATUS = "HELD_PENDING_REDESIGN"
 
 
 def load_registered_p13c_entry() -> dict:
@@ -38,7 +44,7 @@ def _bootstrap_ci_delta(
     alpha_two_sided: float,
     seed: int,
 ) -> dict:
-    """Deterministic synthetic-data bootstrap for the frozen design budget."""
+    """Deterministic synthetic-data bootstrap for the design-sketch budget."""
     rng = np.random.default_rng(seed)
     template = np.linspace(-1.0, 1.0, n_per_condition, dtype=float)
     template = (template - np.mean(template)) / np.std(template, ddof=1)
@@ -71,7 +77,7 @@ def _replication_simulation(
     n_simulations: int,
     seed: int,
 ) -> dict:
-    """Monte Carlo alpha/beta audit for primary and replication cohorts."""
+    """Monte Carlo alpha/beta check for primary and replication cohorts (design sketch)."""
     rng = np.random.default_rng(seed)
     norm = NormalDist()
     zcrit = norm.inv_cdf(1.0 - alpha_two_sided / 2.0)
@@ -104,12 +110,13 @@ def evaluate_registered_p13c_design(
     replication_simulations: int = 50_000,
     seed: int = 13013,
 ) -> dict:
-    """Evaluate the registered P.13c design against its 5% target.
+    """Evaluate the P.13c design sketch against its 5% target.
 
-    The result is a preregistration-design executable, not lab evidence. The
-    power statistic answers whether the frozen n=24 / alpha=0.01 / beta=0.20
-    design can be decisive for a 5% active-state polarity reversal once the
-    pilot variance budget is locked at or below the returned sigma ceiling.
+    The result is design-sketch power arithmetic, not lab evidence and not an
+    operative gate: P.13c is held pending redesign. The power statistic answers
+    whether an n=24 / alpha=0.01 / beta=0.20 design could resolve a 5%
+    active-state isotope x activity interaction once the pilot variance budget
+    is at or below the returned sigma ceiling.
     """
     entry = load_registered_p13c_entry()
     prereg = entry["preregistration_package"]
@@ -120,8 +127,9 @@ def evaluate_registered_p13c_design(
     beta = float(prereg["beta"])
     target_power = 1.0 - beta
     effect_fraction = float(prereg["active_state_polarity_reversal_power_target_fraction"])
-    systematic_sigma_ppm = float(prereg["dominant_systematic_sigma_ppm_max"])
-    systematic_sigma_fraction = systematic_sigma_ppm * 1.0e-6
+    # Systematic floor registered as a fraction of water-1H T2 (the former
+    # "0.2 ppm" key mixed units; 0.2 ppm == 2e-7 of T2).
+    systematic_sigma_fraction = float(prereg["dominant_systematic_sigma_fraction_of_T2"])
 
     norm = NormalDist()
     zcrit = norm.inv_cdf(1.0 - alpha_two_sided / 2.0)
@@ -171,8 +179,12 @@ def evaluate_registered_p13c_design(
     return {
         "registry_id": "P.13c",
         "status": status,
-        "pass": bool(pass_design),
-        "verdict": f"{status}_PREREGISTRATION_DESIGN",
+        "gate_status": GATE_STATUS,
+        "decision_outputs_operative": False,
+        # Design-budget arithmetic only; never a gate pass while the gate is held.
+        "pass": False,
+        "design_budget_consistent": bool(pass_design),
+        "verdict": f"{status}_DESIGN_SKETCH_{GATE_STATUS}",
         "parameters": {
             "sample_size_per_isotope_condition": n_per_condition,
             "repeated_nmr_acquisitions_per_preparation": repeated_acquisitions,
@@ -180,7 +192,7 @@ def evaluate_registered_p13c_design(
             "beta": beta,
             "target_power": target_power,
             "active_state_polarity_reversal_power_target_fraction": effect_fraction,
-            "dominant_systematic_sigma_ppm_max": systematic_sigma_ppm,
+            "dominant_systematic_sigma_fraction_of_T2": systematic_sigma_fraction,
         },
         "power_statistic": {
             "effect_fraction": effect_fraction,
@@ -189,12 +201,12 @@ def evaluate_registered_p13c_design(
             "zbeta_target": zbeta,
             "max_total_per_preparation_sigma_fraction_for_80pct_power": total_sigma_fraction_max,
             "pilot_variance_acceptance_threshold": (
-                "Accept decisive 5% confirmation/falsification only if pilot total "
-                "per-preparation sigma fraction is <= max_total_per_preparation_sigma_fraction_for_80pct_power."
+                "Non-operative while the gate is held pending redesign. After the redesign, a decisive 5% "
+                "support/rejection of the registered polarity branch would require pilot total "
+                "per-preparation sigma fraction <= max_total_per_preparation_sigma_fraction_for_80pct_power."
             ),
             "statistical_sigma_fraction_budget_after_systematic_floor": statistical_sigma_fraction_budget,
             "systematic_sigma_fraction": systematic_sigma_fraction,
-            "systematic_sigma_ppm": systematic_sigma_ppm,
             "systematic_fraction_of_effect": systematic_sigma_fraction / effect_fraction,
             "standard_error_fraction_at_budget": se_at_budget,
             "noncentrality_at_effect_target": noncentrality,
@@ -203,16 +215,20 @@ def evaluate_registered_p13c_design(
         "bootstrap_ci": bootstrap,
         "alpha_beta_replication_simulation": replication,
         "decision_rule": (
-            "Decisive sign-positive gate requires the 99% bootstrap CI for "
-            "Delta T2 = T2(17O)-T2(16O) to exclude zero, exceed the measurement "
-            "floor, have positive sign, and pass the pilot variance gate for the "
-            "5% powered target. Significant negative polarity fails P.13c. "
-            "Sign-positive significant effects below 5% are positive-sensitivity / "
-            "effect-size revision, not confirmation or failure."
+            "Held pending redesign. As written the gate rejected by construction "
+            "(17O shortens water-1H T2 by scalar relaxation). The former sign-aware "
+            "rule -- reject the registered sign-positive branch on a powered, "
+            "significant negative isotope x activity interaction in water-1H Delta T2, "
+            "Delta T2 = [T2(17O,active) - T2(17O,inactive)] - [T2(16O,active) - "
+            "T2(16O,inactive)] -- applies only after the redesign; until then no "
+            "outcome supports or rejects the branch. Neither outcome would be a "
+            "verdict on GCT as a whole, and no phason, Selection-Operator or "
+            "Level-II inference follows (V1 Ch17 §17.1.3)."
         ),
+        "decision_rule_operative": False,
         "scope": (
-            "Executable preregistration design audit. Lab-data status remains "
-            "open until blinded active-state NMR measurements are acquired."
+            "Design-sketch power calculation; gate held pending redesign; "
+            "lab-data status open."
         ),
     }
 

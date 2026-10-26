@@ -25,6 +25,6 @@
   "bare_crosscheck_ok": true,
   "V_AKN_radius2_Ih": 101,
   "saturated_under_refinement": true,
-  "cited_penrose_figure": "~30-40 (App Z Z.3)",
-  "verdict": "V_AKN closed: |V_AKN| = 101 radius-2 decorated stars under I_h (bare-9 cross-check OK), saturated under grid refinement. This EXCEEDS the cited Penrose-style ~30-40: the 6D-AKN radius-2 I_h-reduced acceptance set is larger than the 2D-Penrose figure. It is the nearest-neighbour Metropolis acceptance-set size for the App Z Z.3.1 viability check (the QLQCD-1L update locality); larger-radius decorations refine it further."
+  "cited_penrose_figure": "~30-40 (App QLA Z.3)",
+  "verdict": "V_AKN closed: |V_AKN| = 101 radius-2 decorated stars under I_h (bare-9 cross-check OK), saturated under grid refinement. This EXCEEDS the cited Penrose-style ~30-40: the 6D-AKN radius-2 I_h-reduced acceptance set is larger than the 2D-Penrose figure. It is the nearest-neighbour Metropolis acceptance-set size for the App QLA Z.3.1 viability check (the QLQCD-1L update locality); larger-radius decorations refine it further."
 }

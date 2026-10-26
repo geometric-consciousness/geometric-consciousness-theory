@@ -6,7 +6,7 @@ Parameter Ledger Sec 2 row 29:
      Wavefunction overlap suppression (derived Sec 13.2.1)
      |psi(0)|^2 ~ l_P^3 / xi^3"
 
-App M Sec M derivation:
+App ULA Sec M derivation:
     By definition: l_P = sqrt(hbar G/c^3), xi = hbar c/(alpha^2 m_e c^2)
     Therefore l_P/xi = alpha^2 m_e / M_Planck
     Jacobian = (l_P/xi)^3 = [alpha^2 * phi^-107 (1-5 alpha)]^3 ~ 10^-78 (manuscript claim)
@@ -61,42 +61,43 @@ def main():
     # Stated values in manuscript
     parameter_ledger_claim = 1.0e-80
     ch18_claim = 1.11e-80
-    app_m_claim = 1.1e-80
+    app_ula_claim = 1.1e-80
 
     routes_agree = (eq_1_vs_2 < 0.01) and (eq_1_vs_3 < 0.05)
     order_of_mag_OK = 1e-82 <= direct_jacobian <= 1e-78
-    app_m_off_by = direct_jacobian / app_m_claim
-    app_m_consistent = 0.5 <= app_m_off_by <= 2.0
+    app_ula_off_by = direct_jacobian / app_ula_claim
+    app_ula_consistent = 0.5 <= app_ula_off_by <= 2.0
 
     pass_status = routes_agree and order_of_mag_OK
 
     discrepancies = []
-    if not app_m_consistent:
+    if not app_ula_consistent:
         discrepancies.append(
-            f"App M reference states Jacobian ~ 10^-78; computed "
-            f"value = {direct_jacobian:.3e} (= {direct_jacobian/app_m_claim:.4f} "
-            f"x the App M reference value), a difference of "
-            f"~{abs(math.log10(direct_jacobian/app_m_claim)):.1f} decades. "
+            f"App ULA reference states Jacobian ~ 10^-78; computed "
+            f"value = {direct_jacobian:.3e} (= {direct_jacobian/app_ula_claim:.4f} "
+            f"x the App ULA reference value), a difference of "
+            f"~{abs(math.log10(direct_jacobian/app_ula_claim)):.1f} decades. "
             f"Parameter Ledger Sec 2 (~10^-80) and Ch18 (~6.85e-81) agree with "
             f"the computed value."
         )
 
     res = make_result(
         name="fbio_jacobian",
-        app_r_label="F_bio Jacobian (l_P/xi)^3",
+        app_psc_label="F_bio Jacobian (l_P/xi)^3",
         formula="(l_P/xi)^3 = [alpha^2 (m_e/M_P)]^3 = [alpha^2 * phi^-107 (1-5 alpha)]^3",
         predicted=direct_jacobian,
         observed=parameter_ledger_claim,
+        reference_class="MANUSCRIPT_STATED",
         unit="(dimensionless wavefunction-overlap suppression)",
-        app_r_predicted=1.0e-80,
-        app_r_precision_str=(
+        app_psc_predicted=1.0e-80,
+        app_psc_precision_str=(
             f"three-route convergence: direct = {direct_jacobian:.3e}; "
             f"algebraic [alpha^2 (m_e/M_P)]^3 = {algebraic_jacobian:.3e}; "
             f"GCT-substituted = {gct_jacobian:.3e}"
         ),
-        app_r_precision_ppm=None,
-        tier="Tier 2 (algebraic consequence of GCT mass-spectrum exponent phi^-107)",
-        status="PASS" if pass_status else "TENSION",
+        app_psc_precision_ppm=None,
+        tier="Tier 3 wavefunction-overlap identification (rests on the Tier 3 healing length xi) + Tier 3/Tier 4 inputs (O.14 electron chain; mass-spectrum exponent phi^-107)",
+        status="INTERNAL_ARITHMETIC_PASS" if pass_status else "TENSION",
         tolerance_ppm=None,
         discrepancy_notes=discrepancies,
         extra={
@@ -113,8 +114,8 @@ def main():
             "route_1_vs_3_relative_diff": eq_1_vs_3,
             "parameter_ledger_stated": parameter_ledger_claim,
             "ch18_stated": ch18_claim,
-            "app_m_stated": app_m_claim,
-            "app_m_factor_off": app_m_off_by,
+            "app_ula_stated": app_ula_claim,
+            "app_ula_factor_off": app_ula_off_by,
             "order_of_magnitude_OK_vs_ledger": order_of_mag_OK,
             "note": (
                 "Computation uses CODATA alpha (giving xi ~ 7.25 nm). "

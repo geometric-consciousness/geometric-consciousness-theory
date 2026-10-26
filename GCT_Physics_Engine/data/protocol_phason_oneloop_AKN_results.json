@@ -1,5 +1,5 @@
 {
-  "target": "Phason one-loop self-energy on the AKN lattice produces the +3442 ppm anti-screening shift required by App M \u00a7M.7.1 (which closes ~3400 ppm via the bilayer 1/(2N) correction; the remaining 41.6 ppm is the O.19 magnitude target).",
+  "target": "Phason one-loop self-energy on the AKN lattice produces the +3443 ppm anti-screening shift required by App ULA \u00a7ULA.7.1 (which closes ~3400 ppm via the bilayer 1/(2N) correction; the remaining 41.5 ppm is the O.19 magnitude target).",
   "sign_analysis": {
     "alpha_inv_bare": 137.50776405003785,
     "alpha_inv_observed": 137.035999177,
@@ -12,11 +12,13 @@
   },
   "coupling_structure_analysis": {
     "configuration_manifold": "E_perp / I_h  (R^3 quotient by icosahedral point group, |I_h| = 120)",
-    "berry_connection_class": "NAGT-like (non-flat Berry curvature from non-abelian quotient)",
-    "supports_F_munu_squared_kinetic_term": true,
-    "implies_derivative_coupling_bubble": true,
-    "consistent_with_M_7_1_anti_screening_claim": true,
-    "note": "The non-trivial topology of the I_h orbit on the 12 RT vertices in E_perp ensures the Berry curvature is non-flat at leading non-trivial order in |Phi_perp|. This forces the phason-photon coupling into the NAGT class, yielding anti-screening sign for the one-loop vacuum polarization, consistent with the GCT bare-versus-observed direction."
+    "berry_connection_class": "NAGT-like TEMPLATE (assumed, not derived; a finite I_h quotient does not force Berry curvature - App ORQ O.19)",
+    "nagt_class_forced_by_quotient": false,
+    "assumes_F_munu_squared_kinetic_term": true,
+    "assumes_derivative_coupling_bubble": true,
+    "template_direction_compatible_with_M_7_1_anti_screening": true,
+    "sign_source_derived": false,
+    "note": "If the phason-photon coupling is modelled by the NAGT-class template (non-flat Berry curvature on E_perp / I_h), the one-loop vacuum polarization has the anti-screening sign, compatible with the GCT bare-versus-observed direction. The template is not forced by the quotient: a finite point-group quotient does not force Berry curvature, and I_h admits no quadratic Casimir in the standard Lie-algebraic sense (App ORQ O.19; App ULA). Template-direction compatibility only."
   },
   "bubble_flat": {
     "patch_size_unit_cells": 8,
@@ -35,7 +37,7 @@
     "bubble_sign": "positive"
   },
   "bubble_ratio_deriv_over_flat": 6.490857965618581,
-  "status_sign": "CONFIRMED \u2014 GCT direction matches bosonic anti-screening / asymptotic-freedom sign convention",
-  "status_coupling_class": "CONFIRMED structurally \u2014 App M \u00a7M.4 Berry-connection identification on E_perp / I_h forces NAGT-class coupling (non-flat Berry curvature from non-abelian icosahedral quotient). The App M \u00a7M.7.1 anti-screening claim is structurally implied, not just sign-consistent.",
-  "status_magnitude": "OPEN \u2014 explicit computation of the Berry curvature 2-form on E_perp / I_h at quadratic order in |Phi_perp| remains, together with the AKN momentum-space replacement of the periodic grid. The +41.6 ppm magnitude is the ultimate target."
+  "status_sign": "TEMPLATE-DIRECTION COMPATIBILITY ONLY \u2014 the GCT bare-versus-observed direction is compatible with the bosonic anti-screening template under the declared reference-scale convention; sign and magnitude not source-derived (App ORQ O.19)",
+  "status_coupling_class": "TEMPLATE ONLY \u2014 the NAGT-class coupling is an assumed template, not forced by the E_perp / I_h quotient (a finite point-group quotient does not force Berry curvature; I_h has no quadratic Casimir in the standard Lie-algebraic sense). Template-direction compatibility only; sign and magnitude not source-derived (App ORQ O.19; App ULA).",
+  "status_magnitude": "OPEN \u2014 explicit computation of the Berry curvature 2-form on E_perp / I_h at quadratic order in |Phi_perp| remains, together with the AKN momentum-space replacement of the periodic grid. The +41.5 ppm magnitude is the ultimate target."
 }

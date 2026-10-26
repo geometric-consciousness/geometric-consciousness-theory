@@ -1,4 +1,13 @@
 {
+  "diagnostic_object": "eigenvalue multiplicities of the golden-weighted threshold adjacency matrix",
+  "interpretation": "All 21 weighted adjacencies commute with all 60 rotations. Pair [3,5] has an accidental collision of two G sectors in one multiplicity-eight eigenspace; it is not a failure of I-equivariance.",
+  "resolved_spectral_profile": {
+    "A": 4,
+    "T_lumped": 16,
+    "G": 8,
+    "H": 12,
+    "composite_multiplicities": []
+  },
   "winner_pair": [
     8,
     13
@@ -8,7 +17,7 @@
     "T": 16,
     "G": 8,
     "H": 12,
-    "other": []
+    "composite": []
   },
   "pairings_matching_winner_profile": [
     [
@@ -92,7 +101,29 @@
       13
     ]
   ],
-  "n_clean_i_symmetric_pairings": 20,
+  "n_i_equivariant_pairings": 21,
+  "n_rotations_checked_per_pairing": 60,
+  "max_commutator_error_all_pairings": 0.0,
+  "pair_3_5_collision": {
+    "eigenvalue": -2.022787610687372e-15,
+    "multiplicity": 8,
+    "class_character": [
+      8.0,
+      -2.0,
+      -2.0,
+      2.0,
+      -0.0
+    ],
+    "irrep_multiplicities": {
+      "A": 0,
+      "T1": 0,
+      "T2": 0,
+      "G": 2,
+      "H": 0
+    }
+  },
+  "pair_3_5_collision_identification": "2G accidental spectral collision",
+  "route_alpha_disposition": "Does not select the eta=-8 winner: 20 pairings share its resolved profile; pair [3,5] is fully I-equivariant and differs only because two G sectors collide at one eigenvalue.",
   "all_results": [
     {
       "pair": [
@@ -106,9 +137,32 @@
         "4": 6,
         "5": 12
       },
-      "other_multiplicities": [
+      "composite_multiplicities": [
         8
       ],
+      "collision_eigenspace_decompositions": [
+        {
+          "eigenvalue": -2.022787610687372e-15,
+          "multiplicity": 8,
+          "class_character": [
+            8.0,
+            -2.0,
+            -2.0,
+            2.0,
+            -0.0
+          ],
+          "irrep_multiplicities": {
+            "A": 0,
+            "T1": 0,
+            "T2": 0,
+            "G": 2,
+            "H": 0
+          }
+        }
+      ],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         8,
@@ -164,7 +218,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -221,7 +279,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -278,7 +340,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -335,7 +401,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -392,7 +462,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -449,7 +523,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -506,7 +584,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -563,7 +645,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -620,7 +706,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -677,7 +767,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -734,7 +828,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -791,7 +889,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -848,7 +950,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -905,7 +1011,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -962,7 +1072,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -1019,7 +1133,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -1076,7 +1194,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -1133,7 +1255,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -1190,7 +1316,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,
@@ -1247,7 +1377,11 @@
         "4": 8,
         "5": 12
       },
-      "other_multiplicities": [],
+      "composite_multiplicities": [],
+      "collision_eigenspace_decompositions": [],
+      "n_rotations_checked": 60,
+      "max_commutator_error": 0.0,
+      "i_equivariant": true,
       "n_eigenvalues_total": 144,
       "all_mults_sorted": [
         5,

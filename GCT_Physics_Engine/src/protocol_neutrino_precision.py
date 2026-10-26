@@ -14,39 +14,39 @@ in the RT acceptance window:
 
 where the exponent −36 = −3 · 12 encodes three generations × 12 vertices.
 
-The heavier masses are obtained from oscillation data (NuFit 5.0):
+The heavier masses are obtained from oscillation data (SSOT values, config/gct_constants.yaml):
     m₂ = √(m₁² + Δm²₂₁)
     m₃ = √(m₁² + Δm²₃₁)   [Normal Ordering]
 
 Uncertainty Budget
 ------------------
 1. Geometric floor: ±0.1% on m₁ from higher-order phason loops.
-2. Δm²₂₁ experimental uncertainty (NuFit 5.0): ±0.18e−5 eV²
-3. Δm²₃₁ experimental uncertainty (NuFit 5.0): ±0.017e−3 eV²
+2. Δm²₂₁ experimental uncertainty (fallback 1σ): ±0.18e−5 eV²
+3. Δm²₃₁ experimental uncertainty (fallback 1σ): ±0.028e−3 eV²
 
-θ₂₃ Epistemic Status: TENSION_GT_4SIGMA (Tier 3)
--------------------------------------------------
+θ₂₃ Epistemic Status: WITHIN_3SIGMA_OCTANT_UNRESOLVED (Tier 3)
+---------------------------------------------------------------
 GCT predicts a bare θ₂₃ = 45° from the 3-fold symmetry constraints
-of the icosahedral window. NOvA and T2K measure ~49.5° ± 1.1°, a 4.5° gap.
+of the icosahedral window. NuFIT 6.0 (normal ordering) places 45° inside
+the 3σ range with SK atmospheric data (best fit 43.3°, 3σ 41.3°–49.9°)
+and without it (best fit 48.5°, 3σ 41.0°–50.5°); Δχ²(45°) ≈ 2.0 / 4.2.
+The earlier 4.09σ figure (a one-octant Gaussian on 49.5° ± 1.1°) is
+withdrawn; the octant is unresolved pending DUNE / Hyper-K.
 
-Standard MSW cannot close the gap:
-  The standard Mikheyev-Smirnov-Wolfenstein matter effect on θ₂₃ was
-  computed for NOvA (L=810 km, ρ=2.8 g/cm³, E=2 GeV) and T2K (L=295 km).
-  Result: matter parameter 2EV/Δm²₃₁ ≈ 1.7×10⁻⁴ (NOvA), giving a θ₂₃
-  shift of ~0.00004°. The MSW effect is 5 orders of magnitude too small
-  to close the gap. MSW primarily affects the 1-2 sector, not the 2-3 sector.
+No MSW closure is needed:
+  45° lies inside both NuFIT 6.0 3σ ranges, so there is no θ₂₃ gap to
+  close. (For reference, the standard Mikheyev-Smirnov-Wolfenstein matter
+  effect on θ₂₃ for NOvA/T2K baselines is ~0.00004° and negligible.)
 
 Status - Itinerant Volume Drag excluded:
-  An alternative perturbation Δĥ_drag = γ (J · w) (invoked elsewhere to induce a 4.5°
-  eigenbasis rotation) is excluded from the registered prediction. Its coupling γ is not derived
-  from the phason elastic action, so it is excluded as an undisclosed
-  sector handle (see Ch09 §9.4.2).
+  An alternative perturbation Δĥ_drag = γ (J · w) (a +4.5° eigenbasis
+  rotation diagnostic) is excluded from the registered prediction. Its
+  coupling γ is not derived from the phason elastic action, so it is
+  excluded as an undisclosed sector handle (see Ch09 §9.4.2).
 
-  The bare 45° prediction is classified Tier 3 (Tension) pending a lattice-
-  Hamiltonian derivation of neutrino propagation through the discrete
-  icosahedral vacuum. That derivation is the pre-registered discriminant:
-  if it recovers standard MSW, the 45° is falsified; if it departs from MSW
-  consistent with the 4.5° shift, the prediction elevates to Tier 2.
+  The bare 45° value is a Tier 3 statement within the 3σ ranges; the
+  octant is open pending DUNE / Hyper-K. No tier promotion is attached to
+  any matter-effect derivation.
 """
 
 import json
@@ -61,9 +61,9 @@ from gct_utils import C, get_output_path
 PHI          = float(C.PHI)
 M_E_EV       = float(C.M_E) * 1e6          # MeV → eV
 
-# NuFit 5.0 (Normal Ordering) — if in YAML, load from C; else use published values.
-# Δm²₂₁ = (7.53 ± 0.18) × 10⁻⁵ eV²
-# Δm²₃₁ = (2.455 ± 0.028) × 10⁻³ eV²   (→ ±0.017 on the 2σ range, but use 1σ ≈ 0.014)
+# Normal Ordering. Central values load from the SSOT (config/gct_constants.yaml:
+# Δm²₂₁ = 7.42e-5, Δm²₃₁ = 2.51e-3 eV²); the literals below are fallbacks only.
+# 1σ errors used: Δm²₂₁ ± 0.18e-5, Δm²₃₁ ± 0.028e-3 eV².
 DM2_21      = getattr(C, "DELTA_M2_21",    7.53e-5)   # eV²
 DM2_21_ERR  = getattr(C, "DELTA_M2_21_ERR", 0.18e-5)  # 1σ
 DM2_31      = getattr(C, "DELTA_M2_31",    2.455e-3)  # eV²
@@ -125,60 +125,73 @@ def run_neutrino_precision() -> dict:
 
     # Observational bound (Planck 2018, 95% CL):
     PLANCK_UPPER_95 = 0.12        # eV
-    KATRIN_UPPER_90 = 0.8         # eV  (single ν mass limit, for reference)
+    KATRIN_UPPER_90 = 0.45        # eV  (KATRIN 2025 single-ν mass limit, 90% CL; reference only)
 
-    within_planck = sigma_sum < PLANCK_UPPER_95
-    verdict = "PASS" if within_planck else "FAIL"
+    # The gate is the DESI DR2 BAO + CMB LambdaCDM bound (arXiv:2503.14738),
+    # read from the SSOT. The Planck+DESI 2024 (DR1) bound used by
+    # verify_independent/verify_neutrino.py and the Planck 2018 bound are kept
+    # as named sub-checks; the w0wa bound records the model dependence.
+    DESI_DR2_UPPER_95 = float(C.SUM_MNU_BOUND_DESI_DR2)            # 0.0642 eV
+    DESI_DR2_W0WA_UPPER_95 = float(C.SUM_MNU_BOUND_DESI_DR2_W0WA)  # 0.16 eV
+    PLANCK_DESI_UPPER_95 = float(C.SUM_MNU_BOUND_DESI_2024)        # 0.072 eV
+    within_planck_2018 = sigma_sum < PLANCK_UPPER_95
+    within_planck = sigma_sum < PLANCK_DESI_UPPER_95
+    within_desi_dr2 = sigma_sum < DESI_DR2_UPPER_95
+    within_desi_dr2_w0wa = sigma_sum < DESI_DR2_W0WA_UPPER_95
+    verdict = ("CONSISTENT_DESI_DR2_LCDM" if within_desi_dr2
+               else "TENSION_SIGMA_MNU_ABOVE_DESI_DR2_0P0642_EV_LCDM")
 
     print(f"  3σ internal precision window: [{lower_3s:.4f}, {upper_3s:.4f}] eV")
     print(f"  Planck 2018 bound  : Σm_ν < {PLANCK_UPPER_95} eV")
-    print(f"  GCT prediction     : {sigma_sum:.4f} eV {'< bound ✓' if within_planck else '> bound ✗'}")
+    print(f"  Planck+DESI 2024   : Σm_ν < {PLANCK_DESI_UPPER_95} eV")
+    print(f"  DESI DR2 + CMB     : Σm_ν < {DESI_DR2_UPPER_95} eV (ΛCDM); < {DESI_DR2_W0WA_UPPER_95} eV (w0wa)")
+    print(f"  GCT prediction     : {sigma_sum:.4f} eV; Planck 2018 {'within' if within_planck_2018 else 'outside'}, Planck+DESI 2024 {'within' if within_planck else 'outside'}, DESI DR2 ΛCDM {'within' if within_desi_dr2 else 'outside (tension)'}, DESI DR2 w0wa {'within' if within_desi_dr2_w0wa else 'outside'}")
     print(f"  Verdict            : {verdict}")
     print()
     print(f"  Definitive prediction: Σm_ν = {sigma_sum:.3f} ± {sig_total:.3f} eV")
     print(f"  A Σm_ν measurement outside [{lower_3s:.3f}, {upper_3s:.3f}] eV")
     print("  would flag an internal spectrum-fit inconsistency.")
-    print("  Registered App V P.4 cosmology gate: Σm_ν < 0.075 eV OR > 0.15 eV.")
+    print("  Registered App PRG P.4 cosmology gate: Σm_ν < 0.075 eV OR > 0.15 eV.")
 
-    # -- theta23 tension audit (SIG-04) --------------------------------------
+    # -- theta23 octant audit (SIG-04) --------------------------------------
     # GCT bare prediction: theta23 = 45 deg  (maximal mixing from 3-fold icosahedral symmetry)
-    # Observed (NOvA/T2K combined best fit): ~49.5 deg
-    # MSW correction attempt: computed and found ~0.00004 deg shift -- negligible.
+    # NuFIT 6.0 (normal ordering): best fit 48.5 deg without SK atmospheric data,
+    # 43.3 deg with it; 45 deg is inside both 3-sigma ranges (octant unresolved).
+    # MSW correction contributes a ~0.00004 deg shift and is negligible at this precision.
     #
     # Excluded diagnostic: Itinerant Volume Drag
-    #   The formula below is retained only to document the excluded branch. Its
-    #   coupling was not derived from the phason elastic action and is not used
-    #   as a GCT closure mechanism.
+    #   The formula below is a diagnostic only. Its coupling is not derived from
+    #   the phason elastic action and is not a GCT closure mechanism.
     THETA23_BARE_DEG    = 45.0
-    THETA23_OBS_DEG     = 49.5     # NOvA + T2K best fit (2024)
-    THETA23_OBS_ERR_DEG = 1.1     # approximate 1sigma (combined experiments)
+    THETA23_OBS_DEG     = 48.5     # NuFIT 6.0 NO best fit without SK (upper octant)
+    THETA23_OBS_ERR_DEG = 0.9      # NuFIT 6.0 lower 1-sigma error on that fit (non-Gaussian; two-octant likelihood)
+    THETA23_DCHI2_45_WITH_SK = 2.02      # NuFIT 6.0 1-D projection, with SK
+    THETA23_DCHI2_45_WITHOUT_SK = 4.20   # NuFIT 6.0 1-D projection, without SK
 
     # Excluded diagnostic branch
     theta23_pred_rad = np.pi / 4 + (PHI**-3) / 3
     theta23_pred_deg = np.degrees(theta23_pred_rad)
 
     theta23_gap_bare_deg    = THETA23_OBS_DEG - THETA23_BARE_DEG
-    theta23_tension_bare    = theta23_gap_bare_deg / THETA23_OBS_ERR_DEG
     theta23_residual_cand   = theta23_pred_deg - THETA23_OBS_DEG   # signed residual
-    theta23_tension_cand    = abs(theta23_residual_cand) / THETA23_OBS_ERR_DEG
 
-    theta23_flag = "TENSION_GT_4SIGMA"
+    theta23_flag = "WITHIN_3SIGMA_OCTANT_UNRESOLVED"
 
     print(f"  {'─'*50}")
-    print(f"  theta23 Tension Audit (SIG-04):")
+    print(f"  theta23 Octant Audit (SIG-04):")
     print(f"    GCT bare prediction          : {THETA23_BARE_DEG:.1f} deg  (icosahedral 3-fold symmetry)")
-    print(f"    Observed (NOvA/T2K)          : {THETA23_OBS_DEG:.1f} deg +/- {THETA23_OBS_ERR_DEG:.1f} deg")
-    print(f"    Bare tension                 : {theta23_tension_bare:.1f}sigma  [TENSION_GT_4SIGMA]")
-    print(f"    MSW correction               : ~0.00004 deg (5 orders of magnitude too small)")
+    print(f"    NuFIT 6.0 (NO, without SK)   : {THETA23_OBS_DEG:.1f} deg (-{THETA23_OBS_ERR_DEG:.1f} deg)")
+    print(f"    Delta chi2 at 45 deg          : {THETA23_DCHI2_45_WITH_SK} with SK / {THETA23_DCHI2_45_WITHOUT_SK} without  [WITHIN_3SIGMA_OCTANT_UNRESOLVED]")
+    print(f"    MSW correction               : ~0.00004 deg (negligible; no closure needed)")
     print(f"  ─── Excluded diagnostic: Itinerant Volume Drag ─────────────")
     print(f"    Perturbation Hamiltonian      : Delta H_drag = gamma(J . w)")
     print(f"    Diagnostic formula            : theta23 = pi/4 + phi^(-3)/3")
     print(f"    diagnostic theta23 (rad)      : {theta23_pred_rad:.8f} rad")
     print(f"    diagnostic theta23 (deg)      : {theta23_pred_deg:.4f} deg")
-    print(f"    NOvA/T2K best fit            : {THETA23_OBS_DEG:.1f} deg +/- {THETA23_OBS_ERR_DEG:.1f} deg")
+    print(f"    NuFIT 6.0 best fit (no SK)   : {THETA23_OBS_DEG:.1f} deg")
     print(f"    Residual (pred - obs)        : {theta23_residual_cand:+.4f} deg  ({abs(theta23_residual_cand)*60:.2f} arcmin)")
     print(f"    Status                       : {theta23_flag}")
-    print(f"    Disposition                  : open theta23 octant tension; diagnostic branch not used")
+    print(f"    Disposition                  : theta23 octant unresolved; diagnostic branch not used")
 
     results = {
         "m1_ev":          m1,
@@ -190,12 +203,20 @@ def run_neutrino_precision() -> dict:
         "lower_3sigma":   lower_3s,
         "upper_3sigma":   upper_3s,
         "planck_bound_ev": PLANCK_UPPER_95,
+        "within_planck_2018": bool(within_planck_2018),
+        "planck_desi_2024_bound_ev": PLANCK_DESI_UPPER_95,
+        "within_planck_desi_2024": bool(within_planck),
+        "desi_dr2_lcdm_bound_ev": DESI_DR2_UPPER_95,
+        "within_desi_dr2_lcdm": bool(within_desi_dr2),
+        "desi_dr2_w0wa_bound_ev": DESI_DR2_W0WA_UPPER_95,
+        "within_desi_dr2_w0wa": bool(within_desi_dr2_w0wa),
+        "gate_source": "DESI DR2 BAO + CMB, 95% CL, LambdaCDM (arXiv:2503.14738); relaxes to < 0.16 eV under w0wa",
         "verdict":        verdict,
-        "pass":           bool(within_planck),
+        "pass":           bool(within_desi_dr2),
         "prediction_string": (
             f"Sigma_m_nu = {sigma_sum:.3f} +/- {sig_total:.3f} eV  "
             f"(3-sigma internal precision window: [{lower_3s:.3f}, {upper_3s:.3f}] eV; "
-            "registered App V P.4 cosmology gate: Sigma_m_nu < 0.075 eV OR > 0.15 eV)"
+            "registered App PRG P.4 cosmology gate: Sigma_m_nu < 0.075 eV OR > 0.15 eV)"
         ),
         "registered_app_v_p4_gate": "Sigma_m_nu < 0.075 eV OR Sigma_m_nu > 0.15 eV",
         "theta23_audit": {
@@ -203,16 +224,17 @@ def run_neutrino_precision() -> dict:
             "observed_deg": THETA23_OBS_DEG,
             "observed_err_deg": THETA23_OBS_ERR_DEG,
             "gap_deg": theta23_gap_bare_deg,
-            "tension_sigma_bare": theta23_tension_bare,
+            "dchi2_at_45_with_sk": THETA23_DCHI2_45_WITH_SK,
+            "dchi2_at_45_without_sk": THETA23_DCHI2_45_WITHOUT_SK,
+            "comparator_source": "NuFIT 6.0 (arXiv:2410.05380), normal ordering; gap_deg is against the without-SK best fit",
             "msw_correction_deg": 0.00004,
             "candidate_mechanism": "Itinerant Volume Drag (excluded diagnostic)",
             "candidate_formula": "theta23 = pi/4 + phi^(-3)/3",
             "theta23_candidate_rad": theta23_pred_rad,
             "theta23_candidate_deg": theta23_pred_deg,
             "candidate_residual_deg": theta23_residual_cand,
-            "candidate_tension_sigma": theta23_tension_cand,
-            "status": "TENSION_GT_4SIGMA",
-            "epistemic_tier": "Tier 3 (theta23 octant audit; Itinerant Volume Drag excluded)",
+            "status": "WITHIN_3SIGMA_OCTANT_UNRESOLVED",
+            "epistemic_tier": "Tier 3 (theta23 octant unresolved; Itinerant Volume Drag excluded)",
             "mechanism_formalism": "Excluded diagnostic only; Delta_H_drag coupling is not derived from the phason elastic action",
         },
     }

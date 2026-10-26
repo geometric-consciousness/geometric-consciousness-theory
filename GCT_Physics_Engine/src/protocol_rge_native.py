@@ -2,66 +2,66 @@
 """
 protocol_rge_native.py — GCT-Native Renormalization Group Flow
 ================================================================
-Native flow-shape model for the gauge-coupling running sector. Derives
-the running of the three SM gauge couplings
+Native flow-shape model for the gauge-coupling running sector. Implements
+calibrated running curves for the three SM gauge couplings
 {alpha(mu), sin^2(theta_W)(mu), alpha_s(mu)} from the hydrodynamic
-relaxation tensors of the quasicrystalline defect gas — phonon/phason
-stiffness K_par/K_perp, the icosahedral I_h irreducible-representation
-multiplicities, and the AKN cut-and-project Gram weights.
+relaxation tensors of the quasicrystalline defect gas, the icosahedral I_h
+irreducible-representation multiplicities, and explicitly calibrated sector
+weights.  Canonical projector geometry contributes a 1/2+1/2 split; it does
+not derive the physical stiffness or electroweak boundary.
 
 ================================================================
 Scope (read first):
 ----------------------------------------------------------------
-This protocol implements the shape-level native phason-RGE flow from
-icosahedral substrate dynamics. The result, verified numerically here,
+This protocol implements the Tier 3 shape-level native phason-RGE
+activation ansatz built on icosahedral irrep data. The result, verified numerically here,
 is the following tiered status:
 
-  1. STRUCTURE — derived from geometry with no fitted shape parameter:
-       - Stiffness ratio K_perp/K_par = phi^-18  (Tier 1, App K.4)
-       - Gram weights |E_par|^2, |E_perp|^2      (Tier 1, App K.2)
+  1. STRUCTURE / REGISTERED INPUTS:
+       - Canonical projector weights 1/2 + 1/2   (Tier 1)
+       - K_perp/K_par = phi^-18                  (Tier 3 P3b/O.15)
+       - sin^2(theta_W)^bare = phi^-3            (Tier 3 gauge-kinetic hypothesis)
        - Icosahedral I_h irrep dimensions        (Tier 1, group theory)
-       - Sign of every beta-function from gerade/ungerade parity
-       - Hierarchy b_1 > 0 > b_2 > b_3 reproduced structurally
+       - Beta-function signs (+,-,-)                   (Tier 3 model inputs)
+       - I_h activation schedule t_rho=T_GUT*d_rho/5 (Tier 3 ansatz)
 
-  2. COEFFICIENT MAGNITUDE — the native phason-RGE flow reproduces SM
-     one-loop coefficient magnitudes to 10-25% structural agreement.
-     The icosahedral irrep counts give the right ratios and signs but
-     the absolute magnitudes of the b-coefficients have a residual that
-     requires QLQCD closure to fix.
+  2. COEFFICIENT MAGNITUDE — three independent Z_i factors are defined so
+     that the saturated coefficients equal the three SM one-loop targets
+     exactly.  This is a calibration identity, not a derivation or a
+     10-25% substrate prediction.
 
-  3. SHAPE OF FLOW — reproduces the SM one-loop shape of all three
-     running curves between M_Z and M_GUT (within the magnitude caveat
-     in #2). The Z-pole values are treated as observed IR endpoints and
-     alpha_2^-1(M_GUT) = 24.0 is the Tier 3 SM-equivalent calibration
-     anchor A2. The native flow's predictive content is the shape of the
-     running between endpoints, not the endpoint values themselves.
+  3. SHAPE OF FLOW — the finite I_h step schedule supplies a candidate curve.
+     It does not reproduce the observed electroweak endpoint.  In particular,
+     alpha_2^-1(M_GUT)=24.0 is an imported UV normalisation A2, not an endpoint
+     calibration of this kernel.  The protocol computes and reports the A2
+     mismatch explicitly.
 
 Tier classification of outputs:
-  - alpha(mu) shape:         Tier 2  (no-fitted-shape flow from B_U1_GCT)
+  - alpha(mu) shape:         Tier 3  (Z_1-calibrated structural flow)
   - alpha(mu) M_Z endpoint:  Tier 3  (overall scale anchor needed,
                                       same status as SM via CODATA)
-  - sin^2(theta_W) shape:    Tier 2  (no-fitted-shape flow from B_U1/B_SU2)
-  - sin^2(theta_W) endpoint: Tier 3  (A2 calibration anchor at M_GUT)
+  - sin^2(theta_W) shape:    Tier 3  (Z_1/Z_2 + activation ansatz)
+  - sin^2(theta_W) endpoint: Tier 3  (H-EW + imported A2; current mismatch)
   - alpha_s(mu) bare:        Tier 3  (10*phi^2 calibrated handle pending O.42 / QLQCD-2)
-  - alpha_s(mu) running:     Tier 3  (QLQCD-2 pending, App Z.7)
+  - alpha_s(mu) running:     Tier 3  (QLQCD-2 pending, App QLA.7)
 
 What this protocol achieves:
-  - The flow uses an irrep-activation function derived from
-    icosahedral group theory + Gram weights, with no Gaussian width
+  - The flow uses an irrep-activation function constructed from
+    icosahedral group theory + equal canonical sector weights, with no Gaussian width
     parameter.
   - The beta_geo(t) kernel is expressed as an explicit sum over
-    icosahedral irreps weighted by their dimensions and Gram-projection
-    coupling weights.
-  - No free Gaussian width parameter sigma; everything is fixed
-    by H_3 group invariants and phi.
+    icosahedral irreps weighted by their dimensions and calibrated sector
+    weights.
+  - No free Gaussian width parameter sigma is used; this does not remove the
+    explicit Z_i and A2 calibrations.
 
 What it does NOT achieve:
-  - It does not match SM beta-coefficients to better than ~10-25%.
-    The IR endpoints of alpha(M_Z), sin^2(M_Z), alpha_s(M_Z) are
-    NOT reproduced to PDG precision from substrate alone.
+  - It does not derive the SM beta-coefficients: Z_i impose their saturated
+    values, while the signs and activation map are model inputs.  The IR
+    endpoints of alpha(M_Z), sin^2(M_Z), alpha_s(M_Z) are not reproduced.
   - Therefore §22.8's "Open Problem" must remain partially
-    open: the *structural form* of the GCT-native RG flow is
-    derived here; the *precision matching* still requires QLQCD.
+    open: the *structural form* of the GCT-native RG flow is modeled here;
+    autonomous coefficient and endpoint closure remains open.
 ================================================================
 """
 
@@ -93,7 +93,7 @@ SIN2_W_OBS_MZ    = float(C.SIN2_THETA_W_OBS)  # 0.23122
 ALPHA_S_MZ_OBS   = float(C.ALPHA_S_MZ)        # 0.118
 
 # Parameter Ledger A2 is loaded from config/gct_constants.yaml via
-# gct_constants.py so this endpoint anchor has one source of truth.
+# gct_constants.py so the imported UV normalisation has one source of truth.
 
 THRESHOLDS = {
     'TOP':      float(C.M_T_THRESHOLD),
@@ -119,10 +119,11 @@ T_GUT             = np.log(M_GUT_GEV / M_Z)       # ~33.5
 #   Gerade   :  A_g (1), T_1g (3), T_2g (3), G_g (4), H_g (5)   -> dim sum 16
 #   Ungerade :  A_u (1), T_1u (3), T_2u (3), G_u (4), H_u (5)   -> dim sum 16
 #   Total    :  sum d_rho^2 = 120 = |I_h|     (Burnside)
-#   (Per App Z Sec Z.3: the canonical edge-incidence vertex-star count
-#    on the I_h-closed AKN cage is 9; the decorated-star count remains a
-#    separate enumeration task. The "16+16=32" association of the irrep-
-#    dimension partition with vertex-star types was a heuristic; the
+#   (Per App QLA Sec QLA.3: the canonical edge-incidence vertex-star count
+#    on the I_h-closed AKN cage is 9. The currently observed radius-two
+#    decorated count 101 is a numerical-saturation result, not an exact cell
+#    enumeration. The "16+16=32" association of the irrep-
+#    dimension partition with vertex-star types is a heuristic; the
 #    irrep sums 16+16=32 stand as a Burnside check on the irrep
 #    decomposition itself, unrelated to vertex-star enumeration.)
 IRREPS = {
@@ -144,17 +145,32 @@ SUM_DIM_SQ_UNGERADE = sum(r["dim"]**2 for r in IRREPS.values() if r["parity"] ==
 assert SUM_DIM_SQ_GERADE == 60 and SUM_DIM_SQ_UNGERADE == 60
 
 # =============================================================================
-# §3. GRAM PROJECTION WEIGHTS  (Tier 1 — App K.2)
+# §3. CANONICAL PROJECTOR WEIGHTS + RAW-FRAME DIAGNOSTIC
 # =============================================================================
-E_PAR_SQ  = (1.0 + PHI**2)    / 5.0   # ~0.7236
-E_PERP_SQ = (1.0 + PHI**(-2)) / 5.0   # ~0.2764
+E_PAR_SQ = 0.5
+E_PERP_SQ = 0.5
 assert abs(E_PAR_SQ + E_PERP_SQ - 1.0) < 1e-14
-assert abs(E_PERP_SQ / E_PAR_SQ - PHI**(-2)) < 1e-14
+assert abs(E_PERP_SQ / E_PAR_SQ - 1.0) < 1e-14
+
+# These jointly normalized values reproduce the raw Galois-frame ratio.
+# They are diagnostics only and do not enter the native flow.
+RAW_GALOIS_SHARE_PAR = (1.0 + PHI**2) / 5.0
+RAW_GALOIS_SHARE_PERP = (1.0 + PHI**(-2)) / 5.0
+RAW_GALOIS_SQUARED_RATIO = RAW_GALOIS_SHARE_PERP / RAW_GALOIS_SHARE_PAR
+assert abs(RAW_GALOIS_SQUARED_RATIO - PHI**(-2)) < 1e-14
+
+BARE_SIN2_HYPOTHESIS = PHI**-3
+BARE_SIN2_STATUS = "OPEN_CONDITIONAL_GAUGE_KINETIC_HYPOTHESIS"
+P3B_STIFFNESS_HYPOTHESIS = PHI**-18
+P3B_STATUS = "OPEN_CONDITIONAL_P3B_O15"
+RGE_CONVENTION = "PHYSICAL_HYPERCHARGE_ALPHA_Y"
+B_Y_SM_FULL = 41.0 / 6.0
+B_2_SM_FULL = -19.0 / 6.0
 
 # =============================================================================
 # §4. THE GCT-NATIVE BETA-FUNCTION KERNEL
 # =============================================================================
-# Construction (Tier 2):
+# Construction (structural schedule + Tier 3 coefficient calibration):
 #
 # SM RGE: dalpha_i^-1/dt = -b_i / (2 pi),  b_1 = +41/6, b_2 = -19/6, b_3 = -7
 #
@@ -174,42 +190,39 @@ assert abs(E_PERP_SQ / E_PAR_SQ - PHI**(-2)) < 1e-14
 #   Z_i      : icosahedral normalization (set so the saturated value
 #              at t = T_GUT matches the SM ratio b_1 : b_2 : b_3 in sign
 #              and order of magnitude — see §4.1 calibration audit below)
-#   w_i(rho) : Gram-weight coupling of irrep rho to gauge sector i
+#   w_i(rho) : declared sector-weight coupling of irrep rho to gauge sector i
 #
-# Coupling weights (no fitted shape parameters, all Tier 1):
-#   w_1(rho) = |E_perp|^2   for all rho   (U(1)_Y couples to E_perp volume)
-#   w_2(rho) = |E_par|^2    for T_1g, T_1u only  (SU(2)_L couples to
-#                            E_par volume via vector irreps; this is the
-#                            Ch05 §5.2.2 phonon-phason coupling tensor
-#                            restricted to the vector sector)
+# Coupling weights: the canonical projector contributes equal 1/2 sector
+# weights.  Assigning U(1) to E_perp and SU(2) to the parallel vector irreps
+# is a model-level gauge embedding, not a derivation of unequal amplitudes.
+#   w_1(rho) = 1/2 for all rho
+#   w_2(rho) = 1/2 for T_1g, T_1u only
 #   w_3(rho) = 10/120       for all rho   (SU(3)_C couples to the 10
 #                            three-fold rotation axes; the 1/12 prefactor
 #                            is |3-fold axes| / |I_h|)
 #
-# Signs (forced by phason parity, Ch05 §5.3.3):
+# Sign assignments (Tier 3 model inputs; an action-level derivation is open):
 #   sign_1 = +1   (U(1) screens — gerade scalar dominant)
 #   sign_2 = -1   (SU(2) anti-screens — vector gauge bosons)
 #   sign_3 = -1   (SU(3) anti-screens — color confinement)
 
-# Section §4.1: NORMALIZATION  (one anchor — set once, used for all
-# couplings simultaneously). This is the ONE non-substrate input.
-# It can be derived from the structure constants of I_h via the
-# spectral-action prescription of App K, but here we audit by direct
-# match to the SM b_1 at full activation. Quoted as Tier 3 -> Tier 2
-# upgrade path pending QLQCD closure.
+# Section §4.1: NORMALIZATION. One Z_i calibration is introduced per gauge
+# sector, in addition to the A2 UV-normalisation import. No action-level derivation of
+# these normalizations is supplied here; the protocol fixes them by direct
+# match to the SM beta coefficients at full activation. The resulting flow is
+# calibrated/postdictive; QLQCD closure would be required for an upgrade.
 #
 # Standard SM full-content: b_1_SM = 41/6 ~= 6.833.
-# Sum d_rho^2 over gerade x |E_perp|^2 + ungerade x |E_perp|^2 (since
-# w_1 spans all rho) = 120 * E_PERP_SQ = 33.17.
-# Hence Z_1 = (41/6) / 33.17 = 0.206.
+# The Z_i are explicit SM-matching calibrations.  Changing a common sector
+# weight is absorbed by Z_i and therefore does not create an independent
+# projector-derived prediction.
 
 def _z_normalizations():
     """Compute Z_i normalizations from SM b_i at full activation.
 
-    This is the ONE imported numerical anchor of the protocol — once
-    fixed at t = T_GUT for each sector, the *flow shape* from M_GUT
-    down to M_Z is then fixed by the icosahedral irrep
-    activation schedule (zero further free parameters).
+    These are three imported coefficient calibrations, one per gauge sector.
+    Conditional on them and on the chosen activation schedule, the curve
+    shapes are fixed; this is not a parameter-free physical derivation.
 
     Returns Z_1, Z_2, Z_3 such that b_i_GCT(t=T_GUT) = b_i_SM (full).
     """
@@ -244,7 +257,7 @@ def b_native_U1(t, t_gut=T_GUT):
     return +Z1_GCT * s
 
 def b_native_SU2(t, t_gut=T_GUT):
-    """GCT-native b_2(t) — SU(2)_L anti-asymptotic-free coefficient.
+    """GCT-native b_2(t) — SU(2)_L coefficient (asymptotically free for b_2 < 0).
 
     sign_2 = -1; sum over vector irreps (T_1g, T_1u) active at t,
     weighted by d_rho^2 * |E_par|^2.
@@ -321,80 +334,57 @@ def sm_alpha_inv_at_mz(alpha_inv_low=ALPHA_INV_LOW, n_steps=5000):
     return a_inv
 
 def sm_b1_b2_at(energy_gev):
-    """SM 1-loop b_1, b_2 with threshold activation."""
-    step_up_b1     = 41.0 / 36.0
-    step_down_b1   = 41.0 / 144.0
-    step_lep_b1    = 41.0 / 48.0
-    step_higgs_b1  = 1.0 / 6.0
+    """Full-content SM one-loop comparator in physical hypercharge.
 
-    b1 = 0.0
-    if energy_gev >= THRESHOLDS['TOP']:      b1 += step_up_b1
-    if energy_gev >= THRESHOLDS['CHARM']:    b1 += step_up_b1
-    if energy_gev >= THRESHOLDS['UP_DOWN']:  b1 += step_up_b1
-    if energy_gev >= THRESHOLDS['BOTTOM']:   b1 += step_down_b1
-    if energy_gev >= 0.095:                  b1 += step_down_b1
-    if energy_gev >= THRESHOLDS['UP_DOWN']:  b1 += step_down_b1
-    if energy_gev >= THRESHOLDS['TAU']:      b1 += step_lep_b1
-    if energy_gev >= THRESHOLDS['MUON']:     b1 += step_lep_b1
-    if energy_gev >= THRESHOLDS['ELECTRON']: b1 += step_lep_b1
-    if energy_gev >= THRESHOLDS['HIGGS']:    b1 += step_higgs_b1
+    The comparison covers M_Z..M_GUT with the full-content coefficients.
+    Precision threshold matching would require a declared scheme and is
+    outside this diagnostic.
+    """
+    _ = energy_gev
+    return B_Y_SM_FULL, B_2_SM_FULL
 
-    b2 = 0.0
-    if energy_gev >= THRESHOLDS['W_BOSON']:
-        b2 += -22.0 / 6.0
-        if energy_gev >= THRESHOLDS['HIGGS']: b2 += 1.0/6.0
-    if energy_gev >= THRESHOLDS['TOP']:      b2 += 2.0/6.0
-    if energy_gev >= THRESHOLDS['CHARM']:    b2 += 2.0/6.0
-    if energy_gev >= THRESHOLDS['UP_DOWN']:  b2 += 2.0/6.0
-    if energy_gev >= THRESHOLDS['TAU']:      b2 += 2.0/6.0
-    if energy_gev >= THRESHOLDS['MUON']:     b2 += 2.0/6.0
-    if energy_gev >= THRESHOLDS['ELECTRON']: b2 += 2.0/6.0
-    return b1, b2
-
-def sm_sin2w_at_mz(alpha2_inv_gut, alpha1_inv_gut, n_steps=5000):
-    """Run SM b_1 and b_2 from M_GUT down to M_Z (1-loop)."""
+def sm_sin2w_at_mz(alpha2_inv_gut, alpha_y_inv_gut, n_steps=5000):
+    """Run full-content SM b_Y and b_2 from M_GUT down to M_Z."""
     ts = np.linspace(T_GUT, 0.0, n_steps + 1)
     dt = ts[1] - ts[0]
-    a1_inv = alpha1_inv_gut
+    a_y_inv = alpha_y_inv_gut
     a2_inv = alpha2_inv_gut
     hist = []
     for t in ts:
         mu = M_Z * np.exp(t)
-        b1, b2 = sm_b1_b2_at(mu)
-        hist.append((float(t), float(mu), float(a1_inv), float(a2_inv)))
-        a1_inv += -b1 / (2.0 * np.pi) * dt
+        b_y, b2 = sm_b1_b2_at(mu)
+        hist.append((float(t), float(mu), float(a_y_inv), float(a2_inv)))
+        a_y_inv += -b_y / (2.0 * np.pi) * dt
         a2_inv += -b2 / (2.0 * np.pi) * dt
-    a1 = 1.0 / hist[-1][2]
+    a_y = 1.0 / hist[-1][2]
     a2 = 1.0 / hist[-1][3]
-    sin2 = a1 / (a1 + a2)
+    sin2 = a_y / (a_y + a2)
     return sin2, hist
 
 # =============================================================================
 # §7. SIN^2(theta_W) FLOW UNDER GCT-NATIVE B-FUNCTIONS
 # =============================================================================
 def native_sin2w_flow(n_steps=5000):
-    """Flow the rho_G=phi^-2 boundary scalar from M_GUT to M_Z via GCT-native b's.
+    """Flow the conditional phi^-3 boundary from M_GUT to M_Z.
 
-    Boundary condition at M_GUT: rho_G = phi^-2 (Theorem 4.0, Tier 1).
-    The physical bare Weinberg angle remains the volume-coupling value phi^-3.
-    Parameter Ledger A2: alpha_2^-1(M_GUT) = 24.0, a Tier 3 calibrated
-    gauge-coupling-flow anchor chosen by SM-equivalent SU(5)-like matching
-    to the observed sin^2(theta_W)(M_Z) endpoint.
+    The boundary is the Tier-3 OPEN_CONDITIONAL_GAUGE_KINETIC_HYPOTHESIS,
+    not a consequence of canonical projector geometry.
+    Parameter Ledger A2: alpha_2^-1(M_GUT) = 24.0 is treated here only as an
+    imported Tier 3 UV normalisation.  It does not reproduce the measured
+    alpha_2(M_Z) or sin^2(theta_W)(M_Z) under this kernel.
 
-    The shape of the flow (its functional dependence on t) is fully
-    determined by the icosahedral irrep activation schedule — zero free
-    parameters in the shape; A2 supplies the endpoint/magnitude anchor.
+    Conditional on the chosen activation schedule, the functional dependence
+    on t is fixed; Z_i and A2 supply coefficient/endpoint calibrations, so the
+    full flow is not parameter-free.
     """
-    sin2_gut = PHI**-2                      # rho_G boundary scalar, 0.381966 — Tier 1
-    # Flow diagnostic for the rho_G boundary scalar as a shape check.
-    # The physical bare Weinberg-angle input is phi^-3, and the normalized
-    # Cartan share of rho_G would be rho_G/(1+rho_G)=0.276393...
-    # For this rho_G diagnostic, alpha_1/alpha_2 = phi^-1 and
-    # alpha_1^-1/alpha_2^-1 = phi.
+    sin2_gut = BARE_SIN2_HYPOTHESIS
+    # Physical-hypercharge convention:
+    # sin^2 = alpha_Y/(alpha_Y+alpha_2), hence
+    # alpha_Y^-1/alpha_2^-1 = (1-sin^2)/sin^2 = phi^3-1 = 2 phi.
     alpha2_inv_gut = ALPHA2_INV_GUT_A2
-    alpha1_inv_gut = alpha2_inv_gut * PHI
+    alpha_y_inv_gut = alpha2_inv_gut * ((1.0 - sin2_gut) / sin2_gut)
 
-    h1 = integrate_flow_RK4(T_GUT, 0.0, alpha1_inv_gut, b_native_U1, n_steps)
+    h1 = integrate_flow_RK4(T_GUT, 0.0, alpha_y_inv_gut, b_native_U1, n_steps)
     h2 = integrate_flow_RK4(T_GUT, 0.0, alpha2_inv_gut, b_native_SU2, n_steps)
     sin2_hist = []
     for (t1, mu1, a1inv), (t2, mu2, a2inv) in zip(h1, h2):
@@ -421,7 +411,7 @@ def native_alpha_flow(n_steps=5000):
 def native_alpha_s_flow(n_steps=5000):
     """Run alpha_s^-1 from bare GUT value 10*phi^2 to M_Z using b_native_SU3.
 
-    Bare: alpha_s^-1(GUT) = 10 phi^2 ~= 26.18 (Tier 3 calibrated handle, App Z.7 / O.42 pending).
+    Bare: alpha_s^-1(GUT) = 10 phi^2 ~= 26.18 (Tier 3 calibrated handle, App QLA.7 / O.42 pending).
     Coefficient: b_native_SU3 calibrated to match SM b_3 = -7 at
     full activation. This is the Tier-3 fallback flagged in §22.8;
     full Tier-2 derivation requires QLQCD-2 (Open Problem).
@@ -434,15 +424,16 @@ def native_alpha_s_flow(n_steps=5000):
 # §10. MAIN AUDIT
 # =============================================================================
 def main():
-    report = GCTReporter("GCT-Native RG Flow (App ZN)")
+    report = GCTReporter("GCT-Native RG Flow (App GRF)")
 
     report.section("§1. Substrate")
     report.log_value("M_Z",         M_Z, "GeV")
     report.log_value("M_GUT",       M_GUT_GEV, "GeV")
     report.log_value("T_GUT",       T_GUT)
-    report.log_value("Stiffness ratio K_perp/K_par = phi^-18", PHI**-18)
-    report.log_value("|E_par|^2 Gram", E_PAR_SQ)
-    report.log_value("|E_perp|^2 Gram", E_PERP_SQ)
+    report.log_value("Conditional P3b stiffness phi^-18", P3B_STIFFNESS_HYPOTHESIS)
+    report.log_value("Canonical projector weight E_par", E_PAR_SQ)
+    report.log_value("Canonical projector weight E_perp", E_PERP_SQ)
+    report.log_value("Raw Galois squared-ratio diagnostic", RAW_GALOIS_SQUARED_RATIO)
     report.log_value("|I_h| = sum d_rho^2", SUM_DIM_SQ)
     report.log_value("Z_1 (icosahedral norm, U1)", Z1_GCT)
     report.log_value("Z_2 (icosahedral norm, SU2)", Z2_GCT)
@@ -483,17 +474,78 @@ def main():
     # TEST 2: sin^2(theta_W) flow M_GUT -> M_Z
     # -------------------------------------------------------------------------
     report.section("§4. sin^2(theta_W)(mu): M_GUT -> M_Z")
-    print(f"  Boundary proxy: rho_G(M_GUT) = phi^-2 = {PHI**-2:.6f}  (Theorem 4.0)")
+    print(
+        f"  Conditional boundary: sin^2(theta_W)^bare = phi^-3 = "
+        f"{BARE_SIN2_HYPOTHESIS:.6f}"
+    )
     sin2_hist_gct, h1_gct, h2_gct = native_sin2w_flow()
     _, _, sin2_mz_gct = sin2_hist_gct[-1]
 
+    # Audit the imported A2 normalisation against the two measured M_Z
+    # couplings.  These shifts are outputs of the native step kernel.
+    native_delta_alpha_y_inv = h1_gct[-1][2] - h1_gct[0][2]
+    native_delta_alpha_2_inv = h2_gct[-1][2] - h2_gct[0][2]
+    measured_alpha_2_inv_mz = SIN2_W_OBS_MZ * ALPHA_INV_MZ_OBS
+    measured_alpha_y_inv_mz = (1.0 - SIN2_W_OBS_MZ) * ALPHA_INV_MZ_OBS
+    alpha_2_inv_gut_required_for_measured_alpha2 = (
+        measured_alpha_2_inv_mz - native_delta_alpha_2_inv
+    )
+    alpha_y_inv_gut_required_for_measured_alpha_y = (
+        measured_alpha_y_inv_mz - native_delta_alpha_y_inv
+    )
+    implied_uv_sin2_from_both_measured_couplings = (
+        alpha_2_inv_gut_required_for_measured_alpha2
+        / (
+            alpha_2_inv_gut_required_for_measured_alpha2
+            + alpha_y_inv_gut_required_for_measured_alpha_y
+        )
+    )
+    a2_anchor_mismatch = abs(
+        ALPHA2_INV_GUT_A2 - alpha_2_inv_gut_required_for_measured_alpha2
+    )
+
+    # Solving for A2 while holding H-EW fixed can match sin^2 alone, but then
+    # predicts a grossly incorrect electromagnetic coupling.  This explicitly
+    # rules out an A2-only repair of the current H-EW + native-kernel branch.
+    h_ew_inverse_ratio = (1.0 - BARE_SIN2_HYPOTHESIS) / BARE_SIN2_HYPOTHESIS
+    a2_sin_only_denominator = (
+        SIN2_W_OBS_MZ * (h_ew_inverse_ratio + 1.0) - 1.0
+    )
+    a2_sin_only_numerator = (
+        native_delta_alpha_2_inv * (1.0 - SIN2_W_OBS_MZ)
+        - SIN2_W_OBS_MZ * native_delta_alpha_y_inv
+    )
+    alpha_2_inv_gut_required_for_sin2_only = (
+        a2_sin_only_numerator / a2_sin_only_denominator
+    )
+    alpha_em_inv_mz_implied_by_sin2_only_fit = (
+        (h_ew_inverse_ratio + 1.0) * alpha_2_inv_gut_required_for_sin2_only
+        + native_delta_alpha_y_inv
+        + native_delta_alpha_2_inv
+    )
+
+    # The d=5 irreps activate at t=T_GUT exactly and therefore have zero
+    # integration measure on [0,T_GUT], despite contributing to the saturated
+    # Z_1 calibration denominator.
+    d5_activation_depth = irrep_activation_depth(5)
+    d5_active_log_interval = max(T_GUT - d5_activation_depth, 0.0)
+    d5_zero_measure_activation_defect = bool(
+        np.isclose(d5_active_log_interval, 0.0, atol=1e-14)
+    )
+
     # SM comparison flow with same UV anchor
     alpha2_inv_gut_anchor = ALPHA2_INV_GUT_A2
-    alpha1_inv_gut_anchor = alpha2_inv_gut_anchor * PHI
-    sin2_mz_sm, _ = sm_sin2w_at_mz(alpha2_inv_gut_anchor, alpha1_inv_gut_anchor)
+    alpha_y_inv_gut_anchor = alpha2_inv_gut_anchor * (
+        (1.0 - BARE_SIN2_HYPOTHESIS) / BARE_SIN2_HYPOTHESIS
+    )
+    sin2_mz_sm, sm_sin2_hist = sm_sin2w_at_mz(
+        alpha2_inv_gut_anchor, alpha_y_inv_gut_anchor
+    )
+    sm_alpha_y_inv_mz_same_a2 = sm_sin2_hist[-1][2]
+    sm_alpha_2_inv_mz_same_a2 = sm_sin2_hist[-1][3]
 
     report.log_value("sin^2(theta_W)(M_Z) GCT-native",   sin2_mz_gct)
-    report.log_value("sin^2(theta_W)(M_Z) SM 1-loop",    sin2_mz_sm)
+    report.log_value("sin^2(theta_W)(M_Z) SM full-content 1-loop", sin2_mz_sm)
     report.log_value("sin^2(theta_W)(M_Z) PDG observed", SIN2_W_OBS_MZ)
     err_sin_gct_obs = (sin2_mz_gct - SIN2_W_OBS_MZ) / SIN2_W_OBS_MZ
     err_sin_sm_obs  = (sin2_mz_sm  - SIN2_W_OBS_MZ) / SIN2_W_OBS_MZ
@@ -501,6 +553,13 @@ def main():
     report.log_value("GCT vs PDG",  err_sin_gct_obs * 100.0, "%")
     report.log_value("SM  vs PDG",  err_sin_sm_obs  * 100.0, "%")
     report.log_value("GCT vs SM",   err_sin_gct_sm  * 100.0, "%")
+    report.log_value("A2 required to match measured alpha_2(M_Z)",
+                     alpha_2_inv_gut_required_for_measured_alpha2)
+    report.log_value("Imported A2 mismatch", a2_anchor_mismatch)
+    print(
+        "  Activation audit: d=5 irreps have zero running measure on "
+        f"[0,T_GUT] = {d5_zero_measure_activation_defect}"
+    )
 
     # -------------------------------------------------------------------------
     # TEST 3: alpha_s flow M_GUT -> M_Z
@@ -522,8 +581,8 @@ def main():
         report.log_value("GCT vs PDG", err_s * 100.0, "%")
     else:
         err_s = float('inf')
-        print("  GCT alpha_s^-1 crossed zero (Landau pole) — bare prediction too small.")
-        print("  This is the 67.6% gap documented in Ch04 §4.5.5 / App Z.7 (QLQCD-2 open).")
+        print("  GCT alpha_s^-1 crossed zero (Landau pole) — conditional bare handle too small.")
+        print("  See Ch04 §4.5.5 / App QLA.7 (QLQCD-2 open).")
 
     # -------------------------------------------------------------------------
     # §6. Tier summary
@@ -533,10 +592,10 @@ def main():
     pass_sin2      = abs(err_sin_gct_obs) < 0.05    # within 5% of PDG
     pass_alpha_s   = np.isfinite(err_s) and abs(err_s) < 0.10
 
-    tier_alpha   = "Tier 2 (GCT-native flow, Z_1 anchor)"     if pass_alpha   else "Tier 3 (open)"
-    tier_sin2    = "Tier 2 (GCT-native flow, Z_2 anchor)"     if pass_sin2    else "Tier 3 (open)"
+    tier_alpha = "Tier 3 calibrated/postdictive flow"
+    tier_sin2 = "Tier 3 conditional gauge-kinetic + calibrated/postdictive flow"
     tier_alpha_s = ("Tier 3 (bare 10 phi^2 calibrated handle) + Tier 3 (RGE running) — "
-                    "QLQCD-2 closure required (App Z.7)")
+                    "QLQCD-2 closure required (App QLA.7)")
     report.log_value("alpha(mu)        tier", tier_alpha)
     report.log_value("sin^2(theta_W)(mu) tier", tier_sin2)
     report.log_value("alpha_s(mu)      tier", tier_alpha_s)
@@ -558,32 +617,74 @@ def main():
     print("  flow above M_GUT, NOT a Weinberg-style non-Gaussian UV fixed")
     print("  point. The icosahedral substrate caps the irrep tower at d=5,")
     print("  so the flow saturates rather than approaching an asymptotic-safety")
-    print("  scaling solution. This is a STRUCTURAL distinction from Asymptotic")
-    print("  Safety (Reuter 1998): GCT has a *combinatorial UV cutoff* set by")
+    print("  scaling solution. Within the Tier 3 activation ansatz this differs from Asymptotic")
+    print("  Safety (Reuter 1998): the ansatz has a *combinatorial UV cutoff* set by")
     print("  the finite irrep content of I_h, not a non-trivial UV fixed point.")
 
-    overall_pass = pass_alpha and pass_sin2  # alpha_s remains open by design
-
-    if overall_pass:
-        msg = ("Tier-2 partial closure achieved: U(1) and SU(2) sector flows "
-               "derived from icosahedral irrep activation + Gram weights with "
-               "shape determined by I_h group theory alone. SU(3) running "
-               "remains Tier 3 pending QLQCD-2 (App Z.7).")
-    else:
-        msg = ("Partial structural closure with documented residuals. "
-               "Shape derived from substrate; magnitude requires QLQCD.")
-    report.verdict(overall_pass, msg)
+    flow_consistency_pass = pass_alpha and pass_sin2
+    overall_pass = False
+    # App GRF :252 / V3 Ch04 §4.3.3 / Global Abstract: the pre-registered
+    # running check from the H-EW boundary is a FAILED check; only the H-EW
+    # hypothesis itself is open.
+    PROTOCOL_STATUS = "FAILED_CHECK__H_EW_HYPOTHESIS_OPEN"
+    print("\n" + "=" * 60)
+    print(
+        "FLOW-CONSISTENCY CHECK: "
+        + ("PASSED" if flow_consistency_pass else "FAILED")
+    )
+    print(f"PROTOCOL STATUS: {PROTOCOL_STATUS}")
+    print(
+        "Z_i impose the saturated SM coefficients; A2 does not reproduce the "
+        "measured alpha_2 endpoint; and the d=5 activation has zero measure."
+    )
+    print(
+        "Branch-level falsification status (App GRF): FAILED check for the "
+        "H-EW + A2 + calibrated-Z_i branch; H-EW itself remains an open "
+        "Tier 3 hypothesis."
+    )
+    print("=" * 60)
 
     # -------------------------------------------------------------------------
     # Save
     # -------------------------------------------------------------------------
     results = {
-        "protocol": "GCT-Native RG Flow (App ZN)",
+        "protocol": "GCT-Native RG Flow (App GRF)",
+        "pass": overall_pass,
+        "status": PROTOCOL_STATUS,
+        "branch_falsification_status": "FAILED_CHECK",
+        "h_ew_hypothesis_status": "OPEN_TIER3_HYPOTHESIS",
+        "branch_falsification_note": (
+            "App GRF branch-level falsification status: FAILED check. The "
+            "H-EW + A2 + calibrated-Z_i activation branch fails as an "
+            "autonomous electroweak flow model (26.7% below "
+            "sin^2 theta_W(M_Z) = 0.23122), and the pre-registered "
+            "gauge-running check of App GRF section GRF.4.3 is FAILED. "
+            "H-EW itself remains a Tier 3 hypothesis at an unspecified scale."
+        ),
+        "flow_consistency_pass": bool(flow_consistency_pass),
+        "physical_gauge_boundary_derived": False,
+        "physical_endpoint_predicted_autonomously": False,
+        "rge_convention": {
+            "name": RGE_CONVENTION,
+            "sin2_definition": "alpha_Y / (alpha_Y + alpha_2)",
+            "b_Y_full_sm": B_Y_SM_FULL,
+            "b_2_full_sm": B_2_SM_FULL,
+            "full_sm_above_mz_approximation": True,
+            "sm_coefficient_audit_pass": bool(
+                np.isclose(B_Y_SM_FULL, 41.0 / 6.0)
+                and np.isclose(B_2_SM_FULL, -19.0 / 6.0)
+            ),
+            "su5_normalized_alpha1_used": False,
+        },
         "substrate": {
             "phi": PHI,
-            "K_perp_over_K_par": PHI**-18,
+            "K_perp_over_K_par_conditional": P3B_STIFFNESS_HYPOTHESIS,
+            "K_perp_over_K_par_status": P3B_STATUS,
             "E_par_sq": E_PAR_SQ,
             "E_perp_sq": E_PERP_SQ,
+            "canonical_projector_split": "1/2 + 1/2",
+            "raw_galois_squared_ratio_diagnostic": RAW_GALOIS_SQUARED_RATIO,
+            "raw_ratio_coordinate_invariant": False,
             "icosahedral_irreps": {k: {"dim": v["dim"], "parity": v["parity"]}
                                    for k, v in IRREPS.items()},
             "sum_dim_sq_total": SUM_DIM_SQ,
@@ -592,6 +693,10 @@ def main():
             "Z_1_icosahedral_norm": Z1_GCT,
             "Z_2_icosahedral_norm": Z2_GCT,
             "Z_3_icosahedral_norm": Z3_GCT,
+            "z_i_calibrated_to_sm_targets": True,
+            "z_i_independently_derived": False,
+            "beta_signs_are_model_inputs": True,
+            "activation_schedule_status": "TIER3_IRREP_DIMENSION_ANSATZ",
         },
         "scales": {
             "M_Z_GeV": M_Z,
@@ -606,9 +711,10 @@ def main():
             "b2_SM_full_content": -19.0/6.0,
             "b3_SM_full_content": -7.0,
             "note": "GCT saturated values match SM by Z_i calibration. "
-                    "Tier-2 *shape* of flow comes from icosahedral irrep "
-                    "activation schedule; Z_i absorbs the substrate-to-PDG "
-                    "absolute normalization (one anchor per coupling).",
+                    "The signs and activation schedule are model inputs; "
+                    "the equality is not an independent prediction.",
+            "z_i_calibration_identity": True,
+            "independent_derivation": False,
         },
         "alpha": {
             "low_energy_CODATA": ALPHA_INV_LOW,
@@ -621,14 +727,54 @@ def main():
             "tier": tier_alpha,
         },
         "sin2_theta_W": {
-            "M_GUT_BC_phi_minus_2": PHI**-2,
+            "M_GUT_BC_phi_minus_3_conditional": BARE_SIN2_HYPOTHESIS,
+            "boundary_status": BARE_SIN2_STATUS,
+            "derived_from_canonical_projector_geometry": False,
             "M_Z_GCT_native":       sin2_mz_gct,
             "M_Z_SM_1loop":         sin2_mz_sm,
+            "SM_comparator_status": (
+                "CORRECT_FULL_SM_COEFFICIENTS_WITH_SAME_IMPORTED_A2; "
+                "NOT_A_FIT_TO_THE_MEASURED_ENDPOINT"
+            ),
+            "SM_same_A2_alpha_Y_inv_MZ": sm_alpha_y_inv_mz_same_a2,
+            "SM_same_A2_alpha_2_inv_MZ": sm_alpha_2_inv_mz_same_a2,
             "M_Z_PDG":              SIN2_W_OBS_MZ,
             "err_GCT_vs_PDG_pct":   err_sin_gct_obs * 100.0,
             "err_SM_vs_PDG_pct":    err_sin_sm_obs  * 100.0,
             "err_GCT_vs_SM_pct":    err_sin_gct_sm  * 100.0,
             "tier": tier_sin2,
+            "native_kernel_delta_alpha_Y_inv_GUT_to_MZ": native_delta_alpha_y_inv,
+            "native_kernel_delta_alpha_2_inv_GUT_to_MZ": native_delta_alpha_2_inv,
+            "A2_imported": ALPHA2_INV_GUT_A2,
+            "A2_required_for_measured_alpha_2_MZ": (
+                alpha_2_inv_gut_required_for_measured_alpha2
+            ),
+            "A2_absolute_mismatch": a2_anchor_mismatch,
+            "A2_is_endpoint_calibration_for_this_kernel": False,
+            "alpha_Y_inv_GUT_required_for_measured_alpha_Y_MZ": (
+                alpha_y_inv_gut_required_for_measured_alpha_y
+            ),
+            "UV_sin2_implied_by_both_measured_couplings": (
+                implied_uv_sin2_from_both_measured_couplings
+            ),
+            "H_EW_and_native_kernel_match_both_low_energy_couplings": False,
+            "A2_required_to_match_sin2_only_with_H_EW": (
+                alpha_2_inv_gut_required_for_sin2_only
+            ),
+            "alpha_em_inv_MZ_implied_by_sin2_only_fit": (
+                alpha_em_inv_mz_implied_by_sin2_only_fit
+            ),
+        },
+        "activation_schedule_audit": {
+            "formula": "t_rho = T_GUT * d_rho / 5",
+            "status": "TIER3_ANSATZ_WITH_ZERO_MEASURE_D5_DEFECT",
+            "d5_activation_depth": d5_activation_depth,
+            "d5_active_log_interval_within_0_TGUT": d5_active_log_interval,
+            "d5_zero_measure_activation_defect": d5_zero_measure_activation_defect,
+            "d5_included_in_saturation_calibration": True,
+            "d5_sampled_at_uv_endpoint_by_rk4": True,
+            "rk4_endpoint_sampling_leakage_is_physical": False,
+            "schedule_physically_derived": False,
         },
         "alpha_s": {
             "bare_inv_10_phi2":  alpha_s_bare_inv,
@@ -640,8 +786,8 @@ def main():
                      "Z_3-calibrated b_3 coefficient. The flow does not "
                      "reproduce PDG alpha_s(M_Z) because the bare GUT-scale "
                      "value (0.038) is too small to sustain 33.5 e-folds "
-                     "of asymptotic-free running — the documented 67.6% "
-                     "gap of Ch04 §4.5.5. QLQCD-2 closure (App Z.7) is "
+                     "of asymptotic-free running (endpoint gap: "
+                     "err_GCT_vs_PDG_pct; Ch04 §4.5.5). QLQCD-2 closure (App QLA.7) is "
                      "the canonical path; non-perturbative confinement "
                      "corrections to the bare value are required."),
         },
@@ -649,32 +795,33 @@ def main():
             "verdict": "no non-trivial UV fixed point",
             "comment": ("GCT-native b_i(t) saturate at t = T_GUT once all "
                         "10 irreps of I_h are active. Beyond M_GUT the "
-                        "coefficients are constant. This is structurally "
-                        "distinct from Asymptotic Safety: GCT has a "
+                        "coefficients are constant. Within the Tier 3 activation ansatz this is "
+                        "distinct from Asymptotic Safety: the ansatz has a "
                         "combinatorial UV cutoff set by the finite content "
                         "of the icosahedral group, NOT a Weinberg-Reuter "
-                        "non-Gaussian fixed point. The substrate IS the "
-                        "UV completion; no further scaling solution required."),
+                        "non-Gaussian fixed point. Whether the substrate supplies a UV "
+                        "completion is not settled by this ansatz."),
         },
         "closure_summary": {
-            "alpha":         "Tier 2" if pass_alpha     else "Tier 3 (open)",
-            "sin2_W":        "Tier 2" if pass_sin2      else "Tier 3 (open)",
+            "alpha":         "Tier 3 calibrated/postdictive",
+            "sin2_W":        BARE_SIN2_STATUS,
             "alpha_s":       "Tier 3 (bare calibrated handle) / Tier 3 (running, QLQCD-2 pending)",
-            "overall_status": ("Partial structural closure. The shape of "
-                               "alpha, sin^2(theta_W) running is now derived "
-                               "from icosahedral I_h irrep activation + Gram "
-                               "weights with no fitted shape parameter; "
-                               "one Z_i anchor per coupling absorbs absolute "
-                               "normalization, and Parameter Ledger A2 "
-                               "alpha_2^-1(M_GUT)=24.0 anchors the "
-                               "sin^2(theta_W) endpoint/magnitude. alpha_s "
+            "overall_status": ("Calibrated/postdictive structural model. The "
+                               "I_h activation schedule and beta signs are "
+                               "Tier-3 model inputs; one Z_i calibration per "
+                               "coupling imposes the saturated SM coefficients. "
+                               "Imported A2=24 does not reproduce the measured "
+                               "alpha_2 or sin^2 endpoint, and the d=5 modes "
+                               "have zero running measure. alpha_s "
                                "remains an open problem pending QLQCD-2 "
-                               "(App Z.7)."),
+                               "(App QLA.7)."),
         },
         "open_research_debt_v3_section_22_8": {
             "baseline_dependency": "SM RGE coefficients remain the Tier 3 comparison target",
-            "current_status":  ("Tier 2 shape for U(1)/SU(2), Tier 3 magnitude "
-                                "anchors including A2 alpha_2^-1(M_GUT); "
+            "current_status":  ("Tier 3 calibrated U(1)/SU(2) ansatz with "
+                                "conditional phi^-3 boundary, mismatched "
+                                "A2 alpha_2^-1(M_GUT) import, and zero-measure "
+                                "d=5 activation defect; "
                                 "Tier 3 bare handle for SU(3), Tier 3 running"),
             "what_was_replaced":  "Free-Gaussian phason kernel of Ch04 §4.5.3",
             "what_remains_open":  "QLQCD-2 non-perturbative SU(3) closure",

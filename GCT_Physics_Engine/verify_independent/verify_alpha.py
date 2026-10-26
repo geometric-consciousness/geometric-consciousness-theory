@@ -1,10 +1,11 @@
 """
 verify_alpha.py — Independent re-derivation of α^-1
 
-App R §R.2 row 1:
+App PSC §PSC.2 row 1:
  Formula: α^-1 = 360 · φ^-2
- App R: 137.5077 vs CODATA 137.035999 -> 3442 ppm
- Tier: Tier 2 mechanism + Tier 3 specific 600-cell multiplier pending O.19/O.5
+ App PSC: 137.5078 vs CODATA 137.035999177 -> 3443 ppm
+ Tier: Tier 3 numerical relation (Tier 3 600-cell multiplier; mechanism open —
+ the RT solid-angle construction is withdrawn, V1 §13.2.1–§13.2.2); O.19/O.5 pending
 
  The 0.5% band is the disclosed GCT phason anti-screening residual after
  ordinary sub-ppm QED precision is treated as an external Standard-Model
@@ -16,7 +17,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from constants import CODATA, MATH, ppm_error
-from report import make_result, write_result, print_summary
+from report import make_result, write_result, print_summary, status_from_registered_band
 
 ALPHA_FACTOR_360 = 360.0 # 600-cell edges / 2 = 720/2
 
@@ -29,20 +30,23 @@ def main():
  # Compute precision and let make_result/print_summary derive status
  # from (predicted, observed, tolerance) rather than hardcoding PASS.
  ppm_actual = abs(alpha_inv_pred - observed) / observed * 1e6
- tolerance = 5000.0 # documented anti-screening residual band (Tier 2 tree-level)
- derived_status = "OPEN_CONDITIONAL" if ppm_actual <= tolerance else "FAIL"
+ tolerance = 5000.0 # documented anti-screening residual band
+ derived_status = status_from_registered_band(
+  ppm_actual, tolerance,
+  inside_status="OPEN_CONDITIONAL", outside_status="FAIL",
+ )
 
  result = make_result(
  name="alpha_inverse",
- app_r_label="Fine-structure constant inverse (α^-1)",
+ app_psc_label="Fine-structure constant inverse (α^-1)",
  formula="α^-1 = 360 · φ^-2",
  predicted=alpha_inv_pred,
  observed=observed,
  unit="(dimensionless)",
- app_r_predicted=137.5077,
- app_r_precision_str="3442 ppm (Tree-Level Base)",
- app_r_precision_ppm=3442.0,
- tier="Tier 2 mechanism + Tier 3 specific multiplier (O.19/O.5 pending)",
+ app_psc_predicted=137.5078,
+ app_psc_precision_str="3443 ppm (Tree-Level Base)",
+ app_psc_precision_ppm=3443.0,
+ tier="Tier 3 numerical relation (Tier 3 600-cell multiplier; mechanism open — the RT solid-angle construction is withdrawn, V1 §13.2.1–§13.2.2); O.19/O.5 pending + Tier 4 as evidence that phi explains the value (constant control test v3 NEGATIVE-FRAGILE; App PSC §PSC.9.6)",
  status=derived_status,
  tolerance_ppm=tolerance,
  extra={

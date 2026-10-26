@@ -1,15 +1,15 @@
 """
 verify_E_amplitudes.py — E_∥ / E_⊥ projection amplitudes (Tier 1 algebraic).
 
-App ZN §ZN.2.1 (Tier 1 substrate ingredient):
+Raw-frame amplitudes (Tier 1 arithmetic; coordinate-dependent, not App GRF weights):
  |E_∥|² = (1 + φ²) / 5 ≈ 0.7236
  |E_⊥|² = (1 + φ⁻²) / 5 ≈ 0.2764
  |E_⊥|²/|E_∥|² = φ⁻² (exact, Tier 1)
 
 These are the standard cut-and-project amplitudes for the H₃/H₄ icosahedral
-projection from R⁶ to E_∥ ⊕ E_⊥. They underpin the Weinberg bare prediction
-sin²θ_W = φ⁻³ (via volume cube of length ratio) and the App ZN gauge-sector
-coupling weights Z_1, Z_2.
+projection from R⁶ to E_∥ ⊕ E_⊥ in the jointly normalized raw frame. The bare
+Weinberg value sin²θ_W = φ⁻³ reuses their volume cube as the Tier 3 hypothesis
+H-EW; App GRF uses the canonical projector shares 1/2 for Z_1, Z_2 instead.
 
 Tier 1 algebraic identity: the formulas (1+φ²)/5 and (1+φ⁻²)/5 are exact
 algebraic constructs from the φ minimal polynomial φ² = φ + 1; their ratio
@@ -56,21 +56,21 @@ def main():
 
  res = make_result(
  name="E_perp_E_para_amplitudes",
- app_r_label="E_∥ / E_⊥ projection amplitudes (Tier 1 — cut-and-project algebra)",
+ app_psc_label="E_∥ / E_⊥ raw-frame projection amplitudes (Tier 1 raw-frame identity; coordinate-dependent)",
  formula="|E_∥|² = (1+φ²)/5; |E_⊥|² = (1+φ⁻²)/5; |E_⊥|²/|E_∥|² = φ⁻²",
  predicted=ratio,
  observed=ratio_expected,
  unit="(dimensionless)",
- app_r_predicted=ratio_expected,
- app_r_precision_str=(
+ app_psc_predicted=ratio_expected,
+ app_psc_precision_str=(
  f"|E_∥|² = {E_para_sq:.6f} (vs stated {E_para_sq_stated}, {err_para_pct:+.4f}%); "
  f"|E_⊥|² = {E_perp_sq:.6f} (vs stated {E_perp_sq_stated}, {err_perp_pct:+.4f}%); "
  f"ratio = {ratio:.10f} (vs expected φ⁻² = {ratio_expected:.10f}, "
  f"{err_ratio_pct:.2e}%)"
  ),
- app_r_precision_ppm=err_ratio_pct * 1e4,
- tier="Tier 1 (algebraic identity from φ minimal polynomial)",
- status="PASS" if pass_status else "FAIL",
+ app_psc_precision_ppm=err_ratio_pct * 1e4,
+ tier="Tier 1 (raw-frame algebraic identity from the phi minimal polynomial; coordinate-dependent)",
+ status="TIER1_EXACT" if pass_status else "FAIL",
  tolerance_ppm=1.0,
  extra={
  "phi": phi,
@@ -87,10 +87,10 @@ def main():
  "derivation_note": (
  "Standard H_4/H_3 cut-and-project amplitudes from the icosahedral "
  "projection R^6 → E_∥ ⊕ E_⊥. The ratio E_⊥²/E_∥² = φ⁻² is the "
- "algebraic source of: (a) sin²θ_W^bare = φ⁻³ via volume cube "
- "(V3 Ch04 §4.3.1, Theorem U.9), (b) the App ZN gauge-sector "
- "coupling weights Z_1 = 41/6 / (120·|E_⊥|²) and Z_2 = 19/6 / "
- "(18·|E_∥|²). Tier 1: pure algebraic identity from φ² = φ + 1."
+ "raw-frame (coordinate-dependent) ratio reused by the Tier 3 "
+ "hypothesis H-EW, sin²θ_W^bare = φ⁻³ (V3 Ch04 §4.3; App USS §USS.9). "
+ "App GRF uses the canonical projector shares 1/2 for Z_1, Z_2. "
+ "Tier 1: pure algebraic identity from φ² = φ + 1."
  ),
  },
  )

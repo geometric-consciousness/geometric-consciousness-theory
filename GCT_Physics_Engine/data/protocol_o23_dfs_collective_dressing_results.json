@@ -106,21 +106,18 @@
     "acetylation_differential_ratio": {
         "T2_ratio_acet_over_dyn_bare": 523.2434050008131,
         "T2_ratio_acet_over_dyn_collective": 2499.9999999999995,
-        "pre_registered_band_bare": [
+        "post_hoc_robustness_envelope_bare": [
             250.0,
             1000.0
         ],
-        "pre_registered_band_collective": [
+        "post_hoc_robustness_envelope_collective": [
             1000.0,
             5000.0
         ],
         "in_band_bare": true,
         "in_band_collective": true,
-        "band_violation_disclosure": null,
-        "pre_registered_band": [
-            250.0,
-            1000.0
-        ]
+        "robustness_envelope_status": "WITHIN_POST_HOC_ENVELOPE",
+        "robustness_envelope_provenance": "Factor-2 sensitivity envelope centred on canonical-regime engine outputs; not independently preregistered and not a model-validation gate. See App ORQ O.23."
     },
     "best_tau_eff_bare_s": 0.0001818094688879613,
     "best_tau_eff_collective_s": 0.0008686658405550221,

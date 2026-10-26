@@ -1,0 +1,94 @@
+{
+  "prefix_constraint": {
+    "description": "Daughter p-adic address must equal parent address modulo p^L where L is the branch-level of inheritance. Equivalent to: d_H(parent, daughter) <= p^{-L}.",
+    "tier": "Tier 2 structural (forced by p-adic ultrametric)"
+  },
+  "suffix_multiplicity": {
+    "p=2": {
+      "L=0.25*D": {
+        "L": 1.7925,
+        "D_minus_L": 5.3774999999999995,
+        "allowed_suffix_multiplicity": 41.57084014636071
+      },
+      "L=0.5*D": {
+        "L": 3.585,
+        "D_minus_L": 3.585,
+        "allowed_suffix_multiplicity": 12.000311914286545
+      },
+      "L=0.75*D": {
+        "L": 5.3774999999999995,
+        "D_minus_L": 1.7925000000000004,
+        "allowed_suffix_multiplicity": 3.464146635794529
+      }
+    },
+    "p=3": {
+      "L=0.25*D": {
+        "L": 1.131,
+        "D_minus_L": 3.393,
+        "allowed_suffix_multiplicity": 41.57884463346654
+      },
+      "L=0.5*D": {
+        "L": 2.262,
+        "D_minus_L": 2.262,
+        "allowed_suffix_multiplicity": 12.001852309096831
+      },
+      "L=0.75*D": {
+        "L": 3.393,
+        "D_minus_L": 1.1310000000000002,
+        "allowed_suffix_multiplicity": 3.4643689626101946
+      }
+    },
+    "p=5": {
+      "L=0.25*D": {
+        "L": 0.772,
+        "D_minus_L": 2.316,
+        "allowed_suffix_multiplicity": 41.57330294805882
+      },
+      "L=0.5*D": {
+        "L": 1.544,
+        "D_minus_L": 1.544,
+        "allowed_suffix_multiplicity": 12.000785869854862
+      },
+      "L=0.75*D": {
+        "L": 2.316,
+        "D_minus_L": 0.7720000000000002,
+        "allowed_suffix_multiplicity": 3.464215043823762
+      }
+    }
+  },
+  "thermal_sampling": {
+    "N_states=4": {
+      "Z": 3.9999999998819913,
+      "S_nats": 1.3862943611198906,
+      "S_bits": 2.0,
+      "max_p": 0.25000000000737554,
+      "min_p": 0.24999999999262446
+    },
+    "N_states=16": {
+      "Z": 15.999999999527965,
+      "S_nats": 2.772588722239781,
+      "S_bits": 4.0,
+      "max_p": 0.06250000000184389,
+      "min_p": 0.062499999998156114
+    },
+    "N_states=64": {
+      "Z": 63.99999999811186,
+      "S_nats": 4.158883083359672,
+      "S_bits": 6.000000000000001,
+      "max_p": 0.01562500000046097,
+      "min_p": 0.015624999999539028
+    },
+    "N_states=256": {
+      "Z": 255.99999999244744,
+      "S_nats": 5.545177444479562,
+      "S_bits": 8.0,
+      "max_p": 0.003906250000115243,
+      "min_p": 0.003906249999884757
+    }
+  },
+  "closure_status": {
+    "tier_structure": "Tier 2 prefix-constraint piece (forced by ultrametric topology) + Tier 3 suffix-selection piece (Boltzmann sample over allowed register)",
+    "resolution_of_random_vs_determined": "Neither extreme holds. The lineage prefix is forced by topological-charge continuity; the within-class suffix is thermally sampled. The apparent dichotomy is therefore false-binary.",
+    "remaining_open_research_level": "First-principles derivation of the spin-spin interaction energy spectrum on the polaron register, beyond the linear-ramp toy model used here for the entropy calculation."
+  }
+}

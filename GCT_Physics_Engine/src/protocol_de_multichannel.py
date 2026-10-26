@@ -111,9 +111,10 @@ equation-of-state values: at every redshift,
 with the bounds independent of the channel-fraction parameters
 (Omega_Lambda_0, f_ext, f_chiral, f_pert, z_chiral). Every channel in
 the registered decomposition carries w_c(z) <= -0.9 across the fit
-window (the frozen-phason perturbation channel at w_pert = -0.9 is the
-least-negative channel; the biogenic and chiral channels are more
-negative). Hence
+window. The frozen-phason perturbation item at w_pert = -0.9 is a Tier 3
+nonphantom menu assumption, not a law-derived channel. The other
+channels are stipulated phantom-directed templates (Tier 4; no ghost-free
+action produces w<-1) or the w=-1 baseline. Hence
 
     w_total(z)  <=  -0.9   for all z in [0, 1.5]   and all sweep points.
 
@@ -189,17 +190,17 @@ W0_BIO_TERR   = -1.0037973296449392
 WA_BIO_TERR   = +0.013560610917121069
 
 # Extragalactic biogenic channel (stronger phantom)
-# Tier 3 calibrated channel-menu value [App H O.13]: stress-test shape.
+# Tier 3 calibrated channel-menu value [App ORQ O.13]: stress-test shape.
 W0_BIO_EXT    = -1.01
 WA_BIO_EXT    = +0.05
 
 # Abiotic-chiral phantom early-universe channel
-# Tier 3 calibrated channel-menu value [App H O.13]: stress-test shape.
+# Tier 3 calibrated channel-menu value [App ORQ O.13]: stress-test shape.
 W_CHIRAL      = -1.5
 WIDTH_CHIRAL  = 2.0
 
 # Frozen-phason perturbation channel
-# Tier 3 calibrated channel-menu value [App H O.13]: stress-test shape.
+# Tier 3 calibrated channel-menu value [App ORQ O.13]: stress-test shape.
 W_PERT        = -0.9
 
 # DESI fit window
@@ -588,7 +589,10 @@ def main():
         "scope": (
             "Registered-menu no-go over convex-combination shape proxies. "
             "This output is not a physical density-weighted multi-fluid "
-            "background calculation and not a covariance-aware DESI likelihood."
+            "background calculation and not a covariance-aware DESI likelihood. "
+            "The other channels are stipulated phantom-directed templates (Tier 4; "
+            "no ghost-free action produces w<-1) or the w=-1 baseline; "
+            "w_pert=-0.9 is a Tier 3 nonphantom menu assumption."
         ),
         "desi_target": {
             **DESI_DR2_CPL_TARGET,
@@ -609,7 +613,7 @@ def main():
                                      "width_chiral": WIDTH_CHIRAL,
                                      "source": "Tier 3 chirality-onset model"},
             "frozen_phason_pert":   {"w": W_PERT,
-                                     "source": "Tier 3 weak quintessence-like perturbation"},
+                                     "source": "Tier 3 nonphantom menu assumption; not law-derived"},
         },
         "channels": {
             "alias_of": "multichannel_eos_shape_proxy",

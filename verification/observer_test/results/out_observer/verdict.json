@@ -1,0 +1,161 @@
+{
+ "observer_bundle": "b9f405c736aba7ee6cf64b40b85772279ac50e87764f9a71ad24fb58c0de4c04",
+ "v1_bundle": "2510829f30423bd7f32651cd70fed24d182c5a0f1ed48fffb3a111e7621553ba",
+ "effective_k": {
+  "A": {
+   "m_e": null,
+   "m_mu": 0,
+   "m_tau": 0,
+   "m_p": 0,
+   "m_u": 0,
+   "m_d": 0,
+   "m_s": 0,
+   "m_c": 0,
+   "m_b": 0,
+   "m_t": 0,
+   "v": 0,
+   "m_H": 0,
+   "alpha_inv": 1,
+   "alphas_inv": 1,
+   "sin2thW": -1,
+   "s12": -1,
+   "s23": -1,
+   "s13": -1,
+   "th12": -1,
+   "th13": -1,
+   "dcp": 0
+  },
+  "B": {
+   "m_e": null,
+   "m_mu": 0,
+   "m_tau": 0,
+   "m_u": 0,
+   "m_d": 0,
+   "m_s": 0,
+   "m_c": 0,
+   "m_b": 0,
+   "m_t": null,
+   "m_H": null,
+   "alpha_inv": 1,
+   "sin2thW": -1,
+   "alphas_inv": -1,
+   "m_p": null,
+   "v": null,
+   "s12": 0,
+   "s23": 0,
+   "s13": 0,
+   "th12": 0,
+   "th13": 0,
+   "dcp": 0
+  }
+ },
+ "residuals": {
+  "m_e": -0.0010050497117602974,
+  "m_mu": 2.1094801381682515e-05,
+  "m_tau": 5.0855701123175834e-05,
+  "m_p": -0.0001549043834842001,
+  "m_u": -0.002137224135156268,
+  "m_d": -0.0011621259229164238,
+  "m_s": 0.009848766892494476,
+  "m_c": 0.009717863535709359,
+  "m_b": 0.0040935271385325045,
+  "m_t": -0.008808419097521947,
+  "v": 0.00015804109482253637,
+  "m_H": 0.016978173454908818,
+  "alpha_inv": 4.1542934323679503e-05,
+  "sin2thW": -0.020239837484073542,
+  "alphas_inv": -0.6762999904660125,
+  "s12": -0.010747731490894363,
+  "s23": 0.010590406044931333,
+  "s13": -7.565380430463176e-05,
+  "th12": 0.007735313689522405,
+  "th13": 0.015581089683350369,
+  "dcp": -0.2044666221979683
+ },
+ "rule_A": {
+  "rows": [
+   "alpha_inv",
+   "sin2thW",
+   "alphas_inv",
+   "s12",
+   "s23",
+   "s13",
+   "th12",
+   "th13"
+  ],
+  "n": 8,
+  "k": {
+   "alpha_inv": 1.0,
+   "sin2thW": -1.0,
+   "alphas_inv": 1.0,
+   "s12": -1.0,
+   "s23": -1.0,
+   "s13": -1.0,
+   "th12": -1.0,
+   "th13": -1.0
+  },
+  "agree": {
+   "alpha_inv": true,
+   "sin2thW": true,
+   "alphas_inv": false,
+   "s12": true,
+   "s23": false,
+   "s13": true,
+   "th12": false,
+   "th13": false
+  },
+  "A": 4,
+  "p_sign": 0.63671875,
+  "eps_hat": -0.0038468853775993628,
+  "I_LOO": 0,
+  "p_rand": 1.0,
+  "p_sector": 1.0,
+  "n_sector_patterns": 32,
+  "report_2sigma": {
+   "rows": [
+    "alpha_inv",
+    "sin2thW",
+    "alphas_inv",
+    "s12"
+   ],
+   "agree": 3,
+   "n": 4
+  },
+  "label": "REFUTED"
+ },
+ "rule_B": {
+  "rows": [
+   "alpha_inv",
+   "sin2thW",
+   "alphas_inv"
+  ],
+  "n": 3,
+  "k": {
+   "alpha_inv": 1.0,
+   "sin2thW": -1.0,
+   "alphas_inv": -1.0
+  },
+  "agree": {
+   "alpha_inv": true,
+   "sin2thW": true,
+   "alphas_inv": true
+  },
+  "A": 3,
+  "p_sign": 0.125,
+  "eps_hat": 0.020239837484073542,
+  "I_LOO": 1,
+  "p_rand": 0.25,
+  "p_sector": 0.25,
+  "n_sector_patterns": 8,
+  "report_2sigma": {
+   "rows": [
+    "alpha_inv",
+    "sin2thW",
+    "alphas_inv"
+   ],
+   "agree": 3,
+   "n": 3
+  }
+ },
+ "rule_C": "sign undetermined - not testable by sign test (report only)"
+}

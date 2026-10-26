@@ -73,13 +73,22 @@
       "matches": true
     }
   },
-  "rank_3_invariant_sums": {
+  "rank_3_irreducible_invariant_sums": {
     "A_3": 9,
     "B_3": 12,
     "H_3": 18
   },
-  "H_3_is_largest_rank_3_sum": true,
+  "H_3_is_largest_rank_3_irreducible_sum": true,
+  "reducible_rank_3_counterexample": {
+    "group": "A_1 x I_2(14)",
+    "degrees": [
+      2,
+      2,
+      14
+    ],
+    "sum_degrees": 18
+  },
   "structural_identification": "18 in phi^(-18) is the sum of H_3 fundamental degrees = 2 + 6 + 10 = N_pos_roots + rank = 15 + 3. This is the canonical Shephard-Todd invariant of the icosahedral H_3 Coxeter group, NOT an ad-hoc rank*Galois*dim count.",
-  "status": "Tier 2 structural sharpening; full first-principles RG derivation still open",
+  "status": "Tier 1 Coxeter algebra + Tier 2 H_3-conditional integer identification; Tier 3 RG-map link pending O.15(b)",
   "remaining_open": "The symmetry-adapted phason-elasticity RG flow mapping the Coxeter invariant-degree sum to the K_perp/K_parallel exponent. Research-level LRT-style calculation with explicit H_3 symmetry-breaking."
 }

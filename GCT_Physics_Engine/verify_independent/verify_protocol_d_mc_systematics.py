@@ -1,9 +1,14 @@
 """
 verify_protocol_d_mc_systematics.py — Registry parity check for Protocol D MC.
 
+INDEPENDENCE SCOPE: This wrapper is NOT an independent re-derivation. It reads
+the engine-produced `data/protocol_d_mc_systematics_results.json` artifact and
+checks its registered expected-non-pass disposition. Its scorecard row is an
+engine-consistency check, not external corroboration.
+
 The executable Monte Carlo lives in src/protocol_d_mc_systematics.py and writes
 data/protocol_d_mc_systematics_results.json. This independent-harness wrapper
-binds the App FM P.13 row to that artifact so the matrix reports the registered
+binds the App FSM P.13 row to that artifact so the matrix reports the registered
 no-gate / expected-non-pass disposition instead of PENDING-VERIFIER.
 """
 
@@ -44,20 +49,21 @@ def main():
 
     result = make_result(
         name="protocol_d_mc_systematics",
-        app_r_label="Protocol D LORR MC systematics gate",
+        app_psc_label="Protocol D LORR MC systematics gate",
         formula="End-to-end MC propagation of S1-S6 systematics through Hill-equation C50 fit",
         predicted=None,
         observed=None,
         unit="verdict",
-        app_r_predicted=None,
-        app_r_precision_str="Expected non-pass/no-gate under registered systematic budget",
-        app_r_precision_ppm=None,
+        app_psc_predicted=None,
+        app_psc_precision_str="Expected non-pass/no-gate under registered systematic budget",
+        app_psc_precision_ppm=None,
         tier="Tier 2 mechanism + Tier 4 operational no-gate under current systematics",
         status=status,
         tolerance_ppm=None,
         discrepancy_notes=notes,
         extra={
-            "artifact": str(data_path),
+            # Repository-relative so the artifact is byte-reproducible from any checkout.
+            "artifact": "data/protocol_d_mc_systematics_results.json",
             "verdict_status": verdict,
             "expected_verdict": EXPECTED_VERDICT,
             "systematic_only_SD_total": syst,

@@ -69,20 +69,20 @@ def main():
 
     res = make_result(
         name="imp01_biogenic_DE_pipeline",
-        app_r_label="Biogenic DE pipeline (continuous phantom; no crossing)",
+        app_psc_label="Biogenic DE pipeline (continuous phantom; no crossing)",
         formula="w(z) = -1 + delta_w * P_info(z)/P_info(0) ; phantom throughout",
         predicted=w_at_028,
         observed=-1.0,
         unit="(w(z=0.28))",
-        app_r_predicted=-1.0,
-        app_r_precision_str=(
+        app_psc_predicted=-1.0,
+        app_psc_precision_str=(
             f"Pipeline w(z=0): {w_at_0:+.5f}; "
             f"w(z=0.28): {w_at_028:+.5f}; "
             f"w(z=0.5): {w_at_05:+.5f}; w(z=1): {w_at_10:+.5f} (asymptotes to -1). "
             f"Direct z_cross brentq: NaN (confirms w(z) never crosses -1); "
             f"CPL linear-fit extrapolation gives apparent z={z_cross_CPL:+.4f}."
         ),
-        app_r_precision_ppm=None,
+        app_psc_precision_ppm=None,
         tier="Tier 3 (biogenic model, pipeline-validated; continuous-phantom)",
         status="PASS" if pass_status else "TENSION",
         tolerance_ppm=None,

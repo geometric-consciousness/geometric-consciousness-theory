@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
 protocol_uniqueness_final_push.py — physical, Bellissard-fit, and
-topological invariants tested for uniqueness of the η_scalar = -8 cage, as
-a route to the Tier-1 closure target (Open Problem O.14).
+topological invariants tested for uniqueness of the weighted-adjacency
+sign-sum -8 cage (Open Problem O.14). This finite diagnostic specifies no
+APS operator/domain/index and supplies no Tier-1 inference.
 
 Tested invariants:
   1. Ground-state-gap: the gap between λ_min and the next eigenvalue
@@ -24,7 +25,7 @@ Tested invariants:
   8. Chromatic number of the bond graph.
   9. Genus of the bond graph (smallest genus surface embedding).
 
-The most promising of these for a Tier-1-style argument:
+The most discriminating finite diagnostics are:
   - Bipartiteness (clean dichotomy)
   - Bellissard-IDOS-fit (links cage to the gap-labeling framework)
   - Ground-state spectral structure (physical ground-state argument)
@@ -151,7 +152,7 @@ def compute_metrics(orbit_indices, orbits):
     pos_spec = float(np.sum(evals[evals > 0]))
     # Spectral mass
     spec_mass = float(np.sum(evals ** 2))
-    # eta_scalar
+    # finite weighted-adjacency sign sum
     eta = float(np.sum(np.sign(nonzero_evals)))
     # Bipartite check
     bipart = is_bipartite(binary_A)
@@ -178,7 +179,7 @@ def compute_metrics(orbit_indices, orbits):
     n_clean_bellissard = sum(1 for _, err in best_bellissard_fits if err < 0.01)
     return {
         "orbit_indices": orbit_indices,
-        "eta_scalar": eta,
+        "adjacency_sign_sum": eta,
         "gs_gap": gs_gap,
         "neg_spec": neg_spec,
         "pos_spec": pos_spec,
@@ -210,7 +211,7 @@ def main() -> int:
         if sub_idx % 10 == 0:
             print(f"    Processed {sub_idx + 1}/{len(subsets)}...")
 
-    winners = [m for m in metrics if abs(m["eta_scalar"] - (-8)) < 0.5]
+    winners = [m for m in metrics if abs(m["adjacency_sign_sum"] - (-8)) < 0.5]
     winner = winners[0]
     print(f"  ✓ Winner: subset #{winner['subset_idx']}")
     print()
@@ -271,12 +272,12 @@ def main() -> int:
             print(f"    • {c}")
         print()
         print("  These are PHYSICAL or PRINCIPLED criteria, not arbitrary structural")
-        print("  fingerprints. A Tier-1 closure argument can be built on the most")
-        print("  natural of these.")
+        print("  fingerprints. They remain finite weighted-adjacency diagnostics;")
+        print("  no APS operator/domain/index or Tier-1 inference follows.")
     else:
         print("  No criteria in this set uniquely pick the winner. Under these")
         print("  invariants the cage approach does not single out the cage; the")
-        print("  disposition is the split-Tier one (framework Tier 1, integer Tier 3).")
+        print("  disposition remains diagnostic only; the APS problem is open.")
     print("=" * 90)
 
     DATA_PATH.parent.mkdir(parents=True, exist_ok=True)

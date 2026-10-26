@@ -97,7 +97,14 @@ def run_spectral_geometry():
     
     finite_spectrum = bool(np.all(np.isfinite(lambdas_sorted)) and np.all(np.isfinite(gaps)))
     index_available = bool(len(gaps) > 17)
-    audit_pass = bool(finite_spectrum and index_available and tier in (2, 3))
+    # The former pass (finite and index_available and tier in
+    # (2, 3)) could not fail because tier is always 2 or 3. The protocol now
+    # passes only on the physics criterion: both gaps exceed 2 sigma.
+    spectral_closure_pass = bool(finite_spectrum and index_available and tier == 2)
+    verdict = (
+        "GAPS_11_17_ABOVE_2SIGMA" if spectral_closure_pass
+        else f"GAPS_11_17_NOT_SIGNIFICANT_sig11={sig_11:.2f}_sig17={sig_17:.2f}"
+    )
 
     results = {
         "N_nodes": N,
@@ -113,9 +120,10 @@ def run_spectral_geometry():
         "phi_inverse_distance_bonds": int(phi_bonds),
         "finite_spectrum": finite_spectrum,
         "index_available": index_available,
-        "spectral_closure_pass": bool(tier == 2),
-        "pass_interpretation": "Engine execution/tier-disclosure pass; spectral_closure_pass carries the physics-closure status.",
-        "pass": audit_pass
+        "spectral_closure_pass": spectral_closure_pass,
+        "pass_interpretation": "pass == spectral_closure_pass (both gaps > 2 sigma). The former execution-only pass is retired.",
+        "verdict": verdict,
+        "pass": spectral_closure_pass
     }
     
     out_path = get_output_path("protocol_ncg_spectral_geometry_results.json")

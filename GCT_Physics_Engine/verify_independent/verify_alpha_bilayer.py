@@ -1,23 +1,23 @@
 """
 verify_alpha_bilayer.py — α⁻¹_GCT = 360φ⁻² × (1 - 1/288) with bilayer correction.
 
-V1 Ch13 §13.2.4 (Tier 2 Motivated Derivation):
+V1 Ch13 §13.2.4 (Tier 3 motivated handle on the Tier 3 N = 144 posit):
  α⁻¹_GCT = α⁻¹_geom × η(144)
- = 137.5077 × (1 - 1/288)
+ = 137.5078 × (1 - 1/288)
  = 137.0303
- CODATA α⁻¹ = 137.035999
- Residual: 41.6 ppm
+ CODATA α⁻¹ = 137.035999177
+ Residual: 41.5 ppm
 
-The bare 360φ⁻² baseline is already verified in verify_alpha.py (3442 ppm
+The bare 360φ⁻² baseline is already verified in verify_alpha.py (3443 ppm
 residual). This verifier tests the BILAYER-CORRECTED prediction which
-sharpens the residual to 41.6 ppm by importing the 1/(2N) = 1/288 potential-
+sharpens the residual to 41.5 ppm by importing the 1/(2N) = 1/288 potential-
 theory correction (N = 144 cage nodes; bilayer = 2N = 288).
 
-Tier 2 (Motivated Derivation) per Ch13 §13.2.4: the 1/(2N) correction is
+Tier 3 (motivated handle) per Ch13 §13.2.4: the 1/(2N) correction is
 not a free parameter (288 = 2×144 follows from N without additional choice)
 but it is imported from potential theory rather than derived from GCT axioms
-directly. The 41.6 ppm residual is the documented QLQCD-1L research debt
-(O.5 / App Z.5-Z.6).
+directly. The 41.5 ppm residual is the documented QLQCD-1L research debt
+(O.5 / App QLA §QLA.5–§QLA.6).
 """
 
 import sys
@@ -32,10 +32,10 @@ def main():
  phi = MATH.PHI
  alpha_inv_CODATA = CODATA.ALPHA_INV # 137.035999...
 
- N_cage = 144 # cage node count (Tier 2 from Gauss-Bonnet + Fibonacci-square)
+ N_cage = 144 # Tier 3 cage posit pending O.38; this verifier tests downstream arithmetic only
  bilayer = 2 * N_cage # = 288
 
- alpha_inv_bare = 360.0 * phi ** (-2) # = 137.5077 (Tier 2 bare)
+ alpha_inv_bare = 360.0 * phi ** (-2) # = 137.5078 (Tier 3 bare numerical relation)
  eta_bilayer = 1.0 - 1.0 / bilayer # = 1 - 1/288 = 0.996528
  alpha_inv_GCT_corr = alpha_inv_bare * eta_bilayer # = 137.0303
 
@@ -48,21 +48,21 @@ def main():
 
  res = make_result(
  name="alpha_inverse_bilayer_corrected",
- app_r_label="Fine-structure α⁻¹ with bilayer 1/288 correction (Ch13 §13.2.4, Tier 2 Motivated)",
+ app_psc_label="Fine-structure α⁻¹ with bilayer 1/288 correction (Ch13 §13.2.4, Tier 3 motivated handle)",
  formula="α⁻¹_GCT = 360φ⁻² × (1 - 1/288) = α⁻¹_bare × (1 - 1/(2N)), N=144",
  predicted=alpha_inv_GCT_corr,
  observed=alpha_inv_CODATA,
  unit="(dimensionless, α⁻¹)",
- app_r_predicted=137.0303,
- app_r_precision_str=(
+ app_psc_predicted=137.0303,
+ app_psc_precision_str=(
  f"Bare 360·φ⁻² = {alpha_inv_bare:.6f} ({err_bare_ppm:.1f} ppm); "
  f"with bilayer factor (1-1/288) = {eta_bilayer:.6f}: "
  f"α⁻¹_GCT = {alpha_inv_GCT_corr:.6f} ({err_corr_ppm:.2f} ppm). "
- f"Precision improvement: {improvement:.0f}× (3442→41.6 ppm). "
+ f"Precision improvement: {improvement:.0f}× (3443→41.5 ppm). "
  f"Matches Ch13 §13.2.4 stated 137.0303 ✓."
  ),
- app_r_precision_ppm=err_corr_ppm,
- tier="Tier 2 (Motivated Derivation; 1/(2N) correction imported from potential theory; full QLQCD-1L closure pending O.5)",
+ app_psc_precision_ppm=err_corr_ppm,
+ tier="Tier 3 (motivated handle; 1/(2N) correction imported from potential theory on the Tier 3 N = 144 posit; full QLQCD-1L closure pending O.5) + Tier 4 as evidence that phi explains the value (constant control test v3 NEGATIVE-FRAGILE; App PSC §PSC.9.6)",
  status="OPEN_CONDITIONAL" if internal_reproduction_status else "TENSION",
  tolerance_ppm=None,
  extra={
@@ -80,17 +80,17 @@ def main():
  "matches_internal_137_0303_value": internal_reproduction_status,
  "closure_condition": (
  "This verifier reproduces the manuscript's bilayer-corrected arithmetic. "
- "It does not close the 1/(2N) bilayer correction or the residual 41.6 ppm "
+ "It does not close the 1/(2N) bilayer correction or the residual 41.5 ppm "
  "as a first-principles alpha derivation; that remains O.5/O.19."
  ),
  "derivation_note": (
- "The bare 360φ⁻² formula yields 137.5077 (3442 ppm residual). "
+ "The bare 360φ⁻² formula yields 137.5078 (3443 ppm residual). "
  "The bilayer 1/(2N) = 1/288 correction (N=144 cage nodes; "
  "bilayer = 2N=288) tightens the prediction to 137.0303, "
- "reducing the residual to 41.6 ppm — an 83× precision "
+ "reducing the residual to 41.5 ppm — an 83× precision "
  "improvement. The 1/(2N) factor is acknowledged in Ch13 "
- "§13.2.4 as imported from potential theory (Tier 2 Motivated) "
- "rather than derived from GCT axioms; the remaining 41.6 ppm "
+ "§13.2.4 as imported from potential theory (Tier 3 motivated handle) "
+ "rather than derived from GCT axioms; the remaining 41.5 ppm "
  "is the documented QLQCD-1L research debt (Open Problem O.5)."
  ),
  },

@@ -2,8 +2,9 @@
 """
 protocol_su3_complexification.py — Internal Tangent Space Complexification at RT 3-fold Axes
 ===================================================================
-Checks that the internal tangent space at a 3-fold RT axis is naturally
-complex (C^3) rather than real (R^3).
+Checks that the 2D tangent plane at a 3-fold RT axis carries a complex
+structure J (J^2 = -Id) from the stabilizer action. This does not derive a
+complex three-component (C^3) matter representation (Tier 3 / open, C02).
 
 Method: Binary Icosahedral Group 2I
 ------------------------------------
@@ -349,7 +350,7 @@ def extract_complex_structure(stabilizer: list[np.ndarray],
 def main() -> int:
     print("=" * 70)
     print("  Structural Analysis")
-    print("  SU(3) Complexification Theorem via Binary Icosahedral Group 2I")
+    print("  Tangent-Space Complexification Check via Binary Icosahedral Group 2I")
     print("=" * 70)
 
     # ------------------------------------------------------------------

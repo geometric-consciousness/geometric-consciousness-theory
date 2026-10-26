@@ -1,14 +1,17 @@
 {
   "name": "p13c_nmr_polarity",
-  "app_r_label": "P.13c NMR polarity gate",
-  "formula": "99% bootstrap sign-positive Delta T2 gate powered for 5% active-state polarity reversal; design target only, no observed NMR data yet",
-  "tier": "Tier 2 mechanism + Tier 3 active-state Delta T2 calibration anchor pending O.21/O.33",
+  "app_psc_label": "P.13c NMR polarity gate",
+  "formula": "Delta T2 = isotope x activity interaction on water-1H T2; former sign-aware rule (reject the sign-positive branch on a powered, significant negative interaction) held pending redesign; design sketch only, no observed NMR data",
+  "tier": "Tier 3 material-response sign hypothesis (ordinary isotope/spin-coherence material mechanism; no phason or Level-II content) conditional on O.21/O.33 + Tier 3 active-state Delta T2 calibration anchor pending O.21/O.33",
   "predicted": 0.05,
   "observed": null,
+  "reference_class": "EMPIRICAL_ANCHOR",
+  "band_outcome": "NO_NUMERIC_VERIFIER_BAND",
+  "derivational_closure": "OPEN_CONDITIONAL",
   "unit": "fractional Delta T2/T2",
-  "app_r_predicted": 0.05,
-  "app_r_precision_str": "OPEN_CONDITIONAL executable preregistration: n=24 per isotope, 3 repeated acquisitions, 99% bootstrap CI [0.0136, 0.0861], systematic floor 0.2 ppm, primary power 0.800, simulated beta 0.201, replication-pair power 0.638",
-  "app_r_precision_ppm": null,
+  "app_psc_predicted": 0.05,
+  "app_psc_precision_str": "OPEN_CONDITIONAL design sketch (sign-aware rule held pending redesign; no outcome supports or rejects the branch until then): n=24 per isotope, 3 repeated acquisitions, 99% bootstrap CI [0.0136, 0.0861], systematic floor 2e-07 of T2, design-sketch primary power 0.800, simulated beta 0.201, design-sketch replication-pair power 0.638",
+  "app_psc_precision_ppm": null,
   "independent_precision_ppm": null,
   "status": "OPEN_CONDITIONAL",
   "tolerance_ppm": null,
@@ -16,8 +19,11 @@
   "extra": {
     "registry_id": "P.13c",
     "status": "OPEN_CONDITIONAL",
-    "pass": true,
-    "verdict": "OPEN_CONDITIONAL_PREREGISTRATION_DESIGN",
+    "gate_status": "HELD_PENDING_REDESIGN",
+    "decision_outputs_operative": false,
+    "pass": false,
+    "design_budget_consistent": true,
+    "verdict": "OPEN_CONDITIONAL_DESIGN_SKETCH_HELD_PENDING_REDESIGN",
     "parameters": {
       "sample_size_per_isotope_condition": 24,
       "repeated_nmr_acquisitions_per_preparation": 3,
@@ -25,7 +31,7 @@
       "beta": 0.2,
       "target_power": 0.8,
       "active_state_polarity_reversal_power_target_fraction": 0.05,
-      "dominant_systematic_sigma_ppm_max": 0.2
+      "dominant_systematic_sigma_fraction_of_T2": 2e-07
     },
     "power_statistic": {
       "effect_fraction": 0.05,
@@ -33,10 +39,9 @@
       "zcrit_two_sided_alpha": 2.5758293035489,
       "zbeta_target": 0.8416212335729144,
       "max_total_per_preparation_sigma_fraction_for_80pct_power": 0.05068254211010805,
-      "pilot_variance_acceptance_threshold": "Accept decisive 5% confirmation/falsification only if pilot total per-preparation sigma fraction is <= max_total_per_preparation_sigma_fraction_for_80pct_power.",
+      "pilot_variance_acceptance_threshold": "Non-operative while the gate is held pending redesign. After the redesign, a decisive 5% support/rejection of the registered polarity branch would require pilot total per-preparation sigma fraction <= max_total_per_preparation_sigma_fraction_for_80pct_power.",
       "statistical_sigma_fraction_budget_after_systematic_floor": 0.05068254210971344,
       "systematic_sigma_fraction": 2e-07,
-      "systematic_sigma_ppm": 0.2,
       "systematic_fraction_of_effect": 4e-06,
       "standard_error_fraction_at_budget": 0.014630789665242713,
       "noncentrality_at_effect_target": 3.4174505371218147,
@@ -59,7 +64,8 @@
       "zcrit_two_sided_alpha": 2.5758293035489,
       "noncentrality_at_effect_target": 3.4174505371218147
     },
-    "decision_rule": "Decisive sign-positive gate requires the 99% bootstrap CI for Delta T2 = T2(17O)-T2(16O) to exclude zero, exceed the measurement floor, have positive sign, and pass the pilot variance gate for the 5% powered target. Significant negative polarity fails P.13c. Sign-positive significant effects below 5% are positive-sensitivity / effect-size revision, not confirmation or failure.",
-    "scope": "Executable preregistration design audit. Lab-data status remains open until blinded active-state NMR measurements are acquired."
+    "decision_rule": "Held pending redesign. As written the gate rejected by construction (17O shortens water-1H T2 by scalar relaxation). The former sign-aware rule -- reject the registered sign-positive branch on a powered, significant negative isotope x activity interaction in water-1H Delta T2, Delta T2 = [T2(17O,active) - T2(17O,inactive)] - [T2(16O,active) - T2(16O,inactive)] -- applies only after the redesign; until then no outcome supports or rejects the branch. Neither outcome would be a verdict on GCT as a whole, and no phason, Selection-Operator or Level-II inference follows (V1 Ch17 \u00a717.1.3).",
+    "decision_rule_operative": false,
+    "scope": "Design-sketch power calculation; gate held pending redesign; lab-data status open."
   }
 }

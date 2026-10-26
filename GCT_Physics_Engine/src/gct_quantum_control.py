@@ -8,8 +8,9 @@ Landauer's Principle.
 
 Physics
 -------
-The GCT "Agent" continuously monitors and projects the quantum state
-of a sparse network of tubulin qubits (the Identity Polaron).  Each
+In the Tier 3 tubulin model, the GCT "Agent" continuously monitors and projects the
+quantum state of a sparse network of tubulin qubits (the candidate Identity Polaron
+substrate; no Level II classification follows).  Each
 measurement collapses the wave-function and prevents it from decohering
 —- the Quantum Zeno Effect.  But every collapse implicitly erases one
 bit of "which-path" information; by Landauer's Principle that erasure

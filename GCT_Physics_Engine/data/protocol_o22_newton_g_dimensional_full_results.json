@@ -9,5 +9,5 @@
   "residual_matches_expected": true,
   "dimensional_status_route_2_single_a6": "L^4 M^(-1) T^(-2) -- INCONSISTENT",
   "dimensional_status_route_2_corrected_with_a_6_squared": "L^3 M^(-1) T^(-2) -- CORRECT",
-  "closure_text": "Route 2 with a single a_6 factor in App K Sec K.7 is dimensionally inconsistent (L^4 M^(-1) T^(-2) instead of L^3 M^(-1) T^(-2); extra factor of L). The corrected form G_2 = c_hat^4 / (8 pi K_perp a_6^2) is dimensionally correct but gives G_2 = [phi^(-18)/(32 pi)] G_1 = 1.7e-6 * G_1, differing from Route 1 by 6 orders of magnitude. The framework does not absorb the phi^(-18)/(32 pi) residual; Routes 2/3 are structural scaling cross-checks only, NOT standalone SI-unit G formulas. The 2274 ppm CODATA agreement derives from Route 1 alone."
+  "closure_text": "Route 2 with a single a_6 factor in App DPS Sec DPS.7 is dimensionally inconsistent (L^4 M^(-1) T^(-2) instead of L^3 M^(-1) T^(-2); extra factor of L). The corrected form G_2 = c_hat^4 / (8 pi K_perp a_6^2) is dimensionally correct but gives G_2 = [phi^(-18)/(32 pi)] G_1 = 1.7e-6 * G_1, differing from Route 1 by 6 orders of magnitude. The framework does not absorb the phi^(-18)/(32 pi) residual; Routes 2/3 are structural scaling cross-checks only, NOT standalone SI-unit G formulas. The 2273.725 ppm model-authoritative alpha_GCT comparison derives from Route 1 alone."
 }

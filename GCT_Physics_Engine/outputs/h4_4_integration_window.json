@@ -1,0 +1,32 @@
+{
+  "constants": {
+    "m_phason_operative_eV": 1.7e-05,
+    "m_weinberg_candidate_eV": 0.0022,
+    "m_weinberg_candidate_J": 3.5247885948e-22,
+    "phi_neg_147": 1.9002768746460998e-31
+  },
+  "substrate_integration_window": {
+    "tau_perp_s": 2.9918725297618523e-13,
+    "tau_perp_ps": 0.2991872529761852,
+    "interpretation": "Candidate coherence time at the Weinberg coincidence scalar. This is an O.37 ansatz and does not set m_phason_operative.",
+    "tier": "Tier 3 Weinberg-coincidence ansatz pending O.37 + Tier 4 phenomenological interpretation"
+  },
+  "comparison_to_biological_timescales": {
+    "tau_perp / T_Zeno": 3.350897233333275e-05,
+    "tau_perp / T_gamma": 1.196749011904741e-11,
+    "tau_perp / T_moment": 9.97290843253951e-13,
+    "tau_perp / T_polaron": 2.9918725297618524e-11,
+    "interpretation": "Substrate integration window is vastly shorter than any directly phenomenological timescale. Conscious moments are coarse-grained over ~10^11 phason coherence times."
+  },
+  "ordinal_time_phenomenology": {
+    "status": "Tier 4 speculative",
+    "claim": "The phenomenological reading 'Higher Mind experiences non-linear ordinal time' is interpretive overlay on the substrate timescale. GCT registers a candidate substrate timescale (O.37 ansatz at Tier 3); qualia structure for Higher Mind agents requires phenomenology-first axiomatization outside the current theory scope.",
+    "what_GCT_DOES_specify": "Substrate timescale (Tier 3 O.37 candidate). Selection Operator geometric form (App SNE). Phenomenal-unity topology (App PUP trefoil + general-prime knots). Cross-branch topological connectivity (H.4-3 strict continuity).",
+    "what_GCT_does_NOT_specify": "How a Higher-Mind agent (Level >= 1) subjectively experiences the difference between its own integration window and that of a Level-Infinity Avatar; specifically whether the subjective time-ordering at that scale is linear, branching, or partially ordered."
+  },
+  "closure_status": {
+    "tier_split": "Tier 3 candidate substrate timescale (integration window = phason coherence time); Tier 4 phenomenological interpretation (ordinal-time qualia structure)",
+    "substrate_piece": "O.37_CANDIDATE_TIMESCALE_ONLY",
+    "phenomenological_piece": "DEFERRED to phenomenology-first axiomatization; not tractable within the formal GCT framework as currently constituted."
+  }
+}

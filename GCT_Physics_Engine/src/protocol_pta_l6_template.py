@@ -1,121 +1,136 @@
 #!/usr/bin/env python3
-"""
-GCT Protocol I: PTA l=6 Icosahedral Template Generator
-Filename: protocol_pta_l6_template.py
+"""Exact rotational-icosahedral l=6 invariant calculation.
 
-This script generates the GCT icosahedral l=6 angular correlation template
-for Pulsar Timing Array (PTA) analysis. The template is defined as:
-    Delta_Gamma(theta) = PHI**-18 * P6(cos(theta))
-
-Reference: Vol 3, Chapter 21, Section 21.4
+This protocol verifies
+the representation-theory theorem that the first nonconstant scalar invariant
+of I ~= A5 occurs uniquely at l=6, constructs the six-axis Reynolds sum, and
+records that no PTA amplitude or detector transfer follows from that theorem.
 """
 
-import numpy as np
+from __future__ import annotations
+
 import json
-import os
 import sys
+from pathlib import Path
 
-# Ensure local imports work
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+import sympy as sp
 
-from gct_utils import PHI, get_output_path, GCTReporter
+sys.path.append(str(Path(__file__).resolve().parent))
+from gct_utils import get_output_path
 
-def legendre_p4(x):
-    """P4(x) = (1/8) * (35x^4 - 30x^2 + 3)"""
-    return (1.0/8.0) * (35.0*x**4 - 30.0*x**2 + 3.0)
 
-def legendre_p5(x):
-    """P5(x) = (1/8) * (63x^5 - 70x^3 + 15x)"""
-    return (1.0/8.0) * (63.0*x**5 - 70.0*x**3 + 15.0*x)
+def character_decomposition() -> list[dict[str, object]]:
+    sqrt5 = sp.sqrt(5)
+    phi = (1 + sqrt5) / 2
+    sizes = [1, 15, 20, 12, 12]
+    angles = [0, sp.pi, 2 * sp.pi / 3, 2 * sp.pi / 5, 4 * sp.pi / 5]
+    irreps = {
+        "A": [1, 1, 1, 1, 1],
+        "T1": [3, -1, 0, phi, 1 - phi],
+        "T2": [3, -1, 0, 1 - phi, phi],
+        "G": [4, 0, 1, -1, -1],
+        "H": [5, 1, -1, 0, 0],
+    }
 
-def legendre_p6(x):
-    """
-    Computes the 6th-degree Legendre polynomial P6(x).
-    P6(x) = (1/16) * (231x^6 - 315x^4 + 105x^2 - 5)
-    """
-    return (1.0/16.0) * (231.0*x**6 - 315.0*x**4 + 105.0*x**2 - 5.0)
+    rows: list[dict[str, object]] = []
+    for ell in range(7):
+        chi = []
+        for theta in angles:
+            value = 2 * ell + 1 if theta == 0 else 1 + 2 * sum(
+                sp.cos(m * theta) for m in range(1, ell + 1)
+            )
+            chi.append(sp.simplify(value))
 
-def generate_template(n_points=1000):
-    """
-    Generates the angular correlation template for PTA pair-angles theta in [0, 180].
-    """
-    # icosahedral stiffness ratio (perturbation amplitude)
-    epsilon = PHI**-18
-    
-    theta_deg = np.linspace(0, 180, n_points)
-    theta_rad = np.radians(theta_deg)
-    cos_theta = np.cos(theta_rad)
-    
-    # Delta_Gamma(theta)
-    delta_gamma = epsilon * legendre_p6(cos_theta)
-    
-    # Negative controls (must be zero for icosahedral symmetry)
-    l4_power = np.max(np.abs(legendre_p4(cos_theta))) * epsilon * 1e-12 # Numeric zero
-    l5_power = np.max(np.abs(legendre_p5(cos_theta))) * epsilon * 1e-12
-    
-    # Maximum deviation
-    dg_max = np.max(np.abs(delta_gamma))
-    
+        mult: dict[str, int] = {}
+        for name, irrep_chi in irreps.items():
+            inner = sp.simplify(
+                sum(s * a * b for s, a, b in zip(sizes, chi, irrep_chi)) / 60
+            )
+            assert inner.is_Integer and inner >= 0
+            mult[name] = int(inner)
+
+        parity = "g" if ell % 2 == 0 else "u"
+        decomposition = " + ".join(
+            f"{name}{parity}" for name, count in mult.items() for _ in range(count)
+        )
+        assert sum(mult[name] * int(irreps[name][0]) for name in irreps) == 2 * ell + 1
+        rows.append(
+            {
+                "ell": ell,
+                "decomposition_Ih": decomposition,
+                "trivial_scalar_multiplicity": mult["A"],
+            }
+        )
+
+    assert [row["decomposition_Ih"] for row in rows] == [
+        "Ag", "T1u", "Hg", "T2u + Gu", "Gg + Hg", "T1u + T2u + Hu", "Ag + T1g + Gg + Hg",
+    ]
+    assert all(rows[ell]["trivial_scalar_multiplicity"] == 0 for ell in range(1, 6))
+    assert rows[6]["trivial_scalar_multiplicity"] == 1
+    return rows
+
+
+def six_axis_invariant() -> dict[str, object]:
+    x, y, z = sp.symbols("x y z", real=True)
+    phi = (1 + sp.sqrt(5)) / 2
+    axis_norm = sp.sqrt(phi + 2)
+    raw_axes = [(0, 1, phi), (0, -1, phi), (1, phi, 0), (-1, phi, 0), (phi, 0, 1), (phi, 0, -1)]
+    axes = [sp.Matrix(v) / axis_norm for v in raw_axes]
+    vec = sp.Matrix([x, y, z])
+    r2 = x**2 + y**2 + z**2
+
+    def solid_p6(dot: sp.Expr) -> sp.Expr:
+        return sp.Rational(1, 16) * (231 * dot**6 - 315 * dot**4 * r2 + 105 * dot**2 * r2**2 - 5 * r2**3)
+
+    h6 = sp.expand(sum(solid_p6(axis.dot(vec)) for axis in axes))
+    laplacian = sp.simplify(sum(sp.diff(h6, q, 2) for q in (x, y, z)))
+    assert laplacian == 0
+    assert sp.simplify(h6.subs({x: z, y: x, z: y}, simultaneous=True) - h6) == 0
+    assert sp.simplify(h6.subs({x: x, y: -y, z: -z}, simultaneous=True) - h6) == 0
+
+    dot_sq = {sp.simplify(axes[i].dot(axes[j]) ** 2) for i in range(6) for j in range(i + 1, 6)}
+    assert dot_sq == {sp.Rational(1, 5)}
+    p6_pair = sp.simplify(sp.legendre(6, 1 / sp.sqrt(5)))
+    assert p6_pair == sp.Rational(41, 125)
+    norm_sq = sp.simplify(4 * sp.pi / 13 * (6 + 30 * p6_pair))
+    assert norm_sq == sp.Rational(1584, 325) * sp.pi
+
     return {
-        "theta_deg": theta_deg.tolist(),
-        "delta_gamma": delta_gamma.tolist(),
-        "epsilon": epsilon,
-        "delta_gamma_max": dg_max,
-        "l_index": 6,
-        "l4_suppression": l4_power,
-        "l5_suppression": l5_power
+        "definition": "H6(n) = sum_{i=1}^6 P6(a_i dot n)",
+        "L2_norm_squared": "1584*pi/325",
+        "normalized_template": "A6 = H6/sqrt(1584*pi/325)",
+        "fivefold_frame_power_fractions": {"m=0": "11/25", "m=+5": "7/25", "m=-5": "7/25"},
+        "zonal_P6": False,
+        "fivefold_axis_line_pair_angle_deg": 63.43494882292201,
+        "orientation_space": "SO(3)/I",
     }
 
-def main():
-    report = GCTReporter("PTA l=6 Icosahedral Template")
-    
-    print("\n======================================================================")
-    print("  PTA l=6 Icosahedral Template Generator")
-    print("======================================================================")
-    
-    template_data = generate_template()
-    
-    report.section("Geometric Parameters")
-    report.log_value("Stiffness Ratio (epsilon = phi^-18)", template_data["epsilon"])
-    report.log_value("Harmonic Index (l)", template_data["l_index"])
-    report.log_value("Max Deviation (Delta_Gamma)", template_data["delta_gamma_max"])
-    
-    report.section("Negative Control Audit (Multipole Suppression)")
-    report.log_value("l=4 residual power", template_data["l4_suppression"])
-    report.log_value("l=5 residual power", template_data["l5_suppression"])
-    
-    # Assertion: l < 6 must be zeroed by icosahedral invariance
-    l_low_passed = (template_data["l4_suppression"] < 1e-15) and (template_data["l5_suppression"] < 1e-15)
-    
-    # Characteristic angles test
-    char_angles = [0, 36, 60, 72, 90, 108, 120, 144, 180]
-    report.section("Evaluation at Characteristic Icosahedral Angles")
-    for angle in char_angles:
-        val = template_data["epsilon"] * legendre_p6(np.cos(np.radians(angle)))
-        print(f"  Angle: {angle:3d}° | Delta_Gamma: {val:+.8f}")
-        
-    passed = (template_data["delta_gamma_max"] > 0) and l_low_passed
-    report.verdict(passed, f"Template generated. All l < 6 modes suppressed. DG_max: {template_data['delta_gamma_max']:.6f}")
-    
-    # Output JSON
-    results = {
-        "prediction_id": "GCT-PTA-L6",
-        "parameters": {
-            "epsilon": template_data["epsilon"],
-             "l": template_data["l_index"]
+
+def main() -> dict[str, object]:
+    rows = character_decomposition()
+    invariant = six_axis_invariant()
+    result = {
+        "prediction_id": "GCT-IH-L6-STRUCTURAL",
+        "protocol": "EXACT_ICOSAHEDRAL_SCALAR_INVARIANT",
+        "status": "PASS_EXACT_L6_INVARIANT__PTA_SCALAR_SEPARATION_MAP_OBSTRUCTED",
+        "pass": True,
+        "tier": "Tier 1 exact mathematics; Tier 2 conditional symmetry application; Tier 3/open PTA transfer",
+        "character_decomposition": rows,
+        "invariant": invariant,
+        "pta_bridge": {
+            "separation_only_P6_template_valid": False,
+            "fifteen_angle_mask_valid": False,
+            "nonzero_response_derived": False,
+            "amplitude_derived": False,
+            "required_next_map": "action -> propagator -> polarization/source/pulsar transfer -> generalized ORFs",
         },
-        "max_deviation": template_data["delta_gamma_max"],
-        "template_summary": {
-             "theta_min_deg": 0,
-             "theta_max_deg": 180,
-             "num_points": len(template_data["theta_deg"])
-        },
-        "status": "EXECUTABLE",
-        "pass": bool(passed)
     }
-    
-    with open(get_output_path("protocol_pta_l6_template_results.json"), 'w') as f:
-        json.dump(results, f, indent=4)
-        
+    out = get_output_path("protocol_pta_l6_template_results.json")
+    with open(out, "w", encoding="utf-8") as handle:
+        json.dump(result, handle, indent=2)
+    print(json.dumps({"pass": True, "status": result["status"], "output": str(out)}, indent=2))
+    return result
+
+
 if __name__ == "__main__":
     main()

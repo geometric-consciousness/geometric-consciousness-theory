@@ -67,7 +67,7 @@ This protocol supplies the H.1.1 profinite-fiber-limit scope check for
 the consensus-convergence kernel.
 
 Cross-reference: V1 Ch11 §11.3.2 (Consensus Action), Ch07 §7.4.2
-(p-adic Identity Coordinate); App H §H.1.1; Krein & Rutman 1948 (UMN
+(p-adic Identity Coordinate); App ORQ §ORQ.1.1; Krein & Rutman 1948 (UMN
 3:3-95); Deimling 1985 Nonlinear Functional Analysis Thm 19.3 / Cor
 19.4; Reed-Simon 1980 Vol 1 Thm VI.22 (Hilbert-Schmidt compactness).
 """

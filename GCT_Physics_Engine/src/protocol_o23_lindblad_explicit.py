@@ -4,7 +4,7 @@ protocol_o23_lindblad_explicit.py
 
 Explicit Tavis-Cummings + Lindblad master-equation solver for the
 chiral phonon-polariton Decoherence-Free Subspace (DFS) suppression on
-the alpha-helical microtubule lattice (V1 Ch17 sec 17.1.3c, App H Open
+the alpha-helical microtubule lattice (V1 Ch17 sec 17.1.3c, App ORQ Open
 Problem O.23). Closure-path-(a) numerical companion to
 `protocol_o23_dfs_collective_dressing.py` (which uses the analytic
 sqrt(N) Tavis-Cummings collective-dressing argument).

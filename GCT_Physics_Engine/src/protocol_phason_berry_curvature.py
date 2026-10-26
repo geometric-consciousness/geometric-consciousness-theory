@@ -53,7 +53,7 @@ is the precise quantitative version of the structural claim in
 `protocol_phason_oneloop_AKN.py`: F != 0 confirms the NAGT-class coupling
 generates a genuine F_munu^2 kinetic term for the emergent photon (in the
 continuum limit where the 12-site model coarse-grains to a smooth gauge
-field on E_perp / I_h), feeding the +41.6 ppm magnitude target of O.19.
+field on E_perp / I_h), feeding the +41.5 ppm magnitude target of O.19.
 """
 
 from __future__ import annotations
@@ -243,7 +243,7 @@ def berry_curvature_with_flux(H0: np.ndarray, V_mu_list: list[np.ndarray]) -> np
 def canonical_chirality_flux_quanta() -> dict:
     """Chirality-induced effective flux per RT plaquette from the geometry.
 
-    App Z Sec Z.4 establishes that the icosahedral cut-and-project is
+    App QLA Sec QLA.4 establishes that the icosahedral cut-and-project is
     inherently chiral. In the Berry-connection language of the phason
     configuration manifold E_perp / I_h, this chirality manifests as an
     Aharonov-Bohm-like phase per closed loop in physical space.
@@ -266,7 +266,7 @@ def canonical_chirality_flux_quanta() -> dict:
     flux_quanta = 0.1 is the principal physical estimate.
     Load-bearing GCT prediction: the 1/(2k) flux fractions are the
     icosahedral chirality heuristic registered under O.19, not fit to the
-    41.6 ppm residual magnitude.
+    41.5 ppm residual magnitude.
     """
     return {
         "k_5_fold_flux_quanta": 1.0 / 10.0,
@@ -278,7 +278,7 @@ def canonical_chirality_flux_quanta() -> dict:
             "flux_quanta = theta_k / (2 pi) = 1/(2k). The 5-fold axis is the "
             "principal AKN-defining rotation; k=5 gives flux_quanta = 0.10."
         ),
-        "tier": "Tier 3 (geometric heuristic; full derivation requires the explicit chirality -> Peierls phase map on RT plaquettes from the GCT action App M Sec M.5).",
+        "tier": "Tier 3 (geometric heuristic; full derivation requires the explicit chirality -> Peierls phase map on RT plaquettes from the GCT action App ULA Sec ULA.5).",
     }
 
 
@@ -313,12 +313,12 @@ def estimate_alpha_residual_ppm(F_Frob_squared: float,
     """
     # Verification target (CODATA): empirical alpha^-1 used only as the ppm
     # denominator for the residual estimate.
-    alpha_inv = 137.036
+    alpha_inv = float(C.ALPHA_INV_OBS)
     delta_alpha_inv_abs = F_Frob_squared / (4.0 * np.pi) * normalization_factor
     delta_ppm = (delta_alpha_inv_abs / alpha_inv) * 1e6
     # Verification target (O.19): residual magnitude to be closed by the full
     # phason-loop calculation, not a normalization fit for this toy estimate.
-    target_ppm_o19 = 41.6
+    target_ppm_o19 = 41.5
     return {
         "F_Frob_squared": F_Frob_squared,
         "normalization_factor": normalization_factor,
@@ -332,7 +332,7 @@ def estimate_alpha_residual_ppm(F_Frob_squared: float,
 
 def main():
     print("=" * 76)
-    print("Phason Berry curvature on E_perp / I_h (App M Sec M.4 + Sec M.7.1; O.19)")
+    print("Phason Berry curvature on E_perp / I_h (App ULA Sec ULA.4 + Sec ULA.7.1; O.19)")
     print("=" * 76)
 
     vertices_perp, _ = vertex_pairs_from_projection()
@@ -408,7 +408,7 @@ def main():
     print(f"  Tier: {chir['tier']}")
 
     print("\n--- Step 8: Order-of-magnitude estimate of delta(alpha^-1) in ppm ---")
-    print(f"  Target (O.19 residual): 41.6 ppm")
+    print(f"  Target (O.19 residual): 41.5 ppm")
     for k_name, k_flux in [
         ("k=5 (5-fold)", chir["k_5_fold_flux_quanta"]),
         ("k=3 (3-fold)", chir["k_3_fold_flux_quanta"]),
@@ -427,7 +427,7 @@ def main():
     print(f"|F|_Frob at flux_quanta = 0.1: {F_norm:.4e}")
     print("Linear-in-flux scaling confirmed by Step-6 sensitivity sweep.")
     print()
-    print("Interpretation: the App M Sec M.4 Berry-connection identification of the")
+    print("Interpretation: the App ULA Sec ULA.4 Berry-connection identification of the")
     print("photon as the U(1) connection on the icosahedral phason configuration")
     print("manifold E_perp / I_h does produce a non-trivial Berry curvature 2-form")
     print("at leading non-trivial order (linear in the lattice flux that breaks")
@@ -437,14 +437,14 @@ def main():
     print("This is the second-order step toward O.19 magnitude closure: the bubble")
     print("integral coefficient is proportional to |F|^2 * (AKN momentum-space")
     print("density), where the AKN density is supplied by the vertex-star catalog in")
-    print("`protocol_akn_vertex_stars.py` (9 edge-incidence types; the App Z '32'")
+    print("`protocol_akn_vertex_stars.py` (9 edge-incidence types; the App QLA '32'")
     print("decorated-star count remains a distinct O.19 enumeration target).")
     print("=" * 76)
 
     print("\nInterpretation of Step 8:")
     print("  The 12-site Berry-curvature estimate gives delta(alpha^-1) ~ 0.01-0.07 ppm")
     print("  across the three icosahedral chirality scales. This is 2-3 decades BELOW")
-    print("  the full 41.6 ppm O.19 residual target. Three readings of the gap:")
+    print("  the full 41.5 ppm O.19 residual target. Three readings of the gap:")
     print()
     print("  (i)  The 12-site tight-binding model is a small-N toy. The full N=144 cage")
     print("       Hessian has 12-13x more modes per shell + bilayer enhancement; if the")
@@ -452,21 +452,21 @@ def main():
     print("       would be 100-200x larger than the 12-site result, closing 2 of the 3")
     print("       decade gap. Tier 3 scaling assumption pending verification.")
     print()
-    print("  (ii) App M Sec M.3.1 explicitly notes the 41.6 ppm residual is the SUM of")
+    print("  (ii) App ULA Sec ULA.3.1 explicitly notes the 41.5 ppm residual is the SUM of")
     print("       (a) 1-loop QLQCD phason VP + (b) RT non-sphericity shape-factor")
     print("       correction. The Berry-curvature mechanism addresses (a) only; (b) is")
     print("       a separate geometric correction that may dominate. If (b) accounts")
-    print("       for most of the 41.6 ppm, the Berry-curvature 0.01-0.07 ppm could be")
+    print("       for most of the 41.5 ppm, the Berry-curvature 0.01-0.07 ppm could be")
     print("       a small but legitimate contribution to (a).")
     print()
     print("  (iii) The gauge-coupling normalisation factor (taken as 1 here) may be")
     print("        substantially larger than 1 when properly derived from the GCT")
-    print("        action App M Sec M.5. The normalisation could rescale the estimate")
+    print("        action App ULA Sec ULA.5. The normalisation could rescale the estimate")
     print("        by O(10) without changing the structural argument.")
     print()
     print("  Current status: the sign-and-structural-class defense is solid;")
     print("  the magnitude pathway requires both N=144 scaling and shape-factor")
-    print("  separation before a quantitative comparison against 41.6 ppm is meaningful.")
+    print("  separation before a quantitative comparison against 41.5 ppm is meaningful.")
 
     # Also save the canonical k=5 result for the verdict
     H_principal = add_lattice_flux_phase(H0_real, vertices_perp, flux_quanta=chir["principal_estimate_5_fold"])
@@ -501,9 +501,9 @@ def main():
             "Berry curvature NON-ZERO at I_h-symmetric reference under TRB element. "
             "Chirality-induced |F|^2 at the principal 5-fold flux setting yields a "
             "delta(alpha^-1) estimate ~ 0.01 ppm at the 12-site toy level, 2-3 decades "
-            "below the 41.6 ppm O.19 residual target. The gap admits three possible "
-            "readings (12-site->N=144 scaling, App M Sec M.3.1 shape-factor "
-            "decomposition of the 41.6 ppm, gauge-coupling normalisation); sign and "
+            "below the 41.5 ppm O.19 residual target. The gap admits three possible "
+            "readings (12-site->N=144 scaling, App ULA Sec ULA.3.1 shape-factor "
+            "decomposition of the 41.5 ppm, gauge-coupling normalisation); sign and "
             "structural class are confirmed; full magnitude closure remains O.19 open."
         ),
     }

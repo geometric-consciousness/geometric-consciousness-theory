@@ -21,13 +21,13 @@
   "n_rp_sensitivity_branch": 1,
   "f_bound_operative_central": 0.0,
   "f_bound_sensitivity_range": [
-    0.001,
-    0.002
+    0.0011,
+    0.0022
   ],
-  "f_bound_sensitivity_central": 0.0015,
+  "f_bound_sensitivity_central": 0.00165,
   "f_bound_range": [
-    0.001,
-    0.002
+    0.0011,
+    0.0022
   ],
   "f_bound_central": 0.0,
   "spin_entropy_H2_16O_kB": 0.0,
@@ -39,37 +39,42 @@
     "reported_lorr_shift_convention": "pure-endpoint/enrichment-normalized; multiply by verified enrichment for cohort-level decision statistics",
     "verified_H2_17O_enrichment_fraction": 0.95,
     "sensitivity_branch_signed_shift_range": [
-      -0.002,
-      -0.001
+      -0.0022,
+      -0.0011
     ],
-    "sensitivity_branch_signed_shift_central": -0.0015,
+    "sensitivity_branch_signed_shift_central": -0.00165,
     "sensitivity_branch_signed_shift_range_at_verified_enrichment": [
-      -0.0019,
-      -0.00095
+      -0.00209,
+      -0.001045
     ],
-    "sensitivity_branch_signed_shift_central_at_verified_enrichment": -0.001425,
+    "sensitivity_branch_signed_shift_central_at_verified_enrichment": -0.0015674999999999999,
     "predicted_signed_shift_central": -0.0,
     "prediction_percent_range": [
-      -0.2,
-      -0.1
+      -0.22,
+      -0.11
     ],
     "prediction_percent_central": -0.0,
     "prediction_percent_range_at_verified_enrichment": [
-      -0.19,
-      -0.095
+      -0.209,
+      -0.1045
     ],
-    "prediction_percent_central_at_verified_enrichment": -0.14250000000000002,
+    "prediction_percent_central_at_verified_enrichment": -0.15675,
     "decision_rule": "Central branch is n_rp=0 -> no LORR signal while O.21 is open. The n_rp=1 Trp21 branch is a sensitivity branch only; LORR remains a no-gate mechanism probe under the registered systematic budget."
   },
   "nmr_quadrupole_gate": {
-    "primary_readout": "baseline-subtracted H2^17O bound-water quadrupolar R2/T2",
-    "predicted_polarity": "active-state H2^17O R2 decreases relative to H2^16O control",
-    "tier_scope": "Tier 2 mechanism + Tier 3 active-state Delta T2 calibration anchor pending O.21/O.33",
-    "executable_preregistration": {
+    "gate_status": "HELD_PENDING_REDESIGN",
+    "decision_outputs_operative": false,
+    "primary_readout": "water-1H T2 isotope x activity interaction (V3 Ch16 \u00a716.5)",
+    "predicted_polarity": "registered sign-positive branch: positive isotope x activity interaction (non-operative; gate held pending redesign, no outcome supports or rejects the branch)",
+    "tier_scope": "Tier 3 material-response sign hypothesis conditional on O.21/O.33 + Tier 3 active-state Delta T2 calibration anchor pending O.21/O.33",
+    "design_sketch_power": {
       "registry_id": "P.13c",
       "status": "OPEN_CONDITIONAL",
-      "pass": true,
-      "verdict": "OPEN_CONDITIONAL_PREREGISTRATION_DESIGN",
+      "gate_status": "HELD_PENDING_REDESIGN",
+      "decision_outputs_operative": false,
+      "pass": false,
+      "design_budget_consistent": true,
+      "verdict": "OPEN_CONDITIONAL_DESIGN_SKETCH_HELD_PENDING_REDESIGN",
       "parameters": {
         "sample_size_per_isotope_condition": 24,
         "repeated_nmr_acquisitions_per_preparation": 3,
@@ -77,7 +82,7 @@
         "beta": 0.2,
         "target_power": 0.8,
         "active_state_polarity_reversal_power_target_fraction": 0.05,
-        "dominant_systematic_sigma_ppm_max": 0.2
+        "dominant_systematic_sigma_fraction_of_T2": 2e-07
       },
       "power_statistic": {
         "effect_fraction": 0.05,
@@ -85,10 +90,9 @@
         "zcrit_two_sided_alpha": 2.5758293035489,
         "zbeta_target": 0.8416212335729144,
         "max_total_per_preparation_sigma_fraction_for_80pct_power": 0.05068254211010805,
-        "pilot_variance_acceptance_threshold": "Accept decisive 5% confirmation/falsification only if pilot total per-preparation sigma fraction is <= max_total_per_preparation_sigma_fraction_for_80pct_power.",
+        "pilot_variance_acceptance_threshold": "Non-operative while the gate is held pending redesign. After the redesign, a decisive 5% support/rejection of the registered polarity branch would require pilot total per-preparation sigma fraction <= max_total_per_preparation_sigma_fraction_for_80pct_power.",
         "statistical_sigma_fraction_budget_after_systematic_floor": 0.05068254210971344,
         "systematic_sigma_fraction": 2e-07,
-        "systematic_sigma_ppm": 0.2,
         "systematic_fraction_of_effect": 4e-06,
         "standard_error_fraction_at_budget": 0.014630789665242713,
         "noncentrality_at_effect_target": 3.4174505371218147,
@@ -111,8 +115,9 @@
         "zcrit_two_sided_alpha": 2.5758293035489,
         "noncentrality_at_effect_target": 3.4174505371218147
       },
-      "decision_rule": "Decisive sign-positive gate requires the 99% bootstrap CI for Delta T2 = T2(17O)-T2(16O) to exclude zero, exceed the measurement floor, have positive sign, and pass the pilot variance gate for the 5% powered target. Significant negative polarity fails P.13c. Sign-positive significant effects below 5% are positive-sensitivity / effect-size revision, not confirmation or failure.",
-      "scope": "Executable preregistration design audit. Lab-data status remains open until blinded active-state NMR measurements are acquired."
+      "decision_rule": "Held pending redesign. As written the gate rejected by construction (17O shortens water-1H T2 by scalar relaxation). The former sign-aware rule -- reject the registered sign-positive branch on a powered, significant negative isotope x activity interaction in water-1H Delta T2, Delta T2 = [T2(17O,active) - T2(17O,inactive)] - [T2(16O,active) - T2(16O,inactive)] -- applies only after the redesign; until then no outcome supports or rejects the branch. Neither outcome would be a verdict on GCT as a whole, and no phason, Selection-Operator or Level-II inference follows (V1 Ch17 \u00a717.1.3).",
+      "decision_rule_operative": false,
+      "scope": "Design-sketch power calculation; gate held pending redesign; lab-data status open."
     },
     "power_statistic": {
       "effect_fraction": 0.05,
@@ -120,10 +125,9 @@
       "zcrit_two_sided_alpha": 2.5758293035489,
       "zbeta_target": 0.8416212335729144,
       "max_total_per_preparation_sigma_fraction_for_80pct_power": 0.05068254211010805,
-      "pilot_variance_acceptance_threshold": "Accept decisive 5% confirmation/falsification only if pilot total per-preparation sigma fraction is <= max_total_per_preparation_sigma_fraction_for_80pct_power.",
+      "pilot_variance_acceptance_threshold": "Non-operative while the gate is held pending redesign. After the redesign, a decisive 5% support/rejection of the registered polarity branch would require pilot total per-preparation sigma fraction <= max_total_per_preparation_sigma_fraction_for_80pct_power.",
       "statistical_sigma_fraction_budget_after_systematic_floor": 0.05068254210971344,
       "systematic_sigma_fraction": 2e-07,
-      "systematic_sigma_ppm": 0.2,
       "systematic_fraction_of_effect": 4e-06,
       "standard_error_fraction_at_budget": 0.014630789665242713,
       "noncentrality_at_effect_target": 3.4174505371218147,
@@ -146,7 +150,7 @@
       "zcrit_two_sided_alpha": 2.5758293035489,
       "noncentrality_at_effect_target": 3.4174505371218147
     },
-    "null_control": "H2^16O has oxygen spin I=0 and no ^17O quadrupole line",
+    "null_control": "H2^16O has oxygen spin I=0 (no 17O-1H scalar relaxation)",
     "systematic_controls": [
       "S1 matched osmolarity",
       "S2 locked ^17O enrichment assay",
@@ -166,10 +170,12 @@
     "registered_solvent_kie_bound_status": "Tier 3 literature-prior control; no direct H2^16O-to-H2^17O radical-pair solvent-KIE verifier",
     "registered_solvent_kie_bound_provenance": "Heavy-atom solvent/substrate isotope-effect control imported from the anaesthesia solvent-KIE literature; registered as a conservative control bound, not as a GCT-derived constant.",
     "registered_solvent_kie_bound_closure_target": "O.21/O.33: direct assembled-substrate and solvent-KIE calibration for the H2^16O/H2^17O radical-pair and NMR-polarity protocol.",
-    "interpretation": "The raw oxygen-mass diagnostic is a bulk-solvent control, not the registered spin-entropy endpoint. Protocol D requires the signed LORR shift plus the ^17O NMR polarity gate to separate spin entropy from ordinary isotope chemistry."
+    "interpretation": "The raw oxygen-mass diagnostic is a bulk-solvent control, not the registered spin-entropy endpoint. Protocol D would need the signed LORR shift plus the redesigned water-1H NMR polarity gate (P.13c, held pending redesign) to separate spin entropy from ordinary isotope chemistry."
   },
-  "recommendation": "Run LORR as the behavioral endpoint and treat the ^17O NMR polarity gate as mandatory. A LORR-only shift is not sufficient for GCT closure because solvent isotope systematics can be sign-ambiguous.",
-  "pass": true,
+  "recommendation": "Run LORR as the behavioral endpoint; the NMR polarity gate (P.13c) is held pending redesign and is mandatory once redesigned. A LORR-only shift is not sufficient because solvent isotope systematics can be sign-ambiguous.",
+  "verdict": "NO_GCT_TEST_DESIGN_ONLY_CENTRAL_N_RP_ZERO_O21_PENDING",
+  "pass": false,
+  "design_arithmetic_consistent": true,
   "self_consistency_check": {
     "entropy_load_is_unity_for_17O_vs_16O": true,
     "central_shift_equals_minus_f_bound": true,

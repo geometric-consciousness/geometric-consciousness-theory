@@ -1,32 +1,34 @@
 """
-App Y Sec Y.6.3b General-Prime Polaron Unity Extension via Anderson-Putnam Primitivity
+App PUP Sec PUP.6.3b General-Prime Polaron Unity Extension via Anderson-Putnam Primitivity
 ========================================================================================
 
-Audits the matrix-theoretic input in the App Y Sec Y.6.3b general-prime
-extension of Proposition Y.1 (Polaron Unity). The protocol verifies the
+Audits the matrix-theoretic input in the App PUP Sec PUP.6.3b general-prime
+extension of Proposition PUP.1 (Polaron Unity). The protocol verifies the
 primitive-matrix Perron-Frobenius ingredient needed for the AF-core
 dimension-group trace step; it does not construct the knot-complement
-C*-algebra, prove canonicity of K |-> A_K, or supply a universal
-finite-quotient meridian trace.
+C*-algebra, prove canonicity of K |-> A_K, or supply a controlled
+meridian representation with convergence and trace descent.
 
 What this protocol closes
 ==========================
 
-App Y Sec Y.6.3b reduces the general-prime extension to three inputs:
+App PUP Sec PUP.6.3b reduces the general-prime extension to three inputs:
 (A) an Anderson-Putnam-style substitution C*-algebra for S^3 \ K;
-(B) canonicity of the assignment K |-> A_K; and (C) a meridian
-finite-quotient trace construction for the relevant knot-complement
+(B) canonicity of the assignment K |-> A_K; and (C) a controlled meridian
+representation/trace construction for the relevant knot-complement
 representation. Given a primitive non-permutation matrix A_K, the
 Cuntz-Krieger algebra O_{A_K} is non-tracial; the trace data used by
-Lemma Y.3.4 live on the gauge-fixed AF core F_{A_K}=O_{A_K}^T and on
-the finite-dimensional meridian quotient, as in the trefoil case.
+Lemma PUP.3.4 live on the gauge-fixed AF core F_{A_K}=O_{A_K}^T and on
+the finitely generated meridian subalgebra of the declared represented
+discrete quotient. The trefoil M_2(C) calculation is a finite-matrix
+surrogate, not a faithful finite-dimensional model of that subalgebra.
 
 Conditional structural chain (Tier 3 extension scaffold)
 ========================================================
 
   (1) K is a prime knot in S^3.
-      Premise from App Y Sec Y.3 (Kneser-Stallings: prime knot groups
-      are freely indecomposable; Lemma Y.3.2).
+      Premise from App PUP Sec PUP.3 (Kneser-Stallings: prime knot groups
+      are freely indecomposable; Lemma PUP.3.2).
 
   (2) ==> If a prime-knot complement supplies an AKN-style substitution
       model rho_K with an irreducible substitution matrix A_K, then the
@@ -60,25 +62,29 @@ Conditional structural chain (Tier 3 extension scaffold)
       (Cuntz-Krieger 1980 Thm 2.14 + Cor 2.15).
 
   (6) ==> The Zeno conditional expectation E_Zeno : B_K -> B_K^diag
-      on the meridian subalgebra B_K must be compared in a finite
-      meridian quotient or other trace-bearing representation. The
-      trefoil calculation currently uses an M_2(C) finite-matrix
-      surrogate; a unitary finite-dimensional faithful quotient of the
-      meridian C*-subalgebra remains an open construction. No trace is
-      extended to O_{A_K}.
+      on the meridian subalgebra B_K of A_K=C_r^*(Gamma_K) must be
+      compared on that same declared domain. The trefoil calculation
+      currently uses an M_2(C) finite-matrix surrogate; a faithful
+      represented model, or a controlled finite-representation family
+      with convergence and trace descent to B_K, remains open. No trace
+      is extended to O_{A_K}.
 
-The closure chain is structurally complete *given* (A) the
+The general-prime extension would additionally need (A) the
 Anderson-Putnam-style C*-algebra extension from R^n tile spaces
 to substitution structures on S^3 \ K, (B) canonicity of the
 assignment K |-> A_K across choice of substitution presentation,
-(C) a finite-quotient meridian trace construction, (D) KO-dim-6 sign
-verification (O.32), (E) the BKKO trivial-amenable-radical hypothesis
-(O.35), and (F) the primary-representation hypothesis (O.36). Under
-(A) + (B) + (C) + (D) + (E) + (F) and the fixed-slice finite-level
-complement reduction H_Y.1, Lemma Y.3.4 extends from the trefoil to
-any prime knot K. Proposition Y.1 (Polaron Unity) is Tier 3 conditional
-for the trefoil case and Tier 3 conditional on those general-prime
-inputs.
+(C) a meridian representation with convergence and trace descent,
+(D) KO-dim-6 sign verification (O.32), and (E) a physically
+identified factorial sector. O.35/O.36 are not open hypotheses that
+could be assumed here: they fail as posed for the represented trefoil
+group B_3 (its centre makes the amenable radical nontrivial and L(B_3)
+non-factorial) and hold only for the further central quotient
+B_3/Z(B_3) = C_2*C_3 [Tier 1 - standard]; whether any physical sector
+is that quotient's regular representation is open [Tier 3] (App PUP
+Sec PUP.6). Even with (A)-(E) and the declared full-fibre support
+hypothesis H_PUP.1^fib, the result would be at most an algebraic unity
+candidate (Tier 3 conditional): Proposition PUP.1(ii) is withdrawn,
+and no subject count, owner or Level-II verdict follows.
 
 What this protocol DOES NOT do
 ================================
@@ -101,7 +107,7 @@ What this protocol DOES provide
   - Numerical verification of the trefoil case as a reference check
     (Fibonacci matrix [[1,1],[1,0]] with Perron eigenvalue phi,
     confirming the structural chain).
-  - A structural audit of the primitive-matrix input in Sec Y.6.3b.
+  - A structural audit of the primitive-matrix input in Sec PUP.6.3b.
 
 Sample verification: Perron eigenvalues for canonical primitive
 non-negative integer matrices of small size
@@ -119,8 +125,8 @@ matrix is roughly (k-1) x (k-1) with entries derived from the
 crossing structure. We also include a primitive rational-Perron
 counterexample to prevent the false primitivity-implies-irrational step.
 
-Cross-reference: App Y Sec Y.6.3a (trefoil case explicit closure);
-Sec Y.6.3b (general-prime extension); App H §O.18 (Lemma Y.3.4);
+Cross-reference: App PUP Sec PUP.6.3a (trefoil case explicit closure);
+Sec PUP.6.3b (general-prime extension); App ORQ §O.18 (Lemma PUP.3.4);
 Anderson-Putnam 1998 (Ergodic Theory & Dynamical Systems 18:509);
 Putnam 2000 (Comm. Math. Phys. 213:493); Horn-Johnson 1985 Sec 8.5;
 Lind-Marcus 1995 Sec 11.1.
@@ -243,11 +249,11 @@ def compute() -> dict:
     # matrices have algebraic-irrational Perron eigenvalues.
     #
     # The load-bearing case is the trefoil (Fibonacci), which is the
-    # specific AKN matrix verified in App Y Sec Y.6.3a. The remaining
+    # specific AKN matrix verified in App PUP Sec PUP.6.3a. The remaining
     # samples are PATTERN-DEMONSTRATIONS, not knot-specific verifications.
 
     # Trefoil case (Fibonacci): the canonical AKN matrix from
-    # App Y Sec Y.6.3a. Perron = phi.
+    # App PUP Sec PUP.6.3a. Perron = phi.
     trefoil_A = np.array([[1, 1], [1, 0]])
 
     # Pattern demonstration: 2x2 primitive matrices with irrational Perron
@@ -272,7 +278,7 @@ def compute() -> dict:
 
     verifications = []
     verifications.append(verify_knot_substitution_matrix(
-        "Trefoil AKN (Fibonacci, App Y Sec Y.6.3a) -- ACTUAL knot AKN matrix",
+        "Trefoil Fibonacci surrogate matrix (App PUP Sec PUP.6.3a; a superseded modelling choice, not a derived knot matrix)",
         trefoil_A,
         expected_perron=PHI,
     ))
@@ -310,29 +316,30 @@ def compute() -> dict:
 
     return {
         "structural_chain_summary": [
-            "(1) K prime in S^3 [Kneser-Stallings, Lemma Y.3.2]",
+            "(1) K prime in S^3 [Kneser-Stallings, Lemma PUP.3.2]",
             "(2) AKN tile-substitution rho_K primitive [unproved extension; Anderson-Putnam 1998 supplies substitution-tiling machinery, not S^3 \\ K construction]",
             "(3) Perron-Frobenius: A_K has unique max-modulus eigenvalue [HJ85 Thm 8.5.1]",
             "(4) Perron eigenvalue is algebraic; irrationality requires excluding rational-root degeneracies [Lind-Marcus 1995 Sec 11.1]",
             "(5) AF core F_{A_K}=O_{A_K}^T carries dimension-group state; O_{A_K} is non-tracial",
-            "(6) meridian trace identity requires a unitary finite-dimensional faithful trace-bearing quotient [trefoil currently: M_2(C) surrogate]",
+            "(6) meridian trace identity remains on B_K subset C_r^*(Gamma_K); convergence and trace descent from the M_2(C) surrogate remain open",
         ],
         "closure_status": (
-            "Structural extension of Y.6.3a to general prime knots is "
-            "complete *given* (A) the Anderson-Putnam-style C*-algebra "
-            "extension from R^n tile spaces to substitution structures on "
-            "S^3 \\ K, (B) canonicity of K |-> A_K, and (C) a finite-quotient "
-            "meridian trace construction (Open Problem O.18), and the "
-            "fixed-slice finite-level complement reduction H_Y.1. Trefoil-case "
-            "Polaron Unity is Tier 3 conditional pending resolution of the "
-            "App Y finite-level 4-manifold knot-complement clarification "
-            "(registered as a sub-closure of Open Problem O.18); the "
-            "general-prime extension remains Tier 3 conditional on "
-            "Anderson-Putnam-to-knot-complement extension, canonicity of "
-            "K -> A_K, finite-quotient meridian trace construction, and "
-            "KO-dim-6 sign verification (O.32), together with O.35 "
-            "(BKKO trivial-amenable-radical hypothesis) and O.36 "
-            "(primary-representation hypothesis)."),
+            "The general-prime extension of the superseded trefoil surrogate "
+            "(App PUP Sec PUP.6.3a/6.3b) is not complete. It would need (A) "
+            "the Anderson-Putnam-style C*-algebra extension from R^n tile spaces "
+            "to substitution structures on S^3 \\ K, (B) canonicity of K |-> A_K, "
+            "(C) a controlled meridian representation with convergence and trace "
+            "descent (Open Problem O.18), (D) KO-dim-6 sign verification (O.32), "
+            "and the declared complement-compatible full-fibre supports "
+            "D_n=X_n x K_n. The inverse limit is a pro-group of generally "
+            "infinite groups, not a profinite group. O.35/O.36 fail as posed for "
+            "the represented trefoil group B_3 and hold only for the further "
+            "central quotient B_3/Z(B_3) = C_2*C_3; whether any physical sector "
+            "is that quotient regular representation is open (Tier 3). Under an "
+            "assumed factorial sector, Prop. PUP.1(iii) gives uniqueness of R_inv "
+            "only, not of F_sel. The physical support, inverse-limit and "
+            "factorial-sector identifications remain open; the ceiling is an "
+            "algebraic unity candidate (Tier 3 conditional)."),
         "sample_verifications": verifications,
         "rational_perron_counterexample": rational_counterexample,
         "all_samples_pass_matrix_theoretic_ingredient": {
@@ -359,7 +366,7 @@ def main():
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
 
-    print(f"App Y Sec Y.6.3b General-Prime Polaron Unity Extension")
+    print(f"App PUP Sec PUP.6.3b General-Prime Polaron Unity Extension")
     print(f"=" * 65)
     print(f"Structural chain:")
     for step in results["structural_chain_summary"]:

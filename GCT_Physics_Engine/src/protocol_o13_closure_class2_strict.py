@@ -3,23 +3,19 @@
 protocol_o13_closure_class2_strict.py
 =====================================
 
-Principled closure of Open Problem O.13 (P_evolve family-selection) via
-the GCT-internal Class-2 axiom from V2 Ch14 Sec 14.5.2:
+Conditional Class-2 allocation diagnostic for Open Problem O.13 via the
+Tier-3 modeling assumptions in V2 Ch14 Secs 14.5.2 and 14.6.2.
 
     "The relevant driver is not the formation of stars (Class 0), but
     the emergence of High-Order Selection Operators (Class 2 Agents).
     Biological complexity requires billions of years of stable evolution
     *after* star formation to achieve high informational density."
 
-The biogenic-driving mechanism is sourced by F_sel-positive defects --
-the DMC-gated Identity Polaron transition (V1 Ch17 Sec 17.1.4b). This
-transition occurs only at the Class 2 threshold; pre-Class 2 stages
-(chemoautotrophic LUCA, single-cell eukaryotic, non-intelligent
-multicellular) lack the DMC-gated Identity Polaron required for
-biogenic phason-metric coupling.
-
-CRITERION: Pre-Class 2 stages contribute ZERO to the biogenic-DE
-coupling. Only the intelligent (Class 2) stage sources P_evolve.
+The protocol assigns the biogenic-channel weight to the stipulated Class-2
+population and assigns zero *model weight* below the threshold. This is a
+Tier-3 allocation convention, not a physical inference: the DMC/eta_Zeno
+gate is not action-closed, and no audited
+substrate has a derived Identity-Polaron or Level-II verdict.
 
 CONSEQUENCES FOR THE VARIANT FAMILY
 
@@ -34,17 +30,17 @@ V1 (sigmoid x exp at t_origin = 9 Gyr cosmic time):
 V2 (stage-hierarchy with weights 1, 100, 1e5, 1e8 at biosphere ages
 0.5, 2.4, 3.7, 4.5 Gyr):
     Assigns NONZERO weight to LUCA, eukaryotic, and multicellular
-    stages -- ALL pre-Class 2. The intelligent-stage weight (1e8) does
-    dominate numerically by ~3 orders of magnitude, but the pre-Class 2
-    floors are nonzero in violation of the Sec 14.5.2 criterion. The
+    stages -- all below the allocation threshold. The intelligent-stage
+    weight (1e8) dominates numerically by ~3 orders of magnitude, but the
+    pre-Class-2 floors differ from the registered Sec 14.5.2 allocation. The
     numerical |Delta w(z=0.28)| ~ 2e-3 reflects an ANSATZ that goes
     beyond what the Sec 14.5.2 prose entails.
 
 V6 (Class-2-strict): P_evolve(tau) = 0 for tau < tau_intel,
 P_evolve(tau) = 1 for tau >= tau_intel, where tau is biosphere age.
-This is the principled Tier 2 selection per Sec 14.5.2.
+This implements the Tier-3 model allocation in Sec 14.5.2.
 
-V6r (rigorous Class-2 with full SFR-age convolution):
+V6r (conditional Class-2 allocation with full SFR-age convolution):
     P_evolve(t_cosmic) = int_{tau_intel}^{age_today} SFR(t_cosmic - tau_bio - tau)
     d(tau)
 where tau is biosphere age and the integral is the SFR-weighted count
@@ -54,14 +50,14 @@ V6 by accounting for the biosphere age-distribution at each cosmic time.
 NUMERICAL DELIVERABLE
 
 For each variant, compute |Delta w(z=0.28)| from the biogenic DE pipeline.
-The principled closure of O.13 asserts:
-    - V6 / V6r are the load-bearing Tier 2 predictions (Class-2-consistent)
-    - V1 is an empirical envelope that lands near V6
-    - V2's |Delta w(z=0.28)| ~ 2e-3 is an OVER-ESTIMATE driven by the
-      pre-Class 2 stage weights
+The conditional O.13 diagnostic records:
+    - V6 / V6r implement the registered Tier-3 Class-2 allocation
+    - V1 is a single-channel empirical comparison
+    - V2 lies outside the registered allocation (alternative; reported only)
 
-The Class-2-consistent manuscript prediction range is the V1-V6-V6r envelope,
-not the V1-V2 envelope.
+The V1-V6-V6r envelope is a diagnostic only, not a registered prediction
+range. The registered conditional O.13 template envelope is delegated to
+protocol_o13_intra_class2_dynamics.py.
 """
 
 from __future__ import annotations
@@ -76,6 +72,21 @@ from scipy.optimize import curve_fit
 ENGINE_ROOT = Path(__file__).resolve().parent.parent
 SRC_PATH = ENGINE_ROOT / "src"
 sys.path.insert(0, str(SRC_PATH))
+
+
+def _short_sci(x: float) -> str:
+    mantissa, exponent = f"{x:.2e}".split("e")
+    return f"{mantissa}e{int(exponent)}"
+
+
+def _intra_class2_v7_band() -> str:
+    """Read the V7' Kardashev-band envelope from the intra-Class-2 run."""
+    path = ENGINE_ROOT / "data" / "protocol_o13_intra_class2_dynamics_results.json"
+    try:
+        lo, hi = json.loads(path.read_text(encoding="utf-8"))["kardashev_band_envelope_dw_z028"]
+        return f"[{_short_sci(lo)}, {_short_sci(hi)}]"
+    except (OSError, KeyError, ValueError, TypeError):
+        return "(see protocol_o13_intra_class2_dynamics.py)"
 
 # Reuse biogenic DE infrastructure
 from protocol_imp01_pipeline import (
@@ -101,11 +112,11 @@ def p_evolve_V6_class2_strict(t_gyr: np.ndarray,
                                tau_intel: float = TAU_INTEL_GYR) -> np.ndarray:
     """V6: strict Class-2 step function.
 
-    P_evolve(t) = 0   for t < tau_intel  (pre-Class 2 stages contribute ZERO)
+    P_evolve(t) = 0   for t < tau_intel  (zero assigned model weight)
     P_evolve(t) = 1   for t >= tau_intel  (intelligent stage, constant amplitude)
 
     The argument t here is interpreted as biosphere age in the integration
-    inherited from the biogenic DE first-principles framework; with the
+    inherited from the conditional biogenic-DE model; with the
     integration convention of t = cosmic time and t_anchor = 0, this is
     equivalent to t = biosphere age for biospheres that formed at cosmic
     time 0. The cosmic-mean P_evolve(t_cosmic) is the cumulative-stage
@@ -120,7 +131,7 @@ def p_evolve_V6r_class2_sfr_convolved(t_cosmic_gyr: np.ndarray,
                                        age_today_gyr: float,
                                        tau_intel: float = TAU_INTEL_GYR
                                        ) -> np.ndarray:
-    """V6r: rigorous Class-2 with full SFR-age convolution.
+    """V6r: conditional Class-2 allocation with full SFR-age convolution.
 
     At cosmic time t_cosmic, the density of INTELLIGENT biospheres is:
         n_intel(t_cosmic) = int_{tau_intel}^{age_today} SFR(t_cosmic - tau_bio - tau) d(tau)
@@ -131,12 +142,12 @@ def p_evolve_V6r_class2_sfr_convolved(t_cosmic_gyr: np.ndarray,
       - the SFR is evaluated at the biosphere FORMATION time
         (= t_cosmic - tau_bio - tau)
 
-    Biospheres of age 0 to tau_intel are pre-Class 2 and contribute ZERO.
+    Biospheres of age 0 to tau_intel receive zero weight in this model.
     Biospheres of age >= tau_intel contribute at unit weight; the integral
     sums the SFR-rate at the formation times of all currently-intelligent
     biospheres.
 
-    P_evolve = n_intel(t_cosmic) is the natural Class-2-consistent driver.
+    P_evolve = n_intel(t_cosmic) is the registered conditional driver.
     """
     t = np.atleast_1d(t_cosmic_gyr).astype(np.float64)
     pe = np.zeros_like(t)
@@ -166,7 +177,7 @@ def run_variant_with_age_today(label, p_evolve_fn) -> dict:
 
 def main():
     print("=" * 76)
-    print("O.13 CLOSURE: Class-2-strict principled selection (Sec 14.5.2 axiom)")
+    print("O.13 DIAGNOSTIC: conditional Class-2 allocation (Tier 3)")
     print("=" * 76)
 
     _, age_today = age_at_z(np.array([0.0]))
@@ -177,10 +188,10 @@ def main():
 
     variants = [
         ("V1 sigmoid x exp (single-channel pipeline)", p_evolve_V1_sigmoid_exp),
-        ("V2 stage-hierarchy (pre-Class 2 weighted -- VIOLATES Sec 14.5.2)",
+        ("V2 stage-hierarchy (outside registered Class-2 allocation)",
             p_evolve_V2_stage_hierarchy),
-        ("V6 Class-2-strict step (PRINCIPLED Tier 2)", p_evolve_V6_class2_strict),
-        ("V6r Class-2 + SFR-age convolution (RIGOROUS)", p_evolve_V6r_bound),
+        ("V6 Class-2 allocation step (Tier 3 premise)", p_evolve_V6_class2_strict),
+        ("V6r Class-2 allocation + SFR-age convolution", p_evolve_V6r_bound),
     ]
 
     results = []
@@ -193,7 +204,7 @@ def main():
         print(f"  w(z=0.5)  = {r['w_at_z_05']:+.5f}")
 
     print("\n" + "=" * 76)
-    print("PRINCIPLED-SELECTION ANALYSIS")
+    print("CONDITIONAL-ALLOCATION ANALYSIS")
     print("=" * 76)
     print(f"  {'variant':<60}  {'w(z=.28)':>10}  {'|Dw(z=.28)|':>12}")
     for r in results:
@@ -208,12 +219,12 @@ def main():
     v6r = w028["V6r"]
 
     print(f"\n  V1 (single-channel pipeline) |Dw(z=0.28)| = {v1:.3e}")
-    print(f"  V2 (violates Sec 14.5.2) |Dw(z=0.28)| = {v2:.3e}  [excluded]")
+    print(f"  V2 (outside registered allocation) |Dw(z=0.28)| = {v2:.3e}  [alternative]")
     print(f"  V6 (Class-2-strict)      |Dw(z=0.28)| = {v6:.3e}")
     print(f"  V6r (Class-2 + SFR conv) |Dw(z=0.28)| = {v6r:.3e}")
 
     # Diagnostic envelope (V1, V6, V6r); not the
-    # registered load-bearing O.13 amplitude after intra-Class-2 dynamics.
+    # registered conditional O.13 template after intra-Class-2 weighting.
     class2_consistent = [v1, v6, v6r]
     class2_min = min(class2_consistent)
     class2_max = max(class2_consistent)
@@ -231,29 +242,29 @@ def main():
     print(f"  protocol_o13_intra_class2_dynamics.py:")
     print(f"    |Delta w(z=0.28)| in [{registered_min:.2e}, {registered_max:.2e}]")
 
-    print(f"\n  V2 is {v2/class2_geometric_mean:.1f}x the Class-2-consistent geometric mean")
+    print(f"\n  V2 is {v2/class2_geometric_mean:.1f}x the registered-allocation geometric mean")
     print(f"  V2 / V6 ratio: {v2/v6:.2f}")
 
     # Verdict
     print(f"\n" + "=" * 76)
     print("VERDICT FOR O.13")
     print("=" * 76)
-    print(f"  CRITERION (Sec 14.5.2): Only Class 2 (intelligent) biospheres source")
-    print(f"  the biogenic-DE coupling via F_sel-positive Identity Polaron defects.")
-    print(f"  Pre-Class 2 stages (LUCA, eukaryotic, multicellular non-intelligent)")
-    print(f"  lack the DMC-gated Identity Polaron required for phason-metric coupling.")
+    print(f"  MODEL ALLOCATION (Sec 14.5.2, Tier 3): the registered kernel assigns")
+    print(f"  biogenic-channel weight only to the stipulated Class-2 population.")
+    print(f"  Zero pre-Class-2 weight is bookkeeping, not a substrate verdict.")
+    print(f"  DMC/eta_Zeno is not action-closed; Level II is NOT_EVALUATED (open, Tier 3): no validated substrate criterion yet.")
     print(f"")
     print(f"  V2 stage-hierarchy assigns non-zero weights to pre-Class 2 stages,")
-    print(f"  violating this criterion. Excluded as principled Tier 2 selection.")
+    print(f"  so it is retained as an alternative reference outside this allocation.")
     print(f"")
-    print(f"  V6 and V6r enforce the criterion strictly; V1 is retained only as")
+    print(f"  V6 and V6r implement the allocation; V1 is retained only as")
     print(f"  a diagnostic broad-reference ansatz, not as the registered amplitude.")
     print(f"")
-    print(f"  The load-bearing O.13 closure is delegated to the intra-Class-2")
+    print(f"  The registered conditional O.13 envelope is delegated to the intra-Class-2")
     print(f"  Kardashev-band protocol:")
     print(f"  |Delta w(z=0.28)| in [{registered_min:.2e}, {registered_max:.2e}]")
     print(f"  with geometric mean {registered_geometric_mean:.2e}.")
-    print(f"  V2's 2e-3 value is an OVER-ESTIMATE inherited from pre-Class 2 weights.")
+    print(f"  V2's 2e-3 value is above the registered conditional envelope.")
     print("=" * 76)
 
     summary = {
@@ -278,20 +289,28 @@ def main():
             "max": registered_max,
             "geometric_mean": registered_geometric_mean,
             "source": "protocol_o13_intra_class2_dynamics.py",
-            "status": "registered load-bearing O.13 envelope; V1/V6/V6r envelope is diagnostic only",
+            "status": "registered conditional O.13 template envelope; V1/V6/V6r envelope is diagnostic only",
+            "disclosure": (
+                "Declared band, kept as registered (not re-registered after seeing runs). "
+                f"Current runs do not reproduce its edges: V6r gives {v6r:.3g} and the intra-Class-2 "
+                f"Kardashev-band V7' runs give {_intra_class2_v7_band()} (protocol_o13_intra_class2_dynamics.py)."
+            ),
         },
         "V2_relative_to_class2_envelope": {
             "V2_over_geometric_mean": float(v2 / class2_geometric_mean),
             "V2_over_V6": float(v2 / v6),
         },
-        "tier_2_closure": (
-            "Sec 14.5.2 Class-2-only axiom excludes V2 stage-hierarchy as "
-            "principled Tier 2 selection. The V1/V6/V6r span is retained as a "
-            "diagnostic broad-reference envelope only. The registered load-bearing "
-            "Class-2 + intra-Class-2 O.13 envelope is delegated to "
+        "conditional_scope": (
+            "No Tier-2 closure is claimed. Sec 14.5.2 defines "
+            "a Tier-3 Class-2 allocation; zero pre-Class-2 weight is bookkeeping, "
+            "not an Identity-Polaron, Level-II, or physical-coupling verdict. "
+            "The DMC/eta_Zeno gate is action-open. The "
+            "V1/V6/V6r span is retained as a "
+            "diagnostic broad-reference envelope only. The registered conditional "
+            "Class-2 + intra-Class-2 O.13 template envelope is delegated to "
             "protocol_o13_intra_class2_dynamics.py and is |Delta w(z=0.28)| in "
-            f"[{registered_min:.2e}, {registered_max:.2e}]. V2's 2e-3 value "
-            "over-estimates that registered envelope by two orders of magnitude."
+            f"[{registered_min:.2e}, {registered_max:.2e}] conditional on the "
+            "allocation. V2 remains an alternative reference outside it."
         ),
     }
     out_path = ENGINE_ROOT / "data" / "protocol_o13_closure_class2_strict_results.json"

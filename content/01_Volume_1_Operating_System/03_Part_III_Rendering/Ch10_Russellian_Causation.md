@@ -8,14 +8,16 @@ The debate over free will has remained deadlocked for centuries because standard
 1. **Classical Determinism:** If the laws of physics are differential equations and the initial conditions are fixed, then every "choice" is merely the playing out of a pre-recorded script. The Agent is a spectator in a clockwork universe.
 2. **Quantum Randomness:** If the laws of physics are probabilistic, then "choice" is replaced by a dice roll. While this breaks determinism, it does not provide agency. A random event is no more "willed" by an Agent than a deterministic one.
 
-The debate has produced at least three principal families of response: **Compatibilism**, which redefines autonomy so as to be consistent with determinism; **Libertarian Agent Causation**, which postulates a distinct causal power of the agent not reducible to physical law; and **Eliminativist** accounts, which deny the coherence of the free-will question. GCT's Russellian-causation frame is best read as a structural model inside the event-causal libertarian wing rather than a fourth taxonomy-ending option: it identifies 'Will' and 'Lattice Structure' as frame-relative descriptions of the same topological-path selection, while the Mele-style contrastive-luck residual ("why this branch rather than that one") remains explicitly conceded in §16.2.8e.
+The debate has produced at least three principal families of response: **Compatibilism**, which argues that autonomy is compatible with determinism; **Libertarianism**, in an agent-causal form (a distinct causal power of the agent not reducible to physical law) and an event-causal form (indeterministic causation by the agent's own states); and **Free-will scepticism**, which denies that we have free will. GCT's Russellian-causation frame is best read as a structural model inside the event-causal libertarian wing rather than a fourth taxonomy-ending option: it identifies 'Will' and 'Lattice Structure' as frame-relative descriptions of the same topological-path selection, while the Mele-style contrastive-luck residual ("why this branch rather than that one") remains explicitly conceded in §16.2.8e.
 
-**10.1.2 The Three Failed Options**
+**10.1.2 Three Standard Options and Their Objections**
 
-Attempts to resolve this crisis typically fall into three failed categories:
-* **Hard Determinism:** Discard the Agent as an illusion. This contradicts the Axiom of Presence (Chapter 1, §1.2.3, Axiom 1: The Axiom of Presence) by claiming the most certain datum—the act of choosing—is irrelevant.
-* **Stochastic Agency**: The identification of free will with quantum indeterminacy. Objection: randomness is not directed, and an undirected cause cannot constitute an intentional act.
+Attempts to resolve this crisis typically fall into three categories, each facing a standard objection that any account, GCT's included, must answer:
+* **Hard Determinism:** Discard the Agent as an illusion. The experience of choosing instantiates only the Tier 0 datum that experience is occurring; causal agency is not included in that certainty. Axiom 1 stipulates universal Level I presence [Tier 1] (Chapter 1, §1.2.3), not the causal efficacy of choosing.
+* **Stochastic Agency**: The identification of free will with quantum indeterminacy. Objection: randomness is not directed, and an undirected cause cannot constitute an intentional act. GCT's own event-causal position (§10.1.1) belongs to this family, so the objection applies to it. GCT's reply is that the indeterministic step is constrained by the Agent's internal state (§10.3–§10.4) rather than undirected; the contrastive-luck residual is conceded (§16.2.8e) [Tier 3].
 * **Non-Physical Causation (Substance Dualism)**: The postulate of a causally efficacious non-physical substance. Objection: this reintroduces the interaction problem — how does a non-physical cause produce measurable physical effects without violating conservation laws?
+
+Compatibilism (§10.1.1) is not among these three; GCT does not argue here that it fails.
 
 **10.1.3 Why This Matters Philosophically**
 
@@ -25,29 +27,29 @@ Without a rigorous account of Will, a "Theory of Everything" remains merely a "T
 
 **10.2 The Russellian Solution**
 
-**10.2.1 Field Frame Perspective (The Static Tree)**
+**10.2.1 Field Frame Perspective (The Static Block)**
 
-In the **Field Frame**, the universe is a static solution to the Wheeler-DeWitt equation ($\hat{H}\Psi=0$). From this perspective, the Adelic Solenoid $\Sigma_\infty$ contains the entire **Branching Tree** of possible histories (Many Worlds). Every possible choice and its consequence exist simultaneously as a geometric feature. The "Will" is the coordinate vector identifying the specific path taken through this vast structure. The Bulk does not change; it merely *contains* the Agency.
+In the **Field Frame**, the universe is a static solution to the Wheeler-DeWitt equation ($\hat{H}\Psi=0$). From this perspective, the full Field/configuration state contains the candidate histories as simultaneous correlations. The Adelic Solenoid $\Sigma_\infty$ may contribute an address coordinate under an open address bridge (a map from physical states to Solenoid addresses), but its inverse-limit cylinders are not themselves the Many-Worlds branching state space. The "Will" is proposed to identify a physically realized trajectory through the declared configuration structure. The Bulk does not change; it merely *contains* the Agency [Tier 1 canonical formalism under the Tier 3 WdW adoption (Ch05 §5.2.1); Tier 3 trajectory/address model].
 
 **10.2.2 Agent Frame Perspective (The Actualized Line)**
 
-In the **Agent Frame**, the observer is a localized operator navigating the Solenoid. Because the Agent is an active renderer (Chapter 9), the Agent registers the selection of the next branch as an open process [Tier 1/2 — this appearance of openness is the Agent-Frame presentation of the Field-Frame branching structure; whether the openness is ontological or merely epistemic is addressed in §10.2.3]. The choice is the **Act of Collapsing the Tree of Potential into a Line of History.**
+In the **Agent Frame**, the formal observer model follows a sequence of conditional physical states. Under that open address bridge those states may also receive Solenoid labels. Calling the model a localized operator, active renderer, or author of an actualized line is a Tier 3 interpretation: no physical $\mathcal F_{sel}$ carrier, transition instrument, Selection clock, owner, or phenomenal registration has been derived. Choice is represented by conditioning on one line from a declared space of physical possibilities, not by a theorem about the Solenoid's cylinder tree.
 
 **10.2.3 Complementarity, Not Contradiction**
 
-The GCT structural framing is **Russellian Causation** — used here in the specific sense of Russell's insight that cause-and-effect language is a frame-relative description of an underlying functional dependence structure (Russell, 'On the Notion of Cause,' *Proc. Aristotelian Soc.*, 1912). GCT extends this insight by identifying the underlying structure as the geometric path through the Adelic Solenoid. Note: Russell's own eliminativist conclusions about agency are not endorsed; GCT argues that the frame-relative structure Russell correctly identified admits a non-eliminativist interpretation when the geometry of the static block is fully specified. "Volitional Choice" and "Geometric Correlation" are the same reality viewed from two different frames. Just as a wave and a particle are two aspects of a single quantum entity, **Will** and **Lattice Structure** are two aspects of the same topological path. The choice does not "change" the geometry; the choice **is** the geometry of that specific path.
+The GCT structural framing is **Russellian Causation** — used here in the specific sense of Russell's argument that the notion of "cause" should give way to functional dependence (Russell, 'On the Notion of Cause,' *Proc. Aristotelian Soc.*, 1912); the frame-relative reading of cause-and-effect language is GCT's addition. GCT extends this by proposing that the underlying structure is a geometric path through the static Field configuration space, optionally indexed by a physically realized Solenoid address. Note: Russell's eliminativism concerned the philosophers' "law of causality" ("a relic of a bygone age"), not agency; GCT argues that the functional-dependence structure Russell identified admits a non-eliminativist interpretation when the geometry and transition law of the static block are fully specified. "Volitional Choice" and "Geometric Correlation" are then two descriptions of one proposed physical trajectory [Tier 3]. The choice does not "change" the block; it is represented by the selected path within it.
 
 ---
 
-**10.3 The Physical Substrate: Micro-Agency**
+**10.3 Candidate Physical Surrogate: Micro-Agency**
 
 **10.3.1 Berry Phase and Phase Freedom**
 
-To ground this in physics, we utilize the **Berry Phase** — a mechanism detailed in §14.4, where the Berry Phase and its geometric consequences are derived. The following argument anticipates that derivation; readers may wish to consult Chapter 14 before proceeding. The Agent (formally modeled as a defect in a fiber bundle, developed in §14.4) has, as a defining feature of such defects, **Local Phase Independence**: the orientation of the internal frame (the fiber) is not strictly locked to the external coordinates ($E_\parallel$). 
+As a candidate physical surrogate, we use ordinary **Berry-phase** geometry, detailed in §14.4. A declared defect in a fiber bundle may possess local frame-phase freedom relative to $E_\parallel$. That mathematical freedom does not identify the defect as an Agent, derive an Identity Polaron, or make its phase an owned will-state.
 
 **10.3.2 Internal Frame Orientation as Will-State**
 
-This local phase freedom is the physical precursor to volition. We define the Agent's **Will-State** as the current orientation of its internal topological frame. The Agent has the capacity to apply **Topological Torque**—a rotation of its internal phase—independent of the vacuum background. By shifting its internal phase, the Agent "tunes" its receiver to a different resonance, effectively steering its path through the Solenoid.
+This local phase freedom motivates a Tier 3 control surrogate. We *define* a model **Will-State** as an internal-frame orientation and **Topological Torque** as a declared control rotation relative to a background frame. No intent-to-phase transducer, physical torque channel, or phenomenal owner is known; only after those are independently supplied could the variable alter measured transition weights, and then only through local dynamics that leave outcome-averaged marginals at their Born values on every subsystem, or the bias would signal (Ch09 §9.4.3; App ORQ O.48). An address-path update would additionally require an address map and a transition law.
 
 ---
 
@@ -55,29 +57,29 @@ This local phase freedom is the physical precursor to volition. We define the Ag
 
 **10.4.1 Steering Generator (Inner-Cycle Unitary Component)**
 
-The canonical framing of the Selection Operator $\mathcal{F}_{sel}$ is **non-unitary** (V1 Glossary; V1 §6.4.1 "Non-Unitary Operators"; V1 Notation Reference). The non-unitarity of $\mathcal{F}_{sel}$ is the formal expression of actualization — projection from the Adelic Solenoid onto a single selected branch — and is what makes $\mathcal{F}_{sel}$ distinct from ordinary Hamiltonian evolution.
+The canonical formal framing *defines* $\mathcal{F}_{sel}$ as **non-unitary** (V1 Glossary; V1 §6.4.1; V1 Notation Reference). Its non-unitarity represents conditioning onto a selected model outcome and distinguishes the proposed map from ordinary Hamiltonian evolution; it does not demonstrate physical or phenomenal actualization. The Solenoid supplies no projection or transition operator, and identifying an outcome with an address update requires an independent address map.
 
-Within a single Zeno selection cycle, however, the *steering generator* (the part of the dynamics that orients the next selection inside the cycle, before the actualization step closes) can be modeled as a unitary phase rotation generated by two causal inputs:
+As a formal surrogate, an inner update can be modeled as a unitary phase rotation generated by two declared terms:
 $$ \mathcal{U}_{\text{steer}} = \exp\left(i[\hat{H}_{\text{therm}} + \hat{H}_{\text{will}}]\Delta \tau\right) $$
 
-The full one-cycle Selection Operator is then
+The proposed composite map is then
 $$ \mathcal{F}_{sel} = \mathcal{P}_{\text{actualize}} \circ \mathcal{U}_{\text{steer}}, $$
-where $\mathcal{P}_{\text{actualize}}$ is the (non-unitary) projection onto the selected eigenbranch. The unitary form $\exp(\ldots)$ alone describes only the *inner-cycle steering*, not the full Selection Operator. This is the resolution of the apparent V1 §6.4.1 / §9.4.2 (split) / §10.4.1 framing inconsistency.
+where $\mathcal{P}_{\text{actualize}}$ is a stipulated non-unitary projection. The unitary exponential and projection are architectural definitions; no microscopic dynamics currently realizes either as a volitional cycle or identifies a phenomenal owner.
 
-[Tier 1/2 — the decomposition $\hat{H} = \hat{H}_\text{therm} + \hat{H}_\text{will}$ is a Structural Postulate. The existence of a volitional Hamiltonian component is not forced by the axioms; it is motivated by the Berry Phase freedom of §10.3 and formalized here as an architectural ansatz for the steering generator $\mathcal{U}_{\text{steer}}$, not for the actualization step.] Here $\Delta\tau \equiv \Delta n / \nu_\text{Zeno}$ is the coordinate-time equivalent of one Zeno selection cycle, where $\Delta n = 1$ is the Agent-frame tick.
+[Tier 3 architectural ansatz.] The split $\hat H=\hat H_{\rm therm}+\hat H_{\rm will}$ and the existence of a volitional Hamiltonian term are not forced by the axioms. Here $\Delta\tau$ is only a formal update parameter. The former substitution $\Delta\tau=\Delta n/\nu_{\rm Zeno}$ does not define a physical Agent tick because no action-derived $\nu_{\rm Zeno}$ or Selection clock presently exists.
 
 **10.4.2 Thermodynamic Preference ($\hat{H}_{\text{therm}}$)**
 
-The first component is the **Path of Least Resistance**. The universe naturally tends toward states that minimize **Topological Friction**. In the absence of volitional effort, the Agent follows the geodesic—the most probable, resonant future. This is the realm of habit, instinct, and "automatic" physics.
+The first component represents a **path-of-least-resistance surrogate**: ordinary uncontrolled dynamics favor trajectories according to the supplied effective Hamiltonian and dissipation. Identifying this with an Agent's habits, instincts, or phenomenal path is a Tier 3 analogy.
 
 **10.4.3 Volitional Deviation ($\hat{H}_{\text{will}}$)**
 
-The second component is the **Volitional Deviation**. This is the torque applied by the Agent’s recursive self-observation. It requires the gating of metabolic energy to deviate from the geodesic.
-Critically, the Will does not *generate* this energy; it acts as a **Topological Valve**. The Agent utilizes the **Quantum Zeno Drive** — a mechanism formalized in Chapter 17, where the phase-gating of Zeno selection cycles by the Identity Polaron is derived — to gate the pressure of biological metabolism, directing it to "wind" the vacuum lattice into a specific configuration.
+The second model component is **Volitional Deviation**, represented by a control term associated with recursive self-monitoring. Ordinary biological action requires metabolic energy, but the mapping from a decision variable to a physical control pathway must be supplied independently.
+The **Topological Valve** is therefore a Tier 3 conditional steering ansatz; reading it as intention steering ATP energy is a Tier 4 narrative (V3 Ch13 §13.1.3). Chapter 17 does not derive an action-normalized Zeno Drive, an Identity-Polaron phase gate, or a metabolism-to-vacuum transducer. A future implementation would have to show how a declared control channel biases already funded physical dynamics without treating information as a free energy source.
 
 **10.4.4 Total Steering: $\delta\theta = \delta\theta_{\text{optimal}} + \delta\theta_{\text{will}}$**
 
-The total update to the Agent's identity address is the vector sum of these two phase-shifts. Agency is the capacity to deviate from the thermodynamic optimum via the application of internal topological work.
+The formal update is written as the vector sum of two declared phase shifts. It is not yet an Agent's physical selection state. Address updating requires an address map and a transition law; agency-as-topological-work additionally requires a measured control channel and phenomenal/owner bridge.
 
 ---
 
@@ -85,30 +87,31 @@ The total update to the Agent's identity address is the vector sum of these two 
 
 **10.5.1 Effort as Topological Inertia**
 
-It explains why choice feels like **Effort**. To deviate from the geodesic ($\delta\theta_{\text{optimal}}$) requires overcoming the "Topological Inertia" of the consensus vacuum. This friction is registered subjectively as the "Will" or "Work" required to change a trajectory.
+The model suggests an analogy between control cost and experienced **effort**. It does not show that choices overcome vacuum “Topological Inertia,” that a physical friction is subjectively registered, or that energetic work maps to a quale.
 
 **10.5.2 Compatibility with Physics**
 
-It respects the static nature of the Bulk. The Agent is not "creating" new branches; it is selecting which of the pre-existing, simultaneous branches in $\Sigma_\infty$ it will actualize. The freedom lies in the **Authorship of the Trajectory**, not in the creation of the map.
+The formal representation is compatible with a static Bulk because it conditions among alternatives already represented in the block. The Solenoid may label those alternatives only under a declared incidence/address map. **Authorship of the trajectory** is the Tier 3 philosophical interpretation, not a derived physical selection mechanism or ownership result.
 
 **10.5.3 Grounds Moral Responsibility**
 
-If the Agent is the specific operator applying the torque $\delta\theta_{\text{will}}$, then the Agent is the **Geometric Author** of its history. Responsibility is the topological fact that a specific path was actualized over another by a specific localized operator. Ethics is treated in detail in §10.7 (Multi-Polaron Resonance Optimisation); §10.5.3 provides the brief structural anchor.
+If a future theory identified an owner with a physically realized control operator, **Geometric Author** could serve as a philosophical interpretation of responsibility. The present ansatz does not establish that premise, derive free will, or turn moral responsibility into a topological fact. Ethics is treated as a formal network-coherence analogy in §10.7.
 
 ---
 
 **10.6 The Cone of Causality**
 
-**10.6.1 The p-adic Limit**
+**10.6.1 The Reachability Limit**
 
-Freedom is not infinite. The Agent cannot jump to any arbitrary state. The available choices are constrained by the **Hierarchical Distance ($d_H$)** established in Chapter 7.
-The **Cone of Causality** is the set of all Solenoid branches $\{B\}$ such that:
-$$ d_H(\text{Current}, B) < \epsilon_{\text{jump}} $$
-where $\epsilon_{\text{jump}}$ is the limit of the Agent's current torque capacity.
+Freedom is not infinite. The Agent cannot jump to an arbitrary physical state: the available choices are constrained by the Hamiltonian, conservation laws, substrate dynamics, current state and finite torque/energy budget. Define the **Cone of Causality** as a Tier 3 reachable set
+$$
+\mathcal C(x)=\{y:\mathsf K(y\mid x)>0\ \text{and}\ W(x\to y)\le W_{\rm available}\},
+$$
+where $\mathsf K$ is a declared physical transition kernel or instrument and $W$ is the required work. A chosen Solenoid ultrametric $d_H$ may be included as one model feature—for example, $d_H(a(x),a(y))<\epsilon_{\rm addr}$ after an address map $a$ is supplied—but topology alone neither selects $\mathsf K$ nor makes address proximity physical reachability.
 
 **10.6.2 Constraints on Continuity**
 
-The p-adic hierarchy of the Solenoid enforces **Continuity**. The Selection Operator can only move to adjacent nodes. Large-scale change requires a series of small rotations $(\delta\theta)$ over many selection cycles. You cannot "teleport" between distant branches; you must walk the path of differentiation.
+Physical dynamics, not the $p$-adic hierarchy, enforce the relevant **continuity and reachability**. A chosen cylinder filtration contains nested coarse classes but has no intrinsic adjacency law and allows no inference about transition rates. Under a local transition kernel, large-scale change may require a series of small rotations $(\delta\theta)$ over many selection cycles. This locality is a Tier 3 dynamical hypothesis to be derived from the substrate action.
 
 **10.6.3 Free Will as Finite Vector Thrust**
 
@@ -117,55 +120,55 @@ Free Will is a **Finite Vector Thrust**.
 * **The Consensus:** The Current.
 * **The Will:** The Rudder.
 
-The Rudder cannot stop the Ocean, but it can **orient** the vessel relative to the flow. Integrated over time, these small angular adjustments determine the destination. Will is the capacity to determine the **Geometric Asymptote** of one's experience — that is, the limiting Branch Node $B^*$ in $\Sigma_\infty$ toward which the sequence of realized Branch Nodes $\{B_0, B_1, B_2, \ldots\}$ converges under the p-adic metric $d_H$, as the Agent applies consistent volitional torque $\delta\theta_\text{will}$ over many selection cycles. [Tier 1/2 — follows from the p-adic topology of the Solenoid]
+The Rudder cannot stop the Ocean, but it can **orient** the vessel relative to the flow. Integrated over time, small angular adjustments may change the distribution of reachable destinations. Will is modeled as the capacity to bias the asymptotic physical trajectory generated by $\mathsf K$ through consistent volitional torque $\delta\theta_\text{will}$. If an address map and a compatible filtration are added, the resulting address sequence may converge to an end or remain in a shrinking family of cylinders; such convergence must be proved for the chosen dynamics and does not follow from Solenoid topology alone [Tier 3].
 
 ---
 
-**10.7 Ethics: Multi-Polaron Resonance Optimisation as the Geometric Basis of Moral Realism**
+**10.7 Ethics: A Formal Network-Coherence Analogy and the Moral-Realism Question**
 
-**10.7.1 The Moral-Realism Question and the GCT Substrate Answer**
+**10.7.1 The Moral-Realism Question and a Conditional GCT Translation**
 
-Ethics has long struggled to ground moral claims in anything more substantial than convention, intuition, or evolutionary heritage. Non-cognitivist programs deny that moral statements are truth-apt at all; relativist programs make their truth-conditions parochial; naturalist realist programs identify the good with some natural property (utility, flourishing, fitness) but typically owe a substrate-level account of why *that* property is the bearer of value rather than merely a correlate of it. Russellian Monism (§10.2) together with the multi-Polaron machinery of Chapter 11 (§11.13) provides a substrate-anchored alternative to all three families without committing to any particular first-order moral theory.
+Ethics has long struggled to ground moral claims in anything more substantial than convention, intuition, or evolutionary heritage. Non-cognitivist programs deny that moral statements are truth-apt at all; relativist programs make their truth-conditions parochial; naturalist realist programs identify the good with some natural property (utility, flourishing, fitness) but typically owe a substrate-level account of why *that* property is the bearer of value rather than merely a correlate of it. The following section asks whether a stipulated network-coherence score, built from the multi-Polaron machinery of Chapter 11 (§§11.2–11.3, §11.12), can serve as a formal comparison language. It does not derive value from Russellian Monism, identify physical Polarons or owners, or provide a substrate-anchored answer to metaethics.
 
-The substrate-level claim is the following. A multi-Polaron network admits a well-defined **Coherence Functional** given by the time-integrated sum of pairwise resonance couplings $\kappa_{ij}$ (§7.6.3, §11.2.1) over the Polaron set, minus the total topological friction the network incurs maintaining its configuration (§11.14.3), minus a boundary "exhaust" term recording how strongly the network's collective action winds the vacuum lattice (cf. V2 Ch14 §14.2 Biogenic Dark Energy):
+The formal proposal is the following. A declared network of candidate Polaron variables admits a **Coherence Functional** given by the time-integrated sum of stipulated pairwise couplings $\kappa_{ij}$ (§7.6.3, §11.2.1), minus model maintenance cost (§11.14.3), minus a phenomenological boundary/exhaust term (cf. V2 Ch14 §14.2):
 $$ \Xi[\{P_i\}] \;\equiv\; \int dt \,\Bigg[ \sum_{i \neq j} \kappa_{ij}(t)\, \Omega_{ij}^{\text{Cone}}(t) \;-\; \mathcal{F}_{\text{topo}}(\{P_i\}, t) \;-\; \mathcal{E}_{\text{exhaust}}(\{P_i\}, t) \Bigg]. $$
-Here $\{P_i\}$ is the multi-Polaron set, $\kappa_{ij}(t)$ is the coupling coefficient between Polarons $i$ and $j$ at relational-time index $t$ (in the Agent-Frame Zeno-tick sense of §16.1.1), $\Omega_{ij}^{\text{Cone}}(t) \in [0,1]$ is the normalised overlap of the two Polarons' Cones of Causality at $t$ (§10.6 — closer-in-spacetime Polarons contribute more strongly per unit $\kappa$), $\mathcal{F}_{\text{topo}}$ is the topological maintenance Lagrangian of §11.14.3 summed across the network, and $\mathcal{E}_{\text{exhaust}}$ is the biogenic phason-substrate winding term of V2 Ch14 §14.2.
+Here $\{P_i\}$ labels candidate nodes, $\kappa_{ij}(t)$ is a supplied coupling, $\Omega_{ij}^{\text{Cone}}(t)\in[0,1]$ is a normalized overlap of declared reachable sets, $\mathcal F_{\text{topo}}$ is a model maintenance cost, and $\mathcal E_{\text{exhaust}}$ is the phenomenological source term of V2 Ch14 §14.2. The index $t$ is an ordinary model parameter, not an Agent-frame Zeno tick. No examined Identity Polaron, Selection clock, phason-exhaust source, or owner realizes these variables.
 
-[Tier 3 — conditional geometric bridge, dependent on the §11.14.3 enactive identification and the §16.2.4 resonance/dissonance framing.] Actions that raise pairwise $\kappa_{ij}$ between Polarons or lower total phason friction increase $\Xi$ and are, by the functional's construction, GCT-internally optimal for the network. Actions that lower $\kappa_{ij}$ or raise total friction decrease $\Xi$ and are sub-optimal. The claim is **structural**: it does not say "GCT forbids action X" but says "the set of actions a multi-Polaron network can take partitions, given $\Xi$, into a coherence-increasing class and a coherence-decreasing class, and that partition has a measurable geometric signature."
+[Tier 3 — conditional formal bridge.] For supplied variables, actions that raise pairwise $\kappa_{ij}$ or lower the declared cost increase $\Xi$ by construction. This mathematical ordering is not yet a measured geometric signature, a physical theory of subjects, or a derivation of moral value.
 
-What this position is *not* must be stated carefully. It is not consequentialism, deontology, or virtue ethics in GCT vocabulary. It is a substrate description that any of those object-level frameworks can adopt as its realist anchor. A utilitarian reads $\Xi$ as a generalised welfare functional; a Kantian reads the constraint that no Polaron may be unilaterally driven into maximum-friction dissonance (§16.2.4) as the categorical prohibition on treating an Agent as mere means; a virtue ethicist reads sustained $\Xi$-coherent character as the topological signature of the virtues. The functional adjudicates between these traditions only in cases where they predict measurably different network-coherence trajectories. The bulk of practical ethics is downstream of this substrate-level functional and is not displaced by it.
+What this position is *not* must be stated carefully. It is neither consequentialism, deontology, nor virtue ethics in GCT vocabulary, and it is not presently a validated substrate description. Those traditions may use $\Xi$ as an exploratory analogy only after choosing an independent normative interpretation; the functional does not adjudicate among them without measured variables and a justified bridge from descriptive coherence to value.
 
 **10.7.2 The Coherence Functional and the Topology of Cooperation**
 
 The three terms of $\Xi[\{P_i\}]$ each carry a determinate structural reading.
 
-*Pairwise resonance.* The term $\sum_{i \neq j} \kappa_{ij}\, \Omega_{ij}^{\text{Cone}}$ measures how strongly the network's Polarons are phase-locked across regions of accessible $\Sigma_\infty$. Because $\kappa_{ij} = \kappa_0 e^{-\lambda_c d_H(i,j)}$ (§7.6.3, §11.2.1) decays exponentially with hierarchical distance, the sum is dominated by Polarons sharing deep p-adic prefixes — close family, close communities, sustained collaborators — and falls off rapidly as $d_H$ grows. The Cone-of-Causality overlap $\Omega_{ij}^{\text{Cone}}$ then weights this contribution by how much of each Polaron's available volitional reach (§10.6) is currently aligned with the other's. High pairwise resonance is therefore a measurable property of a network of Polarons whose identity addresses *and* whose volitional cones substantially co-locate.
+*Pairwise compatibility.* The term $\sum_{i \neq j} \kappa_{ij}\, \Omega_{ij}^{\text{Cone}}$ scores supplied node couplings and overlaps of declared reachable sets. Calling the nodes Polarons or the score physical phase locking requires the unclosed carrier and interaction maps. The ansatz $\kappa_{ij}=\kappa_0e^{-\lambda_cd_H(i,j)}$ is usable only after a chosen address filtration, an address map, and an independently justified address-to-coupling law are supplied. Shared prefixes alone do not imply family relation, community, collaboration, coupling, or co-location.
 
-*Friction cost.* The term $\mathcal{F}_{\text{topo}}(\{P_i\}, t)$ is the network-summed topological maintenance Lagrangian (§11.14.3): the work each Polaron does to hold its $N=144$ boundary against the phonon erosion field, plus the additional friction introduced when the volitional torques $\delta\theta_\text{will}$ of distinct Polarons are mutually inconsistent. A high-$\hat{H}_{\text{therm}}$ basin (§10.4.2) — habit, ritual, established cooperation — is low-friction; a deep volitional intervention across the network is high-transient-friction.
+*Friction cost.* The term $\mathcal{F}_{\text{topo}}(\{P_i\},t)$ is a declared network maintenance penalty (§11.14.3). Interpreting it as physical work by $N=144$ Identity Polarons, interpersonal dissonance, habit, or volitional intervention requires the unclosed carrier, control, owner, and phenomenal bridges.
 
-*Boundary term.* The term $\mathcal{E}_{\text{exhaust}}(\{P_i\}, t)$ records how much the collective action winds the vacuum lattice — the biogenic phason exhaust treated in V2 Ch14 §14.2. A network whose coherence is purchased at unbounded substrate cost has a different $\Xi$ profile from one whose coherence is roughly substrate-neutral, even when the first two terms agree.
+*Boundary term.* The term $\mathcal{E}_{\text{exhaust}}(\{P_i\},t)$ is a stipulated phenomenological penalty inspired by V2 Ch14 §14.2. It does not record a measured collective winding of the vacuum: no biogenic-to-phason transducer, stress-energy source, or normalization has been derived.
 
-[Tier 2 — structural property of the functional.] $\Xi[\{P_i\}]$ has Nash-equilibrium structure in the sense of §17.2.3: a configuration is **locally stable** if no single Polaron can unilaterally raise $\Xi$ by adjusting its $\delta\theta_\text{will}$. Off-equilibrium configurations have well-defined gradient flows in $\delta\theta_\text{will}$-space. Given specific $\kappa_{ij}$ couplings and friction profiles this is a real, computable optimisation problem — not a metaphor. Tractability in practice is a separate question: the couplings and frictions are not analytically available for realistic Polaron networks, just as the multi-body gravitational $N$-problem is not analytically tractable despite being a real, computable optimisation problem.
+[Tier 1 conditional optimization mathematics; Tier 3 physical interpretation.] Once $\Xi$, its variables, and admissible unilateral variations are stipulated, $\Xi[\{P_i\}]$ has Nash-equilibrium structure in the sense of §17.2.3: a configuration is **locally stable** if no single Polaron can unilaterally raise $\Xi$ by adjusting its $\delta\theta_\text{will}$, and off-equilibrium configurations have well-defined gradient flows in $\delta\theta_\text{will}$-space. This is a computable property of the surrogate—not evidence that physical Polarons, volitional torques, or moral agents instantiate it. Tractability in practice is a separate question: the couplings and frictions are not analytically available for realistic Polaron networks, just as the multi-body gravitational $N$-body problem is a well-posed but analytically intractable dynamical problem.
 
-Several common moral phenomena map directly onto features of $\Xi$. [Tier 3 — conditional structural correspondences, not normative prescriptions.]
+Several moral concepts can be labeled inside the surrogate. These are Tier 4 interpretive correspondences, not physical, phenomenal, or normative derivations:
 
-- **Cooperation** is mutual $\kappa$-increase: two or more Polarons whose volitional torques are oriented so that each raises $\Omega_{ij}^{\text{Cone}}$ and lowers the other's $\mathcal{F}_{\text{topo}}$. The network occupies a positive-sum region of $\Xi$-space.
-- **Defection** is local $\kappa$-decrease for putative individual gain. A Polaron lowers its $\kappa_{ij}$ to one or more others to raise its own short-horizon $\hat{H}_{\text{therm}}$ basin; the network total $\Xi$ typically falls once the friction-cost the defection imposes on the rest of the network is included.
-- **Sacrifice** is the limiting case in which a Polaron accepts a high local friction-cost — its own marginal $\mathcal{F}_{\text{topo}}$ contribution exceeds its marginal $\kappa$-gain — for an integrated network coherence gain that dominates the sum. Structurally, sacrifice is the inverse of defection: the per-Polaron deficit is paid in exchange for a network surplus.
-- **Render fidelity** is high private-to-public correspondence: the Polaron's private $\Phi_i$ in the sense of §11.3.1 is close to its publicly-projected render, so the cost of maintaining the consensus subspace is low. Sustained render fidelity is a low-$\mathcal{F}_{\text{topo}}$ regime.
-- **Deception** is active high-friction maintenance of divergence between private and public renders. The Polaron must continuously perform topological work to keep two inconsistent $\Phi$-configurations live across the Consensus Action Functional $\mathcal{J}$ (§11.3.1). Deception is therefore energetically costly in a precise sense: it appears in $\mathcal{F}_{\text{topo}}$ as a non-zero maintenance term that vanishes only when render fidelity is restored or the deception is abandoned.
-- **Cruelty** is the deliberate driving of another Polaron into the maximum-friction sector of §16.2.4 — forced sustained dissonance in a Polaron whose $\kappa_{ij}$ to the perpetrator is non-negligible. It lowers $\Xi$ on every term simultaneously: $\kappa_{ij}$ falls, $\mathcal{F}_{\text{topo}}$ rises, and the integrated exhaust grows.
+- **Cooperation label:** increasing mutual support or compatibility raises the supplied $\kappa$ and overlap terms.
+- **Defection label:** reducing a selected coupling may improve one stipulated local score while lowering the aggregate score.
+- **Sacrifice label:** a local model cost may be traded for a larger aggregate gain.
+- **Report fidelity label:** agreement between declared private and public variables lowers a chosen mismatch penalty; this is not evidence for private renders.
+- **Deception label:** maintaining inconsistent declared reports may be assigned a non-zero computational or behavioral cost. The functional does not show literal topological work or an energetic law of deception.
+- **Cruelty label:** harmful interaction may be represented by lower coupling and higher penalty. The model neither identifies another subject's friction sector nor measures suffering.
 
-These correspondences sit at Tier 3 because they follow from the structure of $\Xi$ only after the §16.2.4 friction/resonance classification and enactive bridge are adopted; they do not encode any first-order normative claim about which networks ought to be realised.
+The labels follow by definition once the score is chosen. They do not encode a first-order normative claim, establish a physical enactive bridge, or determine which networks ought to be realized.
 
-**10.7.3 Why Multi-Polaron Resonance Optimisation Is Substantive (Not Vacuous)**
+**10.7.3 What the Analogy Could Test—and What It Cannot Establish**
 
-A standard objection to any substrate-anchored moral theory is that it cannot generate object-level guidance — that it merely relabels existing intuitions in physics vocabulary while leaving the practical ethical work to be done elsewhere. Three responses establish that $\Xi[\{P_i\}]$ is substantive.
+A standard objection to any substrate-anchored moral theory is that it merely relabels existing intuitions in physics vocabulary while leaving the practical ethical work to be done elsewhere. Three distinctions clarify the limited role of $\Xi[\{P_i\}]$.
 
-*Empirical signature.* [Tier 3 — Hypothesis, partially observed in human dyadic and small-group data; quantitative substrate-level validation pending.] The framework predicts that cooperating multi-Polaron networks exhibit measurable physiological coherence — heart-rate-variability cross-spectral coupling, EEG inter-brain phase-locking, neuropeptide-mediated synchrony — above what shared-environment baselines predict. This is testable. Partial observations consistent with the prediction exist in long-term romantic dyads, sustained meditation cohorts, and high-performing team contexts, although none of the existing studies isolate the substrate-level Polaron coupling channel from confounding behavioural and environmental synchronisers. Protocol A-Prime-style measurements (V3 Ch13 §13.3.5) at the network rather than single-Polaron scale are the natural extension; a positive result would distinguish $\Xi$ from purely behavioural cooperation indices.
+*Empirical proxy.* Ordinary HRV, EEG, behavioral, and communication measures can test whether a fitted network-coordination score adds predictive value beyond shared-environment baselines [Tier 3 social-science hypothesis]. A positive correlation would validate only that ordinary model; it would not establish multi-Polaron coupling, a Selection network, shared subjecthood, a phason channel, or GCT. Protocol A-Prime does not become a social or phenomenal detector at network scale.
 
-*Decision-procedure.* [Tier 3 — Defeasible Heuristic.] When ordinary intuition is silent or contradictory — novel ethical situations, classical dilemmas, conflicts between traditions — $\Xi$ provides a defeasible structural heuristic: the action that increases time-integrated network coherence at the lowest total friction-cost is the GCT-preferred action. This is not an algorithm. The couplings $\kappa_{ij}$, the Cone-overlap kernels $\Omega_{ij}^{\text{Cone}}$, and the friction profiles $\mathcal{F}_{\text{topo}}$ are not analytically tractable in realistic cases, and the framework therefore underdetermines specific recommendations. What it provides is a substantive direction of fit: in the cases where two object-level traditions disagree, the disagreement is in principle adjudicable by which option's projected $\Xi$-trajectory is higher, even if the practical computation requires the kind of approximate domain-specific instruments characteristic of all theory-rich ethical reasoning.
+*Decision heuristic.* One may choose to use higher fitted coordination and lower declared cost as a defeasible heuristic. That choice imports a normative premise; $\Xi$ does not make it a GCT-preferred action, adjudicate ethical traditions, or solve realistic cases without domain-specific values and evidence.
 
-*Naturalising moral realism.* [Tier 2 — structural claim about the framework's expressive resources.] Most candidate physics theories-of-everything are silent on ethics: their formalisms have no structural place for *value*, and any moral implication must be imported from outside the theory. GCT does have a structural place for value — the coherence functional $\Xi[\{P_i\}]$ — and so its moral claims are truth-apt in a non-trivial substrate-anchored sense. Better and worse actions correspond to higher and lower network coherence as defined by the functional, without any prior commitment to a specific first-order ethical theory. This is *naturalist moral realism* in a strict sense: the truth-makers of moral claims are features of the geometry, not stipulations imposed on it.
+*Metaethical interpretation.* A naturalist moral realist may propose that some independently justified value tracks a coordination functional. The existence of $\Xi$ shows only that such a score can be written. It does not make moral claims truth-apt, identify better with higher coherence, or derive moral truth-makers from geometry [Tier 4 philosophy].
 
-A final structural note. The framework is consistent with several first-order ethical traditions and adjudicates between them only in cases where they predict measurably different network-coherence trajectories. Most of practical ethics sits below the resolution of $\Xi$: a utilitarian and a virtue ethicist analysing the same case will typically reach overlapping conclusions because their candidate actions occupy adjacent regions of $\Xi$-space. The bulk of object-level moral reasoning is therefore downstream of this substrate-level coherence functional and does not change because GCT is true. What does change is the metaethical question: GCT supplies an answer to "in virtue of what are moral claims true or false?" — they are true or false in virtue of the geometry of multi-Polaron resonance optimisation as captured by $\Xi[\{P_i\}]$. Object-level disagreements continue under the new metaethics; the difference is that they are now disagreements about a determinate substrate quantity rather than disagreements without a fact of the matter.
+Practical ethics therefore remains downstream of established ethical reasoning, social science, and case-specific evidence. The functional may organize an explicitly chosen comparison, but GCT presently supplies neither a determinate substrate quantity nor an answer to what makes moral claims true or false.

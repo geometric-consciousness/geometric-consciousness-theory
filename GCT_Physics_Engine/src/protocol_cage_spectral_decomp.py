@@ -3,7 +3,7 @@
 protocol_cage_spectral_decomp.py — Decompose the I_h-closed AKN boundary
 cage adjacency spectrum by I_h irrep.
 
-Goal: determine whether the spectral asymmetry η_scalar measured by
+Goal: determine whether the scalar weighted-adjacency sign sum measured by
 protocol_aps_index_proof.py on the I_h-closed cage is a *structural*
 fact about the icosahedral symmetry of the cage, or whether it's a
 coincidental numerical outcome of the specific bond-weighting choice.
@@ -20,13 +20,14 @@ Method:
   4. Decompose the adjacency operator A by irrep blocks: A = ⊕_ρ A_ρ,
      where A_ρ acts on the m_ρ-fold isotypic component of ρ.
   5. Compute spectrum of each A_ρ; count signs.
-  6. Verify η_scalar = Σ_ρ dim(ρ)·sign_count(A_ρ) and look for a
+  6. Verify the scalar sign sum = Σ_ρ dim(ρ)·sign_count(A_ρ) and look for a
      structural "why" the total comes out to the measured integer.
 
-If η_scalar = integer-X because some specific I_h irrep has a fixed sign
+If the scalar sign sum is integer-X because some specific I_h irrep has a fixed sign
 pattern, the integer has a structural derivation. If not, the integer is a
-numerical outcome of the bond-weighting choice and the Tier-1 closure
-target (Open Problem O.14) is not met along this route.
+numerical outcome of the bond-weighting choice. In either case this finite
+scalar operator is not a Dirac operator or APS eta-invariant and supplies no
+APS-index evidence for Open Problem O.14.
 """
 
 from __future__ import annotations
@@ -233,7 +234,7 @@ def decompose_node_space_by_irrep(permutations: list[np.ndarray],
 
 def main() -> int:
     print("=" * 90)
-    print("  Cage spectral decomposition under I_h: is η_scalar forced by a specific irrep?")
+    print("  Cage spectral decomposition under I_h: is the scalar sign sum forced by a specific irrep?")
     print("=" * 90)
     print("  Building I_h-closed boundary cage + adjacency matrix...")
     nodes_6d, nodes_perp, A = build_cage_and_adjacency()
@@ -243,9 +244,9 @@ def main() -> int:
     # Spectrum
     eigvals = np.linalg.eigvalsh(A)
     nonzero = eigvals[np.abs(eigvals) > 1e-12]
-    eta_scalar = np.sum(np.sign(nonzero))
+    scalar_sign_sum = np.sum(np.sign(nonzero))
     print(f"  ✓ Adjacency spectrum: min={eigvals.min():.3f}, max={eigvals.max():.3f}")
-    print(f"  ✓ η_scalar = Σ sign(λ) over non-zero = {eta_scalar}")
+    print(f"  ✓ scalar adjacency sign sum over non-zero eigenvalues = {scalar_sign_sum}")
     print(f"  ✓ # positive eigvals: {int(np.sum(nonzero > 0))}, # negative: {int(np.sum(nonzero < 0))}")
 
     print()
@@ -326,13 +327,16 @@ def main() -> int:
                   f"(pos={int(np.sum(nonzero_proj > 0))}, neg={int(np.sum(nonzero_proj < 0))})")
 
         total_sign = sum(s["sign_sum_in_isotypic"] for s in irrep_signs.values())
-        print(f"  ─ Sum over irreps: {total_sign:.1f}  (should match η_scalar = {eta_scalar:.0f})")
+        print(f"  ─ Sum over irreps: {total_sign:.1f}  (should match scalar sign sum = {scalar_sign_sum:.0f})")
     else:
         irrep_signs = {}
 
     results = {
         "N_nodes": int(N),
-        "eta_scalar_measured": float(eta_scalar),
+        "scalar_adjacency_sign_sum": float(scalar_sign_sum),
+        "aps_operator_domain_specified": False,
+        "aps_eta_evaluated": False,
+        "aps_index_evaluated": False,
         "n_positive_eigvals": int(np.sum(nonzero > 0)),
         "n_negative_eigvals": int(np.sum(nonzero < 0)),
         "permutations_found": len(permutations),
@@ -344,10 +348,10 @@ def main() -> int:
     print("=" * 90)
     if len(permutations) == 60:
         print("  STRUCTURAL FINDING:")
-        print(f"  η_scalar = {int(eta_scalar)} = ({int(np.sum(nonzero > 0))} positive) - ({int(np.sum(nonzero < 0))} negative)")
+        print(f"  scalar sign sum = {int(scalar_sign_sum)} = ({int(np.sum(nonzero > 0))} positive) - ({int(np.sum(nonzero < 0))} negative)")
         print(f"  decomposes by I-irrep as shown above.")
         print(f"  If a SPECIFIC irrep contributes the entire asymmetry, that's the")
-        print(f"  structural reason for the η_scalar integer. Otherwise the asymmetry")
+        print(f"  structural reason for this finite-matrix integer. Otherwise the asymmetry")
         print(f"  is distributed across multiple irreps and the integer is harder to")
         print(f"  derive structurally.")
     else:

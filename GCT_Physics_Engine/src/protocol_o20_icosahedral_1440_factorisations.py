@@ -4,17 +4,16 @@ protocol_o20_icosahedral_1440_factorisations.py
 ================================================
 
 Classification of icosahedral combinatorial factorisations of 1440.
-Enumeration-level closure of Open Problem O.20.
+Conditional arithmetic catalogue for Open Problem O.20.
 
 CONTEXT (V3 Ch05 §5.2.1)
 
-The Higgs VEV saturation factor 1440 is derived as
+Conditional on the Tier-3 O.38 adoption of N_cage = 144, the registered
+integer product is
     1440 = N_cage * N_C3 = 144 * 10
-from muon-defect saturation across the icosahedral projection window.
-The integer 1440 admits multiple factorisations from independent
-icosahedral combinatorial counts. The Tier 2 claim is the SPECIFIC
-(144) x (10) mechanism; the integer handle remains Tier 3 because this
-enumeration does not uniquely select 1440 from first principles.
+where N_C3 = 10 is the exact count of three-fold axes. The multiplication
+and factor catalogue are exact arithmetic; this protocol neither selects
+N_cage = 144 nor establishes a physical saturation mechanism or Higgs VEV.
 
 CLOSURE STRATEGY
 
@@ -22,12 +21,12 @@ Enumerate all (a, b) pairs with a * b = 1440 where both a and b are
 identified with icosahedral combinatorial quantities (group orders,
 orbit sizes, irrep dimensions, polytope element counts, Coxeter
 invariants). Classify each factorisation as:
-    - GENUINELY INDEPENDENT topological pathway
-    (provides a dimensional cross-check of the Higgs VEV scale)
+    - INDEPENDENT combinatorial factorisation
+    (both factors occur separately in the declared dictionary)
   - COINCIDENTAL integer agreement
     (no physical content; arithmetic accident)
-  - SAME PATHWAY rewritten
-    (algebraically equivalent to the canonical 144 x 10)
+  - REGISTERED CONDITIONAL factorisation
+    (the 144 x 10 product conditional on Tier-3 O.38)
 
 ICOSAHEDRAL COMBINATORIAL DICTIONARY
 
@@ -42,7 +41,7 @@ ICOSAHEDRAL COMBINATORIAL DICTIONARY
   h_3 (Coxeter) = 10  (Coxeter number of H_3)
   rank(H_3)     = 3
   Irreps_I      = (1, 3, 3, 4, 5)  with sum^2 = 60 = |I|
-  N_cage        = 144  (GCT-specific: defect cage on N=144 sublattice)
+  N_cage        = 144  (Tier-3 O.38 conditional input)
   N_C3          = 10   (3-fold axes count; = h_3)
 
 PRIMARY-DECOMPOSITION CHECK
@@ -63,7 +62,7 @@ except ImportError:
 
 N_TARGET = 1440
 
-# Icosahedral combinatorial counts (canonical names and values)
+# Declared combinatorial counts and the Tier-3 O.38 conditional input
 ICOSAHEDRAL_COUNTS = {
     "Order_I_rotational": 60,
     "Order_Ih_full": 120,
@@ -80,7 +79,7 @@ ICOSAHEDRAL_COUNTS = {
     "Irrep_dim_3a": 3,
     "Irrep_dim_3b": 3,
     "Irrep_dim_1": 1,
-    "N_cage_GCT": 144,
+    "N_cage_O38_conditional": 144,
     "N_C3_GCT": 10,
     "Inversion_pairs": 2,
     "Tetrahedral_subgroup_T": 12,
@@ -114,24 +113,27 @@ def classify_factorisation(a, b, counts):
 
 
 def assess_factorisation(a, b, a_names, b_names):
-    """Decide whether (a, b) is genuinely independent, coincidental, or
-    same-pathway-rewritten relative to the canonical 144 x 10.
+    """Classify each factorisation relative to the registered 144 x 10 pair.
 
-    Heuristic classification (encodes the physics reading):
-    - 'CANONICAL': the GCT-derived (N_cage, N_C3) = (144, 10) pair
+    Arithmetic classification:
+    - 'REGISTERED_CONDITIONAL': (N_cage, N_C3) = (144, 10), conditional
+      on the Tier-3 O.38 input N_cage = 144
     - 'INDEPENDENT': both factors identified with distinct icosahedral
       combinatorial origins (group orders, polytope elements, etc.)
       potentially providing a cross-check
     - 'TRIVIAL': one factor is 1 (no topology)
     - 'PRIME': involves a factor that is NOT a primary icosahedral count
       (3, 5, 6, 9, 15, 32, 45 etc.) -- arithmetic coincidence
-    - 'SAME_PATHWAY': both factors are dimensionally equivalent
-      (e.g., |I_h|/|I| times something) and reduce to the canonical
+    - 'SAME_PATHWAY': reserved for algebraically equivalent rewritings
     """
     if a == 1 or b == 1:
         return "TRIVIAL", "Factor of 1; no topology"
     if (a == 144 and b == 10) or (a == 10 and b == 144):
-        return "CANONICAL", "GCT (N_cage) x (N_C3) = 144 x 10 -- the registered Tier 2 mechanism with Tier 3 integer-handle residual"
+        return (
+            "REGISTERED_CONDITIONAL",
+            "Exact product (N_cage) x (N_C3) = 144 x 10, conditional on "
+            "the Tier-3 O.38 input N_cage = 144",
+        )
     if not a_names or not b_names:
         return "PRIME", f"Factor not in icosahedral dictionary; arithmetic accident"
     # Both identified; check if they're independent topological objects
@@ -147,7 +149,7 @@ def assess_factorisation(a, b, a_names, b_names):
     # If both factors map to distinct combinatorial structures, INDEPENDENT
     return "INDEPENDENT", (
         f"Distinct icosahedral structures: {a_names[0]} x {b_names[0]} "
-        f"(provides a dimensional cross-check of the Higgs VEV scale)"
+        f"(an independent arithmetic factorisation in the declared dictionary)"
     )
 
 
@@ -199,37 +201,35 @@ def main():
 
     # Verdict summary
     print(f"\nVerdict breakdown:")
-    for v in ["CANONICAL", "INDEPENDENT", "TRIVIAL", "PRIME", "SAME_PATHWAY"]:
+    for v in ["REGISTERED_CONDITIONAL", "INDEPENDENT", "TRIVIAL", "PRIME", "SAME_PATHWAY"]:
         items = by_verdict.get(v, [])
         print(f"  {v:>15}: {len(items)} pairs")
 
-    # Independent (non-canonical, non-trivial, non-prime) factorisations
+    # Independent (non-registered, non-trivial, non-prime) factorisations
     independent = by_verdict.get("INDEPENDENT", [])
     print(f"\n{len(independent)} INDEPENDENT factorisation(s) identified -- "
-          f"each is a dimensional cross-check of the Higgs VEV scale:")
+          f"each is an arithmetic factorisation in the declared dictionary:")
     for c in independent:
         print(f"  {c['a']} x {c['b']}: {c['rationale']}")
 
-    canonical = by_verdict.get("CANONICAL", [])
+    registered = by_verdict.get("REGISTERED_CONDITIONAL", [])
     primes = by_verdict.get("PRIME", [])
 
     print(f"\n" + "=" * 76)
     print("VERDICT FOR O.20")
     print("=" * 76)
     print(f"  Total factor pairs (a <= b)         : {len(catalogue)}")
-    print(f"  Canonical (GCT-derived 144 x 10)    : {len(canonical)}")
-    print(f"  Independent icosahedral pathways    : {len(independent)}")
+    print(f"  Registered conditional (144 x 10)  : {len(registered)}")
+    print(f"  Independent dictionary products     : {len(independent)}")
     print(f"  Trivial (factor of 1)               : {len(by_verdict.get('TRIVIAL', []))}")
     print(f"  Arithmetic-coincidence factors      : {len(primes)}")
     print(f"")
     if len(independent) > 0:
         print(f"  STATUS: 1440 admits {len(independent)} independent icosahedral")
-        print(f"  factorisation(s) beyond the canonical (144) x (10) derivation.")
-        print(f"  Each is a dimensional cross-check pathway. The Higgs VEV")
-        print(f"  scale derivation is therefore *non-unique* in factorisation,")
-        print(f"  but the (144) x (10) pathway is the specific muon-defect-")
-        print(f"  saturation derivation; other factorisations represent")
-        print(f"  dimensional-support checks at the order-of-magnitude level.")
+        print(f"  factorisation(s) besides the registered (144) x (10) product.")
+        print(f"  The catalogue is exact arithmetic only. The 144 x 10 entry is")
+        print(f"  conditional on Tier-3 O.38's adoption of N_cage = 144; this")
+        print(f"  protocol does not select N_cage, a physical mechanism, or a VEV.")
     else:
         print(f"  STATUS: The (144) x (10) factorisation is UNIQUELY identified")
         print(f"  as the only icosahedral combinatorial decomposition of 1440")
@@ -244,19 +244,19 @@ def main():
         "n_factor_pairs": len(catalogue),
         "factor_pairs": catalogue,
         "verdict_breakdown": {v: len(items) for v, items in by_verdict.items()},
-        "canonical_factorisations": canonical,
+        "registered_conditional_factorisations": registered,
         "independent_factorisations": independent,
         "closure_text": (
             f"1440 admits {len(catalogue)} factor pairs (a <= b). Of these, "
-            f"{len(canonical)} matches the canonical GCT-derived (N_cage, N_C3) = (144, 10) "
-            f"pathway; {len(independent)} represent INDEPENDENT icosahedral combinatorial "
-            f"pathways with both factors in the icosahedral dictionary; "
-            f"{len(by_verdict.get('TRIVIAL', []))} are trivial (one factor = 1); "
+            f"{len(registered)} is the registered (N_cage, N_C3) = (144, 10) product, "
+            "conditional on the Tier-3 O.38 input N_cage = 144; "
+            f"{len(independent)} represent INDEPENDENT combinatorial products with both "
+            f"factors in the declared dictionary; "
+            f"{len(by_verdict.get('TRIVIAL', []))} is trivial (one factor = 1); "
             f"{len(primes)} involve arithmetic-coincidence factors. "
-            "The Higgs VEV derivation is non-unique in factorisation; the canonical "
-            "muon-defect-saturation pathway is the registered Tier 2 mechanism, while "
-            "the 1440 handle remains Tier 3 until upstream uniqueness problems close. "
-            "Other factorisations are dimensional cross-checks at the order-of-magnitude level."
+            "The multiplication and catalogue are exact arithmetic. This protocol does "
+            "not select N_cage = 144, establish a physical saturation mechanism, or "
+            "derive a Higgs VEV."
         ),
     }
     if OUTPUT_DIR_AVAILABLE:

@@ -1105,7 +1105,7 @@ z
    </g>
   </g>
   <g id="text_11">
-   <text style="font-weight: 700; font-size: 24px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1f1f1f" x="342.576" y="36.23625" transform="rotate(-0 342.576 36.23625)">The E8 Slice</text>
+   <text style="font-weight: 700; font-size: 24px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1f1f1f" x="342.576" y="36.23625" transform="rotate(-0 342.576 36.23625)">E8 Root Projection</text>
   </g>
   <g id="text_12">
    <g id="patch_12">
@@ -1121,7 +1121,7 @@ Q 82.149445 566.031047 87.684445 566.031047
 z
 " style="fill: #f4f4f4; stroke: #2c5d8a; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
-   <text style="font-size: 12.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1f1f1f" x="342.576" y="557.938031" transform="rotate(-0 342.576 557.938031)">The mother lattice: 6D hypercubic directions projected through the E8 root system</text>
+   <text style="font-size: 12.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1f1f1f" x="342.576" y="557.938031" transform="rotate(-0 342.576 557.938031)">E8 roots with the adopted Z6 axes overlaid for comparison (Z6 is not inside E8)</text>
   </g>
  </g>
  <defs>

@@ -8,7 +8,7 @@
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
     <dc:title>Figure V2.12.1</dc:title>
-    <dc:description>Log-log MOND/RAR acceleration transition with Newtonian, deep-MOND, and smooth interpolation curves.</dc:description>
+    <dc:description>Conditional log-log MOND/RAR acceleration transition. Empirical a0=1.2e-10 m/s^2; at canonical H0=67.4 km/s/Mpc, cH0=6.54832237e-10 m/s^2, cH0/a0=5.45694, and the Tier-3 candidate cH0/(2pi)=1.04219787e-10 m/s^2 is 13.1502 percent low. The mechanism/scale relation is Tier 2; the coefficient and physical normalization are open.</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -1629,7 +1629,7 @@ z
     <text style="font-size: 8.7px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #1f1f1f" x="490.19194" y="99.340219" transform="rotate(-0 490.19194 99.340219)">Newtonian regime</text>
    </g>
    <g id="text_19">
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #666666" x="307.652" y="458.069794" transform="rotate(-0 307.652 458.069794)">The material acceleration scale marks the onset of the elastic phason strain response.</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #666666" x="307.652" y="458.069794" transform="rotate(-0 307.652 458.069794)">Conditional Tier 3 response; the empirical normalization is not derived.</text>
    </g>
    <g id="PathCollection_1">
     <defs>
@@ -1664,8 +1664,8 @@ Q 381.6307 313.601747 386.4307 313.601747
 z
 " style="fill: #ffffff; stroke: #2c5d8a; stroke-width: 1.3; stroke-linejoin: miter"/>
      </g>
-     <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(386.4307 261.930809)">Cosmological boundary</text>
-     <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(422.025231 273.128622)">condition</text>
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(386.4307 261.930809)">Candidate scale</text>
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(422.025231 273.128622)">Tier 3 coefficient</text>
      <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(445.1432 284.326434)"/>
      <!-- $a_0 \simeq cH_0/2\pi$ -->
      <g style="fill: #1f1f1f" transform="translate(416.9932 295.524247)">
@@ -1681,26 +1681,8 @@ z
        <tspan x="43.869141" y="-0.578125" style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f">2</tspan>
       </text>
      </g>
-     <!-- $= 1.13\times10^{-10}\;{\rm m\,s^{-2}}$ -->
-     <g style="fill: #1f1f1f" transform="translate(392.7932 306.722059)">
-      <text>
-       <tspan x="1.948242" y="-0.976562" style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f">=</tspan>
-       <tspan x="12.275391" y="-0.976562" style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f">1</tspan>
-       <tspan x="18.637695" y="-0.976562" style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f">.</tspan>
-       <tspan x="21.816406" y="-0.976562" style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f">1</tspan>
-       <tspan x="28.178711" y="-0.976562" style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f">3</tspan>
-       <tspan x="36.489258" y="-0.976562" style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f">×</tspan>
-       <tspan x="46.816406" y="-0.976562" style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f">1</tspan>
-       <tspan x="53.178711" y="-0.976562" style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f">0</tspan>
-       <tspan x="77.388531" y="-0.976562" style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f">m</tspan>
-       <tspan x="88.753309" y="-0.976562" style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #1f1f1f">s</tspan>
-       <tspan x="59.636719" y="-4.804688" style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #1f1f1f">−</tspan>
-       <tspan x="65.501953" y="-4.804688" style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #1f1f1f">1</tspan>
-       <tspan x="69.955566" y="-4.804688" style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #1f1f1f">0</tspan>
-       <tspan x="94.058973" y="-4.804688" style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #1f1f1f">−</tspan>
-       <tspan x="99.924208" y="-4.804688" style="font-size: 7px; font-family: 'DejaVu Sans'; fill: #1f1f1f">2</tspan>
-      </text>
-     </g>
+     <!-- Exact canonical candidate value at H0=67.4 km/s/Mpc. -->
+     <text style="font-size: 7.6px; font-family: 'DejaVu Sans'; fill: #1f1f1f" x="386.8" y="305.9">= 1.04219787×10⁻¹⁰ m s⁻²</text>
     </g>
    </g>
    <g id="legend_1">

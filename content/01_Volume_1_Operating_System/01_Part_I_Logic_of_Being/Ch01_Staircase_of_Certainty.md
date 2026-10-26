@@ -9,8 +9,8 @@
 Modern physics finds itself in a paradoxical state. On the one hand, it possesses two theories of unparalleled predictive power: Quantum Mechanics (QM), which governs the subatomic realm, and General Relativity (GR), which governs the cosmic realm. On the other hand, these theories are mutually incompatible at their core. QM describes a probabilistic world of discrete quanta evolving against a fixed background, while GR describes a deterministic world of continuous geometry where the background itself is dynamic.
 
 Attempts to unify them into a Theory of Everything (TOE) have stalled for half a century. The symptoms of this stagnation are well-known:
-1. **The Measurement Problem:** Quantum mechanics provides no mechanism for how a probability wave collapses into a definitive event, requiring the ad-hoc insertion of an observer.
-2. **The Problem of Time:** The Wheeler-DeWitt equation ($\hat{H}\Psi=0$), the canonical result of quantizing gravity, implies that the universe is static and timeless, contradicting our most basic experience.
+1. **The Measurement Problem:** Quantum mechanics provides no agreed mechanism for how a probability wave yields a definitive event; collapse formulations require an observer- or measurement-dependent rule, while no-collapse alternatives (Everett, Bohm, objective-collapse models) pay other costs.
+2. **The Problem of Time:** The Wheeler-DeWitt equation ($\hat{H}\Psi=0$), the canonical result of quantizing gravity, on its standard reading suggests that the universe is static and timeless, contradicting our most basic experience.
 3. **The Parameters Problem:** The Standard Model relies on ~26 arbitrary constants (masses, couplings) whose values must be measured rather than derived. [Tier 3 — Phenomenological count; exact number depends on definition of independent parameters]
 
 Geometric Consciousness Theory (GCT) posits that these are not separate problems, but symptoms of a single methodological error: the attempt to derive the Observer from the Observed.
@@ -23,11 +23,11 @@ The "Hard Problem of Consciousness" arises from the assumption that matter is pr
 
 Instead of trying to squeeze consciousness into a materialist framework, we ask: *What geometry is required to support a universe where the Subject is irreducible?* This shift from "How does the brain make a mind?" to "What geometry unifies Mind and Matter?" is the core of the GCT program.
 
-The standard Materialist alternative commits the following errors:
+GCT raises two objections to the standard Materialist alternative [Tier 3 — Philosophical Framework; contested objections, not refutations]:
 
-1. **The Something-from-Nothing Error:** The claim that subjective experience emerges from sufficiently complex arrangements of non-experiential matter is akin to claiming that stacking enough zeroes eventually yields a one. It introduces an unexplained miracle into the causal chain — a discontinuity of ontological kind with no mathematical grounding.
+1. **The Something-from-Nothing Objection:** The claim that subjective experience emerges from sufficiently complex arrangements of non-experiential matter is akin to claiming that stacking enough zeroes eventually yields a one. It introduces an unexplained miracle into the causal chain — a discontinuity of ontological kind with no mathematical grounding. (This is Strawson's (2006) objection to brute emergence; physicalists contest it, see Ch16.)
 
-2. **The Circular Causation Error:** Physics is an activity performed *by* conscious agents. We infer the existence of particles based on observations made within consciousness. To then claim that the particles *create* the consciousness is to confuse the map with the territory — the measurement presupposes the measurer.
+2. **The Circular Causation Objection:** Physics is an activity performed *by* conscious agents. We infer the existence of particles based on observations made within consciousness. GCT reads the claim that the particles *create* the consciousness as confusing the order of knowing with the order of being — the measurement presupposes the measurer. Epistemic priority does not by itself entail ontological priority, and physicalists accept the first while denying the second; the point motivates the epistemic inversion of §1.1.4 rather than refuting physicalism.
 
 **1.1.4 The Requirement for Epistemic Inversion**
 
@@ -45,7 +45,7 @@ To find the true starting point, we employ the method of Radical Skepticism. We 
 
 1. **The External World?** Could the physical universe be an illusion? Yes. The **Simulation Hypothesis** or the "Brain in a Vat" scenario demonstrates that our sensory data could be a coherent fabrication. Therefore, the existence of matter is a hypothesis ($P < 1$). [Tier 3 — Philosophical Framework]
 2. **The Ego/Personality?** Could "I" be an illusion? Yes. The sense of being a continuous person with a name and history is interrupted by sleep, amnesia, and psychedelic dissolution. The "Ego" is a narrative construct ($P < 1$). [Tier 3 — Philosophical Framework]
-3. **The Past?** Could history be fake? Yes. The "Last Thursdayism" argument (or Boltzmann Brain hypothesis) suggests the universe could have fluctuated into existence one second ago with false memories implanted. The past is an inference ($P < 1$). [Tier 3 — Philosophical Framework]
+3. **The Past?** Could history be fake? Yes. Russell's five-minute hypothesis (1921; popularly "Last Thursdayism") suggests the universe could have come into existence moments ago with false memories implanted; the Boltzmann-brain scenario is a related argument about a brain fluctuating into existence. The past is an inference ($P < 1$). [Tier 3 — Philosophical Framework]
 
 What remains when the world, the self, and time are stripped away?
 
@@ -53,25 +53,26 @@ What remains when the world, the self, and time are stripped away?
 
 Even if the world is a simulation, the **experience of the simulation** is happening. Even if the pain is hallucinatory, the **feeling of pain** is real. Even if "I" do not exist, there is a "There" where the doubting is occurring.
 
-This is the **Zero-Point**. To deny it is to affirm it, for one must *be* there to do the denying. This is not a logical proof; it is a phenomenological fact. It is the only datum in the universe that possesses absolute probability. [Tier 1 — Axiom of Presence]
+This is the **Zero-Point**. To deny it is to affirm it, for one must *be* there to do the denying. This is not a logical proof; it is a phenomenological fact. It is the only datum in the universe that possesses absolute probability. [Tier 0 — First-Person Datum]
 
 **1.2.3 Axiom 1: The Axiom of Presence**
 
-We formally state the first axiom of the theory. This is the bedrock upon which the entire mathematical structure of GCT rests.
+The Tier 0 datum motivates the first axiom of the theory, a universal generalisation adopted by stipulation rather than established by first-person certainty.
 
 > **Axiom 1 (The Axiom of Presence):**
-> *Experience is the non-negotiable zero-point of reality. Before we can measure a particle, define a law, or doubt a theory, there must be a field of Presence where the data appears. We take this field—not the matter it perceives—as the fundamental substrate of the universe.*
+> *All configurations of the Field carry Level I intrinsic non-subjective presence.* [Tier 1 — stipulated universal axiom]
+> The objective-idealist choice of the Field as fundamental substrate is a Tier 3 parsimony commitment (Ch06), distinct from the Tier 0 datum.
 >
-> **Probability:** $P(\text{Presence}) = 1.0$ [Tier 1 — Axiom of Presence]
+> **First-person datum only — Probability:** $P(\text{Presence}) = 1.0$ [Tier 0 — First-Person Datum]
 >
-> **Scope Note:** Axiom 1 asserts Qualitative Presence as the irreducible ontological primitive. GCT derives the Quality Space (the topological structure of experiential similarity) from RT geometry. The *bare fact* of Qualitative Presence is not derived — it is the ground from which all derivation proceeds.
+> **Scope Note:** Axiom 1 asserts Qualitative Presence as the irreducible ontological primitive. GCT derives the Quality Space (the topological structure of experiential similarity) from RT geometry. The bare fact that experience is occurring is the sole Tier 0 datum; universal Field presence is the Tier 1 stipulation, not an indubitable datum.
 
 **Clarification on "Field":** We use the term "Field" here not to imply immediate 3D spatial extension, but to denote a **Domain of Variation**. Presence is not a geometric point; it has capacity. It can sustain multiple distinct qualia (e.g., sound and color) simultaneously. It is a manifold of potentiality.
 
-This axiom redefines the task of physics. We are not trying to explain how a brain generates consciousness. We are trying to explain how a fundamental field of consciousness generates the appearance of a brain.
+This axiom redefines the task of physics. We are not trying to explain how a brain generates consciousness. We are trying to explain how a fundamental Field of presence generates the appearance of a brain.
 
 > [!IMPORTANT]
-> **Scope note on the "$P=1$" framing across volumes.** The $P = 1$ certainty above applies **strictly to the Axiom of Presence** — the bare phenomenological fact that something is felt — and to nothing downstream. Every derived claim in this manuscript carries an explicit epistemic tier label (Tier 1 through Tier 4 per Global Frontmatter §0.0). In particular: Volume 1 Chapters 16-17 develop the biophysical substrate of the Identity Polaron (microtubule Tryptophan radical-pair Zeno mechanism, ~100 MHz coherence, $f_{bound}$ derivation), and *every quantitative claim there is at Tier 2 or Tier 3* with explicit Open Problem cross-references (O.16, O.21, O.12, O.10). The high-confidence Bayesian rhetoric of this chapter applies *only* to Axiom 1; readers should not infer that the substrate biophysics shares the same epistemic status. The bare fact of experience is at $P = 1$; the GCT account of *how* experience is instantiated in biological matter is Tier 2/3 hypothesis under active experimental falsification (Protocol A-Prime, Protocol D).
+> **Scope of the $P=1$ claim across volumes.** The $P = 1$ certainty belongs only to the Tier 0 first-person datum, not to Axiom 1's universal stipulation. This certainty does not transfer downstream. Every further claim carries an explicit epistemic tier label (Tier 0 is reserved for the single datum; Tiers 1, 1/2, 2, 3 and 4 classify all other claims per the Global Frontmatter Epistemic Tier System). Volume 1 Chapters 16–17 develop a **candidate material-response programme** (microtubule Trp radical-pair, spin, chirality, coherence and bound-water hypotheses) with explicit Open Problem cross-references (O.16, O.21, O.12, O.10); its specific identifications are Tier 3. The historical 100 MHz material-scan scenario is an external scenario, not an action-derived GCT rate (V1 Ch17 §17.1.3). Protocol A-Prime and Protocol D test ordinary material proxies: neither outcome is a verdict on GCT as a whole, and no phason, Selection-Operator or Level-II inference follows from either (V1 Ch17 §17.1.3); a preregistered null rejects the registered biophysical branch as registered, only under that branch's own decision rule (the Protocol D NMR polarity gate (P.13c) is held pending redesign: as written it rejected by construction, since $^{17}$O shortens water-$^1$H $T_2$ by scalar relaxation; the former sign-aware rule, which rejects the registered sign-positive branch on a powered, significant negative isotope × activity interaction in water-$^1$H $\Delta T_2$, applies only after the redesign, and until then no outcome supports or rejects the branch; the LORR assay has no rejection rule under the current systematic budget). The bare fact of experience is at $P = 1$; the account of *how* experience is physically instantiated remains open rather than resting on a single decisive experimental gate.
 
 ---
 
@@ -82,7 +83,7 @@ This axiom redefines the task of physics. We are not trying to explain how a bra
 Having established *that* something exists (Presence), we ask: What is its nature? Is it a featureless void? Is it chaotic noise?
 
 We observe that our experience—whether veridical or hallucinatory—possesses inherent characteristics:
-1. **Distinction:** We perceive differences. Red is not Blue. Pain is not Pleasure. This thought is not that thought. **Distinction is the seed of Topology.** If A is distinct from B, there is a "boundary" or "relation" between them. This implies discreteness.
+1. **Distinction:** We perceive differences. Red is not Blue. Pain is not Pleasure. This thought is not that thought. **Distinction is the seed of Topology.** If A is distinct from B, there is a "boundary" or "relation" between them. Distinction alone does not imply discreteness (a continuous hue line contains distinct colours); discreteness is adopted separately as a structural postulate (Ch04).
 2. **Sequence:** We perceive order. There is a "Before" and an "After." Causality flows.
 
 **1.3.2 Structure vs. Chaos**
@@ -90,18 +91,18 @@ We observe that our experience—whether veridical or hallucinatory—possesses 
 Consider the hypothesis of **Pure Chaos**—a state of total randomness with no pattern, no distinction, and no stability.
 Could we be experiencing Pure Chaos? No.
 To experience "Chaos" requires distinguishing it from "Order." To experience "Nothing" requires distinguishing it from "Something."
-While a state of pure undifferentiated awareness (Void/Nirvana) may theoretically exist as $0=0$, **Physics begins with the departure from null identity.** To have a "Universe" (an observable manifold) requires structure. The very fact that there is "Something" rather than "Uniformity" implies that the Field of Presence has entered a structured state. It is not vapor; it is geometry. [Tier 1/2 — Structural Postulate: Axiom of Intelligibility]
+While a state of pure undifferentiated awareness (Void/Nirvana) may theoretically exist as $0=0$, **Physics begins with the departure from null identity.** To have a "Universe" (an observable manifold) requires structure. The very fact that there is "Something" rather than "Uniformity" implies that the Field of Presence has entered a structured state. It is not vapor; it is structured. [Tier 1 — stipulated axiom (Axiom 2, §1.3.5)]
 
 **1.3.3 Clarification: Intelligibility vs. Specific Aristotelian Logic**
 
-We do not claim that the universe must obey specific human logical rules (like the Law of Excluded Middle, which Quantum Mechanics violates). We claim only that it possesses **Internal Consistency**.
+We do not claim that the universe must obey specific human logical rules (like the distributive law, which quantum logic gives up). We claim only that it possesses **Internal Consistency**.
 The Field has a nature. It holds patterns. It sustains correlations. This capacity for self-consistency is what we call **Intelligibility**. If reality were not intelligible, science would be impossible, and the regularity of experience (the sun rising, gravity pulling) would be a miraculous accident.
 
 **1.3.4 The Dream Question: Weak Causality vs. Strong Causality**
 
 Critics might argue: "What about dreams? Dreams are illogical."
 GCT responds: Dreams possess **Weak Causality**, but they are not chaotic. In a dream, a door might lead to a beach (violating spatial logic), but the door is still distinct from the beach (Distinction), and the opening precedes the arriving (Sequence). Even the most surreal hallucination relies on a substrate of pattern recognition.
-The difference between "Dream Logic" and "Waking Logic" is a difference in the **Rigidity of the Consensus Protocol** (to be derived in Chapter 11), not a difference in the fundamental intelligibility of the substrate.
+The difference between "Dream Logic" and "Waking Logic" is modelled in Chapter 11 as differing rigidity of a conditional Consensus-Protocol compatibility functional [Tier 3 model; no derivation of material rigidity from interacting Agents is supplied], not as a difference in the fundamental intelligibility of the substrate.
 
 **1.3.5 Axiom 2: The Axiom of Intelligibility**
 
@@ -110,10 +111,10 @@ We formally state the second ontological axiom of the theory.
 > **Axiom 2 (The Axiom of Intelligibility):**
 > *The Field of Presence is not chaotic vapor. It contains distinction and sequence. Therefore it possesses internal consistency—it is intelligible. The Universe can be known.*
 >
-> **Probability:** $P(\text{Structure} | \text{Presence}) = 1.0$ [Tier 1/2 — Axiom of Intelligibility]
+> **Status:** adopted by stipulation [Tier 1 — stipulated axiom]. No probability is assigned to it: the $P = 1$ certainty belongs only to the Tier 0 first-person datum (§1.2.2) and does not transfer to Axiom 2.
 
 From these two ontological axioms—Presence (Existence) and Intelligibility (Structure)—we begin the construction of the GCT architecture. While the ontological root is minimal, it is supplemented by explicit structural postulates (e.g., the 6D lattice, discreteness) to map reality to the observed Standard Model. These are enumerated in the **Axiom & Postulate Ledger**.
 
-> **Scope-note on Axiom 1: mathematical objects do not have Level I presence.** A natural misreading of Axiom 1 — "if every configuration of the Field has Level I presence, then mathematical objects (integers, theorems, abstract structures) must have presence too" — is incorrect. Mathematical objects are *patterns* in the Russellian sense (Chapter 6): extrinsic structure, abstractly specified, multiply instantiable. They are not Field configurations. Axiom 1 applies to the substrate (the Field), not to descriptions of substrate. The *instantiation* of doing mathematics in a Class 2 Polaron is a Field configuration and has presence in the ordinary way; the abstract integer 7 does not. This distinction is load-bearing — collapsing it would dissolve the Field/Pattern split that the entire ontology rests on, converting GCT into Tegmark's Mathematical Universe Hypothesis (a position GCT explicitly rejects; see §6.4.5 for the formal contrast).
+> **Scope-note on Axiom 1: mathematical objects do not have Level I presence.** A natural misreading of Axiom 1 — "if every configuration of the Field has Level I presence, then mathematical objects (integers, theorems, abstract structures) must have presence too" — is incorrect. Mathematical objects are *patterns* in the Russellian sense (Chapter 6): extrinsic structure, abstractly specified, multiply instantiable. They are not Field configurations. Axiom 1 applies to the substrate (the Field), not to descriptions of substrate. The physical *instantiation* of doing mathematics (in a brain, or in a Class 2 Polaron if one is physically realized) is a Field configuration and has Level-I presence in the ordinary way; the abstract integer 7 does not. This distinction is load-bearing — collapsing it would dissolve the Field/Pattern split that the entire ontology rests on, converting GCT into Tegmark's Mathematical Universe Hypothesis (a position GCT explicitly rejects; see §6.4.5 for the formal contrast).
 
 ![Epistemic descent from the founding axioms down to observable quantities: each layer inherits the assumptions of the layer above, and numerical rows retain their epistemic tier labels.](content/Figures/Volume_1/Figure V1.1.1.svg)

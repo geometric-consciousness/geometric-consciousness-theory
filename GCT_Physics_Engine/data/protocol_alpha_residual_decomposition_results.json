@@ -22,12 +22,12 @@
   "shape_deviation_fractional": 0.7461797631400877,
   "shape_deviation_ppm": 746179.7631400877,
   "alpha_inv_bare": 137.50776405003785,
-  "alpha_inv_with_eta_analytic": 137.03030653597523,
+  "alpha_inv_with_bilayer_factor": 137.03030653597523,
   "alpha_inv_with_shape_factor": 239.27954821000284,
-  "shape_factor_shift_ppm_NAIVE": 746148.7614497476,
-  "target_residual_ppm_per_App_M_3_1": 41.6,
-  "implied_1_loop_QLQCD_target_ppm_NAIVE": -746190.3026583276,
-  "diagnostic_outcome": "UNRESOLVED -- naive Madelung diagnostic overshoots; structural mismatch identified (engine cage is not App M Sec M.7 bilayer).",
-  "classification": "The engine 144-node cage built by the GCTLattice(R=2, perp_cutoff=2.0) pipeline + top-144-by-perp-norm selection produces 5 perp-space shells with vertex counts that do NOT admit a (72, 72) bilayer split. App M Sec M.7 derives eta_analytic = 1 - 1/(2N) by assuming a clean 2-shell bilayer structure; the O.19 shape-factor calculation therefore requires an explicit map between the analytic bilayer and the engine cage construction.",
+  "shape_factor_shift_ppm_NAIVE": 746148.765930909,
+  "target_residual_ppm_per_App_ULA_3_1": 41.5,
+  "implied_1_loop_QLQCD_target_ppm_NAIVE": -746190.307139489,
+  "diagnostic_outcome": "UNRESOLVED -- naive Madelung diagnostic overshoots; structural mismatch identified (engine cage is not App ULA Sec ULA.7 bilayer).",
+  "classification": "The engine 144-node cage built by the GCTLattice(R=2, perp_cutoff=2.0) pipeline + top-144-by-perp-norm selection produces 5 perp-space shells with vertex counts that do NOT admit a (72, 72) bilayer split. App ULA Sec ULA.7 derives bilayer_factor = 1 - 1/(2N) by assuming a clean 2-shell bilayer structure; the O.19 shape-factor calculation therefore requires an explicit map between the analytic bilayer and the engine cage construction.",
   "tier": "Tier 3 diagnostic (structural mismatch, magnitude unresolved)."
 }

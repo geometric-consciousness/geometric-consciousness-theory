@@ -1,0 +1,25 @@
+{
+  "name": "pta_l6_transfer_open",
+  "app_psc_label": "PTA physical transfer map",
+  "formula": "action -> propagator -> polarization/source/pulsar transfer -> generalized ORFs",
+  "tier": "Tier 3 physical response program",
+  "predicted": 0.0,
+  "observed": 0.0,
+  "reference_class": "MANUSCRIPT_STATED",
+  "band_outcome": "NOT_APPLICABLE",
+  "derivational_closure": "OPEN_RESEARCH",
+  "unit": "closure state",
+  "app_psc_predicted": null,
+  "app_psc_precision_str": null,
+  "app_psc_precision_ppm": null,
+  "independent_precision_ppm": null,
+  "status": "OPEN_CONDITIONAL",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "nonzero_response_derived": false,
+    "amplitude_derived": false,
+    "frequency_law_derived": false,
+    "sky_orientation_derived": false
+  }
+}

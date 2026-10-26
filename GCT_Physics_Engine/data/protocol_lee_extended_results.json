@@ -1,5 +1,10 @@
 {
-  "pass": true,
+  "pass": false,
+  "verdict": "GCT_OUTSIDE_20PPM_WINDOW_LEE_PREMISE_FAILS_mu=-21.1ppm_tau=-50.9ppm",
+  "gct_muon_ratio_residual_ppm": -21.09570666831242,
+  "gct_tau_ratio_residual_ppm": -50.85446518009174,
+  "gct_both_within_20ppm": false,
+  "global_p_value_interpretation": "conditional on GCT landing within 20 ppm for both mu and tau; not a significance when that premise fails",
   "space_size": 840,
   "search_pair_trials": 352380.0,
   "muon_20ppm_hits": 0,

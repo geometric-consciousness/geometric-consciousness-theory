@@ -1,0 +1,32 @@
+{
+ "note": "Frozen at preregistration; scored only when new data arrive; never feeds the decision rules (design 4.9).",
+ "rows": [
+  {
+   "id": "m1",
+   "formula": "m_e*phi^-36",
+   "value_eV": 0.015306114553413084,
+   "gate": null
+  },
+  {
+   "id": "sum_m_nu",
+   "value_eV": 0.0853,
+   "gate": "excluded if <0.075 eV at definitive precision or >0.15 eV"
+  },
+  {
+   "id": "delta_CP",
+   "formula": "360deg*phi^-1",
+   "value_deg": 222.49223594996215,
+   "gate": "+-5 sigma, DUNE/Hyper-K"
+  },
+  {
+   "id": "theta23",
+   "value_deg": 45.0,
+   "base_free": true
+  },
+  {
+   "id": "ordering",
+   "value": "normal",
+   "base_free": true
+  }
+ ]
+}

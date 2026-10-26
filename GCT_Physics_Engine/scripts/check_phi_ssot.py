@@ -26,7 +26,7 @@ ENGINE_ROOT = Path(__file__).resolve().parent.parent
 # (epistemic-circularity guards or from-scratch reproducers).
 SSOT_EXEMPT = {
     "verify_independent/constants.py",   # epistemic-circularity guard for independent verification
-    "reproduce_standard_model.py",        # Tier 0 from-scratch reproducer, no engine deps by design
+    "reproduce_standard_model.py",        # Standalone from-scratch reproducer, no engine deps by design
 }
 
 # Capture any `PHI = <RHS>` line; check RHS against the SSOT allow-list.

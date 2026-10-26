@@ -5,8 +5,8 @@ protocol_isotope_experiment.py -- Protocol D H2^16O vs H2^17O LORR/NMR design
 
 Implements the named Protocol D isotope-substitution experiment from V3 Ch16:
 compare H2^16O control water against H2^17O-enriched water using the LORR
-anesthetic-threshold endpoint and an orthogonal NMR/quadrupolar-relaxation
-polarity check.
+anesthetic-threshold endpoint and an orthogonal water-1H NMR polarity check
+(P.13c, held pending redesign).
 
 Endpoint A: LORR anesthetic threshold
 -------------------------------------
@@ -19,15 +19,16 @@ shift is
 
 because DeltaS/Smax = ln(6)/ln(6) = 1 for ^17O vs ^16O.
 
-Endpoint B: NMR polarity gate
------------------------------
-The same samples must show a bound-water ^17O quadrupolar-relaxation signature:
-active-state baseline-subtracted R2 decrease / T2 lengthening in the ^17O channel must have
-the predicted sign, while H2^16O has no ^17O quadrupole line. This gate prevents
-a pure bulk-solvent isotope effect from masquerading as the GCT spin-entropy
-signal. The mechanism is Tier 2; the active-state Delta T2 sign/magnitude
-calibration is Tier 3 pending assembled-substrate and lumen-water NMR closure
-(O.21/O.33).
+Endpoint B: NMR polarity gate (P.13c) -- HELD PENDING REDESIGN
+-----------------------------------------------------------------
+The readout is water-1H T2, and Delta T2 is the isotope x activity interaction
+[T2(17O,active) - T2(17O,inactive)] - [T2(16O,active) - T2(16O,inactive)]
+(V3 Ch16 §16.5). As written the gate rejected by construction (17O shortens
+water-1H T2 by scalar relaxation). The former sign-aware rule -- reject the
+registered sign-positive branch on a powered, significant negative interaction --
+applies only after the redesign; until then no outcome supports or rejects the
+branch. The sign hypothesis is a Tier 3 material-response hypothesis conditional
+on O.21/O.33; the power arithmetic emitted here is a design sketch only.
 """
 
 from __future__ import annotations
@@ -66,8 +67,8 @@ H2_17O = WaterIsotope(
 )
 
 F_BOUND_OPERATIVE_CENTRAL = 0.0
-F_BOUND_SENSITIVITY_RANGE = (1.0e-3, 2.0e-3)
-F_BOUND_SENSITIVITY_CENTRAL = 1.5e-3
+F_BOUND_SENSITIVITY_RANGE = (1.1e-3, 2.2e-3)  # n_rp=1; N_bound = n_rp x n_contact, ~3.6e3 lumen waters per dimer
+F_BOUND_SENSITIVITY_CENTRAL = 1.65e-3
 REGISTERED_SOLVENT_KIE_BOUND = 4.0e-3
 REGISTERED_SOLVENT_KIE_BOUND_STATUS = "Tier 3 literature-prior control; no direct H2^16O-to-H2^17O radical-pair solvent-KIE verifier"
 REGISTERED_SOLVENT_KIE_BOUND_PROVENANCE = (
@@ -153,14 +154,19 @@ def build_protocol_results() -> dict:
     }
 
     nmr_gate = {
-        "primary_readout": "baseline-subtracted H2^17O bound-water quadrupolar R2/T2",
-        "predicted_polarity": "active-state H2^17O R2 decreases relative to H2^16O control",
-        "tier_scope": "Tier 2 mechanism + Tier 3 active-state Delta T2 calibration anchor pending O.21/O.33",
-        "executable_preregistration": nmr_preregistration_power,
+        "gate_status": nmr_preregistration_power["gate_status"],
+        "decision_outputs_operative": False,
+        "primary_readout": "water-1H T2 isotope x activity interaction (V3 Ch16 §16.5)",
+        "predicted_polarity": (
+            "registered sign-positive branch: positive isotope x activity interaction "
+            "(non-operative; gate held pending redesign, no outcome supports or rejects the branch)"
+        ),
+        "tier_scope": "Tier 3 material-response sign hypothesis conditional on O.21/O.33 + Tier 3 active-state Delta T2 calibration anchor pending O.21/O.33",
+        "design_sketch_power": nmr_preregistration_power,
         "power_statistic": nmr_preregistration_power["power_statistic"],
         "bootstrap_ci_design_check": nmr_preregistration_power["bootstrap_ci"],
         "alpha_beta_replication_simulation": nmr_preregistration_power["alpha_beta_replication_simulation"],
-        "null_control": "H2^16O has oxygen spin I=0 and no ^17O quadrupole line",
+        "null_control": "H2^16O has oxygen spin I=0 (no 17O-1H scalar relaxation)",
         "systematic_controls": [
             "S1 matched osmolarity",
             "S2 locked ^17O enrichment assay",
@@ -183,9 +189,9 @@ def build_protocol_results() -> dict:
         "registered_solvent_kie_bound_closure_target": REGISTERED_SOLVENT_KIE_BOUND_CLOSURE_TARGET,
         "interpretation": (
             "The raw oxygen-mass diagnostic is a bulk-solvent control, not the "
-            "registered spin-entropy endpoint. Protocol D requires the signed LORR "
-            "shift plus the ^17O NMR polarity gate to separate spin entropy from "
-            "ordinary isotope chemistry."
+            "registered spin-entropy endpoint. Protocol D would need the signed LORR "
+            "shift plus the redesigned water-1H NMR polarity gate (P.13c, held pending "
+            "redesign) to separate spin entropy from ordinary isotope chemistry."
         ),
     }
 
@@ -216,11 +222,17 @@ def build_protocol_results() -> dict:
         "nmr_quadrupole_gate": nmr_gate,
         "kie_controls": kie_controls,
         "recommendation": (
-            "Run LORR as the behavioral endpoint and treat the ^17O NMR polarity "
-            "gate as mandatory. A LORR-only shift is not sufficient for GCT "
-            "closure because solvent isotope systematics can be sign-ambiguous."
+            "Run LORR as the behavioral endpoint; the NMR polarity gate (P.13c) is "
+            "held pending redesign and is mandatory once redesigned. A LORR-only shift "
+            "is not sufficient because solvent isotope systematics can be sign-ambiguous."
         ),
-        "pass": bool(self_consistency_ok),
+        # The former pass (three design-arithmetic identities
+        # that hold by construction on typed inputs) is retired. This is an
+        # experimental design; no data exist and the central predicted
+        # effect is zero (n_rp = 0 pending O.21).
+        "verdict": "NO_GCT_TEST_DESIGN_ONLY_CENTRAL_N_RP_ZERO_O21_PENDING",
+        "pass": False,
+        "design_arithmetic_consistent": bool(self_consistency_ok),
         "self_consistency_check": {
             "entropy_load_is_unity_for_17O_vs_16O": abs(entropy_load - 1.0) < 1.0e-12,
             "central_shift_equals_minus_f_bound": abs(lorr_central + F_BOUND_OPERATIVE_CENTRAL) < 1.0e-15,
@@ -243,13 +255,14 @@ def run_protocol_d() -> dict:
     print(f"  Sensitivity LORR shift    : {lorr['prediction_percent_range'][0]:.3f}% to {lorr['prediction_percent_range'][1]:.3f}%")
     print(f"  Enrichment-applied shift  : {lorr['prediction_percent_range_at_verified_enrichment'][0]:.3f}% to {lorr['prediction_percent_range_at_verified_enrichment'][1]:.3f}%")
     print(f"  Central LORR shift        : {lorr['prediction_percent_central']:.3f}%")
-    print(f"  NMR polarity gate       : {nmr['predicted_polarity']}")
+    print(f"  NMR polarity gate       : {nmr['gate_status']} ({nmr['primary_readout']})")
     print(
-        "  NMR prereg power       : "
+        "  NMR design-sketch power: "
         f"{nmr['power_statistic']['achieved_primary_power_at_budget']:.3f} "
-        f"({nmr['executable_preregistration']['status']})"
+        f"({nmr['design_sketch_power']['status']}; non-operative)"
     )
-    print(f"  Self-consistency pass   : {results['pass']}")
+    print(f"  Design arithmetic consistent: {results['design_arithmetic_consistent']} (identities on typed inputs, not a test)")
+    print(f"  Verdict                 : {results['verdict']}")
 
     out = get_output_path("protocol_isotope_experiment_results.json")
     with open(out, "w", encoding="utf-8") as fp:

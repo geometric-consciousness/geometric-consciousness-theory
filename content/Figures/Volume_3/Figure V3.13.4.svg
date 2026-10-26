@@ -8,7 +8,7 @@
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
     <dc:title>Figure V3.13.4</dc:title>
-    <dc:description>Protocol A-Prime expected T2 frequency signature with four-conjunct F1 joint null gate.</dc:description>
+    <dc:description>Protocol A-Prime full-scan T2 signature with three-conjunct F1 joint-null gate; the 150 MHz sign is unfixed and diagnostic-only.</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -2413,7 +2413,7 @@ L 352.287793 290.460049
    </g>
    <g id="text_19">
     <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #c0392b" transform="translate(299.612629 297.154021)">150 MHz</text>
-    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #c0392b" transform="translate(299.612629 306.112271)">anti-Zeno sign</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; fill: #c0392b" transform="translate(299.612629 306.112271)">sign-unfixed diagnostic</text>
    </g>
    <g id="legend_1">
     <g id="patch_12">
@@ -2546,7 +2546,7 @@ z
 " clip-path="url(#p44b172f6d5)" style="fill: #f4f4f4; stroke: #1f1f1f; stroke-width: 1.05; stroke-linejoin: miter"/>
    </g>
    <g id="text_23">
-    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="454.356207" y="50.896217" transform="rotate(-0 454.356207 50.896217)">Four-conjunct F1 null</text>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="454.356207" y="50.896217" transform="rotate(-0 454.356207 50.896217)">Three-conjunct F1 null</text>
    </g>
    <g id="text_24">
     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #c0392b" x="470.451299" y="103.15779" transform="rotate(-0 470.451299 103.15779)">NAND 1</text>
@@ -2563,11 +2563,11 @@ z
     <text style="font-size: 7.1px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(565.128313 124.363113)">32-52 MHz</text>
    </g>
    <g id="text_28">
-    <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #c0392b" x="470.451299" y="172.90851" transform="rotate(-0 470.451299 172.90851)">NAND 3</text>
+    <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #c0392b" x="470.451299" y="172.90851" transform="rotate(-0 470.451299 172.90851)">DIAGNOSTIC</text>
    </g>
    <g id="text_29">
-    <text style="font-size: 7.1px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(470.451299 186.433131)">no 150 MHz</text>
-    <text style="font-size: 7.1px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(470.451299 194.113833)">anti-Zeno sign</text>
+    <text style="font-size: 7.1px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(470.451299 186.433131)">150 MHz sign unfixed</text>
+    <text style="font-size: 7.1px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(470.451299 194.113833)">outside F1</text>
    </g>
    <g id="text_30">
     <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #c0392b" x="565.128313" y="172.90851" transform="rotate(-0 565.128313 172.90851)">NAND 4</text>

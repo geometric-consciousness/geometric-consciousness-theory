@@ -4,9 +4,11 @@ gct_algebra_consistency.py — Algebra Consistency Engine
 =======================================================
 Verifies the mathematical consistency of the GCT particle spectrum.
 Tasks:
-1. Derive Hypercharge (Y) from topological winding weights.
+1. Assign Hypercharge (Y) from topological winding weights (Tier 3: the
+   fractional unit is Proposal 1.2, V3 Ch01 §1.3.2, and the face-defect quark
+   assignment is a Tier 3 candidate, V3 Ch03 §3.4).
    - Vertex Defect (5-fold axis) -> Integer winding -> Y ~ -1
-   - Face Defect (3-fold axis) -> Fractional winding -> Y ~ 1/3
+   - Face Defect (3-fold axis) -> proposed fractional winding -> Y ~ 1/3
 2. Check Anomaly Cancellation.
    - Sum(Y) = 0 (Gravitational)
    - Sum(Y^3) = 0 (U(1)^3)
@@ -25,7 +27,7 @@ class ConsistencyChecker:
     @staticmethod
     def derive_hypercharge(defect_topology: str) -> float:
         """
-        Derive the Weak Hypercharge Y from the defect topology.
+        Assign the Weak Hypercharge Y from the defect topology (Tier 3 mapping, Proposal 1.2).
         
         Geometric Logic:
         Left-handed states use Y = 2(Q - T_3) with T_3 = +/- 1/2.
@@ -116,7 +118,7 @@ class ConsistencyChecker:
     def get_standard_model_generation() -> List[Dict]:
         """
         Return the quantum numbers for one generation of Standard Model fermions.
-        We use the GCT-derived hypercharges as base.
+        We use the GCT-assigned hypercharges (Tier 3 charge mapping, Proposal 1.2) as base.
         
         Right-handed hypercharges satisfy Y_R = 2Q because T_3 = 0 for
         singlets. The algebraic identity is Tier 1 once the assignment is

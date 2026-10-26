@@ -19,7 +19,7 @@ Observables compared:
 
 The comparison provides a Tier 3 estimate of the magnitude of any
 downstream-observable shift between cage constructions for protocols
-(App R Sec R.9 catalog: protocol_aps_index_proof, protocol_alpha_1loop,
+(App PSC Sec PSC.9 catalog: protocol_aps_index_proof, protocol_alpha_1loop,
 etc.) that are sensitive to I_h-closure of the cage.
 """
 
@@ -252,8 +252,8 @@ def main():
     print("structurally independent of the cage variant. The asymmetric-vs-closed")
     print("difference therefore cannot propagate into the scorecard.")
     print()
-    print("Manuscript dependencies on cage-spectrum intermediates: App U (cage uniqueness),")
-    print("Ch07 (K-theory framework), App M Sec M.7 (1/(2N) derivation), App R Sec R.9")
+    print("Manuscript dependencies on cage-spectrum intermediates: App USS (cage uniqueness),")
+    print("Ch07 (K-theory framework), App ULA Sec ULA.7 (1/(2N) derivation), App PSC Sec PSC.9")
     print("(engine outputs). These sections use the I_h-closed 152-cage as the canonical")
     print("structural object; numerical values reported there correspond to that cage.")
     print("=" * 76)
@@ -269,7 +269,7 @@ def main():
             "par_norm_mean": pct_delta(obs_asym["par_norm_mean"], obs_closed["par_norm_mean"]),
         },
         "scorecard_impact": "NONE -- verify_independent verifiers re-derive each claim from CODATA inputs and do not import any cage-using protocol.",
-        "manuscript_impact": "SMALL -- prose claims citing cage-spectrum intermediates (App U, Ch07, App M Sec M.7, App R Sec R.9) reference the I_h-closed 152 cage; numerical deltas between variants are at the single-digit-percent scale.",
+        "manuscript_impact": "SMALL -- prose claims citing cage-spectrum intermediates (App USS, Ch07, App ULA Sec ULA.7, App PSC Sec PSC.9) reference the I_h-closed 152 cage; numerical deltas between variants are at the single-digit-percent scale.",
         "engineering_impact": "MODEST -- 9 cage-using engine protocols ingest the I_h-closed 152 cage as their geometric source; the asymmetric 144 variant is retained only for the structural comparison computed here.",
     }
     out_path = ENGINE_ROOT / "data" / "protocol_cage_blast_radius_results.json"

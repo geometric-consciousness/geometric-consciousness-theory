@@ -6,7 +6,7 @@ Verifies that N=11 and N=17 do not arise as activation ordinals of the
 phason-vector channel in the icosahedrally-decomposed linear spectrum of the
 canonical 152-node defect cage (the linear-spectral analogue of the W4
 arithmetic-invariant audit); the non-perturbative soliton extraction remains
-the closure target (App H, O.5).
+the closure target (App ORQ, O.5).
 
 The protocol builds the phason-sector central-force spring Hessian on the
 456 perpendicular-displacement degrees of freedom of the canonical I_h-closed
@@ -24,7 +24,6 @@ from __future__ import annotations
 import json
 import math
 import sys
-import time
 from pathlib import Path
 
 import numpy as np
@@ -35,14 +34,14 @@ if str(SRC_PATH) not in sys.path:
 
 from cage_builder import build_canonical_cage  # noqa: E402
 import gct_projections as proj  # noqa: E402
-from gct_utils import get_output_path  # noqa: E402
+from gct_utils import C, get_output_path  # noqa: E402
 from protocol_cage_repair import (  # noqa: E402
     icosahedral_rotations_lattice_frame,
     lift_to_6d_signed_perm,
     vertex_pairs_from_projection,
 )
 
-PHI = (1.0 + math.sqrt(5.0)) / 2.0
+PHI = float(C.PHI)
 
 N_NODES = 152
 N_DOF = 3 * N_NODES
@@ -382,7 +381,6 @@ def cluster_nonzero_spectrum(evals_nz: np.ndarray, evecs_nz: np.ndarray) -> tupl
 
 
 def run() -> dict:
-    t0 = time.time()
     print("=" * 78)
     print("GCT Protocol W4b - spectral-ordinal audit of lepton harmonic integers")
     print("=" * 78)
@@ -612,7 +610,6 @@ def run() -> dict:
             "confirms_negative": protocol_passes,
         },
         "activation_table": activation_table,
-        "runtime_s": round(time.time() - t0, 3),
     }
     RESULTS_PATH.write_text(json.dumps(results, indent=2), encoding="utf-8")
 
@@ -628,7 +625,6 @@ def run() -> dict:
     print(f"Zero modes: {n_zero} {zero_content} (rigid translations and rotations)")
     print("All validation gates: PASS")
     print(f"JSON results: {RESULTS_PATH}")
-    print(f"Runtime: {results['runtime_s']} s")
     return results
 
 

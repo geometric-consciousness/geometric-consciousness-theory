@@ -104,5 +104,9 @@ def export_engine():
     return True
 
 if __name__ == "__main__":
+    import sys
+    if any(a in ("-h", "--help") for a in sys.argv[1:]):
+        print(__doc__)
+        sys.exit(0)
     success = export_engine()
     exit(0 if success else 1)

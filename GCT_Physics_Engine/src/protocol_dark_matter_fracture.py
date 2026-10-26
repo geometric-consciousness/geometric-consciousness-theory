@@ -7,7 +7,8 @@ All constants imported from SSOT (gct_constants).
 
 **Scope.** This script is a *mechanism demonstration*, not an independent
 derivation. Every bond in the toy lattice is assigned e_bond = E_VAC_EV by
-construction (the Tier 2 GCT mechanism posits a single discrete vacuum
+construction (the Tier 3 GCT fracture mechanism, which rests on the Tier 3 Topological
+Glass model, posits a single discrete vacuum
 quantum per Lattice-Fracture event), then "broken" with a 1%-sigma
 Gaussian to show the resulting energy distribution is discrete and
 monochromatic by construction. The PASS verdict (discrete + monochromatic
@@ -18,14 +19,15 @@ E_vac.
 **What this script verifies:** the *mechanism* — that a Lattice Fracture
 event releasing exactly one E_vac quantum produces a discrete,
 monochromatic spectrum with sub-instrumental Lorentzian linewidth. This
-is the Tier 2 mechanism claim of V3 Ch11 (Lattice Fracture Release).
+is the Tier 3 mechanism claim of V3 Ch11 (Lattice Fracture Release); the
+line width is open (emitter kinematics, V3 Ch11 §11.2.3).
 
 **What it does NOT verify:** the absolute value E_vac = m_e / 144 ~ 3.55
 keV. That postdiction lives in `verify_independent/verify_dm_line_centroid_postdiction_check.py`
-(matches the disputed astrophysical line) and is registered as Tier 2
-postdiction + Tier 3 empirical anchor (cf. V3 Ch11 + App R). The
+(matches the disputed astrophysical line) and is registered as Tier 3
+postdiction (O.38-conditional centroid; context only, not counted as a PASS) (cf. V3 Ch11 + App PSC). The
 load-bearing falsification gate is the linewidth + spatial-tracking
-test in Protocol C (App V P.3), not the toy lattice simulation here.
+test in Protocol C (App PRG P.3), not the toy lattice simulation here.
 
 **Single-seed realization (seed=42 for reproducibility).** The binary
 verdict (`discrete: true`, `monochromatic: true`) is structural and

@@ -1,0 +1,24 @@
+{
+  "assignment_parameters": {
+    "N_cage": 144,
+    "N_cage_status": "Tier 3 structural posit pending O.38; not selected by this scalar-score assignment",
+    "score_at_N_minus_1": 1,
+    "score_at_N_cage": 25
+  },
+  "construction_defined_score_at_N_cage": {
+    "score_at_N_minus_1": 1,
+    "score_at_N_cage": 25,
+    "delta": 24,
+    "ratio": 25.0,
+    "assigned_transition": [
+      1,
+      25
+    ]
+  },
+  "closure_status": {
+    "tier": "Tier 3 construction-defined diagnostic conditional on the Tier 3 O.38 N=144 cage posit",
+    "claim": "The declared scalar assignment changes from 1 to 25 at the adopted N_cage=144 branch; delta=24 and ratio=25 are exact arithmetic on the assigned values.",
+    "scope": "No graph G_N is constructed, so this score is not a graph invariant or min-cut. It is not IIT Phi and supplies no physical phase-transition or cage-selection inference.",
+    "remaining_open_research_level": "Physical cage-size selection remains O.38. Any graph or IIT claim requires a separately constructed object and proof."
+  }
+}

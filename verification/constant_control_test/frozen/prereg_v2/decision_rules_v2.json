@@ -1,0 +1,49 @@
+{
+ "version": "2.0",
+ "source": "PREREG_V2_FROZEN.md §4 + §10 (approved by Pablo 2026-10-20 ~11:40 CDMX). Mechanical transcription; the document wins on disagreement. Power control changed to k = 6 after the scrambled-target pilot (Pablo 'B', 2026-10-20).",
+ "primary": "p0 = p_self(phi) on the real targets, H_w at T2 under L_i^GCT, M = 1000 weight dithers, M' = 9999 reference dithers, ties against phi",
+ "alpha": 0.01,
+ "non_confirmatory": "v2 is a re-analysis of public data (statistic chosen after v1 results were public); any POSITIVE must carry that sentence",
+ "labels": {
+  "POSITIVE": {
+   "condition": "p0 <= 0.01 AND at least 2 of [V4, V8_1e-3, w003] give p <= 0.05 AND all validity controls pass",
+   "sub_label": {
+    "ROBUST": "self-calibrated p_F (S_F) <= 0.10",
+    "TAILORED": "otherwise"
+   }
+  },
+  "NEGATIVE": {
+   "condition": "p0 > 0.10",
+   "sub_label": {
+    "ROBUST": "V2 and V6 both give p > 0.10",
+    "FRAGILE": "otherwise"
+   },
+   "mandatory_scope": "excludes, at power >= 0.8, an effect in which phi hits at least 6 of the 8 informative rows through a real effect; weaker effects are not excluded"
+  },
+  "INCONCLUSIVE": {
+   "condition": "every other case"
+  }
+ },
+ "INVALID_if_any": [
+  "v1 or v2 bundle hash mismatch",
+  "any rule, seed, dither law or size changed after freeze",
+  "control 2 (300 random bases, real targets, randomised p_self) KS p <= 0.01",
+  "control 3b (phi on 100 scrambles, randomised p_self) KS p <= 0.01",
+  "reference regression fails (one unit of the last displayed digit, D1 rule)",
+  "dual implementation of dither + p_self disagrees",
+  "determinism (fresh pool) not bit-identical",
+  "any non-phi evaluation on the real targets before freeze"
+ ],
+ "UNDERPOWERED_if": "power of the k = 6 informative-row plant (50 plants, fraction with p_self <= 0.01) < 0.8",
+ "UNDERPOWERED_effect": "POSITIVE may still be reported; NEGATIVE and INCONCLUSIVE may not relabel any row to Tier 4",
+ "NEGATIVE_consequence": "even a valid, powered NEGATIVE supports only 'not distinguishable from numerology for strong effects' (Pablo decides any Tier 4 relabel)",
+ "report_only": [
+  "p_cross (rank of p0 among control-2 p_self, 300 bases)",
+  "Z_S and p for S (21 rows)",
+  "Z_SF sign and p for S_F",
+  "ladder powers lambda 0.25/0.5, k = 3..6",
+  "w05 variant",
+  "V2/V6 outside NEGATIVE",
+  "lambda = 0.75 plant power (the design's original power control, demoted after the pilot)"
+ ]
+}

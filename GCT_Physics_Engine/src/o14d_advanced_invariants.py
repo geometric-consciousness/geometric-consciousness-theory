@@ -14,7 +14,8 @@ Route (beta):  Discrete topological / spectral invariants of the bond graph:
     - Spectral moments Tr(A^k) for k = 2..6
     - Adjacency-matrix determinant
     - Permanent of A_{pos eigenvalues sign matrix}
-Hypothesis: at least one invariant uniquely identifies pair (8, 13).
+The invariants separate candidates descriptively; uniqueness of a measured
+value is not itself a first-principles selection rule.
 """
 
 import math
@@ -220,6 +221,27 @@ def character_decomposition(cage_6d, six_d_matrices, rot_class):
     return mults, class_fp_avg
 
 
+def adjacency_spectral_profile(evals, tol=1e-4):
+    """Summarize weighted-adjacency eigenvalue degeneracies."""
+    values = np.sort(evals)
+    multiplicities = []
+    i = 0
+    while i < len(values):
+        j = i + 1
+        while j < len(values) and abs(values[j] - values[i]) < tol:
+            j += 1
+        multiplicities.append(j - i)
+        i = j
+    hist = Counter(multiplicities)
+    return {
+        "A": hist.get(1, 0),
+        "T_lumped": hist.get(3, 0),
+        "G": hist.get(4, 0),
+        "H": hist.get(5, 0),
+        "composite_multiplicities": sorted(m for m in multiplicities if m not in {1, 3, 4, 5}),
+    }
+
+
 def topological_invariants(A):
     """Compute several discrete topological invariants of the bond graph."""
     N = A.shape[0]
@@ -306,6 +328,7 @@ def main():
         evals = np.linalg.eigvalsh(A)
         nz = evals[np.abs(evals) > 1e-12]
         eta = float(np.sum(np.sign(nz)))
+        spectral_profile = adjacency_spectral_profile(evals)
 
         # Route (alpha') -- character decomposition with T_1 / T_2 distinguished
         mults, class_fp_avg = character_decomposition(nodes_6d, six_d_matrices, rot_class)
@@ -318,6 +341,7 @@ def main():
             "eta": eta,
             "char_mults": mults,
             "class_fp_avg": [round(x, 3) for x in class_fp_avg],
+            "adjacency_spectral_profile": spectral_profile,
             "topo": invs,
         })
 
@@ -343,17 +367,25 @@ def main():
     n_match_char = sum(1 for p, _ in char_profiles if p == winner_char)
     print(f"    Route (alpha') T1/T2 character profile: {n_match_char}/21 pairings match winner")
     if n_match_char == 1:
-        print(f"      *** UNIQUE: route (alpha') closes O.14d ***")
+        print(f"      Profile is unique within this finite candidate set.")
 
     # Check route (beta) candidate invariants
     print("\n    Route (beta) invariants:")
     invariant_keys = ["n_edges", "n_triangles", "n_4cycles", "tr_A2", "tr_A3", "tr_A4", "tr_A5", "tr_A6", "det_A"]
+    invariant_distinct_counts = {}
+    winner_value_match_counts = {}
     for key in invariant_keys:
         values = [(r["topo"][key], r["pair"]) for r in results]
         winner_v = next(v for v, p in values if p == winner["pair"])
         n_match = sum(1 for v, _ in values if v == winner_v)
-        flag = " *** UNIQUE -- CLOSES O.14d via " + key + " ***" if n_match == 1 else ""
+        invariant_distinct_counts[key] = len({v for v, _ in values})
+        winner_value_match_counts[key] = n_match
+        flag = " (distinct in this candidate set; not a selection rule)" if n_match == 1 else ""
         print(f"      {key:>15} = {winner_v} -> {n_match}/21 pairings match{flag}")
+    expected_distinct_counts = {key: (16 if key == "n_edges" else 21) for key in invariant_keys}
+    if invariant_distinct_counts != expected_distinct_counts or any(count != 1 for count in winner_value_match_counts.values()):
+        raise AssertionError("O.14d route-beta distinct-count/winner-uniqueness gate failed")
+    print(f"      global distinct counts: {invariant_distinct_counts}")
 
     # Combinations of multiple invariants
     print("\n    Compound invariant: (n_triangles, n_4cycles)")
@@ -375,8 +407,24 @@ def main():
     print(f"      winner full topo -> {n_match}/21 pairings match{' *** UNIQUE ***' if n_match == 1 else ''}")
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    resolved_spectral_profile = {"A": 4, "T_lumped": 16, "G": 8, "H": 12, "composite_multiplicities": []}
+    spectral_collisions = [
+        {"pair": r["pair"], "profile": r["adjacency_spectral_profile"]}
+        for r in results if r["adjacency_spectral_profile"] != resolved_spectral_profile
+    ]
     with OUTPUT_PATH.open("w", encoding="utf-8") as f:
         json.dump({
+            "permutation_character_object": "I action on the 144 cage nodes",
+            "permutation_character_profile": winner["char_mults"],
+            "permutation_character_profile_match_count": n_match_char,
+            "adjacency_spectral_object": "eigenvalue multiplicities of the golden-weighted threshold adjacency matrix",
+            "resolved_adjacency_spectral_profile": resolved_spectral_profile,
+            "n_resolved_adjacency_spectral_pairings": len(results) - len(spectral_collisions),
+            "adjacency_spectral_collisions": spectral_collisions,
+            "profile_reconciliation": "All 21 weighted adjacencies are I-equivariant. Twenty display the resolved (4,16,8,12) degeneracy profile; [3,5] displays (4,16,6,12) plus one multiplicity-eight eigenspace because two G sectors collide at one eigenvalue. The permutation character remains (4,8,8,8,12) for all 21 cages.",
+            "invariant_distinct_value_counts": invariant_distinct_counts,
+            "winner_value_match_counts": winner_value_match_counts,
+            "invariant_uniqueness_disposition": "n_edges takes 16 distinct values; each of the other eight invariants takes 21. The winner's value is unique for all nine, but no invariant supplies a first-principles selection rule.",
             "winner_pair": winner["pair"],
             "winner_char_mults": winner["char_mults"],
             "winner_topo": winner["topo"],

@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 """
-protocol_aps_cage_search.py - Search for I_h-closed cage geometries that
-admit integer-arithmetic APS recovery of n = -107.
+protocol_aps_cage_search.py - Search finite I_h-closed cage geometries for
+scalar weighted-adjacency sign-count patterns.
 
-The discrete APS index decomposition is:
-    n_def = Bulk + eta_eff,   where eta_eff = eta_scalar / dim_spinor = eta_scalar / 8
-
-For n_def = -107 to close cleanly, Bulk must be an integer (it is a
-Pontryagin-class evaluation), which requires:
-    eta_scalar ≡ 8 * (-107 - Bulk)  for some integer Bulk
-i.e., eta_scalar must be a multiple of 8.
+This is a finite-matrix diagnostic. The scalar adjacency is not a Dirac
+operator, its sign sum is not an APS eta-invariant, division by an eight-
+component spinor dimension has no index-theorem status, and no APS bulk term
+or complete index is evaluated here.
 
 This protocol:
   1. Enumerates I_h orbits in Z^6 perp-projected via M_perp up to a
@@ -17,21 +14,9 @@ This protocol:
   2. For each contiguous union of orbits (sweeping outward by perp-norm),
      builds the cage adjacency matrix with the golden-bond rule
      (|x_perp| = 1 -> weight 1; |x_perp| = 1/phi -> weight phi).
-  3. Computes eta_scalar = Σ sign(λ) over non-zero eigenvalues.
-  4. Reports which cage sizes give eta_scalar ≡ 0 (mod 8) — the
-     necessary condition for integer-arithmetic APS recovery.
-
-Closure of this search produces one of three outcomes:
-  (i)  Cage(s) found with eta_scalar mod 8 == 0 AND bulk-required-for-
-       n=107 = (107 + eta_scalar/8) being a plausible Pontryagin
-       integer for the 6D icosahedral cell. -> APS pathway recoverable;
-       O.14c can be closed analytically on the chosen cage.
-  (ii) Cage(s) found with eta_scalar mod 8 == 0 but bulk-required is
-       not a plausible Pontryagin integer (e.g., 0 or negative). ->
-       Mathematical formalism holds; physical interpretation open.
-  (iii) NO I_h-closed cage in the searched range gives eta_scalar mod
-        8 == 0 for the relevant target. -> Strong negative result;
-        focuses O.14c on non-cage-based alternatives.
+  3. Computes the scalar-adjacency sign sum over non-zero eigenvalues.
+  4. Reports the purely arithmetic divisibility-by-eight pattern. This pattern
+     neither supplies nor constrains a bulk term of a qualifying APS problem.
 """
 
 from __future__ import annotations
@@ -134,7 +119,7 @@ def cage_adjacency(nodes_6d: np.ndarray) -> np.ndarray:
     return A
 
 
-def eta_scalar_of_cage(nodes_6d: np.ndarray) -> int:
+def scalar_adjacency_sign_sum(nodes_6d: np.ndarray) -> int:
     A = cage_adjacency(nodes_6d)
     evals = np.linalg.eigvalsh(A)
     nz = evals[np.abs(evals) > 1e-12]
@@ -143,7 +128,7 @@ def eta_scalar_of_cage(nodes_6d: np.ndarray) -> int:
 
 def main():
     print("=" * 76)
-    print("APS-cage search: I_h-closed cages with integer-arithmetic APS")
+    print("Finite-cage search: I_h-closed scalar-adjacency sign-count diagnostics")
     print("=" * 76)
 
     R = 3
@@ -157,7 +142,7 @@ def main():
         print(f"  {k:>5} {o['perp_norm']:>10.4f} {o['size']:>10}")
 
     print(f"\nSweeping cumulative I_h-orbit unions (outward by perp_norm)...")
-    print(f"  {'orbits':>7} {'N_total':>8} {'eta_scalar':>11} {'eta_eff':>10} {'bulk_req':>10} {'mod_8_ok':>9} {'bulk_int':>9}")
+    print(f"  {'orbits':>7} {'N_total':>8} {'sign_sum':>11} {'sign/8':>10} {'mod_8':>9}")
     print("  " + "-" * 76)
 
     results = []
@@ -173,30 +158,28 @@ def main():
             # Too large for the eigenvalue computation in reasonable time
             print(f"  ...skipping cage with N={N} (eigenvalue computation too expensive)")
             break
-        eta_s = eta_scalar_of_cage(nodes_arr)
-        eta_eff = eta_s / 8.0
-        bulk_required = -107.0 - eta_eff
-        mod8_ok = (eta_s % 8 == 0)
-        bulk_int = abs(bulk_required - round(bulk_required)) < 1e-9
-        flag = "<-- candidate" if (mod8_ok and bulk_int) else ""
-        print(f"  {k + 1:>7} {N:>8} {eta_s:>+11} {eta_eff:>+10.4f} {bulk_required:>+10.4f} {str(mod8_ok):>9} {str(bulk_int):>9}   {flag}")
+        sign_sum = scalar_adjacency_sign_sum(nodes_arr)
+        scalar_over_8 = sign_sum / 8.0
+        mod8_ok = (sign_sum % 8 == 0)
+        flag = "<-- divisible by 8" if mod8_ok else ""
+        print(f"  {k + 1:>7} {N:>8} {sign_sum:>+11} {scalar_over_8:>+10.4f} {str(mod8_ok):>9}   {flag}")
 
         rec = {
             "n_orbits_included": k + 1,
             "N_total": N,
             "outer_orbit_perp_norm": o["perp_norm"],
-            "eta_scalar": eta_s,
-            "eta_eff": eta_eff,
-            "bulk_required_for_n_minus_107": bulk_required,
-            "eta_scalar_mod_8_zero": mod8_ok,
-            "bulk_required_is_integer": bulk_int,
-            "is_aps_recovery_candidate": (mod8_ok and bulk_int),
+            "scalar_adjacency_sign_sum": sign_sum,
+            "scalar_adjacency_per_spinor_dimension_diagnostic": scalar_over_8,
+            "scalar_sign_sum_mod_8_zero": mod8_ok,
+            "aps_operator_domain_specified": False,
+            "aps_eta_evaluated": False,
+            "aps_index_evaluated": False,
         }
         results.append(rec)
-        if mod8_ok and bulk_int:
+        if mod8_ok:
             interesting.append(rec)
 
-    # Distinguish trivial (no edges -> eta = 0 vacuously) from non-trivial candidates
+    # Distinguish trivial (no edges -> sign sum 0 vacuously) from non-trivial cases.
     edge_thresholds = []
     for c in interesting:
         nodes_arr_c = None
@@ -214,39 +197,35 @@ def main():
 
     print()
     print("=" * 76)
-    print(f"APS-recovery candidates found: {len(interesting)} (of which {len(non_trivial)} non-trivial; the rest have no edges in the golden-bond regime and give eta=0 vacuously)")
+    print(f"Divisible-by-eight scalar sign counts: {len(interesting)} (of which {len(non_trivial)} non-trivial; the rest have no edges and give zero vacuously)")
     for c, ne in zip(interesting, edge_thresholds):
         status = "non-trivial" if ne > 0 else "trivial (no edges)"
-        print(f"  N={c['N_total']:4d}, edges={ne:5d}, eta_scalar={c['eta_scalar']:+d}, "
-              f"eta_eff={c['eta_eff']:+.4f}, bulk={c['bulk_required_for_n_minus_107']:+.0f}   [{status}]")
+        print(f"  N={c['N_total']:4d}, edges={ne:5d}, sign_sum={c['scalar_adjacency_sign_sum']:+d}, "
+              f"scalar/8={c['scalar_adjacency_per_spinor_dimension_diagnostic']:+.4f}   [{status}]")
     print("=" * 76)
 
     if not interesting:
         print("STRONG NEGATIVE RESULT.")
         print("No I_h-closed cage in the searched range (5 inner-orbit unions up to")
         print(f"perp_cutoff = {perp_cutoff}, max N = {results[-1]['N_total'] if results else 0})")
-        print("yields eta_scalar ≡ 0 (mod 8) AND integer bulk-required-for-n=-107.")
+        print("yields a non-trivial scalar-adjacency sign sum divisible by eight.")
         print()
-        print("Reading: the discrete APS recovery of n = -107 on an I_h-closed")
-        print("boundary cage at perp_cutoff <= 3.5 is structurally blocked at the")
-        print("integer-arithmetic level. The asymmetric 144-cage's eta_scalar = -8 was a")
-        print("unique-to-asymmetric-truncation result; no I_h-symmetric counterpart")
-        print("exists in the searched range. O.14c closure via the direct discrete-")
-        print("APS-on-I_h-closed-cage pathway is therefore not available; the")
-        print("Connes-Moscovici smooth-manifold route (O.14b) becomes the primary")
-        print("remaining path to closure.")
+        print("Reading: no qualifying APS conclusion follows. The search only audits")
+        print("scalar-adjacency arithmetic; O.14b/c still require a specified Fredholm")
+        print("bulk/boundary problem, domains, kernel term, regularised eta, and the")
+        print("complete APS index.")
 
     verdict = {
         "search_R": R,
         "search_perp_cutoff": perp_cutoff,
         "n_Ih_orbits_enumerated": len(orbits),
         "cage_sweep_results": results,
-        "aps_recovery_candidates_all": interesting,
-        "aps_recovery_candidates_non_trivial": non_trivial,
+        "divisible_by_8_diagnostics_all": interesting,
+        "divisible_by_8_diagnostics_non_trivial": non_trivial,
         "outcome": (
-            f"FOUND_{len(non_trivial)}_non_trivial_aps_recovery_candidates"
+            f"FOUND_{len(non_trivial)}_non_trivial_divisible_by_8_scalar_diagnostics"
             if non_trivial else
-            "STRONG_NEGATIVE_no_non_trivial_Ih_cage_recovers_n=-107"
+            "NO_non_trivial_divisible_by_8_scalar_diagnostic"
         ),
     }
     out_path = ENGINE_ROOT / "data" / "protocol_aps_cage_search_results.json"

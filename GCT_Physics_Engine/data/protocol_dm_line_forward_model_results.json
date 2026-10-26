@@ -186,7 +186,8 @@
   },
   "fwhm_difference_cdm_minus_gct_ev": 26.824692705078682,
   "discrimination_delta_ev": 26.824692705078682,
-  "verdict": "DISTINGUISHABLE",
-  "pass": true,
+  "design_distinguishable": true,
+  "verdict": "DESIGN_DISTINGUISHABLE_TYPED_VELOCITIES_NO_DATA",
+  "pass": false,
   "expected_fwhm_ev": 9.74581605261418
 }

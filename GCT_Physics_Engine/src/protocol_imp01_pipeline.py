@@ -60,7 +60,7 @@ a clean cosmic-mean test.
 This protocol implements Open Problem O.13 fingerprint (i) — the
 biogenic channel's asymptote-from-below shape — and exposes the
 (w_0, w_a, z_cross_CPL_fit) triple as the diagnostic projection,
-not as a literal phantom-crossing prediction. See App H O.13 and
+not as a literal phantom-crossing prediction. See App ORQ O.13 and
 V2 Ch14 Sec 14.6.3 for the fingerprint-set framing.
 """
 

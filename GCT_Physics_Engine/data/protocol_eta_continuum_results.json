@@ -1,7 +1,7 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "group": "2I = SL(2,5)",
-  "manifold": "S\u00b2 with binary icosahedral action",
+  "declared_orbit_space": "finite 2I conjugacy-class table with trial S\u00b2 rotation angles",
   "classes": [
     {
       "name": "e",
@@ -67,50 +67,60 @@
       "spinor_sign": 1
     }
   ],
-  "eta_table": [
+  "finite_orbit_diagnostic_table": [
     {
       "n": -3,
-      "conv_A_avg": -0.125,
-      "conv_B_alt": -0.25,
-      "conv_C_over_60": -0.25
+      "normalisation_A_avg": -0.125,
+      "normalisation_B_group": -0.25,
+      "normalisation_C_rotation_subgroup": -0.25
     },
     {
       "n": -2,
-      "conv_A_avg": 0.125,
-      "conv_B_alt": 0.25,
-      "conv_C_over_60": 0.25
+      "normalisation_A_avg": 0.125,
+      "normalisation_B_group": 0.25,
+      "normalisation_C_rotation_subgroup": 0.25
     },
     {
       "n": -1,
-      "conv_A_avg": -0.125,
-      "conv_B_alt": -0.25,
-      "conv_C_over_60": -0.25
+      "normalisation_A_avg": -0.125,
+      "normalisation_B_group": -0.25,
+      "normalisation_C_rotation_subgroup": -0.25
     },
     {
       "n": 0,
-      "conv_A_avg": 0.125,
-      "conv_B_alt": 0.25,
-      "conv_C_over_60": 0.25
+      "normalisation_A_avg": 0.125,
+      "normalisation_B_group": 0.25,
+      "normalisation_C_rotation_subgroup": 0.25
     },
     {
       "n": 1,
-      "conv_A_avg": -0.125,
-      "conv_B_alt": -0.25,
-      "conv_C_over_60": -0.25
+      "normalisation_A_avg": -0.125,
+      "normalisation_B_group": -0.25,
+      "normalisation_C_rotation_subgroup": -0.25
     },
     {
       "n": 2,
-      "conv_A_avg": 0.125,
-      "conv_B_alt": 0.25,
-      "conv_C_over_60": 0.25
+      "normalisation_A_avg": 0.125,
+      "normalisation_B_group": 0.25,
+      "normalisation_C_rotation_subgroup": 0.25
     },
     {
       "n": 3,
-      "conv_A_avg": -0.125,
-      "conv_B_alt": -0.25,
-      "conv_C_over_60": -0.25
+      "normalisation_A_avg": -0.125,
+      "normalisation_B_group": -0.25,
+      "normalisation_C_rotation_subgroup": -0.25
     }
   ],
-  "matches_to_engine_minus_one": [],
-  "scope_disposition": "This script is the smooth-manifold companion to protocol_aps_index_proof.py. It attempts the Connes\u2013Moscovici Theorem 4.1 character-theoretic evaluation of the equivariant \u03b7-invariant on S\u00b2/2I with line-bundle twist. The conventions surveyed do not all land on -1 cleanly; the closure of Lemma T-McK.1b (App U \u00a7U.7.6.3) requires fixing the precise convention chain matching the AKN C*-algebra's gap-label definition. Numerical evidence on the discrete cage (protocol_aps_index_proof.py) remains stronger than this smooth route, but the smooth route is conceptually closer to the formal Tier 1 target."
+  "numerical_coincidences_with_selected_cage_scalar_over_8": [],
+  "qualifying_boundary_operator_specified": false,
+  "operator_domain_specified": false,
+  "spectrum_computed": false,
+  "regularised_eta_function_computed": false,
+  "aps_eta_evaluated": false,
+  "aps_reduced_invariant_evaluated": false,
+  "relative_rho_evaluated": false,
+  "connes_moscovici_pairing_evaluated": false,
+  "topological_invariance_claimed": false,
+  "pass": false,
+  "scope_disposition": "Finite-orbit fixed-point ansatz only. No elliptic self-adjoint boundary operator, Hilbert-space domain, boundary conditions, kernel, spectrum, or regularised eta function is specified. The values are not raw eta, APS xi, relative rho, or a Connes\u2013Moscovici pairing, and do not independently confirm any finite-cage graph diagnostic."
 }

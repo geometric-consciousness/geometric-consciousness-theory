@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-check_data_json_producers.py - committed data/*.json refresh-path audit.
+check_data_json_producers.py - committed generated-JSON refresh-path audit.
 
 The refresh-all-data contract requires every committed JSON artifact under
-GCT_Physics_Engine/data/ to have an explicit source-side refresh path.
+GCT_Physics_Engine/data/ and outputs/ to have an explicit source-side refresh path.
 This audit is intentionally conservative: a committed data JSON is accepted
 only if either a same-stem protocol script is run by refresh-all-data, or the
 exact JSON filename appears in a source script / build script that is reachable
@@ -50,7 +50,7 @@ def refresh_reachable_sources() -> list[Path]:
         path
         for path in (
             ENGINE_ROOT / "build_falsifiability_matrix.py",
-            ENGINE_ROOT / "build_app_r.py",
+            ENGINE_ROOT / "build_app_psc.py",
             ENGINE_ROOT / "Makefile",
         )
         if path.exists()
@@ -85,12 +85,17 @@ def main() -> int:
     parser.add_argument("--strict", action="store_true", help="fail on any missing producer")
     args = parser.parse_args()
 
-    committed = sorted(git_ls_files("GCT_Physics_Engine/data/*.json"))
+    committed = set(
+        git_ls_files("GCT_Physics_Engine/data/*.json")
+        + git_ls_files("GCT_Physics_Engine/outputs/*.json")
+    )
+    present_outputs = set((ENGINE_ROOT / "outputs").glob("*.json"))
+    artifacts = sorted(committed | present_outputs)
     sources = refresh_reachable_sources()
     missing: list[str] = []
 
-    print(f"Committed data JSON artifacts: {len(committed)}")
-    for path in committed:
+    print(f"Generated JSON artifacts in the tracked/present boundary: {len(artifacts)}")
+    for path in artifacts:
         json_name = path.name
         producers = explicit_filename_producers(json_name, sources)
         default_producer = default_same_stem_producer(json_name)
@@ -112,7 +117,7 @@ def main() -> int:
             print(f"  - {name}")
         return 1 if args.strict else 0
 
-    print("\nPASS: every committed data/*.json artifact has a refresh-path producer.")
+    print("\nPASS: every tracked/present data/*.json and outputs/*.json artifact has a refresh-path producer.")
     return 0
 
 

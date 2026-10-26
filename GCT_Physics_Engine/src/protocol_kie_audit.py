@@ -40,7 +40,11 @@ def main() -> int:
         ),
         "interpretation": (
             "Protocol D LORR remains a pilot/systematics study under the registered "
-            "budget. The NMR polarity gate is the operative spin-entropy discriminator."
+            "budget. The NMR polarity gate is the intended spin-entropy discriminator, "
+            "but it is held pending redesign: as written it rejected by construction "
+            "(17O shortens water-1H T2 by scalar relaxation), so until the redesign "
+            "no outcome supports or rejects the branch "
+            "(protocol_isotope_experiment_results.json decision_rule_operative = false)."
         ),
         "status": status,
         "pass": False,

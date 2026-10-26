@@ -140,14 +140,14 @@ def main():
     status = evaluate_gate()
     res = make_result(
         name="dm_line_width_morphology",
-        app_r_label="3.55 keV line width + morphology gate (P.3)",
+        app_psc_label="3.55 keV line width + morphology gate (P.3)",
         formula="P.3 decisive gate: terminal no-line Gamma<=2.0e-28 s^-1 in >=94 Ms equivalent (XRISM 3.75 Ms stack Gamma<=1.0e-27 scaled by sqrt(3.75/94)); 26 Ms/Gamma<=3.8e-28 is a morphology-linewidth milestone; W_int>20 eV; morphology Delta chi^2>=9 vs smooth rho and smooth rho^2 with D_sep>=0.25. Background-limited Gamma<=1.2e-30 is theoretical, not operative.",
         predicted=W_INT_FALSIFICATION_EV,
         observed=None,
         unit="eV",
-        app_r_predicted=20.0,
-        app_r_precision_str="OPEN_CONDITIONAL (awaiting decisive Gamma/exposure + W_int + Delta chi^2 morphology)",
-        tier="Tier 2 linewidth/morphology mechanism",
+        app_psc_predicted=20.0,
+        app_psc_precision_str="OPEN_CONDITIONAL (awaiting decisive Gamma/exposure + W_int + Delta chi^2 morphology)",
+        tier="Tier 3 morphology template + open linewidth (Ch11 §11.2.3)",
         status=status,
         tolerance_ppm=None,
         extra={
@@ -179,7 +179,7 @@ def main():
                 "Protocol C operative aperture is mass-weighted stress-gated "
                 "regions with pre-line P_proxy >= sigma_crit = 0.53 keV cm^-3 "
                 "in the XRISM stacked-cluster sample. "
-                "GCT is falsified at terminal no-line sensitivity if no 3.55 "
+                "The registered Protocol C branch is falsified at terminal no-line sensitivity if no 3.55 "
                 "keV line is detected at Gamma<=2.0e-28 s^-1 in >=94 Ms "
                 "equivalent, or if a detected line has W_int>20 eV, "
                 "or if a smooth rho or smooth rho^2 template beats the "

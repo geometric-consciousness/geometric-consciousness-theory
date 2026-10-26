@@ -14,6 +14,7 @@ Each entry specifies:
 """
 
 import json
+import math
 import sys
 from pathlib import Path
 from gct_utils import C, get_output_path
@@ -41,31 +42,104 @@ _predicted_m_e = (
 _N_chan  = 5
 _Δa_gct = (1.0 / _N_chan) * _alpha_pi**3   # Muon g-2 lattice correction
 
-PROTOCOL_A_PRIME_AUTHORITATIVE_SOURCE = "App V P.8 + Ch13 §13.3.5"
+PROTOCOL_A_PRIME_AUTHORITATIVE_SOURCE = "App PRG P.8 + Ch13 §13.3.5"
 
-PROTOCOL_A_PRIME_REQUIRED_SYSTEMATICS = tuple(f"S{i}" for i in range(7))
+PROTOCOL_A_PRIME_REQUIRED_SYSTEMATICS = tuple(f"S{i}" for i in range(8))
+
+PROTOCOL_A_PRIME_SCAN_START_MHZ = 32.0
+PROTOCOL_A_PRIME_SCAN_STOP_MHZ = 200.0
+PROTOCOL_A_PRIME_BASELINE_STEP_KHZ = 5.0
+PROTOCOL_A_PRIME_RAW_SHOTS_PER_BIN_CELL = round(((5.6 + 1.48) / 0.10) ** 2, 2)
+PROTOCOL_A_PRIME_CELLS = (
+    "L-chiral / RF frequency scan",
+    "L-chiral / matched sham-no-drive",
+    "R-chiral / RF frequency scan",
+    "R-chiral / matched sham-no-drive",
+    "achiral-racemic / RF frequency scan",
+    "achiral-racemic / matched sham-no-drive",
+)
+
+
+def protocol_a_prime_scan_budget(cell_count=len(PROTOCOL_A_PRIME_CELLS)):
+    """Return the exact baseline scan budget for the registered 3x2 design.
+
+    The frequency grid is half-open, [32, 200) MHz.  The six-cell factorial is
+    an experimental-design premise, not a physics derivation; budgets scale
+    linearly with ``cell_count``.  The 5 kHz baseline is allowed only when it
+    resolves half the effective linewidth, so longer measured T2_eff values
+    require a finer grid and a fresh multiplicity/power budget.
+    """
+    span_khz = int(round((PROTOCOL_A_PRIME_SCAN_STOP_MHZ - PROTOCOL_A_PRIME_SCAN_START_MHZ) * 1000.0))
+    bins = span_khz // int(PROTOCOL_A_PRIME_BASELINE_STEP_KHZ)
+    bin_cells = bins * int(cell_count)
+    executable_shots_per_bin_cell = math.ceil(PROTOCOL_A_PRIME_RAW_SHOTS_PER_BIN_CELL)
+    raw_total_shots = int(round(PROTOCOL_A_PRIME_RAW_SHOTS_PER_BIN_CELL * bin_cells))
+    executable_total_shots = executable_shots_per_bin_cell * bin_cells
+    cadence_hz = 1000.0
+    return {
+        "grid_interval_MHz": "[32, 200)",
+        "grid_endpoint_convention": "half-open; 200 MHz excluded",
+        "baseline_step_kHz": PROTOCOL_A_PRIME_BASELINE_STEP_KHZ,
+        "frequency_bins_per_cell": bins,
+        "experimental_design_premise": "3 substrate states x 2 acquisition states",
+        "primary_cells": list(PROTOCOL_A_PRIME_CELLS),
+        "cell_count": int(cell_count),
+        "auxiliary_calibration_outside_multiplier": "bare diamond",
+        "look_elsewhere_bin_cells": bin_cells,
+        "raw_shots_per_bin_cell": PROTOCOL_A_PRIME_RAW_SHOTS_PER_BIN_CELL,
+        "executable_shots_per_bin_cell_ceiling": executable_shots_per_bin_cell,
+        "raw_total_shots": raw_total_shots,
+        "executable_total_shots": executable_total_shots,
+        "raw_runtime_hours_at_1kHz": round(raw_total_shots / cadence_hz / 3600.0, 5),
+        "executable_runtime_hours_at_1kHz": round(executable_total_shots / cadence_hz / 3600.0, 3),
+        "cell_count_sensitivity": "all bin-cell, shot-total, and runtime budgets scale linearly with cell_count",
+        "adaptive_resolution_rule": {
+            "effective_linewidth_Hz": "delta_nu = 1/(2*pi*T2_eff)",
+            "maximum_step_Hz": "Delta_nu <= 1/(4*pi*T2_eff)",
+            "baseline_5kHz_valid_through_T2_eff_us": 1.0e6 / (4.0 * math.pi * 5000.0),
+            "action_above_threshold": "tighten the grid and recompute bins, multiplicity, shots, and runtime before unblinding",
+        },
+        "branch_window_role": "pre-registered hypothesis regions inside the full scan; not substitute scan bands",
+        "control_point_150MHz_role": "sign-unfixed diagnostic only; excluded from F1 and Holm primary decisions",
+    }
+
+
+PROTOCOL_A_PRIME_SCAN_BUDGET = protocol_a_prime_scan_budget()
 
 
 def evaluate_protocol_a_prime_f1(observation):
     """Evaluate Protocol A-Prime F1 using the canonical joint-null rule.
 
-    Authoritative preregistration source is App V P.8 + Ch13 §13.3.5; this
+    Authoritative preregistration source is App PRG P.8 + Ch13 §13.3.5; this
     engine config mirrors the canonical rule. T2 ratio is O.23/O.24 readout
     context, not a falsification threshold.
     """
     observed = dict(observation)
     branch_a_peak = bool(observed.get("branch_a_112mhz_peak_detected", False))
     branch_b_peak = bool(observed.get("branch_b_42mhz_peak_detected", False))
-    anti_zeno_sign = bool(observed.get("anti_zeno_sign_150mhz_detected", False))
+    response_150mhz = bool(observed.get("response_150mhz_detected", False))
     chirality_contrast = bool(observed.get("chirality_contrast_detected", False))
     scan_complete = bool(observed.get("scan_band_32_200mhz_complete", False))
     spacing_khz = float(observed.get("max_scan_spacing_khz", float("inf")))
+    t2_eff_us = observed.get("t2_eff_us")
     p_ciss_measured = bool(observed.get("p_ciss_measured_pre_unblinding", False))
     p_ciss_net = observed.get("p_ciss_net")
     completed_systematics = set(observed.get("completed_systematics", ()))
 
     systematics_ok = set(PROTOCOL_A_PRIME_REQUIRED_SYSTEMATICS).issubset(completed_systematics)
-    scan_ok = scan_complete and spacing_khz <= 5.0
+    adaptive_step_khz = (
+        None if t2_eff_us is None
+        else 1_000.0 / (4.0 * math.pi * float(t2_eff_us))
+    )
+    allowed_step_khz = (
+        None if adaptive_step_khz is None
+        else min(PROTOCOL_A_PRIME_BASELINE_STEP_KHZ, adaptive_step_khz)
+    )
+    scan_ok = (
+        scan_complete
+        and allowed_step_khz is not None
+        and spacing_khz <= allowed_step_khz
+    )
     ciss_value = None if p_ciss_net is None else float(p_ciss_net)
     ciss_clean = p_ciss_measured and ciss_value is not None and ciss_value >= 0.1
     ciss_sensitivity_limited = (
@@ -75,7 +149,6 @@ def evaluate_protocol_a_prime_f1(observation):
     joint_null = (
         not branch_a_peak
         and not branch_b_peak
-        and not anti_zeno_sign
         and not chirality_contrast
     )
     acceptance_ready = scan_ok and systematics_ok and p_ciss_measured and ciss_value is not None
@@ -97,6 +170,9 @@ def evaluate_protocol_a_prime_f1(observation):
         "acceptance_ready": acceptance_ready,
         "scan_ok": scan_ok,
         "systematics_ok": systematics_ok,
+        "response_150mhz_diagnostic": response_150mhz,
+        "t2_eff_us_recorded": t2_eff_us is not None,
+        "allowed_max_scan_spacing_khz": allowed_step_khz,
         "p_ciss_value_recorded": ciss_value is not None,
         "ciss_clean_falsification_possible": ciss_clean,
         "ciss_sensitivity_limited": ciss_sensitivity_limited,
@@ -127,7 +203,7 @@ def _load_muon_g2_wp2025_disposition():
     gap = float(data.get("observed", fallback_gap))
     sigma = float(extra.get("wp2025_gap_sigma_x_10_11", fallback_sigma / 1e-11)) * 1e-11
     disposition = str(data.get("tier", fallback_disposition))
-    precision = str(data.get("app_r_precision_str", fallback_precision))
+    precision = str(data.get("app_psc_precision_str", fallback_precision))
     return gap, sigma, disposition, precision
 
 
@@ -142,11 +218,18 @@ REGISTRY = {
 
         "claim":       (
             "5-postulate (P1-P5) + A1 m_e dimensional anchor for the bare "
-            "topology/exponent sub-sector, A2 alpha_2^{-1}(M_GUT) Tier-3 "
-            "calibrated native-RGE boundary, and A3 measured low-energy "
-            "alpha for corrected precision-comparison rows; the "
-            "zero-continuous-free-parameter claim applies only to the bare "
-            "topology/exponent sub-sector."
+            "topology/exponent sub-sector; A2 alpha_2^{-1}(M_GUT) Tier-3 "
+            "calibrated native-RGE boundary and A4-A6 Tier-3 calibrated "
+            "Z1/Z2/Z3 beta-coefficient magnitude normalisations for the "
+            "native-RGE flow; A3 measured low-energy alpha for corrected "
+            "precision-comparison rows. The current sector accounting is "
+            "six continuous anchors A1-A6. A named precision/gauge comparison "
+            "subset contains six calibrated Tier-3 discrete coefficient handles "
+            "(1440, 12, 360, 2, 10 phi^2, 1/5); this is not a manuscript-wide "
+            "handle total. The O.38 N=144 cage posit and other sector-specific "
+            "handles are counted separately. The bare topology/exponent "
+            "sub-sector takes no continuous fitted input beyond the A1 "
+            "dimensional anchor."
         ),
     },
 
@@ -154,7 +237,7 @@ REGISTRY = {
     "fine_structure_constant": {
         "prediction":     137.0303,
         "formula":        "360·phi^-2·(1 − 1/(2·N))",
-        "experiment":     137.035999178,
+        "experiment":     float(C.ALPHA_INV_OBS),
         "tolerance_ppm":  50,
         "verdict_rule":   "|pred − obs| / obs < 50e-6",
         "status":         "LOCKED",
@@ -208,7 +291,10 @@ REGISTRY = {
     "chirality": {
         "prediction":        "Net chirality = 1 per generation",
         "mechanism":         "Domain-wall fermion at quasicrystal boundary",
-        "simulation_result": "N_L − N_R = 1 (Fibonacci chain N=89)",
+        "simulation_result": "N_L − N_R = 1 (Fibonacci chain N=89). Audit caveat (protocol_chirality_audit): "
+                             "the N_L/N_R sign labels are noise (|<C>| ~ 1e-14) and the zero mode is generic to "
+                             "odd-length bipartite chains (200/200 random controls), not Fibonacci-specific; "
+                             "gct_verified false, verdict CHIRAL_ZERO_MODE_GENERIC_NOT_FIBONACCI_SPECIFIC.",
         "status":            "LOCKED",
     },
 
@@ -224,46 +310,50 @@ REGISTRY = {
 
     },
 
-    "shapley_biogenic_dipole": {
-        "prediction_delta_w_w":      2.0e-4,
+    "shapley_source_proxy_template": {
+        "prediction_delta_w_w_band": [2.0e-5, 1.5e-4],
         "alignment_l_deg":           311.0,
         "alignment_b_deg":           30.0,
         "alignment_tolerance_deg":   30.0,
         "amplitude_basis":           (
-            "V7' Class-2 envelope cosmic-mean |Delta w(z=0.28)| in "
-            "[2, 5] x 10^-5 (Ch14 §14.6.3) x realistic biogenic-"
-            "overdensity factor delta_bio in [1, 3] at Shapley scale "
-            "(Local Sheet to Laniakea)"
+            "Stipulated product of the conditional Class-2 coordinate "
+            "envelope [2, 5] x 10^-5 and a source-proxy overdensity "
+            "factor in [1, 3] at Shapley scale; model arithmetic only"
         ),
-        "mechanism":                 "Biogenic phason vacuum strain Shapley orientation",
+        "mechanism":                 (
+            "Stipulated Shapley-oriented source-proxy/template test; "
+            "not physical biogenic strain"
+        ),
         "tier":                      3,
         "falsification":             (
             "Post-Roman successor mission (or DESI Y10+ extended "
-            "spatial-mapping program) finds no dipole amplitude "
-            ">= 2e-4 aligned within +/-30 deg of Shapley at > 3sigma"
+            "spatial-mapping program) finds no dipole amplitude in the "
+            "registered [2e-5, 1.5e-4] delta_w/w band aligned within "
+            "+/-30 deg of Shapley at > 3sigma; this excludes the "
+            "stipulated template only, while a match supports the "
+            "template without establishing a physical source or coupling"
         ),
         "experiment":                "Post-Roman successor (or DESI Y10+ extended spatial-w(z) mapping)",
         "timeframe":                 "Post-Roman successor",
-        "status":                    "SHAPLEY_DIPOLE_SPECIFICATION_AVAILABLE",
+        "status":                    "CONDITIONAL_SOURCE_PROXY_TEMPLATE_REGISTERED",
 
     },
     "pta_l6_anisotropy": {
-        "prediction_delta_gamma_max": 0.00017307,
-        "prediction_c6_c0":           2.92e-08,
-        "mechanism":    "Icosahedral vacuum anisotropy (phason-graviton limit)",
-        "verdict_rule": (
-            "IMMEDIATE ACTION — Joint Bayesian analysis of NANOGrav 15yr + "
-            "PPTA DR3 + EPTA DR2 using 15-angle icosahedral mask and "
-            "spherical harmonic decomposition. Positive detection: "
-            "combined C_6/sigma(C_6) >= 3.0."
+        "structural_theorem": (
+            "The first nonconstant rotational-icosahedral scalar harmonic "
+            "occurs uniquely at ell=6."
         ),
-        "immediate_datasets":   ["NANOGrav 15yr", "PPTA DR3", "EPTA DR2"],
-        "immediate_sensitivity": "sigma(C_6) ~ 3e-3 (~8000 pulsar pairs combined)",
-        "preregistration_required": True,
-        "preregistration_status":   "PTA anisotropy protocol specified for external deposit",
-        "decision_criterion":       "C6 / sigma(C6) >= 3.0",
-        "status":   "PTA anisotropy analysis specification available",
-        "priority": "HIGHEST_LEVERAGE_NEAR_TERM",
+        "physical_response_status": (
+            "OPEN: no action-to-propagator-to-generalized-ORF transfer, amplitude, "
+            "frequency law, or sky orientation is derived."
+        ),
+        "empirical_gate": (
+            "No PTA detection or exclusion threshold is registered until the "
+            "physical transfer and normalization are derived."
+        ),
+        "preregistration_required": False,
+        "status": "EXACT_L6_STRUCTURE__PHYSICAL_PTA_TRANSFER_OPEN",
+        "priority": "THEOREM_COMPLETE_TRANSFER_REQUIRED",
     },
 
     # ──────────────────────────────────────────────────────────────────────
@@ -281,7 +371,7 @@ REGISTRY = {
             "b": "primary analysis: Euclid weak-lensing + galaxy clustering joint analysis",
             "c": "falsification: Σmν < 0.075 eV at definitive precision OR Σmν > 0.15 eV",
             "d": "blinding: pre-registration before data release",
-            "e": "secondary: Σmν > 0.10 eV at 3σ keeps the biogenic-DE survival branch active; DESI 2024 <0.072 eV is tension only"
+            "e": "secondary model-comparison evidence: Σmν > 0.10 eV at 3σ supports the independent P.4 neutrino template; it cannot activate P.6 or a causal biogenic channel; DESI 2024 <0.072 eV is tension only"
         }
     },
 
@@ -289,8 +379,8 @@ REGISTRY = {
     "nv_center_chiral_proxy": {
         "authoritative_preregistration_source": PROTOCOL_A_PRIME_AUTHORITATIVE_SOURCE,
         "engine_config_mirror": (
-            "This entry mirrors App V P.8 and Ch13 §13.3.5. The F1 decision "
-            "rule is the joint Branch A + Branch B null after the required "
+            "This entry mirrors App PRG P.8 and Ch13 §13.3.5. The F1 decision "
+            "rule is the three-conjunct Branch A + Branch B + chirality null after the required "
             "scan, controls, chirality comparison, and per-cap P_CISS acceptance."
         ),
         "readout_context": (
@@ -307,41 +397,48 @@ REGISTRY = {
         "prediction_branch_B_MHz": 42.0,
         "prediction_branch_B_window_MHz": [32.0, 52.0],
         "required_scan_band_MHz": [32.0, 200.0],
-        "max_scan_spacing_kHz": 5.0,
-        "anti_zeno_control_MHz": 150.0,
+        "required_scan_grid": PROTOCOL_A_PRIME_SCAN_BUDGET,
+        "baseline_max_scan_spacing_kHz_through_T2_eff_15p915us": 5.0,
+        "sign_unfixed_diagnostic_MHz": 150.0,
         "chirality_control": "R-vs-S enantiomer measurement required",
         "per_cap_P_CISS_requirement": (
             "P_CISS^net measured pre-unblinding on each cap; >=0.1 at >=5sigma "
             "across all 50 caps for clean F1, 0.025-0.1 sensitivity-limited, "
             "<0.025 not falsifying."
         ),
-        "mechanism": "CISS-dependent protected-subspace Zeno lock; chirality requirement of GCT biophysics",
+        "mechanism": "CISS material-proxy branch; chirality is a candidate missing-leg control (DMC), not a requirement; no Zeno lock implied",
         "verdict_rule": (
-            "F1 = joint Branch A + B null. Protocol A-Prime F1 is falsified "
+            "F1 = joint Branch A + B + chirality null. Protocol A-Prime F1 is falsified "
             "only if BOTH no peak is detected in the Branch A 112 +/- 10 MHz "
             "window and no peak is detected in the Branch B 42 +/- 10 MHz "
-            "window across the required 32-200 MHz scan with <=5 kHz spacing, "
-            "S0-S7 acceptance checks, no 150 MHz anti-Zeno sign, no R-vs-S "
-            "chirality contrast, measured pre-unblinding per-cap P_CISS, and "
+            "window across the authoritative half-open [32,200) MHz scan, with "
+            "adaptive spacing Delta_nu <= 1/(4*pi*T2_eff) and a 5 kHz ceiling only "
+            "through T2_eff = 15.915 us, "
+            "S0-S7 acceptance checks, no R-vs-S chirality contrast, measured "
+            "pre-unblinding per-cap P_CISS, and "
             "post-transfer CISS retention on the h-BN/NV process flow meeting "
             "the clean-falsification floor. A single-branch null does "
-            "not falsify. Peak-amplitude magnitude is O.23/O.24 readout "
-            "context, not a falsification threshold."
+            "not falsify. The 150 MHz sign is unfixed and is a Tier 3 mechanism "
+            "diagnostic outside F1 and Holm primary decisions. Peak-amplitude magnitude "
+            "is O.23/O.24 readout context, not a falsification threshold."
         ),
         "evaluation_function": "evaluate_protocol_a_prime_f1",
         "dataset":   "NV centres in diamond with controlled h-BN chirality capping",
         "timeline":  "2-5 years (established nanofabrication technology)",
-        "status":    "TIER_2_PREDICTION — execution protocol specified",
-        "priority":  "HIGH — non-biological validation of core CISS mechanism",
+        "status":    "MATERIAL_PROXY_TEST — execution protocol specified; not evidence for GCT (no phason, Selection-Operator or Level-II inference; App PRG P.8)",
+        "priority":  "HIGH — non-biological material-proxy test of the CISS candidate",
     },
 
     # ──────────────────────────────────────────────────────────────────────
     "directional_bell_inequality": {
         "prediction": "Icosahedral violation of rotational isotropy",
-        "mechanism": "Anisotropic entanglement collapse due to 10 three-fold vacuum axes and c-anisotropy at phi^-18",
-        "alignment_mask": "15-angle icosahedral mask (identical to PTA l=6 prediction)",
-        "falsification": "Isotropic Bell inequality violation across all baselines -> GCT excluded",
-        "status": "BELL_TEST_SPECIFICATION_AVAILABLE"
+        "mechanism": "Physical directional-response mechanism and normalization remain open",
+        "orientation_requirement": (
+            "Any icosahedral test must retain an oriented A6(R n) structure "
+            "rather than a finite separation mask"
+        ),
+        "falsification": "No Bell-test exclusion rule is registered until a physical directional transfer is derived",
+        "status": "DIRECTIONAL_RESPONSE_TRANSFER_OPEN"
     },
 }
 
@@ -375,7 +472,13 @@ if __name__ == "__main__":
         print(f"  {key:<30}  {str(pred):<20}  [{status}]")
 
     # Also write a machine-readable output to data/
-    ci_output = {"locked": True, "pass": True, "n_predictions": len(REGISTRY) - 1}
+    ci_output = {
+        "locked": True,
+        "pass": True,
+        "pass_scope": "BOOKKEEPING: pass means the registry file was written; no prediction is tested here (closure label open, not confirmed)",
+        "n_predictions": len(REGISTRY) - 1,
+        "protocol_a_prime_scan_budget": PROTOCOL_A_PRIME_SCAN_BUDGET,
+    }
     with open(get_output_path("protocol_preregistration_results.json"), "w") as fp:
         json.dump(ci_output, fp, indent=2)
     print("Output written to data/protocol_preregistration_results.json")

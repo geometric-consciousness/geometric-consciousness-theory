@@ -1,7 +1,7 @@
 {
   "winner_idx": 17,
   "winner_metrics": {
-    "eta_scalar": -8.0,
+    "adjacency_sign_sum": -8.0,
     "gs_gap": 7.105427357601002e-15,
     "neg_spec": 434.7626860582416,
     "pos_spec": 434.7626860582416,
@@ -16,7 +16,7 @@
   "unique_picks": [],
   "all_metrics_summary": [
     {
-      "eta_scalar": 6.0,
+      "adjacency_sign_sum": 6.0,
       "gs_gap": 1.7763568394002505e-14,
       "neg_spec": 387.98186288631626,
       "pos_spec": 387.98186288631626,
@@ -29,7 +29,7 @@
       "subset_idx": 0
     },
     {
-      "eta_scalar": 4.0,
+      "adjacency_sign_sum": 4.0,
       "gs_gap": 3.907985046680551e-14,
       "neg_spec": 384.43290613465086,
       "pos_spec": 384.4329061346508,
@@ -42,7 +42,7 @@
       "subset_idx": 1
     },
     {
-      "eta_scalar": 0.0,
+      "adjacency_sign_sum": 0.0,
       "gs_gap": 1.0658141036401503e-14,
       "neg_spec": 386.6632714713875,
       "pos_spec": 386.66327147138736,
@@ -55,7 +55,7 @@
       "subset_idx": 2
     },
     {
-      "eta_scalar": -10.0,
+      "adjacency_sign_sum": -10.0,
       "gs_gap": 1.4210854715202004e-14,
       "neg_spec": 426.2910101678185,
       "pos_spec": 426.29101016781846,
@@ -68,7 +68,7 @@
       "subset_idx": 3
     },
     {
-      "eta_scalar": 2.0,
+      "adjacency_sign_sum": 2.0,
       "gs_gap": 6.039613253960852e-14,
       "neg_spec": 419.97273425119,
       "pos_spec": 419.97273425119005,
@@ -81,7 +81,7 @@
       "subset_idx": 4
     },
     {
-      "eta_scalar": 6.0,
+      "adjacency_sign_sum": 6.0,
       "gs_gap": 0.0,
       "neg_spec": 401.25027475371996,
       "pos_spec": 401.25027475371996,
@@ -94,7 +94,7 @@
       "subset_idx": 5
     },
     {
-      "eta_scalar": 0.0,
+      "adjacency_sign_sum": 0.0,
       "gs_gap": 0.0,
       "neg_spec": 371.0913090528601,
       "pos_spec": 371.0913090528602,
@@ -107,7 +107,7 @@
       "subset_idx": 6
     },
     {
-      "eta_scalar": -10.0,
+      "adjacency_sign_sum": -10.0,
       "gs_gap": 1.4210854715202004e-14,
       "neg_spec": 386.85503331831734,
       "pos_spec": 386.8550333183174,
@@ -120,7 +120,7 @@
       "subset_idx": 7
     },
     {
-      "eta_scalar": -22.0,
+      "adjacency_sign_sum": -22.0,
       "gs_gap": 1.0658141036401503e-14,
       "neg_spec": 418.01579448996205,
       "pos_spec": 418.01579448996216,
@@ -133,7 +133,7 @@
       "subset_idx": 8
     },
     {
-      "eta_scalar": 24.0,
+      "adjacency_sign_sum": 24.0,
       "gs_gap": 8.881784197001252e-15,
       "neg_spec": 407.9200108821239,
       "pos_spec": 407.92001088212396,
@@ -146,7 +146,7 @@
       "subset_idx": 9
     },
     {
-      "eta_scalar": -14.0,
+      "adjacency_sign_sum": -14.0,
       "gs_gap": 5.329070518200751e-15,
       "neg_spec": 426.88510796487515,
       "pos_spec": 426.88510796487515,
@@ -159,7 +159,7 @@
       "subset_idx": 10
     },
     {
-      "eta_scalar": -12.0,
+      "adjacency_sign_sum": -12.0,
       "gs_gap": 5.329070518200751e-15,
       "neg_spec": 390.49545968935496,
       "pos_spec": 390.4954596893551,
@@ -172,7 +172,7 @@
       "subset_idx": 11
     },
     {
-      "eta_scalar": -14.0,
+      "adjacency_sign_sum": -14.0,
       "gs_gap": 5.329070518200751e-15,
       "neg_spec": 433.0849287091406,
       "pos_spec": 433.0849287091407,
@@ -185,7 +185,7 @@
       "subset_idx": 12
     },
     {
-      "eta_scalar": -6.0,
+      "adjacency_sign_sum": -6.0,
       "gs_gap": 3.552713678800501e-15,
       "neg_spec": 418.0343807750899,
       "pos_spec": 418.03438077508986,
@@ -198,7 +198,7 @@
       "subset_idx": 13
     },
     {
-      "eta_scalar": -10.0,
+      "adjacency_sign_sum": -10.0,
       "gs_gap": 1.9539925233402755e-14,
       "neg_spec": 415.9090506609131,
       "pos_spec": 415.90905066091307,
@@ -211,7 +211,7 @@
       "subset_idx": 14
     },
     {
-      "eta_scalar": -16.0,
+      "adjacency_sign_sum": -16.0,
       "gs_gap": 1.2434497875801753e-14,
       "neg_spec": 420.9305371896808,
       "pos_spec": 420.930537189681,
@@ -224,7 +224,7 @@
       "subset_idx": 15
     },
     {
-      "eta_scalar": 2.0,
+      "adjacency_sign_sum": 2.0,
       "gs_gap": 5.329070518200751e-15,
       "neg_spec": 434.26450236653795,
       "pos_spec": 434.26450236653795,
@@ -237,7 +237,7 @@
       "subset_idx": 16
     },
     {
-      "eta_scalar": -8.0,
+      "adjacency_sign_sum": -8.0,
       "gs_gap": 7.105427357601002e-15,
       "neg_spec": 434.7626860582416,
       "pos_spec": 434.7626860582416,
@@ -250,7 +250,7 @@
       "subset_idx": 17
     },
     {
-      "eta_scalar": -10.0,
+      "adjacency_sign_sum": -10.0,
       "gs_gap": 5.329070518200751e-15,
       "neg_spec": 447.6057763393935,
       "pos_spec": 447.60577633939357,
@@ -263,7 +263,7 @@
       "subset_idx": 18
     },
     {
-      "eta_scalar": -6.0,
+      "adjacency_sign_sum": -6.0,
       "gs_gap": 7.105427357601002e-15,
       "neg_spec": 438.5287203939749,
       "pos_spec": 438.52872039397494,
@@ -276,7 +276,7 @@
       "subset_idx": 19
     },
     {
-      "eta_scalar": 0.0,
+      "adjacency_sign_sum": 0.0,
       "gs_gap": 1.7763568394002505e-14,
       "neg_spec": 445.7113746596801,
       "pos_spec": 445.71137465968013,
@@ -289,7 +289,7 @@
       "subset_idx": 20
     },
     {
-      "eta_scalar": 0.0,
+      "adjacency_sign_sum": 0.0,
       "gs_gap": 4.263256414560601e-14,
       "neg_spec": 248.71734399613416,
       "pos_spec": 248.7173439961341,
@@ -302,7 +302,7 @@
       "subset_idx": 21
     },
     {
-      "eta_scalar": -10.0,
+      "adjacency_sign_sum": -10.0,
       "gs_gap": 0.9286357543094397,
       "neg_spec": 285.5690496120444,
       "pos_spec": 285.5690496120444,
@@ -315,7 +315,7 @@
       "subset_idx": 22
     },
     {
-      "eta_scalar": -1.0,
+      "adjacency_sign_sum": -1.0,
       "gs_gap": 2.241939868615084,
       "neg_spec": 364.42588426497554,
       "pos_spec": 364.4258842649756,
@@ -328,7 +328,7 @@
       "subset_idx": 23
     },
     {
-      "eta_scalar": -1.0,
+      "adjacency_sign_sum": -1.0,
       "gs_gap": 4.599386713620188,
       "neg_spec": 381.9666473223541,
       "pos_spec": 381.9666473223541,
@@ -341,7 +341,7 @@
       "subset_idx": 24
     },
     {
-      "eta_scalar": 0.0,
+      "adjacency_sign_sum": 0.0,
       "gs_gap": 3.7799624081108796,
       "neg_spec": 417.5621242059884,
       "pos_spec": 417.5621242059884,
@@ -354,7 +354,7 @@
       "subset_idx": 25
     },
     {
-      "eta_scalar": 8.0,
+      "adjacency_sign_sum": 8.0,
       "gs_gap": 0.9784850710972144,
       "neg_spec": 374.5174509118052,
       "pos_spec": 374.5174509118052,
@@ -367,7 +367,7 @@
       "subset_idx": 26
     },
     {
-      "eta_scalar": 0.0,
+      "adjacency_sign_sum": 0.0,
       "gs_gap": 3.552713678800501e-15,
       "neg_spec": 427.8040786883793,
       "pos_spec": 427.80407868837926,
@@ -380,7 +380,7 @@
       "subset_idx": 27
     },
     {
-      "eta_scalar": 6.0,
+      "adjacency_sign_sum": 6.0,
       "gs_gap": 7.105427357601002e-15,
       "neg_spec": 330.48740473675997,
       "pos_spec": 330.48740473676,
@@ -393,7 +393,7 @@
       "subset_idx": 28
     },
     {
-      "eta_scalar": 6.0,
+      "adjacency_sign_sum": 6.0,
       "gs_gap": 1.0658141036401503e-14,
       "neg_spec": 326.0585748789567,
       "pos_spec": 326.0585748789567,
@@ -406,7 +406,7 @@
       "subset_idx": 29
     },
     {
-      "eta_scalar": -2.0,
+      "adjacency_sign_sum": -2.0,
       "gs_gap": 1.4210854715202004e-14,
       "neg_spec": 362.53562307274194,
       "pos_spec": 362.53562307274206,
@@ -419,7 +419,7 @@
       "subset_idx": 30
     },
     {
-      "eta_scalar": -16.0,
+      "adjacency_sign_sum": -16.0,
       "gs_gap": 3.552713678800501e-15,
       "neg_spec": 384.15486973260965,
       "pos_spec": 384.1548697326095,
@@ -432,7 +432,7 @@
       "subset_idx": 31
     },
     {
-      "eta_scalar": -12.0,
+      "adjacency_sign_sum": -12.0,
       "gs_gap": 0.0,
       "neg_spec": 459.5211726414526,
       "pos_spec": 459.52117264145255,
@@ -445,7 +445,7 @@
       "subset_idx": 32
     },
     {
-      "eta_scalar": 4.0,
+      "adjacency_sign_sum": 4.0,
       "gs_gap": 7.105427357601002e-15,
       "neg_spec": 426.24234860174283,
       "pos_spec": 426.2423486017429,
@@ -458,7 +458,7 @@
       "subset_idx": 33
     },
     {
-      "eta_scalar": -12.0,
+      "adjacency_sign_sum": -12.0,
       "gs_gap": 7.105427357601002e-15,
       "neg_spec": 434.8148735519213,
       "pos_spec": 434.8148735519213,
@@ -471,7 +471,7 @@
       "subset_idx": 34
     },
     {
-      "eta_scalar": 2.0,
+      "adjacency_sign_sum": 2.0,
       "gs_gap": 5.3290705182007514e-14,
       "neg_spec": 387.4368315794737,
       "pos_spec": 387.43683157947373,
@@ -484,7 +484,7 @@
       "subset_idx": 35
     },
     {
-      "eta_scalar": -6.0,
+      "adjacency_sign_sum": -6.0,
       "gs_gap": 2.334776822769422,
       "neg_spec": 412.76568144496093,
       "pos_spec": 412.7656814449609,
@@ -497,7 +497,7 @@
       "subset_idx": 36
     },
     {
-      "eta_scalar": -16.0,
+      "adjacency_sign_sum": -16.0,
       "gs_gap": 5.440520508667376,
       "neg_spec": 411.19381253934876,
       "pos_spec": 411.19381253934864,
@@ -510,7 +510,7 @@
       "subset_idx": 37
     },
     {
-      "eta_scalar": -18.0,
+      "adjacency_sign_sum": -18.0,
       "gs_gap": 5.875382681878847,
       "neg_spec": 428.16794068479544,
       "pos_spec": 428.16794068479544,
@@ -523,7 +523,7 @@
       "subset_idx": 38
     },
     {
-      "eta_scalar": -4.0,
+      "adjacency_sign_sum": -4.0,
       "gs_gap": 5.776387800746496,
       "neg_spec": 450.2604810746418,
       "pos_spec": 450.2604810746416,
@@ -536,7 +536,7 @@
       "subset_idx": 39
     },
     {
-      "eta_scalar": 10.0,
+      "adjacency_sign_sum": 10.0,
       "gs_gap": 0.4602156414905032,
       "neg_spec": 437.8604879428424,
       "pos_spec": 437.86048794284244,
@@ -549,7 +549,7 @@
       "subset_idx": 40
     },
     {
-      "eta_scalar": -10.0,
+      "adjacency_sign_sum": -10.0,
       "gs_gap": 7.105427357601002e-15,
       "neg_spec": 447.96018259721035,
       "pos_spec": 447.9601825972103,

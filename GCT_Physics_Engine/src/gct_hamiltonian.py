@@ -3,7 +3,7 @@
 gct_hamiltonian.py — 6D Microscopic Action
 ==========================================
 Implements the Hamiltonian mechanics for the GCT vacuum.
-Reference: Appendix M (Master Action)
+Reference: Appendix ULA (Master Action)
 
 Hamiltonian Structure:
 ----------------------

@@ -67,16 +67,22 @@ def _fbio_derived_payload(derivation: str, jacobian_field: str) -> dict:
 COMPAT_ARTIFACTS = {
     "aps_index_proof_results.json": {
         "N_nodes": 144,
-        "eta_scalar": -8.0,
-        "eta_eff": -1.0,
-        "bulk_index": 108,
-        "total_index": 107.0,
+        "cage_scope": "selected 144-node I-orbit union",
+        "scalar_adjacency_operator": "A on C^144 (finite weighted adjacency matrix)",
+        "scalar_adjacency_sign_sum": -8.0,
+        "spinor_dimension_used_for_diagnostic": 8,
+        "scalar_adjacency_per_spinor_dimension_diagnostic": -1.0,
+        "discrete_dirac_sign_sum": None,
+        "aps_boundary_operator_specified": False,
+        "aps_eta_evaluated": False,
+        "aps_index_evaluated": False,
         "scalar_eigenvalues_summary": {
             "min": -16.895064453732978,
             "max": 35.75124580378021,
             "mean_abs": 5.8899195586277635,
         },
-        "pass": True,
+        "pass": False,
+        "tier_status": "DIAGNOSTIC_ONLY — compatibility record of a scalar-adjacency sign sum; no APS operator or index evaluation",
     },
     "protocol_fbio_kk_reduction_results.json": lambda: _fbio_derived_payload(
         "6D_stress_tensor_E_perp_compactification",

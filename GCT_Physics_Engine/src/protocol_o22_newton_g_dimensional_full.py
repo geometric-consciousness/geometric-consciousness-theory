@@ -3,7 +3,7 @@
 protocol_o22_newton_g_dimensional_full.py
 ==========================================
 
-Full dimensional analysis of the three-route Newton-G claim (App K §K.7).
+Full dimensional analysis of the three-route Newton-G claim (App DPS §DPS.7).
 Open Problem O.22 is carried with the invariant disposition: Routes 2/3
 with a single power of a_6 are dimensionally inconsistent as SI expressions;
 the dimensionally corrected a_6^2 scaling differs from Route 1 by
@@ -16,7 +16,7 @@ ROUTE 1 (Jacobson, dimensionally clean)
 
     Closes to G = hbar c / M_P^2 via a_6 = 2 hbar / (M_P c).
 
-ROUTE 2 SINGLE-a_6 FORM (App K §K.7, equation 8.1.4)
+ROUTE 2 SINGLE-a_6 FORM (App DPS §DPS.7, equation 8.1.4)
 
     G_2 = c_hat^4 / (8 pi K_perp a_6)
     [c_hat]^4 = L^4 T^(-4)
@@ -66,7 +66,7 @@ CONCLUSION
   via any natural GCT-internal substitution. Routes 2/3 should be
   interpreted as STRUCTURAL CROSS-CHECKS (the form G ~ c_hat^4/(K_perp L^2)
   has the right dimensional scaling) but NOT as standalone SI-unit G
-  formulas. The 2274 ppm CODATA agreement of G derives from Route 1
+  formulas. The 2273.725 ppm model-authoritative alpha_GCT comparison derives from Route 1
   alone.
 
 CLOSURE STATUS
@@ -77,7 +77,7 @@ CLOSURE STATUS
 
   The invariant statement is: not in SI units with the single-a_6 expression;
   only as a STRUCTURAL identification at the natural-units / order-of-
-  magnitude scaling level. App K §K.7 carries the same disposition:
+  magnitude scaling level. App DPS §DPS.7 carries the same disposition:
   dimensional inconsistency of the single-a_6 Route 2 expression, corrected
   a_6^2 form, unabsorbed phi^(-18)/(32*pi) residual, and restriction of
   "three-route equivalence" to structural scaling rather than numerical
@@ -168,7 +168,7 @@ def main():
     print(f"  but gives G_2_corrected = [phi^(-18)/(32 pi)] * G_1 = {expected_ratio:.2e} * G_1,")
     print(f"  differing from Route 1 by ~6 orders of magnitude.")
     print(f"")
-    print(f"  FULL O.22 CLOSURE (closure direction (b) from App H):")
+    print(f"  FULL O.22 CLOSURE (closure direction (b) from App ORQ):")
     print(f"  Routes 2/3 reduce to Route 1 ONLY at the natural-units / order-")
     print(f"  of-magnitude scaling level. They are STRUCTURAL cross-checks that")
     print(f"  the form G ~ c_hat^4/(K_perp L^2) has the right dimensional scaling,")
@@ -176,11 +176,11 @@ def main():
     print(f"  the phi^(-18)/(32 pi) residual; this is a documented limitation of")
     print(f"  Routes 2/3, not a hidden equivalence.")
     print(f"")
-    print(f"  The 2274 ppm CODATA agreement of G derives from Route 1 alone")
+    print(f"  The 2273.725 ppm model-authoritative alpha_GCT comparison derives from Route 1 alone")
     print(f"  (which closes cleanly via the standard Planck identity); this is")
     print(f"  unaffected by the Routes 2/3 dimensional analysis.")
     print(f"")
-    print(f"  App K §K.7 carries the same invariant disposition:")
+    print(f"  App DPS §DPS.7 carries the same invariant disposition:")
     print(f"    (a) single-a_6 Route 2 is dimensionally inconsistent")
     print(f"    (b) the corrected a_6^2 form is dimensionally valid")
     print(f"    (c) phi^(-18)/(32 pi) remains unabsorbed by the framework")
@@ -199,14 +199,14 @@ def main():
         "dimensional_status_route_2_single_a6": "L^4 M^(-1) T^(-2) -- INCONSISTENT",
         "dimensional_status_route_2_corrected_with_a_6_squared": "L^3 M^(-1) T^(-2) -- CORRECT",
         "closure_text": (
-            "Route 2 with a single a_6 factor in App K Sec K.7 is dimensionally inconsistent "
+            "Route 2 with a single a_6 factor in App DPS Sec DPS.7 is dimensionally inconsistent "
             "(L^4 M^(-1) T^(-2) instead of L^3 M^(-1) T^(-2); extra factor of L). "
             "The corrected form G_2 = c_hat^4 / (8 pi K_perp a_6^2) is dimensionally "
             "correct but gives G_2 = [phi^(-18)/(32 pi)] G_1 = 1.7e-6 * G_1, "
             "differing from Route 1 by 6 orders of magnitude. The framework does "
             "not absorb the phi^(-18)/(32 pi) residual; Routes 2/3 are structural "
             "scaling cross-checks only, NOT standalone SI-unit G formulas. The "
-            "2274 ppm CODATA agreement derives from Route 1 alone."
+            "2273.725 ppm model-authoritative alpha_GCT comparison derives from Route 1 alone."
         ),
     }
     if OUTPUT_DIR_AVAILABLE:

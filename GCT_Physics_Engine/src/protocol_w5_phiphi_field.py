@@ -3,7 +3,7 @@
 protocol_w5_phiphi_field.py - W5: algebraic-field status of the FK determinant
 ==============================================================================
 The down-quark FK determinant limit det_FK has TWO candidate closed forms,
-recorded in App TP item 2b:
+recorded in App TPR item 2b:
   (A) phi^phi                      (the adopted primary output, m_d = m_u phi^phi)
   (B) phi * 2^(39/100) * 3^(5/100) (the finite-cage R=2 secondary diagnostic)
 
@@ -29,7 +29,7 @@ Rigorous facts (not numerical guesses):
 => Both forms lie outside Z[phi], but for different reasons: (A) is
    transcendental (excluded from every algebraic-number module), while (B) is
    algebraic of degree > 2 over Q (excluded by algebraic degree, not by
-   transcendence). This matches the classification in App TP item 2b.
+   transcendence). This matches the classification in App TPR item 2b.
 
 The protocol verifies the algebraic/transcendental classification structurally
 (degrees of the defining polynomials) and compares both forms numerically to the
@@ -112,7 +112,7 @@ def run():
         "3^(5/100) is ALGEBRAIC of degree > 2 over Q (rational powers of integers "
         "are algebraic); it lies outside Z[phi] by its algebraic degree, not by "
         "transcendence. Both forms therefore lie outside Z[phi] for distinct "
-        "reasons, as recorded in App TP item 2b. "
+        "reasons, as recorded in App TPR item 2b. "
         f"Numerically phi^phi ({phiphi:.4f}) matches the det_FK centre to "
         f"{abs(100*(phiphi-DETFK_CENTRE)/DETFK_CENTRE):.2f}%, closer than form "
         f"(B) ({formB:.4f}, {abs(100*(formB-DETFK_CENTRE)/DETFK_CENTRE):.2f}%); "

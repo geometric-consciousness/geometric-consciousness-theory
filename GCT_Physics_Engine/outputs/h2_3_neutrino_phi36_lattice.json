@@ -1,0 +1,60 @@
+{
+  "constants": {
+    "m_e_MeV": 0.51099895069,
+    "M_Planck_MeV": 1.22089e+22,
+    "M_red_Planck_MeV": 2.435323e+21,
+    "phi_neg_18": 0.00017307027171223924,
+    "phi_neg_27": 2.276846294648535e-06,
+    "phi_neg_36": 2.995331895054832e-08,
+    "phi_neg_9": 0.013155617496424835,
+    "m_Dirac_GCT_MeV": 8.843872724058743e-05,
+    "M_R_GUT_MeV": 3.203817786824582e+19,
+    "M_R_RECON_MeV": 0.51099895069,
+    "M_R_RECON_interpretation": "M_R^eff = m_e is an effective See-Saw scale chosen so that m_Dirac^2 / M_R^eff reproduces Theorem 9.1's phi^(-36) law; it is distinct from the E_6 GUT scale M_E_6 = M_red * phi^(-9) ~ 3.2e16 GeV (Tier 3, conditional on O.15). The 2x2 agreement is an algebraic identity given that choice.",
+    "m_nu_T91_target_MeV": 1.5306114553413084e-08,
+    "m_nu_T92_GUT_MeV": 2.441277562069814e-28,
+    "T92_GUT_to_T91_ratio": 1.5949688299735337e-20
+  },
+  "phase_1_seesaw_2x2": {
+    "results": {
+      "H": [
+        [
+          0.0,
+          8.843872724058743e-05
+        ],
+        [
+          8.843872724058743e-05,
+          0.51099895069
+        ]
+      ],
+      "eigenvalues_full": [
+        -1.5306114094944176e-08,
+        0.510998965996114
+      ],
+      "light_eigenvalue_full": -1.5306114094944176e-08,
+      "heavy_eigenvalue_full": 0.510998965996114,
+      "light_eigenvalue_leading_PT": -1.530611455341308e-08,
+      "relative_error_leading_vs_full": 2.995331720430392e-08
+    },
+    "light_eigenvalue_MeV": 1.5306114094944176e-08,
+    "light_eigenvalue_eV": 0.015306114094944177,
+    "ratio_to_m_e": 2.995331805334705e-08,
+    "ratio_to_phi_neg_36": 0.9999999700466825,
+    "leading_PT_matches_full_at": "relative error 2.995e-08"
+  },
+  "phase_2_icosahedron_itinerant": {
+    "edge_count_verified": 30,
+    "expected_30": true,
+    "lightest_eigenvalue_MeV": -1.1041211540206034e-08,
+    "lightest_eigenvalue_abs_MeV": 1.1041211540206034e-08,
+    "lightest_eigenvalue_eV": 0.011041211540206035,
+    "ratio_to_m_e": 2.160711196235751e-08,
+    "ratio_to_phi_neg_36": 0.7213595260688791
+  },
+  "closure_status": {
+    "tier": "Tier 3: consistency arithmetic with a chosen effective scale (M_R^eff = m_e); not an independent verification",
+    "claim": "With M_R^eff = m_e chosen to match, the 2x2 See-Saw light eigenvalue equals m_e * phi^(-36) identically, and it survives a subdominant itinerant hopping (t = m_e * phi^(-42), chosen below the See-Saw eigenvalue) on a 12-vertex (A_g sector of H_3) lattice. With the E_6 GUT scale (Theorem 9.2) the See-Saw term is ~20 orders of magnitude smaller. The effective scale is not derived from the lattice.",
+    "what_is_NOT_closed": "Full 6D non-perturbative lattice simulation with all H_3 irreps (Protocol G full HPC). The icosahedrally-reduced 12-vertex sector confirms the A_g (totally-symmetric) mode scaling; sub-leading irreps (T_1u, T_2u, etc) and oscillation parameter (PMNS) extraction require the full HPC calculation.",
+    "scope_note": "H.2.3 is open: the reduced-sector checks are consistency arithmetic given the chosen effective scale; a lattice derivation of that scale and full HPC closure (all icosahedral irreps + thermal disorder + oscillation parameters) remain research-level."
+  }
+}

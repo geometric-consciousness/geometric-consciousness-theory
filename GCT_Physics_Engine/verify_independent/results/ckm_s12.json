@@ -1,20 +1,23 @@
 {
   "name": "ckm_s12",
-  "app_r_label": "CKM s12",
+  "app_psc_label": "CKM s12",
   "formula": "s12 = phi^-3 * (1 - 5 alpha)",
-  "tier": "Tier 2 bare + Tier 3 lepton-to-hadron transfer correction pending O.5",
-  "predicted": 0.22745462119500365,
-  "observed": 0.225,
+  "tier": "Tier 3 bare identification (raw-frame phi^-3) + Tier 3 lepton-to-hadron transfer correction pending O.5 + Tier 4 as evidence that phi explains the value (constant control test v3 NEGATIVE-FRAGILE; App PSC \u00a7PSC.9.6)",
+  "predicted": 0.22745462119496657,
+  "observed": 0.22501,
+  "reference_class": "EMPIRICAL_ANCHOR",
+  "band_outcome": "OUTSIDE_VERIFIER_BAND",
+  "derivational_closure": "NO_DERIVATIONAL_CLOSURE_FLAG",
   "unit": "(dimensionless)",
-  "app_r_predicted": 0.2275,
-  "app_r_precision_str": "1.09%",
-  "app_r_precision_ppm": 10900.0,
-  "independent_precision_ppm": 10909.427533349522,
+  "app_psc_predicted": 0.2275,
+  "app_psc_precision_str": "1.09%",
+  "app_psc_precision_ppm": 10900.0,
+  "independent_precision_ppm": 10864.500222063814,
   "status": "TENSION",
   "tolerance_ppm": 5000.0,
   "discrepancy_notes": [],
   "extra": {
-    "percent_error": 1.0909427533349523,
+    "percent_error": 1.0864500222063815,
     "precision_gate_percent": 0.5
   }
 }

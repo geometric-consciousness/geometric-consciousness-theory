@@ -1,0 +1,105 @@
+{
+  "argument_structure": {
+    "inputs_used": [
+      "Input 1: H_3 invariant-degree sum D=18 (Tier 1 Coxeter algebra; Tier 2 identification conditional on the irreducible icosahedral premise)",
+      "Input 2: Icosahedral RG step b=phi (Perron eigenvalue of Fibonacci substitution; AKN tile inflation factor; Senechal 1995 Sec 2.5; Tier 2)",
+      "Input 3: Symmetry-adapted RG bookkeeping (each fundamental invariant of degree d_n contributes d_n * log(phi) to log(K_parallel/K_perp))"
+    ],
+    "conclusion": "K_perp / K_parallel = phi^(-D) = phi^(-18)",
+    "tier": "Tier 3 numerical heuristic anchored by Tier 2 canonical Coxeter integer (structural)"
+  },
+  "groups_compared": {
+    "A_3": {
+      "degrees": [
+        2,
+        3,
+        4
+      ],
+      "per_invariant_contributions": [
+        0.9624236501192069,
+        1.4436354751788105,
+        1.9248473002384139
+      ],
+      "sum_log_ratio": 4.330906425536432,
+      "sum_degrees": 9,
+      "ratio_K_perp_over_K_parallel": 0.013155617496424831,
+      "ratio_as_phi_power": -9,
+      "group_name": "A_3",
+      "rank": 3,
+      "matches_GCT_phi_neg_18": false
+    },
+    "B_3": {
+      "degrees": [
+        2,
+        4,
+        6
+      ],
+      "per_invariant_contributions": [
+        0.9624236501192069,
+        1.9248473002384139,
+        2.887270950357621
+      ],
+      "sum_log_ratio": 5.774541900715242,
+      "sum_degrees": 12,
+      "ratio_K_perp_over_K_parallel": 0.0031056200151418564,
+      "ratio_as_phi_power": -12,
+      "group_name": "B_3",
+      "rank": 3,
+      "matches_GCT_phi_neg_18": false
+    },
+    "H_3": {
+      "degrees": [
+        2,
+        6,
+        10
+      ],
+      "per_invariant_contributions": [
+        0.9624236501192069,
+        2.887270950357621,
+        4.8121182505960345
+      ],
+      "sum_log_ratio": 8.661812851072863,
+      "sum_degrees": 18,
+      "ratio_K_perp_over_K_parallel": 0.00017307027171223916,
+      "ratio_as_phi_power": -18,
+      "group_name": "H_3",
+      "rank": 3,
+      "matches_GCT_phi_neg_18": true
+    },
+    "H_4": {
+      "degrees": [
+        2,
+        12,
+        20,
+        30
+      ],
+      "per_invariant_contributions": [
+        0.9624236501192069,
+        5.774541900715242,
+        9.624236501192069,
+        14.436354751788103
+      ],
+      "sum_log_ratio": 30.797556803814622,
+      "sum_degrees": 64,
+      "ratio_K_perp_over_K_parallel": 4.214936382002263e-14,
+      "ratio_as_phi_power": -64,
+      "group_name": "H_4",
+      "rank": 4,
+      "matches_GCT_phi_neg_18": false
+    }
+  },
+  "bookkeeping_identity_check": {
+    "predicted_exponent": -18,
+    "derived_exponent": -18,
+    "match": true,
+    "predicted_value": 0.00017307027171223924,
+    "derived_value": 0.00017307027171223916,
+    "relative_error": 4.698389973733563e-16
+  },
+  "closure_status": {
+    "tier": "Tier 3 numerical heuristic anchored by Tier 2 canonical Coxeter integer",
+    "what_is_reproduced": "Under three declared inputs (H_3 Shephard-Todd D=18 + icosahedral RG step b=phi + symmetry-adapted bookkeeping), the bookkeeping returns K_perp/K_parallel = phi^(-18). This is a Tier 3 conditional physical-link calculation, not a derivation of the RG rule.",
+    "what_remains_open": "First-principles derivation of the 'd_n * log(phi) per fundamental invariant' anomalous-dimension bookkeeping from explicit one-loop integration of the LRT free energy on the AKN lattice. The physical link remains Tier 3 pending O.15(b) and bundles with O.5 QLQCD-1L (same non-perturbative-lattice machinery).",
+    "scope_caveat": "The protocol IMPLEMENTS the dimensional-RG bookkeeping; it does not DERIVE the bookkeeping from a first-principles loop calculation. Two inputs are taken as principled but not derived in-protocol: (a) the icosahedral RG step b=phi, (b) the per-invariant contribution d_n * log(phi)."
+  }
+}

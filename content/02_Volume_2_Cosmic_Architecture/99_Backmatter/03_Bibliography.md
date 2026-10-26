@@ -10,7 +10,7 @@
 * **Gross, E. P.** (1961). "Structure of a Quantized Vortex in Boson Systems." *Nuovo Cimento*, 20(3), 454.
 * **Pitaevskii, L. P.** (1961). "Vortex Lines in an Imperfect Bose Gas." *Soviet Physics JETP*, 13(2), 451.
 * **Leggett, A. J.** (1970). "Can a Solid Be 'Superfluid'?" *Physical Review Letters*, 25(22), 1543.
-* **Kim, E., & Chan, M. H. W.** (2004). "Probable Observation of a Supersolid Helium Phase." *Nature*, 427(6971), 225.
+* **Kim, E., & Chan, M. H. W.** (2004). "Probable Observation of a Supersolid Helium Phase." *Nature*, 427(6971), 225. [The authors later found no measurable period drop attributable to supersolidity in a redesigned cell and attributed the original signal to elastic stiffening effects in the cell rather than supersolidity: Kim, D. Y., & Chan, M. H. W. (2012), "Absence of Supersolidity in Solid Helium in Porous Vycor Glass," *Physical Review Letters*, 109, 155301.]
 
 #### **Acoustic/Analog Gravity**
 * **Unruh, W. G.** (1981). "Experimental Black-Hole Evaporation?" *Physical Review Letters*, 46(21), 1351.
@@ -20,6 +20,7 @@
 #### **Entropic Gravity**
 * **Jacobson, T.** (1995). "Thermodynamics of Spacetime: The Einstein Equation of State." *Physical Review Letters*, 75(7), 1260.
 * **Verlinde, E.** (2011). "On the Origin of Gravity and the Laws of Newton." *Journal of High Energy Physics*, 2011(4), 29.
+* **Verlinde, E. P.** (2017). "Emergent Gravity and the Dark Universe." *SciPost Physics*, 2(3), 016. DOI: 10.21468/SciPostPhys.2.3.016.
 * **Padmanabhan, T.** (2010). "Thermodynamical Aspects of Gravity: New Insights." *Reports on Progress in Physics*, 73(4), 046901.
 
 #### **Dark Matter**
@@ -31,11 +32,15 @@
 #### **MOND**
 * **Milgrom, M.** (1983). "A Modification of the Newtonian Dynamics as a Possible Alternative to the Hidden Mass Hypothesis." *The Astrophysical Journal*, 270, 365.
 * **Bekenstein, J. D.** (2004). "Relativistic Gravitation Theory for the MOND Paradigm." *Physical Review D*, 70(8), 083509.
-* **McGaugh, S. S., Lelli, F., & Schombert, J. M.** (2016). "Radial Acceleration Relation in Rotationally Supported Galaxies." *Physical Review Letters*, 117(20), 201101.
+* **McGaugh, S. S., Lelli, F., & Schombert, J. M.** (2016). "Radial Acceleration Relation in Rotationally Supported Galaxies." *Physical Review Letters*, 117(20), 201101. DOI: 10.1103/PhysRevLett.117.201101; arXiv:1609.05917. [Primary 153-galaxy/2693-point SPARC RAR analysis; Gaussian residual width 0.11 dex, rms scatter 0.13 dex, with negligible intrinsic scatter after the observational-error budget.]
+* **Lelli, F., McGaugh, S. S., Schombert, J. M., & Pawlowski, M. S.** (2017). "One Law to Rule Them All: The Radial Acceleration Relation of Galaxies." *The Astrophysical Journal*, 836(2), 152. DOI: 10.3847/1538-4357/836/2/152; arXiv:1610.08981. [Primary 240-galaxy extension across late types, early types, and dwarf spheroidals; observed scatter $\leq0.13$ dex and intrinsic scatter consistent with zero or extremely small.]
 
 #### **Dark Energy & Cosmology**
 * **Riess, A. G., et al.** (1998). "Observational Evidence from Supernovae for an Accelerating Universe and a Cosmological Constant." *The Astronomical Journal*, 116(3), 1009.
 * **Riess, A. G., Yuan, W., Macri, L. M., Scolnic, D., Brout, D., Casertano, S., Jones, D. O., Murakami, Y., Breuval, L., Brink, T. G., et al.** (2022). "A Comprehensive Measurement of the Local Value of the Hubble Constant with 1 km s⁻¹ Mpc⁻¹ Uncertainty from the Hubble Space Telescope and the SH0ES Team." *The Astrophysical Journal Letters*, 934, L7. DOI: 10.3847/2041-8213/ac5c5b.
+* **Freedman, W. L., Madore, B. F., Jang, I. S., Hoyt, T. J., Lee, A. J., & Owens, K. A.** (2024). "Status Report on the Chicago-Carnegie Hubble Program (CCHP): Measurement of the Hubble Constant Using the Hubble and James Webb Space Telescopes." arXiv:2408.06153. [The v1 values cited in Ch14 are TRGB $69.85\pm1.75_{stat}\pm1.54_{sys}$ and JAGB $67.96\pm1.85_{stat}\pm1.90_{sys}$ km s$^{-1}$ Mpc$^{-1}$; later arXiv revisions use expanded samples and updated values.]
+* **Scolnic, D., Riess, A. G., Wu, J., Li, S., Anand, G. S., Beaton, R., Casertano, S., Anderson, R., Dhawan, S., & Ke, X.** (2023). "CATS: The Hubble Constant from Standardized TRGB and Type Ia Supernova Measurements." arXiv:2304.06693. [Baseline $H_0=73.22\pm2.06$ km s$^{-1}$ Mpc$^{-1}$.]
+* **Anand, G. S., Tully, R. B., Rizzi, L., Riess, A. G., & Yuan, W.** (2022). "Comparing Tip of the Red Giant Branch Distance Scales: An Independent Reduction of the Carnegie-Chicago Hubble Program and the Value of the Hubble Constant." *The Astrophysical Journal*, 932, 15. DOI: 10.3847/1538-4357/ac68df. [$H_0=71.5\pm1.8$ km s$^{-1}$ Mpc$^{-1}$.]
 * **Perlmutter, S., et al.** (1999). "Measurements of $\Omega$ and $\Lambda$ from 42 High-Redshift Supernovae." *The Astrophysical Journal*, 517(2), 565.
 * **DESI Collaboration.** (2024). "DESI 2024 VI: Cosmological Constraints from the Measurements of Baryon Acoustic Oscillations." *arXiv:2404.03002*.
 * **DESI Collaboration: M. Abdul Karim et al.** (2025). "DESI DR2 Results II: Measurements of Baryon Acoustic Oscillations and Cosmological Constraints." arXiv:2503.14738.

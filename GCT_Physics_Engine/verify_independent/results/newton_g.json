@@ -1,32 +1,41 @@
 {
   "name": "newton_g",
-  "app_r_label": "Newton's G (Jacobson horizon chain)",
-  "formula": "a_6 = (2 \u0127 / (m_e c)) \u00b7 \u03c6^-107 \u00b7 (1 - 5\u03b1); G = c^3 a_6^2 / (4 \u0127)",
-  "tier": "Tier 2 thermodynamic mechanism + Tier 4 Planck-link conjecture (inherits O.14) + Tier 3 dimensional anchor",
-  "predicted": 6.689475518614076e-11,
+  "app_psc_label": "Newton's G (Jacobson horizon chain)",
+  "formula": "a_6 = (2 \u0127 / (m_e c)) \u00b7 \u03c6^-107 \u00b7 (1 - 5\u03b1_GCT), \u03b1_GCT=\u03c6^2/360; G = c^3 a_6^2 / (4 \u0127)",
+  "tier": "Tier 2 thermodynamic mechanism + Tier 4 Planck-link conjecture (inherits O.14) + Tier 3 dimensional anchor + Tier 4 as evidence that phi explains the value (constant control test v3 NEGATIVE-FRAGILE; App PSC \u00a7PSC.9.6)",
+  "predicted": 6.689475522712847e-11,
   "observed": 6.6743e-11,
+  "reference_class": "EMPIRICAL_ANCHOR",
+  "band_outcome": "OUTSIDE_VERIFIER_BAND",
+  "derivational_closure": "NO_DERIVATIONAL_CLOSURE_FLAG",
   "unit": "m^3 kg^-1 s^-2",
-  "app_r_predicted": 6.68948e-11,
-  "app_r_precision_str": "2274 ppm postdiction; Tier 2 thermodynamic mechanism + Tier 4 Planck-link conjecture (inherits O.14) + Tier 3 dimensional anchor",
-  "app_r_precision_ppm": 2274.0,
-  "independent_precision_ppm": 2273.7243776990726,
-  "status": "PASS",
-  "tolerance_ppm": 5000.0,
+  "app_psc_predicted": 6.689475522712847e-11,
+  "app_psc_precision_str": "2273.725 ppm (display 2274 ppm) on model-authoritative alpha_GCT=phi^2/360 with CODATA m_e and exact SI h,c; Tier 2 thermodynamic mechanism + Tier 4 Planck-link conjecture (inherits O.14) + Tier 3 dimensional anchor",
+  "app_psc_precision_ppm": 2273.724991811475,
+  "independent_precision_ppm": 2273.724991811475,
+  "status": "FAIL",
+  "tolerance_ppm": 2000.9999999996974,
   "discrepancy_notes": [],
   "extra": {
     "branch_A_alpha_gct_codata_anchors": {
       "alpha": 0.007272316635416375,
-      "a_6_m": 3.2361828797391343e-35,
-      "G_pred": 6.689475518614076e-11,
-      "ppm_vs_CODATA_G": 2273.7243776990726,
-      "note": "GCT-bare \u03b1 with CODATA-2022 m_e, hbar, c. True independent re-derivation."
+      "a_6_m": 3.236182881722006e-35,
+      "G_pred": 6.689475522712847e-11,
+      "ppm_vs_CODATA_G": 2273.724991811475,
+      "same_branch_electron_equivalent_ppm": 1136.2170013686778,
+      "note": "Model-authoritative GCT-bare \u03b1 with CODATA-2022 m_e and exact SI hbar, c."
     },
     "branch_B_alpha_codata_codata_anchors": {
-      "alpha": 0.0072973525643,
-      "a_6_m": 3.235762489460908e-35,
-      "G_pred": 6.687737663911304e-11,
-      "ppm_vs_CODATA_G": 2013.3443074636255,
-      "note": "CODATA \u03b1 throughout \u2014 alt branch for sensitivity to \u03b1."
-    }
+      "alpha": 0.0072973525643314245,
+      "a_6_m": 3.235762491442994e-35,
+      "G_pred": 6.68773766800683e-11,
+      "ppm_vs_CODATA_G": 2013.34492108997,
+      "same_branch_electron_equivalent_ppm": 1006.1662752582912,
+      "note": "All-CODATA-\u03b1 sensitivity branch; not the model-authoritative output."
+    },
+    "inherited_rule": "P.1c LOCKED 1000 ppm electron rule -> (1.001)^2 - 1 = 2001 ppm on G; both branches miss it, so the row inherits P.1c's FAIL and is not an independent pass",
+    "sigma_vs_CODATA_G_uncertainty_branch_A": 103.35113599143068,
+    "sigma_vs_CODATA_G_uncertainty_branch_B": 91.51567823136227,
+    "cascade_invariant": "G/G_CODATA = (1 + electron_equivalent_residual)^2; branch A: 1136.217001 ppm -> 2273.724992 ppm; branch B: 1006.166275 ppm -> 2013.344921 ppm."
   }
 }

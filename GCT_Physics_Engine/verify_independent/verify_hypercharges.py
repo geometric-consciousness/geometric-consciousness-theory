@@ -105,13 +105,13 @@ def main():
 
     res = make_result(
         name="hypercharges_and_anomaly_cancellation",
-        app_r_label="Right-handed hypercharges Y_R = 2Q + four-anomaly SM cancellation",
+        app_psc_label="Right-handed hypercharges Y_R = 2Q + four-anomaly SM cancellation",
         formula="Y_R = 2Q (right-handed singlets); [SU(3)]^2 U(1), [SU(2)]^2 U(1), grav^2 U(1), [U(1)]^3 anomalies all vanish",
         predicted=total_max_resid,
         observed=0.0,
         unit="(L_inf residual across right-handed identity + four anomaly traces)",
-        app_r_predicted=0.0,
-        app_r_precision_str=(
+        app_psc_predicted=0.0,
+        app_psc_precision_str=(
             "Right-handed singlet identity Y_R = 2Q exact; "
             "four SM anomaly conditions all evaluate to 0 to machine precision "
             "with Y_Q=+1/3, Y_u=+4/3, Y_d=-2/3, Y_L=-1, Y_e=-2 (Q = T_3 + Y/2 convention). "
@@ -120,9 +120,9 @@ def main():
             f"grav^2 U(1) = {A_grav:.2e}, "
             f"[U(1)]^3 = {A_u1_cube:.2e}."
         ),
-        app_r_precision_ppm=0.0,
-        tier="Tier 1 algebraic identity (anomaly cancellation is the standard SM textbook identity check per Bilal 2008 §7.3 given the L/R-asymmetric hypercharge assignment) + Tier 2 GCT-specific L/R-asymmetric assignment Y_R = 2Q (App R §R.2.2)",
-        status="PASS" if all_pass else "FAIL",
+        app_psc_precision_ppm=0.0,
+        tier="Tier 1 algebraic identity (anomaly cancellation is the standard SM textbook identity check per Bilal 2008 §7.3 given the L/R-asymmetric hypercharge assignment) + Tier 2 GCT-specific L/R-asymmetric assignment Y_R = 2Q (App PSC §PSC.2.2)",
+        status="TIER1_EXACT" if all_pass else "FAIL",
         tolerance_ppm=None,
         extra={
             "right_handed_singlet_check": {
@@ -155,7 +155,7 @@ def main():
                 "doublet multiplicity is the load-bearing structure; the "
                 "anomaly cancellation is the standard textbook consistency "
                 "of the SM particle content, here verified explicitly on "
-                "GCT's identified hypercharges (App R §R.6)."
+                "GCT's identified hypercharges (App PSC §PSC.6)."
             ),
         },
     )

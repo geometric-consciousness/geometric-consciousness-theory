@@ -78,6 +78,7 @@
     "tau_screening_ratio": "-18/5",
     "tau_screening_float": -3.6
   },
+  "D2_status": "INPUT: D = 6+6+6 and N = 5 are typed; c = -D/N is a Tier 3 rule pending O.26b; excluded from pass",
   "pass": true,
   "verdict": "PASS"
 }

@@ -24,12 +24,52 @@ with open(METADATA_PATH, "r", encoding="utf-8") as _f:
     METADATA = json.load(_f)
 
 ORDERED_SECTIONS = METADATA["ordered_sections"]
+APPENDIX_ORDER = METADATA["appendix_order"]
+APPENDIX_ORDER_INDEX = {
+    appendix_id: index for index, appendix_id in enumerate(APPENDIX_ORDER)
+}
+
+# Files whose canonical reading position cannot be represented by natural
+# filename sorting alone.  The effective-action bridge belongs after Chapter
+# 4 even though its historical ``Ch04_00_`` filename sorts before Chapter 4.
+# Keep the filename stable: chapter identifiers and external references must
+# not be renumbered merely to control build traversal.
+READ_AFTER = {
+    "Ch04_00_Effective_Action_Bridge.md": "Ch04_Lattice_Dynamics.md",
+}
 
 
 def natural_sort_key(path: Path):
     """Sort paths with numbers naturally (1, 2, 10 instead of 1, 10, 2)."""
     return [int(text) if text.isdigit() else text.lower()
             for text in re.split(r'(\d+)', path.name)]
+
+
+def ordered_directory_entries(directory: Path):
+    """Return directory entries in canonical order."""
+    entries = list(directory.iterdir())
+    if directory == CONTENT_DIR / "98_Global_Appendices":
+        def appendix_sort_key(path: Path):
+            match = re.match(r"^App_([A-Z]+)_", path.name)
+            if match:
+                return (0, APPENDIX_ORDER_INDEX.get(match.group(1), len(APPENDIX_ORDER)))
+            return (1, natural_sort_key(path))
+        ordered = sorted(entries, key=appendix_sort_key)
+    else:
+        ordered = sorted(entries, key=natural_sort_key)
+
+    # Apply explicit local reading-order constraints after the base sort.
+    # A constraint is active only when both files are siblings in this
+    # directory; unrelated directories therefore retain their natural order.
+    by_name = {entry.name: entry for entry in ordered}
+    for dependent_name, anchor_name in READ_AFTER.items():
+        dependent = by_name.get(dependent_name)
+        anchor = by_name.get(anchor_name)
+        if dependent is None or anchor is None:
+            continue
+        ordered.remove(dependent)
+        ordered.insert(ordered.index(anchor) + 1, dependent)
+    return ordered
 
 
 def parse_header_title(path: Path, level: int) -> str:
@@ -71,7 +111,7 @@ def walk_content_files():
                     print(f"[WARNING] Expected section not found: {section_name}",
                           file=sys.stderr)
         else:
-            entries = sorted(list(directory.iterdir()), key=natural_sort_key)
+            entries = ordered_directory_entries(directory)
 
         for entry in entries:
             if entry.name.startswith("."):

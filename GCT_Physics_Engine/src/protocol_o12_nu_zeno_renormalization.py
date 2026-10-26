@@ -4,21 +4,23 @@ protocol_o12_nu_zeno_renormalization.py
 ========================================
 
 Order-of-magnitude estimate of the chiral phonon-polariton frequency-
-scale renormalization factor for nu_Zeno = 112 MHz. Partial closure of
-Open Problem O.12.
+scale renormalization factor for nu_Zeno = 112 MHz: a Tier 3
+order-of-magnitude estimate for Open Problem O.12 (no closure).
 
-REGISTERED PROBLEM (App H O.12)
+REGISTERED PROBLEM (App ORQ O.12)
 
-Reaching the registered nu_Zeno = 112 MHz from the tubulin-Trp bare
-Delta_ST/h in [10, 20] MHz requires a chiral phonon-polariton frequency-scale
-renormalization factor of ~ 6-11x. The full Tier 2 closure asks for this
+Reaching the registered nu_Zeno = 112 +/- 10 MHz (a Tier 3 branch value) from
+the TrpH+ effective hyperfine scale ~27 MHz (0.97 mT; larger than FAD- ~20 MHz,
+Wong, Benjamin & Hore 2023) requires a residual frequency-scale factor of
+~4x (3.7-4.5x). The earlier 10-20 MHz indole band and 6-11x factor are withdrawn. The full Tier 2 closure asks for this
 factor to be derived from first principles via the chiral phonon-polariton
 avoided-crossing RG flow on the magnon dispersion.
 
 Scope: this protocol estimates the O.12 frequency-scale burden at Tier 3; full Tier 2 closure requires the first-principles RG derivation.
 
-This protocol provides an ORDER-OF-MAGNITUDE ESTIMATE consistent with
-the required 6-11x range, NOT a first-principles RG derivation. The
+This protocol provides an ARITHMETIC ESTIMATE of the coupling the two-level
+formula would need for the ~4x residual factor, NOT a consistency check or
+a first-principles RG derivation. The
 estimate uses the standard two-level avoided-crossing dressing formula
 from atom-photon coupling theory (Cohen-Tannoudji, Dupont-Roc, Grynberg
 1992 "Atom-Photon Interactions" §IV.C):
@@ -28,10 +30,10 @@ from atom-photon coupling theory (Cohen-Tannoudji, Dupont-Roc, Grynberg
 where g is the coupling strength between the bare two-level system and
 the continuum mode (here, the chiral phonon-polariton).
 
-For nu_renorm/nu_bare in [5.6, 11.2], the required dimensionless coupling
+For nu_renorm/nu_bare in [3.75, 4.49], the required dimensionless coupling
 ratio is:
   g / nu_bare = (1/2) sqrt((nu_renorm/nu_bare)^2 - 1)
-              in [2.76, 5.59]
+              in [1.81, 2.19]
 
 The literature-supported CISS input is a spin-polarization percentage band,
 not a measured g/nu_bare coupling interval. The operative biological target is
@@ -42,21 +44,22 @@ Trp-like chiral microenvironments, not as a measured beta-tubulin coupling.
 Mapping those polarization data to the model's g/nu_bare target is a Tier 3
 translation, not a literature-derived CISS envelope.
 
-VERDICT: TIER 3 PARTIAL CLOSURE
+VERDICT: TIER 3 ORDER-OF-MAGNITUDE ESTIMATE
 
-The 6-11x renormalization factor required to reach nu_Zeno = 112 MHz
-from the tubulin-Trp 10-20 MHz singlet-triplet splitting is order-of-magnitude
-consistent with standard chiral phonon-polariton avoided-crossing
-physics at strong chiral phonon-polariton coupling strengths
-g/nu_bare in [2.76, 5.59].
+The ~4x (3.7-4.5x) residual factor required to reach the 112 +/- 10 MHz branch
+window from the TrpH+ ~27 MHz scale corresponds to g/nu_bare in [1.81, 2.19]
+in the two-level avoided-crossing formula. The earlier model-defined target
+[2.5, 6.0] was set for the withdrawn 10-20 MHz band and is retained only for
+comparison; the required range does not fall inside it.
 
-This is a CONSISTENCY CHECK at the dimensional/scale level, NOT a
-first-principles derivation. Full Tier 2 closure of O.12 requires:
+This is an ARITHMETIC ESTIMATE of the coupling the two-level formula would
+need (a formula inversion), NOT a consistency check or a first-principles
+derivation. Full Tier 2 closure of O.12 requires:
   - Deriving g from the icosahedral AKN tiling structure + CISS spin-
     polarization at Trp microenvironments
   - Explicit RG flow on the magnon dispersion (not a simple two-level
     avoided-crossing formula)
-  - Coupling to the App Q renormalization framework (~41x factor for
+  - Coupling to the App GPE renormalization framework (~41x factor for
     g_single^eff)
 """
 
@@ -70,14 +73,17 @@ try:
 except ImportError:
     OUTPUT_DIR_AVAILABLE = False
 
-# Bare tubulin-Trp singlet-triplet splitting range (Ch13 Sec 13.1.2b)
-NU_BARE_MIN_MHZ = 10.0
-NU_BARE_MAX_MHZ = 20.0
+# Bare scale: TrpH+ effective hyperfine 0.97 mT (Wong, Benjamin & Hore 2023,
+# PCCP 25:975), larger than FAD- 0.70 mT. The earlier 10-20 MHz band is withdrawn.
+MHZ_PER_MT = 28.025
+NU_BARE_MHZ = 0.97 * MHZ_PER_MT  # ~27.2 MHz
+NU_BARE_FAD_MHZ = 0.70 * MHZ_PER_MT  # ~19.6 MHz (reference)
 
-# Target frequency (Ch13 Sec 13.1.2b)
+# Registered Tier 3 branch window (Ch13 Sec 13.1.2b); a branch value, not an observation
 NU_TARGET_MHZ = 112.0
+NU_TARGET_HALFWIDTH_MHZ = 10.0
 
-# CISS spin-polarization range (Naaman+ 2019/App X protein operative band)
+# CISS spin-polarization range (Naaman+ 2019/App BEB protein operative band)
 CISS_EFFICIENCY_MIN = 0.05
 CISS_EFFICIENCY_MAX = 0.20
 # DNA-equivalent ordered-helix stress-test upper edge; not the operative
@@ -101,11 +107,11 @@ def main():
     print("=" * 76)
 
     print(f"\nInputs:")
-    print(f"  Bare singlet-triplet splitting Delta_ST/h : {NU_BARE_MIN_MHZ}-{NU_BARE_MAX_MHZ} MHz")
+    print(f"  Bare TrpH+ effective hyperfine            : {NU_BARE_MHZ:.1f} MHz (FAD- {NU_BARE_FAD_MHZ:.1f} MHz)")
     print(f"  Target nu_Zeno                             : {NU_TARGET_MHZ} MHz")
 
-    ratio_min = NU_TARGET_MHZ / NU_BARE_MAX_MHZ  # 112/20 = 5.6
-    ratio_max = NU_TARGET_MHZ / NU_BARE_MIN_MHZ  # 112/10 = 11.2
+    ratio_min = (NU_TARGET_MHZ - NU_TARGET_HALFWIDTH_MHZ) / NU_BARE_MHZ  # ~3.75
+    ratio_max = (NU_TARGET_MHZ + NU_TARGET_HALFWIDTH_MHZ) / NU_BARE_MHZ  # ~4.49
 
     print(f"\nRequired renormalization factor             : "
           f"{ratio_min:.1f}-{ratio_max:.1f}x")
@@ -120,35 +126,37 @@ def main():
     print(f"\nCISS-mediated coupling envelope (Tier 3 anchor):")
     print(f"  CISS spin-polarization efficiency        : {CISS_EFFICIENCY_MIN:.0%}-{CISS_EFFICIENCY_MAX:.0%}")
     print(f"  (Naaman-Paltiel-Waldeck 2019 Nat. Rev. Chem. 3:250)")
-    print(f"  Model-defined g/nu_bare target            : 2.5-6.0 (operative O.12 burden)")
+    print(f"  Earlier model-defined target (comparison only): 2.5-6.0")
 
     consistent = (g_min >= 2.5 and g_max <= 6.0)
 
     print(f"\n" + "=" * 76)
-    print("VERDICT FOR O.12 (Tier 3 order-of-magnitude partial closure)")
+    print("VERDICT FOR O.12 (Tier 3 order-of-magnitude estimate; no closure)")
     print("=" * 76)
     print(f"  Required g/nu_bare range                  : [{g_min:.2f}, {g_max:.2f}]")
-    print(f"  Operative O.12 g/nu_bare target           : [2.5, 6.0]")
+    print(f"  Earlier model target (comparison only)    : [2.5, 6.0]")
     print(f"  Required range fits model target          : {consistent}")
     print(f"")
-    print(f"  The 6-11x renormalization factor required for nu_Zeno = 112 MHz")
-    print(f"  is order-of-magnitude consistent with standard chiral phonon-")
-    print(f"  polariton avoided-crossing physics at CISS-mediated coupling")
-    print(f"  strengths.")
+    print(f"  The ~4x residual factor (TrpH+ ~27 MHz to the 112 +/- 10 MHz branch window)")
+    print(f"  needs g/nu_bare in [{g_min:.2f}, {g_max:.2f}]; the earlier [2.5, 6.0] target")
+    print(f"  was set for the withdrawn 10-20 MHz band and is reported for comparison only.")
     print(f"")
-    print(f"  STATUS: TIER 3 PARTIAL CLOSURE (order-of-magnitude consistency only).")
+    print(f"  STATUS: TIER 3 ORDER-OF-MAGNITUDE ESTIMATE (no closure claimed).")
     print(f"  NOT a first-principles RG derivation. Full Tier 2 closure of O.12")
     print(f"  requires:")
     print(f"    - Deriving g from the icosahedral AKN tiling + CISS at Trp")
     print(f"      microenvironments")
     print(f"    - Explicit RG flow on the magnon dispersion (not avoided crossing)")
-    print(f"    - Coupling to App Q renormalization framework (~41x g_single^eff)")
+    print(f"    - Coupling to App GPE renormalization framework (~41x g_single^eff)")
     print("=" * 76)
 
     out = {
-        "NU_BARE_MIN_MHZ": NU_BARE_MIN_MHZ,
-        "NU_BARE_MAX_MHZ": NU_BARE_MAX_MHZ,
+        "NU_BARE_MHZ": NU_BARE_MHZ,
+        "NU_BARE_FAD_MHZ": NU_BARE_FAD_MHZ,
+        "bare_scale_source": "Wong, Benjamin & Hore 2023, PCCP 25:975-982 (TrpH+ 0.97 mT; FAD- 0.70 mT)",
+        "withdrawn_inputs": "10-20 MHz indole band and 6-11x factor",
         "NU_TARGET_MHZ": NU_TARGET_MHZ,
+        "NU_TARGET_HALFWIDTH_MHZ": NU_TARGET_HALFWIDTH_MHZ,
         "required_ratio_min": ratio_min,
         "required_ratio_max": ratio_max,
         "required_g_over_nu_bare_min": g_min,
@@ -161,11 +169,12 @@ def main():
         "model_defined_g_over_nu_bare_target": [2.5, 6.0],
         "required_range_fits_model_target": consistent,
         "g_over_nu_scope": "The g/nu_bare interval is a GCT model-defined strong-coupling target inferred from avoided-crossing bookkeeping; CISS literature supplies spin-polarization percentages, not a direct coupling interval.",
-        "tier_label": "Tier 3 order-of-magnitude partial closure (consistency only, NOT first-principles RG)",
+        "model_target_note": "The [2.5, 6.0] target was set for the withdrawn 10-20 MHz band; reported for comparison only.",
+        "tier_label": "Tier 3 order-of-magnitude estimate (no closure claimed; NOT first-principles RG)",
         "full_tier_2_closure_requires": [
             "Deriving g from icosahedral AKN tiling + CISS at Trp microenvironments",
             "Explicit RG flow on magnon dispersion (not avoided crossing)",
-            "Coupling to App Q renormalization framework (~41x g_single^eff)",
+            "Coupling to App GPE renormalization framework (~41x g_single^eff)",
         ],
     }
     if OUTPUT_DIR_AVAILABLE:

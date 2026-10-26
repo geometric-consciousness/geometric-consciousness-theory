@@ -1,20 +1,25 @@
 {
   "name": "charm_quark",
-  "app_r_label": "Charm quark (m_c)",
+  "app_psc_label": "Charm quark (m_c)",
   "formula": "m_c = m_u \u00b7 \u03c6^(13 + \u03c6^-3)",
-  "tier": "Tier 3 (Mixed-Harmonic ansatz, N=17 second-harmonic)",
+  "tier": "Tier 3 (Mixed-Harmonic ansatz, N=17 second-harmonic) + Tier 4 as evidence that phi explains the value (constant control test v3 NEGATIVE-FRAGILE; App PSC \u00a7PSC.9.6)",
   "predicted": 1263.4484934507473,
   "observed": 1273.0,
+  "reference_class": "EMPIRICAL_ANCHOR",
+  "band_outcome": "INSIDE_VERIFIER_BAND",
+  "derivational_closure": "NO_DERIVATIONAL_CLOSURE_FLAG",
   "unit": "MeV",
-  "app_r_predicted": 1263.45,
-  "app_r_precision_str": "0.75%",
-  "app_r_precision_ppm": 7503.0,
+  "app_psc_predicted": 1263.45,
+  "app_psc_precision_str": "0.75%",
+  "app_psc_precision_ppm": 7503.0,
   "independent_precision_ppm": 7503.1473285567445,
   "status": "PASS",
-  "tolerance_ppm": 10000.0,
+  "tolerance_ppm": 30000.0,
   "discrepancy_notes": [],
   "extra": {
     "percent_error_manuscript_branch": 0.7503147328556744,
+    "sigma_vs_pdg": 2.076414467228856,
+    "band_source": "registry P.22: m_c outside +/- 3% (30000 ppm)",
     "engine_branch_note": "Engine uses FK\u00b2_charm in place of \u03c6^(13+\u03c6^-3). Both branches happen to give ~1263 MeV due to FK calibration. Manuscript branch value is reproducible from the prose formula."
   }
 }

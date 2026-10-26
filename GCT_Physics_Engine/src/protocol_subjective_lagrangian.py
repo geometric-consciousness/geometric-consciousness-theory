@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-protocol_subjective_lagrangian.py — The Quantitative Calculus of Volition
-=========================================================================
-Simulates the Subjective Lagrangian for three canonical
-mental states, deriving the metabolic (ATP) cost of Topological
-Torque — the physical substrate of Willpower.
+protocol_subjective_lagrangian.py — Subjective Lagrangian surrogate arithmetic
+================================================================================
+Historical Tier 3/4 surrogate arithmetic for three labelled states: it
+evaluates the metabolic (ATP) cost that the surrogate "topological torque"
+model would require. It carries no volition, phason, Selection-Operator or
+Level-II inference (V1 Ch17 §17.1.3); the state labels are narrative names for
+input regimes, and the registered result is the budget tension of State C.
 
 Physical Model:
     The Subjective Lagrangian L_S = T_internal - V_consensus,
@@ -22,8 +24,8 @@ Physical Model:
 Declared Model Inputs (SSOT constants plus local Tier 3 VSE anchors):
     K_perp         = phi^-18 * K_parallel = 1.143e-5 N/m  (phason stiffness)
     K_parallel     = 6.603e-2 N/m                         (phonon stiffness)
-    omega_Zeno     = 2*pi*112 MHz                          (Zeno drive frequency)
-    N_bio          = 1.25e8 beta-Trp sensitivity-branch spins (central n_rp=0 pending O.21; hydration shell is bath/environment)
+    nu_Zeno        = 112 MHz                               (cyclic Zeno-drive frequency)
+    N_bio          = 1.625e9 beta-Trp sensitivity-branch spins (central n_rp=0 pending O.21; hydration shell is bath/environment)
     P_neuron_max   = 1.0e-9 W                              (1 nW ATP budget limit)
     eps_ATP        = 0.52 eV = 8.326e-20 J                (1 ATP hydrolysis energy)
     J_screening    = 1e-78                                 (Jacobian of screening)
@@ -51,8 +53,17 @@ K_PERP_RATIO    = PHI ** -18             # dimensionless stiffness ratio
 K_PERP_N_M      = K_PARALLEL_N_M * K_PERP_RATIO   # 1.143e-5 N/m
 
 # Zeno drive parameters (from protocol_zeno_energy_budget)
-OMEGA_ZENO_HZ   = 112.0e6               # primary Protocol A-Prime nuclear-spin Zeno branch
-N_BIO           = 1.25e8                # beta-Trp n_rp=1 sensitivity branch per Ch13:633; central n_rp=0 pending O.21
+NU_ZENO_HZ      = 112.0e6               # primary Protocol A-Prime nuclear-spin Zeno branch
+MT_PER_NEURON = 1.0e5
+PROTOFILAMENTS_PER_MT = 13.0
+DIMERS_PER_PROTOFILAMENT = 1250.0        # 10 um length / 8 nm dimer rise
+N_RP_PER_DIMER_SENSITIVITY = 1.0
+N_BIO = (                               # beta-Trp n_rp=1 sensitivity branch per Ch13 Sec 13.5.3
+    MT_PER_NEURON
+    * PROTOFILAMENTS_PER_MT
+    * DIMERS_PER_PROTOFILAMENT
+    * N_RP_PER_DIMER_SENSITIVITY
+)
 P_NEURON_MAX_W  = 1.0e-9               # 1 nW — hard metabolic ceiling per neuron
 
 # Energy anchors
@@ -136,17 +147,17 @@ def subjective_lagrangian(delta_w: float, coherence_grad: float, friction: float
     neg_entropy_rate_W = coherence_grad * E_LANDAUER_J   # W
 
     # --- Lagrangian density ---
-    L_S = T_internal_J - V_consensus_J + neg_entropy_rate_W / OMEGA_ZENO_HZ
+    L_S = T_internal_J - V_consensus_J + neg_entropy_rate_W / NU_ZENO_HZ
 
     # --- Energy per Zeno cycle ---
-    T_cycle_s = 1.0 / OMEGA_ZENO_HZ
+    T_cycle_s = 1.0 / NU_ZENO_HZ
     work_per_cycle_J = V_consensus_J + T_internal_J
 
     # --- ATP molecules per Zeno cycle ---
     atp_per_cycle = work_per_cycle_J / EPS_ATP_J
 
     # --- Power budget ---
-    power_W = work_per_cycle_J * OMEGA_ZENO_HZ
+    power_W = work_per_cycle_J * NU_ZENO_HZ
 
     # --- Biological scaling across N_BIO spins ---
     power_total_nW = power_W * N_BIO * 1e9   # nW for the whole neuron
@@ -252,7 +263,7 @@ def analyze_willpower_budget(state_c: dict) -> dict:
     fraction_active = n_active_max / N_BIO if n_active_max < N_BIO else 1.0
 
     # Peak ATP rate (ATP/s) for the max-willpower neuron
-    atp_per_second = n_active_max * atp_per_cycle * OMEGA_ZENO_HZ
+    atp_per_second = n_active_max * atp_per_cycle * NU_ZENO_HZ
 
     # Compare to baseline ATP rate (~2 μmol ATP/min per neuron at rest):
     # 1 mol = 6.022e23 molecules; neuron fires ~10 Hz baseline
@@ -296,7 +307,7 @@ def analyze_willpower_budget(state_c: dict) -> dict:
 # VIBRATIONAL STARK EFFECT & CONICAL INTERSECTION DYNAMICS
 # =============================================================================
 
-def compute_stark_conical_intersection(e_field_v_m=1.0e7, omega_zeno_hz=1.0e8) -> dict:
+def compute_stark_conical_intersection(e_field_v_m=1.0e7, nu_zeno_hz=1.0e8) -> dict:
     """
     Compute the Vibrational Stark Effect (VSE) coupling of ATP hydrolysis energy
     to the Tryptophan (Trp) radical pair singlet-triplet dynamics via Conical
@@ -307,12 +318,19 @@ def compute_stark_conical_intersection(e_field_v_m=1.0e7, omega_zeno_hz=1.0e8) -
        electric field E_ATP ~ 10^7 V/m near the Trp pocket (O.34 pending)
     2. The Trp radical pair is highly polarizable (dipole moment ~ 5 D)
     3. Under VSE, the singlet-triplet energy gap shifts: ΔE_ST(E) = ΔE_ST(0) - μ·E
-    4. The 100 MHz Zeno drive provides a resonant Berry Phase
+    4. In the Tier 3 model, a 100 MHz drive (historical material-scan scenario,
+       not a derived Zeno frequency) would provide a resonant Berry Phase
     5. This steers the system through a Conical Intersection, enabling
        non-adiabatic population transfer
     6. The energy is dissipated as chiral phonon-polaritons (not rotation)
 
-    Refs: VSE coupling derivation — V1 Ch17 §17.1.3b
+    Refs: V1 Ch17 §17.1.3b. The reported kappa is the dimensionless
+    Stark-to-CI energy-scale ratio |mu_Trp . E_ATP| / Delta E_CI. It is not a
+    transition probability, an ATP-to-channel efficiency or a steering
+    fraction, and it is not clipped: values above 1 are allowed (propagated
+    Tier 3 input envelope [0.006, 1.5], central 0.104). The legacy JSON keys
+    "transition_probability" and "kappa_atp_to_ci_channel" are kept for
+    compatibility only.
     """
 
     # --- Stark Shift Calculation ---
@@ -332,13 +350,13 @@ def compute_stark_conical_intersection(e_field_v_m=1.0e7, omega_zeno_hz=1.0e8) -
     # The energy splitting at the CI is approximately the exchange interaction.
     ci_gap_ev = 0.01  # eV - typical S1/S0 gap at conical intersection
 
-    # --- Coupling to 100 MHz Zeno Drive ---
+    # --- Coupling to a 100 MHz drive (historical material-scan scenario) ---
     # The Berry Phase from the Zeno drive (topological phase winding)
     # has magnitude proportional to the solid angle subtended.
     # For a phason winding in the e_perp manifold, the Berry phase is:
     # γ_Berry = ∫_path A(R) · dR, where A is the Berry connection
 
-    zeno_frequency_hz = omega_zeno_hz
+    zeno_frequency_hz = nu_zeno_hz
     zeno_energy_ev = (6.62607015e-34 * zeno_frequency_hz) / 1.602176634e-19  # hf in eV
     zeno_energy_j = zeno_frequency_hz * 6.62607015e-34  # hf in joules
 
@@ -350,8 +368,9 @@ def compute_stark_conical_intersection(e_field_v_m=1.0e7, omega_zeno_hz=1.0e8) -
     v_ci_seam_au_s = zeno_frequency_hz * 1e-15  # Arbitrary units: frequency scaling
     delta_e_coupling_ev = abs(delta_e_stark_ev)
 
-    # Transition probability (capped at 1.0)
-    p_transition = min(1.0, delta_e_coupling_ev / (ci_gap_ev + 1e-6))
+    # Dimensionless Stark-to-CI scale ratio (V1 Ch17 §17.1.3b): an energy-scale
+    # ratio, not a probability, so it is not clipped to [0, 1].
+    p_transition = delta_e_coupling_ev / (ci_gap_ev + 1e-6)
 
     # --- ATP Energy Dissipation as Chiral Phonon-Polaritons ---
     # The ATP hydrolysis energy (0.52 eV) is now dissipated as OAM-carrying
@@ -392,7 +411,9 @@ def compute_stark_conical_intersection(e_field_v_m=1.0e7, omega_zeno_hz=1.0e8) -
         "polariton_power_w": power_polariton_w,
         "steering_efficiency": steering_efficiency,
         "kappa_atp_to_ci_channel": p_transition,
-        "physical_outcome": f"ATP energy (0.52 eV) steered via VSE+CI into chiral phonon-polaritons at {zeno_frequency_hz/1e6:.0f} MHz. Stark shift: {delta_e_stark_ev*1000:.3f} meV. ATP-to-CI-channel coupling kappa (transition_probability): {p_transition:.3f} (matches manuscript Ch17 §17.1.3b range 0.1-0.3). Landau-Zener steering efficiency (capped by Zeno-vs-electronic-timescale ratio): {steering_efficiency:.4f}.",
+        "kappa_stark_ci_scale_ratio": p_transition,
+        "kappa_semantics": "dimensionless Stark-to-CI energy-scale ratio (V1 Ch17 §17.1.3b); not a transition probability or efficiency; not clipped; Tier 3 propagated envelope [0.006, 1.5]",
+        "physical_outcome": f"Conditional Tier 3 material-scenario arithmetic: Stark shift {delta_e_stark_ev*1000:.3f} meV against a {ci_gap_ev*1000:.0f} meV CI seam gap gives the dimensionless scale ratio kappa = {p_transition:.3f} (central input; V1 Ch17 §17.1.3b envelope 0.006-1.5). No ATP-to-channel efficiency, steering fraction or phason coupling follows. The heuristic 'steering_efficiency' field ({steering_efficiency:.4f}) is a timescale-ratio diagnostic, not a derived efficiency.",
     }
 
 
@@ -416,9 +437,11 @@ def compute_wgm_resonance(radius=7.5e-9, length=1e-6) -> dict:
     # Whispering gallery modes are higher-order azimuthal resonances.
     # For a dielectric cylinder, the fundamental WGM frequency scales as:
     # f_wgm = (c / (2*pi*r*n_eff)) * m
-    # Here we use the acoustic-matching resonance at the anti-Zeno crossover frequency.
+    # The 150 MHz value is a construction-defined diagnostic anchor. Protocol
+    # A-Prime does not predict its response sign; an anti-Zeno interpretation
+    # requires a specified O.23/O.24 spectral-density branch.
     f_wgm_hz = 1.0 / (radius * 1.33) * 1.0  # Normalized heuristic for the MHz target scale
-    f_wgm_hz = 150.0e6  # Anti-Zeno control frequency (§13.3.5)
+    f_wgm_hz = 150.0e6  # Sign-unfixed diagnostic frequency (§13.3.5)
     
     # Q-factor for the MT cavity (dimensionless)
     # Typical biological micro-cavities: Q ~ 100 - 1000
@@ -445,7 +468,7 @@ def main():
     report.section("Physical Parameters")
     report.log_value("K_perp (phason stiffness)", K_PERP_N_M, "N/m = K_par * phi^-18")
     report.log_value("K_parallel",               K_PARALLEL_N_M, "N/m")
-    report.log_value("omega_Zeno",               f"{OMEGA_ZENO_HZ:.0e}", "Hz (primary 112 MHz branch)")
+    report.log_value("nu_Zeno",                  NU_ZENO_HZ / 1e6, "MHz (cyclic frequency; primary 112 MHz branch)")
     report.log_value("N_bio (spins/neuron)",      f"{N_BIO:.4e}")
     report.log_value("P_neuron_max",              P_NEURON_MAX_W * 1e9, "nW")
     report.log_value("eps_ATP",                   EPS_ATP_EV, "eV")
@@ -484,7 +507,7 @@ def main():
     report.log_value("Within 1 nW budget?",    str(budget["within_1nW_budget"]))
 
     report.section("Vibrational Stark Effect & Conical Intersection Coupling")
-    vse_data = compute_stark_conical_intersection(e_field_v_m=E_ATP_V_M, omega_zeno_hz=OMEGA_ZENO_HZ)
+    vse_data = compute_stark_conical_intersection(e_field_v_m=E_ATP_V_M, nu_zeno_hz=NU_ZENO_HZ)
     report.log_value("Mechanism", vse_data["mechanism"])
     report.log_value("ATP Transient Field", vse_data["atp_field_v_m"], "V/m")
     report.log_value("Trp Dipole Moment", vse_data["trp_dipole_moment_debye"], "Debye")
@@ -492,7 +515,7 @@ def main():
     report.log_value("CI Seam Gap", vse_data["ci_seam_gap_ev"], "eV")
     report.log_value("Zeno Frequency", vse_data["zeno_frequency_hz"] / 1e6, "MHz")
     report.log_value("Zeno Energy (hf)", vse_data["zeno_energy_ev"], "eV")
-    report.log_value("Non-adiabatic Transition P", vse_data["transition_probability"])
+    report.log_value("Stark/CI scale ratio kappa (not a probability)", vse_data["transition_probability"])
     report.log_value("ATP Energy Dissipated", vse_data["atp_energy_ev"], "eV")
     report.log_value("Polariton Power Flow", vse_data["polariton_power_w"], "W")
     report.log_value("Steering Efficiency", vse_data["steering_efficiency"])
@@ -506,9 +529,12 @@ def main():
     report.log_value("Target WGM Frequency", wgm_data["f_wgm_hz"] / 1e6, "MHz")
     report.log_value("Cavity Q-factor", wgm_data["q_factor"])
 
-    # Verdict: State C must be within the 1 nW ceiling PER SPIN
-    # (The 1 nW is the whole-neuron limit; each individual spin is far below it)
-    passed = budget["within_1nW_budget"] or (budget["power_per_spin_W"] < P_NEURON_MAX_W)
+    # Verdict: State C must fit the 1 nW whole-neuron ceiling.
+    # The former OR-fallback (single-spin power compared with
+    # the whole-NEURON ceiling) turned a failed budget into a PASS; retired.
+    passed = bool(budget["within_1nW_budget"])
+    state_c_total_power_W = float(budget["power_per_spin_W"]) * float(N_BIO)
+    verdict = "STATE_C_WITHIN_1NW_NEURON_BUDGET" if passed else "STATE_C_EXCEEDS_1NW_NEURON_BUDGET"
     report.verdict(
         passed,
         f"Phason torque at State C: {budget['work_per_cycle_J']:.3e} J/cycle, "
@@ -529,10 +555,10 @@ def main():
         "constants": {
             "K_perp_N_m":        K_PERP_N_M,
             "K_parallel_N_m":    K_PARALLEL_N_M,
-            "omega_Zeno_Hz":     OMEGA_ZENO_HZ,
+            "nu_Zeno_Hz":        NU_ZENO_HZ,
             "N_bio":             N_BIO,
             "N_bio_central":     0.0,
-            "N_bio_basis":       "conditional beta-Trp n_rp=1 sensitivity branch; central n_rp=0 pending O.21; hydration shell is bath/environment per Ch13:633",
+            "N_bio_basis":       "conditional beta-Trp n_rp=1 sensitivity branch; central n_rp=0 pending O.21; hydration shell is bath/environment per Ch13 Sec 13.5.3",
             "P_neuron_max_W":    P_NEURON_MAX_W,
             "eps_ATP_eV":        EPS_ATP_EV,
             "J_screening":       J_SCREENING,
@@ -541,6 +567,9 @@ def main():
             "Mu_Trp_Debye":      MU_TRP_DEBYE,
             "Delta_ST_eV":       DELTA_ST_EV,
         },
+        "state_c_total_power_W": state_c_total_power_W,
+        "state_c_total_power_over_ceiling": state_c_total_power_W / float(P_NEURON_MAX_W),
+        "verdict": verdict,
         "pass": bool(passed),
     }
 

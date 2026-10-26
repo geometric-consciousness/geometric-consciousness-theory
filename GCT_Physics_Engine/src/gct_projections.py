@@ -52,7 +52,7 @@ isometries by construction).
 Normalization Disambiguation
 -----------------------------
 - V2 Ch2.1.1 uses N = 1/sqrt(2(2+phi)) - this is N_para, the physical-space isometry.
-- Appendix J's N = 1/sqrt(5) is a single-normalization approximation
+- Appendix CXL's N = 1/sqrt(5) is a single-normalization approximation
   (1/sqrt(5) ~ 0.4472 vs N_perp ~ 0.6015), distinct from the two-
   normalization convention adopted here.
 - The canonical convention defined here (two-normalization form) is the
@@ -167,8 +167,9 @@ def get_projector_perp() -> np.ndarray:
 def compute_stiffness_ratio() -> dict:
     """Compute the Gram determinant ratio and stiffness suppression factor.
 
-    The physical stiffness ratio eta = K_perp / K_para is derived from the
-    UNNORMALIZED Gram matrices, where the intrinsic scale difference between
+    The stiffness ratio eta = K_perp / K_para is evaluated from the
+    UNNORMALIZED (raw-frame, coordinate-dependent) Gram matrices; its map to the
+    physical stiffness ratio is a Tier 3 heuristic (App DPS §DPS.3; O.15(b)), where the intrinsic scale difference between
     E_parallel and E_perp is preserved.
     """
     M_para_raw = get_m_parallel_unnormalized()

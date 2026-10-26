@@ -29,8 +29,8 @@ separated:
 Engine outputs:
   - Weinberg-candidate scalar energy in physical units (O.37 ansatz).
   - Integration window tau_perp = hbar / Delta_Weinberg.
-  - Comparison to relevant biological/cognitive timescales (Zeno Drive
-    100 MHz period, gamma-band cortical oscillation ~25-100 Hz,
+  - Comparison to relevant biological/cognitive timescales (100 MHz period
+    of the historical material-scan scenario, gamma-band cortical oscillation ~25-100 Hz,
     conscious-moment estimates ~100-500 ms).
 
 This protocol closes the substrate-timescale piece of H.4-4 to Tier
@@ -108,14 +108,14 @@ def compute() -> dict:
             "claim": ("The phenomenological reading 'Higher Mind "
                        "experiences non-linear ordinal time' is "
                        "interpretive overlay on the substrate timescale. "
-                       "GCT specifies the substrate (closed here at "
-                       "Tier 2-3); qualia structure for Higher Mind "
+                       "GCT registers a candidate substrate timescale (O.37 ansatz at "
+                       "Tier 3); qualia structure for Higher Mind "
                        "agents requires phenomenology-first axiomatization "
                        "outside the current theory scope."),
             "what_GCT_DOES_specify": (
-                "Substrate timescale (closed). Selection Operator "
-                "geometric form (App W). Phenomenal-unity topology "
-                "(App Y trefoil + general-prime knots). Cross-branch "
+                "Substrate timescale (Tier 3 O.37 candidate). Selection Operator "
+                "geometric form (App SNE). Phenomenal-unity topology "
+                "(App PUP trefoil + general-prime knots). Cross-branch "
                 "topological connectivity (H.4-3 strict continuity)."),
             "what_GCT_does_NOT_specify": (
                 "How a Higher-Mind agent (Level >= 1) subjectively "
@@ -125,7 +125,7 @@ def compute() -> dict:
                 "linear, branching, or partially ordered."),
         },
         "closure_status": {
-            "tier_split": ("Tier 2-3 substrate closure (integration "
+            "tier_split": ("Tier 3 candidate substrate timescale (integration "
                             "window = phason coherence time); Tier 4 "
                             "phenomenological interpretation (ordinal-"
                             "time qualia structure)"),

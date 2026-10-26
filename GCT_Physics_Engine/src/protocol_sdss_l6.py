@@ -2,41 +2,35 @@
 """
 protocol_sdss_l6.py — SDSS LSS Icosahedral Anisotropy Forward Model
 ===================================================================
-Construct the template and analysis specification for the SDSS DR16
-l=6 Quasar Anisotropy test.
-
-Predicted Ratio: C_6 / C_0 = (4π/13) * phi^-36 approx 2.92e-8.
+Construct the structural template for an SDSS DR16 l=6 quasar-anisotropy
+program.  The exact icosahedral harmonic does not by itself determine an LSS
+response amplitude or a shared normalization with another messenger.
 """
 
 import json
-import numpy as np
-import os
-from pathlib import Path
-
-# GCT Imports
-from gct_utils import C, get_output_path
+from gct_utils import get_output_path
 
 class SDSS_L6_Analyzer:
     def __init__(self):
-        # The predicted amplitude stems from the phason stiffness ratio phi^-18
-        # squared for power spectrum, times solid angle normalization 4pi/(2l+1).
-        self.phi = float(C.PHI)
-        self.predicted_ratio = (4 * np.pi / 13.0) * (self.phi**-36)
-        
-        # Characteristic 15-angle icosahedral mask
-        self.mask_angles_deg = [0, 36, 60, 72, 90, 108, 120, 144, 180]
+        self.multipole = 6
 
     def generate_results(self):
         result = {
-            "status": "LSS_L6_SPECIFICATION_AVAILABLE",
-            "prediction_type": "LSS_Angular_Power_Spectrum_Anisotropy",
-            "multipole": 6,
-            "predicted_c6_c0": self.predicted_ratio,
-            "icosahedral_mask_deg": self.mask_angles_deg,
-            "mechanism": "Icosahedral vacuum anisotropy imprint on LSS 2-point correlation",
+            "status": "LSS_L6_STRUCTURAL_TEMPLATE__PHYSICAL_TRANSFER_OPEN",
+            "prediction_type": "Oriented icosahedral l=6 structural template",
+            "multipole": self.multipole,
+            "predicted_c6_c0": None,
+            "oriented_template": "A6(R n), with R in SO(3)/I",
+            "finite_separation_mask_derived": False,
+            "shared_cross_messenger_normalization_derived": False,
+            "mechanism": "Exact icosahedral scalar structure; physical LSS transfer remains open",
             "dataset": "SDSS DR16 Quasar Catalog",
-            "alignment": "Same vacuum root as PTA (phi^-18 scaling)",
-            "pass": True
+            "alignment": "No common amplitude is asserted across messenger channels",
+            # The former literal pass=True is retired. No
+            # amplitude is predicted and no data are compared, so nothing is
+            # tested here; the protocol records a template design only.
+            "verdict": "NO_GCT_TEST_TEMPLATE_ONLY_PHYSICAL_TRANSFER_OPEN",
+            "pass": False
         }
         
         file_path = get_output_path("protocol_sdss_l6_results.json")
@@ -44,7 +38,8 @@ class SDSS_L6_Analyzer:
             json.dump(result, f, indent=4)
             
         print(f"SDSS L6 Protocol Execution Complete.")
-        print(f"Predicted C6/C0: {self.predicted_ratio:.4e}")
+        print("Physical C6/C0 normalization: open")
+        print("Verdict: NO_GCT_TEST_TEMPLATE_ONLY_PHYSICAL_TRANSFER_OPEN (no amplitude predicted, no data compared)")
         print(f"Results written to {file_path}")
         return result
 

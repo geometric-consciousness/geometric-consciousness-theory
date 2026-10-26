@@ -93,8 +93,8 @@ $$\boxed{\;\langle |\boldsymbol{\Phi}_\perp(\mathbf{r})|^2 \rangle = \frac{n\,\x
 
 | Quantity | Value | Source |
 |---|---|---|
-| a₆ | 2 ℓ_P = 3.232 × 10⁻³⁵ m | App_K §K.7 |
-| ξ | 8.5 × 10⁻⁹ m | App_K §K.5 |
+| a₆ | 2 ℓ_P = 3.232 × 10⁻³⁵ m | App_DPS §DPS.7 |
+| ξ | 8.5 × 10⁻⁹ m | App_DPS §DPS.5 |
 | (3 − φ) | 1.381966 | Golden-ratio identity |
 | n_e | 8.4 × 10²³ /cm³ = 8.4 × 10²⁹ /m³ | ρ ≈ 2.8 g/cm³, ⟨Z/A⟩ ≈ 0.5 for crustal silicates |
 
@@ -120,7 +120,7 @@ This is the mean-square phason strain in Earth-crust matter — the zero-point "
 
 $$\mathcal{E}_\perp \sim K_\perp \cdot \frac{\langle |\boldsymbol{\Phi}_\perp|^2 \rangle}{\xi^2}$$
 
-with K⊥ = (E_P/ℓ_P³) φ⁻¹⁸ ≈ 8.03 × 10¹⁰⁹ J/m³ (App_K §K.6). Therefore
+with K⊥ = (E_P/ℓ_P³) φ⁻¹⁸ ≈ 8.03 × 10¹⁰⁹ J/m³ (App_DPS §DPS.6). Therefore
 
 $$\mathcal{E}_\perp \sim 8.03\times10^{109} \cdot 5.92\times10^{-102} \approx 4.75\times10^8\;\text{J/m}^3 \approx 3.0\;\text{eV/nm}^3$$
 
@@ -134,7 +134,7 @@ $$n_e\,\xi^3 = (8.4\times10^{29})\cdot(8.5\times10^{-9})^3 = (8.4\times10^{29})\
 
 ## 2.9 Contribution from Quarks (Nucleons)
 
-The calculation above used electron density only. Nucleons (protons and neutrons) are also pinned defects (quarks are "Interstitial Face Defects" per V3 Ch10), and they contribute to ⟨|**Φ**⊥|²⟩ additively:
+The calculation above used electron density only. Nucleons (protons and neutrons) are also pinned defects (quarks as "Interstitial Face Defects" is the Tier 3 candidate assignment of V3 Ch10), and they contribute to ⟨|**Φ**⊥|²⟩ additively:
 
 $$\langle |\boldsymbol{\Phi}_\perp|^2 \rangle_{\text{total}} = \frac{\xi\,a_6^4}{8\pi}\left[ n_e (3 - \varphi) + n_{\text{quarks}} (3 - \varphi)_{\text{quark}} \right]$$
 

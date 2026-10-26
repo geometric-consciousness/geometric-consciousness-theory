@@ -48,9 +48,11 @@ desktop.ini
 
 # --- Runtime logs ---
 *.log
-!build_scripts/*.log
 
 # --- Note ---
 # GCT_Physics_Engine/data/*.json artifacts are explicitly tracked.
 # They are the immutable proof-state of the verification engine and
 # are part of the citable artifact.
+
+# LaTeX build cache produced by the PDF build; not part of the published tree.
+.texbuild-anchor/

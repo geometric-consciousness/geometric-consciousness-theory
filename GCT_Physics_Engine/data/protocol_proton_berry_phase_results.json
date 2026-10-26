@@ -12,8 +12,122 @@
   "Phi_total": 15.618033988749895,
   "Phi_total_target": 15.618033988749895,
   "phi_total_deviation": 0.0,
-  "verdict": "PASS",
-  "pass": true,
+  "phi_inv_status": "INPUT: R_projection = 2*phi^-1 is typed, so phi_correction = phi^-1 and Phi_total = 15 + phi^-1 hold by construction; not part of pass",
+  "input_consistency_phi_correction": true,
+  "input_consistency_phi_total": true,
+  "holonomy_parity_theorem": "For every integer n, exp(i*n*pi*sigma_z) = (-1)^n I_2; even n gives I_2 and odd n gives -I_2.",
+  "parity_sweep": [
+    {
+      "n": -6,
+      "parity": "even",
+      "expected_holonomy": "I_2",
+      "trace": 2.0000000000008766,
+      "deviation_frobenius": 6.198840320944955e-13,
+      "pass": true
+    },
+    {
+      "n": -5,
+      "parity": "odd",
+      "expected_holonomy": "-I_2",
+      "trace": -1.9999999999994194,
+      "deviation_frobenius": 4.105817611447974e-13,
+      "pass": true
+    },
+    {
+      "n": -4,
+      "parity": "even",
+      "expected_holonomy": "I_2",
+      "trace": 1.9999999999988245,
+      "deviation_frobenius": 8.312093376190368e-13,
+      "pass": true
+    },
+    {
+      "n": -3,
+      "parity": "odd",
+      "expected_holonomy": "-I_2",
+      "trace": -2.0000000000004383,
+      "deviation_frobenius": 3.0994233734404977e-13,
+      "pass": true
+    },
+    {
+      "n": -2,
+      "parity": "even",
+      "expected_holonomy": "I_2",
+      "trace": 1.9999999999994116,
+      "deviation_frobenius": 4.1607848735428824e-13,
+      "pass": true
+    },
+    {
+      "n": -1,
+      "parity": "odd",
+      "expected_holonomy": "-I_2",
+      "trace": -2.000000000000817,
+      "deviation_frobenius": 5.777940427564824e-13,
+      "pass": true
+    },
+    {
+      "n": 0,
+      "parity": "even",
+      "expected_holonomy": "I_2",
+      "trace": 2.0,
+      "deviation_frobenius": 0.0,
+      "pass": true
+    },
+    {
+      "n": 1,
+      "parity": "odd",
+      "expected_holonomy": "-I_2",
+      "trace": -2.000000000000817,
+      "deviation_frobenius": 5.777940427564824e-13,
+      "pass": true
+    },
+    {
+      "n": 2,
+      "parity": "even",
+      "expected_holonomy": "I_2",
+      "trace": 1.9999999999994116,
+      "deviation_frobenius": 4.1607848735428824e-13,
+      "pass": true
+    },
+    {
+      "n": 3,
+      "parity": "odd",
+      "expected_holonomy": "-I_2",
+      "trace": -2.0000000000004383,
+      "deviation_frobenius": 3.0994233734404977e-13,
+      "pass": true
+    },
+    {
+      "n": 4,
+      "parity": "even",
+      "expected_holonomy": "I_2",
+      "trace": 1.9999999999988245,
+      "deviation_frobenius": 8.312093376190368e-13,
+      "pass": true
+    },
+    {
+      "n": 5,
+      "parity": "odd",
+      "expected_holonomy": "-I_2",
+      "trace": -1.9999999999994194,
+      "deviation_frobenius": 4.105817611447974e-13,
+      "pass": true
+    },
+    {
+      "n": 6,
+      "parity": "even",
+      "expected_holonomy": "I_2",
+      "trace": 2.0000000000008766,
+      "deviation_frobenius": 6.198840320944955e-13,
+      "pass": true
+    }
+  ],
+  "parity_sweep_pass": true,
+  "n_selection_premise": "Tier 2 physical premise: require nontrivial holonomy and choose the least positive integer weight, selecting n=1; 2I equivariance alone distinguishes only parity.",
+  "tier_split": "Tier 1 exact holonomy parity; Tier 2 least-positive/nontrivial-winding physical minimality premise; Tier 3 deployment in the absolute proton-mass exponent.",
+  "verdict": "SU2_HOLONOMY_IDENTITY_NO_GCT_INPUT_PHI_INV_INPUT",
+  "identity_holds": true,
+  "pass": false,
   "ckm_berry_extension": {
     "berry_correction": 0.6180339887498948,
     "s23_bare": 0.0557280900008412,
@@ -24,6 +138,6 @@
     "s13_pdg": 0.003735,
     "berry_improves_s23": true,
     "berry_improves_s13": true,
-    "physical_interpretation": "Each generation-changing off-diagonal CKM element acquires one SU(2) holonomy step."
+    "physical_interpretation": "Tier 3 ansatz: each generation-changing off-diagonal CKM element acquires one SU(2) holonomy step."
   }
 }

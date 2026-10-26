@@ -4,7 +4,7 @@ protocol_qed_audit.py — QED Precision Audit
 ============================================================
 Verifies GCT predictions for:
   1. Muon anomalous magnetic moment
-  2. Electron g-2 consistency check
+  2. Electron g-2 activation-threshold null (Tier 3/4 hypothesis; pending alpha resolution)
   3. Hydrogen Lamb Shift correction
 
 Muon g-2 uses A3 measured low-energy alpha as a precision-comparison input.
@@ -29,8 +29,11 @@ from gct_utils import get_output_path, C
 
 def derive_phason_activation_threshold():
     """
-    Kinematic Depinning Threshold Derivation
+    Activation-Threshold Hypothesis (Tier 3/4; not a derivation)
     -------------------------------------------------
+    Hypothesis, in tension with QFT decoupling: virtual loops have no
+    rest-mass threshold, and a decoupled muon-scale term would give
+    Delta a_e ~ (m_e/m_mu)^2 * 250.65e-11 ~ 6e-14 rather than an exact zero.
     The N_channels = 5 lattice correction for the anomalous magnetic moment 
     requires the lepton to activate a closed phason loop inside the I_h-closed cage.
     To emit this loop, the lepton must possess enough rest-mass energy to 
@@ -107,7 +110,7 @@ def run_qed_audit() -> dict:
     print(f"    ~{sigma_before:.1f}σ. The GCT (α/π)³/5 correction sits above")
     print(f"    the consolidated SM by approximately {abs(sigma_after):.1f}σ — disposition:")
     print(f"    Tension under WP2025; falsification conditional on long-term")
-    print(f"    HVP-synthesis arbitration (App R §R.2 / App V §P.5).")
+    print(f"    HVP-synthesis arbitration (App PSC §PSC.2 / App PRG §P.5).")
 
     verdict_mu = "PASS" if abs(sigma_after) <= 0.6 else "TENSION"
     print(f"    Verdict              : {verdict_mu}")
@@ -128,12 +131,12 @@ def run_qed_audit() -> dict:
     }
 
     # ─────────────────────────────────────────────────────────────
-    # 2. Electron g-2 consistency check
+    # 2. Electron g-2 activation-threshold null (Tier 3/4 hypothesis)
     # ─────────────────────────────────────────────────────────────
     gct_e = compute_anomalous_moment("electron")
     
     print(f"\n{'─'*65}")
-    print(f"2.  Electron g-2 Consistency (Kinematic Threshold Derivation)")
+    print(f"2.  Electron g-2 Activation-Threshold Null (Tier 3/4 hypothesis)")
     print(f"{'─'*65}")
     
     thresh = derive_phason_activation_threshold()
@@ -141,26 +144,31 @@ def run_qed_audit() -> dict:
     print(f"    Electron rest mass (N=0)          : {thresh['electron_mass_mev']:.3f} MeV")
     print(f"    Activation deficit ratio          : ~{thresh['kinematic_deficit_ratio']:.0f}x too light")
     
-    print(f"\n    GCT lattice correction : {gct_e['gct_part']:.1e}  (exact zero)")
-    print(f"    Reason : The electron is kinematically forbidden from emitting")
-    print(f"             a closed phason loop. It lacks the {thresh['activation_gap_mev']:.1f} MeV gap")
-    print(f"             required to depin the acoustic cage resonance.")
-    print(f"             → Electron QED precision ({10**-12:.0e}) unaffected.")
+    print(f"\n    GCT lattice correction : {gct_e['gct_part']:.1e}  (hypothesised null at this loop order)")
+    print(f"    Hypothesis : below the {thresh['activation_gap_mev']:.1f} MeV N=11 activation gap the")
+    print(f"             electron would not activate the closed phason loop (Tier 3/4;")
+    print(f"             in tension with QFT decoupling, Delta a_e ~ 6e-14; not derived).")
+    print(f"             Null vs a_e(exp): Cs-alpha Delta a_e ~ -1.0e-12 (3.9 sigma),")
+    print(f"             Rb-alpha Delta a_e ~ +0.3e-12 (2.1 sigma); no alpha branch passes.")
     electron_g2_tier = (
-        "Tier 2 kinematic-threshold mechanism + Tier 3 threshold exponent; "
+        "Tier 3/4 activation-threshold hypothesis (not derived; in tension with QFT "
+        "decoupling, Delta a_e ~ 6e-14; no Tier 2 support) + Tier 3 threshold exponent; "
         "alpha-input contingent"
     )
-    print(f"    Verdict: CONSISTENT ({electron_g2_tier})")
+    print(f"    Verdict: PENDING-ALPHA-RESOLUTION ({electron_g2_tier})")
 
     results["electron_g2"] = {
         "gct_correction": 0.0,
         "kinematic_threshold_mev": thresh['n11_resonance_mev'],
         "electron_deficit_ratio": thresh['kinematic_deficit_ratio'],
         "tier": electron_g2_tier,
-        "verdict": "CONSISTENT",
+        "verdict": "PENDING-ALPHA-RESOLUTION",
         "explanation": (
-            f"Kinematically forbidden (requires >{thresh['activation_gap_mev']:.1f} MeV gap to depin "
-            f"N=11 resonance). Electron is ~{thresh['kinematic_deficit_ratio']:.0f}x too light to activate lattice loops."
+            f"Hypothesised null (Tier 3/4): below the {thresh['activation_gap_mev']:.1f} MeV N=11 activation gap "
+            f"(electron ~{thresh['kinematic_deficit_ratio']:.0f}x too light) the lattice loop is assumed inactive. "
+            "Not derived and in tension with QFT decoupling (Delta a_e ~ 6e-14). Against a_e(exp) (Fan 2023) "
+            "the null gives Delta a_e ~ -1.0e-12 (3.9 sigma, Cs alpha) and ~ +0.3e-12 (2.1 sigma, Rb alpha); "
+            "no branch passes; status pending alpha resolution (registry P.5b)."
         ),
     }
 
@@ -169,8 +177,8 @@ def run_qed_audit() -> dict:
     # ─────────────────────────────────────────────────────────────
     tau_mass_mev = float(C.M_TAU_OBS)
 
-    # By the same kinematic-threshold argument that gates the electron at
-    # zero correction (mass from SSOT << N=11 resonance), the tau
+    # By the same Tier 3/4 activation-threshold hypothesis that sets the electron
+    # correction to a hypothesised zero (mass from SSOT << N=11 resonance), the tau
     # (mass from SSOT >> N=11 resonance) is above threshold and the
     # closed-phason-loop correction applies. The mechanism is the same
     # 5-channel A_5 averaging that gives the muon prediction; the
@@ -189,7 +197,7 @@ def run_qed_audit() -> dict:
     print(f"    Form-factor universality          : Tier 3 (assumes same 5-channel A_5 averaging as muon)")
     print(f"    Current PDG bound on Delta_a_tau  : ~1e-1 (loose; FCC-ee target ~1e-6)")
     print(f"    Predicted Delta_a_tau             : {gct_tau.get('gct_part', 0.0):.3e}")
-    print(f"    Verdict: UNDETECTABLE-AT-CURRENT-SENSITIVITY (Tier 2 mechanism + Tier 3 form-factor universality)")
+    print(f"    Verdict: UNDETECTABLE-AT-CURRENT-SENSITIVITY (Tier 2 loop mechanism as for the muon + Tier 3/4 activation-threshold hypothesis + Tier 3 form-factor universality)")
 
     results["tau_g2"] = {
         "gct_correction": gct_tau.get('gct_part', 0.0),

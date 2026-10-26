@@ -1,23 +1,22 @@
 """
-Clustering Dark-Energy Framework Bridge for App H O.13 Fingerprint (iv)
-=========================================================================
+Conditional Clustering Dark-Energy Catalogue for App ORQ O.13 Fingerprint (iv)
+===============================================================================
 
-V2 Ch14 §14.6.3 registers a sub-horizon sound-speed commitment
-c_{s,bio}^2 << 1 as a Tier 3 framework requirement, load-bearing for
+V2 Ch14 §14.6.3 registers a conditional sub-horizon sound-speed choice
+c_{s,bio}^2 << 1 as a Tier 3 model requirement, load-bearing only for
 the angular cross-power fingerprint between biogenic-DE perturbations
-and habitable-zone galactic large-scale structure (App H Open Problem
+and habitable-zone galactic large-scale structure (App ORQ Open Problem
 O.13 fingerprint (iv)). The full numerical evaluation of this
 fingerprint requires Boltzmann-code-level integration (CAMB/CLASS
 extension with explicit DE-perturbation modules); that integration is
 registered as a sub-item of O.13 and not implemented here.
 
-This protocol fulfills the *framework-level* bridge between the GCT
-biogenic-channel commitment and the standard clustering-DE perturbation
-literature: it catalogues the perturbation equations, verifies the
-sub-horizon-tracking regime consistency at GCT-canonical biogenic-
-channel parameters, and exposes the parametric dependence of the
-cross-power signature on c_{s,bio}^2. The framework-level checks below
-are necessary-but-not-sufficient for the full numerical closure.
+This protocol catalogs the standard clustering-DE perturbation framework
+under a stipulated source-proxy template: it records the perturbation
+equations, evaluates a conditional benchmark, and exposes the parametric
+dependence of the cross-power template on c_{s,bio}^2. These catalogue
+checks are neither a GCT derivation nor a canonical physical realization;
+they are necessary-but-not-sufficient inputs to a future model comparison.
 
 Equations (canonical references)
 ================================
@@ -52,8 +51,8 @@ suppression does NOT activate within the LSS observation window.
 Batista 2022 Universe 8:22 — review confirming the clustering-DE
 parametrisation framework's standing in late-time cosmology.
 
-GCT biogenic-channel parameters
-================================
+Stipulated conditional source-proxy parameters
+===============================================
 From V2 Ch14 §14.6.3 + the IMP-01 pipeline:
   w_bio(z=0) = -1.005        (continuous phantom phase, asymptotes to -1)
   Omega_bio(z=0) ~ 0.685 * f_bio    (carried by Lambda-baseline + biogenic admixture)
@@ -82,12 +81,11 @@ suppression of delta_DE in the sub-horizon regime; the fingerprint is
 
 Status
 ======
-Framework-level bridge implemented. Full numerical evaluation
-registered as App H O.13 fingerprint (iv) sub-item, requiring
-Boltzmann-code extension. The framework-level disclosure here closes
-the "asserted-but-not-tested" gap by providing the explicit equations,
-the GCT-canonical parameter inputs, and the consistency checks that
-the full numerical closure must verify.
+Conditional framework catalogue implemented. Full numerical evaluation
+registered as App ORQ O.13 fingerprint (iv) sub-item, requiring
+Boltzmann-code extension. This disclosure records explicit equations,
+stipulated benchmark inputs, and catalogue checks; it does not derive a
+physical biogenic channel, its normalization, or a causal source map.
 """
 
 from __future__ import annotations
@@ -224,7 +222,7 @@ def cross_power_parametric_signature_check() -> dict:
 
 
 def compute() -> dict:
-    """Framework-level bridge for App H O.13 fingerprint (iv).
+    """Framework-level bridge for App ORQ O.13 fingerprint (iv).
 
     The protocol verifies:
       (i)   The clustering-DE perturbation equations (Sapone-Kunz 2009)
@@ -238,7 +236,7 @@ def compute() -> dict:
             form (1 + (c_s k / aH)^2)^{-1}.
     Full numerical closure (Boltzmann-code-level integration of the
     perturbation equations on the GCT biogenic-channel kernel) is
-    registered as a sub-item of App H Open Problem O.13.
+    registered as a sub-item of App ORQ Open Problem O.13.
     """
     regime_check = verify_clustering_regime(
         C_S_BIO_SQ_BENCHMARK,
@@ -280,16 +278,16 @@ def compute() -> dict:
         f"LSS scales (k near k_LSS_min). Full coverage of the LSS "
         f"window requires c_s_sq below the activation threshold. This "
         f"is the canonical Sapone-Kunz clustering-DE regime structure "
-        f"and is the load-bearing Tier 3 framework requirement that "
-        f"the biogenic-channel realisation must satisfy."
+        f"and is a conditional Tier 3 model requirement if this "
+        f"cross-power forecast is adopted; it is not a derived physical property."
     )
 
     results = {
         "tier": (
             "Tier 2 framework (Sapone-Kunz 2009 + Creminelli 2010 "
             "clustering-DE perturbation equations) + Tier 3 specific "
-            "c_{s,bio}^2 input + Tier 3 framework requirement (the "
-            "c_{s,bio}^2 << 1 commitment is load-bearing for the App H "
+            "c_{s,bio}^2 input + Tier 3 conditional model requirement (the "
+            "c_{s,bio}^2 << 1 commitment is load-bearing for the App ORQ "
             "O.13 fingerprint (iv) angular cross-power test)"
         ),
         "gct_inputs": {
@@ -319,18 +317,17 @@ def compute() -> dict:
             ],
         },
         "residual_research_target": (
-            "Full numerical evaluation of the angular cross-power "
-            "C_l^{bio x gal-hab} between biogenic-DE perturbations "
-            "and habitable-zone galactic large-scale structure under "
-            "the GCT-canonical clustering-DE realisation. This "
+            "Full numerical evaluation of the stipulated angular cross-power "
+            "template C_l^{bio x gal-hab} between a conditional source proxy "
+            "and habitable-zone galactic large-scale structure. This "
             "requires Boltzmann-code-level integration (CAMB or CLASS "
             "extension with explicit DE-perturbation modules carrying "
-            "the GCT-derived w_bio(z) curve from `protocol_imp01_pipeline.py`). "
-            "Registered as App H Open Problem O.13 fingerprint (iv) "
-            "bridge sub-item; bundles with O.13's residual GCT-"
-            "derivable thawing-quintessence channel construction."
+            "the conditional w_bio(z) template from `protocol_imp01_pipeline.py`). "
+            "Registered as App ORQ Open Problem O.13 fingerprint (iv) "
+            "catalogue sub-item; a typed coupling, normalized source map, "
+            "and physical channel construction remain open."
         ),
-        "verdict_status": "FRAMEWORK_BRIDGE_CATALOGUED_ACTIVATION_THRESHOLD_IDENTIFIED",
+        "verdict_status": "CONDITIONAL_FRAMEWORK_CATALOGUED__PHYSICAL_SOURCE_MAP_OPEN",
         "verdict": (
             "The clustering-DE perturbation framework (Sapone-Kunz 2009; "
             "Creminelli 2010; Batista 2022) is CATALOGUED at the "
@@ -339,41 +336,25 @@ def compute() -> dict:
             f"window k in [{K_LSS_MIN_H_PER_MPC}, {K_LSS_MAX_H_PER_MPC}] "
             f"h/Mpc identified at c_s_sq < "
             f"{c_s_sq_activation_threshold:.2e}, parametric dependence "
-            "of the cross-power fingerprint on c_{s,bio}^2 confirmed "
+            "of the cross-power template on c_{s,bio}^2 checked "
             "to match the canonical sub-horizon-suppression form. "
-            "The Tier 3 framework requirement c_{s,bio}^2 << 1 is the "
-            "load-bearing commitment for the App H O.13 fingerprint "
+            "The Tier 3 conditional choice c_{s,bio}^2 << 1 is load-bearing "
+            "only for the App ORQ O.13 model fingerprint "
             "(iv) angular cross-power test; the activation threshold "
             "identified here tightens the required value to "
             f"c_{{s,bio}}^2 < {c_s_sq_activation_threshold:.2e} for "
             "clustering activation across the full LSS window. Full "
-            "numerical closure is registered as App H Open Problem "
+            "numerical closure is registered as App ORQ Open Problem "
             "O.13 fingerprint (iv) sub-item, requiring CAMB/CLASS-style "
             "Boltzmann-code integration of the perturbation equations on "
-            "the GCT biogenic-channel kernel."
+            "the stipulated source-proxy kernel. Typed coupling, normalized "
+            "source mapping, and causal identification remain open."
         ),
     }
 
-    # Top-level pass field for verify_engine integration: PASS at the
-    # framework-bridge level means (i) the equations are catalogued,
-    # (ii) the Jeans-length activation threshold is identified
-    # symbolically, and (iii) the parametric dependence matches the
-    # canonical form. Full numerical closure remains an O.13 sub-item
-    # registered with the residual research target. The benchmark
-    # clustering-activation status is exposed as a diagnostic; it is
-    # not a gate (the activation threshold is the load-bearing
-    # quantity, not the benchmark choice).
-    results["pass"] = bool(
-        results["framework_level_closure"][
-            "perturbation_equations_catalogued"
-        ]
-        and results["framework_level_closure"][
-            "sub_horizon_jeans_threshold_identified"
-        ]
-        and results["framework_level_closure"][
-            "parametric_dependence_matches_canonical_form"
-        ]
-    )
+    # The catalogue checks may all be true while physical closure remains
+    # open.  The top-level outcome therefore stays non-pass/conditional.
+    results["pass"] = False
 
     return results
 
@@ -397,7 +378,7 @@ def main():
     with open(out_path, "w") as f:
         json.dump(results, f, indent=2)
 
-    print("Clustering Dark-Energy Framework Bridge (App H O.13 fingerprint (iv))")
+    print("Clustering Dark-Energy Framework Bridge (App ORQ O.13 fingerprint (iv))")
     print("=" * 70)
     print(f"Verdict: {results['verdict_status']}")
     print(f"Top-level pass: {results['pass']}")

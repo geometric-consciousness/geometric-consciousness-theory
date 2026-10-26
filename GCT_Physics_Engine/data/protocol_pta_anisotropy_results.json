@@ -1,20 +1,27 @@
 {
-  "phi": 1.618033988749895,
-  "stiffness_ratio": 0.00017307027171223924,
-  "delta_c_over_c": 0.00017307027171223924,
-  "epsilon_l6": 0.00017307027171223924,
-  "delta_gamma_max": 0.00017307027171223924,
-  "delta_gamma_max_note": "Peak deviation over spatial correlation function theta |epsilon * P6(cos th)|",
-  "formula": "linear_phason_graviton",
-  "normalization_scope": "Peak-deviation form; squared angular-power form reported separately.",
-  "C6_over_C0": 2.895419285097678e-08,
-  "C6_over_C0_note": "Angular Power Spectrum coefficient (4pi / 13) * epsilon^2. Typically used by experimental groups.",
-  "delta_gamma_rms": 6.958007556593739e-05,
-  "peak_angle_deg": 180.0,
-  "ska_precision": 0.0001,
-  "detectable_by_ska": true,
-  "detectable_nanograv": false,
-  "nanograv_tension_status": "NO_TENSION",
-  "verdict": "PASS",
-  "pass": true
+  "protocol": "PTA_OBSERVABLE_MAP_OBSTRUCTION",
+  "status": "PASS_EXACT_L6_INVARIANT__PHYSICAL_PTA_RESPONSE_OPEN",
+  "pass": true,
+  "exact_l6_invariant": true,
+  "separation_only_model": "Gamma_HD(zeta) + epsilon P6(cos zeta)",
+  "separation_only_model_is_SO3_invariant": true,
+  "fifteen_angle_mask_valid": false,
+  "physical_response_derived": false,
+  "amplitude_derived": false,
+  "orientation_derived": false,
+  "frequency_law_derived": false,
+  "p3b_implies_pta_amplitude": false,
+  "undefined_pta_conversions_without_transfer": [
+    "1.67e-4",
+    "2.90e-8"
+  ],
+  "conditional_sky_power_model": {
+    "power": "P(Omega;R) = 1 + eta A6(R^-1 Omega)",
+    "covariance": "Gamma_ab = Gamma_HD_ab + eta sum_m a_6m(R) Gamma_ab,6m",
+    "orientation_space": "SO(3)/I",
+    "eta": "undetermined",
+    "scope": "phenomenological sky-power model, not a derived GCT propagation response"
+  },
+  "required_next_map": "action -> directional kernel -> Green function -> polarization/source/pulsar transfer -> generalized ORFs",
+  "null_falsifies_exact_angular_theorem": false
 }

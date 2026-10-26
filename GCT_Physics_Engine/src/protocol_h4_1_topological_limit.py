@@ -13,21 +13,20 @@ cells that record the p-adic digits via nuclear-spin addresses
 
 Outputs:
   - Mathematical depth: infinite (formal).
-  - Polaron internal depth: log_p(N_cage) with N_cage = 144 (Ch05 muon
-    saturation, V3 Ch05 Sec 5.2.1).
-  - Biological substrate depth: log_p(N_Trp) for N_Trp ~ 1e8 local-inward
+  - Conditional polaron internal depth: log_p(N_cage) with the Tier-3
+    O.38 posit N_cage = 144.
+  - Biological substrate depth: log_p(N_Trp) for N_Trp ~ 1.6e9 local-inward
     Trp candidates per typical pyramidal neuron under the O.21 candidate-only
-    disposition (~ 1e5 MTs/neuron x 1,250 dimers/MT x 1 Trp candidate per
-    dimer ~= 1.3e8; assembled-lumen-axis verification remains open; V1 Ch17
+    disposition (~ 1e5 MTs/neuron x 13 protofilaments/MT x 1,250 dimers per
+    protofilament x 1 Trp candidate per dimer ~= 1.625e9; assembled-lumen-axis verification remains open; V1 Ch17
     Sec 17.1.4 + Hirokawa-Takemura 2005, Conde-Caceres 2009).
   - Hubble-volume depth: log_p(L_H / a_6) with L_H = c/H_0,
     a_6 = 2 ell_P.
 
-Tier 2 structural argument: any countable p-adic register over a
-finite-cell lattice has depth <= log_p(N_cells); the "infinite
-fractalization of identity" reading is excluded by lattice
-discretization, which is itself a foundational postulate of the GCT
-cut-and-project framework.
+The finite-count inequality is exact conditional arithmetic: any p-adic
+register realized on N_cells addresses has depth <= log_p(N_cells). The
+reported polaron value inherits the Tier-3 O.38 input N_cage = 144 and does
+not derive that cage size or establish it as a ground state.
 """
 
 from __future__ import annotations
@@ -47,14 +46,22 @@ A6_LATTICE_M = 2.0 * PLANCK_LENGTH_M
 # Hubble length
 HUBBLE_LENGTH_M = SPEED_OF_LIGHT_M_S / HUBBLE_H0_PER_S
 
-# Polaron cage saturation (V3 Ch05 muon-defect 144 = N_cage)
+# Tier-3 O.38 conditional cage input
 N_CAGE = 144
 
 # Biological Trp population per typical pyramidal neuron under the conditional
 # O.21 sensitivity branch n_rp = 1. The operative central branch remains
-# n_rp = 0 until assembled-MT lumen-axis closure (V1 Ch17 Sec 17.1.4 audit:
-# ~ 1e5 MTs/neuron x 1,250 dimers/MT x 1 Trp candidate per dimer ~= 1.3e8)
-N_TRP_BIOLOGY = 1.0e8
+# n_rp = 0 until assembled-MT lumen-axis closure (V1 Ch17 Sec 17.1.4).
+MT_PER_NEURON = 1.0e5
+PROTOFILAMENTS_PER_MT = 13.0
+DIMERS_PER_PROTOFILAMENT = 1250.0  # 10 um length / 8 nm dimer rise
+N_RP_PER_DIMER_SENSITIVITY = 1.0
+N_TRP_BIOLOGY = (
+    MT_PER_NEURON
+    * PROTOFILAMENTS_PER_MT
+    * DIMERS_PER_PROTOFILAMENT
+    * N_RP_PER_DIMER_SENSITIVITY
+)
 
 # Hubble-volume lattice cell count
 N_CELLS_HUBBLE_3D = (HUBBLE_LENGTH_M / A6_LATTICE_M) ** 3
@@ -132,16 +139,17 @@ def main():
     results["monotonicity_check"] = verify_monotonicity(results)
     results["hierarchy_check"] = verify_hierarchy(results)
     results["closure_status"] = {
-        "tier": "Tier 2 structural bound",
+        "tier": ("Tier 2 finite-count arithmetic conditional on the "
+                 "Tier 3 O.38 N_cage = 144 posit"),
         "claim": ("Physical p-adic tree depth is finite and bounded by "
                    "log_p(N_cells) where N_cells is the count of lattice "
                    "cells comprising the substrate. The infinite-"
                    "fractalization reading is excluded by lattice "
                    "discretization."),
-        "remaining_open": ("Tier 1 first-principles derivation of N_cage = "
-                           "144 from cut-and-project geometry is closed "
-                           "(V3 Ch05); the universal upper bound here is "
-                           "a corollary."),
+        "remaining_open": ("O.38 must select N_cage by full lattice "
+                           "minimization. The logarithmic value reported for "
+                           "the polaron is conditional on the adopted "
+                           "N_cage = 144 input."),
     }
 
     out_dir = Path(__file__).parent.parent / "outputs"

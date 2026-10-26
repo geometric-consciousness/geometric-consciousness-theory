@@ -3,7 +3,8 @@
   "pass": true,
   "verdict": "PASS",
   "tier": "Tier 1",
-  "6d_lattice_tier": "Tier 1 (Derived)",
+  "tier_scope": "2I -> affine E8 McKay correspondence only, within its hypotheses; architecture use is Tier 1/2 conditional (App USS Lemma III)",
+  "6d_lattice_tier": "Tier 1/2 architectural postulate (P1); McKay 2I->E8 is a conditional Tier 1 result and does not derive Z^6",
   "mckay_correspondence": {
     "irrep_dimensions": [
       1,

@@ -481,13 +481,13 @@ L 541.311281 404.159014
     </g>
    </g>
    <g id="text_14">
-    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #666666" x="482.721281" y="262.371507" transform="rotate(-0 482.721281 262.371507)">clock ladder: selection index</text>
+    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #666666" x="482.721281" y="262.371507" transform="rotate(-0 482.721281 262.371507)">clock ladder: clock-basis label n</text>
    </g>
    <g id="text_15">
     <text style="font-weight: 700; font-size: 8.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #2c5d8a" x="116.533781" y="313.437417" transform="rotate(-0 116.533781 313.437417)">3. Conditional readout</text>
    </g>
    <g id="text_16">
-    <text style="font-size: 7.6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #666666" x="116.533781" y="329.210981" transform="rotate(-0 116.533781 329.210981)">agent view</text>
+    <text style="font-size: 7.6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #666666" x="116.533781" y="329.210981" transform="rotate(-0 116.533781 329.210981)">relative to the clock</text>
    </g>
    <g id="text_17">
     <!-- $\langle 0|_C\Psi\rangle$ -->
@@ -604,7 +604,7 @@ L 541.311281 404.159014
     <text style="font-size: 7.6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #666666" x="116.533781" y="417.027941" transform="rotate(-0 116.533781 417.027941)">ordinal dynamics</text>
    </g>
    <g id="text_27">
-    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1f1f1f" x="408.019031" y="447.351853" transform="rotate(-0 408.019031 447.351853)">ordinal clock index n (Zeno Drive tick count)</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1f1f1f" x="408.019031" y="447.351853" transform="rotate(-0 408.019031 447.351853)">formal ordinal update index n (not a derived Zeno clock)</text>
    </g>
    <g id="text_28">
     <text style="font-size: 8.8px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(218.325194 452.625671) rotate(-90)">configuration-space</text>

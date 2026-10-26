@@ -1,16 +1,19 @@
 {
   "name": "alpha_s_inv_bare",
-  "app_r_label": "Strong coupling \u03b1_s\u207b\u00b9(bare) = 10 \u03c6\u00b2 (Tier 3 calibrated handle)",
+  "app_psc_label": "Strong coupling \u03b1_s\u207b\u00b9(bare) = 10 \u03c6\u00b2 (Tier 3 calibrated handle)",
   "formula": "\u03b1_s\u207b\u00b9(bare) = 10 \u00b7 \u03c6\u00b2 (10 = RT three-fold axes; \u03c6\u00b2 = icosahedral inflation)",
-  "tier": "Tier 3 calibrated handle (10 integer + \u03c6\u00b2 geometric factor); O.42 / QLQCD-2 open",
+  "tier": "Tier 3 calibrated handle (10 integer + \u03c6\u00b2 geometric factor); O.42 / QLQCD-2 open + Tier 4 as evidence that phi explains the value (constant control test v3 NEGATIVE-FRAGILE; App PSC \u00a7PSC.9.6)",
   "predicted": 26.18033988749895,
   "observed": 26.18,
+  "reference_class": "MANUSCRIPT_STATED",
+  "band_outcome": "NOT_APPLICABLE",
+  "derivational_closure": "NO_DERIVATIONAL_CLOSURE_FLAG",
   "unit": "(dimensionless)",
-  "app_r_predicted": 26.18,
-  "app_r_precision_str": "Tier 3 calibrated-handle evaluation: 10 \u00b7 \u03c6\u00b2 = 26.1803 vs stated 26.18 (+0.0013%). Gap to PDG \u03b1_s\u207b\u00b9(M_Z) = 8.4818 is +208.7% \u2014 the DOCUMENTED 'too-small-to-run' debt of App ZN \u00a7ZN.5 / Ch04 \u00a74.5.5 (QLQCD-2 non-perturbative confinement correction, App Z.7 open problem).",
-  "app_r_precision_ppm": 12.98271577346484,
+  "app_psc_predicted": 26.18,
+  "app_psc_precision_str": "Tier 3 calibrated-handle evaluation: 10 \u00b7 \u03c6\u00b2 = 26.1803 vs stated 26.18 (+0.0013%). Gap to PDG \u03b1_s\u207b\u00b9(M_Z) = 8.4746 is +208.9% under the (bare\u207b\u00b9 - M_Z\u207b\u00b9)/M_Z\u207b\u00b9 convention; in direct-coupling space, \u03b1_s(M_Z) exceeds \u03b1_s(bare) by 67.63% when normalized to \u03b1_s(M_Z). This is the open debt of App GRF \u00a7GRF.5 / Ch04 \u00a74.5.5 (QLQCD-2 non-perturbative confinement correction, App QLA.7 open problem).",
+  "app_psc_precision_ppm": 12.98271577346484,
   "independent_precision_ppm": 12.98271577346484,
-  "status": "PASS",
+  "status": "INTERNAL_ARITHMETIC_PASS",
   "tolerance_ppm": null,
   "discrepancy_notes": [],
   "extra": {
@@ -19,9 +22,13 @@
     "alpha_s_bare_GCT": 0.03819660112501051,
     "alpha_s_inv_stated_in_manuscript": 26.18,
     "formula_rounding_error_pct": 0.001298271577346484,
-    "alpha_s_PDG_MZ": 0.1179,
-    "alpha_s_inv_PDG_MZ": 8.481764206955047,
-    "bare_vs_PDG_gap_pct": 208.6662072736126,
-    "derivation_note": "\u03b1_s\u207b\u00b9(bare) = 10 \u03c6\u00b2 combines two geometric substrate inputs: (a) the count of three-fold rotation axes of the rhombic triacontahedron = 10, and (b) the icosahedral inflation factor \u03c6\u00b2. The TREE-LEVEL bare value 26.18 is a calibrated handle at M_GUT; the gap to PDG \u03b1_s\u207b\u00b9(M_Z) \u2248 8.48 is the OPEN QLQCD-2 non-perturbative confinement debt (App Z.7), explicitly acknowledged in App ZN \u00a7ZN.5 and Ch04 \u00a74.5.5. This is NOT a hidden bug \u2014 it's open by design pending non-perturbative closure."
+    "alpha_s_PDG_MZ": 0.118,
+    "alpha_s_PDG_MZ_uncertainty": 0.0009,
+    "alpha_s_inv_PDG_MZ": 8.474576271186441,
+    "bare_vs_PDG_gap_pct": 208.9280106724876,
+    "inverse_space_residual_convention": "(alpha_s_inv_bare - alpha_s_inv_PDG_MZ) / alpha_s_inv_PDG_MZ",
+    "direct_space_gap_pct": 67.62999904660127,
+    "direct_space_gap_convention": "(alpha_s_PDG_MZ - alpha_s_bare) / alpha_s_PDG_MZ",
+    "derivation_note": "\u03b1_s\u207b\u00b9(bare) = 10 \u03c6\u00b2 combines two geometric substrate inputs: (a) the count of three-fold rotation axes of the rhombic triacontahedron = 10, and (b) the icosahedral inflation factor \u03c6\u00b2. The TREE-LEVEL bare value 26.18 is a calibrated handle at M_GUT; the inverse-space +208.9% residual to PDG 2024 \u03b1_s\u207b\u00b9(M_Z) = 8.475 uses the observed inverse coupling as denominator. The direct-space 67.63% comparison is separately labelled. Both compare a GUT-scale handle with an M_Z value and so mix scales; the native run gives \u03b1_s(M_Z) \u2248 0.052 (55.9% low). The gap is the open QLQCD-2 non-perturbative confinement debt (App QLA.7), explicitly acknowledged in App GRF \u00a7GRF.5 and Ch04 \u00a74.5.5. Non-perturbative closure remains pending."
   }
 }

@@ -4,5 +4,6 @@
     "eig_perp_mean": 2.76393202250021,
     "eigenvalue_ratio": 0.38196601125010515,
     "target_eta_0": 0.38196601125010515,
-    "stiffness_ratio": 0.38196601125010515
+    "stiffness_ratio": 0.38196601125010515,
+    "scope": "raw-frame Gram-eigenvalue identity (frame-dependent; canonical projectors give 1); not a stiffness derivation. D = 18 Tier 2; phi^-18 map Tier 3 P3b (O.15(b))."
 }

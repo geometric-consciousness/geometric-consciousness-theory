@@ -10,8 +10,8 @@ electron-exponent derivation.
 Approach: 6D Phase-Space Candidate Bookkeeping — NO cosmological horizon.
 ----------------------------------------------------------------------
 A topological defect (the electron) is an ABSENCE of a node — a vacancy
-or boundary mismatch in the 6D quasilattice.  Its phase-space volume is
-derived purely from the geometry of the lattice:
+or boundary mismatch in the 6D quasilattice.  In this candidate bookkeeping
+its phase-space volume is assigned from the geometry of the lattice:
 
   1. The phason stiffness ratio is  eta = phi^{-18}.
   2. The 6D unit-cell volume suppression is  eta^6 = phi^{-108}.
@@ -35,7 +35,7 @@ Output
 > formulas as stand-ins for the underlying 6D geometric operations. The
 > closed-form expressions are mathematically faithful to the intended derivations
 > at the analytical level; full non-perturbative lattice diagonalization
-> (App Z; QLQCD-1L Open Problem O.5) is the elevation path to Tier 1.
+> (App QLA; QLQCD-1L Open Problem O.5) is the elevation path to Tier 1.
 
 """
 
@@ -207,12 +207,15 @@ def test_c3_closure(n_vol: float, n_vac: int):
     Note on precision
     -----------------
     The dominant source of residual error is the truncation of the QED
-    series at first order in alpha.  Including second-order corrections
-    (alpha^2 ~ 5e-5) closes the gap to < 50 ppm.  The Tier-2 acceptance
-    criterion for this protocol is < 1100 ppm (about 3 significant figures),
-    confirming the topological derivation is correct to leading order.
+    series at first order in alpha.  The registered precision rule for this
+    row is the P.1c LOCKED 1000 ppm pre-commitment
+    (config/falsification_thresholds.json; falsifiability_registry.json
+    P.1c). The current 1006 ppm residual misses it by 6 ppm, so C3 is
+    reported as a FAIL of that rule; the 1500 ppm band is later and
+    non-retroactive. The second-order estimate below is a reference
+    diagnostic only (it moves the residual to about 1144 ppm, not closer).
 
-    Success criterion: |m_pred - m_e| / m_e  <  1100 ppm
+    Registered criterion: |m_pred - m_e| / m_e  <  1000 ppm (LOCKED)
     """
     # ---- Geometric exponent -------------------------------------------------
     n_geom = int(round(n_vol)) - n_vac    # 108 - 1 = 107
@@ -220,8 +223,8 @@ def test_c3_closure(n_vol: float, n_vac: int):
 
     # ---- Universal 5-channel Drag correction --------------------------------
     # GCT postulates that the single spin-1/2 fermion propagator couples to 5
-    # radiative channels (the 5 gauge bosons of SU(3)×SU(2)×U(1) reduced by
-    # SU(3) closure), each contributing one factor of alpha.
+    # radiative channels (Tier 3 reading: the 5 gauge bosons of the candidate SU(3)×SU(2)×U(1) reduced by
+    # the proposed SU(3) closure), each contributing one factor of alpha.
     drag_factor = 1.0 - 5.0 * ALPHA
 
     # ---- Pure Geometric Ratio (No G_N input) --------------------------------
@@ -235,8 +238,8 @@ def test_c3_closure(n_vol: float, n_vac: int):
 
     # ---- Precision ----------------------------------------------------------
     precision_ppm = abs(m_pred - M_ELECTRON) / M_ELECTRON * 1e6
-    SUCCESS_PPM   = 1100.0     # Tier-2 acceptance: 3 significant figures
-    c3_pass       = bool(precision_ppm <= SUCCESS_PPM)
+    SUCCESS_PPM   = 1000.0     # P.1c LOCKED 1000 ppm rule (falsification_thresholds.json)
+    c3_pass       = bool(precision_ppm < SUCCESS_PPM)
 
     # ---- Second-order estimate (for reference) ------------------------------
     # Including alpha^2 term: (1 - 5*alpha + 5*alpha^2 / 2 + ...)
@@ -255,7 +258,10 @@ def test_c3_closure(n_vol: float, n_vac: int):
         "precision_ppm": precision_ppm,
         "precision_2nd_order_ppm": precision_2nd_ppm,
         "success_threshold_ppm": SUCCESS_PPM,
+        "registered_rule": "P.1c LOCKED 1000 ppm pre-commitment; the 1500 ppm band is later and non-retroactive",
         "c3_pass": c3_pass,
+        "c3_status": ("INSIDE_LOCKED_1000PPM_RULE" if c3_pass
+                      else "FAIL_LOCKED_1000PPM_RULE"),
         "final_exponent": -n_geom,     # -107
         "n_geom": n_geom,
     }
@@ -286,7 +292,7 @@ def compute_spectral_zeta_test():
 
     The finite-N matrix gives n_eff_finite, which departs from 107 due to
     discretization artifacts of the N=144 cage. The analytic continuum value
-    n=107 is an assumed gap-label anchor pending the App H O.14 physical-link
+    n=107 is an assumed gap-label anchor pending the App ORQ O.14 physical-link
     derivation.
 
     Returns
@@ -480,8 +486,8 @@ def main():
     print(f"  m_e (CODATA)                 : {c3_info['m_electron_CODATA_kg']:.6e} kg")
     print()
     print(f"  Precision                    : {c3_info['precision_ppm']:.1f} ppm")
-    print(f"  Success threshold            : {c3_info['success_threshold_ppm']:.0f} ppm")
-    print(f"  Within threshold?            : {c3_pass}   {'[PASS]' if c3_pass else '[FAIL]'}")
+    print(f"  LOCKED threshold (P.1c)      : {c3_info['success_threshold_ppm']:.0f} ppm")
+    print(f"  Within threshold?            : {c3_pass}   {'[PASS]' if c3_pass else '[FAIL of the LOCKED rule]'}")
 
     # -----------------------------------------------------------------------
     # C4: Spectral Zeta Function
@@ -517,9 +523,13 @@ def main():
     # -----------------------------------------------------------------------
     # Final verdict
     # -----------------------------------------------------------------------
-    arithmetic_pass = c1_pass and c2_pass and c3_pass
+    # The arithmetic-consistency check is the n = 108 - 1 = 107 counting
+    # (C1, C2, n_geom). The C3 numerical comparison is scored separately
+    # against the P.1c LOCKED 1000 ppm rule and is reported in its own field;
+    # it never enters the arithmetic flag, and its miss keeps `pass` false.
+    arithmetic_pass = c1_pass and c2_pass and (n_geom == 107)
     o14_physical_link_closed = False
-    all_pass = arithmetic_pass and o14_physical_link_closed
+    all_pass = arithmetic_pass and c3_pass and o14_physical_link_closed
     final_tag = "ARITHMETIC_PASS__O14_PHYSICAL_LINK_OPEN" if arithmetic_pass else "FAIL"
 
     print("\n" + "=" * 70)
@@ -533,10 +543,13 @@ def main():
     print()
     if arithmetic_pass:
         print(f"  VERDICT: {final_tag}")
-        print("  The vacancy-volume arithmetic yields n = 107 and matches the")
-        print("  electron mass scale within the registered comparison band.")
+        print("  The vacancy-volume arithmetic yields n = 107. The numerical")
+        print(f"  comparison ({c3_info['precision_ppm']:.0f} ppm) is "
+              + ("inside" if c3_pass else "OUTSIDE")
+              + " the P.1c LOCKED 1000 ppm rule"
+              + ("." if c3_pass else " (FAIL of that rule)."))
         print("  The physical V->K_0 trace-image / Dixmier-residue selection")
-        print("  remains App H Open Problem O.14 and is not closed by C4.")
+        print("  remains App ORQ Open Problem O.14 and is not closed by C4.")
         print()
         print("  C4 NOTE: The spectral zeta computation on the finite N=144 cage")
         print("  yields n_eff (see above). Convergence to the analytic limit n=107")
@@ -572,6 +585,7 @@ def main():
             "alpha": ALPHA,
         },
         "arithmetic_consistency_pass": arithmetic_pass,
+        "locked_1000ppm_rule_pass": c3_pass,
         "o14_physical_link_closed": o14_physical_link_closed,
         "status": "open_problem_O.14",
         "open_problem": "O.14 physical V->K_0 trace-image / Dixmier-residue selection remains open; C4 finite-N spectral-zeta diagnostic does not derive n=107.",

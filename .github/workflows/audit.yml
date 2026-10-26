@@ -17,6 +17,14 @@ jobs:
         # newer pyphi release lands on PyPI.
         python-version: '3.9'
 
+    - name: Check publication metadata
+      run: |
+        python3 -X utf8 build_scripts/manage_publication_metadata.py --check
+
+    - name: Check codebase structure
+      run: |
+        python3 -X utf8 build_scripts/manage_codebase_structure.py --check
+
     - name: Install Dependencies
       run: |
         pip install --upgrade pip

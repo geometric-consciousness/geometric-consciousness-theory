@@ -56,8 +56,8 @@
     "sign_consistent_with_standard_isw": true
   },
   "verdict": {
-    "direction": "(ii) MAGNITUDE_DISCLOSURE_BELOW_NEAR_FUTURE_SENSITIVITY",
-    "framing": "Cosmic-mean ISW amplitude shift is 0.01% of LambdaCDM, with biogenic-vs-gravitational differential up to 0.00% of standard ISW under realistic bias differences. Both numbers are below the CMB-S4 + SPHEREx detectability threshold (~4%). V3 Ch12 Sec 12.4.2 carries these explicit magnitudes and the smallest experiment that could detect the signal identified (likely post-CMB-S5 / 30m-class radio + IR spectroscopic surveys, or via population-averaged stacking on stellar-mass-weighted galaxy samples). Sign is CONSISTENT with standard ISW direction -- no sign issue, unlike O.17 closure.",
+    "direction": "(iii) CONDITIONAL_TEMPLATE_BELOW_NEAR_FUTURE_SENSITIVITY",
+    "framing": "Cosmic-mean ISW amplitude shift is 0.01% of LambdaCDM, with biogenic-vs-gravitational differential up to 0.00% of standard ISW under realistic bias differences. Both numbers are below the CMB-S4 + SPHEREx detectability threshold (~4%). V3 Ch12 Sec 12.4.2 carries these explicit magnitudes and the smallest experiment that could detect the signal identified (likely post-CMB-S5 / 30m-class radio + IR spectroscopic surveys, or via population-averaged stacking on stellar-mass-weighted galaxy samples). Sign is CONSISTENT with standard ISW direction -- no sign issue, unlike O.17 closure. This remains conditional-template arithmetic: a future comparison may support, disfavor, or exclude it, but cannot change its epistemic tier or confirm a causal biogenic channel.",
     "cosmic_perturbation_pct": 0.005766771221515987,
     "differential_max_pct": 0.001730031366454796,
     "sign_consistent": true

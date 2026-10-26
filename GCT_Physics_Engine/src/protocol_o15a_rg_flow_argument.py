@@ -16,19 +16,19 @@ calculation on the AKN lattice. That calculation requires the explicit
 phason-elasticity loop integrals on the icosahedral cage and is
 research-level (matches the scope of O.5 QLQCD-1L).
 
-This protocol provides a SYMMETRY-FORCED DIMENSIONAL-RG ARGUMENT
-under two icosahedrally-natural inputs:
+This protocol evaluates a CONDITIONAL DIMENSIONAL-RG BOOKKEEPING RULE
+under three declared inputs:
 
-  (i) The H_3 Shephard-Todd invariant-degree sum D = 18 (Tier 2,
-      closed in `protocol_o15a_h3_invariant_degrees.py`).
+  (i) The H_3 Shephard-Todd invariant-degree sum D = 18 (Tier 1
+      Coxeter algebra; Tier 2 integer identification conditional on the
+      irreducible icosahedral premise).
   (ii) The icosahedral RG scaling factor b = phi (Tier 2; the Perron
        eigenvalue of the Fibonacci substitution matrix and the
        canonical AKN tile inflation factor).
 
-Under these inputs, dimensional + scaling analysis forces
-K_perp/K_parallel = phi^(-D) = phi^(-18). This is a Tier 2 structural
-sharpening — beyond the bare integer identification of 18, it now
-PRODUCES the full phi^(-18) factor under two principled inputs.
+The calculation returns K_perp/K_parallel = phi^(-D) = phi^(-18) once
+the per-invariant anomalous-dimension rule is assumed. The physical RG
+identification is therefore Tier 3 pending O.15(b), not a Tier 2 result.
 
 Argument structure
 ==================
@@ -62,11 +62,10 @@ Under one RG step b = phi:
     -log(phi) * (n * Delta_u + 2*Delta_u) = -log(phi) * Delta_u * (n + 2)
     from each I_n term in the lock potential.
 
-Standard RG bookkeeping for the kinetic-term anomalous dimension
-under an H_3-invariant lock potential: each fundamental invariant
-I_n contributes EXACTLY d_n * log(phi) to log(K_parallel / K_perp)
-under the natural icosahedral RG step b = phi, where d_n is the
-invariant degree.
+The declared RG bookkeeping rule assigns each fundamental invariant
+I_n a contribution d_n * log(phi) to log(K_parallel / K_perp) under
+the icosahedral RG step b = phi, where d_n is the invariant degree.
+This assignment is the Tier 3 physical-link assumption being tested.
 
 Total accumulated anomalous-dimension shift:
   log(K_parallel / K_perp) = sum_{n=1,2,3} d_n * log(phi)
@@ -83,8 +82,8 @@ DIAGNOSTIC (Tier 3 numerical heuristic anchored by Tier 2 canonical Coxeter inte
   - The base phi is forced by icosahedral self-similarity (AKN tile
     inflation, Perron eigenvalue of Fibonacci substitution; Tier 2
     standard quasicrystal-theory result).
-  - The product phi^(-18) is structurally forced under the
-    symmetry-adapted RG step argument, conditional on the
+  - The product phi^(-18) follows algebraically within the
+    symmetry-adapted bookkeeping, conditional on the
     bookkeeping "each invariant of degree d contributes d * log(phi)
     to log(K_par/K_perp)" being the correct natural anomalous-
     dimension assignment.
@@ -92,8 +91,8 @@ DIAGNOSTIC (Tier 3 numerical heuristic anchored by Tier 2 canonical Coxeter inte
 DOES NOT PROVIDE (research-level open):
   - Explicit one-loop integration of the LRT free energy on the AKN
     lattice that DERIVES the "d_n * log(phi) per invariant"
-    assignment from a first-principles calculation. This is the
-    full Tier 1 closure of O.15(a) and bundles with O.5 QLQCD-1L
+    assignment from a first-principles calculation. The physical link
+    remains Tier 3 pending O.15(b) and bundles with O.5 QLQCD-1L
     (the same non-perturbative-lattice machinery is required).
   - Verification that the symmetry-adapted RG fixed point coincides
     with the GCT cut-and-project structure. The argument here
@@ -108,12 +107,13 @@ Engine outputs
   - Numerical verification: the per-invariant contributions
     d_1*log(phi), d_2*log(phi), d_3*log(phi) sum to 18*log(phi).
   - Exponentiation: phi^(-18) value vs CODATA-style anchor.
-  - Comparison to alternative rank-3 Coxeter groups (A_3, B_3, H_3)
-    to confirm the icosahedral H_3 case uniquely gives the
-    GCT-predicted 18.
+  - Comparison to the finite irreducible rank-three Coxeter systems
+    (A_3, B_3, H_3) confirms that H_3 alone gives 18 in that class.
+    The reducible system A_1 x I_2(14) also gives 18, so the numerical
+    sum is not unique across all finite rank-three systems.
 
-Cross-reference: App K Sec K.3-K.4 (phason stiffness ratio);
-App H O.15(a); Lubensky-Ramaswamy-Toner 1985 PRB 32:7444; Senechal
+Cross-reference: App DPS Sec DPS.3-DPS.4 (phason stiffness ratio);
+App ORQ O.15(a); Lubensky-Ramaswamy-Toner 1985 PRB 32:7444; Senechal
 1995 "Quasicrystals and Geometry" Sec 2.5 (cut-and-project scaling);
 Humphreys 1990 Tables 1 + 3.1 (Coxeter degrees).
 """
@@ -174,8 +174,9 @@ def compute() -> dict:
     results = {
         "argument_structure": {
             "inputs_used": [
-                "Input 1: H_3 invariant-degree sum D=18 (Shephard-Todd, "
-                "Tier 2 closed in protocol_o15a_h3_invariant_degrees.py)",
+                "Input 1: H_3 invariant-degree sum D=18 (Tier 1 Coxeter "
+                "algebra; Tier 2 identification conditional on the irreducible "
+                "icosahedral premise)",
                 "Input 2: Icosahedral RG step b=phi (Perron eigenvalue "
                 "of Fibonacci substitution; AKN tile inflation factor; "
                 "Senechal 1995 Sec 2.5; Tier 2)",
@@ -198,7 +199,7 @@ def compute() -> dict:
         results["groups_compared"][group_name] = analysis
 
     h3 = results["groups_compared"]["H_3"]
-    results["GCT_prediction_verified"] = {
+    results["bookkeeping_identity_check"] = {
         "predicted_exponent": -18,
         "derived_exponent": h3["ratio_as_phi_power"],
         "match": h3["ratio_as_phi_power"] == -18,
@@ -211,19 +212,18 @@ def compute() -> dict:
 
     results["closure_status"] = {
         "tier": "Tier 3 numerical heuristic anchored by Tier 2 canonical Coxeter integer",
-        "what_is_closed": (
-            "Under three principled inputs (H_3 Shephard-Todd D=18 + "
+        "what_is_reproduced": (
+            "Under three declared inputs (H_3 Shephard-Todd D=18 + "
             "icosahedral RG step b=phi + symmetry-adapted bookkeeping), "
-            "K_perp/K_parallel = phi^(-18) is structurally forced. "
-            "Sharpening beyond the bare integer identification of "
-            "protocol_o15a_h3_invariant_degrees.py: the full phi^(-18) "
-            "factor is now produced under the dimensional-RG argument."),
+            "the bookkeeping returns K_perp/K_parallel = phi^(-18). "
+            "This is a Tier 3 conditional physical-link calculation, not a "
+            "derivation of the RG rule."),
         "what_remains_open": (
             "First-principles derivation of the 'd_n * log(phi) per "
             "fundamental invariant' anomalous-dimension bookkeeping "
             "from explicit one-loop integration of the LRT free energy "
-            "on the AKN lattice. This is the full Tier 1 closure and "
-            "bundles with O.5 QLQCD-1L (same non-perturbative-lattice "
+            "on the AKN lattice. The physical link remains Tier 3 pending "
+            "O.15(b) and bundles with O.5 QLQCD-1L (same non-perturbative-lattice "
             "machinery)."),
         "scope_caveat": (
             "The protocol IMPLEMENTS the dimensional-RG bookkeeping; "
@@ -256,8 +256,8 @@ def main():
               f" {a['sum_log_ratio']:14.6f}  {a['ratio_K_perp_over_K_parallel']:11.4e}"
               f"  phi^{a['ratio_as_phi_power']:>3}{marker}")
     print()
-    g = results["GCT_prediction_verified"]
-    print(f"GCT prediction verification (H_3):")
+    g = results["bookkeeping_identity_check"]
+    print(f"Conditional bookkeeping identity check (H_3):")
     print(f"  predicted: K_perp/K_par = phi^{g['predicted_exponent']} = "
           f"{g['predicted_value']:.6e}")
     print(f"  derived:                = phi^{g['derived_exponent']} = "

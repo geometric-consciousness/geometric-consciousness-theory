@@ -13,7 +13,8 @@ Identities:
 3. m_s = m_u * phi^8 * (1 - 12*alpha)
 4. m_c = m_u * phi^(13 + phi^-3)
 5. m_b = m_c * phi^2 * (1.25)
-6. m_t = (v_target / 2) * sqrt(2)
+6. m_t = (v_GCT / 2) * sqrt(2), where v_GCT is the absolute Higgs-VEV
+   pipeline value built from the corrected geometric muon resonance
 """
 
 import sys
@@ -21,7 +22,7 @@ import json
 import math
 import io
 from pathlib import Path
-from gct_utils import C
+from gct_utils import C, resolve_a3
 
 # Force UTF-8 for Windows compatibility with scientific symbols
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
@@ -39,7 +40,7 @@ except ImportError:
         return str(_SRC.parent.parent / "data" / filename)
     class C:
         PHI = float(C.PHI)
-        ALPHA_OBS = 0.0072973525693
+        ALPHA_OBS = 1.0 / 137.035999177
         M_E_OBS = 0.51099895
         SQRT2 = 1.4142135623730951
 
@@ -67,20 +68,26 @@ def verify_a5_ratio():
     ratio = analyzer.compute_a5_spectral_ratio(D_F)
     
     assert abs(ratio - 1.25) < 1e-6, f"Expected 1.25, got {ratio}"
-    print(f"A5 SPECTRAL RATIO THEOREM: dim(5E)/dim(4D) extracted from eigenspectrum = {ratio} — VERIFIED [Tier 2]")
+    print(f"A5 SPECTRAL RATIO THEOREM: dim(H)/dim(G) extracted from eigenspectrum = {ratio} — VERIFIED [Tier 2]")
     return ratio
 
 def main():
     import numpy as np
 
     phi = float(C.PHI)
-    alpha = float(C.ALPHA_OBS)
+    alpha, _ = resolve_a3(C)
     m_e_mev = float(C.M_E_OBS)
+    m_e_vev_mev = float(C.M_E_CODATA_MEV)
     sqrt2 = float(C.SQRT2)
 
-    # Target VEV in GeV, converted to MeV for the top quark calc
-    v_target_gev = 246.2196
-    v_target_mev = v_target_gev * 1000.0
+    # Absolute GCT Higgs-VEV pipeline, matching protocol_higgs_vev.py:
+    # m_mu = m_e phi^11 (1 + 5 alpha + phi^8 alpha^2),
+    # v_GCT = m_mu * (144 * 10) * phi.
+    m_mu_geom_mev = m_e_vev_mev * (phi ** 11) * (
+        1.0 + 5.0 * alpha + (phi ** 8) * (alpha ** 2)
+    )
+    v_gct_gev = (m_mu_geom_mev / 1000.0) * 1440.0 * phi
+    v_gct_mev = v_gct_gev * 1000.0
 
     # PDG targets (in MeV); strange-quark sourced from YAML.
     targets = {
@@ -125,8 +132,8 @@ def main():
         },
         "single_cage_behavior": "single-cage values oscillate within the 11% shell-resonance band; the m_d match is the central tendency of the sequence",
         "convergence_caveat": "empirical decaying envelope toward phi^phi; rigorous infinite-volume proof open, bundles with O.5",
-        "derived_mass_scorecard_inclusion": "Included with Tier 3 conditional note: postdiction-consistent under the phi^phi infinite-volume-limit identification conditional on O.5.",
-        "tier": "Tier 2 FK-determinant mechanism + Tier 3 phi^phi infinite-volume-limit identification conditional on O.5",
+        "derived_mass_scorecard_inclusion": "Included with Tier 3 conditional note: postdiction-consistent under the phi^phi identification of the shell median (infinite-volume limit open, O.5).",
+        "tier": "Tier 2 FK-determinant mechanism + Tier 3 phi^phi identification of the shell median (infinite-volume limit open, O.5)",
     }
 
     m_s = m_u * (phi ** 8) * (1.0 - 12.0 * alpha)
@@ -136,13 +143,13 @@ def main():
     # K-theoretic gap label is structurally distinct from the down-quark FK
     # determinant; the engine does NOT yet derive that label from the cage
     # spectrum, so m_c remains a Tier 3 heuristic awaiting closure via QLQCD-1L
-    # gap-label analysis (App H Open Problem O.5; tracked in App TP §TP-B and
+    # gap-label analysis (App ORQ Open Problem O.5; tracked in App TPR §TP-B and
     # §TP-F).
     m_c = m_u * (phi ** (13.0 + (phi ** -3)))
 
     # A5 representation ratio derived dynamically from graph eigenspectrum [Tier 2]
     m_b = m_c * (phi ** 2) * a5_ratio
-    m_t = (v_target_mev / 2.0) * sqrt2
+    m_t = (v_gct_mev / 2.0) * sqrt2
     
     predictions = {
         "u": m_u,
@@ -155,14 +162,39 @@ def main():
     
     # Error Calculation and Logic
     # -----------------------------------------------------------------------
-    # Registered numerical tolerance gates: m_d 11% shell-resonance band,
-    # m_s ±10%, m_c ±5%,
-    # m_b ±2%, m_t ±1%; PASS only if within gate. The up-quark row is
-    # retained as an anchor/tension diagnostic because its quoted PDG range
-    # is scheme-dependent and not the registered pass/fail gate here.
+    # Numerical tolerance gates: m_d 11% shell-resonance band (P.20),
+    # m_s ±10%, m_c ±5%; PASS only if within gate.
+    # Top and bottom rows are scored against their REGISTERED falsification
+    # rule, not a percentage tolerance: P.24 "m_t outside PDG +/- 5 sigma of
+    # the geometric prediction" (registered since v1.2.0; comparator PDG 2024
+    # direct-measurement mass 172.57 +/- 0.29 GeV) and P.23 "m_b outside PDG
+    # +/- 5 sigma (the P.24 rule)" (PDG 2024 m_b(m_b) = 4183 +/- 7 MeV).
+    # Both rows miss that rule (App FSM / App PSC rows P.23, P.24;
+    # falsifiability_registry.json), so they are reported as FAIL with their
+    # sigma distance. The former 1%/2% tolerances are not registered rules and
+    # are withdrawn. The up-quark row is retained as an anchor/tension
+    # diagnostic because its quoted PDG range is scheme-dependent and not the
+    # registered pass/fail gate here.
     # -----------------------------------------------------------------------
     errors = {}
-    pdg_tolerance_gates_pct = {"d": 11.0, "s": 10.0, "c": 5.0, "b": 2.0, "t": 1.0}
+    # Charm gate = registered P.22 band (+/- 3%, falsifiability_registry.json);
+    # tightened from an unregistered 5% on 2026-10-22 (sweep I008).
+    pdg_tolerance_gates_pct = {"d": 11.0, "s": 10.0, "c": 3.0}
+    registered_sigma_gates = {
+        "b": {
+            "rule": "P.23: m_b outside PDG +/- 5 sigma of the geometric prediction (the P.24 rule)",
+            "gate_sigma": 5.0,
+            "pdg_sigma_mev": 7.0,
+            "comparator": "PDG 2024 m_b(m_b) = 4183 +/- 7 MeV (MS-bar)",
+        },
+        "t": {
+            "rule": "P.24: m_t outside PDG +/- 5 sigma of the geometric prediction (registered since v1.2.0)",
+            "gate_sigma": 5.0,
+            "pdg_sigma_mev": 290.0,
+            "comparator": "PDG 2024 direct-measurement mass 172.57 +/- 0.29 GeV (not a pole mass)",
+        },
+    }
+    sigma_distance = {}
     per_quark_status = {}
     passed_all = True
     failed_registered_gates = []
@@ -187,7 +219,24 @@ def main():
         print(f"    Error     : {err_pct:.2f}%")
 
         gate = pdg_tolerance_gates_pct.get(q)
-        if gate is None:
+        sigma_gate = registered_sigma_gates.get(q)
+        if sigma_gate is not None:
+            n_sigma = abs(pred - targ) / sigma_gate["pdg_sigma_mev"]
+            sigma_distance[q] = n_sigma
+            sigma_gate["sigma_distance"] = float(n_sigma)
+            print(f"    Sigma     : {n_sigma:.2f} sigma (PDG sigma = {sigma_gate['pdg_sigma_mev']:g} MeV)")
+            if n_sigma <= sigma_gate["gate_sigma"]:
+                per_quark_status[q] = "PASS"
+                sigma_gate["status"] = "PASS"
+                print(f"    [PASS] Inside registered PDG +/- {sigma_gate['gate_sigma']:.0f} sigma rule")
+            else:
+                per_quark_status[q] = "FAIL"
+                sigma_gate["status"] = "FAIL"
+                passed_all = False
+                failed_registered_gates.append(q)
+                print(f"    [FAIL] Outside registered PDG +/- {sigma_gate['gate_sigma']:.0f} sigma rule "
+                      f"(missed at {n_sigma:.2f} sigma)")
+        elif gate is None:
             per_quark_status[q] = "DIAGNOSTIC_NO_REGISTERED_GATE"
             print("    [DIAGNOSTIC] No registered PDG gate applied to this row")
         elif err_pct <= gate:
@@ -199,13 +248,28 @@ def main():
             failed_registered_gates.append(q)
             print(f"    [FAIL] Exceeds PDG numerical tolerance gate (> {gate:.1f}%)")
 
+    d_gate_pass = per_quark_status["d"] == "PASS"
+    if passed_all:
+        verdict = "PASS"
+    else:
+        verdict = (
+            "REGISTERED_GATE_FAIL_"
+            + "_".join(q.upper() for q in failed_registered_gates)
+            + ("__D_FK_GATE_PASS" if d_gate_pass else "__D_FK_GATE_FAIL")
+        )
     print("=" * 70)
     if passed_all:
-        print("  VERDICT: PASS (all registered PDG numerical tolerance gates satisfied)")
+        print("  VERDICT: PASS (every gated row inside its registered rule)")
     else:
-        print("  VERDICT: FAIL (one or more registered PDG numerical tolerance gates failed)")
+        print(f"  VERDICT: {verdict}")
+        print("  Registered falsification rules missed by: "
+              + ", ".join(
+                  f"{q} ({sigma_distance[q]:.2f} sigma)" if q in sigma_distance
+                  else f"{q} ({errors[q]:.2f}%)"
+                  for q in failed_registered_gates))
+        print(f"  Down-quark FK gate (P.20, 11% band): {'PASS' if d_gate_pass else 'FAIL'}")
     print("=" * 70)
-    
+
     output = {
         "pass": passed_all,
         "a5_ratio": float(a5_ratio),
@@ -213,8 +277,19 @@ def main():
         "b_quark_coefficient_deployment_tier": 3,
         "b_quark_coefficient_derivation": "Exact A5 representation ratio; absolute bottom-mass deployment inherits Tier 3 quark-sector closure",
         "pdg_tolerance_gates_percent": pdg_tolerance_gates_pct,
+        "registered_sigma_gates": registered_sigma_gates,
+        "sigma_distance": {k: float(v) for k, v in sigma_distance.items()},
         "per_quark_status": per_quark_status,
-        "verdict": "PASS" if passed_all else "FAIL",
+        "failed_registered_gates": failed_registered_gates,
+        "d_gate_pass": bool(d_gate_pass),
+        "verdict": verdict,
+        "verdict_note": (
+            "Top (P.24) and bottom (P.23) rows are FAILs of the registered PDG +/- 5 sigma "
+            "rule; the residuals stay Tier 3 state-level residuals conditional on O.5, and a "
+            "pole/MS-bar uncertainty model would be a new pre-registered band, not a "
+            "retroactive rescue. The down-quark P.20 row is postdiction-consistent inside its "
+            "11% shell-resonance band, conditional on O.5."
+        ),
         "down_quark_canonical_tuple": {
             "m_d_MeV": float(m_d),
             "error_percent": float(errors["d"]),
@@ -222,6 +297,11 @@ def main():
             "status": per_quark_status["d"],
         },
         "predictions_mev": {k: float(v) for k, v in predictions.items()},
+        "top_quark_vev_provenance": {
+            "vev_GeV": v_gct_gev,
+            "source": "absolute GCT Higgs-VEV pipeline used by protocol_higgs_vev.py",
+            "formula": "v_GCT = m_e phi^11 (1 + 5 alpha + phi^8 alpha^2) * 1440 * phi",
+        },
         "targets_mev": targets,
         "errors_percent": {k: float(v) for k, v in errors.items()},
         "down_quark_fk_info": fk_info,
@@ -234,13 +314,16 @@ def main():
     outfile = get_output_path("protocol_quark_mismatch_results.json")
     with open(outfile, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
-        
-    return 0 if passed_all else 1
+
+    # The registered FAILs are recorded in the result JSON and asserted by
+    # config/expected_outcomes.json; a non-zero exit would only stop the
+    # refresh path, not report the miss.
+    return 0
 
 def derive_strange_12alpha():
     from gct_utils import C
     PHI = float(C.PHI)
-    alpha = float(C.ALPHA_OBS) if hasattr(C, 'ALPHA_OBS') else 0.0072973525693
+    alpha, _ = resolve_a3(C)
     
     # RT Geometry mapping
     n_channels_dodecahedral = 12 # 12 pentagonal faces of the dodecahedral dual cage
@@ -250,25 +333,31 @@ def derive_strange_12alpha():
         "n_channels_dodecahedral": n_channels_dodecahedral,
         "correction_12alpha": strange_correction,
         "geometric_argument": "Strange quark (face defect) couples to 12 surrounding dodecahedral channels. Analogous to muon's 5alpha from A5 H-representation.",
-        "tier": "Tier 2 mechanism + Tier 3 specific coefficient (12) pending O.43 closure"
+        "tier": "Tier 2 mechanism (conditional on the Tier 3 face-defect quark assignment) + Tier 3 specific coefficient (12) pending O.43 closure"
     }
 
 def estimate_top_qcd_correction():
     """
     Estimate the leading-order QCD pole-mass correction to the tree-level GCT top quark.
-    Explains why the 0.89% residual is theoretically bounded (QLQCD-2L target).
+    Explains why the 0.87% residual is theoretically bounded (QLQCD-2L target).
     Inputs from first principles (alpha_s PDG, m_t GCT), with no additional fitted coefficient.
     """
     import math
     phi = float(C.PHI) if hasattr(C, 'PHI') else 1.6180339887
     sqrt2 = float(C.SQRT2) if hasattr(C, 'SQRT2') else math.sqrt(2)
 
-    v_target_mev = 246219.6  # GCT Higgs VEV in MeV
-    m_t_gct_mev = (v_target_mev / 2.0) * sqrt2
+    alpha = float(C.ALPHA_OBS)
+    m_e_mev = float(C.M_E_OBS)
+    m_e_vev_mev = float(C.M_E_CODATA_MEV)
+    m_mu_geom_mev = m_e_vev_mev * (phi ** 11) * (
+        1.0 + 5.0 * alpha + (phi ** 8) * (alpha ** 2)
+    )
+    v_gct_mev = m_mu_geom_mev * 1440.0 * phi
+    m_t_gct_mev = (v_gct_mev / 2.0) * sqrt2
     m_t_pdg_mev = 172570.0
 
     M_Z_mev = 91187.6        # Z boson mass in MeV
-    alpha_s_mz = 0.1179      # PDG alpha_s(M_Z)
+    alpha_s_mz = 0.1180      # PDG 2024 alpha_s(M_Z)
 
     # One-loop OLO QCD correction at full top scale
     delta_olo_mev = (4.0 / 3.0) * (alpha_s_mz / math.pi) * m_t_gct_mev
@@ -300,7 +389,7 @@ def estimate_top_qcd_correction():
         "olo_correction_percent": delta_olo_mev / m_t_gct_mev * 100.0,
         "effective_scale_gev": mu_eff_mev / 1000.0,
         "effective_correction_percent": delta_eff_mev / m_t_gct_mev * 100.0,
-        "status": "Open Problem QLQCD-2L — 0.89% residual bounded by first-order QCD"
+        "status": f"Open Problem QLQCD-2L — {bare_err_pct:.2f}% residual bounded by first-order QCD"
     }
 
 if __name__ == "__main__":

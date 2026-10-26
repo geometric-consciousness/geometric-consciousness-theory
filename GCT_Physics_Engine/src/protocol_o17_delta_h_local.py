@@ -3,16 +3,20 @@
 protocol_o17_delta_h_local.py
 =============================
 
-Quantitative derivation of the local Hubble excess delta H_local from the
-GCT biogenic-driving action (V2 Ch14 Sec 14.5.1 lag-kernel + Sec 14.5.4
-local-environment framing). Addresses Open Problem O.17.
+Conditional model calculation of the local Hubble response delta H_local from
+the stipulated V2 Ch14 Sec 14.5.1 lag kernel and Sec 14.5.4 local-environment
+scaling. This does not derive a physical biogenic action; typed coupling,
+source normalization, and the information-to-metric causal map remain open.
 
 PHYSICAL SETUP
 --------------
 
-The biogenic-driven dark-energy equation of state at cosmic mean is:
-    w_cosmic(z) = -1 + delta_w_cosmic(z),  delta_w_cosmic(0) approx -0.005
-calibrated by the biogenic DE pipeline (`protocol_imp01_pipeline.py`).
+The excluded broad-logistic comparison branch uses
+    w_cosmic(z) = -1 + delta_w_cosmic(z),  delta_w_cosmic(0) approx -0.005,
+as calibrated by the broad-logistic comparator in `protocol_imp01_pipeline.py`.
+That value is not the operative Class-2 envelope, which is registered at
+|Delta w(z=0.28)| in [2, 5]e-5.  Because no normalized Class-2 z=0 history is
+available, the operative envelope is not substituted into this O.17 exercise.
 
 In a region with biogenic-information overdensity factor delta_bio
 (defined as rho_bio,local/rho_bio,cosmic - 1), the local informational
@@ -47,7 +51,8 @@ inference shifts the fitted H_0 downward:
 i.e.
     delta_H_local / H_0 = +(3/4) Omega_Lambda * z_SH0ES * delta_bio * delta_w_cosmic(0)
 
-For Omega_Lambda = 0.685, z_SH0ES = 0.075 (SH0ES median), delta_w_cosmic(0) = -0.005:
+For the excluded broad-logistic comparison, Omega_Lambda = 0.685,
+z_SH0ES = 0.075 (SH0ES median), and delta_w_cosmic(0) = -0.005:
     delta_H_local / H_0 = (3/4) * 0.685 * 0.075 * delta_bio * (-0.005)
                         = -1.9e-4 * delta_bio                           [eqn A]
 
@@ -88,14 +93,14 @@ average delta_bio at the volume-average over the SH0ES sample is ~1-3
 VERDICT FRAMEWORK
 -----------------
 
-Closure of O.17 has two possible outcomes:
-  (i)  if delta_H_local / H_0 (delta_bio = 1-3) reproduces the ~0.09
-       observed SH0ES-vs-Planck tension --> promote Sec 14.5.4 from
-       Tier 3 consistency to Tier 2 prediction
-  (ii) if delta_H_local / H_0 (delta_bio = 1-3) is too small (<< 0.09)
-       to account for the tension --> classify the row as a non-solution
-       for the full Hubble tension and report the sign and magnitude at
-       realistic overdensity
+Closure of O.17 has two conditional model-arithmetic outcomes:
+  (i)  if delta_H_local / H_0 (delta_bio = 1-3) is comparable to the
+       ~0.09 observed SH0ES-vs-Planck tension, report that numerical
+       comparison without tier promotion or causal-mechanism inference
+  (ii) if delta_H_local / H_0 (delta_bio = 1-3) is too small (<< 0.09),
+       classify the stipulated branch as a non-solution for the full
+       Hubble tension and report its sign and magnitude at realistic
+       overdensity
 
 This protocol computes the predicted delta_H_local across the realistic
 delta_bio range and reports the verdict.
@@ -117,11 +122,14 @@ except ImportError:
 H0_KM_S_MPC = 67.4
 OMEGA_M = 0.315
 OMEGA_L = 0.685
-ALPHA = 1.0 / 137.036
+ALPHA = 1.0 / 137.036  # legacy low-resolution conditional-template input; not A3 SSOT
 TAU_LAG_GYR = 5.0
 TAU_BIO_GYR = 4.5
-W0_TARGET = -1.005
-DELTA_W_TARGET = W0_TARGET - (-1.0)
+W0_LOGISTIC_REFERENCE = -1.005
+# Excluded broad-logistic comparison branch.  The operative Class-2 envelope is
+# |Delta w(z=0.28)| in [2, 5]e-5 and is not substituted into this local-H0
+# diagnostic because no normalized z=0 history for that envelope is specified.
+DELTA_W_LOGISTIC_REFERENCE = W0_LOGISTIC_REFERENCE - (-1.0)
 
 MPC_TO_KM = 3.0857e19
 SEC_PER_GYR = 3.1557e16
@@ -222,14 +230,14 @@ def p_info_cosmic(t_gyr, age_today_gyr, t_origin=9.0, tau_evolve=2.0):
 
 
 def w_cosmic_of_z(z_array, age_today_gyr, t_origin=9.0, tau_evolve=2.0):
-    """Cosmic-mean w(z) = -1 + DELTA_W_TARGET * P_info(z)/P_info(0)."""
+    """Excluded logistic-reference w(z), not the operative Class-2 envelope."""
     t_array, _ = age_at_z(z_array)
     p_info_array = p_info_cosmic(t_array, age_today_gyr, t_origin, tau_evolve)
     p_info_today = p_info_cosmic(np.array([age_today_gyr]), age_today_gyr,
                                  t_origin, tau_evolve)[0]
     if p_info_today == 0:
         return -np.ones_like(z_array)
-    return -1.0 + DELTA_W_TARGET * (p_info_array / p_info_today)
+    return -1.0 + DELTA_W_LOGISTIC_REFERENCE * (p_info_array / p_info_today)
 
 
 def w_local_of_z(z_array, delta_bio, age_today_gyr,
@@ -428,7 +436,14 @@ def run_o17(t_origin=9.0, tau_evolve=2.0):
         "tau_lag_gyr": TAU_LAG_GYR,
         "tau_bio_gyr": TAU_BIO_GYR,
         "lambda_bio": ALPHA,
-        "delta_w_cosmic_z0": DELTA_W_TARGET,
+        "excluded_logistic_delta_w_cosmic_z0": DELTA_W_LOGISTIC_REFERENCE,
+        "operative_class2_envelope_abs_delta_w_z028": [2.0e-5, 5.0e-5],
+        "branch_scope": (
+            "The O.17 local/Planck arithmetic below belongs to the excluded "
+            "broad-logistic delta_w_cosmic(0)=-0.005 comparison branch. The "
+            "operative Class-2 envelope is |Delta w(z=0.28)| in [2,5]e-5; "
+            "without a normalized z=0 Class-2 history it is not an O.17 input."
+        ),
         "H0_SH0ES_obs": H0_SH0ES_OBS,
         "H0_Planck_obs": H0_PLANCK_OBS,
         "observed_tension_fractional": TENSION_FRACTIONAL,
@@ -464,24 +479,26 @@ def verdict(results):
     # Channel 2: cosmic-mean Planck-bias contribution to SH0ES-Planck tension
     planck_bias_frac = results["implied_SH0ES_minus_Planck_bias_fraction_of_tension"]
 
-    abs_kin_max = max(abs(f) for f in realistic_fracs_kin + [filament_frac_kin])
+    abs_kin_max = max(abs(f) for f in realistic_fracs_kin)
+    abs_linear_max = max(abs(f) for f in realistic_fracs_lin)
     abs_planck = abs(planck_bias_frac)
-    total_explained_upper_bound = abs_kin_max + abs_planck
+    linear_max_plus_planck = abs_linear_max + abs_planck
 
     sign_consistent_local = bool(all(f > 0 for f in realistic_fracs_kin))
     sign_consistent_planck = bool(planck_bias_frac > 0)
 
-    if total_explained_upper_bound >= 0.5:
-        direction = "(i) PROMOTE to Tier 2 prediction"
+    if linear_max_plus_planck >= 0.5:
+        direction = "(i) CONDITIONAL MODEL MAGNITUDE COMPARABLE"
         framing = (
             f"Combined upper-bound contribution from local-cosmography "
-            f"({100.0 * abs_kin_max:.2f}% of H_0) and Planck-bias "
-            f"({100.0 * abs_planck:.2f}% of H_0) channels accounts for "
-            f"{100.0 * total_explained_upper_bound:.1f}% of the observed "
+            f"({100.0 * abs_linear_max:.6f}% of the tension) and Planck-bias "
+            f"({100.0 * abs_planck:.6f}% of the tension) channels account for "
+            f"{100.0 * linear_max_plus_planck:.6f}% of the observed "
             f"~{100.0 * results['observed_tension_fractional']:.1f}% Hubble "
-            f"tension at realistic delta_bio. Promote V2 Ch14 Sec 14.5.4 from "
-            f"Tier 3 consistency to Tier 2 prediction with this magnitude as "
-            f"the derived bound."
+            f"tension at realistic delta_bio under the stipulated lag-kernel "
+            f"inputs. This is conditional model arithmetic only: it does not "
+            f"promote the branch or establish a physical source, normalized "
+            f"coupling, or causal information-to-metric map."
         )
     else:
         sign_note = ""
@@ -494,21 +511,24 @@ def verdict(results):
         if sign_consistent_local and sign_consistent_planck:
             sign_note += " Both channels are sign-consistent with the tension."
 
-        direction = "Biogenic-driving action does not account for the Hubble tension"
+        direction = "Conditional lag-kernel coordinate does not account for the Hubble tension"
         framing = (
-            f"At realistic SH0ES-volume-average overdensity (delta_bio ~ 1-3), "
-            f"the local-cosmography channel of biogenic-DE shifts the SH0ES "
-            f"inferred H_0 by "
-            f"[{anchors['local_sheet']['delta_H_local_kinematic_percent']:+.4f}%, "
-            f"{anchors['laniakea']['delta_H_local_kinematic_percent']:+.4f}%] "
-            f"of H_0 (kinematic-fit channel); the Planck-bias channel "
-            f"contributes {100.0 * planck_bias_frac:+.2f}% of the observed "
-            f"tension. Combined upper bound is at most "
-            f"{100.0 * total_explained_upper_bound:.2f}% of the observed "
+            f"For the excluded broad-logistic reference only, delta_bio=1.5/3.5 "
+            f"gives kinematic fractional H_0 shifts "
+            f"{anchors['local_sheet']['delta_H_local_kinematic_percent']/100.0:+.6e}/"
+            f"{anchors['laniakea']['delta_H_local_kinematic_percent']/100.0:+.6e} "
+            f"and linear-fit shifts "
+            f"{anchors['local_sheet']['delta_H_local_linear_percent']/100.0:+.6e}/"
+            f"{anchors['laniakea']['delta_H_local_linear_percent']/100.0:+.6e}. "
+            f"The Planck-bias is {results['implied_SH0ES_minus_Planck_bias_cosmic']:+.6e}, "
+            f"or {100.0 * planck_bias_frac:+.6f}% of the observed tension. "
+            f"Linear-max plus Planck is {100.0 * linear_max_plus_planck:.6f}% "
+            f"of the observed "
             f"~{100.0 * results['observed_tension_fractional']:.1f}% tension."
             f"{sign_note} The Hubble tension is not among the framework's "
             f"predictions; this diagnostic is a quantitative non-closure "
-            f"bound for the local biogenic-DE channel."
+            f"bound for the stipulated lag-kernel coordinate, not evidence "
+            f"for or against a physical biogenic causal mechanism."
         )
 
     return {
@@ -530,20 +550,22 @@ def verdict(results):
                 "sign_consistent_with_tension": sign_consistent_planck,
             },
         },
-        "total_explained_upper_bound": float(total_explained_upper_bound),
+        "linear_max_plus_planck_fraction_of_tension": float(linear_max_plus_planck),
+        "kinematic_max_plus_planck_fraction_of_tension": float(abs_kin_max + abs_planck),
     }
 
 
 def main():
     print("=" * 72)
-    print("O.17 PROTOCOL: delta H_local from GCT biogenic-driving action")
+    print("O.17 PROTOCOL: conditional lag-kernel delta H_local diagnostic")
     print("=" * 72)
 
     results = run_o17(t_origin=9.0, tau_evolve=2.0)
 
     print(f"\nCosmic-mean baselines:")
     print(f"  Age of universe today                       : {results['age_today_gyr']:.3f} Gyr")
-    print(f"  delta_w_cosmic(z=0)                         : {results['delta_w_cosmic_z0']:+.4f}")
+    print(f"  EXCLUDED logistic delta_w_cosmic(z=0)       : {results['excluded_logistic_delta_w_cosmic_z0']:+.4f}")
+    print(f"  Operative Class-2 |Delta w(z=0.28)| envelope: {results['operative_class2_envelope_abs_delta_w_z028']}")
     print(f"  H_0_SH0ES_linear  / H_0_global              : {results['H0_SH0ES_linear_cosmic_over_global']:.6f}")
     print(f"  H_0_SH0ES_kinematic / H_0_global            : {results['H0_SH0ES_kinematic_cosmic_over_global']:.6f}")
     print(f"  H_0_Planck (LCDM-fid inversion) / H_0_global: {results['H0_Planck_inferred_cosmic_over_global']:.6f}")
@@ -568,7 +590,7 @@ def main():
     v = verdict(results)
     print(f"\nVerdict for O.17:")
     print(f"  Direction : {v['direction']}")
-    print(f"  Total explained upper bound: {100.0 * v['total_explained_upper_bound']:.2f}% of tension")
+    print(f"  Linear-max + Planck diagnostic: {100.0 * v['linear_max_plus_planck_fraction_of_tension']:.6f}% of tension")
     print(f"  Framing   : {v['framing']}")
 
     output = {"results": results, "verdict": v}

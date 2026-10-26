@@ -1,11 +1,49 @@
 {
-    "m_gut_gev": 3.203844296328604e+16,
-    "t_gut": 33.49279399635455,
-    "sin2_w_gut_bc": 0.38196601125010515,
-    "sin2_w_predicted": 0.23121998341510144,
-    "sin2_w_observed": 0.23122,
-    "error_pct": 7.172778550989089e-06,
-    "pass": true,
-    "method": "Spectral Action dS/dlnL Beta Function Kernel",
-    "sm_beta_functions": false
+  "protocol": "Quarantined Spectral-Kernel Integrator Audit",
+  "pass": false,
+  "status": "QUARANTINED_ENDPOINT_BY_CONSTRUCTION",
+  "m_gut_gev": 3.203844296328604e+16,
+  "t_gut": 33.49279399635455,
+  "h_ew_boundary": {
+    "sin2_theta_W_uv_phi_minus_3": 0.23606797749978967,
+    "status": "OPEN_CONDITIONAL_GAUGE_KINETIC_HYPOTHESIS",
+    "derived_from_kernel": false,
+    "derived_from_canonical_projector": false
+  },
+  "raw_phi_minus_2": {
+    "value": 0.38196601125010515,
+    "status": "COORDINATE_DIAGNOSTIC_NOT_PHYSICAL_BOUNDARY",
+    "prediction": false
+  },
+  "kernel_audit": {
+    "kernel_file": "spectral_rge_kernel.json",
+    "raw_kernel_integral": 634.5196700418617,
+    "unit_response_TGUT_to_zero": -1.0000000002881566,
+    "expected_unit_response": -1.0,
+    "unit_integral_pass": true,
+    "shape_physically_derived": false,
+    "amplitude_physically_derived": false
+  },
+  "target_normalized_integrator_check": {
+    "observed_endpoint_used_as_input": true,
+    "sin2_theta_W_observed_input": 0.23122,
+    "h_ew_initial_value": 0.23606797749978967,
+    "amplitude_solved_from_observed_endpoint": 0.00484797749839268,
+    "output_endpoint": 0.2312199999999995,
+    "absolute_integrator_error": 4.996003610813204e-16,
+    "integrator_pass": true,
+    "physical_prediction": false
+  },
+  "physical_closure": {
+    "physical_endpoint_predicted": false,
+    "sin2_theta_W_MZ_prediction": null,
+    "action_level_kernel_coefficient_derived": false,
+    "overall_physical_pass": false
+  },
+  "sin2_w_gut_bc": 0.23606797749978967,
+  "sin2_w_predicted": null,
+  "sin2_w_observed": 0.23122,
+  "error_pct": null,
+  "method": "Target-normalised spectral-kernel integrator quarantine",
+  "sm_beta_functions": false
 }

@@ -4,26 +4,34 @@ verify_stiffness_ratio.py — Phason stiffness ratio η_stiff = K_⊥/K_∥ = φ
 INDEPENDENCE SCOPE: This verifier is NOT fully independent. Unlike the
 CODATA/PDG-only scripts in this directory, it imports engine geometry
 from src/ (`gct_projections` for the AKN projection matrices). Its
-agreement with App K is therefore a CONSISTENCY CHECK against the engine's
+agreement with App DPS is therefore a CONSISTENCY CHECK against the engine's
 own projection construction, not an independent corroboration of the
 stiffness ratio. (See README "independence contract"; the fully
 CODATA/PDG-anchored scripts in this directory carry the independence claim.)
 
-App K §K.4 (Parameter Ledger §2):
- "K_⊥/K_∥ ≈ (det(G_⊥)/det(G_∥))³ = (φ⁻⁶)³ = φ⁻¹⁸"
- Tier 2: exponent D=18 = H_3 invariant-degree sum (Coxeter rep over Q(√5))
- Tier 2: identification of K with elastic phason stiffness sector
+App DPS §DPS.2-§DPS.4 (Parameter Ledger §0.1 P3):
+ Tier 2: exponent D=18 = H_3 invariant-degree sum (integer identification)
+ Tier 3: the stiffness map K_⊥/K_∥ = φ⁻¹⁸ (registered hypothesis P3b, O.15(b),
+         listed outside the count)
+ Retired as a derivation: "K_⊥/K_∥ ≈ (det(G_⊥)/det(G_∥))³". The raw-frame
+ Gram ratio φ⁻⁶ scales as s⁶ under internal rescaling (its cube as s¹⁸), and
+ the canonical isometric projectors give 1 (App DPS §DPS.3).
 
-This verifier:
- (1) Computes det(G_⊥)/det(G_∥) from the canonical AKN projection
+This verifier checks raw-frame coordinate arithmetic only (TIER1_EXACT means
+the arithmetic identities hold, not that a stiffness ratio is derived):
+ (1) Computes det(G_⊥)/det(G_∥) from the unnormalized AKN projection
  matrices and verifies it equals φ⁻⁶ exactly.
- (2) Cubes the ratio and confirms K_⊥/K_∥ = φ⁻¹⁸ ≈ 1.731 × 10⁻⁴.
- (3) Confirms the lattice speed of light c = sqrt(K_⊥/K_∥) = φ⁻⁹.
+ (2) Cubes the ratio: (φ⁻⁶)³ = φ⁻¹⁸ ≈ 1.731 × 10⁻⁴.
+ (3) Takes the square root: φ⁻⁹ (the value the Tier 3 P3b reading uses for
+ the lattice speed).
 
-This is structurally similar to the A.2 (Weinberg φ⁻³ uniqueness)
+This is structurally similar to the raw-frame Weinberg volume identity
+($n=-3$ and V_perp,0/V_parallel,0 = phi^-3 as Tier 1 coordinate arithmetic,
+with the physical bare angle remaining the Tier 3 hypothesis H-EW)
 audit: the exponent follows from composition of independent geometric
-inputs (Gram-determinant ratio + cube-power dimension argument), a Tier 2
-geometric result.
+inputs (Gram-determinant ratio + cube-power dimension argument); the
+raw-frame ratio is Tier 1 coordinate arithmetic and the cube-power map to the
+physical stiffness ratio is a Tier 3 heuristic (App DPS §DPS.3; O.15(b)).
 """
 
 import sys, math
@@ -72,16 +80,16 @@ def main():
 
  res = make_result(
  name="phason_stiffness_ratio",
- app_r_label="Phason stiffness ratio η_stiff = K_⊥/K_∥",
+ app_psc_label="Phason stiffness ratio η_stiff = K_⊥/K_∥",
  formula="K_⊥/K_∥ = (det(G_⊥)/det(G_∥))³ = (φ⁻⁶)³ = φ⁻¹⁸",
  predicted=K_ratio,
  observed=expected_K_ratio,
  unit="(dimensionless)",
- app_r_predicted=phi ** (-18),
- app_r_precision_str=f"det ratio = {det_ratio:.10e} (expected φ⁻⁶ = {expected_det_ratio:.10e}); cubed = {K_ratio:.10e} (= φ⁻¹⁸); c_lattice = {c_lattice:.10e} (= φ⁻⁹)",
- app_r_precision_ppm=K_ratio_match * 1e6,
- tier="Tier 2 postulate + Tier 3 specific exponent (D=18)",
- status="PASS" if all_match else "FAIL",
+ app_psc_predicted=phi ** (-18),
+ app_psc_precision_str=f"det ratio = {det_ratio:.10e} (expected φ⁻⁶ = {expected_det_ratio:.10e}); cubed = {K_ratio:.10e} (= φ⁻¹⁸); c_lattice = {c_lattice:.10e} (= φ⁻⁹)",
+ app_psc_precision_ppm=K_ratio_match * 1e6,
+ tier="Tier 2 integer identification (D=18) + Tier 3 heuristic stiffness-ratio map",
+ status="TIER1_EXACT" if all_match else "FAIL",
  tolerance_ppm=1.0,
  extra={
  "det_G_para_raw": float(det_para),
@@ -95,15 +103,13 @@ def main():
  "all_three_machine_precision_match": all_match,
  "derivation_note": (
  "The Gram-determinant ratio det(G_perp)/det(G_para) = phi^-6 "
- "is the algebraic identity following from the cut-and-project "
- "lattice basis. The cube relationship K ~ det^3 arises from "
- "the 3-dimensional projected continuum (elastic stiffness "
- "is energy density per unit volume in 3D). Composition gives "
- "K_perp/K_para = phi^-18 with no additional fitted coefficient. The exponent "
- "18 is the H_3 invariant-degree sum (App K §K.4; real dimension "
- "of the Q(sqrt 5) representation = 18), a Tier 2 geometric "
- "input; the Tier 2 identification with the physical phason "
- "elastic sector is the substantive claim."
+ "is a raw-frame (coordinate-dependent) algebraic identity of the cut-and-project "
+ "lattice basis: it scales as s^6 under an internal rescaling and the canonical "
+ "isometric projectors give 1, so its cube does not derive a stiffness ratio "
+ "(the former Gram-cube route is retired, App DPS §DPS.3). The exponent "
+ "18 is the H_3 invariant-degree sum (App DPS §DPS.4), the Tier 2 integer "
+ "identification; the map K_perp/K_para = phi^-18 is the Tier 3 P3b "
+ "hypothesis (O.15(b)), registered outside the count."
  ),
  },
  )

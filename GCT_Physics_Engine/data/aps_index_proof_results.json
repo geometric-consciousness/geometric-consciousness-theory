@@ -1,13 +1,19 @@
 {
  "N_nodes": 144,
- "eta_scalar": -8.0,
- "eta_eff": -1.0,
- "bulk_index": 108,
- "total_index": 107.0,
+ "cage_scope": "selected 144-node I-orbit union",
+ "scalar_adjacency_operator": "A on C^144 (finite weighted adjacency matrix)",
+ "scalar_adjacency_sign_sum": -8.0,
+ "spinor_dimension_used_for_diagnostic": 8,
+ "scalar_adjacency_per_spinor_dimension_diagnostic": -1.0,
+ "discrete_dirac_sign_sum": null,
+ "aps_boundary_operator_specified": false,
+ "aps_eta_evaluated": false,
+ "aps_index_evaluated": false,
  "scalar_eigenvalues_summary": {
   "min": -16.895064453732978,
   "max": 35.75124580378021,
   "mean_abs": 5.8899195586277635
  },
- "pass": true
+ "pass": false,
+ "tier_status": "DIAGNOSTIC_ONLY \u2014 compatibility record of a scalar-adjacency sign sum; no APS operator or index evaluation"
 }

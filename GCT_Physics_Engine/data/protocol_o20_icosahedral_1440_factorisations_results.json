@@ -16,7 +16,7 @@
     "Irrep_dim_3a": 3,
     "Irrep_dim_3b": 3,
     "Irrep_dim_1": 1,
-    "N_cage_GCT": 144,
+    "N_cage_O38_conditional": 144,
     "N_C3_GCT": 10,
     "Inversion_pairs": 2,
     "Tetrahedral_subgroup_T": 12,
@@ -123,10 +123,10 @@
         "C3_axes"
       ],
       "b_icosahedral_names": [
-        "N_cage_GCT"
+        "N_cage_O38_conditional"
       ],
-      "verdict": "CANONICAL",
-      "rationale": "GCT (N_cage) x (N_C3) = 144 x 10 -- the registered Tier 2 mechanism with Tier 3 integer-handle residual"
+      "verdict": "REGISTERED_CONDITIONAL",
+      "rationale": "Exact product (N_cage) x (N_C3) = 144 x 10, conditional on the Tier-3 O.38 input N_cage = 144"
     },
     {
       "a": 12,
@@ -140,7 +140,7 @@
         "Order_Ih_full"
       ],
       "verdict": "INDEPENDENT",
-      "rationale": "Distinct icosahedral structures: Icosa_vertices x Order_Ih_full (provides a dimensional cross-check of the Higgs VEV scale)"
+      "rationale": "Distinct icosahedral structures: Icosa_vertices x Order_Ih_full (an independent arithmetic factorisation in the declared dictionary)"
     },
     {
       "a": 15,
@@ -153,7 +153,7 @@
         "Faces_24cell"
       ],
       "verdict": "INDEPENDENT",
-      "rationale": "Distinct icosahedral structures: C2_axes x Edges_24cell (provides a dimensional cross-check of the Higgs VEV scale)"
+      "rationale": "Distinct icosahedral structures: C2_axes x Edges_24cell (an independent arithmetic factorisation in the declared dictionary)"
     },
     {
       "a": 16,
@@ -192,7 +192,7 @@
         "Order_I_rotational"
       ],
       "verdict": "INDEPENDENT",
-      "rationale": "Distinct icosahedral structures: Vertices_24cell x Order_I_rotational (provides a dimensional cross-check of the Higgs VEV scale)"
+      "rationale": "Distinct icosahedral structures: Vertices_24cell x Order_I_rotational (an independent arithmetic factorisation in the declared dictionary)"
     },
     {
       "a": 30,
@@ -225,10 +225,10 @@
   "verdict_breakdown": {
     "TRIVIAL": 1,
     "PRIME": 13,
-    "CANONICAL": 1,
+    "REGISTERED_CONDITIONAL": 1,
     "INDEPENDENT": 3
   },
-  "canonical_factorisations": [
+  "registered_conditional_factorisations": [
     {
       "a": 10,
       "b": 144,
@@ -239,10 +239,10 @@
         "C3_axes"
       ],
       "b_icosahedral_names": [
-        "N_cage_GCT"
+        "N_cage_O38_conditional"
       ],
-      "verdict": "CANONICAL",
-      "rationale": "GCT (N_cage) x (N_C3) = 144 x 10 -- the registered Tier 2 mechanism with Tier 3 integer-handle residual"
+      "verdict": "REGISTERED_CONDITIONAL",
+      "rationale": "Exact product (N_cage) x (N_C3) = 144 x 10, conditional on the Tier-3 O.38 input N_cage = 144"
     }
   ],
   "independent_factorisations": [
@@ -258,7 +258,7 @@
         "Order_Ih_full"
       ],
       "verdict": "INDEPENDENT",
-      "rationale": "Distinct icosahedral structures: Icosa_vertices x Order_Ih_full (provides a dimensional cross-check of the Higgs VEV scale)"
+      "rationale": "Distinct icosahedral structures: Icosa_vertices x Order_Ih_full (an independent arithmetic factorisation in the declared dictionary)"
     },
     {
       "a": 15,
@@ -271,7 +271,7 @@
         "Faces_24cell"
       ],
       "verdict": "INDEPENDENT",
-      "rationale": "Distinct icosahedral structures: C2_axes x Edges_24cell (provides a dimensional cross-check of the Higgs VEV scale)"
+      "rationale": "Distinct icosahedral structures: C2_axes x Edges_24cell (an independent arithmetic factorisation in the declared dictionary)"
     },
     {
       "a": 24,
@@ -283,8 +283,8 @@
         "Order_I_rotational"
       ],
       "verdict": "INDEPENDENT",
-      "rationale": "Distinct icosahedral structures: Vertices_24cell x Order_I_rotational (provides a dimensional cross-check of the Higgs VEV scale)"
+      "rationale": "Distinct icosahedral structures: Vertices_24cell x Order_I_rotational (an independent arithmetic factorisation in the declared dictionary)"
     }
   ],
-  "closure_text": "1440 admits 18 factor pairs (a <= b). Of these, 1 matches the canonical GCT-derived (N_cage, N_C3) = (144, 10) pathway; 3 represent INDEPENDENT icosahedral combinatorial pathways with both factors in the icosahedral dictionary; 1 are trivial (one factor = 1); 13 involve arithmetic-coincidence factors. The Higgs VEV derivation is non-unique in factorisation; the canonical muon-defect-saturation pathway is the registered Tier 2 mechanism, while the 1440 handle remains Tier 3 until upstream uniqueness problems close. Other factorisations are dimensional cross-checks at the order-of-magnitude level."
+  "closure_text": "1440 admits 18 factor pairs (a <= b). Of these, 1 is the registered (N_cage, N_C3) = (144, 10) product, conditional on the Tier-3 O.38 input N_cage = 144; 3 represent INDEPENDENT combinatorial products with both factors in the declared dictionary; 1 is trivial (one factor = 1); 13 involve arithmetic-coincidence factors. The multiplication and catalogue are exact arithmetic. This protocol does not select N_cage = 144, establish a physical saturation mechanism, or derive a Higgs VEV."
 }

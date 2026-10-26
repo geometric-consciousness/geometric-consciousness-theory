@@ -8,7 +8,7 @@
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
     <dc:title>Figure V3.16.1</dc:title>
-    <dc:description>Protocol D matched isotope NMR workflow and sign-aware Delta T2 bootstrap decision gate.</dc:description>
+    <dc:description>Protocol D matched isotope NMR workflow and the former sign-aware Delta T2 bootstrap decision rule for the registered material branch; the P.13c gate is held pending redesign.</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -698,7 +698,7 @@ Q 572.690262 213.451605 574.406262 213.451605
 z
 " style="fill: #ffffff; opacity: 0.94"/>
     </g>
-    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #2c5d8a" transform="translate(574.406262 192.644861)">confirmation branch:</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #2c5d8a" transform="translate(574.406262 192.644861)">material-branch support:</text>
     <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #2c5d8a" transform="translate(574.406262 201.379155)">CI excludes zero</text>
     <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #2c5d8a" transform="translate(574.406262 210.113448)">and sign is positive</text>
    </g>
@@ -726,7 +726,7 @@ z
 " style="fill: #ffffff; opacity: 0.94"/>
     </g>
     <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #c0392b" transform="translate(322.142545 218.564639)">powered negative sign</text>
-    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #c0392b" transform="translate(322.142545 227.298933)">fails P.13c</text>
+    <text style="font-size: 7.8px; font-family: 'DejaVu Sans'; fill: #c0392b" transform="translate(322.142545 227.298933)">rejects material branch</text>
    </g>
    <g id="legend_1">
     <g id="patch_22">
@@ -767,7 +767,7 @@ L 512.754156 92.706469
 " style="fill: none; stroke: #2c5d8a; stroke-width: 1.7; stroke-linecap: square"/>
     </g>
     <g id="text_23">
-     <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; text-anchor: start" x="518.674156" y="95.296469" transform="rotate(-0 518.674156 95.296469)">GCT design target (+5%)</text>
+     <text style="font-size: 7.4px; font-family: 'DejaVu Sans'; text-anchor: start" x="518.674156" y="95.296469" transform="rotate(-0 518.674156 95.296469)">registered branch target (+5%)</text>
     </g>
     <g id="patch_23">
      <path d="M 497.954156 106.158281
@@ -783,13 +783,13 @@ z
    </g>
   </g>
   <g id="text_25">
-   <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="41.04" y="31.477969" transform="rotate(-0 41.04 31.477969)">Protocol D NMR polarity gate: 17O must lengthen active-state T2</text>
+   <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="41.04" y="31.477969" transform="rotate(-0 41.04 31.477969)">Protocol D NMR polarity: former gate (held pending redesign)</text>
   </g>
   <g id="text_26">
    <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #666666" x="313.2" y="354.570234" transform="rotate(-0 313.2 354.570234)">n=24 per isotope; 3 acquisitions/prep; target power ~0.80; 99% CI [1.36%, 8.61%].</text>
   </g>
   <g id="text_27">
-   <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #666666" x="21.6" y="372.576375" transform="rotate(-0 21.6 372.576375)">Sources: Ch16 §16.5; protocol_isotope_experiment_results.json. NMR P.13c is OPEN-CONDITIONAL until blinded lab data land.</text>
+   <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #666666" x="21.6" y="372.576375" transform="rotate(-0 21.6 372.576375)">Sources: Ch16 §16.5; protocol_isotope_experiment_results.json. P.13c gate held pending redesign; no outcome currently supports or rejects the branch.</text>
   </g>
  </g>
  <defs>

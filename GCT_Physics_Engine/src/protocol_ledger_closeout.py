@@ -109,7 +109,7 @@ REGISTRY_ENTRIES = [
         "claim_id":   "C_BORN_RULE_TIER2",
         "description": "Born Rule is a Tier 3 conditional compatibility theorem via Gleason's Theorem under GCT's Selection Operator construction, pending O.40a/O.40b.",
         "disposition_text": "TIER3-CONDITIONAL-COMPATIBILITY (Gleason representation conditional on O.40a countable additivity + O.40b noncontextuality; executable proof NOT IMPLEMENTED)",
-        "monograph_location": "Global Frontmatter §3, Appendix D",
+        "monograph_location": "Global Frontmatter §3, Appendix BRC",
         "protocol_script":    "protocol_ledger_closeout.py",
         "protocol_output_json": "data/protocol_ledger_closeout_results.json",
         "json_field":         "C_BORN_RULE_TIER2_STATUS.status",
@@ -125,7 +125,7 @@ REGISTRY_ENTRIES = [
         "claim_id":   "C_HVP_STANCE",
         "description": "Muon g-2 HVP stance under WP2025: no significant anomaly; GCT correction survives only conditionally on HVP-synthesis arbitration",
         "disposition_text": "Tier 2 mechanism + Tier 3 1/5 coefficient + A3 + Tier 4 calibration-survival conjecture (HVP arbitration); Tension under WP2025; falsification conditional on long-term HVP-synthesis arbitration",
-        "monograph_location": "V3 Ch09, Appendix R.9",
+        "monograph_location": "V3 Ch09, Appendix PSC.9",
         "protocol_script":    "protocol_ledger_closeout.py",
         "protocol_output_json": "data/protocol_ledger_closeout_results.json",
         "json_field":         "C_HVP_STANCE_STATUS.status",
@@ -198,7 +198,12 @@ def run_ledger_closeout(update_registry: bool = True) -> dict:
         "protocol":  "ledger_status",
         "C_BORN_RULE_TIER2_STATUS": C_BORN_RULE_TIER2_STATUS,
         "C_HVP_STANCE_STATUS": C_HVP_STANCE_STATUS,
-        "pass":      True,
+        # The former literal pass=True is retired. This script
+        # records two status declarations (Born rule Tier 3 conditional with
+        # the O.40a/O.40b proof not implemented; HVP stance Tier 4 under WP2025
+        # tension). Nothing is computed, so nothing is confirmed.
+        "verdict":   "BOOKKEEPING_ONLY_STATUS_DECLARATIONS_NO_COMPUTATION",
+        "pass":      False,
     }
     report_path = get_output_path("protocol_ledger_closeout_results.json")
     with open(report_path, "w") as fp:
@@ -228,7 +233,8 @@ def run_ledger_closeout(update_registry: bool = True) -> dict:
 
     print("\n  ═══ VERDICT ═══")
     print("  Born Rule: Tier 3 conditional compatibility recorded; O.40a/O.40b proof not implemented.")
-    print("  HVP Stance: CLOSED — formalised.")
+    print("  HVP Stance: recorded as Tier 4 calibration-survival conjecture (tension under WP2025).")
+    print("  Verdict: BOOKKEEPING_ONLY_STATUS_DECLARATIONS_NO_COMPUTATION (nothing computed).")
 
     return report
 

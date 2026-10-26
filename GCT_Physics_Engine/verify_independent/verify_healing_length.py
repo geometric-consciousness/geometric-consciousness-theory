@@ -5,15 +5,16 @@ verify_healing_length.py — Polaron healing length ξ = ℏc/(α² m_e c²).
 primitives (ℏ, c, α, m_e). No imports from `protocol_healing_length.py`
 or from the engine-side cage adjacency code; this verifier re-derives ξ
 directly from constants and compares to the canonical single value
-ξ ≈ 7.25 nm published in Parameter Ledger §2 (V1 Ch7, V3 Ch13, App K §K.5)
-as a Tier 1 textbook Bohr-Compton result. The GCT-internal phason-elastic
-Route 2 derivation arriving at the same expression is registered as App H
+ξ ≈ 7.25 nm published in Parameter Ledger §2 (V1 Ch7, V3 Ch13, App DPS §DPS.5)
+as ξ = a₀/α ≈ 7.25 nm [Tier 1 arithmetic; its identification as the
+vacuum/polaron healing length is Tier 3]. The GCT-internal phason-elastic
+Route 2 derivation arriving at the same expression is registered as App ORQ
 Open Problem O.25 and closes NEGATIVELY (the substitution chain
 K_⊥ = φ^-18 K_∥, a_6 = 2 ℓ_P, m_e = M_P φ^-107 (1-5α) yields
-ξ^Route2 = (1/2) φ^9 √α ℓ_P ~ 5e-35 m, off the Tier 1 target by ~10^26;
+ξ^Route2 = (1/2) φ^9 √α ℓ_P ~ 5e-35 m, off the a₀/α value by ~10^26;
 the missing 1/α^2 Coulomb enhancement is not derivable from the GCT chain).
-The "two-route convergence" framing is not used here in App K §K.5; this
-verifier evaluates only the Tier 1 Bohr-Compton formula, with α as the
+The "two-route convergence" framing is not used here in App DPS §DPS.5; this
+verifier evaluates only the Tier 1 arithmetic ξ = a₀/α, with α as the
 input variable.
 
 Steps:
@@ -25,7 +26,7 @@ Steps:
  (4) Compare the result to the canonical single value 7.25 nm.
 
 The IDENTIFICATION of ξ with the microtubule lumen (Tier 3 biological
-correlation; polaron diameter 2ξ = 14.5 nm vs lumen ID ~15 nm, 3% match
+correlation; polaron diameter 2ξ = 14.5 nm vs lumen ID ~15-17 nm, 3-17% fit
 per Ch07 §7.3.3) is OUT OF SCOPE for this verifier; only the algebraic
 formula is checked.
 """
@@ -56,7 +57,7 @@ def main():
  xi_CODATA_nm = xi_CODATA_m * 1e9
  xi_GCT_nm = xi_GCT_m * 1e9
 
- # Canonical single value (Parameter Ledger row 23, App K §K.5)
+ # Canonical single value (Parameter Ledger row 23, App DPS §DPS.5)
  xi_stated_nm = 7.25 # nm — both α branches converge here to ~0.7%
 
  err_CODATA_pct = 100.0 * (xi_CODATA_nm - xi_stated_nm) / xi_stated_nm
@@ -74,20 +75,21 @@ def main():
 
  res = make_result(
  name="polaron_healing_length",
- app_r_label="Polaron healing length ξ = ℏc/(α² m_e c²)",
+ app_psc_label="Polaron healing length ξ = ℏc/(α² m_e c²)",
  formula="ξ = ℏc/(α² m_e c²) = a_0/α (single value; no manuscript-derivable O(1) prefactor)",
  predicted=xi_CODATA_nm,
  observed=xi_stated_nm,
+ reference_class="MANUSCRIPT_STATED",
  unit="nm",
- app_r_predicted=7.25,
- app_r_precision_str=(
+ app_psc_predicted=7.25,
+ app_psc_precision_str=(
  f"ξ(CODATA α) = {xi_CODATA_nm:.3f} nm ({err_CODATA_pct:+.2f}% vs stated 7.25 nm); "
  f"ξ(GCT bare α) = {xi_GCT_nm:.3f} nm ({err_GCT_pct:+.2f}%); "
  f"inter-branch agreement {inter_branch_pct:.2f}%"
  ),
- app_r_precision_ppm=None,
- tier="Tier 1 textbook (Bohr-Compton ξ = a_0/α); GCT-internal Route 2 closed negatively under O.25; lumen identification = Tier 3",
- status="PASS" if pass_status else "TENSION",
+ app_psc_precision_ppm=None,
+ tier="Tier 1 arithmetic ξ = a_0/α ≈ 7.25 nm; its identification as the vacuum/polaron healing length is Tier 3; GCT-internal Route 2 closed negatively under O.25; lumen identification = Tier 3",
+ status="INTERNAL_ARITHMETIC_PASS" if pass_status else "TENSION",
  tolerance_ppm=None,
  extra={
  "alpha_CODATA": alpha_CODATA,
@@ -103,14 +105,14 @@ def main():
  "microtubule_lumen_ID_nm": 15.0,
  "diameter_vs_lumen_match_pct": 100.0 * abs(2.0 * xi_CODATA_nm - 15.0) / 15.0,
  "derivation_note": (
- "Standard Gross-Pitaevskii healing-length formula applied to "
- "the Compton-Bohr lengthscale: ξ = ℏc/(α²m_ec²) = a_0/α. The "
+ "Tier 1 arithmetic ξ = ℏc/(α²m_ec²) = a_0/α; its identification "
+ "as the vacuum/polaron healing length is Tier 3. The "
  "formula has no manuscript-derivable O(1) prefactor; both "
  "CODATA α and GCT bare α = φ²/360 inputs give the same ξ ≈ "
  "7.25 nm to within ~0.7% (the formula is α-input-insensitive "
  "at the percent level since the two α values differ by ~0.35% "
  "and the difference enters ξ as a square). Microtubule lumen "
- "identification: 2ξ = 14.5 nm vs lumen ID 15 nm = 3% match "
+ "identification: 2ξ = 14.5 nm vs lumen ID ~15-17 nm = 3-17% fit "
  "(Tier 3 biological correlation per Ch07 §7.3.3)."
  ),
  },

@@ -11,12 +11,19 @@ matrix equal to the affine E8 Dynkin graph.
 import sys
 import json
 import numpy as np
-from gct_mckay_e8 import run_mckay_e8_audit
+from gct_mckay_e8 import run_mckay_e8_audit, MCKAY_REPORT_TIER
 from gct_utils import get_output_path
+
+# App Axiom & Postulate Ledger (6D Euclidean Parent Lattice, Tier 1/2);
+# Parameter Ledger (primitive-P adopted, not uniquely derived); App TAT.
+LATTICE_6D_TIER = (
+    "Tier 1/2 architectural postulate (P1); McKay 2I->E8 is a conditional "
+    "Tier 1 result and does not derive Z^6"
+)
 
 def run_protocol():
     print("=" * 65)
-    print("GCT Protocol: McKay Tier 1 (Derived Necessity) Verification")
+    print("GCT Protocol: McKay Tier 1 Correspondence Check (within its hypotheses)")
     print("=" * 65)
     
     # Run the core E8 McKay audit
@@ -44,9 +51,13 @@ def run_protocol():
         print("FAIL: Irrep-dimension vector is not the affine E8 null root.")
         sys.exit(1)
         
-    # 2. Must be classified as Tier 1
-    if audit_results.get("tier") != "Tier 1 (Derived Necessity)":
-        print("FAIL: Classification error. Expected Tier 1.")
+    # 2. Report tier must carry the conditional Tier 1/2 classification
+    #    (App USS Lemma III), not a derived-necessity label.
+    if audit_results.get("tier") != MCKAY_REPORT_TIER:
+        print("FAIL: Classification error. Expected the conditional Tier 1/2 report tier.")
+        sys.exit(1)
+    if audit_results.get("lemma_iii", {}).get("exhaustive_uniqueness_proof") is not False:
+        print("FAIL: Lemma III must be reported as a conditional comparison, not a uniqueness proof.")
         sys.exit(1)
         
     # 3. Must verify the H4 Cartan/root-metric phi check
@@ -55,8 +66,9 @@ def run_protocol():
         print("FAIL: H4 Cartan/root-metric phi check not verified.")
         sys.exit(1)
         
-    print("\n[VERDICT] Tier 1 McKay Derivation: VERIFIED")
+    print("\n[VERDICT] Tier 1 McKay correspondence (2I -> affine E8): VERIFIED within its hypotheses")
     print("[LOG] 2I irreps + defining-SU(2) fusion reproduce affine E8.")
+    print(f"[LOG] 6D parent lattice: {LATTICE_6D_TIER}")
     print("=" * 65)
     
     # Save protocol-specific result and the intentionally derived compact
@@ -66,7 +78,8 @@ def run_protocol():
         "pass": True,
         "verdict": "PASS",
         "tier": "Tier 1",
-        "6d_lattice_tier": "Tier 1 (Derived)",
+        "tier_scope": "2I -> affine E8 McKay correspondence only, within its hypotheses; architecture use is Tier 1/2 conditional (App USS Lemma III)",
+        "6d_lattice_tier": LATTICE_6D_TIER,
         "mckay_correspondence": {
             "irrep_dimensions": mckay.get("irrep_dimensions"),
             "expected_affine_e8_marks": mckay.get("expected_affine_e8_marks"),

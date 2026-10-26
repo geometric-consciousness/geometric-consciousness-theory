@@ -1,12 +1,12 @@
 {
-    "muon_mass_analytic_mev": 105.65613622658009,
-    "tau_mass_analytic_mev": 1776.839461283127,
-    "muon_error_analytic_ppm": 21.193524974432847,
-    "tau_error_analytic_ppm": 50.9523261315698,
-    "muon_mass_graph_mev": 124.41110944468936,
-    "tau_mass_graph_mev": 1776.839461283127,
-    "muon_error_graph_ppm": 177484.59462817837,
-    "tau_error_graph_ppm": 50.9523261315698,
+    "muon_mass_analytic_mev": 105.65614670457053,
+    "tau_mass_analytic_mev": 1776.8396375744478,
+    "muon_error_analytic_ppm": 21.094356400302235,
+    "tau_error_analytic_ppm": 50.8531149523376,
+    "muon_mass_graph_mev": 124.41112178255241,
+    "tau_mass_graph_mev": 1776.8396375744478,
+    "muon_error_graph_ppm": 177484.7113994518,
+    "tau_error_graph_ppm": 50.8531149523376,
     "graph_pass_tolerance_ppm": 1000,
     "graph_passed": false,
     "graph_gate_basis": "finite-N graph extracted mass residual in ppm, not index proximity",
@@ -16,16 +16,16 @@
         "description": "First-order precision using only (1 + 5*alpha) \u2014 Tier 2 GCT drag postulate",
         "tier": 2,
         "correction_term": "1 + 5*alpha",
-        "m_mu_pred_mev": 105.40173699854667,
-        "error_ppm": 2428.9461222441196
+        "m_mu_pred_mev": 105.40174745164767,
+        "error_ppm": 2428.8471892352723
     },
     "muon_second_order": {
         "description": "Tier 2 mechanism + A3 + Tier 3 closed-form precision; bare phi^N residuals are large",
         "tier": "Tier 2 mechanism + A3 measured alpha + Tier 3 closed-form precision",
         "correction_term": "1 + 5*alpha_A3 + phi^8 * alpha_A3^2",
         "note": "The phi^8*alpha^2 term is a Tier 3 closed-form handle pending O.5/O.15/O.19; bare phi^N residuals are large.",
-        "m_mu_pred_mev": 105.65613622658009,
-        "error_ppm": 21.193524974432847
+        "m_mu_pred_mev": 105.65614670457053,
+        "error_ppm": 21.094356400302235
     },
     "alpha_anchor": "A3 measured low-energy alpha is used in corrected lepton precision comparisons; bare GCT alpha is audited separately under O.19/O.5.",
     "look_elsewhere": {
@@ -44,7 +44,7 @@
     },
     "fourth_generation_audit": {
         "candidate_exponent": 23,
-        "bare_mass_gev": 32.74429852107454,
+        "bare_mass_gev": 32.74430176923905,
         "lep_exclusion_limit_gev": 100.0,
         "empirical_status": "EXCLUDED",
         "geometric_termination_d_bound": 18,

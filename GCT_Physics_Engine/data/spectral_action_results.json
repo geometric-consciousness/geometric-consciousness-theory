@@ -567,14 +567,16 @@
         "ratio_M2_M4_pre_AF_decomposition": 0.12732200375003508,
         "ratio_status": "Tier 3 reference value; CCM a_2/a_4 field-theoretic identification requires A_F spectral-triple decomposition (Open Problem O.5)",
         "ccm_higgs_formula": "m_H^2 \u221d (a_2/a_4) * Lambda_GUT^2 (Connes-Chamseddine-Marcolli 2007 Adv. Theor. Math. Phys. 11:991)",
-        "open_problem_O5_status": "field-theoretic decomposition of M_n into gauge/Higgs/fermion subspaces of A_F pending; bundle with QLQCD-1L per App H O.5"
+        "open_problem_O5_status": "field-theoretic decomposition of M_n into gauge/Higgs/fermion subspaces of A_F pending; bundle with QLQCD-1L per App ORQ O.5"
     },
     "heat_kernel_sanity_check": {
         "t_test": 0.01,
         "hk_direct_Tr_exp_minus_tD2": 145.9557860746408,
         "hk_taylor_truncated_at_M6": 145.95557061814483,
         "relative_residual": 1.476176462474356e-06,
-        "interpretation": "small-t Taylor sum truncated at M_6 vs direct heat-kernel evaluation; residual should be O(t^4 * Tr(D^8)/24) for small enough t"
+        "interpretation": "small-t Taylor sum truncated at M_6 vs direct heat-kernel evaluation; residual should be O(t^4 * Tr(D^8)/24) for small enough t",
+        "numerics_check_pass": true
     },
-    "pass": true
+    "verdict": "BOOKKEEPING_MOMENTS_ONLY_CCM_IDENTIFICATION_OPEN_O5",
+    "pass": false
 }

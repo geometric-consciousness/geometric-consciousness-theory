@@ -8,7 +8,7 @@
   "I_group_order": 60,
   "vertex_star_count_Ih_orbits": 9,
   "vertex_star_count_I_orbits": 9,
-  "vertex_star_count_expected_per_App_Z": 32,
+  "vertex_star_count_expected_per_App_QLA": 32,
   "matches_expected_under_Ih": false,
   "matches_expected_under_I": false,
   "coordination_histogram_Ih": {

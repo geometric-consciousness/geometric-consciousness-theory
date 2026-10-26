@@ -1,0 +1,261 @@
+{
+  "structural_chain_summary": [
+    "(1) K prime in S^3 [Kneser-Stallings, Lemma PUP.3.2]",
+    "(2) AKN tile-substitution rho_K primitive [unproved extension; Anderson-Putnam 1998 supplies substitution-tiling machinery, not S^3 \\ K construction]",
+    "(3) Perron-Frobenius: A_K has unique max-modulus eigenvalue [HJ85 Thm 8.5.1]",
+    "(4) Perron eigenvalue is algebraic; irrationality requires excluding rational-root degeneracies [Lind-Marcus 1995 Sec 11.1]",
+    "(5) AF core F_{A_K}=O_{A_K}^T carries dimension-group state; O_{A_K} is non-tracial",
+    "(6) meridian trace identity remains on B_K subset C_r^*(Gamma_K); convergence and trace descent from the M_2(C) surrogate remain open"
+  ],
+  "closure_status": "The general-prime extension of the superseded trefoil surrogate (App PUP Sec PUP.6.3a/6.3b) is not complete. It would need (A) the Anderson-Putnam-style C*-algebra extension from R^n tile spaces to substitution structures on S^3 \\ K, (B) canonicity of K |-> A_K, (C) a controlled meridian representation with convergence and trace descent (Open Problem O.18), (D) KO-dim-6 sign verification (O.32), and the declared complement-compatible full-fibre supports D_n=X_n x K_n. The inverse limit is a pro-group of generally infinite groups, not a profinite group. O.35/O.36 fail as posed for the represented trefoil group B_3 and hold only for the further central quotient B_3/Z(B_3) = C_2*C_3; whether any physical sector is that quotient regular representation is open (Tier 3). Under an assumed factorial sector, Prop. PUP.1(iii) gives uniqueness of R_inv only, not of F_sel. The physical support, inverse-limit and factorial-sector identifications remain open; the ceiling is an algebraic unity candidate (Tier 3 conditional).",
+  "sample_verifications": [
+    {
+      "label": "Trefoil Fibonacci surrogate matrix (App PUP Sec PUP.6.3a; a superseded modelling choice, not a derived knot matrix)",
+      "matrix": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "size": 2,
+      "primitive": true,
+      "n_to_strictly_positive": 2,
+      "perron_eigenvalue": 1.618033988749895,
+      "characteristic_polynomial": [
+        1,
+        -1,
+        -1
+      ],
+      "perron_is_algebraic_irrational": true,
+      "matches_expected_perron": true,
+      "passes_matrix_theoretic_ingredient": true
+    },
+    {
+      "label": "Pattern 2x2 example A (size-2 primitive demo)",
+      "matrix": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "size": 2,
+      "primitive": true,
+      "n_to_strictly_positive": 1,
+      "perron_eigenvalue": 2.618033988749895,
+      "characteristic_polynomial": [
+        1,
+        -3,
+        1
+      ],
+      "perron_is_algebraic_irrational": true,
+      "matches_expected_perron": null,
+      "passes_matrix_theoretic_ingredient": true
+    },
+    {
+      "label": "Pattern 2x2 example B (size-2 primitive demo)",
+      "matrix": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "size": 2,
+      "primitive": true,
+      "n_to_strictly_positive": 1,
+      "perron_eigenvalue": 2.414213562373095,
+      "characteristic_polynomial": [
+        1,
+        -2,
+        -1
+      ],
+      "perron_is_algebraic_irrational": true,
+      "matches_expected_perron": null,
+      "passes_matrix_theoretic_ingredient": true
+    },
+    {
+      "label": "Pattern 2x2 example C (size-2 primitive demo)",
+      "matrix": [
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "size": 2,
+      "primitive": true,
+      "n_to_strictly_positive": 1,
+      "perron_eigenvalue": 3.618033988749895,
+      "characteristic_polynomial": [
+        1,
+        -5,
+        5
+      ],
+      "perron_is_algebraic_irrational": true,
+      "matches_expected_perron": null,
+      "passes_matrix_theoretic_ingredient": true
+    },
+    {
+      "label": "Pattern 3x3 example A (size-3 primitive demo)",
+      "matrix": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "size": 3,
+      "primitive": true,
+      "n_to_strictly_positive": 2,
+      "perron_eigenvalue": 2.801937735804841,
+      "characteristic_polynomial": [
+        1,
+        -4,
+        3,
+        1
+      ],
+      "perron_is_algebraic_irrational": true,
+      "matches_expected_perron": null,
+      "passes_matrix_theoretic_ingredient": true
+    },
+    {
+      "label": "Pattern 3x3 example B (size-3 primitive demo)",
+      "matrix": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "size": 3,
+      "primitive": true,
+      "n_to_strictly_positive": 2,
+      "perron_eigenvalue": 2.3247179572447454,
+      "characteristic_polynomial": [
+        1,
+        -3,
+        2,
+        -1
+      ],
+      "perron_is_algebraic_irrational": true,
+      "matches_expected_perron": null,
+      "passes_matrix_theoretic_ingredient": true
+    },
+    {
+      "label": "Pattern 4x4 example (size-4 primitive demo)",
+      "matrix": [
+        [
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "size": 4,
+      "primitive": true,
+      "n_to_strictly_positive": 3,
+      "perron_eigenvalue": 2.8793852415718164,
+      "characteristic_polynomial": [
+        1,
+        -5,
+        6,
+        1,
+        -2
+      ],
+      "perron_is_algebraic_irrational": true,
+      "matches_expected_perron": null,
+      "passes_matrix_theoretic_ingredient": true
+    }
+  ],
+  "rational_perron_counterexample": {
+    "label": "Positive rank-one primitive rational-Perron control [[1,1],[1,1]]",
+    "matrix": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "size": 2,
+    "primitive": true,
+    "n_to_strictly_positive": 1,
+    "perron_eigenvalue": 2.0,
+    "characteristic_polynomial": [
+      1,
+      -2,
+      0
+    ],
+    "perron_is_algebraic_irrational": false,
+    "matches_expected_perron": true,
+    "passes_matrix_theoretic_ingredient": false
+  },
+  "all_samples_pass_matrix_theoretic_ingredient": {
+    "matrix_theoretic_input_pass": true,
+    "anderson_putnam_extension_supplied": false,
+    "general_prime_closure": "tier_3_conditional",
+    "open_gaps": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "O.35",
+      "O.36"
+    ]
+  },
+  "remaining_open": "The AKN tile-substitution rho_K primitive remains an unproved extension: Anderson-Putnam 1998 supplies substitution-tiling machinery, not the S^3 \\ K construction. A fully self-contained GCT-internal derivation would require constructing the AKN substitution, proving primitivity, and proving recognizability inside this protocol."
+}

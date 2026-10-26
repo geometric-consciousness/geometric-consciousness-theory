@@ -1,0 +1,1225 @@
+file,tier,before,after,delta
+content/00_Global_Frontmatter/00_Global_Abstract.md,0,0,0,0
+content/00_Global_Frontmatter/00_Global_Abstract.md,1,3,5,2
+content/00_Global_Frontmatter/00_Global_Abstract.md,1/2,1,1,0
+content/00_Global_Frontmatter/00_Global_Abstract.md,2,1,1,0
+content/00_Global_Frontmatter/00_Global_Abstract.md,3,4,4,0
+content/00_Global_Frontmatter/00_Global_Abstract.md,4,0,0,0
+content/00_Global_Frontmatter/01_Epistemic_Tier_System.md,0,0,0,0
+content/00_Global_Frontmatter/01_Epistemic_Tier_System.md,1,1,2,1
+content/00_Global_Frontmatter/01_Epistemic_Tier_System.md,1/2,0,0,0
+content/00_Global_Frontmatter/01_Epistemic_Tier_System.md,2,0,0,0
+content/00_Global_Frontmatter/01_Epistemic_Tier_System.md,3,0,0,0
+content/00_Global_Frontmatter/01_Epistemic_Tier_System.md,4,0,0,0
+content/00_Global_Frontmatter/02_Axiom_and_Postulate_Ledger.md,0,0,1,1
+content/00_Global_Frontmatter/02_Axiom_and_Postulate_Ledger.md,1,1,2,1
+content/00_Global_Frontmatter/02_Axiom_and_Postulate_Ledger.md,1/2,4,4,0
+content/00_Global_Frontmatter/02_Axiom_and_Postulate_Ledger.md,2,0,0,0
+content/00_Global_Frontmatter/02_Axiom_and_Postulate_Ledger.md,3,2,2,0
+content/00_Global_Frontmatter/02_Axiom_and_Postulate_Ledger.md,4,0,0,0
+content/00_Global_Frontmatter/03_Parameter_Ledger.md,0,0,0,0
+content/00_Global_Frontmatter/03_Parameter_Ledger.md,1,0,0,0
+content/00_Global_Frontmatter/03_Parameter_Ledger.md,1/2,0,0,0
+content/00_Global_Frontmatter/03_Parameter_Ledger.md,2,0,0,0
+content/00_Global_Frontmatter/03_Parameter_Ledger.md,3,0,0,0
+content/00_Global_Frontmatter/03_Parameter_Ledger.md,4,2,2,0
+content/00_Global_Frontmatter/04_Prediction_Postdiction_Firewall.md,0,0,0,0
+content/00_Global_Frontmatter/04_Prediction_Postdiction_Firewall.md,1,0,0,0
+content/00_Global_Frontmatter/04_Prediction_Postdiction_Firewall.md,1/2,0,0,0
+content/00_Global_Frontmatter/04_Prediction_Postdiction_Firewall.md,2,0,0,0
+content/00_Global_Frontmatter/04_Prediction_Postdiction_Firewall.md,3,0,0,0
+content/00_Global_Frontmatter/04_Prediction_Postdiction_Firewall.md,4,0,0,0
+content/01_Volume_1_Operating_System/00_Frontmatter/00_Abstract.md,0,0,0,0
+content/01_Volume_1_Operating_System/00_Frontmatter/00_Abstract.md,1,2,3,1
+content/01_Volume_1_Operating_System/00_Frontmatter/00_Abstract.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/00_Frontmatter/00_Abstract.md,2,1,1,0
+content/01_Volume_1_Operating_System/00_Frontmatter/00_Abstract.md,3,1,1,0
+content/01_Volume_1_Operating_System/00_Frontmatter/00_Abstract.md,4,0,0,0
+content/01_Volume_1_Operating_System/00_Frontmatter/01_Preface.md,0,0,0,0
+content/01_Volume_1_Operating_System/00_Frontmatter/01_Preface.md,1,0,0,0
+content/01_Volume_1_Operating_System/00_Frontmatter/01_Preface.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/00_Frontmatter/01_Preface.md,2,0,0,0
+content/01_Volume_1_Operating_System/00_Frontmatter/01_Preface.md,3,0,0,0
+content/01_Volume_1_Operating_System/00_Frontmatter/01_Preface.md,4,0,0,0
+content/01_Volume_1_Operating_System/00_Frontmatter/02_Notation.md,0,0,0,0
+content/01_Volume_1_Operating_System/00_Frontmatter/02_Notation.md,1,1,1,0
+content/01_Volume_1_Operating_System/00_Frontmatter/02_Notation.md,1/2,1,1,0
+content/01_Volume_1_Operating_System/00_Frontmatter/02_Notation.md,2,0,0,0
+content/01_Volume_1_Operating_System/00_Frontmatter/02_Notation.md,3,0,0,0
+content/01_Volume_1_Operating_System/00_Frontmatter/02_Notation.md,4,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch01_Staircase_of_Certainty.md,0,0,2,2
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch01_Staircase_of_Certainty.md,1,2,1,-1
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch01_Staircase_of_Certainty.md,1/2,2,2,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch01_Staircase_of_Certainty.md,2,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch01_Staircase_of_Certainty.md,3,5,5,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch01_Staircase_of_Certainty.md,4,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch02_Axiomatic_Foundation.md,0,0,3,3
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch02_Axiomatic_Foundation.md,1,6,8,2
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch02_Axiomatic_Foundation.md,1/2,4,4,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch02_Axiomatic_Foundation.md,2,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch02_Axiomatic_Foundation.md,3,8,8,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch02_Axiomatic_Foundation.md,4,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch03_Ontological_Fork.md,0,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch03_Ontological_Fork.md,1,0,1,1
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch03_Ontological_Fork.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch03_Ontological_Fork.md,2,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch03_Ontological_Fork.md,3,11,11,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch03_Ontological_Fork.md,4,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch04_Discrete_Geometry.md,0,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch04_Discrete_Geometry.md,1,2,2,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch04_Discrete_Geometry.md,1/2,3,3,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch04_Discrete_Geometry.md,2,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch04_Discrete_Geometry.md,3,7,7,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch04_Discrete_Geometry.md,4,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch05_Cosmology_of_Zero.md,0,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch05_Cosmology_of_Zero.md,1,2,2,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch05_Cosmology_of_Zero.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch05_Cosmology_of_Zero.md,2,0,0,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch05_Cosmology_of_Zero.md,3,3,3,0
+content/01_Volume_1_Operating_System/01_Part_I_Logic_of_Being/Ch05_Cosmology_of_Zero.md,4,6,6,0
+content/01_Volume_1_Operating_System/02_Part_II_Identity/Ch06_Tripartite_Ontology.md,0,0,0,0
+content/01_Volume_1_Operating_System/02_Part_II_Identity/Ch06_Tripartite_Ontology.md,1,3,4,1
+content/01_Volume_1_Operating_System/02_Part_II_Identity/Ch06_Tripartite_Ontology.md,1/2,2,2,0
+content/01_Volume_1_Operating_System/02_Part_II_Identity/Ch06_Tripartite_Ontology.md,2,1,1,0
+content/01_Volume_1_Operating_System/02_Part_II_Identity/Ch06_Tripartite_Ontology.md,3,4,4,0
+content/01_Volume_1_Operating_System/02_Part_II_Identity/Ch06_Tripartite_Ontology.md,4,0,0,0
+content/01_Volume_1_Operating_System/02_Part_II_Identity/Ch07_Universal_Tree_Bundle.md,0,0,0,0
+content/01_Volume_1_Operating_System/02_Part_II_Identity/Ch07_Universal_Tree_Bundle.md,1,10,10,0
+content/01_Volume_1_Operating_System/02_Part_II_Identity/Ch07_Universal_Tree_Bundle.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/02_Part_II_Identity/Ch07_Universal_Tree_Bundle.md,2,0,0,0
+content/01_Volume_1_Operating_System/02_Part_II_Identity/Ch07_Universal_Tree_Bundle.md,3,9,9,0
+content/01_Volume_1_Operating_System/02_Part_II_Identity/Ch07_Universal_Tree_Bundle.md,4,1,1,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch08_Simultaneous_Time.md,0,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch08_Simultaneous_Time.md,1,1,1,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch08_Simultaneous_Time.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch08_Simultaneous_Time.md,2,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch08_Simultaneous_Time.md,3,5,5,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch08_Simultaneous_Time.md,4,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch09_Rendering_Engine.md,0,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch09_Rendering_Engine.md,1,4,4,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch09_Rendering_Engine.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch09_Rendering_Engine.md,2,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch09_Rendering_Engine.md,3,5,5,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch09_Rendering_Engine.md,4,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch10_Russellian_Causation.md,0,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch10_Russellian_Causation.md,1,2,3,1
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch10_Russellian_Causation.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch10_Russellian_Causation.md,2,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch10_Russellian_Causation.md,3,5,5,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch10_Russellian_Causation.md,4,1,1,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch11_Consensus_Protocol.md,0,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch11_Consensus_Protocol.md,1,12,12,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch11_Consensus_Protocol.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch11_Consensus_Protocol.md,2,0,0,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch11_Consensus_Protocol.md,3,9,9,0
+content/01_Volume_1_Operating_System/03_Part_III_Rendering/Ch11_Consensus_Protocol.md,4,1,1,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch12_Fundamental_Constraint.md,0,0,0,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch12_Fundamental_Constraint.md,1,4,4,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch12_Fundamental_Constraint.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch12_Fundamental_Constraint.md,2,2,2,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch12_Fundamental_Constraint.md,3,4,4,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch12_Fundamental_Constraint.md,4,0,0,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch13_Geometric_Constants.md,0,0,0,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch13_Geometric_Constants.md,1,0,0,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch13_Geometric_Constants.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch13_Geometric_Constants.md,2,5,5,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch13_Geometric_Constants.md,3,6,6,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch13_Geometric_Constants.md,4,3,3,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch14_Topology_to_Fields.md,0,0,0,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch14_Topology_to_Fields.md,1,8,8,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch14_Topology_to_Fields.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch14_Topology_to_Fields.md,2,0,0,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch14_Topology_to_Fields.md,3,8,8,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch14_Topology_to_Fields.md,4,0,0,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch15_Spin_Statistics.md,0,0,0,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch15_Spin_Statistics.md,1,8,8,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch15_Spin_Statistics.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch15_Spin_Statistics.md,2,0,0,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch15_Spin_Statistics.md,3,5,5,0
+content/01_Volume_1_Operating_System/04_Part_IV_Physics_Bridge/Ch15_Spin_Statistics.md,4,1,1,0
+content/01_Volume_1_Operating_System/05_Part_V_Experience/Ch16_Time_and_Qualia.md,0,0,0,0
+content/01_Volume_1_Operating_System/05_Part_V_Experience/Ch16_Time_and_Qualia.md,1,5,6,1
+content/01_Volume_1_Operating_System/05_Part_V_Experience/Ch16_Time_and_Qualia.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/05_Part_V_Experience/Ch16_Time_and_Qualia.md,2,3,3,0
+content/01_Volume_1_Operating_System/05_Part_V_Experience/Ch16_Time_and_Qualia.md,3,26,26,0
+content/01_Volume_1_Operating_System/05_Part_V_Experience/Ch16_Time_and_Qualia.md,4,0,0,0
+content/01_Volume_1_Operating_System/05_Part_V_Experience/Ch17_Physical_Substrate.md,0,0,0,0
+content/01_Volume_1_Operating_System/05_Part_V_Experience/Ch17_Physical_Substrate.md,1,2,2,0
+content/01_Volume_1_Operating_System/05_Part_V_Experience/Ch17_Physical_Substrate.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/05_Part_V_Experience/Ch17_Physical_Substrate.md,2,3,3,0
+content/01_Volume_1_Operating_System/05_Part_V_Experience/Ch17_Physical_Substrate.md,3,83,83,0
+content/01_Volume_1_Operating_System/05_Part_V_Experience/Ch17_Physical_Substrate.md,4,3,3,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/00_Part_VI_Introduction.md,0,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/00_Part_VI_Introduction.md,1,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/00_Part_VI_Introduction.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/00_Part_VI_Introduction.md,2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/00_Part_VI_Introduction.md,3,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/00_Part_VI_Introduction.md,4,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch18_Social_Systems.md,0,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch18_Social_Systems.md,1,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch18_Social_Systems.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch18_Social_Systems.md,2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch18_Social_Systems.md,3,11,11,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch18_Social_Systems.md,4,7,7,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch19_Aesthetics.md,0,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch19_Aesthetics.md,1,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch19_Aesthetics.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch19_Aesthetics.md,2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch19_Aesthetics.md,3,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch19_Aesthetics.md,4,7,7,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch20_Contemplative_Practice.md,0,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch20_Contemplative_Practice.md,1,1,1,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch20_Contemplative_Practice.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch20_Contemplative_Practice.md,2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch20_Contemplative_Practice.md,3,1,1,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch20_Contemplative_Practice.md,4,8,8,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch21_Theology.md,0,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch21_Theology.md,1,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch21_Theology.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch21_Theology.md,2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch21_Theology.md,3,5,5,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch21_Theology.md,4,9,9,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch22_Strange_Loops.md,0,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch22_Strange_Loops.md,1,1,1,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch22_Strange_Loops.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch22_Strange_Loops.md,2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch22_Strange_Loops.md,3,2,2,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch22_Strange_Loops.md,4,13,13,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch23_Philosophy_of_Science.md,0,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch23_Philosophy_of_Science.md,1,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch23_Philosophy_of_Science.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch23_Philosophy_of_Science.md,2,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch23_Philosophy_of_Science.md,3,0,0,0
+content/01_Volume_1_Operating_System/06_Part_VI_Applications_and_Extensions/Ch23_Philosophy_of_Science.md,4,1,1,0
+content/01_Volume_1_Operating_System/99_Backmatter/01_Glossary.md,0,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/01_Glossary.md,1,1,2,1
+content/01_Volume_1_Operating_System/99_Backmatter/01_Glossary.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/01_Glossary.md,2,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/01_Glossary.md,3,2,2,0
+content/01_Volume_1_Operating_System/99_Backmatter/01_Glossary.md,4,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/02_Notation_Ref.md,0,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/02_Notation_Ref.md,1,1,1,0
+content/01_Volume_1_Operating_System/99_Backmatter/02_Notation_Ref.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/02_Notation_Ref.md,2,1,1,0
+content/01_Volume_1_Operating_System/99_Backmatter/02_Notation_Ref.md,3,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/02_Notation_Ref.md,4,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/03_Bibliography.md,0,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/03_Bibliography.md,1,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/03_Bibliography.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/03_Bibliography.md,2,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/03_Bibliography.md,3,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/03_Bibliography.md,4,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/04_Index.md,0,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/04_Index.md,1,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/04_Index.md,1/2,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/04_Index.md,2,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/04_Index.md,3,0,0,0
+content/01_Volume_1_Operating_System/99_Backmatter/04_Index.md,4,1,1,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/00_Abstract.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/00_Abstract.md,1,0,0,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/00_Abstract.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/00_Abstract.md,2,1,1,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/00_Abstract.md,3,0,0,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/00_Abstract.md,4,1,1,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/01_Preface.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/01_Preface.md,1,0,0,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/01_Preface.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/01_Preface.md,2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/01_Preface.md,3,1,1,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/01_Preface.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/02_Notation.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/02_Notation.md,1,0,0,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/02_Notation.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/02_Notation.md,2,1,1,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/02_Notation.md,3,1,1,0
+content/02_Volume_2_Cosmic_Architecture/00_Frontmatter/02_Notation.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch01_6D_Parent_Lattice.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch01_6D_Parent_Lattice.md,1,2,2,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch01_6D_Parent_Lattice.md,1/2,1,1,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch01_6D_Parent_Lattice.md,2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch01_6D_Parent_Lattice.md,3,2,2,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch01_6D_Parent_Lattice.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch02_Projective_Geometry.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch02_Projective_Geometry.md,1,2,2,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch02_Projective_Geometry.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch02_Projective_Geometry.md,2,6,6,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch02_Projective_Geometry.md,3,0,0,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch02_Projective_Geometry.md,4,1,1,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch03_Supersolid_Transition.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch03_Supersolid_Transition.md,1,5,5,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch03_Supersolid_Transition.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch03_Supersolid_Transition.md,2,3,3,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch03_Supersolid_Transition.md,3,5,5,0
+content/02_Volume_2_Cosmic_Architecture/01_Part_I_Crystallography/Ch03_Supersolid_Transition.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch04_00_Effective_Action_Bridge.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch04_00_Effective_Action_Bridge.md,1,5,5,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch04_00_Effective_Action_Bridge.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch04_00_Effective_Action_Bridge.md,2,1,1,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch04_00_Effective_Action_Bridge.md,3,2,2,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch04_00_Effective_Action_Bridge.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch04_Lattice_Dynamics.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch04_Lattice_Dynamics.md,1,2,2,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch04_Lattice_Dynamics.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch04_Lattice_Dynamics.md,2,3,3,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch04_Lattice_Dynamics.md,3,7,7,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch04_Lattice_Dynamics.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch05_Vacuum_Hydrodynamics.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch05_Vacuum_Hydrodynamics.md,1,1,1,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch05_Vacuum_Hydrodynamics.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch05_Vacuum_Hydrodynamics.md,2,2,2,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch05_Vacuum_Hydrodynamics.md,3,2,2,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch05_Vacuum_Hydrodynamics.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch06_Electrodynamics_Derivation.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch06_Electrodynamics_Derivation.md,1,3,3,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch06_Electrodynamics_Derivation.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch06_Electrodynamics_Derivation.md,2,5,5,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch06_Electrodynamics_Derivation.md,3,11,11,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch06_Electrodynamics_Derivation.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch07_Thermodynamics_of_Creation.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch07_Thermodynamics_of_Creation.md,1,2,2,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch07_Thermodynamics_of_Creation.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch07_Thermodynamics_of_Creation.md,2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch07_Thermodynamics_of_Creation.md,3,1,1,0
+content/02_Volume_2_Cosmic_Architecture/02_Part_II_Light/Ch07_Thermodynamics_of_Creation.md,4,5,5,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch08_Acoustic_Metric.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch08_Acoustic_Metric.md,1,0,0,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch08_Acoustic_Metric.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch08_Acoustic_Metric.md,2,9,9,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch08_Acoustic_Metric.md,3,2,2,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch08_Acoustic_Metric.md,4,3,3,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch09_Entropic_Gravity.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch09_Entropic_Gravity.md,1,2,2,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch09_Entropic_Gravity.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch09_Entropic_Gravity.md,2,2,2,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch09_Entropic_Gravity.md,3,7,7,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch09_Entropic_Gravity.md,4,1,1,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch10_Singularities_Gravastars.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch10_Singularities_Gravastars.md,1,0,0,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch10_Singularities_Gravastars.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch10_Singularities_Gravastars.md,2,2,2,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch10_Singularities_Gravastars.md,3,2,2,0
+content/02_Volume_2_Cosmic_Architecture/03_Part_III_Gravity/Ch10_Singularities_Gravastars.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch11_Dark_Matter_I_Glass.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch11_Dark_Matter_I_Glass.md,1,3,3,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch11_Dark_Matter_I_Glass.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch11_Dark_Matter_I_Glass.md,2,1,1,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch11_Dark_Matter_I_Glass.md,3,6,6,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch11_Dark_Matter_I_Glass.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch12_Dark_Matter_II_Galactic.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch12_Dark_Matter_II_Galactic.md,1,2,2,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch12_Dark_Matter_II_Galactic.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch12_Dark_Matter_II_Galactic.md,2,2,2,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch12_Dark_Matter_II_Galactic.md,3,4,4,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch12_Dark_Matter_II_Galactic.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch13_Dark_Matter_III_Clusters.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch13_Dark_Matter_III_Clusters.md,1,0,0,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch13_Dark_Matter_III_Clusters.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch13_Dark_Matter_III_Clusters.md,2,3,3,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch13_Dark_Matter_III_Clusters.md,3,2,2,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch13_Dark_Matter_III_Clusters.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch14_Dark_Energy_Lagrangian.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch14_Dark_Energy_Lagrangian.md,1,1,1,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch14_Dark_Energy_Lagrangian.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch14_Dark_Energy_Lagrangian.md,2,9,9,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch14_Dark_Energy_Lagrangian.md,3,21,21,0
+content/02_Volume_2_Cosmic_Architecture/04_Part_IV_Dark_Sector/Ch14_Dark_Energy_Lagrangian.md,4,4,4,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/01_Glossary.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/01_Glossary.md,1,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/01_Glossary.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/01_Glossary.md,2,1,1,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/01_Glossary.md,3,1,1,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/01_Glossary.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/02_Notation_Ref.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/02_Notation_Ref.md,1,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/02_Notation_Ref.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/02_Notation_Ref.md,2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/02_Notation_Ref.md,3,2,2,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/02_Notation_Ref.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/03_Bibliography.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/03_Bibliography.md,1,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/03_Bibliography.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/03_Bibliography.md,2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/03_Bibliography.md,3,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/03_Bibliography.md,4,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/04_Index.md,0,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/04_Index.md,1,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/04_Index.md,1/2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/04_Index.md,2,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/04_Index.md,3,0,0,0
+content/02_Volume_2_Cosmic_Architecture/99_Backmatter/04_Index.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/00_Abstract.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/00_Abstract.md,1,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/00_Abstract.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/00_Abstract.md,2,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/00_Abstract.md,3,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/00_Abstract.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/01_Preface.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/01_Preface.md,1,1,1,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/01_Preface.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/01_Preface.md,2,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/01_Preface.md,3,1,1,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/01_Preface.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/02_Notation.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/02_Notation.md,1,1,1,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/02_Notation.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/02_Notation.md,2,5,5,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/02_Notation.md,3,0,0,0
+content/03_Volume_3_Matter_Spectrum/00_Frontmatter/02_Notation.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch01_Phase_Sector_U1.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch01_Phase_Sector_U1.md,1,6,6,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch01_Phase_Sector_U1.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch01_Phase_Sector_U1.md,2,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch01_Phase_Sector_U1.md,3,10,10,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch01_Phase_Sector_U1.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch02_Rotation_Sector_SU2.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch02_Rotation_Sector_SU2.md,1,6,6,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch02_Rotation_Sector_SU2.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch02_Rotation_Sector_SU2.md,2,4,4,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch02_Rotation_Sector_SU2.md,3,4,4,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch02_Rotation_Sector_SU2.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch03_Color_Force_SU3.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch03_Color_Force_SU3.md,1,7,7,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch03_Color_Force_SU3.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch03_Color_Force_SU3.md,2,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch03_Color_Force_SU3.md,3,11,11,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch03_Color_Force_SU3.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch04_Electroweak_Unification.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch04_Electroweak_Unification.md,1,14,14,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch04_Electroweak_Unification.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch04_Electroweak_Unification.md,2,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch04_Electroweak_Unification.md,3,9,9,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch04_Electroweak_Unification.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch05_Higgs_Mechanism.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch05_Higgs_Mechanism.md,1,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch05_Higgs_Mechanism.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch05_Higgs_Mechanism.md,2,1,1,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch05_Higgs_Mechanism.md,3,9,9,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch05_Higgs_Mechanism.md,4,1,1,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch06_Product_Structure.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch06_Product_Structure.md,1,8,8,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch06_Product_Structure.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch06_Product_Structure.md,2,5,5,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch06_Product_Structure.md,3,14,14,0
+content/03_Volume_3_Matter_Spectrum/01_Part_I_Forces/Ch06_Product_Structure.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch07_Fundamental_Knot_Electron.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch07_Fundamental_Knot_Electron.md,1,3,3,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch07_Fundamental_Knot_Electron.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch07_Fundamental_Knot_Electron.md,2,8,8,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch07_Fundamental_Knot_Electron.md,3,9,9,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch07_Fundamental_Knot_Electron.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch08_Fractal_Resonance_Leptons.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch08_Fractal_Resonance_Leptons.md,1,2,2,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch08_Fractal_Resonance_Leptons.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch08_Fractal_Resonance_Leptons.md,2,15,15,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch08_Fractal_Resonance_Leptons.md,3,6,6,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch08_Fractal_Resonance_Leptons.md,4,2,2,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch09_Neutrinos_Ghostly_Resonances.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch09_Neutrinos_Ghostly_Resonances.md,1,2,2,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch09_Neutrinos_Ghostly_Resonances.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch09_Neutrinos_Ghostly_Resonances.md,2,16,16,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch09_Neutrinos_Ghostly_Resonances.md,3,32,32,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch09_Neutrinos_Ghostly_Resonances.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch10_Extended_Spectrum_Quarks.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch10_Extended_Spectrum_Quarks.md,1,2,2,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch10_Extended_Spectrum_Quarks.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch10_Extended_Spectrum_Quarks.md,2,16,16,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch10_Extended_Spectrum_Quarks.md,3,15,15,0
+content/03_Volume_3_Matter_Spectrum/02_Part_II_Matter/Ch10_Extended_Spectrum_Quarks.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/03_Part_III_Astrophysics/Ch11_355keV_Anomaly.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/03_Part_III_Astrophysics/Ch11_355keV_Anomaly.md,1,0,0,0
+content/03_Volume_3_Matter_Spectrum/03_Part_III_Astrophysics/Ch11_355keV_Anomaly.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/03_Part_III_Astrophysics/Ch11_355keV_Anomaly.md,2,6,6,0
+content/03_Volume_3_Matter_Spectrum/03_Part_III_Astrophysics/Ch11_355keV_Anomaly.md,3,5,5,0
+content/03_Volume_3_Matter_Spectrum/03_Part_III_Astrophysics/Ch11_355keV_Anomaly.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/03_Part_III_Astrophysics/Ch12_Dynamic_Dark_Energy.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/03_Part_III_Astrophysics/Ch12_Dynamic_Dark_Energy.md,1,0,0,0
+content/03_Volume_3_Matter_Spectrum/03_Part_III_Astrophysics/Ch12_Dynamic_Dark_Energy.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/03_Part_III_Astrophysics/Ch12_Dynamic_Dark_Energy.md,2,2,2,0
+content/03_Volume_3_Matter_Spectrum/03_Part_III_Astrophysics/Ch12_Dynamic_Dark_Energy.md,3,10,10,0
+content/03_Volume_3_Matter_Spectrum/03_Part_III_Astrophysics/Ch12_Dynamic_Dark_Energy.md,4,2,2,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch13_Protocol_A_Zeno_Drive.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch13_Protocol_A_Zeno_Drive.md,1,7,7,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch13_Protocol_A_Zeno_Drive.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch13_Protocol_A_Zeno_Drive.md,2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch13_Protocol_A_Zeno_Drive.md,3,44,44,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch13_Protocol_A_Zeno_Drive.md,4,3,3,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch14_Protocol_B_Mass_Spectrum.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch14_Protocol_B_Mass_Spectrum.md,1,2,2,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch14_Protocol_B_Mass_Spectrum.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch14_Protocol_B_Mass_Spectrum.md,2,8,8,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch14_Protocol_B_Mass_Spectrum.md,3,1,1,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch14_Protocol_B_Mass_Spectrum.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch15_Protocol_C_XRISM.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch15_Protocol_C_XRISM.md,1,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch15_Protocol_C_XRISM.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch15_Protocol_C_XRISM.md,2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch15_Protocol_C_XRISM.md,3,6,6,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch15_Protocol_C_XRISM.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch16_Protocol_D_Isotope.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch16_Protocol_D_Isotope.md,1,5,5,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch16_Protocol_D_Isotope.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch16_Protocol_D_Isotope.md,2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch16_Protocol_D_Isotope.md,3,12,12,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch16_Protocol_D_Isotope.md,4,3,3,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch17_Protocol_E_Quark_Mismatch.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch17_Protocol_E_Quark_Mismatch.md,1,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch17_Protocol_E_Quark_Mismatch.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch17_Protocol_E_Quark_Mismatch.md,2,3,3,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch17_Protocol_E_Quark_Mismatch.md,3,5,5,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch17_Protocol_E_Quark_Mismatch.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch18_Protocol_F_Proton_Mass.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch18_Protocol_F_Proton_Mass.md,1,4,4,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch18_Protocol_F_Proton_Mass.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch18_Protocol_F_Proton_Mass.md,2,1,1,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch18_Protocol_F_Proton_Mass.md,3,11,11,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch18_Protocol_F_Proton_Mass.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch19_Protocol_G_Neutrinos.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch19_Protocol_G_Neutrinos.md,1,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch19_Protocol_G_Neutrinos.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch19_Protocol_G_Neutrinos.md,2,1,1,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch19_Protocol_G_Neutrinos.md,3,14,14,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch19_Protocol_G_Neutrinos.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch20_Protocol_H_Lattice_Fracture.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch20_Protocol_H_Lattice_Fracture.md,1,1,1,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch20_Protocol_H_Lattice_Fracture.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch20_Protocol_H_Lattice_Fracture.md,2,1,1,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch20_Protocol_H_Lattice_Fracture.md,3,2,2,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch20_Protocol_H_Lattice_Fracture.md,4,4,4,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch21_Protocol_I_Pulsar_Timing.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch21_Protocol_I_Pulsar_Timing.md,1,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch21_Protocol_I_Pulsar_Timing.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch21_Protocol_I_Pulsar_Timing.md,2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch21_Protocol_I_Pulsar_Timing.md,3,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch21_Protocol_I_Pulsar_Timing.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch22_Conclusion_Roadmap.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch22_Conclusion_Roadmap.md,1,3,3,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch22_Conclusion_Roadmap.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch22_Conclusion_Roadmap.md,2,8,8,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch22_Conclusion_Roadmap.md,3,10,10,0
+content/03_Volume_3_Matter_Spectrum/04_Part_IV_Experiments/Ch22_Conclusion_Roadmap.md,4,4,4,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/01_Glossary.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/01_Glossary.md,1,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/01_Glossary.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/01_Glossary.md,2,1,1,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/01_Glossary.md,3,3,3,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/01_Glossary.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/02_Notation_Ref.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/02_Notation_Ref.md,1,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/02_Notation_Ref.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/02_Notation_Ref.md,2,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/02_Notation_Ref.md,3,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/02_Notation_Ref.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/03_Bibliography.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/03_Bibliography.md,1,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/03_Bibliography.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/03_Bibliography.md,2,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/03_Bibliography.md,3,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/03_Bibliography.md,4,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/04_Index.md,0,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/04_Index.md,1,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/04_Index.md,1/2,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/04_Index.md,2,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/04_Index.md,3,0,0,0
+content/03_Volume_3_Matter_Spectrum/99_Backmatter/04_Index.md,4,0,0,0
+content/98_Global_Appendices/App_BEB_Decoherence_and_Energy.md,0,0,0,0
+content/98_Global_Appendices/App_BEB_Decoherence_and_Energy.md,1,4,4,0
+content/98_Global_Appendices/App_BEB_Decoherence_and_Energy.md,1/2,0,0,0
+content/98_Global_Appendices/App_BEB_Decoherence_and_Energy.md,2,0,0,0
+content/98_Global_Appendices/App_BEB_Decoherence_and_Energy.md,3,17,17,0
+content/98_Global_Appendices/App_BEB_Decoherence_and_Energy.md,4,0,0,0
+content/98_Global_Appendices/App_BRC_Born_Rule.md,0,0,0,0
+content/98_Global_Appendices/App_BRC_Born_Rule.md,1,0,0,0
+content/98_Global_Appendices/App_BRC_Born_Rule.md,1/2,0,0,0
+content/98_Global_Appendices/App_BRC_Born_Rule.md,2,0,0,0
+content/98_Global_Appendices/App_BRC_Born_Rule.md,3,3,3,0
+content/98_Global_Appendices/App_BRC_Born_Rule.md,4,0,0,0
+content/98_Global_Appendices/App_CCD_Collective_Coordinates.md,0,0,0,0
+content/98_Global_Appendices/App_CCD_Collective_Coordinates.md,1,5,5,0
+content/98_Global_Appendices/App_CCD_Collective_Coordinates.md,1/2,0,0,0
+content/98_Global_Appendices/App_CCD_Collective_Coordinates.md,2,0,0,0
+content/98_Global_Appendices/App_CCD_Collective_Coordinates.md,3,1,1,0
+content/98_Global_Appendices/App_CCD_Collective_Coordinates.md,4,0,0,0
+content/98_Global_Appendices/App_CVC_Engine_Reports.md,0,0,0,0
+content/98_Global_Appendices/App_CVC_Engine_Reports.md,1,0,0,0
+content/98_Global_Appendices/App_CVC_Engine_Reports.md,1/2,0,0,0
+content/98_Global_Appendices/App_CVC_Engine_Reports.md,2,1,1,0
+content/98_Global_Appendices/App_CVC_Engine_Reports.md,3,1,1,0
+content/98_Global_Appendices/App_CVC_Engine_Reports.md,4,0,0,0
+content/98_Global_Appendices/App_CXL_Crystallography.md,0,0,0,0
+content/98_Global_Appendices/App_CXL_Crystallography.md,1,2,2,0
+content/98_Global_Appendices/App_CXL_Crystallography.md,1/2,1,1,0
+content/98_Global_Appendices/App_CXL_Crystallography.md,2,0,0,0
+content/98_Global_Appendices/App_CXL_Crystallography.md,3,0,0,0
+content/98_Global_Appendices/App_CXL_Crystallography.md,4,0,0,0
+content/98_Global_Appendices/App_DPS_Phason_Stiffness.md,0,0,0,0
+content/98_Global_Appendices/App_DPS_Phason_Stiffness.md,1,5,5,0
+content/98_Global_Appendices/App_DPS_Phason_Stiffness.md,1/2,0,0,0
+content/98_Global_Appendices/App_DPS_Phason_Stiffness.md,2,3,3,0
+content/98_Global_Appendices/App_DPS_Phason_Stiffness.md,3,5,5,0
+content/98_Global_Appendices/App_DPS_Phason_Stiffness.md,4,0,0,0
+content/98_Global_Appendices/App_FSM_Falsifiability_Matrix.md,0,0,0,0
+content/98_Global_Appendices/App_FSM_Falsifiability_Matrix.md,1,0,0,0
+content/98_Global_Appendices/App_FSM_Falsifiability_Matrix.md,1/2,0,0,0
+content/98_Global_Appendices/App_FSM_Falsifiability_Matrix.md,2,0,0,0
+content/98_Global_Appendices/App_FSM_Falsifiability_Matrix.md,3,0,0,0
+content/98_Global_Appendices/App_FSM_Falsifiability_Matrix.md,4,0,0,0
+content/98_Global_Appendices/App_FTH_Foundational_Theorems.md,0,0,0,0
+content/98_Global_Appendices/App_FTH_Foundational_Theorems.md,1,5,5,0
+content/98_Global_Appendices/App_FTH_Foundational_Theorems.md,1/2,1,1,0
+content/98_Global_Appendices/App_FTH_Foundational_Theorems.md,2,3,3,0
+content/98_Global_Appendices/App_FTH_Foundational_Theorems.md,3,1,1,0
+content/98_Global_Appendices/App_FTH_Foundational_Theorems.md,4,0,0,0
+content/98_Global_Appendices/App_GPE_Physics_Engine.md,0,0,0,0
+content/98_Global_Appendices/App_GPE_Physics_Engine.md,1,2,2,0
+content/98_Global_Appendices/App_GPE_Physics_Engine.md,1/2,0,0,0
+content/98_Global_Appendices/App_GPE_Physics_Engine.md,2,0,0,0
+content/98_Global_Appendices/App_GPE_Physics_Engine.md,3,1,1,0
+content/98_Global_Appendices/App_GPE_Physics_Engine.md,4,0,0,0
+content/98_Global_Appendices/App_GRF_Native_RG_Flow.md,0,0,0,0
+content/98_Global_Appendices/App_GRF_Native_RG_Flow.md,1,2,2,0
+content/98_Global_Appendices/App_GRF_Native_RG_Flow.md,1/2,0,0,0
+content/98_Global_Appendices/App_GRF_Native_RG_Flow.md,2,0,0,0
+content/98_Global_Appendices/App_GRF_Native_RG_Flow.md,3,3,3,0
+content/98_Global_Appendices/App_GRF_Native_RG_Flow.md,4,0,0,0
+content/98_Global_Appendices/App_IVH_Independent_Verification.md,0,0,0,0
+content/98_Global_Appendices/App_IVH_Independent_Verification.md,1,0,0,0
+content/98_Global_Appendices/App_IVH_Independent_Verification.md,1/2,0,0,0
+content/98_Global_Appendices/App_IVH_Independent_Verification.md,2,0,0,0
+content/98_Global_Appendices/App_IVH_Independent_Verification.md,3,0,0,0
+content/98_Global_Appendices/App_IVH_Independent_Verification.md,4,0,0,0
+content/98_Global_Appendices/App_MFD_Math_Foundations.md,0,0,0,0
+content/98_Global_Appendices/App_MFD_Math_Foundations.md,1,9,9,0
+content/98_Global_Appendices/App_MFD_Math_Foundations.md,1/2,0,0,0
+content/98_Global_Appendices/App_MFD_Math_Foundations.md,2,0,0,0
+content/98_Global_Appendices/App_MFD_Math_Foundations.md,3,5,5,0
+content/98_Global_Appendices/App_MFD_Math_Foundations.md,4,0,0,0
+content/98_Global_Appendices/App_MTI_Measure_Theory.md,0,0,0,0
+content/98_Global_Appendices/App_MTI_Measure_Theory.md,1,2,2,0
+content/98_Global_Appendices/App_MTI_Measure_Theory.md,1/2,0,0,0
+content/98_Global_Appendices/App_MTI_Measure_Theory.md,2,0,0,0
+content/98_Global_Appendices/App_MTI_Measure_Theory.md,3,3,3,0
+content/98_Global_Appendices/App_MTI_Measure_Theory.md,4,0,0,0
+content/98_Global_Appendices/App_NSM_Neutrino_Sum_Contingency.md,0,0,0,0
+content/98_Global_Appendices/App_NSM_Neutrino_Sum_Contingency.md,1,0,0,0
+content/98_Global_Appendices/App_NSM_Neutrino_Sum_Contingency.md,1/2,0,0,0
+content/98_Global_Appendices/App_NSM_Neutrino_Sum_Contingency.md,2,0,0,0
+content/98_Global_Appendices/App_NSM_Neutrino_Sum_Contingency.md,3,6,6,0
+content/98_Global_Appendices/App_NSM_Neutrino_Sum_Contingency.md,4,0,0,0
+content/98_Global_Appendices/App_NSP_Nuclear_Spin.md,0,0,0,0
+content/98_Global_Appendices/App_NSP_Nuclear_Spin.md,1,0,0,0
+content/98_Global_Appendices/App_NSP_Nuclear_Spin.md,1/2,0,0,0
+content/98_Global_Appendices/App_NSP_Nuclear_Spin.md,2,0,0,0
+content/98_Global_Appendices/App_NSP_Nuclear_Spin.md,3,4,4,0
+content/98_Global_Appendices/App_NSP_Nuclear_Spin.md,4,1,1,0
+content/98_Global_Appendices/App_ORQ_Research_Questions.md,0,0,0,0
+content/98_Global_Appendices/App_ORQ_Research_Questions.md,1,8,8,0
+content/98_Global_Appendices/App_ORQ_Research_Questions.md,1/2,0,0,0
+content/98_Global_Appendices/App_ORQ_Research_Questions.md,2,1,1,0
+content/98_Global_Appendices/App_ORQ_Research_Questions.md,3,12,12,0
+content/98_Global_Appendices/App_ORQ_Research_Questions.md,4,1,1,0
+content/98_Global_Appendices/App_PRG_Prediction_Registry.md,0,0,0,0
+content/98_Global_Appendices/App_PRG_Prediction_Registry.md,1,1,1,0
+content/98_Global_Appendices/App_PRG_Prediction_Registry.md,1/2,0,0,0
+content/98_Global_Appendices/App_PRG_Prediction_Registry.md,2,1,1,0
+content/98_Global_Appendices/App_PRG_Prediction_Registry.md,3,0,0,0
+content/98_Global_Appendices/App_PRG_Prediction_Registry.md,4,0,0,0
+content/98_Global_Appendices/App_PSC_Precision_Scorecard.md,0,0,0,0
+content/98_Global_Appendices/App_PSC_Precision_Scorecard.md,1,0,0,0
+content/98_Global_Appendices/App_PSC_Precision_Scorecard.md,1/2,0,0,0
+content/98_Global_Appendices/App_PSC_Precision_Scorecard.md,2,1,1,0
+content/98_Global_Appendices/App_PSC_Precision_Scorecard.md,3,7,7,0
+content/98_Global_Appendices/App_PSC_Precision_Scorecard.md,4,1,1,0
+content/98_Global_Appendices/App_PUP_Polaron_Unity_Status.md,0,0,0,0
+content/98_Global_Appendices/App_PUP_Polaron_Unity_Status.md,1,13,13,0
+content/98_Global_Appendices/App_PUP_Polaron_Unity_Status.md,1/2,0,0,0
+content/98_Global_Appendices/App_PUP_Polaron_Unity_Status.md,2,0,0,0
+content/98_Global_Appendices/App_PUP_Polaron_Unity_Status.md,3,13,13,0
+content/98_Global_Appendices/App_PUP_Polaron_Unity_Status.md,4,0,0,0
+content/98_Global_Appendices/App_QCT_Quasicrystal_Theory.md,0,0,0,0
+content/98_Global_Appendices/App_QCT_Quasicrystal_Theory.md,1,5,5,0
+content/98_Global_Appendices/App_QCT_Quasicrystal_Theory.md,1/2,0,0,0
+content/98_Global_Appendices/App_QCT_Quasicrystal_Theory.md,2,0,0,0
+content/98_Global_Appendices/App_QCT_Quasicrystal_Theory.md,3,1,1,0
+content/98_Global_Appendices/App_QCT_Quasicrystal_Theory.md,4,0,0,0
+content/98_Global_Appendices/App_QLA_QLQCD_Algorithm.md,0,0,0,0
+content/98_Global_Appendices/App_QLA_QLQCD_Algorithm.md,1,2,2,0
+content/98_Global_Appendices/App_QLA_QLQCD_Algorithm.md,1/2,0,0,0
+content/98_Global_Appendices/App_QLA_QLQCD_Algorithm.md,2,0,0,0
+content/98_Global_Appendices/App_QLA_QLQCD_Algorithm.md,3,5,5,0
+content/98_Global_Appendices/App_QLA_QLQCD_Algorithm.md,4,0,0,0
+content/98_Global_Appendices/App_SNE_Selection_NoSignalling_Energy.md,0,0,0,0
+content/98_Global_Appendices/App_SNE_Selection_NoSignalling_Energy.md,1,4,4,0
+content/98_Global_Appendices/App_SNE_Selection_NoSignalling_Energy.md,1/2,0,0,0
+content/98_Global_Appendices/App_SNE_Selection_NoSignalling_Energy.md,2,1,1,0
+content/98_Global_Appendices/App_SNE_Selection_NoSignalling_Energy.md,3,2,2,0
+content/98_Global_Appendices/App_SNE_Selection_NoSignalling_Energy.md,4,0,0,0
+content/98_Global_Appendices/App_TAS_Solenoid_Topology.md,0,0,0,0
+content/98_Global_Appendices/App_TAS_Solenoid_Topology.md,1,5,5,0
+content/98_Global_Appendices/App_TAS_Solenoid_Topology.md,1/2,0,0,0
+content/98_Global_Appendices/App_TAS_Solenoid_Topology.md,2,0,0,0
+content/98_Global_Appendices/App_TAS_Solenoid_Topology.md,3,1,1,0
+content/98_Global_Appendices/App_TAS_Solenoid_Topology.md,4,0,0,0
+content/98_Global_Appendices/App_TAT_Tier_Audit.md,0,0,0,0
+content/98_Global_Appendices/App_TAT_Tier_Audit.md,1,3,3,0
+content/98_Global_Appendices/App_TAT_Tier_Audit.md,1/2,0,0,0
+content/98_Global_Appendices/App_TAT_Tier_Audit.md,2,0,0,0
+content/98_Global_Appendices/App_TAT_Tier_Audit.md,3,2,2,0
+content/98_Global_Appendices/App_TAT_Tier_Audit.md,4,0,0,0
+content/98_Global_Appendices/App_TCD_Tier_Classification.md,0,0,0,0
+content/98_Global_Appendices/App_TCD_Tier_Classification.md,1,2,2,0
+content/98_Global_Appendices/App_TCD_Tier_Classification.md,1/2,0,0,0
+content/98_Global_Appendices/App_TCD_Tier_Classification.md,2,7,7,0
+content/98_Global_Appendices/App_TCD_Tier_Classification.md,3,7,7,0
+content/98_Global_Appendices/App_TCD_Tier_Classification.md,4,1,1,0
+content/98_Global_Appendices/App_TIB_Ontology_Block_Universe.md,0,0,0,0
+content/98_Global_Appendices/App_TIB_Ontology_Block_Universe.md,1,2,2,0
+content/98_Global_Appendices/App_TIB_Ontology_Block_Universe.md,1/2,0,0,0
+content/98_Global_Appendices/App_TIB_Ontology_Block_Universe.md,2,0,0,0
+content/98_Global_Appendices/App_TIB_Ontology_Block_Universe.md,3,1,1,0
+content/98_Global_Appendices/App_TIB_Ontology_Block_Universe.md,4,1,1,0
+content/98_Global_Appendices/App_TPF_Transparency_Proof.md,0,0,0,0
+content/98_Global_Appendices/App_TPF_Transparency_Proof.md,1,0,0,0
+content/98_Global_Appendices/App_TPF_Transparency_Proof.md,1/2,0,0,0
+content/98_Global_Appendices/App_TPF_Transparency_Proof.md,2,2,2,0
+content/98_Global_Appendices/App_TPF_Transparency_Proof.md,3,4,4,0
+content/98_Global_Appendices/App_TPF_Transparency_Proof.md,4,1,1,0
+content/98_Global_Appendices/App_TPR_Tier_Promotion_Roadmap.md,0,0,0,0
+content/98_Global_Appendices/App_TPR_Tier_Promotion_Roadmap.md,1,1,1,0
+content/98_Global_Appendices/App_TPR_Tier_Promotion_Roadmap.md,1/2,0,0,0
+content/98_Global_Appendices/App_TPR_Tier_Promotion_Roadmap.md,2,0,0,0
+content/98_Global_Appendices/App_TPR_Tier_Promotion_Roadmap.md,3,1,1,0
+content/98_Global_Appendices/App_TPR_Tier_Promotion_Roadmap.md,4,0,0,0
+content/98_Global_Appendices/App_TPS_Thermodynamics.md,0,0,0,0
+content/98_Global_Appendices/App_TPS_Thermodynamics.md,1,0,0,0
+content/98_Global_Appendices/App_TPS_Thermodynamics.md,1/2,0,0,0
+content/98_Global_Appendices/App_TPS_Thermodynamics.md,2,0,0,0
+content/98_Global_Appendices/App_TPS_Thermodynamics.md,3,0,0,0
+content/98_Global_Appendices/App_TPS_Thermodynamics.md,4,2,2,0
+content/98_Global_Appendices/App_ULA_The_Unified_Action.md,0,0,0,0
+content/98_Global_Appendices/App_ULA_The_Unified_Action.md,1,3,3,0
+content/98_Global_Appendices/App_ULA_The_Unified_Action.md,1/2,0,0,0
+content/98_Global_Appendices/App_ULA_The_Unified_Action.md,2,5,5,0
+content/98_Global_Appendices/App_ULA_The_Unified_Action.md,3,3,3,0
+content/98_Global_Appendices/App_ULA_The_Unified_Action.md,4,0,0,0
+content/98_Global_Appendices/App_USS_Uniqueness_and_Search_Space.md,0,0,0,0
+content/98_Global_Appendices/App_USS_Uniqueness_and_Search_Space.md,1,12,12,0
+content/98_Global_Appendices/App_USS_Uniqueness_and_Search_Space.md,1/2,2,2,0
+content/98_Global_Appendices/App_USS_Uniqueness_and_Search_Space.md,2,2,2,0
+content/98_Global_Appendices/App_USS_Uniqueness_and_Search_Space.md,3,4,4,0
+content/98_Global_Appendices/App_USS_Uniqueness_and_Search_Space.md,4,0,0,0
+content/99_Global_Backmatter/01_Master_Glossary.md,0,0,0,0
+content/99_Global_Backmatter/01_Master_Glossary.md,1,2,3,1
+content/99_Global_Backmatter/01_Master_Glossary.md,1/2,0,0,0
+content/99_Global_Backmatter/01_Master_Glossary.md,2,2,2,0
+content/99_Global_Backmatter/01_Master_Glossary.md,3,10,10,0
+content/99_Global_Backmatter/01_Master_Glossary.md,4,0,0,0
+content/99_Global_Backmatter/02_Master_Bibliography.md,0,0,0,0
+content/99_Global_Backmatter/02_Master_Bibliography.md,1,0,0,0
+content/99_Global_Backmatter/02_Master_Bibliography.md,1/2,0,0,0
+content/99_Global_Backmatter/02_Master_Bibliography.md,2,0,0,0
+content/99_Global_Backmatter/02_Master_Bibliography.md,3,0,0,0
+content/99_Global_Backmatter/02_Master_Bibliography.md,4,0,0,0
+content/99_Global_Backmatter/03_Master_Index.md,0,0,0,0
+content/99_Global_Backmatter/03_Master_Index.md,1,0,0,0
+content/99_Global_Backmatter/03_Master_Index.md,1/2,0,0,0
+content/99_Global_Backmatter/03_Master_Index.md,2,0,0,0
+content/99_Global_Backmatter/03_Master_Index.md,3,0,0,0
+content/99_Global_Backmatter/03_Master_Index.md,4,0,0,0
+content/99_Global_Backmatter/04_Acknowledgments.md,0,0,0,0
+content/99_Global_Backmatter/04_Acknowledgments.md,1,0,0,0
+content/99_Global_Backmatter/04_Acknowledgments.md,1/2,0,0,0
+content/99_Global_Backmatter/04_Acknowledgments.md,2,0,0,0
+content/99_Global_Backmatter/04_Acknowledgments.md,3,0,0,0
+content/99_Global_Backmatter/04_Acknowledgments.md,4,0,0,0
+content/99_Global_Backmatter/05_Colophon.md,0,0,0,0
+content/99_Global_Backmatter/05_Colophon.md,1,0,0,0
+content/99_Global_Backmatter/05_Colophon.md,1/2,0,0,0
+content/99_Global_Backmatter/05_Colophon.md,2,0,0,0
+content/99_Global_Backmatter/05_Colophon.md,3,0,0,0
+content/99_Global_Backmatter/05_Colophon.md,4,0,0,0
+content/Figures/Appendices/Figure App.FSM.1.pdf,0,0,0,0
+content/Figures/Appendices/Figure App.FSM.1.pdf,1,0,0,0
+content/Figures/Appendices/Figure App.FSM.1.pdf,1/2,0,0,0
+content/Figures/Appendices/Figure App.FSM.1.pdf,2,0,0,0
+content/Figures/Appendices/Figure App.FSM.1.pdf,3,0,0,0
+content/Figures/Appendices/Figure App.FSM.1.pdf,4,0,0,0
+content/Figures/Appendices/Figure App.FSM.1.svg,0,0,0,0
+content/Figures/Appendices/Figure App.FSM.1.svg,1,0,0,0
+content/Figures/Appendices/Figure App.FSM.1.svg,1/2,0,0,0
+content/Figures/Appendices/Figure App.FSM.1.svg,2,0,0,0
+content/Figures/Appendices/Figure App.FSM.1.svg,3,0,0,0
+content/Figures/Appendices/Figure App.FSM.1.svg,4,0,0,0
+content/Figures/Frontmatter/Figure GF.1.1.pdf,0,0,0,0
+content/Figures/Frontmatter/Figure GF.1.1.pdf,1,0,0,0
+content/Figures/Frontmatter/Figure GF.1.1.pdf,1/2,0,0,0
+content/Figures/Frontmatter/Figure GF.1.1.pdf,2,0,0,0
+content/Figures/Frontmatter/Figure GF.1.1.pdf,3,0,0,0
+content/Figures/Frontmatter/Figure GF.1.1.pdf,4,0,0,0
+content/Figures/Frontmatter/Figure GF.1.1.svg,0,0,0,0
+content/Figures/Frontmatter/Figure GF.1.1.svg,1,0,0,0
+content/Figures/Frontmatter/Figure GF.1.1.svg,1/2,0,0,0
+content/Figures/Frontmatter/Figure GF.1.1.svg,2,0,0,0
+content/Figures/Frontmatter/Figure GF.1.1.svg,3,0,0,0
+content/Figures/Frontmatter/Figure GF.1.1.svg,4,0,0,0
+content/Figures/Frontmatter/Figure GF.2.1.pdf,0,0,0,0
+content/Figures/Frontmatter/Figure GF.2.1.pdf,1,0,0,0
+content/Figures/Frontmatter/Figure GF.2.1.pdf,1/2,0,0,0
+content/Figures/Frontmatter/Figure GF.2.1.pdf,2,0,0,0
+content/Figures/Frontmatter/Figure GF.2.1.pdf,3,0,0,0
+content/Figures/Frontmatter/Figure GF.2.1.pdf,4,0,0,0
+content/Figures/Frontmatter/Figure GF.2.1.svg,0,0,0,0
+content/Figures/Frontmatter/Figure GF.2.1.svg,1,0,0,0
+content/Figures/Frontmatter/Figure GF.2.1.svg,1/2,0,0,0
+content/Figures/Frontmatter/Figure GF.2.1.svg,2,0,0,0
+content/Figures/Frontmatter/Figure GF.2.1.svg,3,0,0,0
+content/Figures/Frontmatter/Figure GF.2.1.svg,4,0,0,0
+content/Figures/Frontmatter/Figure GF.3.1.pdf,0,0,0,0
+content/Figures/Frontmatter/Figure GF.3.1.pdf,1,0,0,0
+content/Figures/Frontmatter/Figure GF.3.1.pdf,1/2,0,0,0
+content/Figures/Frontmatter/Figure GF.3.1.pdf,2,0,0,0
+content/Figures/Frontmatter/Figure GF.3.1.pdf,3,0,0,0
+content/Figures/Frontmatter/Figure GF.3.1.pdf,4,0,0,0
+content/Figures/Frontmatter/Figure GF.3.1.svg,0,0,0,0
+content/Figures/Frontmatter/Figure GF.3.1.svg,1,0,0,0
+content/Figures/Frontmatter/Figure GF.3.1.svg,1/2,0,0,0
+content/Figures/Frontmatter/Figure GF.3.1.svg,2,0,0,0
+content/Figures/Frontmatter/Figure GF.3.1.svg,3,0,0,0
+content/Figures/Frontmatter/Figure GF.3.1.svg,4,0,0,0
+content/Figures/Frontmatter/Figure GF.4.1.pdf,0,0,0,0
+content/Figures/Frontmatter/Figure GF.4.1.pdf,1,0,0,0
+content/Figures/Frontmatter/Figure GF.4.1.pdf,1/2,0,0,0
+content/Figures/Frontmatter/Figure GF.4.1.pdf,2,0,0,0
+content/Figures/Frontmatter/Figure GF.4.1.pdf,3,0,0,0
+content/Figures/Frontmatter/Figure GF.4.1.pdf,4,0,0,0
+content/Figures/Frontmatter/Figure GF.4.1.svg,0,0,0,0
+content/Figures/Frontmatter/Figure GF.4.1.svg,1,0,0,0
+content/Figures/Frontmatter/Figure GF.4.1.svg,1/2,0,0,0
+content/Figures/Frontmatter/Figure GF.4.1.svg,2,0,0,0
+content/Figures/Frontmatter/Figure GF.4.1.svg,3,0,0,0
+content/Figures/Frontmatter/Figure GF.4.1.svg,4,0,0,0
+content/Figures/GCT_Figures_Catalog_DETAILED.md,0,0,0,0
+content/Figures/GCT_Figures_Catalog_DETAILED.md,1,0,0,0
+content/Figures/GCT_Figures_Catalog_DETAILED.md,1/2,0,0,0
+content/Figures/GCT_Figures_Catalog_DETAILED.md,2,0,0,0
+content/Figures/GCT_Figures_Catalog_DETAILED.md,3,0,0,0
+content/Figures/GCT_Figures_Catalog_DETAILED.md,4,0,0,0
+content/Figures/Volume_1/Figure V1.1.1.pdf,0,0,0,0
+content/Figures/Volume_1/Figure V1.1.1.pdf,1,0,0,0
+content/Figures/Volume_1/Figure V1.1.1.pdf,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.1.1.pdf,2,0,0,0
+content/Figures/Volume_1/Figure V1.1.1.pdf,3,0,0,0
+content/Figures/Volume_1/Figure V1.1.1.pdf,4,0,0,0
+content/Figures/Volume_1/Figure V1.1.1.svg,0,0,0,0
+content/Figures/Volume_1/Figure V1.1.1.svg,1,0,0,0
+content/Figures/Volume_1/Figure V1.1.1.svg,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.1.1.svg,2,0,0,0
+content/Figures/Volume_1/Figure V1.1.1.svg,3,0,0,0
+content/Figures/Volume_1/Figure V1.1.1.svg,4,0,0,0
+content/Figures/Volume_1/Figure V1.12.1.pdf,0,0,0,0
+content/Figures/Volume_1/Figure V1.12.1.pdf,1,0,0,0
+content/Figures/Volume_1/Figure V1.12.1.pdf,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.12.1.pdf,2,0,0,0
+content/Figures/Volume_1/Figure V1.12.1.pdf,3,0,0,0
+content/Figures/Volume_1/Figure V1.12.1.pdf,4,0,0,0
+content/Figures/Volume_1/Figure V1.12.1.svg,0,0,0,0
+content/Figures/Volume_1/Figure V1.12.1.svg,1,0,0,0
+content/Figures/Volume_1/Figure V1.12.1.svg,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.12.1.svg,2,0,0,0
+content/Figures/Volume_1/Figure V1.12.1.svg,3,0,0,0
+content/Figures/Volume_1/Figure V1.12.1.svg,4,0,0,0
+content/Figures/Volume_1/Figure V1.16.1.pdf,0,0,0,0
+content/Figures/Volume_1/Figure V1.16.1.pdf,1,0,0,0
+content/Figures/Volume_1/Figure V1.16.1.pdf,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.16.1.pdf,2,0,0,0
+content/Figures/Volume_1/Figure V1.16.1.pdf,3,0,0,0
+content/Figures/Volume_1/Figure V1.16.1.pdf,4,0,0,0
+content/Figures/Volume_1/Figure V1.16.1.svg,0,0,0,0
+content/Figures/Volume_1/Figure V1.16.1.svg,1,0,0,0
+content/Figures/Volume_1/Figure V1.16.1.svg,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.16.1.svg,2,0,0,0
+content/Figures/Volume_1/Figure V1.16.1.svg,3,0,0,0
+content/Figures/Volume_1/Figure V1.16.1.svg,4,0,0,0
+content/Figures/Volume_1/Figure V1.16.2.pdf,0,0,0,0
+content/Figures/Volume_1/Figure V1.16.2.pdf,1,0,0,0
+content/Figures/Volume_1/Figure V1.16.2.pdf,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.16.2.pdf,2,0,0,0
+content/Figures/Volume_1/Figure V1.16.2.pdf,3,0,0,0
+content/Figures/Volume_1/Figure V1.16.2.pdf,4,0,0,0
+content/Figures/Volume_1/Figure V1.16.2.svg,0,0,0,0
+content/Figures/Volume_1/Figure V1.16.2.svg,1,0,0,0
+content/Figures/Volume_1/Figure V1.16.2.svg,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.16.2.svg,2,0,0,0
+content/Figures/Volume_1/Figure V1.16.2.svg,3,0,0,0
+content/Figures/Volume_1/Figure V1.16.2.svg,4,0,0,0
+content/Figures/Volume_1/Figure V1.17.5.pdf,0,0,0,0
+content/Figures/Volume_1/Figure V1.17.5.pdf,1,0,0,0
+content/Figures/Volume_1/Figure V1.17.5.pdf,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.17.5.pdf,2,0,0,0
+content/Figures/Volume_1/Figure V1.17.5.pdf,3,0,0,0
+content/Figures/Volume_1/Figure V1.17.5.pdf,4,0,0,0
+content/Figures/Volume_1/Figure V1.17.5.svg,0,0,0,0
+content/Figures/Volume_1/Figure V1.17.5.svg,1,0,0,0
+content/Figures/Volume_1/Figure V1.17.5.svg,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.17.5.svg,2,0,0,0
+content/Figures/Volume_1/Figure V1.17.5.svg,3,0,0,0
+content/Figures/Volume_1/Figure V1.17.5.svg,4,0,0,0
+content/Figures/Volume_1/Figure V1.4.1.pdf,0,0,0,0
+content/Figures/Volume_1/Figure V1.4.1.pdf,1,0,0,0
+content/Figures/Volume_1/Figure V1.4.1.pdf,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.4.1.pdf,2,0,0,0
+content/Figures/Volume_1/Figure V1.4.1.pdf,3,0,0,0
+content/Figures/Volume_1/Figure V1.4.1.pdf,4,0,0,0
+content/Figures/Volume_1/Figure V1.4.1.svg,0,0,0,0
+content/Figures/Volume_1/Figure V1.4.1.svg,1,0,0,0
+content/Figures/Volume_1/Figure V1.4.1.svg,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.4.1.svg,2,0,0,0
+content/Figures/Volume_1/Figure V1.4.1.svg,3,0,0,0
+content/Figures/Volume_1/Figure V1.4.1.svg,4,0,0,0
+content/Figures/Volume_1/Figure V1.5.1.pdf,0,0,0,0
+content/Figures/Volume_1/Figure V1.5.1.pdf,1,0,0,0
+content/Figures/Volume_1/Figure V1.5.1.pdf,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.5.1.pdf,2,0,0,0
+content/Figures/Volume_1/Figure V1.5.1.pdf,3,0,0,0
+content/Figures/Volume_1/Figure V1.5.1.pdf,4,0,0,0
+content/Figures/Volume_1/Figure V1.5.1.svg,0,0,0,0
+content/Figures/Volume_1/Figure V1.5.1.svg,1,0,0,0
+content/Figures/Volume_1/Figure V1.5.1.svg,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.5.1.svg,2,0,0,0
+content/Figures/Volume_1/Figure V1.5.1.svg,3,0,0,0
+content/Figures/Volume_1/Figure V1.5.1.svg,4,0,0,0
+content/Figures/Volume_1/Figure V1.5.2.pdf,0,0,0,0
+content/Figures/Volume_1/Figure V1.5.2.pdf,1,0,0,0
+content/Figures/Volume_1/Figure V1.5.2.pdf,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.5.2.pdf,2,0,0,0
+content/Figures/Volume_1/Figure V1.5.2.pdf,3,0,0,0
+content/Figures/Volume_1/Figure V1.5.2.pdf,4,0,0,0
+content/Figures/Volume_1/Figure V1.5.2.svg,0,0,0,0
+content/Figures/Volume_1/Figure V1.5.2.svg,1,0,0,0
+content/Figures/Volume_1/Figure V1.5.2.svg,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.5.2.svg,2,0,0,0
+content/Figures/Volume_1/Figure V1.5.2.svg,3,0,0,0
+content/Figures/Volume_1/Figure V1.5.2.svg,4,0,0,0
+content/Figures/Volume_1/Figure V1.7.1.pdf,0,0,0,0
+content/Figures/Volume_1/Figure V1.7.1.pdf,1,0,0,0
+content/Figures/Volume_1/Figure V1.7.1.pdf,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.7.1.pdf,2,0,0,0
+content/Figures/Volume_1/Figure V1.7.1.pdf,3,0,0,0
+content/Figures/Volume_1/Figure V1.7.1.pdf,4,0,0,0
+content/Figures/Volume_1/Figure V1.7.1.svg,0,0,0,0
+content/Figures/Volume_1/Figure V1.7.1.svg,1,0,0,0
+content/Figures/Volume_1/Figure V1.7.1.svg,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.7.1.svg,2,0,0,0
+content/Figures/Volume_1/Figure V1.7.1.svg,3,0,0,0
+content/Figures/Volume_1/Figure V1.7.1.svg,4,0,0,0
+content/Figures/Volume_1/Figure V1.7.3.pdf,0,0,0,0
+content/Figures/Volume_1/Figure V1.7.3.pdf,1,0,0,0
+content/Figures/Volume_1/Figure V1.7.3.pdf,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.7.3.pdf,2,0,0,0
+content/Figures/Volume_1/Figure V1.7.3.pdf,3,0,0,0
+content/Figures/Volume_1/Figure V1.7.3.pdf,4,0,0,0
+content/Figures/Volume_1/Figure V1.7.3.svg,0,0,0,0
+content/Figures/Volume_1/Figure V1.7.3.svg,1,0,0,0
+content/Figures/Volume_1/Figure V1.7.3.svg,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.7.3.svg,2,0,0,0
+content/Figures/Volume_1/Figure V1.7.3.svg,3,0,0,0
+content/Figures/Volume_1/Figure V1.7.3.svg,4,0,0,0
+content/Figures/Volume_1/Figure V1.8.1.pdf,0,0,0,0
+content/Figures/Volume_1/Figure V1.8.1.pdf,1,0,0,0
+content/Figures/Volume_1/Figure V1.8.1.pdf,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.8.1.pdf,2,0,0,0
+content/Figures/Volume_1/Figure V1.8.1.pdf,3,0,0,0
+content/Figures/Volume_1/Figure V1.8.1.pdf,4,0,0,0
+content/Figures/Volume_1/Figure V1.8.1.svg,0,0,0,0
+content/Figures/Volume_1/Figure V1.8.1.svg,1,0,0,0
+content/Figures/Volume_1/Figure V1.8.1.svg,1/2,0,0,0
+content/Figures/Volume_1/Figure V1.8.1.svg,2,0,0,0
+content/Figures/Volume_1/Figure V1.8.1.svg,3,0,0,0
+content/Figures/Volume_1/Figure V1.8.1.svg,4,0,0,0
+content/Figures/Volume_2/Figure V2.1.1.pdf,0,0,0,0
+content/Figures/Volume_2/Figure V2.1.1.pdf,1,0,0,0
+content/Figures/Volume_2/Figure V2.1.1.pdf,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.1.1.pdf,2,0,0,0
+content/Figures/Volume_2/Figure V2.1.1.pdf,3,0,0,0
+content/Figures/Volume_2/Figure V2.1.1.pdf,4,0,0,0
+content/Figures/Volume_2/Figure V2.1.1.svg,0,0,0,0
+content/Figures/Volume_2/Figure V2.1.1.svg,1,0,0,0
+content/Figures/Volume_2/Figure V2.1.1.svg,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.1.1.svg,2,0,0,0
+content/Figures/Volume_2/Figure V2.1.1.svg,3,0,0,0
+content/Figures/Volume_2/Figure V2.1.1.svg,4,0,0,0
+content/Figures/Volume_2/Figure V2.1.2.pdf,0,0,0,0
+content/Figures/Volume_2/Figure V2.1.2.pdf,1,0,0,0
+content/Figures/Volume_2/Figure V2.1.2.pdf,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.1.2.pdf,2,0,0,0
+content/Figures/Volume_2/Figure V2.1.2.pdf,3,0,0,0
+content/Figures/Volume_2/Figure V2.1.2.pdf,4,0,0,0
+content/Figures/Volume_2/Figure V2.1.2.svg,0,0,0,0
+content/Figures/Volume_2/Figure V2.1.2.svg,1,0,0,0
+content/Figures/Volume_2/Figure V2.1.2.svg,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.1.2.svg,2,0,0,0
+content/Figures/Volume_2/Figure V2.1.2.svg,3,0,0,0
+content/Figures/Volume_2/Figure V2.1.2.svg,4,0,0,0
+content/Figures/Volume_2/Figure V2.12.1.pdf,0,0,0,0
+content/Figures/Volume_2/Figure V2.12.1.pdf,1,0,0,0
+content/Figures/Volume_2/Figure V2.12.1.pdf,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.12.1.pdf,2,0,0,0
+content/Figures/Volume_2/Figure V2.12.1.pdf,3,0,0,0
+content/Figures/Volume_2/Figure V2.12.1.pdf,4,0,0,0
+content/Figures/Volume_2/Figure V2.12.1.svg,0,0,0,0
+content/Figures/Volume_2/Figure V2.12.1.svg,1,0,0,0
+content/Figures/Volume_2/Figure V2.12.1.svg,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.12.1.svg,2,0,0,0
+content/Figures/Volume_2/Figure V2.12.1.svg,3,0,0,0
+content/Figures/Volume_2/Figure V2.12.1.svg,4,0,0,0
+content/Figures/Volume_2/Figure V2.14.1.pdf,0,0,0,0
+content/Figures/Volume_2/Figure V2.14.1.pdf,1,0,0,0
+content/Figures/Volume_2/Figure V2.14.1.pdf,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.14.1.pdf,2,0,0,0
+content/Figures/Volume_2/Figure V2.14.1.pdf,3,0,0,0
+content/Figures/Volume_2/Figure V2.14.1.pdf,4,0,0,0
+content/Figures/Volume_2/Figure V2.14.1.svg,0,0,0,0
+content/Figures/Volume_2/Figure V2.14.1.svg,1,0,0,0
+content/Figures/Volume_2/Figure V2.14.1.svg,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.14.1.svg,2,0,0,0
+content/Figures/Volume_2/Figure V2.14.1.svg,3,0,0,0
+content/Figures/Volume_2/Figure V2.14.1.svg,4,0,0,0
+content/Figures/Volume_2/Figure V2.14.3.pdf,0,0,0,0
+content/Figures/Volume_2/Figure V2.14.3.pdf,1,0,0,0
+content/Figures/Volume_2/Figure V2.14.3.pdf,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.14.3.pdf,2,0,0,0
+content/Figures/Volume_2/Figure V2.14.3.pdf,3,0,0,0
+content/Figures/Volume_2/Figure V2.14.3.pdf,4,0,0,0
+content/Figures/Volume_2/Figure V2.14.3.svg,0,0,0,0
+content/Figures/Volume_2/Figure V2.14.3.svg,1,0,0,0
+content/Figures/Volume_2/Figure V2.14.3.svg,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.14.3.svg,2,0,0,0
+content/Figures/Volume_2/Figure V2.14.3.svg,3,0,0,0
+content/Figures/Volume_2/Figure V2.14.3.svg,4,0,0,0
+content/Figures/Volume_2/Figure V2.14.5.pdf,0,0,0,0
+content/Figures/Volume_2/Figure V2.14.5.pdf,1,0,0,0
+content/Figures/Volume_2/Figure V2.14.5.pdf,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.14.5.pdf,2,0,0,0
+content/Figures/Volume_2/Figure V2.14.5.pdf,3,0,0,0
+content/Figures/Volume_2/Figure V2.14.5.pdf,4,0,0,0
+content/Figures/Volume_2/Figure V2.14.5.svg,0,0,0,0
+content/Figures/Volume_2/Figure V2.14.5.svg,1,0,0,0
+content/Figures/Volume_2/Figure V2.14.5.svg,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.14.5.svg,2,0,0,0
+content/Figures/Volume_2/Figure V2.14.5.svg,3,0,0,0
+content/Figures/Volume_2/Figure V2.14.5.svg,4,0,0,0
+content/Figures/Volume_2/Figure V2.8.1.pdf,0,0,0,0
+content/Figures/Volume_2/Figure V2.8.1.pdf,1,0,0,0
+content/Figures/Volume_2/Figure V2.8.1.pdf,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.8.1.pdf,2,0,0,0
+content/Figures/Volume_2/Figure V2.8.1.pdf,3,0,0,0
+content/Figures/Volume_2/Figure V2.8.1.pdf,4,0,0,0
+content/Figures/Volume_2/Figure V2.8.1.svg,0,0,0,0
+content/Figures/Volume_2/Figure V2.8.1.svg,1,0,0,0
+content/Figures/Volume_2/Figure V2.8.1.svg,1/2,0,0,0
+content/Figures/Volume_2/Figure V2.8.1.svg,2,0,0,0
+content/Figures/Volume_2/Figure V2.8.1.svg,3,0,0,0
+content/Figures/Volume_2/Figure V2.8.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.1.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.1.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.1.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.1.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.1.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.1.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.1.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.1.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.1.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.1.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.1.1.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.1.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.1.2.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.1.2.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.1.2.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.1.2.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.1.2.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.1.2.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.1.2.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.1.2.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.1.2.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.1.2.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.1.2.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.1.2.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.10.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.10.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.10.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.10.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.10.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.10.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.10.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.10.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.10.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.10.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.10.1.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.10.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.11.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.11.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.11.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.11.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.11.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.11.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.11.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.11.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.11.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.11.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.11.1.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.11.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.13.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.13.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.13.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.13.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.13.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.13.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.13.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.13.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.13.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.13.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.13.1.svg,3,2,2,0
+content/Figures/Volume_3/Figure V3.13.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.13.4.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.13.4.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.13.4.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.13.4.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.13.4.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.13.4.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.13.4.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.13.4.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.13.4.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.13.4.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.13.4.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.13.4.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.16.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.16.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.16.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.16.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.16.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.16.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.16.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.16.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.16.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.16.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.16.1.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.16.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.2.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.2.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.2.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.2.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.2.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.2.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.2.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.2.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.2.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.2.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.2.1.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.2.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.21.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.21.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.21.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.21.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.21.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.21.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.21.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.21.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.21.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.21.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.21.1.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.21.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.22.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.22.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.22.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.22.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.22.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.22.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.22.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.22.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.22.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.22.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.22.1.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.22.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.3.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.3.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.3.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.3.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.3.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.3.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.3.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.3.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.3.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.3.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.3.1.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.3.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.4.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.4.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.4.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.4.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.4.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.4.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.4.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.4.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.4.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.4.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.4.1.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.4.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.5.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.5.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.5.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.5.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.5.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.5.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.5.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.5.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.5.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.5.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.5.1.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.5.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.7.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.7.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.7.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.7.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.7.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.7.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.7.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.7.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.7.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.7.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.7.1.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.7.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.8.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.8.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.8.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.8.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.8.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.8.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.8.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.8.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.8.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.8.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.8.1.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.8.1.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.8.2.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.8.2.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.8.2.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.8.2.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.8.2.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.8.2.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.8.2.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.8.2.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.8.2.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.8.2.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.8.2.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.8.2.svg,4,0,0,0
+content/Figures/Volume_3/Figure V3.9.1.pdf,0,0,0,0
+content/Figures/Volume_3/Figure V3.9.1.pdf,1,0,0,0
+content/Figures/Volume_3/Figure V3.9.1.pdf,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.9.1.pdf,2,0,0,0
+content/Figures/Volume_3/Figure V3.9.1.pdf,3,0,0,0
+content/Figures/Volume_3/Figure V3.9.1.pdf,4,0,0,0
+content/Figures/Volume_3/Figure V3.9.1.svg,0,0,0,0
+content/Figures/Volume_3/Figure V3.9.1.svg,1,0,0,0
+content/Figures/Volume_3/Figure V3.9.1.svg,1/2,0,0,0
+content/Figures/Volume_3/Figure V3.9.1.svg,2,0,0,0
+content/Figures/Volume_3/Figure V3.9.1.svg,3,0,0,0
+content/Figures/Volume_3/Figure V3.9.1.svg,4,0,0,0

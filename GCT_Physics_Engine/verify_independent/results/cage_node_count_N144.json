@@ -1,18 +1,23 @@
 {
   "name": "cage_node_count_N144",
-  "app_r_label": "Dodecahedral cage node count N = 144",
-  "formula": "N = 12 x 12 = F_12 = 144 (Gauss-Bonnet closure + Fibonacci resonance)",
-  "tier": "Tier 2 (Gauss-Bonnet closure + Fibonacci resonance)",
+  "app_psc_label": "Dodecahedral cage node count N = 144",
+  "formula": "adopted N = 12 x 12 = F_12 = 144; GB: 12(pi/3) = 20(pi/5) = 4pi",
+  "tier": "Tier 3 N=144 cage posit + Tier 1 polyhedral/arithmetic checks (O.38 open)",
   "predicted": 144,
   "observed": 144,
+  "reference_class": "MANUSCRIPT_STATED",
+  "band_outcome": "NOT_APPLICABLE",
+  "derivational_closure": "OPEN_CONDITIONAL",
   "unit": "(integer)",
-  "app_r_predicted": 144,
-  "app_r_precision_str": "exact integer identity (F_12 = 144 = 12^2; unique Fibonacci-square in [F_10, F_13])",
-  "app_r_precision_ppm": 0.0,
+  "app_psc_predicted": 144,
+  "app_psc_precision_str": "exact conditional arithmetic; physical cage selection NOT_EVALUATED pending O.38",
+  "app_psc_precision_ppm": null,
   "independent_precision_ppm": 0.0,
-  "status": "PASS",
-  "tolerance_ppm": 0.0,
-  "discrepancy_notes": [],
+  "status": "INTERNAL_ARITHMETIC_PASS",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [
+    "The 144-to-144 comparison checks the adopted manuscript datum only; it is not an empirical observation or a physical cage-size test."
+  ],
   "extra": {
     "F_12_computed": 144,
     "F_12_equals_144": true,
@@ -42,6 +47,16 @@
       ]
     ],
     "uniqueness_holds": true,
-    "derivation_note": "Two independent structural anchors converge on 144: (a) Gauss-Bonnet closure with 5-fold angle deficits requires 12 outer faces x 12 inner sub-nodes per face = 144 (Sub-Proof A); (b) the Fibonacci resonance condition for cage-size stability in a phi-based quasicrystal requires N to be both a Fibonacci number AND a perfect square; F_12 = 144 = 12^2 is the unique such number in the cage-relevant range. The integer identity is trivially verifiable; the Tier 2 epistemic substance is in the two structural arguments themselves (Sub-Proofs A and B), which are mathematical consequences of the icosahedral cut-and-project setup."
+    "icosahedron_vertex_defect_rad": 1.0471975511965983,
+    "icosahedron_vertex_count": 12,
+    "icosahedron_total_defect_rad": 12.56637061435918,
+    "dodecahedron_vertex_defect_rad": 0.6283185307179586,
+    "dodecahedron_vertex_count": 20,
+    "dodecahedron_total_defect_rad": 12.566370614359172,
+    "gauss_bonnet_checks_pass": true,
+    "n144_derived_by_gauss_bonnet": false,
+    "z12_role": "geometry-specific consistency check only; not a forcing input",
+    "open_problem": "O.38 full lattice minimization",
+    "derivation_note": "Discrete Gauss--Bonnet closes exactly on the regular icosahedron (vertex defect pi/3, 12 vertices) and regular dodecahedron (vertex defect pi/5, 20 vertices), each totaling 4pi. It does not determine 12 sub-nodes per face or N=144. The exact F_12=144=12^2 identity checks the adopted two-shell ansatz; physical cage-size selection remains a Tier-3 posit pending O.38."
   }
 }

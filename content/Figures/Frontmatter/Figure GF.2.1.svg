@@ -13,8 +13,8 @@
 <rect x="70" y="135" width="250" height="124" rx="6" fill="#f7f7f7" stroke="#222222" stroke-width="1.8"/>
 <rect x="70" y="135" width="250" height="28" rx="6" fill="#222222" stroke="#222222" stroke-width="0"/>
 <text x="82" y="155" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#ffffff" text-anchor="start">Ontological root</text>
-<text x="82" y="185.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">Axiom of Presence:</text>
-<text x="82" y="200.86" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">experience exists.</text>
+<text x="82" y="185.0" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">Axiom of Presence (Tier 1):</text>
+<text x="82" y="200.86" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">universal Level I presence.</text>
 <text x="82" y="216.72" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">Axiom of Intelligibility:</text>
 <text x="82" y="232.57999999999998" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">experience is structured.</text>
 <rect x="380" y="135" width="260" height="124" rx="6" fill="#f8fbfd" stroke="#2c5d8a" stroke-width="1.8"/>
@@ -49,19 +49,25 @@
 <text x="1110" y="352" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2c5d8a" text-anchor="start">P5</text>
 <text x="1110" y="372.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">N = 17 tau harmonic</text>
 <text x="1110" y="386.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">exponent</text>
-<path d="M510,259 C510,292 1209,292 1209,330" fill="none" stroke="#2c5d8a" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
-<rect x="900" y="180" width="140" height="78" rx="5" fill="#fbfbfb" stroke="#666666" stroke-width="1.5"/>
-<text x="910" y="202" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#666666" text-anchor="start">A1</text>
-<text x="910" y="222.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">m_e dimensional SI</text>
-<text x="910" y="236.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">anchor</text>
-<rect x="1055" y="180" width="140" height="78" rx="5" fill="#fbfbfb" stroke="#666666" stroke-width="1.5"/>
-<text x="1065" y="202" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#666666" text-anchor="start">A2</text>
-<text x="1065" y="222.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">alpha_2^-1(M_GUT)</text>
-<text x="1065" y="236.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">endpoint anchor</text>
-<rect x="1210" y="180" width="140" height="78" rx="5" fill="#fbfbfb" stroke="#666666" stroke-width="1.5"/>
-<text x="1220" y="202" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#666666" text-anchor="start">A3</text>
-<text x="1220" y="222.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">alpha(0)_CODATA</text>
-<text x="1220" y="236.16" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">precision anchor</text>
+<path d="M510,270 C510,292 1209,292 1209,330" fill="none" stroke="#2c5d8a" stroke-width="1.8" marker-end="url(#arrow-blue)"/>
+<rect x="900" y="138" width="140" height="58" rx="5" fill="#fbfbfb" stroke="#666666" stroke-width="1.5"/>
+<text x="910" y="158" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#666666" text-anchor="start">A1</text>
+<text x="910" y="176" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#333333" text-anchor="start">m_e dimensional anchor</text>
+<rect x="1055" y="138" width="140" height="58" rx="5" fill="#fbfbfb" stroke="#666666" stroke-width="1.5"/>
+<text x="1065" y="158" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#666666" text-anchor="start">A2</text>
+<text x="1065" y="176" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#333333" text-anchor="start">alpha_2 endpoint</text>
+<rect x="1210" y="138" width="140" height="58" rx="5" fill="#fbfbfb" stroke="#666666" stroke-width="1.5"/>
+<text x="1220" y="158" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#666666" text-anchor="start">A3</text>
+<text x="1220" y="176" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#333333" text-anchor="start">alpha(0) precision</text>
+<rect x="900" y="207" width="140" height="58" rx="5" fill="#fbfbfb" stroke="#666666" stroke-width="1.5"/>
+<text x="910" y="227" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#666666" text-anchor="start">A4</text>
+<text x="910" y="245" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#333333" text-anchor="start">Z1 hypercharge beta</text>
+<rect x="1055" y="207" width="140" height="58" rx="5" fill="#fbfbfb" stroke="#666666" stroke-width="1.5"/>
+<text x="1065" y="227" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#666666" text-anchor="start">A5</text>
+<text x="1065" y="245" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#333333" text-anchor="start">Z2 weak beta</text>
+<rect x="1210" y="207" width="140" height="58" rx="5" fill="#fbfbfb" stroke="#666666" stroke-width="1.5"/>
+<text x="1220" y="227" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#666666" text-anchor="start">A6</text>
+<text x="1220" y="245" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#333333" text-anchor="start">Z3 colour beta</text>
 <rect x="95" y="560" width="220" height="94" rx="5" fill="#fbfbfb" stroke="#4f4f4f" stroke-width="1.5"/>
 <text x="105" y="582" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#4f4f4f" text-anchor="start">Gauge + chirality</text>
 <text x="105" y="602.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">SM gauge/chirality</text>
@@ -124,5 +130,5 @@
 <path d="M1205,654 C1205,698 215,698 215,742" fill="none" stroke="#b03a2e" stroke-width="1.4" stroke-dasharray="6 5" marker-end="url(#arrow-red)"/>
 <rect x="70" y="925" width="1270" height="42" rx="5" fill="#f7f7f7" stroke="#dddddd" stroke-width="1"/>
 <text x="90" y="952" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#333333" text-anchor="start">Reading rule: the root enables the architecture; it does not directly imply every numerical row.</text>
-<text x="60" y="1005" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#666666" text-anchor="start">Sources: content/00_Global_Frontmatter/02_Axiom_and_Postulate_Ledger.md; content/00_Global_Frontmatter/03_Parameter_Ledger.md</text>
+<text x="60" y="1005" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#666666" text-anchor="start">Sources: Front Matter, Axiom and Postulate Ledger; Parameter Ledger</text>
 </svg>

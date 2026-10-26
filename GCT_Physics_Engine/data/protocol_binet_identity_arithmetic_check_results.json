@@ -11,7 +11,7 @@
         "F_n": 10284720757613717413913,
         "F_n_minus_1": -16641027750620563662096
     },
-    "algebraic_evaluation": 2097152.0,
-    "direct_evaluation": 4.348329974529321e-23,
-    "pass": false
+    "algebraic_evaluation": 4.348329974529336e-23,
+    "direct_evaluation": 4.348329974529336e-23,
+    "pass": true
 }

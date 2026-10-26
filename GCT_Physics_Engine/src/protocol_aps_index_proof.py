@@ -1,30 +1,28 @@
 #!/usr/bin/env python3
 """
-protocol_aps_index_proof.py — Discrete APS Index Computation
-============================================================
-Rigorously computes the eta-invariant (spectral asymmetry) of the discrete
-Dirac operator on the I_h-closed icosahedral boundary cage of a Z^6 vacancy.
+protocol_aps_index_proof.py — Finite-Cage Spectral-Asymmetry Diagnostics
+========================================================================
+Computes two distinct finite-dimensional diagnostics on the canonical
+I_h-closed icosahedral cage of a Z^6 vacancy:
 
-Theory:
-The electron mass exponent (107) is the APS index of the Dirac operator
-on the 6D lattice with a vacancy defect.
-Ind = Bulk Integral + Spectral Asymmetry (eta).
-This script computes eta_eff from the cage adjacency spectrum and combines
-it with the Bulk Pontryagin integer to recover Ind = 107.
+1. the sign sum of the scalar weighted adjacency matrix A; and
+2. the sign sum of the explicitly constructed 8N x 8N discrete Dirac matrix D.
+
+The scalar sign sum divided by the spinor dimension is retained only as a
+normalised graph diagnostic.  It is not the eta-invariant of D, an APS
+boundary correction, or evidence for a bulk index.  In the present
+construction the full discrete Dirac sign sum is zero.
 
 Cage source: the canonical I_h-closed cage at perp_cutoff = 2.0 consists
 of 5 full I_h orbits with sizes (12, 30, 20, 30, 60), totalling N = 152
-nodes. The I_h closure is required for the App M Sec M.7 orthogonality
+nodes. The I_h closure is required for the App ULA Sec ULA.7 orthogonality
 theorem on which the finite-N 1/(2N) correction depends. The cage is
 constructed via `cage_builder.build_canonical_cage(size=152)`.
 
-PARTIAL — bulk index pending. The Pontryagin-class evaluation of the 6D
-icosahedral orbifold class on the boundary cage is Open Problem O.14c
-(App U §U.7.6.7). For the present scaffolded computation the Bulk integer
-is held at the value that, combined with the discrete eta_eff above,
-lands on the empirically required n = 107 gap label. The script reports
-this status explicitly via the "Bulk integer status" / verdict fields and
-must not be cited as a closed first-principles derivation of n = 107.
+NO APS EVALUATION IS PERFORMED.  A qualifying APS calculation requires a
+declared elliptic self-adjoint boundary operator, its Hilbert-space domain
+and boundary conditions, the kernel term h, and a compatible bulk operator.
+Those data and any graph-to-smooth comparison map remain Open Problem O.14c.
 """
 
 import numpy as np
@@ -59,14 +57,14 @@ def get_gamma_6d():
     return np.array(gamma)
 
 def run_aps_proof():
-    reporter = GCTReporter("QLQCD-1A: APS Index Computation")
+    reporter = GCTReporter("O.14c: Finite-Cage Spectral-Asymmetry Diagnostics")
 
     reporter.section("Lattice Geometry")
     # Construct the canonical I_h-closed boundary cage surrounding the
     # vacancy at the origin. The 5-orbit composition (12+30+20+30+60)
     # totals N = 152 nodes and is the smallest I_h-closed orbit-union
     # at perp_cutoff = 2.0 that includes the outermost 60-orbit required
-    # by the App M Sec M.7 orthogonality theorem.
+    # by the App ULA Sec ULA.7 orthogonality theorem.
     nodes_6d, nodes_perp = build_canonical_cage(size=152)
     nodes = nodes_6d.astype(np.int64)
     N = nodes.shape[0]
@@ -179,10 +177,10 @@ def run_aps_proof():
     lambdas_scalar = np.linalg.eigvalsh(A)
     signs_scalar = np.sign(lambdas_scalar)
     nonzero_scalar = signs_scalar[np.abs(lambdas_scalar) > 1e-12]
-    eta_scalar = np.sum(nonzero_scalar)
+    scalar_adjacency_sign_sum = np.sum(nonzero_scalar)
     
     reporter.log_value("Scalar Zero Modes", N - len(nonzero_scalar))
-    reporter.log_value("Scalar Sum of Signs", float(eta_scalar))
+    reporter.log_value("Scalar Sum of Signs", float(scalar_adjacency_sign_sum))
 
     reporter.section(f"Spectral Analysis: Dirac Operator ({N * dim_dirac}x{N * dim_dirac})")
     print("  Computing Dirac spectrum...")
@@ -194,64 +192,55 @@ def run_aps_proof():
     reporter.log_value("Dirac Zero Modes", len(lambdas_dirac) - len(nonzero_dirac))
     reporter.log_value("Dirac Sum of Signs", float(eta_dirac))
     
-    # APS Index Logic
-    # ----------------
-    # The scalar adjacency matrix A on the I_h-closed cage exhibits a
-    # spectral asymmetry eta_scalar = sum(sign(lambda)) determined by the
-    # cage's odd-cycle content. The 6D Dirac operator acts on an
-    # 8-component spinor bundle (Cl_6), so the effective topological
-    # asymmetry per spinor degree of freedom is
-    #     eta_eff = eta_scalar / dim_spinor.
+    # Object/domain separation
+    # ------------------------
+    # A is a finite scalar weighted adjacency matrix on C^N.  D is a
+    # distinct finite Hermitian matrix on C^N tensor C^8.  Dividing the
+    # sign sum of A by 8 is only a normalised scalar-graph diagnostic; it
+    # does not turn A into D and does not define an APS eta-invariant.
     dim_spinor = 8
-    eta_eff = float(eta_scalar) / dim_spinor
+    scalar_per_spinor_diagnostic = float(scalar_adjacency_sign_sum) / dim_spinor
 
-    # Total APS Index = Bulk + eta_eff. The Bulk integer is the Pontryagin-
-    # class evaluation of the 6D icosahedral-orbifold class on the cage; a
-    # first-principles derivation from a Pontryagin integral on the discrete
-    # cage is Open Problem O.14c (see App U §U.7.6.7). Until O.14c closes,
-    # this script reports the discrete eta_eff and the bulk value that
-    # would be required (with the present eta_eff) to recover the
-    # empirically required n = 107 gap label; this is a status report, not
-    # a closed first-principles verification.
-    bulk_index_required = 107 - eta_eff  # bulk value that recovers n=107 given the eta_eff
-
-    reporter.section("APS Index Scaffold (Partial — see O.14c)")
-    reporter.log_value("Scalar Asymmetry (eta_scalar)", float(eta_scalar))
+    reporter.section("Object/Domain Audit (Diagnostic Only — see O.14c)")
+    reporter.log_value("Scalar adjacency sign sum", float(scalar_adjacency_sign_sum))
     reporter.log_value("Spinor Normalization Factor", dim_spinor)
-    reporter.log_value("Effective Boundary Shift (eta_eff)", eta_eff)
-    reporter.log_value("Bulk Index status", "pending O.14c (Pontryagin derivation on 6D orbifold)")
-    reporter.log_value("Bulk Index required to recover n=107", float(bulk_index_required))
+    reporter.log_value("Scalar adjacency / spinor-dimension diagnostic", scalar_per_spinor_diagnostic)
+    reporter.log_value("Full discrete Dirac sign sum", float(eta_dirac))
+    reporter.log_value("Qualifying APS boundary operator specified?", False)
+    reporter.log_value("APS eta evaluated?", False)
 
-    # The bulk-required-to-recover-n=107 must be an integer for the APS
-    # decomposition to close cleanly (Pontryagin classes are integer
-    # topological invariants). Report this integrality check explicitly; do
-    # not pretend either outcome verifies n=107 independently of O.14c.
-    bulk_is_integer = abs(bulk_index_required - round(bulk_index_required)) < 1e-9
     reason = (
-        f"eta_eff = {eta_eff:.4f} from N={N} I_h-closed cage; "
-        f"bulk_required_for_n107 = {bulk_index_required:.4f} "
-        f"({'integer' if bulk_is_integer else 'NON-INTEGER'}). "
-        f"Bulk Pontryagin integer is pending O.14c closure; "
-        f"n=107 APS decomposition not yet independently verified."
+        f"DIAGNOSTIC_ONLY: scalar adjacency sign sum={scalar_adjacency_sign_sum:.0f}; "
+        f"scalar/8 diagnostic={scalar_per_spinor_diagnostic:.4f}; "
+        f"full discrete Dirac sign sum={eta_dirac:.0f}. "
+        "No qualifying APS boundary operator/domain, kernel term, bulk "
+        "operator, or graph-to-smooth comparison is specified; therefore "
+        "no APS eta-invariant or APS index is evaluated."
     )
-    reporter.verdict(bulk_is_integer, reason)
+    reporter.verdict(False, reason)
 
     results = {
         "N_nodes": int(N),
         "cage_construction": "I_h-closed 5-orbit (12+30+20+30+60)",
-        "eta_scalar": float(eta_scalar),
-        "eta_eff": float(eta_eff),
-        "bulk_index_status": "pending_O14c",
-        "bulk_index_required_for_n107": float(bulk_index_required),
-        "bulk_required_is_integer": bool(bulk_is_integer),
-        "total_index_status": "partial_pending_bulk_derivation",
+        "scalar_adjacency_operator": "A on C^N (finite weighted adjacency matrix)",
+        "scalar_adjacency_sign_sum": float(scalar_adjacency_sign_sum),
+        "spinor_dimension": dim_spinor,
+        "scalar_adjacency_per_spinor_dimension_diagnostic": scalar_per_spinor_diagnostic,
+        "discrete_dirac_operator": "D on C^N tensor C^8 (finite Hermitian matrix)",
+        "discrete_dirac_sign_sum": float(eta_dirac),
+        "aps_boundary_operator_specified": False,
+        "aps_boundary_operator_domain_specified": False,
+        "aps_kernel_term_computed": False,
+        "aps_eta_evaluated": False,
+        "aps_index_evaluated": False,
+        "object_domain_status": "separate_finite_graph_diagnostics_only",
         "scalar_eigenvalues_summary": {
             "min": float(np.min(lambdas_scalar)),
             "max": float(np.max(lambdas_scalar)),
             "mean_abs": float(np.mean(np.abs(lambdas_scalar)))
         },
-        "pass": bool(bulk_is_integer),
-        "tier_status": "PARTIAL — cage observables computed, bulk Pontryagin pending O.14c"
+        "pass": False,
+        "tier_status": "DIAGNOSTIC_ONLY — finite scalar-adjacency and discrete-Dirac sign sums computed; qualifying APS operator/domain absent"
     }
     
     out_path = get_output_path("protocol_aps_index_proof_results.json")

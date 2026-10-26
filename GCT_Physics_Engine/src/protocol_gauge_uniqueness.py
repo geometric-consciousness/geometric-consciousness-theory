@@ -2,19 +2,25 @@
 """
 protocol_gauge_uniqueness.py — SU(3) Candidate Numerical Control
 =================================================================
-This protocol tests whether the registered RT-icosahedral substrate
-generates the 8-dimensional SU(3) candidate while nearby finite
-geometry controls fail the same witness. It is not a theorem-grade
-classification proof over all compact Lie groups.
+This protocol tests whether the eight-dimensional su(3) candidate built from
+the ten three-fold axes of the RT acceptance window is specific to that
+geometry.  It is not a theorem-grade classification proof over all compact
+Lie groups.
 
 Controls:
-- Cube (4 axes) -> SO(3) (Dim 3)
-- Octahedron (3 axes) -> Abelian (Dim 2)
-- Rhombic Triacontahedron (10 axes) -> SU(3) (Dim 8)
+- Cube face axes / octahedron (3 axes) -> abelian closure
+- Rhombic Triacontahedron (10 three-fold axes) -> 8-dimensional closure
+- Matched-axis control: ten random unit axes, same closure and a
+  tolerance-based A2 Cartan comparison
+- Monte Carlo over random convex polyhedra (first gate: exactly ten
+  three-fold axes)
 
-Monte Carlo Control:
-- 1,000 random convex polyhedra do NOT generate the registered SU(3) witness.
-- Only the specific icosahedral RT geometry does.
+The quadrupole Gram matrix G_ij = (a_i . a_j)^2 has rank <= 6 for any ten
+real axes (Frobenius Gram matrix in Sym^2(R^3)); the RT value is rank 6 with
+a four-dimensional null space.  The eight-dimensional closure is a separate
+calculation.  Generic matched ten-axis sets also close to dimension 8 with an
+A2 Cartan matrix, so the registered controls do not establish RT specificity;
+the color identification remains an open Tier 3 candidate (O.39).
 """
 
 import numpy as np
@@ -87,15 +93,19 @@ def run_monte_carlo_control(n_trials: int = 1000, n_points_per_polyhedron: int =
                 basis = build_su3_basis(axes)
                 f     = compute_structure_constants(basis)
                 cm, _ = compute_cartan_matrix(basis, f)
-                # Strict Cartan Equality Check: True SU(3) geometry aligns perfectly.
+                # Strict Cartan Equality Check: exact integer A2 match (not by itself a specificity test).
                 # Random vectors produce floating-point noise and fail np.array_equal.
                 if np.array_equal(cm, target_cm):
                     n_success += 1
             except Exception:
                 pass
 
-    mc_pass = (n_trials > 0 and n_success == 0)
-    verdict = "PASS" if mc_pass else "FAIL"
+    evaluated = n_10_axes > 0
+    mc_pass = bool(evaluated and n_success == 0)
+    if not evaluated:
+        verdict = "NOT_EVALUATED"
+    else:
+        verdict = "PASS" if mc_pass else "FAIL"
 
     print(f"  Trials with 10 3-fold axes : {n_10_axes} / {n_trials}")
     print(f"  Trials with dim-8 algebra  : {n_dim8} / {n_trials}")
@@ -104,7 +114,8 @@ def run_monte_carlo_control(n_trials: int = 1000, n_points_per_polyhedron: int =
 
     return {
         "n_trials": n_trials,
-        "n_alternatives_tested": n_trials,
+        "n_alternatives_tested": n_10_axes,
+        "n_polyhedra_sampled": n_trials,
         "sampling": "random spherical points -> ConvexHull -> 3-fold-axis extraction",
         "n_points_per_polyhedron": n_points_per_polyhedron,
         "n_trials_with_10_threefold_axes": n_10_axes,
@@ -113,11 +124,50 @@ def run_monte_carlo_control(n_trials: int = 1000, n_points_per_polyhedron: int =
         "n_trials_with_full_rt_witness": n_success,
         "n_alternatives_with_full_rt_witness": n_success,
         "monte_carlo_success_rate": 0.0 if n_success == 0 else float(n_success / n_trials),
-        "success_criterion": "n_trials > 0 and n_success == 0",
-        "edge_case_policy": "n_trials=0 is reported FAIL/unevaluated, not PASS by vacuous truth",
+        "success_criterion": "n_trials_with_10_threefold_axes > 0 and n_trials_with_full_rt_witness == 0",
+        "edge_case_policy": "If no trial reaches the algebra test (no ten-axis hull), the control is NOT_EVALUATED with pass false, not PASS by vacuous truth",
         "pass": mc_pass,
         "verdict": verdict,
     }
+
+A2_TARGET = np.array([[2, -1], [-1, 2]])
+A2_ATOL = 1e-6
+
+
+def _a2_within_tolerance(axes) -> bool:
+    basis = build_su3_basis(axes)
+    f = compute_structure_constants(basis)
+    cm, _ = compute_cartan_matrix(basis, f)
+    return bool(np.allclose(np.asarray(cm, dtype=float), A2_TARGET, atol=A2_ATOL))
+
+
+def run_matched_axis_control(n_trials: int = 200, seed: int = 1) -> dict:
+    """Ten random unit axes per trial: closure dimension and tolerance A2 check."""
+    rng = np.random.default_rng(seed)
+    n_dim8 = 0
+    n_a2 = 0
+    for _ in range(n_trials):
+        axes = [v / np.linalg.norm(v) for v in rng.standard_normal((10, 3))]
+        dim, _ = GaugeGenerator.generate_algebra(axes)
+        if dim == 8:
+            n_dim8 += 1
+            try:
+                if _a2_within_tolerance(axes):
+                    n_a2 += 1
+            except Exception:
+                pass
+    print(f"  Matched-axis control: {n_dim8}/{n_trials} dim-8 closures, "
+          f"{n_a2}/{n_trials} A2 within atol={A2_ATOL}")
+    return {
+        "n_trials": n_trials,
+        "seed": seed,
+        "axes_per_trial": 10,
+        "n_dim8_closure": n_dim8,
+        "n_A2_within_tolerance": n_a2,
+        "a2_tolerance_atol": A2_ATOL,
+        "discriminates_rt": bool(n_a2 == 0),
+    }
+
 
 def run_uniqueness_proof():
     print("="*60)
@@ -222,16 +272,22 @@ def run_uniqueness_proof():
     print(f"  Found {len(null_indices)} null vectors.")
     if len(null_indices) == 4:
         print("  [PASS] Null space dimension is exactly 4.")
-        rank_reduction_status = "PASS"
+        gram_nullity_status = "PASS"
     else:
         print("  [FAIL] Null space dimension is NOT 4.")
-        rank_reduction_status = "FAIL"
+        gram_nullity_status = "FAIL"
         
     for idx, nv in enumerate(null_vectors):
         print(f"    n_{idx+1} = {nv}")
         
     results["RhombicTriacontahedron"]["gram_null_vectors"] = null_vectors.tolist()
-    results["RhombicTriacontahedron"]["rank_reduction_explicit"] = rank_reduction_status
+    results["RhombicTriacontahedron"]["gram_rank"] = int(10 - len(null_indices))
+    results["RhombicTriacontahedron"]["gram_rank_upper_bound_any_ten_axes"] = 6
+    results["RhombicTriacontahedron"]["gram_nullity_check"] = gram_nullity_status
+    try:
+        results["RhombicTriacontahedron"]["cartan_A2_within_tolerance"] = _a2_within_tolerance(rt_axes)
+    except Exception:
+        results["RhombicTriacontahedron"]["cartan_A2_within_tolerance"] = False
     
     # 4. Control C (Cuboctahedron)
     print("\n4. Testing Cuboctahedron (Control Group C)...")
@@ -254,7 +310,7 @@ def run_uniqueness_proof():
             target_cm = np.array([[2, -1], [-1, 2]])
             # A2 Cartan agreement alone is not the full RT uniqueness witness.
             # The control is rejected unless it also has the 10-axis RT orbit
-            # and the rank-reduction witness.
+            # and the Gram-nullity check.
             if np.array_equal(cm_c, target_cm):
                 cuboc_cartan_a2_match = True
                 cuboc_su3_match = (len(cuboc_axes) == len(rt_axes))
@@ -266,7 +322,7 @@ def run_uniqueness_proof():
         "dimension": cuboc_dim,
         "match": not cuboc_su3_match,
         "cartan_A2_match": cuboc_cartan_a2_match,
-        "note": "Rejected as a full RT witness: lacks the 10-axis RT orbit and rank-reduction structure."
+        "note": "Rejected as a full RT witness: lacks the 10-axis RT orbit and its Gram-nullity check."
     }
 
     # 5. Control D (Perturbed RT)
@@ -296,34 +352,58 @@ def run_uniqueness_proof():
         except Exception:
             pass
             
+    try:
+        pert_a2_tol = _a2_within_tolerance(perturbed_axes) if pert_dim == 8 else False
+    except Exception:
+        pert_a2_tol = False
     results["PerturbedRT"] = {
         "axes": len(perturbed_axes),
         "dimension": pert_dim,
         "match": not pert_su3_match,
-        "note": "Failed to produce the correct integer Cartan Matrix (filled with floating-point noise)."
+        "cartan_A2_within_tolerance": pert_a2_tol,
+        "note": ("Exact float equality of the Cartan matrix is not a discriminating test; "
+                 "the tolerance-based comparison is recorded separately."),
     }
     
     # 6. Monte Carlo Control
     mc_results = run_monte_carlo_control(n_trials=1000)
+    mc_results["reached_algebra_test"] = int(mc_results["n_trials_with_10_threefold_axes"])
+    mc_results["discriminating"] = bool(mc_results["n_trials_with_10_threefold_axes"] > 0)
     results["MonteCarlo_Control"] = mc_results
 
+    # 6b. Matched-axis control
+    print("\n6b. Matched-axis control (ten random unit axes)...")
+    matched = run_matched_axis_control()
+    results["MatchedAxis_Control"] = matched
+
     # 7. Save and Verify
-    uniqueness_passed = (
+    rt_witness = (
         rt_dim == 8
-        and cube_dim <= 2
-        and not cuboc_su3_match
-        and not pert_su3_match
-        and mc_results["pass"]
-        and results["RhombicTriacontahedron"].get("rank_reduction_explicit") == "PASS"
+        and results["RhombicTriacontahedron"].get("gram_nullity_check") == "PASS"
+        and results["RhombicTriacontahedron"].get("cartan_A2_within_tolerance") is True
     )
+    uniqueness_passed = (
+        rt_witness
+        and cube_dim <= 2
+        and matched["discriminates_rt"]
+        and mc_results["discriminating"]
+        and mc_results["pass"]
+    )
+    results["rt_candidate_witness"] = bool(rt_witness)
+    results["specificity_established"] = bool(uniqueness_passed)
     results["pass"] = bool(uniqueness_passed)
-    results["verdict"] = "PASS_NUMERICAL_CONTROL" if uniqueness_passed else "FAIL_NUMERICAL_CONTROL"
+    results["verdict"] = (
+        "PASS_NUMERICAL_CONTROL" if uniqueness_passed
+        else "OPEN_CANDIDATE_SPECIFICITY_NOT_ESTABLISHED"
+    )
     results["framing"] = (
-        "PASS (numerical control): RT-icosahedral substrate generates SU(3) "
-        "candidate gauge group; full theorem-grade uniqueness over the "
-        "Cartan-Killing classification remains O.39."
+        "PASS (numerical control): matched controls fail the RT witness; "
+        "theorem-grade uniqueness remains O.39."
         if uniqueness_passed
-        else "FAIL (numerical control): registered RT witness did not isolate the SU(3) candidate."
+        else ("OPEN: the RT inventory closes to an 8-dimensional algebra with an A2 "
+              "Cartan matrix, but generic matched ten-axis sets do the same and no "
+              "random polyhedron reached the algebra test. RT specificity is not "
+              "established; the color identification is an open Tier 3 candidate (O.39).")
     )
     
     outfile = get_output_path("protocol_gauge_uniqueness_results.json")
@@ -331,17 +411,11 @@ def run_uniqueness_proof():
         json.dump(results, f, indent=2)
 
     print("\n" + "="*60)
-    if uniqueness_passed:
-        print("PASS (numerical control): RT-icosahedral substrate generates SU(3) candidate gauge group;")
-        print("  full theorem-grade uniqueness over the Cartan-Killing classification remains O.39.")
-        print(f"  Cube dim={cube_dim}, Cuboctahedron dim={cuboc_dim}, Perturbed RT dim={pert_dim}.")
-        print("  All adversarial controls fail the full RT witness (10-axis orbit + rank reduction + exact Cartan).")
-        print(f"  Monte Carlo: 0/{mc_results['n_trials']} random trials satisfied SU(3) criteria.")
-    else:
-        print("FAIL (numerical control): registered RT witness did not isolate the SU(3) candidate.")
-        print(f"  RT dim={rt_dim} (need 8)")
-        print(f"  Cube dim={cube_dim} (need <=2), Cuboc dim={cuboc_dim} (need !=8), Perturbed dim={pert_dim} (need !=8)")
-        print(f"  Monte Carlo: {mc_results['n_trials_with_exact_A2_cartan']} random trial(s) passed (need 0)")
+    print(results["framing"])
+    print(f"  RT dim={rt_dim}, Gram rank={results['RhombicTriacontahedron']['gram_rank']}, "
+          f"Cube dim={cube_dim}, Cuboctahedron dim={cuboc_dim}, Perturbed RT dim={pert_dim}.")
+    print(f"  Matched-axis control: {matched['n_A2_within_tolerance']}/{matched['n_trials']} A2 within tolerance.")
+    print(f"  Monte Carlo: {mc_results['reached_algebra_test']}/{mc_results['n_trials']} trials reached the algebra test.")
     print("="*60)
 
 if __name__ == "__main__":

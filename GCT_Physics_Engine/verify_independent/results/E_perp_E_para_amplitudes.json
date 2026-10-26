@@ -1,16 +1,19 @@
 {
   "name": "E_perp_E_para_amplitudes",
-  "app_r_label": "E_\u2225 / E_\u22a5 projection amplitudes (Tier 1 \u2014 cut-and-project algebra)",
+  "app_psc_label": "E_\u2225 / E_\u22a5 raw-frame projection amplitudes (Tier 1 raw-frame identity; coordinate-dependent)",
   "formula": "|E_\u2225|\u00b2 = (1+\u03c6\u00b2)/5; |E_\u22a5|\u00b2 = (1+\u03c6\u207b\u00b2)/5; |E_\u22a5|\u00b2/|E_\u2225|\u00b2 = \u03c6\u207b\u00b2",
-  "tier": "Tier 1 (algebraic identity from \u03c6 minimal polynomial)",
+  "tier": "Tier 1 (raw-frame algebraic identity from the phi minimal polynomial; coordinate-dependent)",
   "predicted": 0.38196601125010515,
   "observed": 0.38196601125010515,
+  "reference_class": "PURE_MATHEMATICAL",
+  "band_outcome": "NOT_APPLICABLE",
+  "derivational_closure": "NO_DERIVATIONAL_CLOSURE_FLAG",
   "unit": "(dimensionless)",
-  "app_r_predicted": 0.38196601125010515,
-  "app_r_precision_str": "|E_\u2225|\u00b2 = 0.723607 (vs stated 0.7236, +0.0009%); |E_\u22a5|\u00b2 = 0.276393 (vs stated 0.2764, +0.0025%); ratio = 0.3819660113 (vs expected \u03c6\u207b\u00b2 = 0.3819660113, 0.00e+00%)",
-  "app_r_precision_ppm": 0.0,
+  "app_psc_predicted": 0.38196601125010515,
+  "app_psc_precision_str": "|E_\u2225|\u00b2 = 0.723607 (vs stated 0.7236, +0.0009%); |E_\u22a5|\u00b2 = 0.276393 (vs stated 0.2764, +0.0025%); ratio = 0.3819660113 (vs expected \u03c6\u207b\u00b2 = 0.3819660113, 0.00e+00%)",
+  "app_psc_precision_ppm": 0.0,
   "independent_precision_ppm": 0.0,
-  "status": "PASS",
+  "status": "TIER1_EXACT",
   "tolerance_ppm": 1.0,
   "discrepancy_notes": [],
   "extra": {
@@ -25,6 +28,6 @@
     "err_para_pct": 0.000939434767677603,
     "err_perp_pct": 0.002459388559685473,
     "err_ratio_pct": 0.0,
-    "derivation_note": "Standard H_4/H_3 cut-and-project amplitudes from the icosahedral projection R^6 \u2192 E_\u2225 \u2295 E_\u22a5. The ratio E_\u22a5\u00b2/E_\u2225\u00b2 = \u03c6\u207b\u00b2 is the algebraic source of: (a) sin\u00b2\u03b8_W^bare = \u03c6\u207b\u00b3 via volume cube (V3 Ch04 \u00a74.3.1, Theorem U.9), (b) the App ZN gauge-sector coupling weights Z_1 = 41/6 / (120\u00b7|E_\u22a5|\u00b2) and Z_2 = 19/6 / (18\u00b7|E_\u2225|\u00b2). Tier 1: pure algebraic identity from \u03c6\u00b2 = \u03c6 + 1."
+    "derivation_note": "Standard H_4/H_3 cut-and-project amplitudes from the icosahedral projection R^6 \u2192 E_\u2225 \u2295 E_\u22a5. The ratio E_\u22a5\u00b2/E_\u2225\u00b2 = \u03c6\u207b\u00b2 is the raw-frame (coordinate-dependent) ratio reused by the Tier 3 hypothesis H-EW, sin\u00b2\u03b8_W^bare = \u03c6\u207b\u00b3 (V3 Ch04 \u00a74.3; App USS \u00a7USS.9). App GRF uses the canonical projector shares 1/2 for Z_1, Z_2. Tier 1: pure algebraic identity from \u03c6\u00b2 = \u03c6 + 1."
   }
 }

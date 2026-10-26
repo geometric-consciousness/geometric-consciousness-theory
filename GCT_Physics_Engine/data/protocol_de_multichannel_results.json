@@ -1,5 +1,5 @@
 {
-  "scope": "Registered-menu no-go over convex-combination shape proxies. This output is not a physical density-weighted multi-fluid background calculation and not a covariance-aware DESI likelihood.",
+  "scope": "Registered-menu no-go over convex-combination shape proxies. This output is not a physical density-weighted multi-fluid background calculation and not a covariance-aware DESI likelihood. The other channels are stipulated phantom-directed templates (Tier 4; no ghost-free action produces w<-1) or the w=-1 baseline; w_pert=-0.9 is a Tier 3 nonphantom menu assumption.",
   "desi_target": {
     "w0": -0.803,
     "wa": -0.72,
@@ -44,7 +44,7 @@
     },
     "frozen_phason_pert": {
       "w": -0.9,
-      "source": "Tier 3 weak quintessence-like perturbation"
+      "source": "Tier 3 nonphantom menu assumption; not law-derived"
     }
   },
   "channels": {

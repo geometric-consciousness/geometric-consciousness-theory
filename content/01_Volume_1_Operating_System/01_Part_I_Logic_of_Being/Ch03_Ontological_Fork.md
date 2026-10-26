@@ -13,14 +13,14 @@ We must choose between two primary hypotheses:
 * **Hypothesis A (Materialism):** Extension is fundamental. Mind is a secondary byproduct.
 * **Hypothesis B (Objective Idealism):** Mind (the Field of Presence, $\Psi$) is the ontological primitive. Spatially extended matter is a *secondary pattern* — a structural excitation within the Field. The universe is not a collection of objects observed by a mind; it is a structured self-excitation of the Field perceived by itself.
 
-**Scope of the Fork:** The philosophical landscape includes several additional positions — Neutral Monism (Russell, Stubenberg), Property Dualism (Chalmers), and Illusionism (Frankish) among them. We restrict the analysis to the two extremes of the ontological spectrum because they represent the sharpest logical contrast. Property Dualism reduces to Materialism with an unexplained psychophysical bridge law; illusionism is treated as an eliminative/representational strategy that must explain why robust phenomenal properties seem to be present rather than as a simple denial of all appearing; Neutral Monism shares sufficient structural features with Hypothesis B that the GCT derivations are largely compatible (§3.4.3). The Bayesian framework of §2.2 applies equally to any pairwise comparison; the present analysis focuses on the primary axis of the debate.
+**Scope of the Fork:** The philosophical landscape includes several additional positions — Neutral Monism (Russell, Stubenberg), Property Dualism (Chalmers), and Illusionism (Frankish) among them. We restrict the analysis to the two extremes of the ontological spectrum because they represent the sharpest logical contrast. Property Dualism keeps a physical ontology plus fundamental psychophysical laws (Chalmers 1996), and GCT treats it as carrying the bridge-law cost of §3.2.4; illusionism is treated as an eliminative/representational strategy that must explain why robust phenomenal properties seem to be present rather than as a simple denial of all appearing; Neutral Monism shares sufficient structural features with Hypothesis B that the GCT derivations are largely compatible (§3.4.3). The Bayesian framework of §2.2 applies equally to any pairwise comparison; the present analysis focuses on the primary axis of the debate.
 
 > **Epistemic Note (Postulate Disclosure):**
 > GCT begins from **two ontological axioms** (Presence, Intelligibility) and then adopts **additional structural postulates** to construct a concrete physical architecture. These postulates are listed centrally in the **Axiom & Postulate Ledger** (Global Front Matter) and are not introduced ad hoc inside chapters.
  
 **3.1.2 The Subject/Object Split**
 
-All experience is structured as a **Subject-Object duality**: there is always *that which perceives* (Subject, Res Cogitans) and *that which is perceived* (Object, Res Extensa). This split is not a metaphor — it is a structural feature of every act of cognition. Crucially, the Subject cannot be reduced to an object without generating a **Regress of Observers** (the 'who observes the observer?' problem). Materialism attempts to dissolve the Subject into a highly complex Object (the brain), thereby collapsing the S/O distinction. GCT asserts that this collapse is the root of the Hard Problem: the very structure of experience requires an irreducible Subject pole. The Ontological Fork of §3.2 and §3.3 evaluates which hypothesis — Materialism or Idealism — can account for both poles of the Subject/Object relation without ontological remainder.
+Ordinary waking experience is structured as a **Subject-Object duality**: there is *that which perceives* (Subject, Res Cogitans) and *that which is perceived* (Object, Res Extensa). GCT treats this split as a structural feature of ordinary cognition, not a metaphor [Tier 3; reports of non-dual states are discussed in Ch20 §20.2.2]. Crucially, the Subject cannot be reduced to an object without generating a **Regress of Observers** (the 'who observes the observer?' problem). Materialism attempts to dissolve the Subject into a highly complex Object (the brain), thereby collapsing the S/O distinction. GCT asserts that this collapse is the root of the Hard Problem: the very structure of experience requires an irreducible Subject pole. The Ontological Fork of §3.2 and §3.3 evaluates which hypothesis — Materialism or Idealism — can account for both poles of the Subject/Object relation without ontological remainder.
 
 **3.1.3 The Bayesian Framework Applied to Ontology**
 
@@ -34,36 +34,37 @@ We do not choose based on cultural preference or intuition. We choose based on *
 
 Materialism (or Physicalism) posits that the ontological primitive is non-conscious matter-energy obeying mathematical laws. The universe is a machine running in the dark. At the beginning (The Big Bang), there was no experience, only geometry.
 The promise of Materialism is that if we arrange this non-conscious matter into sufficiently complex configurations (such as brains), subjectivity will spontaneously ignite.
-$$ \text{Dead Atoms} + \text{Complexity} \to \text{Consciousness} \quad \text{[Tier 3 — Philosophical Framework: Materialist claim under structural evaluation]} $$
+$$ \text{Dead Atoms} + \text{Complexity} \to \text{Consciousness} $$
+[Tier 3 — Philosophical Framework: Materialist claim under structural evaluation]
 
 **3.2.2 The Hard Problem of Consciousness**
 
 This hypothesis faces the **Hard Problem**, formalized by David Chalmers. There is no deductive bridge from structure to experience.
 We can explain the *function* of a brain (processing inputs, generating outputs) using only the laws of physics. At no point in that explanation is it necessary to postulate that "it feels like something" to be the brain. The functional explanation is causally closed.
-Therefore, if consciousness exists (which Axiom 1 guarantees), it is **ontologically superfluous** within the Materialist framework. It is an effect without a cause, or a property that appears without a mechanism.
+Therefore, if consciousness exists (which the Tier 0 datum establishes for the reader's own case), it is **ontologically superfluous** within the Materialist framework: a property with no causal role in the causally closed functional story, appearing without a specified mechanism.
 
 **3.2.3 The Cost: Strong Emergence as a Logical Miracle**
 
 To bridge the gap, many materialist accounts invoke **Strong Emergence**. Other physicalist strategies — Type-B physicalism, phenomenal-concept strategies, and related representational approaches — instead try to locate the explanatory gap in our concepts or modes of presentation while preserving ontological monism. GCT treats those strategies as serious competitors addressed in Ch16; the cost analysis here targets the branch that requires a non-deducible transition from non-experiential structure to experience.
-Strong-emergence materialism is logically equivalent to an **Ontological Discontinuity**. It implies a jump in nature where $0$ (zero interiority) becomes $1$ (interiority) simply by iteration.
+On GCT's reading, following Strawson's (2006) objection to brute emergence [Tier 3; contested], strong-emergence materialism amounts to an **Ontological Discontinuity**. It implies a jump in nature where $0$ (zero interiority) becomes $1$ (interiority) simply by iteration.
 In algorithmic terms, this requires the universe to contain a specific "Emergence Function" $f_{EM}$ that monitors complexity and "switches on" the lights when a threshold is passed.
 $$ \Psi_{total} = \Psi_{physics} + f_{EM}(\text{complexity}) \quad \text{[Tier 3 — Philosophical Framework: cost-of-postulate analysis]} $$
 
 **3.2.4 Bayesian Penalty: Postulating Unmeasured Mechanisms**
 
 This $f_{EM}$ is a massive liability. [Tier 3 — Philosophical Framework]
-1. **It is arbitrary:** Why does 40 Hz neural oscillation create consciousness and not 39 Hz?
+1. **It is arbitrary:** a threshold would have to be set at some specific value of complexity (or of whatever neural marker is proposed), with no principle selecting that value over its neighbours.
 2. **It is undiscovered:** No "Psychophysical Law" has ever been observed in the standard model Lagrangian.
 3. **It adds complexity:** The theory must define both the laws of matter *and* the separate laws of emergence.
 
-**3.2.5 Complexity Count: Two Substances + Emergence Rule**
+**3.2.5 Complexity Count: One Substance, Two Law-Sets (Strong-Emergence Branch)**
 
 The Kolmogorov Complexity of Materialism is: [Tier 3 — Philosophical Framework: qualitative complexity comparison]
 $$ K(\text{Mat}) = K(\text{Matter Laws}) + K(\text{Emergence Laws}) $$
-Because the strong-emergence branch has no specified emergence law, $K(\text{Emergence Laws})$ is undefined within that branch. This drives down its prior relative to a theory that makes the bridge explicit. Type-B and phenomenal-concept physicalisms avoid this exact postulate by assigning the gap to reference/concept structure, but then inherit the separate Chalmers-style burden of explaining why those concepts secure phenomenal reference.
-Critically, the strong-emergence version of Materialism is **Functionally Dualist** despite its monist aspiration. It requires two distinct sets of laws: one for the behavior of matter, and one for the emergence of mind.\*
+Because the strong-emergence branch has no specified emergence law, $K(\text{Emergence Laws})$ is undefined within that branch, so the branch cannot be assigned a prior on this scheme; GCT counts the missing law as a cost [Tier 3]. Type-B and phenomenal-concept physicalisms avoid this exact postulate by assigning the gap to reference/concept structure, but then inherit the separate Chalmers-style burden of explaining why those concepts secure phenomenal reference.
+Critically, the strong-emergence version of Materialism is **Functionally Dualist** despite its monist aspiration. It requires two distinct sets of laws: one for the behavior of matter, and one for the emergence of mind.^\*^
 
-*\* Note: GCT adopts Position B Russellian Monism, not eliminativist panpsychism. See Chapter 16 §16.2.2 for the full disambiguation.*
+*^\*^ Note: GCT adopts Position B Russellian Monism, not eliminativist panpsychism. See Chapter 16 §16.2.2 for the full disambiguation.*
 
 ---
 
@@ -71,11 +72,11 @@ Critically, the strong-emergence version of Materialism is **Functionally Dualis
 
 **3.3.1 The Claim: The Field $\Psi$ as Fundamental**
 
-Idealism (specifically **Objective Idealism** or Analytic Idealism) inverts the derivation. It posits that the field of Presence (Axiom 1) is the ontological primitive.
-The "Universe" is not a collection of objects outside of consciousness; it is a **Pattern of Excitation** within the universal consciousness field $\Psi$.
+Idealism (specifically **Objective Idealism** or Analytic Idealism) inverts the derivation. It posits that the field of Presence is the ontological primitive (in GCT, a framework postulate built on Axiom 1; Ch02 §2.3.4).
+The "Universe" is not a collection of objects outside of consciousness; it is a **Pattern of Excitation** within the consciousness field $\Psi$ (Level I).
 $$ \text{Mind} + \text{Constraint} \to \text{Matter} \quad \text{[Tier 3 — philosophical commitment, not derivation]} $$
 
-Objective idealism is the parsimony choice the framework adopts given Axiom 1: Qualitative Presence is fundamental, not derived. It is not derived from the framework; it is the metaphysical commitment that makes Axiom 1 most economical relative to alternative ontologies such as physicalist eliminativism, neutral monism, and panpsychism. The geometric derivations that follow are conditional on this ontological branch rather than proofs of the branch itself. [Tier 3 — philosophical commitment, not derivation]
+Objective idealism is the parsimony choice the framework adopts given Axiom 1: Qualitative Presence is fundamental, not derived. It is not derived from the framework; it is the metaphysical commitment that GCT judges most economical given Axiom 1, relative to materialism (the comparison of §3.4); neutral monism and panpsychism are discussed in §3.4.3 but not costed here. The geometric derivations that follow are conditional on this ontological branch rather than proofs of the branch itself. [Tier 3 — philosophical commitment, not derivation]
 
 **3.3.2 The Mechanism: The Self-Excited Circuit**
 
@@ -91,15 +92,14 @@ This is not a new mechanism; it is the standard mechanism of Quantum Field Theor
 The complexity cost of Idealism is significantly lower: [Tier 3 — Philosophical Framework: qualitative complexity comparison]
 $$ K(\text{Ideal}) = K(\text{Field Dynamics}) $$
 We do not need a separate "Emergence Law." We do not need a miracle to get interiority, because we start with it.
-The "Hard Problem" vanishes. The problem of "how does matter generate mind" is exposed as a false question, equivalent to asking "how does the image on a movie screen generate the screen?" It doesn't. The screen is fundamental; the image is the modulation.
+On this branch the "Hard Problem" is reframed rather than solved: the question "how does matter generate mind" is treated as mis-posed, analogous to asking "how does the image on a movie screen generate the screen?" On the idealist reading, it doesn't. The screen is fundamental; the image is the modulation.
 
 **3.3.4 The Challenge: Explaining Externality (The Consensus Problem)**
 
 The primary objection to Idealism is the "Consensus Problem." If the world is mental, why can't I change it by thinking? Why do we all see the same moon?
-Materialism explains this easily (the moon is a physical object out there). Idealism must explain this as a **Shared Simulation**.
-Note that we do not mean a "Matrix-style" simulation running on a computer in a base reality (which leads to infinite regress). We mean an **Autopoietic Simulation**: a self-calculating system where the laws of physics are the "Server Protocols" maintaining consistency between multiple Agents.
-GCT accepts this burden. We must derive the rigidity of the external world (Consensus Reality) from the interaction of multiple Agents. This is achieved in **Chapter 11** via the **Consensus Protocol**.
-While this requires explanation, it is a problem of *dynamics* (math), not a problem of *ontology* (miracles). Mathematical problems are solvable; ontological miracles are not.
+Materialism explains this by appeal to observer-independent physical objects. The idealist branch must likewise recover stable cross-perspectival records.
+GCT uses **Autopoietic Simulation** and "server protocol" as philosophical metaphors for one constrained Field plus ordinary physical interactions and environmental records. It does not posit a Matrix-style external computer (which would lead to infinite regress), and it has not derived physical renderers, Selection Operators, an owner count, or phenomenal consensus.
+Chapter 11 supplies a conditional multi-aperture compatibility functional—the **Consensus Protocol**—rather than a derivation of material rigidity from interactions among conscious Agents. The remaining burden includes both physical dynamics and the independent owner/phenomenal bridge [Tier 3].
 
 **3.3.5 Complexity Count: One Substance**
 
@@ -120,17 +120,17 @@ We weigh the two branches:
 
 **3.4.2 The Probability Inequality: $P(\text{Idealism}) \gg P(\text{Materialism})$**
 
-Bayesian reasoning compels a decision. Let "Data" denote the foundational phenomenological datum established by Axiom 1: that a universe exists containing both structured matter and subjective experience. Both hypotheses must account for this datum, so the likelihood terms are comparable ($P(\text{Data} | \text{Idealism}) \approx P(\text{Data} | \text{Materialism})$). The decisive factor is therefore the *prior* probability, set by Kolmogorov complexity via Solomonoff Induction (§2.2.2): $P(H) \propto 2^{-K(H)}$.
+Bayesian reasoning frames the decision. Let "Data" denote the sole Tier 0 first-person datum that experience is occurring, together with the separately assumed observations of structured matter. Axiom 1 generalises the presence datum by stipulation [Tier 1]; neither structured matter nor a universal ontology belongs to Tier 0. Both hypotheses must account for this datum, so the likelihood terms are comparable ($P(\text{Data} | \text{Idealism}) \approx P(\text{Data} | \text{Materialism})$). The decisive factor is therefore the *prior* probability, set by Kolmogorov complexity via Solomonoff Induction (§2.2.2): $P(H) \propto 2^{-K(H)}$.
 
-Materialism requires us to postulate a "Substance" (Matter) that we can never directly access (we only access our perception of it) and then requires a magical mechanism to turn that Substance into the Perception. It posits two unknowns to explain one known: $K(\text{Materialism}) = K(\text{Matter Laws}) + K(\text{Emergence Laws})$.
-Idealism postulates only the Known (Presence) and imposes geometrical constraints upon it: $K(\text{Idealism}) = K(\text{Field Dynamics})$.
-Since $K(\text{Idealism}) < K(\text{Materialism})$, the prior favors Idealism:
+Materialism requires us to postulate a "Substance" (Matter) that we can never directly access (we only access our perception of it) and then requires a magical mechanism to turn that Substance into the Perception. It posits an inaccessible substance plus an emergence law: $K(\text{Materialism}) = K(\text{Matter Laws}) + K(\text{Emergence Laws})$.
+Idealism postulates a universal Field whose *kind* is continuous with the one known datum (presence) and imposes geometrical constraints upon it: $K(\text{Idealism}) = K(\text{Field Dynamics})$. That universal Field is not itself known: it is the Tier 1 stipulation of Axiom 1 noted above, as inaccessible in its universality as matter. Idealism's claimed advantage is only that it needs no separate emergence law.
+On GCT's qualitative complexity judgement (there is no coding-independent theorem here, §2.2.3), $K(\text{Idealism}) < K(\text{Materialism})$, so the prior favours Idealism:
 $$ P(\text{Idealism} | \text{Data}) \gg P(\text{Materialism} | \text{Data}) \quad \text{[Tier 3 — Philosophical Framework: qualitative Bayesian preference]} $$
 
 **3.4.3 Proceeding with Idealism**
 
 We accept the branch of **Objective Idealism**. *[Note: While GCT adopts Objective Idealism for its parsimony, the geometric derivations that follow are potentially compatible with other foundational frameworks such as Neutral Monism.]*
 
-Two panpsychist frameworks deserve explicit acknowledgment as competitors on the Idealist branch. Tononi's Integrated Information Theory (IIT) identifies consciousness with $\Phi$, a measure of integrated causal structure, and assigns it to any system above a threshold. GCT differs in three respects: the substrate is geometric-topological rather than causal-informational, unity is conditional on the irreducible-knot route of §11.12 rather than defined axiomatically via $\Phi$, and the account is explicitly panpsychist only at the Field level — individual agents require the topological phase transition of §11.12.5 to achieve unified subjectivity. Goff's Cosmopsychism posits a single cosmic subject whose phenomenal properties are distributed downward to its physical parts; this requires a combination-in-reverse (decomposition) that inherits a structural version of the combination problem. GCT's proposed dissolution of both upward and downward combination problems is conditional on the App Y / O.18 / O.32 Polaron Unity closure path: if holographic restriction is established, no parts are combined and no subject is decomposed — the 6D Field is the unique whole, and individual agents are irreducible topological restrictions of it, not constituents or fragments. Until that closure lands, the combination-problem answer is Tier 3 conditional rather than a derived theorem.
-For the remainder of this work, we proceed with the understanding that **Reality is a Structured Mental Field**. We do not need to prove this again; it is the output of our decision tree.
-The argument now shifts from Ontology ("What is it?") to Geometry ("What shape is it?"). If the universe is a thought, it must be a finite, computable thought. It must carry **Information**. Chapter 4 establishes that information requires discreteness.
+Two frameworks with panpsychist affinities deserve explicit acknowledgment as competitors. Tononi's Integrated Information Theory (IIT), which shares some panpsychist intuitions but is not panpsychist or idealist (its exclusion postulate denies consciousness to most aggregates; Oizumi, Albantakis & Tononi 2014), identifies consciousness with $\Phi$, a measure of integrated causal structure, and assigns it to systems meeting its criterion. GCT differs by proposing a geometric-topological substrate route rather than identifying subjecthood with causal integration. The corresponding §11.12 / App PUP result is narrow: App PUP records at most an algebraic unity candidate (Proposition PUP.1(ii) is withdrawn), and applying even that to an Identity Polaron requires the Tier 3 physical bridge stack (O.18 / O.32). It does not show a physical Hilbert space to be irreducible or establish one subject. Goff's Cosmopsychism posits a single cosmic subject whose phenomenal properties are distributed downward to its physical parts; this requires a combination-in-reverse (decomposition) that inherits a structural version of the combination problem. GCT does not yet dissolve either the upward or the downward combination problem. It proposes a conditional alternative in which Level I belongs to the Field while qualified Identity Polarons realize derivative Level-II candidates; physical boundaries, algebraic unity, ownership and phenomenal subject count still require the App PUP / O.18 / O.32 bridge stack and an independent Level-II bridge [Tier 3]. Holographic restriction or common Field membership alone does not turn an aperture into the whole, identify an owner, or count subjects.
+For the remainder of this work, we proceed on the working assumption that **Reality is a Structured Mental Field**. This is the branch adopted by our decision tree (a Tier 3 parsimony choice), not a proven result; the later chapters are conditional on it rather than re-arguing it.
+The argument now shifts from Ontology ("What is it?") to Geometry ("What shape is it?"). If the universe is a thought, GCT takes it to be a finite, computable one that carries **Information**. Chapter 4 argues from finite information to discreteness and adopts discreteness as a structural postulate.

@@ -7,18 +7,12 @@ Identification of the exponent 18 in K_perp/K_parallel = phi^(-18) as the
 canonical Shephard-Todd invariant-degree sum of the icosahedral H_3
 Coxeter group. Partial closure of Open Problem O.15(a) direction.
 
-CONTEXT (App K §K.3-K.4)
+CONTEXT (App DPS §DPS.3-DPS.4)
 
-The GCT prediction K_perp/K_parallel = phi^(-18) is currently a Tier 2
-POSTULATE with a Tier 3 specific exponent. App K §K.4 derives 18 via a
-heuristic "rank 3 × Galois 2 × dim 3 = 18" count, acknowledged in the
-manuscript as a counting heuristic, not a derivation. App H O.15(a)
-records the need for "a genuine RG calculation in the symmetry-adapted
-phason elasticity framework producing phi^(-18) from icosahedral
-group-theoretic axioms".
-
-This protocol provides a SHARPER IDENTIFICATION of the integer 18 as
-the standard Shephard-Todd / Coxeter-group invariant for H_3.
+The equality 2 + 6 + 10 = 18 is Tier 1 Coxeter algebra. Its use as the
+H_3 integer anchor is Tier 2 conditional on the irreducible icosahedral
+premise. The physical identification K_perp/K_parallel = phi^(-18) is a
+separate Tier 3 RG-map assumption pending Open Problem O.15(b).
 
 H_3 COXETER GROUP FACTS (Humphreys 1990 "Reflection Groups and
 Coxeter Groups" Tables 1, 3.1)
@@ -43,40 +37,30 @@ Equivalently: 18 = N + r where N = 15 is the number of positive roots
 (reflections) and r = 3 is the rank. The Shephard-Todd identity
 sum(d_i) = N + r is a standard result for any finite Coxeter group.
 
-For other rank-3 Coxeter groups (comparison):
+For other finite irreducible rank-three Coxeter systems (comparison):
   A_3 (S_4):          degrees 2, 3, 4;   sum =  9
   B_3 (BC_3):         degrees 2, 4, 6;   sum = 12
   H_3 (icosahedral):  degrees 2, 6, 10;  sum = 18
 
 The icosahedral case gives the largest invariant-degree sum among
-rank-3 finite Coxeter groups (the only rank-3 non-crystallographic
-case; H_3 is the only finite Coxeter group containing 5-fold symmetry).
+finite irreducible rank-three Coxeter systems. The reducible family
+A_1 x I_2(m) has degrees (2, 2, m), so A_1 x I_2(14) also has sum 18.
+The numerical sum identifies H_3 only under the irreducible icosahedral premise.
 
-CONSEQUENCE FOR O.15(a)
+TIER BOUNDARY
 
-The exponent 18 in phi^(-18) is now identified with the canonical
-H_3 invariant-degree sum rather than the heuristic "rank × Galois × dim"
-counting in App K §K.4. This SHARPENS the structural origin of the
-exponent but does NOT close the FULL RG derivation: the connection
-between (a) the sum of invariant degrees and (b) the phason-elasticity
-stiffness ratio still requires a symmetry-adapted RG argument that
-maps the Coxeter invariant to the phason-mode renormalization. The
-identification of 18 with the canonical Coxeter invariant is a
-Tier 2 sharpening of the Tier 3 heuristic count.
+The H_3 invariant-degree sum supplies the Tier 1 algebra and Tier 2
+conditional integer identification. It does not derive the physical RG
+map from that integer to the phason-elastic stiffness ratio. That map
+remains Tier 3 pending a symmetry-adapted one-loop calculation under
+Open Problem O.15(b).
 
 STATUS
 
-  The integer 18 is the canonical Shephard-Todd invariant-degree sum of
-  H_3 = N + r = 15 + 3 (Tier 2 structural identification). This is the
-  canonical form of the App K §K.4 "rank × Galois × dim" count, which
-  gives the same value at the Tier 3 heuristic level.
-
-  Remaining open piece (full Tier 1 closure of O.15(a)): the
-  symmetry-adapted phason-elasticity RG flow that maps the Coxeter
-  invariant-degree sum to the K_perp/K_parallel exponent. This is the
-  research-level math beyond session scope; the structural identification
-  here SHARPENS the heuristic but does NOT fully derive phi^(-18) from
-  first principles.
+  The equality 18 = 2 + 6 + 10 = N + r is Tier 1 Coxeter algebra.
+  Selecting it as the H_3 integer anchor is Tier 2 conditional on the
+  irreducible icosahedral premise. The RG-running identification remains
+  Tier 3 pending O.15(b).
 """
 
 import json
@@ -155,38 +139,38 @@ def main():
     print(f"  Shephard-Todd: N + r               : {h3['positive_roots_N']} + {h3['rank']} = {h3['positive_roots_N'] + h3['rank']}")
     print(f"  Identification matches             : {sum(h3['degrees']) == 18}")
 
-    print(f"\nComparison to the App K §K.4 heuristic count:")
+    print(f"\nComparison to the App DPS §DPS.4 heuristic count:")
     print(f"  Heuristic count: rank * Galois * dim = 3 * 2 * 3 = 18")
     print(f"  Canonical Coxeter-invariant: sum of fundamental degrees of H_3 = 18")
     print(f"  Both give the same numerical answer; the Coxeter-invariant")
     print(f"  identification is the canonical (Shephard-Todd) form, not an")
     print(f"  ad hoc product.")
 
-    # Rank-3 comparison
+    # Finite irreducible rank-three comparison
     rank_3_groups = ["A_3", "B_3", "H_3"]
     sums = {g: sum(COXETER_DATA[g]["degrees"]) for g in rank_3_groups}
-    print(f"\nRank-3 finite Coxeter group invariant-degree sums:")
+    print(f"\nFinite irreducible rank-three Coxeter invariant-degree sums:")
     for g in rank_3_groups:
         print(f"  {g}: {sums[g]}")
-    print(f"  H_3 has the LARGEST sum (=18) among rank-3 finite Coxeter groups.")
+    print(f"  H_3 has the LARGEST sum (=18) among finite irreducible rank-three Coxeter systems.")
     print(f"  Reason: H_3 is non-crystallographic (5-fold symmetry); its Coxeter")
     print(f"  number h = 10 exceeds crystallographic bounds (B_3 has h=6, A_3 h=4).")
 
     print(f"\n" + "=" * 76)
-    print("VERDICT FOR O.15(a) -- structural sharpening")
+    print("O.15(a) H_3 INVARIANT-DEGREE RESULT")
     print("=" * 76)
     print(f"  CANONICAL IDENTIFICATION (Shephard-Todd):")
     print(f"    18 = sum of H_3 fundamental degrees = 2 + 6 + 10")
     print(f"       = N_pos_roots + rank = 15 + 3")
     print(f"    Standard finite-Coxeter-group invariant; canonical, not ad hoc.")
     print(f"")
-    print(f"  App K §K.4 heuristic count (same value at Tier 3):")
+    print(f"  App DPS §DPS.4 heuristic count (same value at Tier 3):")
     print(f"    18 = rank * Galois * dim = 3 * 2 * 3")
     print(f"")
-    print(f"  STATUS: TIER 2 structural sharpening of the integer 18 identification.")
-    print(f"          NOT a full first-principles RG derivation of phi^(-18).")
+    print(f"  STATUS: Tier 1 Coxeter algebra + Tier 2 H_3-conditional integer identification.")
+    print(f"          The physical RG map to phi^(-18) remains Tier 3 under O.15(b).")
     print(f"")
-    print(f"  Remaining open piece (full Tier 1 closure of O.15(a)):")
+    print(f"  Remaining open Tier 3 physical-link claim under O.15(b):")
     print(f"    The symmetry-adapted phason-elasticity RG flow that maps the")
     print(f"    Coxeter invariant-degree sum to the K_perp/K_parallel exponent.")
     print(f"    This requires research-level RG calculation in the Lubensky-")
@@ -203,15 +187,20 @@ def main():
                    "matches": sum(d["degrees"]) == d["positive_roots_N"] + d["rank"]}
             for name, d in COXETER_DATA.items()
         },
-        "rank_3_invariant_sums": sums,
-        "H_3_is_largest_rank_3_sum": True,
+        "rank_3_irreducible_invariant_sums": sums,
+        "H_3_is_largest_rank_3_irreducible_sum": True,
+        "reducible_rank_3_counterexample": {
+            "group": "A_1 x I_2(14)",
+            "degrees": [2, 2, 14],
+            "sum_degrees": 18,
+        },
         "structural_identification": (
             "18 in phi^(-18) is the sum of H_3 fundamental degrees "
             "= 2 + 6 + 10 = N_pos_roots + rank = 15 + 3. This is the "
             "canonical Shephard-Todd invariant of the icosahedral H_3 "
             "Coxeter group, NOT an ad-hoc rank*Galois*dim count."
         ),
-        "status": "Tier 2 structural sharpening; full first-principles RG derivation still open",
+        "status": "Tier 1 Coxeter algebra + Tier 2 H_3-conditional integer identification; Tier 3 RG-map link pending O.15(b)",
         "remaining_open": (
             "The symmetry-adapted phason-elasticity RG flow mapping the Coxeter "
             "invariant-degree sum to the K_perp/K_parallel exponent. Research-level "

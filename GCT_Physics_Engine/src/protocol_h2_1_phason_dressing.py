@@ -21,7 +21,7 @@ Setup:
     has ||V||_op = 1.
   - Coupling strength epsilon swept across [1e-5, 1e-1]; the
     physical anchor is epsilon_phys ~ phi^(-18) ~ 1.73e-4
-    (phason stiffness ratio K_perp/K_phonon, App K Sec K.3).
+    (phason stiffness ratio K_perp/K_phonon, App DPS Sec DPS.3).
 
 First-order Rayleigh-Schrödinger PT:
   - Non-degenerate: delta lambda_i = epsilon * <v_i | V | v_i>.
@@ -61,7 +61,7 @@ extraction is bundled with O.5.
 
 Cross-reference: V3 Ch06 Sec 6.5.A finite Dirac operator as phason
 hopping matrix; V3 Ch10 Sec 10.6 quark mass spectrum (m_d via
-det_FK(D_F)); App K Sec K.3 phason stiffness ratio; App H H.2.1.
+det_FK(D_F)); App DPS Sec DPS.3 phason stiffness ratio; App ORQ H.2.1.
 """
 
 from __future__ import annotations
@@ -262,7 +262,7 @@ def compute() -> dict:
                 "epsilon ~ phi^(-18) are bounded; perturbation is in "
                 "linear regime for all non-degenerate D_F eigenvalues."),
             "what_is_NOT_closed": (
-                "Full Tier 2 CKM/PMNS extraction from dressed non-"
+                "Full CKM/PMNS extraction from dressed non-"
                 "perturbative D_F is bundled with O.5 QLQCD-1L. The "
                 "physical Fuglede-Kadison determinant requires the "
                 "orbit-resolved icosahedral character decomposition "
@@ -274,7 +274,7 @@ def compute() -> dict:
             "scope_note": (
                 "H.2.1 is bundled with O.5. This protocol establishes "
                 "the perturbative-stability infrastructure, but the "
-                "full Tier 2 derivation needs the non-perturbative "
+                "full extraction would need the non-perturbative "
                 "orbit-resolved spectrum that itself requires O.5."),
         },
     }

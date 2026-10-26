@@ -3,9 +3,18 @@
 protocol_fermion_audit.py — Particle Inventory Audit
 =========================================================================
 Generates the "Particle Inventory" of the GCT 6D vacuum by:
-1. Classifying defect topologies into SU(3) representations.
-2. Verifying gauge invariance (gluon redundancy proof).
-3. Checking Spin-Statistics (Fermionic -1 phase under 360° rotation).
+1. Assigning defect topologies to candidate SU(3) representations (Tier 3).
+2. Checking gauge invariance under the Tier 3 gluon-redundancy reading.
+3. Recording Spin-Statistics as a POSTULATE (Fermionic -1 phase under 360°).
+
+The lepton/quark dimensions (1 and
+3) are computed as orbit sizes under the RT 3-fold rotation, and
+spin-statistics is recorded as a postulate. None of the three remaining checks
+can fail: the vertex orbit is 1 because the rotation axis is defined through
+that vertex; every off-axis point has orbit 3 under an order-3 rotation; and
+the gauge-redundancy scan rotates lattice.u_displacement, which is initialised
+to zero, so the energy change is identically 0. The checks are recorded as
+consistent, and the protocol is registered as open (pass = false).
 """
 
 import numpy as np
@@ -74,6 +83,28 @@ def check_fermi_statistics(n_steps: int = 360) -> dict:
     }
 
 
+def compute_z3_orbit_sizes(hull, tol: float = 1e-6) -> dict:
+    """Orbit sizes of a 3-valent RT vertex and an adjacent face centre under
+    the 120-degree rotation about that vertex's (3-fold) axis."""
+    P = hull.points
+    faces = {}
+    for simp, eq in zip(hull.simplices, hull.equations):
+        faces.setdefault(tuple(np.round(eq[:3], 6)), set()).update(simp.tolist())
+    faces = [sorted(f) for f in faces.values()]
+    v_idx = next(i for i in hull.vertices if sum(i in f for f in faces) == 3)
+    axis = P[v_idx] / np.linalg.norm(P[v_idx])
+    K = np.array([[0, -axis[2], axis[1]], [axis[2], 0, -axis[0]], [-axis[1], axis[0], 0]])
+    R = np.eye(3) + np.sin(2 * np.pi / 3) * K + (1 - np.cos(2 * np.pi / 3)) * (K @ K)
+    face_centre = P[next(f for f in faces if v_idx in f)].mean(axis=0)
+
+    def orbit(x):
+        imgs = [x, R @ x, R @ R @ x]
+        return len({tuple(np.round(p / tol) * tol) for p in imgs})
+
+    return {"vertex_orbit_size": orbit(P[v_idx]), "face_centre_orbit_size": orbit(face_centre),
+            "rotation_is_order_3": bool(np.allclose(R @ R @ R, np.eye(3)))}
+
+
 def run_fermion_audit():
     print("=" * 60)
     print("GCT Protocol: Fermion Audit")
@@ -91,6 +122,9 @@ def run_fermion_audit():
     print("\n1. Vertex Defect (Lepton Candidate)...")
     lepton_rep = analyzer.classify_defect_topology("vertex")
     bp_lepton  = analyzer.compute_berry_phase("vertex")
+    orbits     = compute_z3_orbit_sizes(rt.hull)
+    print(f"   Computed Z3 orbit sizes: vertex {orbits['vertex_orbit_size']}, "
+          f"adjacent face centre {orbits['face_centre_orbit_size']}")
 
     print(f"   Representation: {lepton_rep['name']}")
     print(f"   Berry Phase:    {bp_lepton:.4f} * pi  (expect 0)")
@@ -99,7 +133,8 @@ def run_fermion_audit():
         **lepton_rep,
         "berry_phase_pi": bp_lepton,
         "su3_coupling": 0,
-        "verdict": "Lepton Confirmed" if lepton_rep["dimension"] == 1 else "FAIL"
+        "computed_z3_orbit_size": orbits["vertex_orbit_size"],
+        "verdict": "Lepton Candidate Consistent" if orbits["vertex_orbit_size"] == lepton_rep["dimension"] == 1 else "FAIL"
     }
 
     # -------------------------------------------------------
@@ -116,7 +151,8 @@ def run_fermion_audit():
         **quark_rep,
         "berry_phase_pi": bp_quark,
         "su3_coupling": 1,
-        "verdict": "Quark Confirmed" if quark_rep["dimension"] == 3 else "FAIL"
+        "computed_z3_orbit_size": orbits["face_centre_orbit_size"],
+        "verdict": "Quark Candidate Consistent" if orbits["face_centre_orbit_size"] == quark_rep["dimension"] == 3 else "FAIL"
     }
 
     # -------------------------------------------------------
@@ -144,13 +180,13 @@ def run_fermion_audit():
 
     results["gauge_invariance"] = {
         **gauge_result,
-        "verdict": "Gluon Redundancy Confirmed" if gauge_result["all_invariant"] else "FAIL"
+        "verdict": "Gluon Redundancy Candidate Consistent" if gauge_result["all_invariant"] else "FAIL"
     }
 
     # -------------------------------------------------------
     # Step 4: Spin-Statistics
     # -------------------------------------------------------
-    print("\n4. Spin-Statistics Check (Fermionic -1 Phase)...")
+    print("\n4. Spin-Statistics (POSTULATE; not computed, does not gate PASS)...")
     spin_result = check_fermi_statistics()
 
     print(f"   Berry Phase (Lepton):   {spin_result['berry_phase_lepton']:.4f} * pi")
@@ -158,7 +194,8 @@ def run_fermion_audit():
 
     results["spin_statistics"] = {
         **spin_result,
-        "verdict": "Fermion Confirmed" if spin_result["is_fermion"] else "FAIL"
+        "status": "POSTULATE_NOT_COMPUTED: the phase loop sums pi/n n times and cannot fail; Fermi statistics of the defect is assumed",
+        "verdict": "POSTULATE"
     }
 
     # -------------------------------------------------------
@@ -166,24 +203,33 @@ def run_fermion_audit():
     # -------------------------------------------------------
     print("\n" + "=" * 60)
     all_verdicts = [
-        results["lepton"]["verdict"] == "Lepton Confirmed",
-        results["quark"]["verdict"] == "Quark Confirmed",
-        results["gauge_invariance"]["verdict"] == "Gluon Redundancy Confirmed",
-        results["spin_statistics"]["verdict"] == "Fermion Confirmed",
+        results["lepton"]["verdict"] == "Lepton Candidate Consistent",
+        results["quark"]["verdict"] == "Quark Candidate Consistent",
+        results["gauge_invariance"]["verdict"] == "Gluon Redundancy Candidate Consistent",
     ]
+    results["z3_orbit_computation"] = orbits
 
-    if all(all_verdicts):
-        print("Particle Inventory Verified.")
-        print("  Leptons => SU(3) Singlet (vertex defect).")
-        print("  Quarks  => SU(3) Triplet (face defect).")
-        print("  Gluons  => Local gauge redundancy of phason orientation.")
-        print("  All SM particles are topological features of the 6D lattice.")
+    checks_consistent = all(all_verdicts)
+    results["checks_consistent"] = checks_consistent
+    results["closure_status"] = (
+        "OPEN: the vertex orbit is 1 by construction (axis through the vertex), any off-axis point "
+        "has orbit 3 under an order-3 rotation, and the gauge scan rotates a zero displacement field "
+        "(max |u| = 0), so delta_E = 0 for any generator; none of the checks can fail"
+    )
+    results["verdict"] = ("OPEN_INVENTORY_CHECKS_HOLD_BY_CONSTRUCTION" if checks_consistent
+                          else "FAIL")
+    if checks_consistent:
+        print("Particle-inventory checks consistent (they hold by construction; open).")
+        print("  Leptons => SU(3) singlet candidate (vertex defect).")
+        print("  Quarks  => SU(3) triplet candidate (face defect).")
+        print("  Gluons  => proposed local gauge redundancy of phason orientation.")
+        print("  Candidate reading: SM particles as topological features of the 6D lattice.")
     else:
         print("PARTIAL: Some checks failed. See results for details.")
     print("=" * 60)
 
-    # Save
-    results["pass"] = all(all_verdicts)
+    # Save: the checks cannot fail, so they do not count as a confirmation.
+    results["pass"] = False
     out_path = get_output_path("protocol_fermion_audit_results.json")
     with open(out_path, "w") as f:
         json.dump(results, f, indent=2)

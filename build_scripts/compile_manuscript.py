@@ -27,9 +27,10 @@ from _common import (
     CONTENT_DIR,
     METADATA,
     ORDERED_SECTIONS,
-    natural_sort_key,
     parse_header_title,
+    walk_content_files,
 )
+from generate_index import assert_index_fresh
 
 # --- Configuration ---
 OUTPUT_DIR = PROJECT_ROOT
@@ -147,48 +148,46 @@ def deduplicate_content(text: str) -> str:
     return text
 
 
-def crawl_and_assemble(directory: Path, level: int = 1) -> str:
-    """Recursively crawls the content directory."""
+def crawl_and_assemble(directory: Path = CONTENT_DIR, level: int = 1) -> str:
+    """Assemble content using the traversal shared with the LaTeX build."""
     global _processed_files
     assembled_content = ""
-    entries = []
-    
-    if level == 1 and directory == CONTENT_DIR:
-        print(f"Applying Root Order: {ORDERED_SECTIONS}")
-        for section_name in ORDERED_SECTIONS:
-            section_path = directory / section_name
-            if section_path.exists():
-                entries.append(section_path)
-            else:
-                print(f"[WARNING] Expected section not found: {section_name}")
-    else:
-        entries = sorted(list(directory.iterdir()), key=natural_sort_key)
-    
-    for entry in entries:
-        if entry.name.startswith("."): continue # Skip hidden
-        if entry.name == "ignore_me.md": continue 
+    previous_top_level = False
 
-        if entry.is_dir():
-            print(f"{'  ' * level}📂 {entry.name}")
-            assembled_content += parse_header_title(entry, level)
-            assembled_content += crawl_and_assemble(entry, level + 1)
-            if level == 1: 
-                assembled_content += "\n\\newpage\n\n"
-        
-        elif entry.is_file() and entry.suffix == ".md":
+    if directory != CONTENT_DIR or level != 1:
+        raise ValueError("crawl_and_assemble must start at the canonical content root")
+
+    print(f"Applying Root Order: {ORDERED_SECTIONS}")
+    for kind, entry, entry_level in walk_content_files():
+        if kind == "DIR":
+            if entry_level == 1:
+                if previous_top_level:
+                    assembled_content += "\n\\newpage\n\n"
+                previous_top_level = True
+            print(f"{'  ' * entry_level}📂 {entry.name}")
+            # Each volume's 00_Abstract.md owns its one canonical title and
+            # subtitle.  Suppress the otherwise duplicate generated volume
+            # directory heading in the Markdown monolith.
+            is_volume_root = (
+                entry_level == 1
+                and re.match(r"^\d+_Volume_\d+_", entry.name) is not None
+            )
+            if not is_volume_root:
+                assembled_content += parse_header_title(entry, entry_level)
+        elif kind == "FILE":
             resolved_path = str(entry.resolve())
             if resolved_path in _processed_files:
-                print(f"{'  ' * level}[DEDUP] Skipping already-processed: {entry.name}")
+                print(f"{'  ' * entry_level}[DEDUP] Skipping already-processed: {entry.name}")
                 continue
             _processed_files.add(resolved_path)
-            print(f"{'  ' * level}📄 {entry.name}")
+            print(f"{'  ' * entry_level}📄 {entry.name}")
             try:
                 with open(entry, "r", encoding="utf-8") as f:
                     file_content = f.read().strip()
                 
                 has_header = file_content.startswith("#")
                 if not has_header:
-                     file_header = parse_header_title(entry, level)
+                     file_header = parse_header_title(entry, entry_level)
                      assembled_content += file_header
 
                 if "{{INJECT_CODE" in file_content:
@@ -203,6 +202,9 @@ def crawl_and_assemble(directory: Path, level: int = 1) -> str:
                 print(f"[ERROR] Could not read {entry.name}: {e}")
                 sys.exit(1)
 
+    if previous_top_level:
+        assembled_content += "\n\\newpage\n\n"
+
     return assembled_content
 
 def main():
@@ -212,6 +214,9 @@ def main():
     print(f"Root: {PROJECT_ROOT}")
     print(f"Engines: {ENGINE_SRC_DIR}")
     print("-" * 60)
+
+    # Refuse to propagate a stale generated index into the monolith.
+    assert_index_fresh()
 
     # 1. Start Assembly
     full_text = f"# {METADATA['title']}\n"
@@ -240,4 +245,7 @@ def main():
     print("="*60)
 
 if __name__ == "__main__":
+    if any(a in ("-h", "--help") for a in sys.argv[1:]):
+        print(__doc__)
+        sys.exit(0)
     main()

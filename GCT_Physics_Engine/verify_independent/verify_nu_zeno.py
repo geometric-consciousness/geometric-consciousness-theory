@@ -8,20 +8,20 @@ V3 Ch13 §13.1.2b:
  avoided-crossing frequency ν_vH ≈ Δ_ST/(2π·ℏ) = Δ_ST/h.
 
  Tier 3 SPECIFIC VALUE: ν_c = 112 ± 10 MHz registered primary peak. The
- operative bare singlet-triplet scale is set by the β-tubulin tryptophan
- indole hyperfine band (one indole nitrogen N1 plus weaker ring-proton
- couplings), A_hf,rms^indole ≈ 10–20 MHz. Reaching 112 MHz from this band
- requires a chiral phonon-polariton frequency-scale renormalization of
- ~6–11× (analogous to the ~41× coupling renormalization that lifts
- g_single^bare = 931 kHz to g_single^eff = 38.3 MHz per App Q). Exact
- derivation of the renormalization factor is Open Problem O.12 (App H §H.5).
+ operative bare scale is the TrpH•+ effective hyperfine coupling ≈ 0.97 mT
+ ≈ 27 MHz, which is larger than the FAD•− value ≈ 0.70 mT ≈ 20 MHz (Wong,
+ Benjamin & Hore 2023, PCCP 25:975). Reaching 112 ± 10 MHz from it requires a
+ residual frequency-scale factor of ≈4× (3.7–4.5×); the earlier 10–20 MHz
+ indole band and 6–11× factor are withdrawn (compare the ~41× calibrated, not derived, ratio between
+ g_single^bare = 931 kHz and the calibrated constant g_single^eff = 38.3 MHz per App GPE). Exact
+ derivation of the renormalization factor is Open Problem O.12 (App ORQ §ORQ.5).
 
- The FAD•⁻ semiquinone hyperfine values (A_N5 ≈ 42, A_N10 ≈ 28, A_H5 ≈ 12 MHz;
- Δ_ST/h ≈ 30 MHz) are carried only as a literature order-of-magnitude
- reference band, NOT as the operative tryptophan scale; naive substitution
- of the 30 MHz FAD gap would understate the burden as ~3.7×.
+ The 30 MHz figure is the 3-term rms of the FAD•⁻ semiquinone values
+ A_N5 ≈ 42, A_N10 ≈ 28, A_H5 ≈ 12 MHz (≈ 29.96 MHz); it is a placeholder,
+ not the operative scale. (The 6-term rms that also includes three 7 MHz
+ proton terms is ≈ 21.75 MHz and is emitted separately for reference.)
 
-This verifier records the indole-band operative renormalization burden and
+This verifier records the TrpH•+ operative renormalization burden and
 the FAD reference scale. It is OPEN_CONDITIONAL on O.12/O.23 rather than a
 PASS-quality physical validation.
 """
@@ -30,18 +30,14 @@ import sys, math
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from report import make_result, write_result, print_summary
+from report import make_result, write_result, print_summary, status_from_open_problem
 
 
 def main():
- # Magnon-polaron avoided crossing: ν_vH ≈ Δ_ST / h. The operative bare
- # singlet-triplet scale is the β-tubulin tryptophan indole hyperfine band:
- # one indole nitrogen N1 (A_N1 ≈ 14–17 MHz) plus weaker ring-proton
- # couplings, giving A_hf,rms^indole ≈ 10–20 MHz. The FAD•⁻ N5/N10/H5 values
- # are an order-of-magnitude reference only (Δ_ST/h ≈ 30 MHz); β-tubulin
- # tryptophan has a different (lower) hyperfine band, so the operative
- # renormalization burden is ~6–11×, NOT the ~3.7× that naive substitution
- # of the FAD gap would give — Open Problem O.12.
+ # Magnon-polaron avoided crossing: ν_vH ≈ Δ_ST / h. Operative bare scale:
+ # TrpH•+ effective hyperfine 0.97 mT ≈ 27.2 MHz (> FAD•− 0.70 mT ≈ 19.6 MHz;
+ # Wong, Benjamin & Hore 2023). Residual factor to 112 ± 10 MHz ≈ 3.7–4.5×
+ # (Open Problem O.12). The 30 MHz value is the 3-term FAD rms placeholder only.
  A_ref_N5_MHz = 42.0 # FAD-like order-of-magnitude N5 reference (not operative)
  A_ref_N10_MHz = 28.0 # FAD-like order-of-magnitude N10 reference (not operative)
  A_ref_H5_MHz = 12.0 # FAD-like order-of-magnitude H5 reference (not operative)
@@ -56,61 +52,61 @@ def main():
  nu_Zeno_target_MHz = 112.0
  factor_naive_FAD = nu_Zeno_target_MHz / Delta_ST_over_h_FAD_MHz  # ~3.73x (reference)
 
- # Operative tryptophan indole singlet-triplet band and the renormalization
- # burden it implies to reach the registered ν_c = 112 ± 10 MHz peak:
- indole_band_lo_MHz = 10.0
- indole_band_hi_MHz = 20.0
- factor_indole_hi = nu_Zeno_target_MHz / indole_band_lo_MHz  # ~11.2x
- factor_indole_lo = nu_Zeno_target_MHz / indole_band_hi_MHz  # ~5.6x
+ # Operative TrpH•+ scale and the residual factor to the registered window:
+ MHZ_PER_MT = 28.025  # electron gyromagnetic ratio, MHz per mT
+ trp_aeff_MHz = 0.97 * MHZ_PER_MT  # ≈ 27.2 MHz
+ fad_aeff_MHz = 0.70 * MHZ_PER_MT  # ≈ 19.6 MHz
+ factor_trp_lo = (nu_Zeno_target_MHz - 10.0) / trp_aeff_MHz  # ≈ 3.75x
+ factor_trp_hi = (nu_Zeno_target_MHz + 10.0) / trp_aeff_MHz  # ≈ 4.49x
 
  res = make_result(
  name="nu_zeno_van_Hove",
- app_r_label="Zeno Drive frequency ν_Zeno (magnon-polaron avoided crossing)",
- formula="ν_vH ≈ Δ_ST/h with operative tryptophan indole band Δ_ST/h ≈ 10–20 MHz (Ch13 §13.1.2b)",
- predicted=indole_band_hi_MHz * 1e6,
+ app_psc_label="Zeno Drive frequency ν_Zeno (magnon-polaron avoided crossing)",
+ formula="ν_vH ≈ Δ_ST/h with operative TrpH•+ effective hyperfine ≈ 27 MHz (Ch13 §13.1.2b); 112 MHz is a registered Tier 3 branch value",
+ predicted=trp_aeff_MHz * 1e6,
  observed=nu_Zeno_target_MHz * 1e6,
  unit="Hz",
- app_r_predicted=nu_Zeno_target_MHz * 1e6,
- app_r_precision_str=(
+ app_psc_predicted=nu_Zeno_target_MHz * 1e6,
+ app_psc_precision_str=(
  f"Mechanism reference: magnon-polaron avoided crossing ν ≈ Δ_ST/h. "
- f"Operative β-tubulin tryptophan indole band Δ_ST/h ≈ "
- f"{indole_band_lo_MHz:.0f}–{indole_band_hi_MHz:.0f} MHz. Registered "
- f"ν_c = 112 ± 10 MHz requires a chiral phonon-polariton enhancement "
- f"factor of ~{factor_indole_lo:.0f}–{factor_indole_hi:.0f}× "
- f"(Open Problems O.12/O.23). The FAD reference gap (30 MHz) would "
- f"naively imply only ~{factor_naive_FAD:.2f}× and is not operative."
+ f"Operative TrpH•+ effective hyperfine ≈ {trp_aeff_MHz:.1f} MHz "
+ f"(> FAD•− ≈ {fad_aeff_MHz:.1f} MHz). The registered Tier 3 branch value "
+ f"ν_c = 112 ± 10 MHz (not an observation) requires a residual factor of "
+ f"≈{factor_trp_lo:.1f}–{factor_trp_hi:.1f}× (Open Problems O.12/O.23). "
+ f"The 30 MHz value is the 3-term FAD rms placeholder only."
  ),
- app_r_precision_ppm=None,
- tier="Tier 2 mechanism reference + Tier 3 protected-branch value pending O.12/O.23",
- status="OPEN_CONDITIONAL",
+ app_psc_precision_ppm=None,
+ tier="Tier 1 two-branch model mathematics / Tier 3 realization and value (phason coupling; protected-branch value pending O.12/O.23)",
+ status=status_from_open_problem(
+  True, open_status="OPEN_CONDITIONAL", closed_status="TENSION"
+ ),
  tolerance_ppm=None,
  extra={
- "operative_indole_band_lo_MHz": indole_band_lo_MHz,
- "operative_indole_band_hi_MHz": indole_band_hi_MHz,
- "operative_enhancement_factor_lo": factor_indole_lo,
- "operative_enhancement_factor_hi": factor_indole_hi,
+ "operative_trp_aeff_MHz": trp_aeff_MHz,
+ "fad_aeff_MHz": fad_aeff_MHz,
+ "operative_enhancement_factor_lo": factor_trp_lo,
+ "operative_enhancement_factor_hi": factor_trp_hi,
+ "hyperfine_source": "Wong, Benjamin & Hore 2023, PCCP 25:975-982 (TrpH•+ 0.97 mT, FAD•− 0.70 mT)",
+ "withdrawn": "the earlier 10-20 MHz indole band and 6-11x factor",
  "reference_A_N5_MHz": A_ref_N5_MHz,
  "reference_A_N10_MHz": A_ref_N10_MHz,
  "reference_A_H5_MHz": A_ref_H5_MHz,
  "reference_A_other_MHz": A_ref_other_MHz,
- "reference_hyperfine_RMS_FAD_MHz": A_hf_rms_FAD_MHz,
+ "reference_hyperfine_RMS_6term_incl_protons_MHz": A_hf_rms_FAD_MHz,
  "reference_Delta_ST_over_h_FAD_MHz": Delta_ST_over_h_FAD_MHz,
  "reference_naive_FAD_enhancement_factor": factor_naive_FAD,
  "nu_Zeno_target_MHz": nu_Zeno_target_MHz,
- "phonon_polariton_enhancement_factor_for_coupling_App_Q": 41.0,
+ "phonon_polariton_enhancement_factor_for_coupling_App_GPE": 41.0,
  "derivation_note": (
  "Magnon-polaron avoided crossing: solving v_ph k = Δ_ST/ℏ + Jk² "
  "in the small-J regime gives k_c ≈ Δ_ST/(ℏ v_ph), and the "
  "avoided-crossing frequency on the lower branch is ν ≈ Δ_ST/h. "
- "The operative β-tubulin tryptophan indole hyperfine band is "
- "Δ_ST/h ≈ 10–20 MHz (one indole N1 ≈ 14–17 MHz plus weaker ring "
- "protons), so the registered 112 ± 10 MHz peak requires a chiral "
- "phonon-polariton renormalization of ~6–11× (Open Problems "
- "O.12/O.23; analogous to the ~41× coupling renormalization that "
- "lifts g_single^bare = 931 kHz to g_single^eff = 38.3 MHz per "
- "App Q). The FAD•⁻ semiquinone values (Δ_ST/h ≈ 30 MHz) are a "
- "literature order-of-magnitude reference only; naive substitution "
- "would understate the burden as ~3.7×."
+ "The operative TrpH•+ effective hyperfine is ≈ 27 MHz "
+ "(0.97 mT; larger than FAD•− ≈ 20 MHz), so the registered 112 ± 10 MHz "
+ "branch value requires a residual factor of ≈ 3.7–4.5× (Open Problems "
+ "O.12/O.23; compare the ~41× calibrated (not derived) ratio between "
+ "g_single^bare = 931 kHz and the calibrated constant g_single^eff = 38.3 MHz per "
+ "App GPE). The 30 MHz figure is the 3-term FAD rms placeholder only."
  ),
  },
  )

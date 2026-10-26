@@ -1,19 +1,18 @@
 """
 verify_mixing_unitarity.py — 3×3 unitarity check for the CKM and PMNS matrices
 
-Confirms that individual mixing-angle
-predictions in App R §R.4 are not independent — they are constrained by the full
-3×3 unitarity of the CKM and PMNS matrices. This verifier reconstructs the
-unitary matrices from the GCT-predicted angles and the standard parametrization,
-then checks the nine unitarity constraints (three row-norms, three column-norms,
-three off-diagonal sum rules) plus the determinant.
+Bookkeeping check (Tier 1 algebraic identity). This verifier assembles the
+CKM and PMNS matrices from the GCT angles in the standard PDG parametrization,
+a product of unitary rotations and a phase, then evaluates the nine unitarity
+constraints (three row-norms, three column-norms, three off-diagonal sum rules)
+plus the determinant.
 
-For CKM: GCT predicts s12, s23, s13, δ_CP. Test unitarity to ~1% (residual driven
-by individual angle errors of similar magnitude).
-
-For PMNS: GCT predicts θ12, θ23 (tension), θ13, δ_CP. Test unitarity allowing
-for the θ23 tension; the residual is expected to be larger but still consistent
-with unitarity given the individual θ23 mismatch.
+The standard parametrization is unitary for any real angles and phase, so the
+residuals vanish to machine precision by construction. The check confirms the
+matrix assembly; it does not test the GCT angles. Agreement of individual
+elements with PDG values is tracked separately (App PSC §PSC.4; O.7 for CKM;
+the θ23 tension for PMNS). The 1.5% and 5% tolerances below are loose guards
+on the assembly, not physical bands.
 """
 
 import sys
@@ -117,15 +116,15 @@ def main():
  pmns_obs_res = unitarity_residuals(V_pmns_obs)
 
  # CKM 3x3 unitarity result row
- ckm_status = "PASS" if ckm_unitary else "FAIL"
+ ckm_status = "TIER1_EXACT" if ckm_unitary else "FAIL"
  result_ckm = make_result(
  name="ckm_unitarity_3x3",
- app_r_label="CKM 3x3 Unitarity Residual",
+ app_psc_label="CKM 3x3 Unitarity Residual",
  formula="V V^dagger = 1 from GCT angles (s12=phi^-3(1-5alpha), s23=phi^-(6+phi^-1), s13=phi^-(11+phi^-1), delta_CP=2pi/phi)",
  predicted=ckm_res["max_row_norm_residual"],
  observed=0.0,
  unit="dimensionless",
- tier="Tier 2",
+ tier="Tier 1 (algebraic identity)",
  status=ckm_status,
  tolerance_ppm=None,
  extra={
@@ -138,21 +137,22 @@ def main():
  f"CKM 3x3 unitarity from GCT angles. Max row-norm residual: "
  f"{ckm_res['max_row_norm_residual']:.5f}; max off-diagonal residual: "
  f"{ckm_res['max_off_diagonal_residual']:.5f}; |det V|: {ckm_res['abs_det']:.5f}. "
- "Consistent with unitarity to ~1% (driven by individual angle residuals)."
+ "Unitary by construction (standard parametrization); the residuals test the matrix "
+ "assembly, not the GCT angles. Element-level mismatch against PDG is tracked under O.7."
  ),
  },
  )
 
  # PMNS 3x3 unitarity result row (separate)
- pmns_status = "PASS" if pmns_unitary else "FAIL"
+ pmns_status = "TIER1_EXACT" if pmns_unitary else "FAIL"
  result_pmns = make_result(
  name="pmns_unitarity_3x3",
- app_r_label="PMNS 3x3 Unitarity Residual",
+ app_psc_label="PMNS 3x3 Unitarity Residual",
  formula="U U^dagger = 1 from GCT angles (theta12=arctan(1/phi)+theta13/5, theta23=45deg, theta13=arcsin(phi^-4))",
  predicted=pmns_res["max_row_norm_residual"],
  observed=0.0,
  unit="dimensionless",
- tier="Tier 2 / Tier 3 (theta23 Tension)",
+ tier="Tier 1 (algebraic identity for the unitarity check; Tier 3 disposition on theta_23 tension is tracked separately)",
  status=pmns_status,
  tolerance_ppm=None,
  extra={
@@ -167,8 +167,8 @@ def main():
  f"{pmns_res['max_row_norm_residual']:.5f}; max off-diagonal residual: "
  f"{pmns_res['max_off_diagonal_residual']:.5f}; |det U|: {pmns_res['abs_det']:.5f}. "
  f"Cross-check with observed theta23=49.5 deg gives row-norm residual "
- f"{pmns_obs_res['max_row_norm_residual']:.5f}. PMNS unitarity is consistent given "
- "the GCT theta23 tension; no additional unitarity violation introduced."
+ f"{pmns_obs_res['max_row_norm_residual']:.5f}. Unitary by construction for any angles; "
+ "the theta23 tension is an element-level mismatch tracked separately, not a unitarity test."
  ),
  },
  )

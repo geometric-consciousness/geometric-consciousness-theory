@@ -270,7 +270,7 @@ def main() -> int:
         print("  matrices, the I action permutes the cage.")
         print()
         print("  Building I-irrep decomposition of the cage adjacency spectrum...")
-        results["disposition"] = "I-symmetric in 6D; can derive eta_scalar = -8 structurally"
+        results["disposition"] = "I-symmetric in 6D; finite weighted-adjacency diagnostic only; no APS operator/domain/index"
     else:
         print()
         print("  CAGE IS NOT I-SYMMETRIC UNDER THE 6D ACTION.")
@@ -334,9 +334,9 @@ def main() -> int:
                 nz = evals[np.abs(evals) > 1e-12]
                 eta = float(np.sum(np.sign(nz)))
                 print(f"  Repaired-cage adjacency spectrum: min={evals.min():.3f}, max={evals.max():.3f}")
-                print(f"  eta_scalar (repaired) = {eta}")
-                print(f"  (engine's original cage: eta_scalar = -8)")
-                results["eta_scalar_repaired"] = eta
+                print(f"  weighted-adjacency sign sum (repaired) = {eta}")
+                print(f"  reference finite-cage adjacency sign sum: -8")
+                results["adjacency_sign_sum_repaired"] = eta
 
                 from collections import Counter
                 multiplicities = []

@@ -6,7 +6,13 @@
   "t_intel_cosmic_gyr": 12.3,
   "V6r_baseline_no_tech": 3.551620229647057e-05,
   "V1_empirical_reference": 0.00045637170461554355,
-  "tau_tech_match_for_V1": 10.0,
+  "tau_tech_selected_for_V1_comparison": 10.0,
+  "tau_tech_selection_status": "ABOVE_GRID_MAX_TAU_CAP",
+  "selected_model_abs_delta_w_at_z028": 3.33939987022802e-05,
+  "selected_minus_V1_abs_delta_w_at_z028": -0.00042297770591326334,
+  "selected_to_V1_ratio": 0.07317280708805547,
+  "selected_fractional_residual_vs_V1": -0.9268271929119445,
+  "tau_tech_band_position": "OUTSIDE_STIPULATED_BAND",
   "kardashev_band_range_tau_tech_gyr": [
     1.0,
     2.0
@@ -127,6 +133,6 @@
       "abs_delta_w_at_z_028": 3.3393998702280214e-05
     }
   ],
-  "principled_sweep_used_for_closure": "V7prime (biosphere-age, per Sec 14.6.2 'technological advancement' reading)",
-  "closure_text": "V6r baseline (no intra-Class-2 dynamics) = 3.55e-05; V1 empirical level = 4.56e-04. The Sec 14.6.2 intra-Class-2 technological-exp axiom yields V7 = V6r * exp((t-t_intel_cosmic)/tau_tech). Kardashev-band tau_tech in [1, 2] Gyr gives |Dw(z=0.28)| in [1.47e-05, 2.48e-05] (Kardashev-band envelope). V1's empirical level matches V7 at tau_tech = 10.00 Gyr -- OUTSIDE the physically-anchored Kardashev band. The principled load-bearing closure of O.13 under the combined Class-2 axiom (Sec 14.5.2) + technological-exp axiom (Sec 14.6.2) is the Kardashev-band envelope; the pre-F-prime V6r-to-V1 envelope (13x width) is narrowed to 2x in the principled band."
+  "conditional_sensitivity_sweep_used": "V7prime (biosphere-age assigned weight motivated by the Sec 14.6.2 passage)",
+  "conditional_scope_text": "V6r baseline (no intra-Class-2 dynamics) = 3.55e-05; V1 empirical level = 4.56e-04. The Sec 14.6.2 intra-Class-2 assigned technological-exp weight defines V7 = V6r * exp((t-t_intel_cosmic)/tau_tech). Kardashev-band tau_tech in [1, 2] Gyr gives |Dw(z=0.28)| in [1.47e-05, 2.48e-05] (Kardashev-band envelope). V1's empirical level is not matched within the sampled grid; tau_tech = 10.00 Gyr is the nearest boundary (ABOVE_GRID_MAX_TAU_CAP), with selected/V1 ratio 0.073173 and fractional residual -0.926827, outside the stipulated Kardashev-motivated band. This conditional sensitivity envelope does not close O.13 or establish a physical source allocation, coupling, normalized history, or causal bridge; the pre-F-prime V6r-to-V1 envelope (13x width) is narrowed to 2x in the stipulated band."
 }

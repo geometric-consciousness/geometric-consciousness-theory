@@ -75,6 +75,7 @@
     "finite_spectrum": true,
     "index_available": true,
     "spectral_closure_pass": false,
-    "pass_interpretation": "Engine execution/tier-disclosure pass; spectral_closure_pass carries the physics-closure status.",
-    "pass": true
+    "pass_interpretation": "pass == spectral_closure_pass (both gaps > 2 sigma). The former execution-only pass is retired.",
+    "verdict": "GAPS_11_17_NOT_SIGNIFICANT_sig11=0.69_sig17=0.23",
+    "pass": false
 }

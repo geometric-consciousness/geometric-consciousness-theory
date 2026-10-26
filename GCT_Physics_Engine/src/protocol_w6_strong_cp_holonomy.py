@@ -2,7 +2,7 @@
 """
 protocol_w6_strong_cp_holonomy.py - W6: finite witness for theta-bar = 0
 ========================================================================
-App FM P.32 states GCT predicts the strong-CP angle theta-bar = 0 exactly "from
+App FSM P.32 states GCT predicts the strong-CP angle theta-bar = 0 exactly "from
 icosahedral chirality-preserving cycle closure (all 5/3/2-fold I_h rotations
 close at multiples of 2pi exactly)", with theorem-grade elevation bundled into
 O.5 (QLQCD-1L). W6 supplies the FINITE, decidable part of that mechanism.

@@ -1,11 +1,14 @@
 {
-  "NU_BARE_MIN_MHZ": 10.0,
-  "NU_BARE_MAX_MHZ": 20.0,
+  "NU_BARE_MHZ": 27.18425,
+  "NU_BARE_FAD_MHZ": 19.617499999999996,
+  "bare_scale_source": "Wong, Benjamin & Hore 2023, PCCP 25:975-982 (TrpH+ 0.97 mT; FAD- 0.70 mT)",
+  "withdrawn_inputs": "10-20 MHz indole band and 6-11x factor",
   "NU_TARGET_MHZ": 112.0,
-  "required_ratio_min": 5.6,
-  "required_ratio_max": 11.2,
-  "required_g_over_nu_bare_min": 2.754995462791182,
-  "required_g_over_nu_bare_max": 5.577633906953736,
+  "NU_TARGET_HALFWIDTH_MHZ": 10.0,
+  "required_ratio_min": 3.752172673514995,
+  "required_ratio_max": 4.487892805576759,
+  "required_g_over_nu_bare_min": 1.808231164140295,
+  "required_g_over_nu_bare_max": 2.187531818874164,
   "CISS_efficiency_range": [
     0.05,
     0.2
@@ -18,12 +21,13 @@
     2.5,
     6.0
   ],
-  "required_range_fits_model_target": true,
+  "required_range_fits_model_target": false,
   "g_over_nu_scope": "The g/nu_bare interval is a GCT model-defined strong-coupling target inferred from avoided-crossing bookkeeping; CISS literature supplies spin-polarization percentages, not a direct coupling interval.",
-  "tier_label": "Tier 3 order-of-magnitude partial closure (consistency only, NOT first-principles RG)",
+  "model_target_note": "The [2.5, 6.0] target was set for the withdrawn 10-20 MHz band; reported for comparison only.",
+  "tier_label": "Tier 3 order-of-magnitude estimate (no closure claimed; NOT first-principles RG)",
   "full_tier_2_closure_requires": [
     "Deriving g from icosahedral AKN tiling + CISS at Trp microenvironments",
     "Explicit RG flow on magnon dispersion (not avoided crossing)",
-    "Coupling to App Q renormalization framework (~41x g_single^eff)"
+    "Coupling to App GPE renormalization framework (~41x g_single^eff)"
   ]
 }

@@ -121,7 +121,25 @@ def solve_alignment():
                 best_psi = psi
                 best_ra, best_dec = cartesian_to_ra_dec(v)
                 
-    verdict = "PASS" if min_sep < HOTSPOT_RADIUS else "FAIL"
+    geometric_match = bool(min_sep < HOTSPOT_RADIUS)
+
+    # Look-elsewhere control (the former PASS ignored that the
+    # azimuth psi is fitted). With psi free, a target at polar angle theta
+    # from the CMB-pinned vertex is matched to within min_i |theta - theta_i|,
+    # where theta_i are the polar angles of the other 11 vertices. Monte Carlo
+    # over isotropic target directions gives the chance of a match this good.
+    theta_v = np.degrees(np.arccos(np.clip(verts_aligned[1:] @ v_cmb, -1.0, 1.0)))
+    rng = np.random.default_rng(11938)
+    n_mc = 100000
+    u = rng.normal(size=(n_mc, 3))
+    u /= np.linalg.norm(u, axis=1)[:, None]
+    theta_t = np.degrees(np.arccos(np.clip(u @ v_cmb, -1.0, 1.0)))
+    mc_sep = np.min(np.abs(theta_t[:, None] - theta_v[None, :]), axis=1)
+    p_mc_radius = float(np.mean(mc_sep < HOTSPOT_RADIUS))
+    p_mc_as_close = float(np.mean(mc_sep <= min_sep))
+    passed = bool(geometric_match and p_mc_radius < 0.05)
+    verdict = ("ALIGNMENT_SIGNIFICANT" if passed
+               else f"ALIGNMENT_NOT_SIGNIFICANT_MC_P={p_mc_radius:.2f}")
     
     results = {
         "protocol": "protocol_ta_hotspot",
@@ -132,12 +150,17 @@ def solve_alignment():
         "min_separation_deg": float(min_sep),
         "hotspot_radius_deg": float(HOTSPOT_RADIUS),
         "azimuth_offset_deg": float(np.degrees(best_psi)),
+        "geometric_match_within_radius": geometric_match,
+        "mc_n_random_directions": n_mc,
+        "mc_p_within_radius_with_psi_fit": p_mc_radius,
+        "mc_p_as_close_as_observed": p_mc_as_close,
         "verdict": verdict,
-        "pass": bool(min_sep < HOTSPOT_RADIUS)
+        "pass": passed
     }
     
     print(f"TA Hotspot Audit Complete.")
-    print(f"Min Separation: {min_sep:.2f} degrees")
+    print(f"Min Separation: {min_sep:.2f} degrees (azimuth fitted)")
+    print(f"MC p (random direction within {HOTSPOT_RADIUS:.0f} deg after psi fit): {p_mc_radius:.3f}")
     print(f"Verdict: {verdict}")
     
     output_path = get_output_path("protocol_ta_hotspot_results.json")

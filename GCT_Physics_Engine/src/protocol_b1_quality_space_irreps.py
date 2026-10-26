@@ -125,7 +125,7 @@ def run():
     # intensity/olfaction). The rotation group I computed here has no inversion, so
     # only the dimensional content (not any g/u inversion-parity label) is asserted
     # by this engine; the inversion parity of the coordinate vector sector is fixed
-    # by the gauge-sector conventions (App ZN), not by this protocol.
+    # by the gauge-sector conventions (App GRF), not by this protocol.
     lin = decompose(chi_V)            # R^6 itself
     print(f"\n  Linear sector R^6     : {fmt(lin)}")
     n_3d_linear = lin.get("T_1", 0) + lin.get("T_2", 0)

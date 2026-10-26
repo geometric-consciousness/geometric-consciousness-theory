@@ -1,20 +1,28 @@
 {
   "name": "bottom_quark",
-  "app_r_label": "Bottom quark (m_b)",
+  "app_psc_label": "Bottom quark (m_b)",
   "formula": "m_b = m_c \u00b7 \u03c6^2 \u00b7 (5/4)",
-  "tier": "Tier 3 absolute prediction (5/4 coefficient Tier 2; imports Tier 3 m_c input; state-level residual conditional on O.5)",
+  "tier": "Tier 3 absolute prediction (5/4 coefficient Tier 2; imports Tier 3 m_c input; state-level residual conditional on O.5) + Tier 4 as evidence that phi explains the value (constant control test v3 NEGATIVE-FRAGILE; App PSC \u00a7PSC.9.6)",
   "predicted": 4134.688873611131,
   "observed": 4183.0,
+  "reference_class": "EMPIRICAL_ANCHOR",
+  "band_outcome": "OUTSIDE_VERIFIER_BAND",
+  "derivational_closure": "NO_DERIVATIONAL_CLOSURE_FLAG",
   "unit": "MeV",
-  "app_r_predicted": 4134.69,
-  "app_r_precision_str": "1.15%; Tier 2 5/4 coefficient + Tier 3 m_c input \u2192 Tier 3 absolute prediction",
-  "app_r_precision_ppm": 11549.0,
+  "app_psc_predicted": 4134.69,
+  "app_psc_precision_str": "-1.15% (6.9 sigma low against PDG 2024 4183 +/- 7 MeV): FAIL of the PDG +/- 5 sigma rule; Tier 2 5/4 coefficient + Tier 3 m_c input \u2192 Tier 3 absolute prediction",
+  "app_psc_precision_ppm": 11549.0,
   "independent_precision_ppm": 11549.396698271245,
-  "status": "PASS",
-  "tolerance_ppm": 30000.0,
+  "status": "FAIL",
+  "tolerance_ppm": 8367.200573750895,
   "discrepancy_notes": [],
   "extra": {
     "percent_error": 1.1549396698271244,
-    "coefficient_5_over_4_provenance": "A5 representation theorem dim(5E)/dim(4D) = 5/4"
+    "sigma_tension": 6.901589484124088,
+    "registered_gate_sigma": 5.0,
+    "observed_sigma_MeV": 7.0,
+    "cl_note": "PDG labels the +/-7 MeV as a 90% CL interval; read as such, the 1-sigma error is about 4.3 MeV and the miss is about 11 sigma",
+    "binding_rule": "P.23: m_b outside PDG +/- 5 sigma of the geometric prediction (the P.24 rule); the earlier 4130-4230 MeV window was centred on the measurement and is withdrawn as a test",
+    "coefficient_5_over_4_provenance": "A5 representation theorem dim(H)/dim(G) = 5/4"
   }
 }

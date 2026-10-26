@@ -1,40 +1,52 @@
 #!/usr/bin/env python3
 """
-protocol_hadron_topology.py — Hadron-Sector Topological Derivations
-=======================================================================
-Derives the Strange Quark drag coefficient (12α) and the CKM mixing
-exponents (φ⁻¹) from lattice topology.
+protocol_hadron_topology.py — Hadron-Sector Topological Checks
+=================================================================
+Numerical checks for the hadron-sector readings of lattice topology: the
+Strange Quark drag coefficient (12α) and the φ⁻¹ CKM/CP exponents.
 
-The 12α drag coefficient and the φ⁻¹ CKM/CP exponents are structural
-consequences of the 6D → 3D projection mechanics, established below in
-four geometric theorems.
+The lattice counts and holonomy arithmetic below are exact. Their physical
+readings are not established here: the 12α strange-quark drag carries Tier 2
+mechanism status (conditional on the Tier 3 face-defect quark assignment) with a
+Tier 3 coefficient identification, and the φ⁻¹ CKM
+exponents and the CP phase are Tier 3 ansätze (App PSC §PSC.4). The four
+checks verify the arithmetic each reading uses.
 
-Theorem I   — Z⁶ Coordination Number
+Check I   — Z⁶ Coordination Number
     The Z⁶ hypercubic bulk lattice has exactly Z = 12 nearest-neighbour
     bonds per vertex (±e_k, k = 1…6).  This is the drag channel count
     available to an *unpinned* face defect (quark) moving through the bulk.
 
-Theorem II  — CKM φ⁻¹ Exponent via SU(2) Face-Defect Holonomy
+Check II  — CKM φ⁻¹ Exponent via SU(2) Face-Defect Holonomy
     A quark (face defect) undergoing flavour-changing face-tunneling is
     transported across the SU(2)_L weak bundle by the identical 2π loop
     that generates the Baryonic Berry Phase in protocol_proton_berry_phase.
-    The holonomy correction is structurally identical: φ_correction = φ⁻¹.
+    Under the Tier 3 ansatz the holonomy correction is taken as identical: φ_correction = φ⁻¹.
 
-Theorem III — Strange Quark 12α Drag Coefficient
+Check III — Strange Quark 12α Drag Coefficient
     The drag on an unpinned face defect is proportional to the number of
     bulk bonds broken per lattice step.  In Z⁶: Z_bulk = 12.
     The muon (vertex defect) is confined to 5 icosahedral channels.
     Therefore: C_drag(strange) = 12·α, and C_drag(muon) = 5·α.
-    Ratio = 12/5 = 2.4 — a pure geometric invariant.
+    Ratio = 12/5 = 2.4 — a channel-count ratio under the Tier 3 drag reading.
 
-Theorem IV  — CP Phase Radians (Jackiw–Rebbi Boundary Twist)
-    The CP-violating phase is the Jackiw–Rebbi zero-mode accumulated by the
+Check IV  — CP Phase Radians (Jackiw–Rebbi Boundary Twist)
+    Under the Tier 3 ansatz, the CP-violating phase is read as the Jackiw–Rebbi zero-mode accumulated by the
     full dodecahedral quasicrystal boundary twist, modulated by the φ⁻¹
     holonomy: δ_CP = 2π·φ⁻¹ radians ≈ 222.49°.
 
 PASS criterion
 --------------
-All four theorems verified numerically. Script exits 0.
+Check II previously passed on (1/2)*(2*phi^-1) == phi^-1,
+which holds because R = 2*phi^-1 is typed in; that comparison is retired and
+recorded as an input. Check II gates on the verifier's 0.5% CKM band for
+s23 and s13, with the PDG 2024 targets read from the SSOT (config/gct_constants.yaml
+S23_CKM, S13_CKM; the same values as verify_independent/constants.py). s13 lies
+inside the gate (about 76 ppm); s23 misses GCT's own 0.5% gate (0.98%), about
+0.6 sigma from the PDG central value, so the registered tension is a miss of the
+precision gate, not a clash with data. Check III repeats the Check I count
+(Z = 12) and Check IV uses a 296-degree window; both are recorded, but neither
+is evidence on its own.
 
 Output
 ------
@@ -101,12 +113,12 @@ N_HOLONOMY_STEPS = 10_000
 
 
 # ============================================================================
-# SECTION 2 — Theorem I: Z⁶ Coordination Number Z = 12
+# SECTION 2 — Check I: Z⁶ Coordination Number Z = 12
 # ============================================================================
 
 def derive_z6_coordination_number() -> dict:
     """
-    Theorem I: The Z⁶ hypercubic lattice has coordination number Z = 12.
+    Check I [Tier 1 lattice count]: the Z⁶ hypercubic lattice has coordination number Z = 12.
 
     Proof
     -----
@@ -122,8 +134,8 @@ def derive_z6_coordination_number() -> dict:
     in gct_lattice.py's get_neighbors() method (12 direction vectors).
 
     For an *unpinned* face defect (quark) propagating through the 6D bulk
-    rather than the 3D quasicrystal surface, all 12 bulk bonds are accessible.
-    The drag coefficient is therefore:
+    rather than the 3D quasicrystal surface, all 12 bulk bonds are proposed to be
+    accessible. Under that reading the drag coefficient is:
         C_drag = Z_bulk × α = 12 × α.
     """
     # Enumerate the 12 nearest-neighbour displacement vectors in Z⁶
@@ -153,35 +165,36 @@ def derive_z6_coordination_number() -> dict:
 
 
 # ============================================================================
-# SECTION 3 — Theorem II: CKM φ⁻¹ via Face-Defect SU(2) Holonomy
+# SECTION 3 — Check II: CKM φ⁻¹ via Face-Defect SU(2) Holonomy
 # ============================================================================
 
 def derive_ckm_phi_inv() -> dict:
     """
-    Theorem II: The CKM φ⁻¹ exponent is identical to the Baryonic Berry Phase
-    correction because both originate from the same SU(2)_L weak gauge field
-    transporting a topological defect around a 2π circuit of the 5-fold axis.
+    Check II [Tier 3 ansatz]: the proposed CKM φ⁻¹ exponent reuses the
+    Baryonic Berry Phase correction, on the hypothesis that both originate
+    from the same SU(2)_L weak gauge field transporting a topological defect
+    around a 2π circuit of the 5-fold axis.
 
-    Proof
-    -----
-    The baryonic circuit (Proton, vertex defect) was proven in
+    Computation
+    -----------
+    The baryonic circuit (Proton, the face-defect baryonic triad) was computed in
     protocol_proton_berry_phase.py to yield U_weak = −I₂ (Berry phase π),
     giving φ⁻¹ correction = N_weak × R = (1/2) × (2/φ) = φ⁻¹.
 
-    Key observation: The quark (face defect) undergoes *flavour-changing
-    face-tunneling*, which is mediated by the SAME SU(2)_L gauge field.
-    The weak bundle structure is identical — the 5-fold dodecahedral axis
-    governs both vertex-defect confinement (baryonic triad) and face-defect
-    tunneling (inter-generation mixing).
+    Hypothesis: the quark (face defect) undergoes *flavour-changing
+    face-tunneling*, mediated by the same SU(2)_L gauge field, so that
+    the weak bundle structure is shared — the 5-fold dodecahedral axis
+    governs both the baryonic-triad circuit (face defects around the 5-fold
+    vertex star) and face-defect tunneling (inter-generation mixing).
 
     The loop in both cases is:
         θ ∈ [0, 2π], A_θ = (1/2)·σ_z  [canonical SU(2) spin-1/2 connection]
 
-    Therefore U_weak = exp(i·π·σ_z) = −I₂ identically for both defect types.
+    Under this hypothesis U_weak = exp(i·π·σ_z) = −I₂ for both defect types.
     The projection ratio R = 2·φ⁻¹ (pentagon edge-to-diagonal) is a property
     of the ambient icosahedral geometry, not of the defect species.
 
-    Corollary — CKM exponents:
+    Proposed CKM exponents (Tier 3 ansatz):
         s23 = φ^{−(6 + φ⁻¹)}     [3rd generation, double pentagon winding]
         s13 = φ^{−(11 + φ⁻¹)}    [1st↔3rd crossing, triple pentagon winding]
     """
@@ -202,12 +215,15 @@ def derive_ckm_phi_inv() -> dict:
     s23_pred = PHI ** (-s23_exponent)
     s13_pred = PHI ** (-s13_exponent)
 
-    # PDG 2024 targets
-    s23_target = 0.0418
-    s13_target = 0.00369
+    # PDG 2024 targets (RPP CKM review eq. 12.28), read from the SSOT
+    s23_target = float(C.S23_CKM)            # 0.04183 rounded to 0.0418
+    s13_target = float(C.S13_CKM)            # 0.003732
+    s23_full   = float(C.S23_CKM_PDG2024_FULL)
+    s23_sig_lo = float(C.S23_CKM_PDG2024_ERR_MINUS)
 
     s23_err_pct = abs(s23_pred - s23_target) / s23_target * 100.0
     s13_err_pct = abs(s13_pred - s13_target) / s13_target * 100.0
+    CKM_BAND_PCT = 0.5   # same 0.5% band as verify_independent/verify_ckm.py
 
     return {
         "U_weak_trace":           float(np.trace(U_weak).real),
@@ -224,24 +240,33 @@ def derive_ckm_phi_inv() -> dict:
         "s23_predicted":          float(s23_pred),
         "s23_target_PDG":         s23_target,
         "s23_error_pct":          float(s23_err_pct),
+        "s23_target_PDG_unrounded": s23_full,
+        "s23_error_pct_vs_unrounded": float(abs(s23_pred - s23_full) / s23_full * 100.0),
+        "s23_sigma_from_PDG":     float(abs(s23_pred - s23_full) / s23_sig_lo),
         "s13_predicted":          float(s13_pred),
         "s13_target_PDG":         s13_target,
         "s13_error_pct":          float(s13_err_pct),
-        "PASS":                   minus_id_pass and corr_match,
+        "s13_error_ppm":          float(s13_err_pct * 1.0e4),
+        "phi_correction_status":  "INPUT: R_projection = 2*phi^-1 is typed, so N_weak*R = phi^-1 holds by construction",
+        "ckm_band_pct":           CKM_BAND_PCT,
+        "s23_within_band":        bool(s23_err_pct < CKM_BAND_PCT),
+        "s13_within_band":        bool(s13_err_pct < CKM_BAND_PCT),
+        "PASS":                   bool(minus_id_pass and s23_err_pct < CKM_BAND_PCT and s13_err_pct < CKM_BAND_PCT),
     }
 
 
 # ============================================================================
-# SECTION 4 — Theorem III: Strange Quark 12α Drag Coefficient
+# SECTION 4 — Check III: Strange Quark 12α Drag Coefficient
 # ============================================================================
 
 def derive_strange_drag(z6_data: dict, ckm_data: dict) -> dict:
     """
-    Theorem III: The Strange Quark drag coefficient is 12α, arising from the
-    Z⁶ bulk coordination number.
+    Check III: the proposed Strange Quark drag coefficient 12α, read from
+    the Z⁶ bulk coordination number (Tier 2 mechanism, conditional on the
+    Tier 3 face-defect assignment; Tier 3 coefficient identification, App PSC §PSC.4).
 
-    Proof
-    -----
+    Reasoning
+    ---------
     Topological drag on a lattice defect is a frictional coupling to the
     surrounding lattice oscillators (phonons/phasons).  The drag coefficient
     scales with the number of active coupling channels.
@@ -256,15 +281,15 @@ def derive_strange_drag(z6_data: dict, ckm_data: dict) -> dict:
        → Lepton correction factor: (1 − 5α)
 
     2. Face Defect (Quark) — UNPINNED:
-       The quark is an interstitial face defect that is NOT pinned to the
+       Under the Tier 3 face-defect assignment (V3 Ch03 §3.4), the quark is an interstitial face defect NOT pinned to the
        3D quasicrystal surface.  It interacts with the 6D bulk lattice.
        In the Z⁶ parent lattice, every site has 12 nearest-neighbour bonds
-       (Theorem I: Z = 2 × 6 = 12).
+       (Check I: Z = 2 × 6 = 12).
        → C_drag(face) = 12 × α
        → Strange quark correction factor: (1 − 12α)
 
     The ratio of drag coefficients:
-        12 / 5 = 2.4   [pure geometric invariant — no additional fitted coefficient]
+        12 / 5 = 2.4   [channel-count ratio — no additional fitted coefficient]
 
     Numerical verification
     ----------------------
@@ -272,9 +297,9 @@ def derive_strange_drag(z6_data: dict, ckm_data: dict) -> dict:
         m_s = m_u × φ^8 × (1 − 12α)    [protocol_quark_mismatch.py strange-mass branch]
 
     We verify that the 12 in the suppression factor is *exactly* the Z⁶
-    coordination number derived in Theorem I, to machine precision.
+    coordination number derived in Check I, to machine precision.
     """
-    Z_bulk = z6_data["nn_directions_count"]       # 12 (from Theorem I)
+    Z_bulk = z6_data["nn_directions_count"]       # 12 (from Check I)
     Z_icosahedral = N_ICOSAHEDRAL_CHANNELS        # 5
 
     # Drag coefficients
@@ -300,19 +325,20 @@ def derive_strange_drag(z6_data: dict, ckm_data: dict) -> dict:
         "suppression_strange_quark":   float(suppression_strange),
         "suppression_muon_lepton":     float(suppression_muon),
         "coord_number_exact_12":       coord_number_match,
+        "repeat_of_check_I":           True,
         "PASS":                        coord_number_match,
     }
 
 
 # ============================================================================
-# SECTION 5 — Theorem IV: CP Phase in Radians (Jackiw–Rebbi)
+# SECTION 5 — Check IV: CP Phase in Radians (Jackiw–Rebbi)
 # ============================================================================
 
 def derive_cp_phase(ckm_data: dict) -> dict:
     """
-    Theorem IV: The CP-violating phase δ_CP = 2π·φ⁻¹ radians.
+    Check IV [Tier 3 ansatz]: the proposed CP-violating phase δ_CP = 2π·φ⁻¹ radians.
 
-    Physical Mechanism — Jackiw–Rebbi Boundary Twist
+    Proposed Mechanism — Jackiw–Rebbi Boundary Twist
     -------------------------------------------------
     The dodecahedral quasicrystal tiling has a topological boundary.  When
     a face defect (quark) is transported around the full boundary, it
@@ -324,19 +350,19 @@ def derive_cp_phase(ckm_data: dict) -> dict:
     proportional to the Berry holonomy.
 
     Full boundary twist = 2π (one complete winding of the dodecahedral surface)
-    Holonomy modulation = φ⁻¹ (from Theorem II — the SU(2) projection ratio)
+    Holonomy modulation = φ⁻¹ (from Check II — the SU(2) projection ratio)
 
-    Therefore:
+    Under this proposal:
         δ_CP = 2π × φ⁻¹  [radians]
              = 360° × φ⁻¹  [degrees]
 
     Cross-check: this matches the CP phase in protocol_mixing_geometry.py
-    (360 × φ⁻¹ degrees), derived here from the boundary-twist holonomy.
+    (360 × φ⁻¹ degrees), reproduced here from the proposed boundary-twist holonomy.
 
     PDG 2024 best fit: δ_CP ≈ 222° (NO range: 108°–404°).
-    GCT prediction:    δ_CP = 360·φ⁻¹ ≈ 222.49°  [within 1-sigma]
+    Tier 3 ansatz:     δ_CP = 360·φ⁻¹ ≈ 222.49°  [within 1-sigma]
     """
-    phi_inv       = ckm_data["phi_correction"]   # φ⁻¹ from Theorem II
+    phi_inv       = ckm_data["phi_correction"]   # φ⁻¹ from Check II
 
     delta_cp_rad  = 2.0 * math.pi * phi_inv      # 2π·φ⁻¹
     delta_cp_deg  = 360.0 * phi_inv              # 360°·φ⁻¹
@@ -365,10 +391,11 @@ def derive_cp_phase(ckm_data: dict) -> dict:
         "within_PDG_1sigma_range":    within_pdg_range,
         "error_from_PDG_central_pct": float(error_pct),
         "jackiw_rebbi_mechanism":     (
-            "Full dodecahedral boundary winding (2π) × φ⁻¹ holonomy "
-            "(Theorem II SU(2) projection ratio) = δ_CP"
+            "Tier 3 ansatz: full dodecahedral boundary winding (2π) × φ⁻¹ holonomy "
+            "(Check II SU(2) projection ratio) = δ_CP"
         ),
         "radian_degree_consistent":   radian_consistency,
+        "window_note":                "The 108-404 degree window spans 296 degrees; most random phases fall inside it, so this check is weak.",
         "PASS":                       within_pdg_range and radian_consistency,
     }
 
@@ -427,7 +454,7 @@ def main() -> int:
     print(f"  12α        = {12 * ALPHA:.13f}")
 
     # ------------------------------------------------------------------
-    # Theorem I — Z⁶ Coordination Number
+    # Check I — Z⁶ Coordination Number
     # ------------------------------------------------------------------
     print("\n" + "─" * 72)
     print("  THEOREM I — Z⁶ Coordination Number: The Source of 12α")
@@ -439,13 +466,13 @@ def main() -> int:
     print(f"  All directions ||·||² = 1 : {z6['all_directions_unit']}")
     print(f"  Analytic match (2d = 12)  : {z6['analytic_match']}")
     t1 = "PASS" if z6["PASS"] else "FAIL"
-    print(f"\n  Theorem I Verdict         : [{t1}]")
+    print(f"\n  Check I Verdict         : [{t1}]")
 
     # ------------------------------------------------------------------
-    # Theorem II — CKM φ⁻¹ Holonomy
+    # Check II — CKM φ⁻¹ Holonomy
     # ------------------------------------------------------------------
     print("\n" + "─" * 72)
-    print("  THEOREM II — CKM φ⁻¹ via Face-Defect SU(2) Holonomy")
+    print("  CHECK II [Tier 3 ansatz] — CKM φ⁻¹ via Face-Defect SU(2) Holonomy")
     print("─" * 72)
     print(f"  Reusing exact SU(2) machinery from protocol_proton_berry_phase")
     print(f"  Loop: 2π circuit, connection A_θ = (1/2)σ_z, N={N_HOLONOMY_STEPS} steps")
@@ -459,22 +486,23 @@ def main() -> int:
     print(f"  φ⁻¹ reference             : {ckm['phi_inv_reference']:.10f}")
     print(f"  Match (tol 1e-9)          : {ckm['phi_correction_matches_phi_inv']}")
     print(f"\n  → s23 exponent = 6 + φ⁻¹ : {ckm['s23_exponent']:.10f}")
-    print(f"    s23 predicted           : {ckm['s23_predicted']:.6f}  (PDG: {ckm['s23_target_PDG']})")
+    print(f"    s23 ansatz value        : {ckm['s23_predicted']:.6f}  (PDG: {ckm['s23_target_PDG']})")
     print(f"    s23 error               : {ckm['s23_error_pct']:.2f}%")
     print(f"\n  → s13 exponent = 11 + φ⁻¹: {ckm['s13_exponent']:.10f}")
-    print(f"    s13 predicted           : {ckm['s13_predicted']:.6f}  (PDG: {ckm['s13_target_PDG']})")
+    print(f"    s13 ansatz value        : {ckm['s13_predicted']:.6f}  (PDG: {ckm['s13_target_PDG']})")
     print(f"    s13 error               : {ckm['s13_error_pct']:.2f}%")
+    print(f"    0.5% CKM band gate      : s23 {ckm['s23_within_band']}, s13 {ckm['s13_within_band']}")
     t2 = "PASS" if ckm["PASS"] else "FAIL"
-    print(f"\n  Theorem II Verdict        : [{t2}]")
+    print(f"\n  Check II Verdict        : [{t2}]")
 
     # ------------------------------------------------------------------
-    # Theorem III — Strange Quark 12α Drag
+    # Check III — Strange Quark 12α Drag
     # ------------------------------------------------------------------
     print("\n" + "─" * 72)
-    print("  THEOREM III — Strange Quark 12α Drag Coefficient")
+    print("  CHECK III [Tier 3 coefficient identification] — Strange Quark 12α Drag Coefficient")
     print("─" * 72)
     drag = derive_strange_drag(z6, ckm)
-    print(f"  Z⁶ bulk coordination (Z)  : {drag['Z6_coordination_number']}  [Theorem I]")
+    print(f"  Z⁶ bulk coordination (Z)  : {drag['Z6_coordination_number']}  [Check I]")
     print(f"  Icosahedral channels (μ)  : {drag['icosahedral_channels_muon']}  [5-fold vertex]")
     print(f"  Drag ratio (quark/muon)   : {drag['drag_channel_ratio']:.4f}  = 12/5 [geometric]")
     print(f"  α                         : {drag['alpha']:.13f}")
@@ -484,16 +512,16 @@ def main() -> int:
     print(f"  (1 −  5α) lepton factor   : {drag['suppression_muon_lepton']:.13f}")
     print(f"  Z = 12 exact integer match: {drag['coord_number_exact_12']}")
     t3 = "PASS" if drag["PASS"] else "FAIL"
-    print(f"\n  Theorem III Verdict       : [{t3}]")
+    print(f"\n  Check III Verdict       : [{t3}]")
 
     # ------------------------------------------------------------------
-    # Theorem IV — CP Phase in Radians
+    # Check IV — CP Phase in Radians
     # ------------------------------------------------------------------
     print("\n" + "─" * 72)
-    print("  THEOREM IV — CP Phase δ_CP = 2π·φ⁻¹ (Jackiw–Rebbi)")
+    print("  CHECK IV [Tier 3 ansatz] — CP Phase δ_CP = 2π·φ⁻¹ (Jackiw–Rebbi)")
     print("─" * 72)
     cp = derive_cp_phase(ckm)
-    print(f"  φ⁻¹ holonomy (Theorem II) : {cp['phi_inv']:.10f}")
+    print(f"  φ⁻¹ holonomy (Check II) : {cp['phi_inv']:.10f}")
     print(f"  δ_CP formula (radians)    : {cp['formula_radians']}")
     print(f"  δ_CP formula (degrees)    : {cp['formula_degrees']}")
     print(f"  δ_CP                      : {cp['delta_cp_rad']:.10f} rad")
@@ -507,7 +535,7 @@ def main() -> int:
     print(f"  Jackiw–Rebbi link:")
     print(f"    {cp['jackiw_rebbi_mechanism']}")
     t4 = "PASS" if cp["PASS"] else "FAIL"
-    print(f"\n  Theorem IV Verdict        : [{t4}]")
+    print(f"\n  Check IV Verdict        : [{t4}]")
 
     # ------------------------------------------------------------------
     # Projection Geometry Verification
@@ -529,25 +557,30 @@ def main() -> int:
     # ------------------------------------------------------------------
     all_theorems = [z6["PASS"], ckm["PASS"], drag["PASS"], cp["PASS"], proj_check["PASS"]]
     all_pass = all(all_theorems)
-    verdict  = "PASS" if all_pass else "FAIL"
+    failing = [k for k in ("s23", "s13") if not ckm[f"{k}_within_band"]]
+    verdict  = ("PASS" if all_pass
+                else ("CKM_" + "_".join(k.upper() for k in failing)
+                      + "_EXPONENT_OUTSIDE_0P5PCT_GATE"
+                      + f"_s23={ckm['s23_error_pct']:.2f}pct_s13={ckm['s13_error_pct']:.4f}pct")
+                if (not ckm["PASS"] and failing and ckm["U_weak_is_minus_I2"]) else "FAIL")
 
     print("\n" + "=" * 72)
-    print("  FINAL VERDICT — HADRON-SECTOR THEOREMS")
+    print("  FINAL VERDICT — HADRON-SECTOR CHECKS")
     print("=" * 72)
-    print(f"  Theorem I   (Z⁶ coord. = 12)      : {'PASS' if z6['PASS']  else 'FAIL'}")
-    print(f"  Theorem II  (CKM φ⁻¹ holonomy)    : {'PASS' if ckm['PASS'] else 'FAIL'}")
-    print(f"  Theorem III (12α drag coeff.)      : {'PASS' if drag['PASS'] else 'FAIL'}")
-    print(f"  Theorem IV  (δ_CP = 2π·φ⁻¹)       : {'PASS' if cp['PASS']  else 'FAIL'}")
+    print(f"  Check I   (Z⁶ coord. = 12)      : {'PASS' if z6['PASS']  else 'FAIL'}")
+    print(f"  Check II  (CKM φ⁻¹ holonomy)    : {'PASS' if ckm['PASS'] else 'FAIL'}")
+    print(f"  Check III (12α drag coeff.)      : {'PASS' if drag['PASS'] else 'FAIL'}")
+    print(f"  Check IV  (δ_CP = 2π·φ⁻¹)       : {'PASS' if cp['PASS']  else 'FAIL'}")
     print(f"  Aux.        (E8→Z⁶→H₃ projection) : {'PASS' if proj_check['PASS'] else 'FAIL'}")
     print(f"\n  VERDICT: {verdict}")
     if all_pass:
         print()
-        print("  The integer 12 and the ratio φ⁻¹ are structural consequences")
-        print("  of the Z⁶ → H₃ quasicrystal:")
-        print("    12 = 2 × dim(Z⁶)  — bulk coordination number [Theorem I]")
-        print("    φ⁻¹ = SU(2)_L holonomy over 5-fold face-defect circuit [Theorem II]")
-        print("    12α = face-defect drag in Z⁶ bulk       [Theorem III]")
-        print("    δ_CP = 2π·φ⁻¹ (Jackiw–Rebbi boundary)  [Theorem IV]")
+        print("  The arithmetic used by the hadron-sector readings checks out;")
+        print("  the readings themselves remain Tier 2/3 as tagged (App PSC §PSC.4):")
+        print("    12 = 2 × dim(Z⁶)  — bulk coordination number [Check I]")
+        print("    φ⁻¹ = SU(2)_L holonomy over 5-fold face-defect circuit [Check II]")
+        print("    12α = face-defect drag in Z⁶ bulk       [Check III]")
+        print("    δ_CP = 2π·φ⁻¹ (Jackiw–Rebbi boundary)  [Check IV]")
     print("=" * 72)
 
     # ------------------------------------------------------------------
@@ -556,7 +589,7 @@ def main() -> int:
     results = {
         "protocol":           "protocol_hadron_topology",
 
-        "tier":               2,
+        "tier":               "Tier 1 lattice counts; Tier 2 12-alpha drag mechanism conditional on the Tier 3 face-defect assignment; Tier 3 CKM phi^-1 exponents and CP phase",
         "pass":               bool(all_pass),
         "verdict":            verdict,
         "theorem_I_z6_coordination":   z6,
@@ -585,7 +618,9 @@ def main() -> int:
     print(f"\n  Results saved to: {out_path}")
     print("=" * 72)
 
-    return 0 if all_pass else 1
+    # The verdict is recorded in the JSON; the non-pass outcome is registered in
+    # config/expected_outcomes.json, so the script itself exits cleanly.
+    return 0
 
 
 if __name__ == "__main__":

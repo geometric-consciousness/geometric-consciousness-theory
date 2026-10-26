@@ -16,12 +16,12 @@ gap-label use of that integer remains a Tier 3 anchor inside the Tier 2
 K-theoretic framework, with the AKN physical-link conjecture still pending
 Open Problem O.14.
 
-Companion O.14 routes registered in App H
+Companion O.14 routes registered in App ORQ
 =========================================
 
-App H §O.14 also records:
+App ORQ §O.14 also records:
   (a) orbifold Euler-characteristic chi(Z^6 / H_3) -> 0
-  (b) APS eta-invariant via Connes-Moscovici -> open
+  (b) APS boundary-index route (operator, xi, spectral flow, bulk, bridge) -> open
   (c) cage-uniqueness via 42-orbit-union search -> 107 not in list
   (d) Bellissard gap-labels with Z[phi] enumeration -> many integers
   (e) AKN dimension group computation -> open
@@ -72,7 +72,7 @@ Physical interpretation: linking Sigma m_i^2 to AF-core gap labels
 
 The AF-core dimension group / trace image of the AKN substitution algebra
 is Z[φ]; the full Cuntz-Krieger K_0(O_A) for A=[[1,1],[1,0]] is trivial
-since coker(I-A^T) is trivial. See App Y §Y.3 for the canonical
+since coker(I-A^T) is trivial. See App PUP §PUP.6.3a for the canonical
 AF-core-vs-full-O_A distinction. The icosahedral H_3 Coxeter symmetry of
 the AKN cage is conjectured, after O.14 closure, to induce an action on the AF-core trace image via the Coxeter
 element.
@@ -126,7 +126,7 @@ Bellissard 1986 Lectures Notes in Physics 257:99 (gap-labeling);
 Anderson-Putnam 1998 Ergodic Theory & Dynamical Systems 18:509;
 Connes-Moscovici 1995 GAFA 5:174 (local index formula);
 Humphreys 1990 "Reflection Groups and Coxeter Groups" Tables 1, 3.1;
-App H §O.14.
+App ORQ §O.14.
 """
 
 from __future__ import annotations

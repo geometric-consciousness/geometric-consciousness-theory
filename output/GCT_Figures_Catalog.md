@@ -108,18 +108,17 @@
 
 **Location:** Line 5033
 
->
-**[Visual Description]:** *A schematic diagram illustrating the geometric relationships described in this section. (Note: High-resolution vector graphics are available in the supplementary data repository).*
+> **[Visual Description]:** *Log-log acceleration-space illustration of the conditional Newtonian line, assumed deep-elastic limit, and smooth RAR interpolation. The empirical $a_0=1.2\times10^{-10}$ m s$^{-2}$ is distinct from the Tier 2 scale $cH_0$; the Tier 3 candidate $cH_0/(2\pi)=1.04219787\times10^{-10}$ m s$^{-2}$ is $13.1502\%$ low and is not a derivation of $a_0$.*
 
 
 ---
 
-## **Figure V2.14.1:** The Phantom Crossing.
+## **Figure V2.14.1:** Conditional Dark-Energy Envelope.
 
 **Location:** Line 5324
 
-*   **Visual:** A plot of the equation of state parameter $w(z)$ vs redshift $z$. The curve starts at $w=-1$ (high z), crosses to $w<-1$ at $z \approx 0.28$, and dives to $w \approx -1.1$ today.
-*   **Caption:** Physical Dark Energy: The Biogenic Multiplier Effect.
+*   **Visual:** A plot of $w(z)$ with the registered Tier-3 conditional envelope $|w+1|\in[2,5]\times10^{-5}$ at $z\approx0.28$; no crossing or causal information-to-metric mechanism is claimed.
+*   **Caption:** Conditional biogenic-correlation coordinate; noncausal model envelope.
  
 
 ---
@@ -228,7 +227,7 @@
 
 **Location:** Line 9551
 
-*   **Visual:** A timeline showing the four binary gates: THz Leakage (2026), XRISM (2027), Roman/Phantom Crossing (2029), and KATRIN (2030).
+*   **Visual:** A protocol roadmap; the dark-energy entry is a conditional-envelope test without a calendar-dated significance promise.
 *   **Caption:** The Gauntlet: Protocols for Falsification.
  
 

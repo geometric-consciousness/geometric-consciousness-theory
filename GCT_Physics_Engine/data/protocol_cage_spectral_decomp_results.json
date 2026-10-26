@@ -1,6 +1,9 @@
 {
   "N_nodes": 152,
-  "eta_scalar_measured": -14.0,
+  "scalar_adjacency_sign_sum": -14.0,
+  "aps_operator_domain_specified": false,
+  "aps_eta_evaluated": false,
+  "aps_index_evaluated": false,
   "n_positive_eigvals": 69,
   "n_negative_eigvals": 83,
   "permutations_found": 60,

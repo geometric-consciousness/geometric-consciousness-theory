@@ -3,12 +3,13 @@
 protocol_o17p_isw_amplitude.py
 ==============================
 
-Quantitative derivation of the biogenic-DE perturbation to the late-time
-Integrated Sachs-Wolfe (ISW) signal from the V2 Ch14 Sec 14.5.1
-lag-kernel action. Addresses the V3 Ch12 Sec 12.4.2 prediction that GCT
-predicts an "anomalous ISW signal correlated with the 'age' and
-'biological potential' of galaxy clusters rather than their simple
-gravitational mass."
+Quantitative evaluation of the conditional biogenic-DE template for a
+late-time Integrated Sachs-Wolfe (ISW) perturbation assigned by the V2
+Ch14 Sec 14.5.1 lag-kernel ansatz. It addresses the V3 Ch12 Sec 12.4.2
+proposal to compare a conditional ISW template against cluster-age and
+biological-potential tracers independently of simple gravitational mass.
+Detectability can support, disfavor, or exclude this template; it cannot
+confirm a causal biogenic channel or change its epistemic tier.
 
 PHYSICAL SETUP
 --------------
@@ -73,14 +74,15 @@ Future:
 VERDICT FRAMEWORK
 -----------------
 
-Closure of O.17p has two possible outcomes:
-  (i)  If the biogenic-DE ISW perturbation is >= 10% of standard ISW
-       --> promote V3 Ch12 Sec 12.4.2 from Tier 3 to Tier 2 prediction;
-       observationally detectable with CMB-S4 + SPHEREx joint analysis.
-  (ii) If the biogenic-DE ISW perturbation is << 10% of standard ISW
-       --> carry Sec 12.4.2 with explicit magnitude; identify the
-       smallest near-future experiment that could detect it (if any);
-       acknowledge the prediction is too small for current measurement.
+O.17p has three detectability outcomes, none of which changes tier:
+  (i)  If the conditional ISW perturbation is detectable with current
+       Planck-era precision, the measurement can support, disfavor, or
+       exclude the template but cannot confirm a causal biogenic channel.
+  (ii) If only the differential is detectable with CMB-S4 + SPHEREx,
+       that future comparison can support, disfavor, or exclude the same
+       conditional template without changing its epistemic status.
+  (iii) If both amplitudes are below near-future sensitivity, disclose
+       the conditional magnitude and the sensitivity required to test it.
 
 Unlike O.17 (Hubble tension closure), the ISW perturbation sign is
 expected to be CONSISTENT with the standard ISW direction (both source
@@ -104,7 +106,7 @@ except ImportError:
 H0_KM_S_MPC = 67.4
 OMEGA_M = 0.315
 OMEGA_L = 0.685
-ALPHA = 1.0 / 137.036
+ALPHA = 1.0 / 137.036  # legacy low-resolution conditional-template input; not A3 SSOT
 TAU_LAG_GYR = 5.0
 TAU_BIO_GYR = 4.5
 W0_TARGET = -1.005
@@ -400,15 +402,17 @@ def verdict(results):
     sign_consistent = results["sign_consistent_with_standard_isw"]
 
     if results["detectable_with_current_planck"]:
-        direction = "(i) PROMOTE to Tier 2 -- detectable with current Planck"
+        direction = "(i) CURRENTLY_DETECTABLE_CONDITIONAL_TEMPLATE"
         framing = (
             f"Cosmic-mean ISW amplitude shift is {cosmic_pert_pct:.2f}% "
             f"of LambdaCDM, above current Planck precision (20%). "
-            f"V3 Ch12 Sec 12.4.2 can be promoted to Tier 2 with this "
-            f"magnitude as the derived prediction."
+            f"A Planck-era comparison can support, disfavor, or exclude "
+            f"the conditional V3 Ch12 Sec 12.4.2 template; detectability "
+            f"does not change its epistemic tier or confirm a causal "
+            f"biogenic channel."
         )
     elif results["differential_detectable_with_cmbs4_spherex"]:
-        direction = "(i-prospective) PROMOTE conditional on CMB-S4 + SPHEREx"
+        direction = "(ii) FUTURE_DIFFERENTIAL_DETECTABILITY_CONDITIONAL_TEMPLATE"
         framing = (
             f"Cosmic-mean ISW amplitude shift is {cosmic_pert_pct:.2f}% "
             f"of LambdaCDM -- below current Planck precision (20%) but "
@@ -419,10 +423,13 @@ def verdict(results):
             f"(~4%). The biogenic-vs-gravitational tracer differential "
             f"is the closer-binding observational signature. Sign is "
             f"{'CONSISTENT' if sign_consistent else 'OPPOSITE'} "
-            f"with standard ISW direction."
+            f"with standard ISW direction. A future comparison can "
+            f"support, disfavor, or exclude the conditional template, "
+            f"but cannot change its epistemic tier or confirm a causal "
+            f"biogenic channel."
         )
     else:
-        direction = "(ii) MAGNITUDE_DISCLOSURE_BELOW_NEAR_FUTURE_SENSITIVITY"
+        direction = "(iii) CONDITIONAL_TEMPLATE_BELOW_NEAR_FUTURE_SENSITIVITY"
         framing = (
             f"Cosmic-mean ISW amplitude shift is {cosmic_pert_pct:.2f}% "
             f"of LambdaCDM, with biogenic-vs-gravitational differential "
@@ -435,7 +442,10 @@ def verdict(results):
             f"radio + IR spectroscopic surveys, or via population-"
             f"averaged stacking on stellar-mass-weighted galaxy samples). "
             f"Sign is {'CONSISTENT' if sign_consistent else 'OPPOSITE'} "
-            f"with standard ISW direction -- {'no sign issue, unlike O.17 closure' if sign_consistent else 'sign issue similar to O.17'}."
+            f"with standard ISW direction -- {'no sign issue, unlike O.17 closure' if sign_consistent else 'sign issue similar to O.17'}. "
+            f"This remains conditional-template arithmetic: a future "
+            f"comparison may support, disfavor, or exclude it, but cannot "
+            f"change its epistemic tier or confirm a causal biogenic channel."
         )
 
     return {

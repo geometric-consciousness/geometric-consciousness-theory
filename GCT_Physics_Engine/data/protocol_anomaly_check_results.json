@@ -16,5 +16,7 @@
     "verdict": "PASS"
   },
   "overall_verdict": "PASS",
-  "pass": true
+  "identity_holds": true,
+  "verdict": "SM_HYPERCHARGE_ANOMALY_IDENTITY_NO_GCT_INPUT",
+  "pass": false
 }

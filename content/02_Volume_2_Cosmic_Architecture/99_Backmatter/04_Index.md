@@ -9,7 +9,7 @@
 * Anthropic Coincidence, 14.7.2
 
 **B**
-* Bekenstein Bound, 1.1.3, 9.1.1, 14.1.2
+* Bekenstein Bound, 1.1.3, 9.1.1, 14.1.5
 * Big Bang (as Crystallization), 3.1.1, 7.1.1
 * Biogenic Dark Energy, 14.2, 14.3
 * Bose-Einstein Condensate (BEC), 3.2.1, 5.1.1
@@ -35,7 +35,7 @@
 **E**
 * $E_8$ Root Lattice, 1.2.1, 2.1.2
 * Elasticity Tensor ($C_{ijkl}$), 4.1.3, 5.2.2
-* Einstein Field Equations, 9.2.2, 14.2.4
+* Einstein Field Equations, 9.2.2, 14.3.3
 * Entropic Gravity, 9.1
 * Equivalence Principle, 8.2.1
 
@@ -55,17 +55,17 @@
 **H**
 * Healing Length ($\xi$), 3.2.1, 7.3.2
 * Higgs Field (Amplitude Mode), 3.1.4, V3 Ch 5
-* Holographic Principle, 1.1.3, 7.2.2, 14.1.2
+* Holographic Principle, 1.1.3, 7.2.2, 14.1.5
 * Hubble Tension, 14.5.4
 
 **I**
-* Icosahedral Selection, 2.1.2, V1 Ch 12.6
+* Icosahedral Selection, 2.1.2, V1 Ch12 §12.6
 * Inflation (Alternative), 3.2.3
 * Information Saturation, 1.1.4, 9.2.3
 * Isomorphism (Local), 2.2.4
 
 **K**
-* Kibble-Zurek Mechanism, 3.2.2, 11.1.3
+* Kibble-Zurek Mechanism, 3.2.2, 14.1.4
 
 **L**
 * Latent Heat, 7.1.1, 7.2.2
@@ -82,7 +82,7 @@
 * Noble Number, 2.1.2
 
 **P**
-* Phantom Crossing ($w < -1$), 14.3.2, 14.5.3
+* Phantom Phase ($w < -1$, no crossing), 14.3.2, 14.5.3
 * Phason, 4.1.2, 5.1.2, 6.1
 * Phason Stiffness ($K_\perp$), 4.2.2, 6.2.1
 * Phonon, 4.1.1, 5.2.3
@@ -96,7 +96,7 @@
 
 **R**
 * Radial Acceleration Relation (RAR), 12.4.3
-* Realization Operator ($\hat{\mathcal{R}}$), 2.1.4, 14.6.1
+* Realization Operator ($\hat{\mathcal{R}}$), 2.1.4
 * Refractive Index (Vacuum), 8.1.1
 * Rhombic Triacontahedron (RT), 1.2.2, 2.1.3
 
@@ -123,12 +123,12 @@
 * Voronoi Cell (6D), 1.2.2
 
 **W**
-* Wheeler-DeWitt Equation, 1.1, 3.1.1, 14.2.2
+* Wheeler-DeWitt Equation, 1.1, 3.1.1
 
 **Y**
 * Yield Strength ($\sigma_c$), 10.1.2, 13.1.1
 
 **Z**
-* Zeno Drive, 14.6.1, V3 Ch 13
+* Zeno Drive, V3 Ch 13
 
 **END OF VOLUME 2**

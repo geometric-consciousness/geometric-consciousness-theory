@@ -1,0 +1,45 @@
+{
+  "constants": {
+    "T_bio_K": 310.0,
+    "B_bio_T": 5e-05,
+    "N_Trp": 1625000000.0,
+    "binding_per_Trp_eV": 1.0,
+    "E_thermal_bio_J": 4.2800119e-21,
+    "E_ATP_hydrolysis_J": 4.8065299019999993e-20,
+    "E_electronic_J": 1.602176634e-19,
+    "PHI_NEG_18": 0.00017307027171223924,
+    "PHI_NEG_147": 1.9002768746460998e-31
+  },
+  "address_reconfiguration": {
+    "energy_per_digit_J": 2.52539187305e-31,
+    "num_digits_p2": 30.597792572127354,
+    "total_barrier_J": 7.57617561915e-30,
+    "ratio_to_thermal": 1.7701295688336752e-09,
+    "interpretation": "Per-digit Zeeman cost is vastly below thermal; address-reconfiguration alone is NOT the dominant barrier."
+  },
+  "topological_charge_barrier": {
+    "barrier_J": 2.60353703025e-10,
+    "barrier_eV": 1625000000.0,
+    "ratio_to_thermal": 60830135314.57704,
+    "ratio_to_ATP": 5416666666.666667,
+    "ratio_to_electronic": 1625000000.0,
+    "interpretation": "Total un-knotting cost across N_Trp anchor sites; dominant barrier."
+  },
+  "phason_mass_reference": {
+    "m_weinberg_candidate_J": 3.717097389511492e-22,
+    "m_weinberg_candidate_eV": 0.002320029708729039,
+    "m_phason_operative_eV": 1.7e-05,
+    "interpretation": "Tier-3 Weinberg-candidate scalar M_P phi^(-147) ~ 2.2 meV. This is an O.37 alternative scale candidate, not the operative biogenic-DE quartic mass and not a branch-switching barrier input."
+  },
+  "wkb_tunneling": {
+    "log10_P_at_thermal": -26418192100.548935,
+    "log10_P_at_ATP": -2352428443.642614,
+    "log10_P_at_electronic_bond": -705728533.0927842,
+    "interpretation": "At every biologically accessible energy channel, branch-switching tunneling probability is operationally zero."
+  },
+  "closure_status": {
+    "tier": "Tier 2 structural (homotopy continuity); Tier 3 conditional barrier magnitude (O.21 branch; no Level-II verdict)",
+    "claim": "Identity path is strictly continuous within homotopy class. Distal-branch jumps require E ~ 1.62e+09 eV per polaron un-knotting event, exceeding all biological energy channels by more than 9 orders of magnitude. Tunneling probability at thermal < 10^(-N) with N exceeding 10^10.",
+    "remaining_open_research_level": "Exact functional form of the un-knotting saddle-point trajectory in phason field space; the binding-energy estimate per Trp uses a hydrophobic-pocket scaling argument rather than first-principles DFT."
+  }
+}

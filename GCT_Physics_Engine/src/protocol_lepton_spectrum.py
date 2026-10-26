@@ -14,14 +14,15 @@ Epistemic Tiers (Structural Analysis)
   Tier 3 anchors:    Specific harmonic indices N=11 and N=17 pending O.5/O.14/O.15.
   Tier 3 closure:    Closed-form precision (1 + 5*alpha_A3 + phi^8*alpha_A3^2
                      for the muon; -3.6*alpha_A3 for the tau), with ppm residuals
-                     conditional on A3 measured alpha and SM-equivalent higher-loop discipline.
+                     conditional on A3 measured alpha; they are Tier 3 formula
+                     residuals (no theory-error model).
 
 > [!NOTE]
 > **Computational closure scope [Tier 3]:** This script uses exact analytical
 > formulas as stand-ins for the underlying 6D geometric operations. The
 > closed-form expressions are mathematically faithful to the intended derivations
 > at the analytical level; full non-perturbative lattice diagonalization
-> (App Z; QLQCD-1L Open Problem O.5) is the elevation path to Tier 1.
+> (App QLA; QLQCD-1L Open Problem O.5) is the elevation path to Tier 1.
 
 """
 
@@ -37,13 +38,9 @@ from gct_utils import PHI, get_output_path, GCTReporter
 
 if sys.platform == 'win32':
     sys.stdout.reconfigure(encoding='utf-8')
-M_ELECTRON_MEV = 0.5109989
-try:
-    from gct_utils import C
-    ALPHA_FINE_STRUCTURE = C.ALPHA_FINE_STRUCTURE
-except:
-    ALPHA_FINE_STRUCTURE = 0.0072973525693
 from gct_utils import C
+M_ELECTRON_MEV = float(C.M_E_CODATA_MEV)
+ALPHA_FINE_STRUCTURE = float(C.ALPHA_OBS)  # exact CODATA-2022 A3 reciprocal
 
 def look_elsewhere_analysis(mu_correction, tau_correction):
     print("\n======================================================================")
@@ -193,7 +190,7 @@ def main():
     mu_correction_1st = (1 + s_drag * alpha)
     m_mu_pred_1st_graph = m_mu_bare_graph * mu_correction_1st
 
-    electroweak_mixing_factor = phi ** -3
+    electroweak_mixing_factor = phi ** -3  # phi^8 alpha^2 exponent arithmetic is Tier 2; the 'electroweak mixing' reading rests on H-EW (Tier 3)
     bare_muon_graph = phi ** muon_peak_index
     second_order_term_graph = bare_muon_graph * electroweak_mixing_factor * (alpha ** 2)
     mu_correction_2nd_graph = (1 + s_drag * alpha + second_order_term_graph)

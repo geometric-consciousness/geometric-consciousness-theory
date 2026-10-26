@@ -1,21 +1,14 @@
 {
-    "status": "LSS_L6_SPECIFICATION_AVAILABLE",
-    "prediction_type": "LSS_Angular_Power_Spectrum_Anisotropy",
+    "status": "LSS_L6_STRUCTURAL_TEMPLATE__PHYSICAL_TRANSFER_OPEN",
+    "prediction_type": "Oriented icosahedral l=6 structural template",
     "multipole": 6,
-    "predicted_c6_c0": 2.895419285097678e-08,
-    "icosahedral_mask_deg": [
-        0,
-        36,
-        60,
-        72,
-        90,
-        108,
-        120,
-        144,
-        180
-    ],
-    "mechanism": "Icosahedral vacuum anisotropy imprint on LSS 2-point correlation",
+    "predicted_c6_c0": null,
+    "oriented_template": "A6(R n), with R in SO(3)/I",
+    "finite_separation_mask_derived": false,
+    "shared_cross_messenger_normalization_derived": false,
+    "mechanism": "Exact icosahedral scalar structure; physical LSS transfer remains open",
     "dataset": "SDSS DR16 Quasar Catalog",
-    "alignment": "Same vacuum root as PTA (phi^-18 scaling)",
-    "pass": true
+    "alignment": "No common amplitude is asserted across messenger channels",
+    "verdict": "NO_GCT_TEST_TEMPLATE_ONLY_PHYSICAL_TRANSFER_OPEN",
+    "pass": false
 }

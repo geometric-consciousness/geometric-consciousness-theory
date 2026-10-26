@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
 """
 protocol_n132_investigation.py - Structural investigation of the N=132
-I_h-closed cage that admits integer-arithmetic APS recovery of n = -107.
+I_h-closed cage scalar weighted-adjacency sign count.
 
-Background (protocol_aps_cage_search.py): the APS-cage search at
-perp_cutoff = 3.5 found three I_h-closed cages where Bulk + eta_eff = -107
-closes at integer arithmetic, of which the most physically suggestive is
-N = 132 (4-orbit composition; 873 edges; eta_scalar = 0 -> bulk = -107
-exactly). The canonical postulate-anchored N = 144 / N = 152 cages do NOT
-admit such closure at perp_cutoff = 2.0.
+Background (protocol_aps_cage_search.py): the finite-cage search at
+perp_cutoff = 3.5 found several I_h-closed cages whose scalar-adjacency sign
+sum is divisible by eight. N=132 has four orbits, 540 edges under this
+producer's adjacency convention, and scalar sign
+sum zero. This arithmetic neither supplies nor constrains a bulk term of a
+qualifying APS problem. No APS operator/domain, eta-invariant, or complete
+index is evaluated here.
 
 This protocol drills into N = 132:
   1. Identify the 4 I_h orbits that compose it (perp-norms + sizes).
   2. Test bipartiteness of the cage's scalar adjacency graph (2-coloring).
   3. Compute the I-irrep decomposition of the adjacency spectrum
      (like protocol_cage_spectral_decomp.py for the canonical 152-cage).
-  4. Verify the eta_scalar = 0 result via per-irrep sign sums.
+  4. Verify the scalar sign-sum zero result via per-irrep sign sums.
   5. Compare orbit composition to the canonical N=152 cage and look for
      a natural geometric relation (sub-cage / complement / dual).
 """
@@ -150,7 +151,7 @@ def test_bipartite(A: np.ndarray) -> tuple[bool, np.ndarray]:
 
 def main():
     print("=" * 76)
-    print("N=132 investigation: structural origin of integer-APS recovery")
+    print("N=132 investigation: structural origin of scalar-adjacency sign sum")
     print("=" * 76)
 
     print("\n--- Step 1: Build the N=132 cage ---")
@@ -171,21 +172,21 @@ def main():
     print(f"  Is bipartite (2-colorable): {is_bipartite}")
     print(f"    Color 0: {n_class_0}, Color 1: {n_class_1}")
 
-    print("\n--- Step 3: Adjacency spectrum + eta_scalar verification ---")
+    print("\n--- Step 3: Scalar-adjacency sign-sum verification ---")
     evals = np.linalg.eigvalsh(A)
     nz = evals[np.abs(evals) > 1e-12]
-    eta_scalar = int(round(float(np.sum(np.sign(nz)))))
+    scalar_sign_sum = int(round(float(np.sum(np.sign(nz)))))
     n_pos = int(np.sum(nz > 0))
     n_neg = int(np.sum(nz < 0))
     n_zero = int(len(evals) - len(nz))
     print(f"  Eigenvalue range: [{evals.min():.4f}, {evals.max():.4f}]")
     print(f"  Positive: {n_pos}, Negative: {n_neg}, Zero: {n_zero}")
-    print(f"  eta_scalar = sum(sign(non-zero)) = {eta_scalar}")
-    print(f"  eta_eff = {eta_scalar / 8.0:+.4f}")
+    print(f"  scalar adjacency sign sum = {scalar_sign_sum}")
+    print(f"  scalar sign sum / 8 arithmetic diagnostic = {scalar_sign_sum / 8.0:+.4f}")
 
     print("\n--- Step 4: I-irrep decomposition deferred ---")
     print("  (the symbolic computation uses the same character-theoretic machinery as")
-    print("   protocol_cage_spectral_decomp.py; the per-irrep breakdown of the eta = 0")
+    print("   protocol_cage_spectral_decomp.py; the per-irrep breakdown of sign sum zero")
     print("   result is bookmarked for the full irrep-block spectral analysis.)")
     irrep = {"deferred": True}
 
@@ -216,11 +217,11 @@ def main():
     print("=" * 76)
     if is_bipartite:
         print(f"  Bipartiteness: YES (color partition {n_class_0} + {n_class_1})")
-        print(f"  This explains the eta_scalar = 0 result: bipartite graphs")
+        print(f"  This explains the scalar sign-sum zero result: bipartite graphs")
         print(f"  have spectra symmetric about 0, so positive and negative")
-        print(f"  eigenvalue counts are equal (eta = 0 automatically).")
+        print(f"  eigenvalue counts are equal (sign sum zero automatically).")
     else:
-        print(f"  Bipartiteness: NO. The eta_scalar = 0 result has a different")
+        print(f"  Bipartiteness: NO. The scalar sign-sum zero result has a different")
         print(f"  structural origin (e.g., a cancellation among I-irrep blocks).")
     print(f"  Orbit composition: {[(o['perp_norm'], o['size']) for o in orbits]}")
     print(f"  Cage-overlap with canonical N=152: {len(common)} / 132 nodes shared.")
@@ -236,8 +237,11 @@ def main():
         "n_positive_evals": n_pos,
         "n_negative_evals": n_neg,
         "n_zero_evals": n_zero,
-        "eta_scalar": int(eta_scalar),
-        "eta_eff": float(eta_scalar) / 8.0,
+        "scalar_adjacency_sign_sum": int(scalar_sign_sum),
+        "scalar_adjacency_per_spinor_dimension_diagnostic": float(scalar_sign_sum) / 8.0,
+        "aps_operator_domain_specified": False,
+        "aps_eta_evaluated": False,
+        "aps_index_evaluated": False,
         "irrep_decomp": irrep,
         "overlap_with_canonical_152": {
             "n_shared": len(common),

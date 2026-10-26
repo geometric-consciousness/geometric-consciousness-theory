@@ -4,12 +4,12 @@ verify_g2_muon.py — Cross-check of GCT contribution to muon g-2
 INDEPENDENCE SCOPE: This verifier is NOT fully independent. Unlike the
 CODATA/PDG-only scripts in this directory, it imports engine constants
 from src/ (`gct_utils.C` for the geometric constants and the WP2025 SM
-SSOT values). Its agreement with App R is therefore a CONSISTENCY CHECK
+SSOT values). Its agreement with App PSC is therefore a CONSISTENCY CHECK
 against the engine, not an independent corroboration of the muon g-2
 result. (See README "independence contract"; the fully CODATA/PDG-anchored
 scripts in this directory carry the independence claim.)
 
-App R §R.2 row 2:
+App PSC §PSC.2 row 2:
  Δa_μ (GCT) = (1/5) · (α_CODATA/π)^3 → ~250.65 × 10^-11
  WP2025 SM prediction: a_μ^SM = (116592033 ± 62) × 10^-11
    (Aliberti et al. arXiv:2505.21476, May 2025 Muon g-2 Theory Initiative
@@ -18,10 +18,10 @@ App R §R.2 row 2:
  WP2025 gap: a_μ^exp − a_μ^SM ≈ 37.5 × 10^-11 ; combined σ ≈ 63 × 10^-11
    → ~0.59σ, no significant anomaly under WP2025 synthesis.
  GCT prediction 250.65 × 10^-11 overshoots the gap by ~6.7×, sits at
-   ~3.4σ above WP2025 SM. Channel disposition: Tier 2 mechanism + Tier 3
+   ~3.3σ above WP2025 SM. Channel disposition: Tier 2 mechanism + Tier 3
    1/5 coefficient + A3 + Tier 4 calibration-survival conjecture (HVP arbitration); Tension under WP2025,
    falsification conditional on long-term HVP-synthesis arbitration
-   (Ch08 §8.7.3 / App G / App R §R.2).
+   (Ch08 §8.7.3 / App TCD / App PSC §PSC.2).
 """
 
 import sys
@@ -32,6 +32,18 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from constants import CODATA, MATH
 from gct_utils import C
 from report import make_result, write_result, print_summary
+
+
+def evaluate_status(predicted: float, observed_gap: float, combined_sigma: float) -> str:
+ """Return TENSION only when the stipulated correction misses by at least 3σ.
+
+ Agreement cannot close the Tier-3 coefficient or the HVP arbitration, so the
+ non-tension branch remains OPEN_CONDITIONAL rather than PASS.
+ """
+ if combined_sigma <= 0:
+  raise ValueError("combined_sigma must be positive")
+ discrepancy_sigma = abs(predicted - observed_gap) / combined_sigma
+ return "TENSION" if discrepancy_sigma >= 3.0 else "OPEN_CONDITIONAL"
 
 
 def main():
@@ -57,31 +69,33 @@ def main():
  ) / wp2025_gap_sigma
 
  # Under WP2025, no significant SM-vs-experiment anomaly remains
- # (~0.6σ gap), and the GCT 250.65e-11 prediction is ~3.4σ above the
+ # (~0.6σ gap), and the GCT 250.65e-11 prediction is ~3.3σ above the
  # SM under the same lattice-QCD synthesis. Channel disposition:
  # Tier 2 mechanism + Tier 3 1/5 coefficient + A3 + Tier 4
  # calibration-survival conjecture (HVP arbitration); Tension under WP2025,
  # falsification conditional on long-term HVP-synthesis arbitration
- # (Ch08 §8.7.3 / App G).
- derived_status = "TENSION" # WP2025 synthesis: no anomaly for GCT to explain
+ # (Ch08 §8.7.3 / App TCD).
+ derived_status = evaluate_status(
+  delta_a_mu_pred, wp2025_gap, wp2025_gap_sigma
+ )
 
  res = make_result(
  name="g2_muon",
- app_r_label="Muon g-2 GCT contribution",
+ app_psc_label="Muon g-2 GCT contribution",
  formula="Δa_μ = (1/5) · (α_CODATA/π)^3",
  predicted=delta_a_mu_pred,
  observed=wp2025_gap,
  unit="(dimensionless)",
- app_r_predicted=250.65e-11,
- app_r_precision_str=(
+ app_psc_predicted=250.65e-11,
+ app_psc_precision_str=(
  f"WP2025 gap (a_exp − a_SM) = {wp2025_gap*1e11:+.1f}×10⁻¹¹ "
  f"at {wp2025_gap_in_sigmas:.2f}σ (no significant anomaly); "
  f"GCT prediction overshoots the gap by ~{delta_a_mu_pred/abs(wp2025_gap):.1f}× "
  f"and sits {sigma_tension_vs_wp2025_gap:.2f}σ above SM under lattice-QCD HVP. "
  f"Channel disposition: Tension under WP2025; falsification conditional on long-term "
- f"HVP-synthesis arbitration (Ch08 §8.7.3 / App G / App R §R.2)."
+ f"HVP-synthesis arbitration (Ch08 §8.7.3 / App TCD / App PSC §PSC.2)."
  ),
- app_r_precision_ppm=None,
+ app_psc_precision_ppm=None,
  tier="Tier 2 mechanism + Tier 3 1/5 coefficient + A3 + Tier 4 calibration-survival conjecture (HVP arbitration); Tension under WP2025; falsification conditional on long-term HVP-synthesis arbitration",
  status=derived_status,
  tolerance_ppm=None,
@@ -99,12 +113,12 @@ def main():
  "WP2025 (Aliberti et al. arXiv:2505.21476) adopts the "
  "lattice-QCD-dominated HVP average. Under this synthesis the "
  "SM-vs-experiment gap is ~0.6σ — no significant anomaly. "
- "The GCT 250.65×10⁻¹¹ phason-loop correction sits ~3.4σ above "
+ "The GCT 250.65×10⁻¹¹ phason-loop correction sits ~3.3σ above "
  "the WP2025 SM central value under the lattice synthesis. "
  "Channel disposition: Tension under WP2025; falsification "
  "conditional on long-term HVP-synthesis arbitration "
  "— validated-postdiction status is conditional on the HVP-Survival "
- "Condition (App V row P.5) holding under future R-ratio resolution."
+ "Condition (App PRG row P.5) holding under future R-ratio resolution."
  ),
  },
  )

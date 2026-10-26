@@ -1,7 +1,8 @@
 {
   "pass": true,
   "verdict": "PASS",
-  "tier": "Tier 1 (Derived Necessity)",
+  "tier": "Tier 1/2 (conditional on the adopted H3 / maximal-Platonic premise package)",
+  "tier_note": "The 2I character-fusion / affine-E8 McKay correspondence checked here is a closed Tier 1 mathematical result within its hypotheses; its physical composition into the architecture chain is a Tier 1/2 structural postulate (App TAT; App USS Lemma III) and does not derive the 6D parent lattice.",
   "theorem": "T-McKay",
   "h4_coxeter": {
     "h4_coxeter_number": 30,
@@ -18,6 +19,25 @@
   "h4_shell_a_vertices": 120,
   "h4_shell_b_vertices": 120,
   "h4_expected_per_shell": 120,
+  "elser_sloane_projection_certificate": {
+    "pass": true,
+    "phi_orthogonality_max_error": 2.220446049250313e-16,
+    "projected_shell_radii": [
+      0.7434960689,
+      1.20300191
+    ],
+    "projected_shell_counts": [
+      120,
+      120
+    ],
+    "projected_shell_radius_ratio": 1.618033988773925,
+    "expected_radius_ratio_phi": 1.618033988749895,
+    "shell_600cell_fingerprint_max_errors": [
+      1.000000082740371e-10,
+      1.000000082740371e-10
+    ],
+    "method": "Elser-Sloane Phi; project all 240 E8 roots to X; compare normalized shell distance multisets with unit icosians"
+  },
   "mckay_equivalence_verified": true,
   "mckay_correspondence": {
     "pass": true,
@@ -415,7 +435,7 @@
       {
         "E6_rep": 1,
         "SU3_rep": 8,
-        "description": "SU(3) Color Octet (Gluons)"
+        "description": "Adjoint of the commuting SU(3) (colour reading is a Tier 3 assignment; colour sits inside E6 in the standard embedding)"
       },
       {
         "E6_rep": 27,
@@ -423,14 +443,19 @@
         "description": "SM Fermion generation"
       }
     ],
-    "conclusion": "E6(78) sub-algebra shelters the Dark Sector in the GCT E8 branching."
+    "conclusion": "Tier 3 proposal: the E6(78) sub-algebra is a candidate dark-sector host in the GCT E8 branching."
   },
   "cyclic_check": {
-    "status": "Cyclic/Dihedral groups excluded by spin-structure cohomology (see App_U \u00a7U.6)."
+    "status": "Cyclic/dihedral branches are NOT excluded by spin structure: every finite rotation subgroup has a canonical Spin(3) preimage (D_n -> Dic_n), and no spin-lift or H^2 obstruction eliminates them (App USS \u00a7USS.6.2). They are set aside architecturally because they do not reproduce the adopted three-dimensional H3 RT-window / invariant / 2I->E8->H4->H3 package.",
+    "excluded_by_spin_obstruction": false,
+    "set_aside_by": "adopted architectural premise package (Tier 1/2)"
   },
   "lemma_iii": {
-    "lemma_iii_proven": true,
-    "unique_group": "2I (Binary Icosahedral)",
-    "method": "McKay correspondence + H^2 spin obstruction theorem"
+    "lemma_iii_conditional_comparison": true,
+    "exhaustive_uniqueness_proof": false,
+    "surviving_branch": "2I (Binary Icosahedral), within the registered projection families",
+    "tier": "Tier 1/2 (Architectural Postulate + Conditional Mathematics)",
+    "conditional_on": "adopted full three-dimensional H3 RT-window/invariant package and maximal-Platonic-symmetry criterion (App USS Lemma III)",
+    "method": "Tier 1 group facts (Schur cover A5 -> 2I; 2I McKay correspondence; polyhedral-group taxonomy) + conditional comparison under the adopted premise package; no spin-lift obstruction is used"
   }
 }

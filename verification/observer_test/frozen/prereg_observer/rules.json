@@ -1,0 +1,34 @@
+{
+ "version": "1.0",
+ "source": "OBSERVER_TEST_PREREG_FROZEN.md (from OBSERVER_TEST_PREREG_DRAFT.md, approved by Pablo 2026-10-20 ~11:40 CDMX: Rule A primary). Mechanical transcription; if it disagrees with the frozen document, the document wins.",
+ "blind_output_sha256_ref": "observer_blind/PROVENANCE.txt",
+ "row_order": ["m_e", "m_mu", "m_tau", "m_p", "m_u", "m_d", "m_s", "m_c", "m_b", "m_t", "v", "m_H", "alpha_inv", "sin2thW", "alphas_inv", "s12", "s23", "s13", "th12", "th13", "dcp"],
+ "rules": {
+  "A": {"role": "primary",
+        "k": {"m_e": 1, "m_mu": 1, "m_tau": 1, "m_p": 1, "m_u": 1, "m_d": 1, "m_s": 1, "m_c": 1, "m_b": 1, "m_t": 1, "v": 1, "m_H": 1,
+              "alpha_inv": 1, "alphas_inv": 1, "sin2thW": -1, "s12": -1, "s23": -1, "s13": -1, "th12": -1, "th13": -1, "dcp": 0},
+        "k_reference_masses": {"M_P": null},
+        "unknown_sign_zero": []},
+  "B": {"role": "report_only",
+        "k": {"m_e": 1, "m_mu": 1, "m_tau": 1, "m_u": 1, "m_d": 1, "m_s": 1, "m_c": 1, "m_b": 1, "m_t": 1, "m_H": 1, "alpha_inv": 1,
+              "sin2thW": -1, "alphas_inv": -1, "m_p": 0, "v": 0, "s12": 0, "s23": 0, "s13": 0, "th12": 0, "th13": 0, "dcp": 0},
+        "k_reference_masses": {"M_P": null},
+        "unknown_sign_zero": ["m_p", "v"]},
+  "C": {"role": "report_only", "note": "sign undetermined - not testable by sign test; reported as such, no computation"}
+ },
+ "mechanical_exclusion": "effective k = k_row - k_ref for rows predicted as a ratio to a reference mass (reference structure read from prereg/gct_formulas.json encodings[*].R); a reference with no declared k (null) makes the row 'none'; a row or reference whose k is 0 because the sign is unknown (unknown_sign_zero) makes the row 'none'; rows with effective k = 0 do not predict. th12: the GCT formula adds theta13/5 at its observed value; under Rule A both angles shift by -eps so the residual shift is -eps*(th12 - th13/5)/th12 < 0: effective sign of th12 = sign(k_th12) (draft §2). Dimensionless/angle rows have no reference.",
+ "residual": "r_i = y_i / pred_i - 1 with y_i from prereg/targets.json rows[*].y and pred_i = prereg/gct_formulas.json phi_values_primary_convention[*].value (alpha_inv = class E bilayer encoding). NOTE: the stored field 'r' in that file is pred/y - 1 (opposite sign) and is NOT used.",
+ "decision": {
+  "agreement": "sign(r_i) == sign(k_eff_i)",
+  "A_sign_test": "A = #agreeing rows of n; one-sided binomial p = P(X >= A | n, 1/2)",
+  "eps_hat": "median over predicting rows of r_j / k_j",
+  "LOO": "eps_-i = max(0, median_{j != i} r_j / k_j); improved if |r_i - eps_-i * k_i| < |r_i|; I_LOO = #improved",
+  "p_rand": "fraction of all 2^n sign patterns over the same rows (same pipeline) with I_LOO >= Rule A's (ties against Rule A)",
+  "p_sector": "rank of Rule A among the 2^5 sector-coherent patterns (one sign per group, groups {alpha_inv}, {alphas_inv} (split from alpha_inv), {sin2thW}, {s12,s23,s13}, {th12,th13}): fraction of the 32 patterns with I_LOO >= Rule A's (ties against)",
+  "sector_groups": [["alpha_inv"], ["alphas_inv"], ["sin2thW"], ["s12", "s23", "s13"], ["th12", "th13"]],
+  "SUPPORTED": "A >= 7 AND eps_hat > 0 AND I_LOO >= 6 AND p_rand <= 0.05 (for n = 8)",
+  "REFUTED": "A <= 4 OR eps_hat <= 0",
+  "INCONCLUSIVE": "every other case",
+  "report_only": ["count restricted to rows with |r_i| > 2 sigma_hat_i (sigma_hat_i = sigma_i / |y_i|)", "Rule B sign test (n=3, cannot pass at 0.05)", "Rule C: not testable"]
+ }
+}

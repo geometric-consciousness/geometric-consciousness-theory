@@ -1,15 +1,64 @@
 {
-    "prediction_id": "GCT-PTA-L6",
-    "parameters": {
-        "epsilon": 0.00017307027171223924,
-        "l": 6
+  "prediction_id": "GCT-IH-L6-STRUCTURAL",
+  "protocol": "EXACT_ICOSAHEDRAL_SCALAR_INVARIANT",
+  "status": "PASS_EXACT_L6_INVARIANT__PTA_SCALAR_SEPARATION_MAP_OBSTRUCTED",
+  "pass": true,
+  "tier": "Tier 1 exact mathematics; Tier 2 conditional symmetry application; Tier 3/open PTA transfer",
+  "character_decomposition": [
+    {
+      "ell": 0,
+      "decomposition_Ih": "Ag",
+      "trivial_scalar_multiplicity": 1
     },
-    "max_deviation": 0.00017307027171223924,
-    "template_summary": {
-        "theta_min_deg": 0,
-        "theta_max_deg": 180,
-        "num_points": 1000
+    {
+      "ell": 1,
+      "decomposition_Ih": "T1u",
+      "trivial_scalar_multiplicity": 0
     },
-    "status": "EXECUTABLE",
-    "pass": true
+    {
+      "ell": 2,
+      "decomposition_Ih": "Hg",
+      "trivial_scalar_multiplicity": 0
+    },
+    {
+      "ell": 3,
+      "decomposition_Ih": "T2u + Gu",
+      "trivial_scalar_multiplicity": 0
+    },
+    {
+      "ell": 4,
+      "decomposition_Ih": "Gg + Hg",
+      "trivial_scalar_multiplicity": 0
+    },
+    {
+      "ell": 5,
+      "decomposition_Ih": "T1u + T2u + Hu",
+      "trivial_scalar_multiplicity": 0
+    },
+    {
+      "ell": 6,
+      "decomposition_Ih": "Ag + T1g + Gg + Hg",
+      "trivial_scalar_multiplicity": 1
+    }
+  ],
+  "invariant": {
+    "definition": "H6(n) = sum_{i=1}^6 P6(a_i dot n)",
+    "L2_norm_squared": "1584*pi/325",
+    "normalized_template": "A6 = H6/sqrt(1584*pi/325)",
+    "fivefold_frame_power_fractions": {
+      "m=0": "11/25",
+      "m=+5": "7/25",
+      "m=-5": "7/25"
+    },
+    "zonal_P6": false,
+    "fivefold_axis_line_pair_angle_deg": 63.43494882292201,
+    "orientation_space": "SO(3)/I"
+  },
+  "pta_bridge": {
+    "separation_only_P6_template_valid": false,
+    "fifteen_angle_mask_valid": false,
+    "nonzero_response_derived": false,
+    "amplitude_derived": false,
+    "required_next_map": "action -> propagator -> polarization/source/pulsar transfer -> generalized ORFs"
+  }
 }

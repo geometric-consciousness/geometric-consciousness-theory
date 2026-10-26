@@ -4,12 +4,12 @@ protocol_o16_n_coh_verification.py
 ===================================
 
 Numerical verification of the N_coh (Polaron Persistence) formula
-evaluation with the canonical Tier 3 inputs documented in App H O.16
+evaluation with the canonical Tier 3 inputs documented in App ORQ O.16
 and V1 Ch17 §17.1.4b.
 
-REGISTERED PROBLEM (App H O.16)
+REGISTERED PROBLEM (App ORQ O.16)
 
-The formula structure is established as Tier 2:
+The formula has Tier 2 algebraic form (inputs are Tier 3 calibrated):
     N_coh = (phi^(-18) * omega_d / (N_cage * g_single^eff * eta_F))^2
 The formula-evaluation audit uses the pre-overlap g_single^eff reference
 (38.3 MHz, calibrated to operating-point consistency). The operational
@@ -17,12 +17,11 @@ eta_Zeno branch applies the overlap factor separately. With both omega_d and
 g_single^eff expressed as angular rates, canonical tubulin parameters give
 N_coh ~ 1.24e-11 pre-overlap and ~1.24e-7 at f_overlap=0.01. These are
 robustness-margin diagnostics under declared Tier 3 inputs, not biological
-population-threshold derivations. Dissolution requires g_single^eff
-suppression by the branch-specific F_crit diagnostic from
-protocol_polaron_Ncoh_derivation_results.json.
+population-threshold derivations. The branch-specific F_crit value is only
+an external-rate sensitivity diagnostic and implies no Polaron or Level-II transition.
 
 Closure of O.12 (specific omega_d) and a first-principles derivation
-of g_single^eff would convert the formula structure into a fully-
+of g_single^eff would convert the formula into a fully-
 numerical Tier 2 prediction.
 
 Scope: this protocol verifies the N_coh formula evaluation with current Tier 3 inputs; full O.16 closure requires first-principles g_single^eff derivation.
@@ -37,12 +36,12 @@ first-principles derivation question.
 
 INPUTS USED
 
-  phi^(-18)         = 1.731e-4  (App K)
+  phi^(-18)         = 1.731e-4  (App DPS)
   omega_d           = 2*pi * 112 MHz = 7.037e8 rad/s
                       (Ch13 Sec 13.1.2b; Tier 3 pending O.12)
-  N_cage            = 144  (V1 Ch17 / App J cage count)
+  N_cage            = 144  (V1 Ch17 / App CXL cage count)
   g_single^eff      = 2*pi * 38.3 MHz = 2.407e8 rad/s pre-overlap
-                      (App Q renormalized: 41x lift from bare 931 kHz)
+                      (App GPE renormalized: 41x lift from bare 931 kHz)
                       operational eta_Zeno branch multiplies by f_overlap
                       (Tier 3 calibrated, pending first-principles derivation)
   eta_F             = 1.0  (Foerster factor, default)
@@ -55,9 +54,9 @@ VERIFICATION
 
   Angular-consistent evaluation: N_coh = 1.24e-11.
 
-  F_crit interpretation (per App H O.16):
+  F_crit interpretation (per App ORQ O.16):
     "Polaron robustness margin is reported by the dedicated F_crit value"
-    "dissolution requires branch-specific g_single^eff suppression by F_crit"
+    "F_crit is a conditional rate-sensitivity diagnostic, not a dissolution threshold"
   The load-bearing F_crit value is the operational sensitivity-branch
   suppression margin inherited from the dedicated Polaron N_coh derivation
   result. The N_coh=1 and "21 orders" calculations below are diagnostics
@@ -85,19 +84,29 @@ PHI_NEG_18 = PHI ** (-18)
 # Tier 3 canonical tubulin inputs
 OMEGA_D_RAD_PER_S = 2.0 * math.pi * 112.0e6      # primary Protocol A-Prime branch angular drive rate
 N_CAGE = 144
-G_SINGLE_EFF_PRE_OVERLAP_ANGULAR_PER_S = 2.0 * math.pi * 38.3e6  # App Q angular-rate convention
+G_SINGLE_EFF_PRE_OVERLAP_ANGULAR_PER_S = 2.0 * math.pi * 38_334_654.305841066  # exact App GPE branch
 F_OVERLAP_OPERATIONAL = 0.01
 G_SINGLE_EFF_OVERLAP_ANGULAR_PER_S = G_SINGLE_EFF_PRE_OVERLAP_ANGULAR_PER_S * F_OVERLAP_OPERATIONAL
 ETA_F = 1.0                                       # Foerster factor
 
-N_COH_ANGULAR_CONSISTENT_REFERENCE = 1.235260244106657e-11
-F_CRIT_REFERENCE_VALUE = 3.1561715231092423e7
+N_COH_ANGULAR_CONSISTENT_REFERENCE = 1.2330279173314128e-11
+
+
+def load_f_crit_reference() -> float:
+    """Load the branch-specific margin from the dedicated N_coh protocol."""
+    result_path = (
+        Path(__file__).resolve().parent.parent
+        / "data"
+        / "protocol_polaron_Ncoh_derivation_results.json"
+    )
+    with open(result_path, encoding="utf-8") as f:
+        return float(json.load(f)["F_critical_operational"])
 
 
 def compute_n_coh(phi_neg_18, omega_d, n_cage, g_single_eff, eta_f):
     """N_coh = (phi^(-18) * omega_d / (N_cage * g_single^eff * eta_F))^2.
 
-    Both omega_d and g_single^eff use the App Q angular-rate convention.
+    Both omega_d and g_single^eff use the App GPE angular-rate convention.
     A cycles/s display would differ by 2*pi and is not used in this check.
     """
     inner = phi_neg_18 * omega_d / (n_cage * g_single_eff * eta_f)
@@ -113,15 +122,16 @@ def main():
     print(f"  phi^(-18)                              : {PHI_NEG_18:.4e}")
     print(f"  omega_d = 2*pi * 112 MHz               : {OMEGA_D_RAD_PER_S:.4e} rad/s")
     print(f"  N_cage                                 : {N_CAGE}")
-    print(f"  g_single^eff pre-overlap               : {G_SINGLE_EFF_PRE_OVERLAP_ANGULAR_PER_S:.3e} rad/s = {G_SINGLE_EFF_PRE_OVERLAP_ANGULAR_PER_S/(2*math.pi*1e6):.1f} MHz cyclic")
+    print(f"  g_single^eff pre-overlap               : {G_SINGLE_EFF_PRE_OVERLAP_ANGULAR_PER_S:.6e} rad/s = {G_SINGLE_EFF_PRE_OVERLAP_ANGULAR_PER_S/(2*math.pi*1e6):.6f} MHz cyclic")
     print(f"  f_overlap operational branch           : {F_OVERLAP_OPERATIONAL:.2e}")
-    print(f"  g_single^eff overlap-propagated        : {G_SINGLE_EFF_OVERLAP_ANGULAR_PER_S:.3e} rad/s = {G_SINGLE_EFF_OVERLAP_ANGULAR_PER_S/(2*math.pi):.3e} Hz cyclic")
+    print(f"  g_single^eff overlap-propagated        : {G_SINGLE_EFF_OVERLAP_ANGULAR_PER_S:.6e} rad/s = {G_SINGLE_EFF_OVERLAP_ANGULAR_PER_S/(2*math.pi):.6f} Hz cyclic")
     print(f"  eta_F                                  : {ETA_F}")
 
     n_coh = compute_n_coh(PHI_NEG_18, OMEGA_D_RAD_PER_S, N_CAGE,
                           G_SINGLE_EFF_PRE_OVERLAP_ANGULAR_PER_S, ETA_F)
     n_coh_overlap = compute_n_coh(PHI_NEG_18, OMEGA_D_RAD_PER_S, N_CAGE,
-                                  G_SINGLE_EFF_OVERLAP_ANGULAR_PER_S, ETA_F)
+                                   G_SINGLE_EFF_OVERLAP_ANGULAR_PER_S, ETA_F)
+    f_crit_reference_value = load_f_crit_reference()
 
     print(f"\nN_coh evaluation:")
     print(f"  Computed pre-overlap                    : {n_coh:.4e}")
@@ -131,7 +141,7 @@ def main():
     print(f"  Relative agreement to angular reference : {rel_diff:.2%}")
     matches = rel_diff < 0.05  # within 5%
 
-    # F_crit derivation under N_coh = 1 (single-Polaron) threshold
+    # F_crit diagnostic under the arithmetic N_coh = 1 reference
     # N_coh(g_suppressed) = N_coh(g_eff) * (g_eff/g_suppressed)^2
     # For N_coh(suppressed) = 1: (g_eff/g_suppressed)^2 = 1/N_coh
     # => F_crit_N1 = g_eff/g_suppressed = 1/sqrt(N_coh)
@@ -143,9 +153,9 @@ def main():
     f_crit_21_orders = math.sqrt(n_coh / threshold_21_orders)
 
     print(f"\nF_crit interpretation (reference-branch comparison):")
-    print(f"  F_crit assuming N_coh=1 threshold       : {f_crit_n1:.3e}")
-    print(f"  F_crit assuming 21-orders threshold     : {f_crit_21_orders:.3e}")
-    print(f"  Operational F_crit reference            : {F_CRIT_REFERENCE_VALUE:.3e}")
+    print(f"  F_crit at N_coh=1 arithmetic reference  : {f_crit_n1:.3e}")
+    print(f"  F_crit at 21-orders diagnostic reference: {f_crit_21_orders:.3e}")
+    print(f"  Operational F_crit reference            : {f_crit_reference_value:.3e}")
     print(f"  Source: protocol_polaron_Ncoh_derivation_results.json")
 
     print(f"\n" + "=" * 76)
@@ -156,7 +166,7 @@ def main():
     print(f"  STATUS: FORMULA AUDIT (regression-style verification only).")
     print(f"")
     print(f"  AUDITED:")
-    print(f"    - N_coh formula structure evaluates to 1.24e-11 with the")
+    print(f"    - N_coh formula (Tier 2 algebraic form, Tier 3 inputs) gives 1.24e-11 with the")
     print(f"      pre-overlap anchor, and to 1.24e-7 with f_overlap=0.01,")
     print(f"      once omega_d and g_single^eff use the same angular-rate convention.")
     print(f"    - Structural prediction Delta C_50 ~ F_disrupt/F_crit uses the")
@@ -164,7 +174,7 @@ def main():
     print(f"")
     print(f"  NOT CLOSED (these remain as the O.16 open questions):")
     print(f"    - First-principles derivation of g_single^eff (currently calibrated")
-    print(f"      via App Q ~41x pre-overlap renormalization plus overlap propagation)")
+    print(f"      via App GPE ~41x pre-overlap renormalization plus overlap propagation)")
     print(f"    - First-principles derivation of omega_d (currently 112 MHz primary branch pending")
     print(f"      O.12 chiral phonon-polariton renormalization)")
     print("=" * 76)
@@ -184,15 +194,15 @@ def main():
         "N_coh_angular_consistent_reference": N_COH_ANGULAR_CONSISTENT_REFERENCE,
         "relative_agreement": rel_diff,
         "matches_angular_consistent_reference_within_5pct": bool(matches),
-        "F_crit_N_coh_eq_1_threshold": f_crit_n1,
-        "F_crit_21_orders_threshold": f_crit_21_orders,
-        "F_crit_reference_value": F_CRIT_REFERENCE_VALUE,
+        "F_crit_N_coh_eq_1_reference": f_crit_n1,
+        "F_crit_21_orders_reference": f_crit_21_orders,
+        "F_crit_reference_value": f_crit_reference_value,
         "F_crit_source": "protocol_polaron_Ncoh_derivation_results.json",
         "F_crit_interpretation_ambiguous": False,
         "status": "FORMULA AUDIT -- regression-style verification of formula evaluation only",
         "audited": [
             "N_coh = 1.24e-11 pre-overlap and 1.24e-7 at f_overlap=0.01 under consistent angular-rate convention",
-            "Delta C_50 ~ F_disrupt/F_crit uses the branch-specific F_crit diagnostic",
+            "F_crit is retained only as a branch-specific rate-sensitivity diagnostic",
         ],
         "not_closed": [
             "First-principles g_single^eff derivation (still calibrated pre-overlap plus overlap propagation)",

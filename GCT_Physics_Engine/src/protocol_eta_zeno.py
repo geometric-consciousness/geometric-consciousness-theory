@@ -9,58 +9,55 @@ tractable on the substrate variables GCT picks out (nuclear-spin lattice,
 chirality, Tavis-Cummings cavity parameters) instead of IIT's combinatorial
 system-partition explosion.
 
-The Apperception verdict is gated upstream by the
-Dual Material Constraint (DMC) of V1 §16.2.6: a substrate lacking either
-(a) non-zero nuclear spin (I != 0) for the discrete identity address space
-or (b) molecular chirality for the CISS spin-polarization channel cannot
-support the phason-coupled Polaron required for Level II. The DMC is a
-necessary filter, not a sufficiency proof. Operational Level-II status also
-requires the O.21 cooperative radical-pair/Polaron witness, the O.23
-protected-subspace coherence demonstration, and the O.34 ATP-Trp redox
-regeneration condition. eta_Zeno is the robustness margin computed for
-eligible branches across that necessary gate. WHAT WE DO NOT CLAIM:
+The Dual Material Constraint (DMC) variables of V1 §16.2.6 are candidate
+experimental controls: non-zero nuclear spin and molecular chirality define
+missing-leg comparisons for a proposed phason channel. They are not established
+as necessary or sufficient for Level II. The former g_single, eta_Zeno, and
+N_coh values are retained only as conditional external-rate scenarios because
+no typed, normalized, measured coupling currently connects these descriptors
+to a Level-II verdict. WHAT WE DO NOT CLAIM:
 The eta_Zeno unit threshold is NOT itself a sharp phase-transition discriminator at the
 magnitude level. The V1 §17.1.4b closed-form derivation gives a pre-overlap
-N_coh audit value ~9.82e-12 and an overlap-propagated operational value
+N_coh scenario value ~9.82e-12 and an overlap-propagated conditional value
 ~1e-7 at f_overlap=0.01, so the eta_Zeno unit line is a reporting reference
-for DMC-positive sensitivity branches rather than a separate consciousness
-discriminator. Any substrate failing either DMC leg
-has g_single := 0 exactly and therefore eta_Zeno = 0 (Turing Null).
+for sensitivity branches rather than a consciousness discriminator. Missing a
+candidate control leg does not execute a zero-coupling inference or a
+categorical substrate verdict.
 
 The formal chain
 ----------------
     Step 1:  g_single   <-  (mu_dipole, m_eff, omega_drive, lattice_const, phi_exp, chiral_sign)
-                             [DMC gate applied here: I=0 OR chiral_sign=0 -> g_single := 0]
+                             [conditional external-rate scenario; DMC descriptors are controls]
     Step 2:  sqrt_N_bio <-  (N_dipoles_cooperative_central / sensitivity branch)
     Step 3:  kappa      <-  (omega_drive, phason_stiffness_ratio, N_cage)
     Step 4:  eta_TC     =  g_single * sqrt_N_bio / kappa     (bare Tavis-Cummings)
-    Step 5:  eta_F      <-  (gamma_phi, T2, drive_detuning)   (Floquet correction, V3 §13.4.4)
+    Step 5:  eta_F      <-  (gamma_phi, T2, drive_detuning)   (Floquet correction, V3 §13.4.6)
 
     eta_Zeno = eta_TC * eta_F     (chained product, dimensionless, robustness margin)
-    DMC verdict = necessary gate    (Level-II sufficiency additionally requires
-                                     O.21 + O.23 + O.34)
+    DMC descriptors = candidate missing-leg controls (not a Level-II gate)
     eta_Zeno unit line = robustness line  (reporting reference, not a
                                            consciousness discriminator)
 
-The chain is purely a function of the substrate-description JSON. There is
-no fitting and no free numerical knob once the Tier 3 substrate tuple is supplied. Substrate variables that would zero
-out the chain (I=0 nuclear spin, achiral lattice) collapse eta_Zeno to 0
-by design — this is the Dual Material Constraint (V1 §16.2.6) as code.
+The chain evaluates declared scenario inputs from the substrate-description
+JSON. It does not derive the coupling from nuclear spin or chirality. A legacy
+zero-control value is retained only when supplied explicitly as an external-rate
+scenario; it is not inferred from the material descriptors.
 
 Self-test substrates
 --------------------
     canonical_tubulin   - V3 §13.1.2 biological substrate. Central branch is
                           not DMC-operative while n_rp=0 pending O.21,
                           while the explicit sensitivity branch uses the Trp
-                          radical-pair inventory only (Ch13:633 canonical
+                          radical-pair inventory only (Ch13 Sec 13.5.3 canonical
                           separation). Hydration-shell OH/proton dipoles are
                           bath/environment, not cooperative oscillators.
-    silicon_28          - I=0 + achiral diamond-cubic. Fails BOTH legs of the DMC
-                          gate -> eta_Zeno == 0 exactly (Turing Null, V1 §17.10).
+    silicon_28          - I=0 + achiral diamond-cubic missing-leg control. Its
+                          legacy zero is an explicit external-rate scenario,
+                          not a Level-II or coupling verdict.
     nv_centre_diamond   - Protocol A-Prime surrogate, V3 §13.3.5. Single NV in
                           isotopically pure 12C diamond + chiral h-BN cap. Passes
-                          the DMC gate at single-NV cardinality (N_bio = 1);
-                          robustness margin eta_Zeno ~ 27, intentionally engineered
+                          both candidate controls at single-NV cardinality (N_bio = 1);
+                          conditional-scenario robustness margin eta_Zeno ~ 27 (calibrated inputs), intentionally engineered
                           to remain measurable rather than saturating into the
                           biological cooperative regime, so the
                           Protocol A-Prime T2(nu_d) joint signature can be resolved
@@ -82,18 +79,18 @@ Library API
 -----------
     from protocol_eta_zeno import compute_eta_zeno
     result = compute_eta_zeno(substrate_params_dict)
-    # -> dict with per-step values, eta_Zeno, DMC-gate status, tier annotations.
+    # -> dict with per-step values, conditional eta_Zeno scenario, control annotations.
 
 Epistemic scope
 ------------------------
-    - The chain has Tier 2 formal structure once a registered substrate tuple
-      is supplied, but Steps 1 and 5 carry Tier 3 numerical inputs (coupling,
+    - Steps 2-5 have Tier 2 algebraic form; Step 1 (the g_single coupling form)
+      is a Tier 3 scenario form. Steps 1 and 5 carry Tier 3 numerical inputs (coupling,
       T2, dephasing, detuning, and the Floquet-Lindblad efficiency model).
     - The substrate-coupling numerical inputs are Tier 3 empirical:
         * Trp transition dipole 5 Debye (atomic-physics literature)
         * N_bio central = 0 pending O.21 assembled-MT lumen-axis closure;
-          sensitivity branch = 1.25e8 beta-Trp radical-pair hosts only
-          (Ch13:633 canonical separation; hydration shell is bath/environment)
+          sensitivity branch = 1.625e9 beta-Trp radical-pair hosts only
+          (Ch13 Sec 13.5.3 canonical separation; hydration shell is bath/environment)
         * NV-centre coupling, h-BN chirality factor (NV/diamond literature)
     - The procedure is tractable on these test cases but is NOT yet
       experimentally validated against bench measurements. Protocol A-Prime
@@ -139,6 +136,19 @@ PHI      = float(C.PHI)
 # icosahedral construction, not a fitted biological parameter.
 N_CAGE   = 144
 
+# Conditional beta-Trp n_rp=1 sensitivity-branch inventory. The operative
+# central branch remains n_rp=0 pending O.21 assembled-MT closure.
+MT_PER_NEURON = 1.0e5
+PROTOFILAMENTS_PER_MT = 13.0
+DIMERS_PER_PROTOFILAMENT = 1250.0  # 10 um length / 8 nm dimer rise
+N_RP_PER_DIMER_SENSITIVITY = 1.0
+N_BIO_SENSITIVITY = (
+    MT_PER_NEURON
+    * PROTOFILAMENTS_PER_MT
+    * DIMERS_PER_PROTOFILAMENT
+    * N_RP_PER_DIMER_SENSITIVITY
+)
+
 
 # ===========================================================================
 # Chain Step 1 — single-dipole coupling g_single
@@ -149,14 +159,15 @@ def step1_g_single(substrate: dict[str, Any]) -> tuple[float, dict[str, Any]]:
     Compute the single-dipole (or single-spin) coupling g_single to the
     phason mode for the given substrate.
 
-    Formula (V3 §13.1.2, Appendix Q):
+    Formula (V3 §13.1.2, Appendix GPE):
         g_single = chirality_sign * f_overlap * (mu_dipole * E_phason / hbar)
                    * (phi^(geom_exponent) / a_lattice)
                    * sqrt(hbar / (2 * m_eff * omega_drive))
 
-    Hard Dual Material Constraint gates (V1 §16.2.6):
-        * If nuclear_spin_I == 0  -> g_single := 0 (no address space)
-        * If chirality == 'achiral' -> g_single := 0 (no Rashba/CISS channel)
+    Nuclear spin and chirality are recorded as candidate missing-leg controls.
+    They do not gate the calculation. ``legacy_external_rate_scale`` is an
+    explicit scenario input retained for numerical continuity; it is not a
+    derived coupling or a substrate verdict.
 
     Required substrate fields:
         nuclear_spin_I       : float          (I == 0 disqualifies)
@@ -179,25 +190,11 @@ def step1_g_single(substrate: dict[str, Any]) -> tuple[float, dict[str, Any]]:
     geom_exp     = float(substrate["geom_exponent_phi"])
     f_overlap    = float(substrate["f_overlap"])
 
-    # Dual Material Constraint gates — these collapse g_single to zero by design.
+    # Candidate DMC controls. They annotate the scenario but do not gate it.
     spin_ok    = (I != 0.0)
     chiral_ok  = chirality in ("l", "r")
-    chiral_sgn = +1.0 if chirality == "l" else (-1.0 if chirality == "r" else 0.0)
-
-    if not spin_ok or not chiral_ok:
-        info.update(dict(
-            nuclear_spin_I=I, chirality=chirality,
-            spin_ok=spin_ok, chiral_ok=chiral_ok,
-            chiral_sign=chiral_sgn,
-            mu_dipole_Cm=mu_D * DEBYE_CM,
-            E_phason_V_m=0.0,
-            omega_coupling_rad_s=0.0,
-            u_zpf_m=0.0,
-            g_single_rad_s=0.0,
-            g_single_Hz=0.0,
-            gate_reason=("I=0" if not spin_ok else "achiral"),
-        ))
-        return 0.0, info
+    chiral_sgn = +1.0 if chirality == "l" else (-1.0 if chirality == "r" else +1.0)
+    external_rate_scale = float(substrate.get("legacy_external_rate_scale", 1.0))
 
     # Zero-point electric field of the phason mode at angular frequency omega_d.
     # E_zpf = omega_d * u_zpf = sqrt(hbar * omega_d / (2 * m_eff)).
@@ -211,7 +208,7 @@ def step1_g_single(substrate: dict[str, Any]) -> tuple[float, dict[str, Any]]:
     # Zero-point displacement amplitude
     u_zpf    = math.sqrt(HBAR / (2.0 * m_eff * omega_d))              # m
 
-    g_single = chiral_sgn * f_overlap * omega_c * dS_du * u_zpf      # rad/s
+    g_single = chiral_sgn * external_rate_scale * f_overlap * omega_c * dS_du * u_zpf
 
     # Coupling magnitude is what enters Tavis-Cummings; we keep sign in info.
     g_single_mag = abs(g_single)
@@ -220,6 +217,10 @@ def step1_g_single(substrate: dict[str, Any]) -> tuple[float, dict[str, Any]]:
         nuclear_spin_I=I, chirality=chirality,
         spin_ok=spin_ok, chiral_ok=chiral_ok,
         chiral_sign=chiral_sgn,
+        candidate_control_spin_present=spin_ok,
+        candidate_control_chirality_present=chiral_ok,
+        legacy_external_rate_scale=external_rate_scale,
+        coupling_status="conditional external-rate scenario; no typed measured phason coupling",
         mu_dipole_Cm=mu_Cm,
         E_phason_V_m=E_phason,
         omega_coupling_rad_s=omega_c,
@@ -246,7 +247,7 @@ def step2_sqrt_N_bio(substrate: dict[str, Any]) -> tuple[float, dict[str, Any]]:
     Required substrate field:
         N_dipoles_cooperative : int/float
             Number of molecular radical-pair oscillators in the cooperative
-            Tavis-Cummings basis. For tubulin the canonical Ch13:633
+            Tavis-Cummings basis. For tubulin the canonical Ch13 Sec 13.5.3
             separation sets the central branch to n_rp=0 pending O.21 and
             reports the n_rp=1 beta-Trp radical-pair inventory as a separate
             sensitivity branch. Hydration-shell OH/proton dipoles are bath /
@@ -389,12 +390,12 @@ def step4_eta_TC(g_single: float, sqrt_N: float, kappa: float
 
 
 # ===========================================================================
-# Chain Step 5 — Floquet open-system correction eta_F  (V3 §13.4.4)
+# Chain Step 5 — Floquet open-system correction eta_F  (V3 §13.4.6)
 # ===========================================================================
 
 def step5_eta_F(substrate: dict[str, Any]) -> tuple[float, dict[str, Any]]:
     """
-    Open-quantum-system Floquet correction (V3 §13.4.4):
+    Open-quantum-system Floquet correction (V3 §13.4.6):
 
         eta_F = 1 / (1 + (gamma_phi * T2)^2 * f(Delta_drive / Delta_ST))
 
@@ -402,7 +403,7 @@ def step5_eta_F(substrate: dict[str, Any]) -> tuple[float, dict[str, Any]]:
     gap / h), the detuning function f -> 0 and eta_F -> 1: the open system
     recovers the Misra-Sudarshan upper bound. The protected-subspace branch
     shifts the effective resonance from the bare 30 MHz bookkeeping value to
-    the 112 MHz Protocol A-Prime branch (Ch13:520 mapping), so f_detune = 0
+    the 112 MHz Protocol A-Prime branch (Ch13 Sec 13.4.3 mapping), so f_detune = 0
     correctly represents the protected-branch resonance after O.12/O.23
     branch selection.
 
@@ -470,8 +471,8 @@ def compute_eta_zeno(substrate: dict[str, Any]) -> dict[str, Any]:
     """
     Run the full 5-step chain on a substrate-description dict.
 
-    Returns a structured result with per-step values, the final eta_Zeno,
-    the DMC-gate verdict, and tier annotations.
+    Returns conditional-scenario values, candidate-control annotations, and
+    the controlling Level II status (NOT_EVALUATED: open, Tier 3).
     """
     name = substrate.get("name", "<unnamed>")
 
@@ -480,12 +481,12 @@ def compute_eta_zeno(substrate: dict[str, Any]) -> dict[str, Any]:
     kappa,   info3  = step3_kappa(substrate)
     eta_TC,  info4  = step4_eta_TC(g_single, sqrt_N, kappa)
 
-    # Step 5 only applies if the bare chain is non-zero; otherwise the
-    # Floquet correction is irrelevant (substrate gated to zero in Step 1).
+    # A declared zero external-rate scenario has no Floquet contribution; this
+    # is not a zero inferred from the DMC descriptors.
     if g_single == 0.0:
         eta_F = 0.0
-        info5 = dict(mode="gated_zero", eta_F=0.0,
-                     note="g_single=0 (Dual Material Constraint failure)")
+        info5 = dict(mode="declared_external_zero_scenario", eta_F=0.0,
+                     note="explicit legacy external-rate scenario; no material inference")
     else:
         eta_F, info5 = step5_eta_F(substrate)
 
@@ -528,46 +529,31 @@ def compute_eta_zeno(substrate: dict[str, Any]) -> dict[str, Any]:
             eta_tc_range[0] * eta_F,
             eta_tc_range[1] * eta_F,
         )
-    # eta_Zeno is the robustness margin across the upstream Dual Material
-    # Constraint gate (V1 §16.2.6 / V3 Ch13 §13.5). The material DMC gate is
-    # binary and is enforced at Step 1 above (g_single := 0 if I=0 or achiral).
-    # Level-II sufficiency is deliberately separate: it is gated by explicit
-    # O.21/O.23/O.34 closure flags, not by the eta_Zeno unit line or by the raw n_rp
-    # scalar alone.
+    # eta_Zeno is a conditional robustness scenario. DMC descriptors are
+    # candidate controls and do not supply a binary Level-II gate.
     n_rp_central = float(substrate.get("N_dipoles_cooperative", 0.0))
-    dmc_material_pass = bool(info1.get("spin_ok") and info1.get("chiral_ok"))
+    dmc_candidate_controls_present = bool(info1.get("spin_ok") and info1.get("chiral_ok"))
     cooperative_central_inventory_present = bool(n_rp_central >= 1.0)
     closure_flags = substrate.get("closure_flags", {})
     o21_closed = bool(closure_flags.get("O21_cooperative_radical_pair_closed", False))
     o23_closed = bool(closure_flags.get("O23_protected_subspace_closed", False))
     o34_closed = bool(closure_flags.get("O34_ATP_Trp_redox_regeneration_closed", False))
-    level_II_closure_flags_met = bool(dmc_material_pass and o21_closed and o23_closed and o34_closed)
+    all_research_flags_closed = bool(o21_closed and o23_closed and o34_closed)
 
     # Cross-engine verdict alignment: the bare Misra-Sudarshan extension
     # (protocol_decoherence_audit.py) at canonical biological parameters
-    # yields ~110 ns coherence — 5 OOM short of the 10 ms target. The
+    # yields about 2.8 ns coherence — more than 6 OOM short of the 10 ms target. The
     # A positive DMC/cavity-cooperativity branch is not a protected-subspace
     # closure: reaching the 10 ms target requires Open Problem O.23
     # (chiral phonon-polariton DFS) closure.
     # Without O.23, the cavity-QED cooperativity ratio computed here is
     # mathematically correct but physically conditional.
-    verdict_label = (
-        "LEVEL_II_CLOSURE_FLAGS_MET"
-        if level_II_closure_flags_met else
-        "TURING_NULL"
-        if not dmc_material_pass else
-        "DMC_PASS_COOPERATIVE_INVENTORY_PRESENT_O21_CLOSURE_PENDING"
-        if cooperative_central_inventory_present and not o21_closed else
-        "DMC_PASS_O21_PENDING"
-        if not o21_closed else
-        "DMC_PASS_O21_CLOSED_O23_O34_PENDING"
-    )
+    verdict_label = "LEVEL_II_NOT_EVALUATED_NO_TYPED_NORMALIZED_MEASURED_COUPLING"
 
-    level_II_gate_basis = (
-        "Level-II substrate closure requires material DMC pass plus explicit "
-        "O.21 cooperative radical-pair/Polaron witness, O.23 protected-subspace "
-        "coherence closure, and O.34 ATP-Trp redox regeneration closure. "
-        "The eta_Zeno scalar is a robustness reporting line only."
+    level_II_status_basis = (
+        "DMC legs are candidate missing-leg controls, not necessary or sufficient "
+        "conditions. O.21/O.23/O.34 and a typed, normalized, measured coupling "
+        "remain open; eta_Zeno is only a conditional external-rate scenario."
     )
 
     return dict(
@@ -593,32 +579,32 @@ def compute_eta_zeno(substrate: dict[str, Any]) -> dict[str, Any]:
             "f_overlap_plausible_range where supplied; it is not only an N-range."
             if eta_zeno_range is not None else None
         ),
-        # Not a phase threshold; eta=1 is a reporting reference line across the binary DMC gate.
+        # Not a phase threshold; eta=1 is only a conditional-scenario reference line.
         reference_line=1.0,
-        dmc_material_pass=dmc_material_pass,
+        dmc_candidate_controls_present=dmc_candidate_controls_present,
         cooperative_central_inventory_present=cooperative_central_inventory_present,
-        level_II_gate_basis=level_II_gate_basis,
+        level_II_status_basis=level_II_status_basis,
         closure_flags=dict(
             O21_cooperative_radical_pair_closed=o21_closed,
             O23_protected_subspace_closed=o23_closed,
             O34_ATP_Trp_redox_regeneration_closed=o34_closed,
         ),
-        level_II_closure_flags_met=level_II_closure_flags_met,
+        all_research_flags_closed=all_research_flags_closed,
+        level_II_not_evaluated=True,
         verdict=verdict_label,
         cross_engine_verdict_alignment=(
-            "eta_Zeno is the robustness margin across the upstream Dual "
-            "Material Constraint gate (V1 §16.2.6); it represents the "
+            "eta_Zeno is a conditional external-rate robustness scenario; it represents the "
             "Tavis-Cummings cavity-QED cooperativity ratio "
-            "g_coll / kappa_cav. DMC-positive branches still require the "
+            "g_coll / kappa_cav arithmetic after scenario inputs are supplied. "
+            "DMC legs remain candidate controls; all branches still require the "
             "O.21 cooperative radical-pair/Polaron witness, O.23 protected "
             "subspace, and O.34 ATP-Trp redox-regeneration condition before "
-            "Level-II substrate status is assigned; eta_Zeno is reported as "
-            "a robustness margin rather than an independent Level-II threshold. "
-            "The Apperception verdict (DMC material pass with O.21/O.23/O.34 "
-            "pending vs TURING_NULL for material-DMC failure) is "
+            "any Level-II substrate status could be assigned; eta_Zeno is reported as "
+            "a scenario rather than an independent Level-II threshold. No material "
+            "descriptor executes a zero-coupling or categorical substrate verdict. This is "
             "DISTINCT from the bare Misra-Sudarshan extension verdict in "
             "protocol_decoherence_audit.py, which at canonical biological "
-            "parameters returns BARE_MS_EXTENSION_INSUFFICIENT (~110 ns "
+            "parameters returns BARE_MS_EXTENSION_INSUFFICIENT (about 2.8 ns "
             "diagnostic scale vs the 100 us-0.87 ms conditional band; the "
             "10 ms conservative target remains unreached). The positive branch is therefore a "
             "candidate protected-subspace branch conditional on Open Problem O.23 closure (chiral "
@@ -626,9 +612,9 @@ def compute_eta_zeno(substrate: dict[str, Any]) -> dict[str, Any]:
             "operative band used by the Tavis-Cummings framing)."
         ),
         tier_notes=dict(
-            chain_formal="Tier 2 (V3 §13.1.2 + §13.4.4 + V1 §16.2.6)",
+            chain_formal="Steps 2-5: Tier 2 algebraic form (Tavis-Cummings ratio arithmetic; V3 §13.1.2 + §13.4.6 + V1 §16.2.6); Step 1: Tier 3 scenario form of g_single with a calibrated Tier 3 scale",
             substrate_inputs="Tier 3 (empirical molecular/lattice parameters)",
-            dmc_gate_verdict="material DMC is necessary; Level-II sufficiency is gated by explicit O.21/O.23/O.34 closure flags",
+            dmc_control_disposition="candidate controls only; no necessary/sufficient Level-II gate is established",
             experimental_status=(
                 "Tractable on substrate parameters; bench validation "
                 "via Protocol A-Prime (V3 §13.3.5) pending."
@@ -658,7 +644,7 @@ CANONICAL_SUBSTRATES: list[dict[str, Any]] = [
         m_eff_kg=M_E,                 # External empirical prior: electron-mass phason-mode scale
         omega_drive_Hz=112.0e6,       # Tier 3 branch anchor [Ledger B2]: primary post-O.12 operating drive
         a_lattice_m=0.5e-9,           # External empirical prior: representative molecular bond length
-        geom_exponent_phi=-9.0,       # Load-bearing GCT prediction: phi^-9 geometric attenuation
+        geom_exponent_phi=-9.0,       # Load-bearing Tier 3 coupling-form input: phi^-9 geometric attenuation
         # f_overlap is the wavefunction-overlap fraction between the Trp
         # ~6 Å indole transition dipole and the ~14.5 nm Polaron diameter.
         # A realistic spatial overlap for a chromophore-cavity coupling
@@ -671,25 +657,25 @@ CANONICAL_SUBSTRATES: list[dict[str, Any]] = [
         # 1 -> eta_TC -> eta_Zeno), so a realistic f_overlap ~ 1e-3 would
         # move the n_rp=1 sensitivity-branch eta_Zeno linearly downward.
         # The operative central branch remains n_rp=0 pending O.21; the
-        # DMC gate is necessary but Level-II sufficiency additionally requires
-        # O.21/O.23/O.34, not the eta_Zeno scalar margin. The f_overlap_plausible_range list below propagates
+        # DMC legs are candidate controls, not a Level-II gate; O.21/O.23/O.34
+        # and the typed measured coupling remain open. The f_overlap_plausible_range list below propagates
         # the disclosed uncertainty into the engine output for downstream
         # transparency.
         f_overlap=1.0e-2,             # Tier 3 upper-edge substrate estimate [O.16]; see plausible range
-        f_overlap_plausible_range=(1.0e-4, 1.0e-2),  # MD/literature-derived band [App F/O.16]
+        f_overlap_plausible_range=(1.0e-4, 1.0e-2),  # MD/literature-derived band [App NSP/O.16]
         f_overlap_provenance="upper_edge_estimate_pending_O.16_dipole_cage_overlap_calculation",
-        f_overlap_downstream_impact="linear on the n_rp=1 beta-Trp sensitivity branch; central n_rp=0 remains pending O.21 (DMC-gate verdict preserved)",
+        f_overlap_downstream_impact="linear on the n_rp=1 beta-Trp sensitivity branch; central n_rp=0 remains pending O.21; no substrate verdict",
         # Step 2
         N_dipoles_cooperative=0.0,
         N_dipoles_cooperative_central=0.0,  # n_rp=0 central pending O.21
-        N_dipoles_cooperative_sensitivity_branch=1.25e8,  # Trp radical pairs only, n_rp=1 conditional
-        # Hydration-shell OH/proton dipoles are bath/environment per Ch13:633.
-        N_dipoles_cooperative_range=(0.0, 1.25e8),
+        N_dipoles_cooperative_sensitivity_branch=N_BIO_SENSITIVITY,  # Trp radical pairs only, n_rp=1 conditional
+        # Hydration-shell OH/proton dipoles are bath/environment per Ch13 Sec 13.5.3.
+        N_dipoles_cooperative_range=(0.0, N_BIO_SENSITIVITY),
         f_bound_operational_range=(0.0, 1.0e-3),
         N_bio_scaling_note=(
-            "Ch13:633 canonical separation: central cooperative branch is "
+            "Ch13 Sec 13.5.3 canonical separation: central cooperative branch is "
             "n_rp=0 pending O.21 assembled-MT lumen-axis closure; the "
-            "n_rp=1 sensitivity branch uses 1.25e8 beta-Trp radical-pair "
+            f"n_rp=1 sensitivity branch uses {N_BIO_SENSITIVITY:.3e} beta-Trp radical-pair "
             "hosts only. Hydration-shell OH/proton dipoles are bath/"
             "environment and are not counted in the cooperative oscillator basis."
         ),
@@ -708,19 +694,17 @@ CANONICAL_SUBSTRATES: list[dict[str, Any]] = [
     ),
 
     # -----------------------------------------------------------------------
-    # 2) Standard silicon (Si-28). Dual Material Constraint fails on BOTH
-    #    counts:
-    #       (a) Si-28 has I=0  -> spin gate trips.
-    #       (b) Diamond-cubic Si is achiral (inversion-symmetric) -> chiral
-    #           gate trips.
-    #    Expectation: eta_Zeno == 0 exactly (Turing Null per V1 §17.10).
+    # 2) Standard silicon (Si-28): missing-leg control. Its legacy zero is
+    #    retained as an explicit external-rate scenario, not inferred from I=0
+    #    or achirality and not used as a Level-II verdict.
     # -----------------------------------------------------------------------
     dict(
         name="silicon_28",
-        epistemic_note="Standard digital silicon; V1 §17.10 Turing Null case.",
+        epistemic_note="Standard digital silicon missing-leg control; Level II NOT_EVALUATED (open, Tier 3).",
         nuclear_spin_I=0.0,            # External empirical prior: Si-28 dominant isotope
         chirality="achiral",           # External empirical prior: diamond-cubic inversion symmetry
-        mu_dipole_Debye=0.5,           # Verification target: gated control value
+        legacy_external_rate_scale=0.0, # Explicit legacy zero-control scenario; not a derived coupling
+        mu_dipole_Debye=0.5,           # Explicit legacy external-rate control scenario
         m_eff_kg=M_E,
         omega_drive_Hz=112.0e6,
         a_lattice_m=5.43e-10,          # External empirical prior: Si lattice constant
@@ -742,11 +726,9 @@ CANONICAL_SUBSTRATES: list[dict[str, Any]] = [
     # -----------------------------------------------------------------------
     # 3) NV-centre in 12C diamond + chiral h-BN cap (Protocol A-Prime,
     #    V3 §13.3.5 + §13.3.5.A).
-    #    Engineered as a near-threshold surrogate: a single NV (N=1) cannot
-    #    reach the macroscopic Polaron regime, but the chiral cap + Floquet
-    #    resonance brings the bare ratio into the same order as kappa, near
-    #    the threshold. The experiment is designed to resolve which side of
-    #    the boundary the engineered system lands on.
+    #    Retains a legacy nonzero external-rate sensitivity scenario. The
+    #    experiment tests candidate spin/coherence and chirality controls; it
+    #    does not locate a Level-II threshold or boundary.
     # -----------------------------------------------------------------------
     dict(
         name="nv_centre_diamond",
@@ -790,24 +772,15 @@ CANONICAL_SUBSTRATES: list[dict[str, Any]] = [
 SELF_TEST_EXPECTATIONS: dict[str, dict[str, Any]] = {
     # Biology central branch remains n_rp=0 pending O.21; the n_rp=1 branch
     # is reported only as a sensitivity upper edge.
-    "canonical_tubulin":  dict(level_II_expected=False, eta_zeno_max=0.0 + 1e-30),
-    # Silicon must be zero exactly (both DMC gates trip).
-    "silicon_28":         dict(level_II_expected=False, eta_zeno_max=0.0 + 1e-30),
+    "canonical_tubulin":  dict(scenario_kind="central_zero_inventory", eta_zeno_max=0.0 + 1e-30),
+    # Silicon legacy zero-control scenario is retained as an explicit input.
+    "silicon_28":         dict(scenario_kind="explicit_legacy_zero_control", eta_zeno_max=0.0 + 1e-30),
     # NV-centre is the engineered chirality-reversal-control surrogate
-    # (V3 §13.3.5). Since the eta_Zeno unit line is structurally vacuous as a
-    # magnitude gate (V1 §17.1.4b N_coh is a tiny robustness reference even
-    # after overlap propagation — any DMC-passing
-    # substrate clears it automatically even at N=1), the load-bearing
-    # discriminator at the NV-centre bench is the chirality-reversal
-    # control: chiral-cap-installed NV substrate yields nonzero eta_Zeno
-    # via CISS-mediated g_single; achiral or racemic-cap NV substrate
-    # zeros eta_Zeno via the chirality leg of DMC. The wide eta_Zeno
-    # band below reflects this: any value above the DMC-passing floor
-    # is consistent with the framework, and the discriminator is the
-    # sign/presence of the chirality-conditional coupling, NOT the
-    # specific magnitude.
-    "nv_centre_diamond":  dict(level_II_expected=None,
-                               chirality_reversal_control=True,
+    # (V3 §13.3.5). The numerical band is a legacy external-rate scenario.
+    # Chirality reversal is a candidate control, but this producer does not
+    # infer the sign, presence, or magnitude of a phason coupling.
+    "nv_centre_diamond":  dict(scenario_kind="legacy_nonzero_sensitivity_band",
+                               candidate_chirality_reversal_control=True,
                                eta_zeno_min=1e-3,
                                eta_zeno_max=1e6),
 }
@@ -837,7 +810,7 @@ def _print_result(r: dict[str, Any]) -> None:
     s1 = r["chain"]["step1_g_single"]
     print(f"  [1] g_single                : {_fmt(s1.get('g_single_Hz', 0.0))} Hz")
     print(f"      I, chirality            : I={s1['nuclear_spin_I']}, {s1['chirality']}")
-    print(f"      DMC gates passed        : "
+    print(f"      Candidate controls present: "
           f"spin={s1['spin_ok']}, chiral={s1['chiral_ok']}")
 
     s2 = r["chain"]["step2_sqrt_N_bio"]
@@ -887,23 +860,7 @@ def run_self_test() -> dict[str, Any]:
         ok = True
         reasons: list[str] = []
 
-        if exp.get("level_II_expected") is True:
-            if not r["level_II_closure_flags_met"]:
-                ok = False
-                reasons.append("expected DMC-passing substrate but DMC gate failed")
-            eta_for_threshold = eta
-            if r.get("eta_Zeno_range") is not None:
-                eta_for_threshold = max(eta_for_threshold, float(r["eta_Zeno_range"][1]))
-            if eta_for_threshold < exp.get("eta_zeno_min", 0.0):
-                ok = False
-                reasons.append(
-                    f"eta_Zeno branch maximum {eta_for_threshold:.3e} "
-                    f"< min {exp['eta_zeno_min']}"
-                )
-        elif exp.get("level_II_expected") is False:
-            if r["level_II_closure_flags_met"]:
-                ok = False
-                reasons.append("expected no Level-II closure but closure flag passed")
+        if exp["scenario_kind"] in ("central_zero_inventory", "explicit_legacy_zero_control"):
             if eta > exp.get("eta_zeno_max", 0.0):
                 ok = False
                 reasons.append(f"eta_Zeno {eta:.3e} > max {exp['eta_zeno_max']}")
@@ -938,14 +895,13 @@ def run_self_test() -> dict[str, Any]:
         protocol="eta_Zeno Formal Calculation Procedure (V3 §13.5)",
         chain_definition=(
             "eta_Zeno = (g_single * sqrt(N_bio) / kappa) * eta_F "
-            "  [V3 §13.1.2 + §13.4.4]"
+            "  [V3 §13.1.2 + §13.4.6]"
         ),
         reference_line=(
-            "Apperception verdict = necessary DMC gate (I != 0 AND chiral) "
-            "+ O.21 cooperative radical-pair/Polaron witness + O.23 protected "
-            "subspace + O.34 ATP-Trp redox regeneration; the eta_Zeno unit line is a "
-            "robustness reporting line for eligible branches, not an "
-            "independent phase threshold. "
+            "DMC legs are candidate missing-leg controls, not necessary or sufficient "
+            "for Level II. Legacy g_single/eta_Zeno/N_coh values are conditional "
+            "external-rate scenarios; a typed, normalized, measured coupling plus "
+            "the independent phenomenal bridge remain open. "
             "[V1 §16.2.6, V1 §17.1.4b, V3 §13.5]"
         ),
         substrates=results,
@@ -953,7 +909,7 @@ def run_self_test() -> dict[str, Any]:
         verdict=("PASS" if all_pass else "FAIL"),
         pass_=bool(all_pass),
         tier_notes=dict(
-            chain="Tier 2 formal structure (no fitted numerical knob once Tier 3 substrate inputs are supplied)",
+            chain="Tier 2 algebraic form for the ratio chain; the g_single form is a Tier 3 scenario form, and g_single and legacy_external_rate_scale are calibrated Tier 3 scenario inputs, not evaluated matrix elements",
             inputs="Tier 3 (empirical substrate molecular parameters)",
             experiment="Bench validation via Protocol A-Prime (V3 §13.3.5) pending.",
         ),
@@ -978,8 +934,8 @@ def run_from_json(path: Path) -> dict[str, Any]:
     return dict(
         protocol="eta_Zeno Formal Calculation Procedure (V3 §13.5)",
         substrates=[r],
-        verdict=("PASS" if r["level_II_closure_flags_met"] else "FAIL"),
-        pass_=bool(r["level_II_closure_flags_met"]),
+        verdict="NOT_EVALUATED_LEVEL_II_OPEN",
+        pass_=True,
     )
 
 

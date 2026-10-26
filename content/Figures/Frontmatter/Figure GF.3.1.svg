@@ -9,16 +9,16 @@
 </defs>
 <rect x="0" y="0" width="1580" height="1020" fill="#ffffff"/>
 <text x="60" y="62" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#1f1f1f" text-anchor="start">GF.3.1  Parameter and dependency ledger</text>
-<text x="60" y="96" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#555555" text-anchor="start">Current accounting is explicit: 5 core postulates plus 3 anchors, with extra sectors quarantined and closure targets named.</text>
+<text x="60" y="96" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#555555" text-anchor="start">Current sector accounting: 5 core postulates plus 6 continuous anchors; a named 6-coefficient-handle precision/gauge subset and O.38 N=144 are separate.</text>
 <rect x="60" y="125" width="1460" height="86" rx="6" fill="#f7fbfd" stroke="#2c5d8a" stroke-width="2"/>
 <text x="90" y="160" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1f4e79" text-anchor="start">Current core disposition</text>
-<text x="90" y="190" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#222222" text-anchor="start">Gauge + lepton + native-RGE endpoint + precision-comparison accounting = 5 postulates + 3 anchors</text>
+<text x="90" y="190" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#222222" text-anchor="start">Gauge + lepton + native-RGE endpoint + precision-comparison accounting = 5 postulates + 6 continuous anchors</text>
 <rect x="1135" y="142" width="255" height="48" rx="5" fill="#ffffff" stroke="#2c5d8a" stroke-width="1.7"/>
 <text x="1160" y="172" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#9b2f2f" text-anchor="start">Not a zero-parameter claim</text>
 <rect x="70" y="255" width="340" height="315" rx="6" fill="#ffffff" stroke="#2c5d8a" stroke-width="1.7"/>
 <rect x="70" y="255" width="340" height="48" rx="6" fill="#2c5d8a" stroke="#2c5d8a" stroke-width="0"/>
 <text x="84" y="285" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="start">Core P1-P5</text>
-<text x="84" y="325" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#2c5d8a" text-anchor="start">Declared postulates / integer handles</text>
+<text x="84" y="325" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#2c5d8a" text-anchor="start">Declared postulates / discrete-coefficient handles</text>
 <line x1="82" y1="329" x2="398" y2="329" stroke="#e1e1e1" stroke-width="1" fill="none"/>
 <text x="84" y="346" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#2c5d8a" text-anchor="start">P1</text>
 <text x="128" y="343.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Icosahedral cut-and-project</text>
@@ -40,24 +40,30 @@
 <text x="128" y="531.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">N = 17 tau harmonic exponent</text>
 <rect x="450" y="255" width="330" height="221" rx="6" fill="#ffffff" stroke="#555555" stroke-width="1.7"/>
 <rect x="450" y="255" width="330" height="48" rx="6" fill="#555555" stroke="#555555" stroke-width="0"/>
-<text x="464" y="285" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="start">Anchors A1-A3</text>
+<text x="464" y="285" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="start">Continuous anchors A1-A6</text>
 <text x="464" y="325" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="start">Imported or calibrated empirical anchors</text>
 <line x1="462" y1="329" x2="768" y2="329" stroke="#e1e1e1" stroke-width="1" fill="none"/>
-<text x="464" y="346" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#555555" text-anchor="start">A1</text>
-<text x="508" y="343.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">m_e dimensional SI conversion</text>
-<text x="508" y="356.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">anchor</text>
-<line x1="462" y1="376" x2="768" y2="376" stroke="#e1e1e1" stroke-width="1" fill="none"/>
-<text x="464" y="393" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#555555" text-anchor="start">A2</text>
-<text x="508" y="390.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">alpha_2^-1(M_GUT) endpoint</text>
-<text x="508" y="403.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">boundary, approx 24-25</text>
-<line x1="462" y1="423" x2="768" y2="423" stroke="#e1e1e1" stroke-width="1" fill="none"/>
-<text x="464" y="440" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#555555" text-anchor="start">A3</text>
-<text x="508" y="437.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">alpha(0)_CODATA used only in</text>
-<text x="508" y="450.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">disclosed precision rows</text>
-<rect x="820" y="255" width="330" height="268" rx="6" fill="#ffffff" stroke="#7a6a40" stroke-width="1.7"/>
+<text x="464" y="346" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="start">A1</text>
+<text x="508" y="346" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">m_e dimensional SI anchor</text>
+<line x1="462" y1="358" x2="768" y2="358" stroke="#e1e1e1" stroke-width="1" fill="none"/>
+<text x="464" y="377" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="start">A2</text>
+<text x="508" y="377" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">alpha_2^-1(M_GUT) endpoint, approx 24-25</text>
+<line x1="462" y1="389" x2="768" y2="389" stroke="#e1e1e1" stroke-width="1" fill="none"/>
+<text x="464" y="408" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="start">A3</text>
+<text x="508" y="408" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">alpha(0)_CODATA precision rows</text>
+<line x1="462" y1="420" x2="768" y2="420" stroke="#e1e1e1" stroke-width="1" fill="none"/>
+<text x="464" y="439" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="start">A4</text>
+<text x="508" y="439" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">Z1 = 41/360 approx 0.114 hypercharge beta norm.</text>
+<line x1="462" y1="451" x2="768" y2="451" stroke="#e1e1e1" stroke-width="1" fill="none"/>
+<text x="464" y="470" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="start">A5</text>
+<text x="508" y="470" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">Z2 = 19/54 approx 0.352 weak-isospin beta norm.</text>
+<line x1="462" y1="482" x2="768" y2="482" stroke="#e1e1e1" stroke-width="1" fill="none"/>
+<text x="464" y="501" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#555555" text-anchor="start">A6</text>
+<text x="508" y="501" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#333333" text-anchor="start">Z3 = 0.7 colour beta norm.</text>
+<rect x="820" y="255" width="330" height="315" rx="6" fill="#ffffff" stroke="#7a6a40" stroke-width="1.7"/>
 <rect x="820" y="255" width="330" height="48" rx="6" fill="#7a6a40" stroke="#7a6a40" stroke-width="0"/>
-<text x="834" y="285" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="start">Integer Handles</text>
-<text x="834" y="325" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#7a6a40" text-anchor="start">Precision-sector discrete choices</text>
+<text x="834" y="285" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="start">Coefficient Handles</text>
+<text x="834" y="325" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#7a6a40" text-anchor="start">Named precision/gauge subset (not global total)</text>
 <line x1="832" y1="329" x2="1138" y2="329" stroke="#e1e1e1" stroke-width="1" fill="none"/>
 <text x="834" y="346" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#7a6a40" text-anchor="start">1440</text>
 <text x="878" y="343.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">Higgs VEV saturation handle</text>
@@ -72,6 +78,10 @@
 <text x="834" y="487" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#7a6a40" text-anchor="start">2</text>
 <text x="878" y="484.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">bilayer factor in 1/(2N) alpha</text>
 <text x="878" y="497.2" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">correction</text>
+<text x="834" y="522" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#7a6a40" text-anchor="start">10φ²</text>
+<text x="878" y="519.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">bare strong inverse handle</text>
+<text x="834" y="550" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#7a6a40" text-anchor="start">1/5</text>
+<text x="878" y="547.0" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#333333" text-anchor="start">muon g-2 equal-weight coefficient</text>
 <rect x="1190" y="255" width="330" height="345" rx="6" fill="#fffdfb" stroke="#9b2f2f" stroke-width="1.7"/>
 <rect x="1190" y="255" width="330" height="48" rx="6" fill="#9b2f2f" stroke="#9b2f2f" stroke-width="0"/>
 <text x="1204" y="285" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="start">Extra sectors</text>
@@ -92,11 +102,11 @@
 <text x="105" y="693" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#2c5d8a" text-anchor="start">Bare structure</text>
 <text x="105" y="718" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">P1 plus phi geometry</text>
 <rect x="385" y="665" width="250" height="76" rx="6" fill="#ffffff" stroke="#2c5d8a" stroke-width="1.5"/>
-<text x="405" y="693" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#2c5d8a" text-anchor="start">Integer selection</text>
-<text x="405" y="718" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">P2-P5 and precision handles</text>
+<text x="405" y="693" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#2c5d8a" text-anchor="start">Discrete-coefficient selection</text>
+<text x="405" y="718" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">P2-P5 and coefficient handles</text>
 <rect x="705" y="665" width="250" height="76" rx="6" fill="#ffffff" stroke="#555555" stroke-width="1.5"/>
 <text x="725" y="693" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#555555" text-anchor="start">Empirical anchoring</text>
-<text x="725" y="718" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">A1 scale, A2 endpoint, A3 alpha</text>
+<text x="725" y="718" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">A1-A3 scale/endpoint/alpha; A4-A6 Z_i</text>
 <rect x="1025" y="665" width="285" height="76" rx="6" fill="#ffffff" stroke="#4f4f4f" stroke-width="1.5"/>
 <text x="1045" y="693" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#4f4f4f" text-anchor="start">Displayed quantitative rows</text>
 <text x="1045" y="718" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#333333" text-anchor="start">gauge, lepton, RGE, precision</text>
@@ -107,7 +117,7 @@
 <text x="105" y="838" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#9b2f2f" text-anchor="start">Closure horizon</text>
 <text x="105" y="865.0" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#333333" text-anchor="start">Target after closures: a 1-parameter core system, P1 plus A1, recovering dimensionless Standard</text>
 <text x="105" y="883.75" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#333333" text-anchor="start">Model structure from geometry alone.</text>
-<text x="105" y="902" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#555555" text-anchor="start">Required closures: O.5, O.12, O.14, O.15, A2 endpoint derivation, A3 bare-to-physical alpha bridge.</text>
+<text x="105" y="902" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#555555" text-anchor="start">Required closures: O.5, O.12, O.14, O.15; derive A2 and A4-A6; close the A3 bare-to-physical alpha bridge.</text>
 <path d="M1210,805 C1180,760 1125,746 1125,741" fill="none" stroke="#b03a2e" stroke-width="1.5" stroke-dasharray="6 5" marker-end="url(#arrow-red)"/>
-<text x="60" y="975" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#666666" text-anchor="start">Source: content/00_Global_Frontmatter/03_Parameter_Ledger.md, especially sections 0.1, 0.5, and 0.6</text>
+<text x="60" y="975" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" fill="#666666" text-anchor="start">Source: Front Matter, Parameter Ledger, especially sections 0.1, 0.5, and 0.6</text>
 </svg>

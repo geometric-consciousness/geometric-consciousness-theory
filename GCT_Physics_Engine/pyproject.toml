@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "gct-physics-engine"
 version = "1.0.0"
-description = "Numerical engine accompanying the Geometric Consciousness Theory monograph. Re-derives mass spectrum, gauge couplings, mixing angles, and selected cosmological observables from a single 6D icosahedral cut-and-project lattice plus CODATA / PDG anchors."
+description = "Numerical engine accompanying the Geometric Consciousness Theory monograph. Reproducible numerical checks of the monograph's tiered claims: lepton mass ratios, bare gauge-coupling handles, mixing-angle ansaetze, and selected cosmological observables, computed from a 6D icosahedral cut-and-project lattice plus CODATA / PDG anchors. Each output carries its tier; Tier 3 hypotheses are tested, not established."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "All rights reserved" }
@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "see ../content/98_Global_Appendices/App_Q_Physics_Engine.md"
+Documentation = "see ../content/98_Global_Appendices/App_GPE_Physics_Engine.md"
 
 [tool.setuptools]
 package-dir = { "" = "src" }

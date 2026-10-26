@@ -16,6 +16,10 @@
     "min_separation_deg": 9.76797203275332,
     "hotspot_radius_deg": 20.0,
     "azimuth_offset_deg": 56.15598885793872,
-    "verdict": "PASS",
-    "pass": true
+    "geometric_match_within_radius": true,
+    "mc_n_random_directions": 100000,
+    "mc_p_within_radius_with_psi_fit": 0.64028,
+    "mc_p_as_close_as_observed": 0.3081,
+    "verdict": "ALIGNMENT_NOT_SIGNIFICANT_MC_P=0.64",
+    "pass": false
 }

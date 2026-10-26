@@ -8,7 +8,7 @@ In the preceding chapters, we established the kinematic and hydrodynamic laws go
 
 **7.1.1 Crystallization Energy Density**
 
-A phase transition from a disordered, symmetric state (the primordial void) to an ordered, broken-symmetry state (the 6D lattice) is, by definition, a first-order transition. This process releases **Latent Heat**. In the GCT substrate, the energy required to "lock" the lattice nodes into position is determined by the fundamental energy density of the Field.
+The phase transition from a disordered, symmetric state (the primordial void) to an ordered, broken-symmetry state (the 6D lattice) is assumed here to be first-order. That is an assumption, not a definition: symmetry-breaking transitions can be continuous, and the Landau form of Ch03 §3.1.1 (only $|\psi|^2$ and $|\psi|^4$ terms) gives a continuous transition with no latent heat, whereas crystallization is generically first-order because cubic invariants are allowed. On the first-order branch the transition releases **Latent Heat**; on a continuous branch it releases none, and the problem posed in this section does not arise in this form. In the GCT substrate, the energy required to "lock" the lattice nodes into position is determined by the fundamental energy density of the Field.
 
 The energy density released during the crystallization of the vacuum is on the order of the bulk stiffness $K_\parallel$, which is anchored to the Planck scale:
 $$\Delta \rho_{vac} \approx \frac{E_P}{\ell_P^3} \approx 10^{113} \text{ J/m}^3 \quad \text{[Tier 4 — Planck-scale order-of-magnitude estimate]}$$
@@ -19,7 +19,7 @@ $$T_{naive} \approx \frac{E_P}{k_B} = \frac{\sqrt{\hbar c^5 / G}}{k_B} \approx 1
 
 A temperature of $10^{32}$ K (the Planck Temperature) represents a state where the average kinetic energy of every vibration equals the Planck energy. This would result in an immediate and total **Thermal Catastrophe**: no stable matter defects (Leptons or Quarks) could persist, and the information-carrying phason modes would be drowned in thermal noise.
 
-However, observational cosmology confirms that the **Cosmic Microwave Background (CMB)** possesses a temperature of $T_{CMB} = 2.725$ K. There exists a discrepancy of **32 orders of magnitude** [Tier 4 — order-of-magnitude estimate, downstream of the Planck-scale $\Delta\rho_{vac}$ above] between the energy released by the lattice crystallization and the temperature observed in the physical manifold. We must identify the thermodynamic mechanism that sequestered this energy.
+Observational cosmology measures the **Cosmic Microwave Background (CMB)** temperature as $T_{CMB}=2.725$ K. The exact Planck temperature $T_P=1.41678416\times10^{32}$ K exceeds this by $31.71594$ decades. This is a temperature ratio, not an energy-density ratio; converting between them would require a declared equation of state and thermal history.
 
 ---
 
@@ -27,31 +27,32 @@ However, observational cosmology confirms that the **Cosmic Microwave Background
 
 **7.2.1 Density of States in $E_\perp$**
 
-The resolution to the thermal catastrophe lies in the 6-dimensional nature of the parent lattice. While we perceive only the 3D physical space ($E_\parallel$), the 3D internal space ($E_\perp$) is physically real and possesses its own degrees of freedom. We analyze the **Density of States (DOS)** for both manifolds.
+The resolution to the thermal catastrophe lies in the 6-dimensional nature of the parent lattice. While we perceive only the 3D physical space ($E_\parallel$), the 3D internal space ($E_\perp$) is treated in the model as physically real, with its own degrees of freedom [Tier 3 premise]. We analyze the **Density of States (DOS)** for both manifolds.
 
-The parallel space $E_\parallel$ is "Gapped" by the extreme stiffness of the phonon bonds. Conversely, the perpendicular space $E_\perp$ is "Soft" and populated by the phason modes. Because the phason stiffness $K_\perp$ is suppressed, the density of accessible energy states in $E_\perp$ is vastly larger than in $E_\parallel$. $E_\perp$ serves as the primary reservoir for the system's configurational entropy.
+The parallel space $E_\parallel$ has a much smaller low-frequency density of states: its acoustic phonon branch is gapless, but the extreme phonon stiffness raises the sound speed $v$, and the DOS scales as $\omega^2/v^3$. Conversely, the perpendicular space $E_\perp$ is "Soft" and populated by the phason modes. Because the phason stiffness $K_\perp$ is suppressed, the density of accessible energy states in $E_\perp$ is vastly larger than in $E_\parallel$. In the model, $E_\perp$ would then serve as the primary reservoir for the system's configurational entropy.
 
-**7.2.2 Entropy Partitioning: The Sequestration Theorem [Tier 2]**
+**7.2.2 Entropy Partitioning: The Sequestration Hypothesis [Tier 4]**
 
-We propose the **Entropy Sequestration Theorem** to explain the cooling of the physical manifold.
+We propose the **Entropy Sequestration Hypothesis** as a candidate explanation for the cooling of the physical manifold (the same Tier 4 hypothesis is referred to in Ch02 §2.2.2).
 
-**Theorem 7.1:** *In a first-order phase transition of a projected manifold, the released latent heat partitions between the parallel and perpendicular subspaces in proportion to their relative Phase-Space Volumes, constrained by the Holographic Bound.*
+**Hypothesis 7.1 [Tier 4]:** *In a first-order phase transition of a projected manifold, the released latent heat partitions between the parallel and perpendicular subspaces in proportion to their relative phase-space volumes, constrained by the holographic bound.*
 
-**Proof:**
-The Field maximizes its total entropy during the transition. In a $6D \to 3D$ projection, the "Bulk" ($E_\perp$) possesses a phase-space volume that scales with the total number of informational degrees of freedom in the 6D lattice ($N \approx 10^{122}$). The "Screen" ($E_\parallel$) samples only a vanishingly small fraction of these states. Because the $E_\perp$ manifold is geometrically "softer," it absorbs the vast majority of the entropic energy—the "heat" of creation—leaving the physical world cool and structured.
+**Model rationale:**
+The hypothesis assumes entropy maximization during the transition and partitions the available states between the projected subspaces. In a $6D\to3D$ projection, the bulk sector $E_\perp$ is assigned a phase-space volume that scales with the total number of informational degrees of freedom, while the screen $E_\parallel$ samples a smaller subset. If the softer $E_\perp$ sector absorbs most of the latent heat, the physical slice can remain comparatively cool. The required partition ratio is the unclosed quantitative step.
 
 **7.2.3 The Holographic Cooling Factor**
 
-The temperature ratio $T_\parallel / T_\perp$ is governed by the **Holographic Screening** of the projection. We derive the cooling factor $\mathcal{C}_{cool}$ as the ratio of the energy density sampled by the 3D slice to the total energy density of the 6D bulk:
-$$\mathcal{C}_{cool} \approx \frac{\rho_{perceived}}{\rho_{total}} \sim 10^{-32} \quad \text{[Tier 4 — order-of-magnitude estimate]}$$
-This factor represents the "Thermodynamic Insulation" provided by the Perpendicular Space. The physical universe is not a closed system; it is a cool interface on top of an incredibly hot 6-dimensional sink.
+The proposed **Holographic Screening** is parameterized here by a dimensionless *temperature multiplier*, not a density ratio:
+$$\mathcal{C}_{cool}\equiv\frac{T_{book}}{T_P}=10^{-32}\quad\text{[Tier 4 — stipulated bookkeeping coefficient]}.$$
+Within the hypothesis, this factor represents thermodynamic insulation by the perpendicular space: the physical universe is modeled as a cool interface coupled to a much hotter 6-dimensional sink. The value remains an asserted estimate pending the partition-function derivation stated below.
 
-**7.2.4 Result: The Prediction of the CMB Temperature [Tier 4]**
+**7.2.4 Order-of-Magnitude CMB Consistency Check [Tier 4]**
 
-We apply this Holographic Cooling Factor to the primordial Planck temperature:
-$$T_{pred} \approx 10^{32} \text{ K} \times 10^{-32} \approx 1 \text{ K} \quad \text{[Tier 4 — order-of-magnitude estimate; requires icosahedral phason suppression } \mathcal{C}_{cool} \approx \phi^{-n}]$$
+Applying that stipulated multiplier gives
+$$T_{book}=T_P\mathcal{C}_{cool}=(1.41678416\times10^{32}\,\mathrm K)(10^{-32})=1.416784\,\mathrm K.$$
+The observed-to-bookkeeping ratio is $T_{CMB}/T_{book}=1.92337$; equivalently, the exact temperature suppression needed to map $T_P$ directly to the observed CMB is $1.92337\times10^{-32}$.
 
-**Epistemic Status:** This prediction achieves the **correct order-of-magnitude** ($10^0$ K vs. observed $2.7$ K), validating the geometric cooling mechanism. However, the factor of $\sim 2.7$ discrepancy constitutes the remaining Cosmological Cooling Debt. Closing this gap requires the exact geometric coefficient $\eta_{cool} = \phi^{-n}$ for a specific exponent $n$ determined by the Galois conjugate structure of the icosahedral phason suppression and the holographic boundary conditions of the $6D \to 3D$ projection. The geometric structure of the projection explains the extreme coldness of the universe (rescuing it from the Planck-scale thermal catastrophe), but the precise coefficient remains **Tier 4 exploratory** — pending derivation of $n$ from the exact phason partition function. This result demonstrates that the cooling mechanism is geometrically forced, but the absolute magnitude is currently contingent.
+**Epistemic Status:** This is **Tier 4 nonpredictive bookkeeping**. The coefficient $10^{-32}$ is stipulated rather than derived from a partition function, and the factor $1.92337$ is the residual needed to reproduce the observation, not a “Cooling Debt” prediction. Deriving a dimensionally typed suppression and thermal history from the $6D\to3D$ model remains open.
 
 ---
 
@@ -63,4 +64,4 @@ We do not derive $\hbar$ from the speed of light. Instead, we identify $\hbar$ a
 
 **7.3.2 Physical Interpretation: The Informational Pixel**
 
-This identifies $\hbar$ as the **Informational Pixel Size in Phase Space**. The quantum nature of our world is the direct result of the **discreteness of the vacuum lattice**. Uncertainty is not a mystical property of matter; it is the resolution limit of the Realization Operator sampling a discrete 6D lattice. $\hbar$ is the conversion factor between the geometric winding of the Solenoid and the energetic rendering of the physical manifold. There is no sub-Planckian physics because there is no sub-lattice resolution.
+Within the lattice-action postulate, $\hbar$ is the **Informational Pixel Size in Phase Space**: it converts the dimensionless action unit into laboratory energy-time units. Any claim that the Realization Operator samples the discrete 6D lattice is conditional on its physical definition. In particular, $\hbar$ is not derived from a geometric winding of the Solenoid: the bare universal Solenoid has trivial ordinary fundamental group and supplies no action-to-energy conversion map. The proposed Planck-scale cutoff belongs to the independently specified physical lattice model, not to Solenoid topology [Tier 3 physical interpretation].

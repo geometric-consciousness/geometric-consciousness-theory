@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-o14d_closure_search.py - Standalone reproduction of the O.14d cage uniqueness search.
+o14d_closure_search.py - Standalone finite weighted-adjacency diagnostic for O.14d.
 
 This script reproduces the protocol_orbit_union_search.py logic with
 explicit orbit-index logging to identify the winning [12, 60, 12, 60]
-subset (specific 60-orbit pair) that yields eta_scalar = -8.
+subset (specific 60-orbit pair) whose scalar adjacency sign sum is -8.
+This does not specify an APS operator/domain and evaluates no APS eta-invariant or index.
 
 Then tests three candidate selection rules against the winner:
     (i)   minimum-radial-extent
@@ -18,6 +19,7 @@ reproduces just enough to identify the winner.
 import math
 import json
 import sys
+from collections import Counter
 from itertools import combinations, product
 from pathlib import Path
 import numpy as np
@@ -132,7 +134,7 @@ def lift_to_6d(R: np.ndarray, vertices_perp: np.ndarray):
 
 
 def enumerate_i_orbits(pts_6d, six_d_matrices):
-    """Group lattice points into I-orbits."""
+    """Group the top-600 cutoff sample into I-connected shell components."""
     N = len(pts_6d)
     visited = [False] * N
     orbits = []
@@ -156,8 +158,18 @@ def enumerate_i_orbits(pts_6d, six_d_matrices):
     return orbits
 
 
-def compute_eta_scalar(nodes_perp: np.ndarray) -> tuple:
-    """Golden-weighted adjacency on the perp-projected nodes; return eta_scalar."""
+def component_is_full_i_orbit(component, pts_6d, six_d_matrices):
+    """Return whether every I-image stays inside this sampled component."""
+    keys = {tuple(np.rint(pts_6d[i]).astype(int)) for i in component}
+    return all(
+        tuple(np.rint(M @ pts_6d[i]).astype(int)) in keys
+        for i in component
+        for M in six_d_matrices
+    )
+
+
+def compute_adjacency_sign_sum(nodes_perp: np.ndarray) -> tuple:
+    """Golden-weighted adjacency on the perp-projected nodes; return its finite sign sum."""
     N = len(nodes_perp)
     A = np.zeros((N, N))
     for i in range(N):
@@ -198,7 +210,7 @@ def main():
     norms = norms[order]
     print(f"    -> {len(pts_6d)} candidate points (sorted by perp-norm)")
 
-    print("\n[3] Enumerating I-orbits...")
+    print("\n[3] Enumerating radial shell components and checking I-closure...")
     orbits_idx = enumerate_i_orbits(pts_6d, six_d_matrices)
     orbits = []
     for ob in orbits_idx:
@@ -212,17 +224,19 @@ def main():
             "mean_perp_norm": mean_n,
             "indices_in_pts": ob,
             "nodes_perp": pts_perp[ob],
+            "is_full_i_orbit": component_is_full_i_orbit(ob, pts_6d, six_d_matrices),
         })
     orbits.sort(key=lambda o: o["min_perp_norm"])
-    print(f"    -> {len(orbits)} I-orbits")
-    print(f"\n    Orbit table (radial order):")
-    print(f"    {'orbit_idx':>10} {'size':>5} {'min_perp':>9} {'max_perp':>9} {'mean_perp':>10}")
+    print(f"    -> {len(orbits)} radial shell components")
+    print(f"\n    Shell-component table (radial order):")
+    print(f"    {'shell_idx':>10} {'size':>5} {'full_I':>7} {'min_perp':>9} {'max_perp':>9} {'mean_perp':>10}")
     for k, o in enumerate(orbits):
-        print(f"    {k:>10} {o['size']:>5} {o['min_perp_norm']:>9.4f} {o['max_perp_norm']:>9.4f} {o['mean_perp_norm']:>10.4f}")
+        print(f"    {k:>10} {o['size']:>5} {str(o['is_full_i_orbit']):>7} {o['min_perp_norm']:>9.4f} {o['max_perp_norm']:>9.4f} {o['mean_perp_norm']:>10.4f}")
 
-    # Find indices of the two 12-orbits and the five 60-orbits
-    twelve_idx = [k for k, o in enumerate(orbits) if o["size"] == 12]
-    sixty_idx = [k for k, o in enumerate(orbits) if o["size"] == 60]
+    full_i_idx = [k for k, o in enumerate(orbits) if o["is_full_i_orbit"]]
+    truncated_idx = [k for k, o in enumerate(orbits) if not o["is_full_i_orbit"]]
+    twelve_idx = [k for k, o in enumerate(orbits) if o["size"] == 12 and o["is_full_i_orbit"]]
+    sixty_idx = [k for k, o in enumerate(orbits) if o["size"] == 60 and o["is_full_i_orbit"]]
     print(f"\n    12-orbits at indices: {twelve_idx}")
     print(f"    60-orbits at indices: {sixty_idx}")
 
@@ -230,7 +244,7 @@ def main():
         print("    ERROR: insufficient orbits for [12, 60, 12, 60] enumeration")
         return 1
 
-    print("\n[4] Enumerating [12, 60, 12, 60] subsets and computing eta_scalar for each...")
+    print("\n[4] Enumerating [12, 60, 12, 60] subsets and computing adjacency sign sums...")
     print(f"    Total to test: C({len(sixty_idx)},2) = {len(sixty_idx) * (len(sixty_idx) - 1) // 2} pairings")
     print()
     print(f"    {'rank':>4} {'pair_indices':>14} {'pair_min_perps':>20} {'pair_mean_perps':>22} {'eta':>6}")
@@ -238,27 +252,29 @@ def main():
     for combo in combinations(sixty_idx, 2):
         sub = twelve_idx + list(combo)
         nodes = np.vstack([orbits[i]["nodes_perp"] for i in sub])
-        eta, _ = compute_eta_scalar(nodes)
+        eta, _ = compute_adjacency_sign_sum(nodes)
         results.append({
             "sixty_orbit_pair": list(combo),
             "twelve_indices": twelve_idx,
             "pair_min_perps": [orbits[c]["min_perp_norm"] for c in combo],
             "pair_mean_perps": [orbits[c]["mean_perp_norm"] for c in combo],
-            "eta_scalar": eta,
+            "adjacency_sign_sum": eta,
         })
     # Sort by sum of pair_min_perps to display in radial order
     results.sort(key=lambda r: sum(r["pair_min_perps"]))
     for k, r in enumerate(results):
-        marker = " <-- ETA=-8 MATCH" if abs(r["eta_scalar"] - (-8)) < 0.5 else ""
+        marker = " <-- SIGN-SUM=-8 MATCH" if abs(r["adjacency_sign_sum"] - (-8)) < 0.5 else ""
         print(f"    {k:>4} {str(r['sixty_orbit_pair']):>14} "
               f"{str([round(x, 3) for x in r['pair_min_perps']]):>20} "
               f"{str([round(x, 3) for x in r['pair_mean_perps']]):>22} "
-              f"{r['eta_scalar']:>6.1f}{marker}")
+              f"{r['adjacency_sign_sum']:>6.1f}{marker}")
 
-    eta_matches = [r for r in results if abs(r["eta_scalar"] - (-8)) < 0.5]
+    eta_matches = [r for r in results if abs(r["adjacency_sign_sum"] - (-8)) < 0.5]
+    eta_frequencies = Counter(int(round(r["adjacency_sign_sum"])) for r in results)
+    singleton_eta_values = sorted(eta for eta, count in eta_frequencies.items() if count == 1)
     print()
     if len(eta_matches) == 0:
-        print("    NO eta_scalar = -8 match among the 10 [12, 60, 12, 60] pairings!")
+        print(f"    NO adjacency sign-sum -8 match among the {len(results)} [12, 60, 12, 60] pairings!")
         print("    Either the search radius is too small or no match exists at this scale.")
     elif len(eta_matches) == 1:
         winner = eta_matches[0]
@@ -331,13 +347,22 @@ def main():
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with OUTPUT_PATH.open("w", encoding="utf-8") as f:
         json.dump({
-            "n_orbits": len(orbits),
+            "sample_definition": "first 600 Z^6 points sorted by perpendicular norm at R=3 and perp_cutoff=3.0",
+            "n_shell_components": len(orbits),
+            "n_full_i_orbits": len(full_i_idx),
             "orbit_sizes": [o["size"] for o in orbits],
+            "shell_inventory": [o["size"] for o in orbits],
+            "full_i_orbit_indices": full_i_idx,
+            "cutoff_truncated_shell_indices": truncated_idx,
+            "shell_classification": ["full_I_orbit" if o["is_full_i_orbit"] else "cutoff_truncated" for o in orbits],
             "orbit_min_perps": [o["min_perp_norm"] for o in orbits],
             "twelve_orbit_indices": twelve_idx,
             "sixty_orbit_indices": sixty_idx,
+            "n_pairings": len(results),
+            "adjacency_sign_sum_frequencies": {str(k): v for k, v in sorted(eta_frequencies.items())},
+            "single_occurrence_adjacency_sign_sums": singleton_eta_values,
             "results": [{k: v for k, v in r.items() if k != "nodes_perp"} for r in results],
-            "eta_minus_8_matches": [{"sixty_orbit_pair": r["sixty_orbit_pair"], "pair_min_perps": r["pair_min_perps"]} for r in eta_matches],
+            "adjacency_sign_sum_minus_8_matches": [{"sixty_orbit_pair": r["sixty_orbit_pair"], "pair_min_perps": r["pair_min_perps"]} for r in eta_matches],
         }, f, indent=2)
     print(f"\n  Output: {OUTPUT_PATH}")
     return 0

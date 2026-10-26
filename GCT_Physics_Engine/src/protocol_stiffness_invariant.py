@@ -2,8 +2,16 @@
 """
 protocol_stiffness_invariant.py
 ===============================
-Compute G_par and G_perp eigenvalues from the canonical
-AKN projection matrices to verify the phi^-2 stiffness ratio tree-level foundation.
+Compute the G_par and G_perp Gram eigenvalues of the unnormalized (raw-frame)
+AKN projection matrices and check that their mean ratio is phi^-2.
+
+Scope: this is raw-frame coordinate arithmetic, not a stiffness derivation.
+The ratio depends on the frame (it scales as s^2 under an internal rescaling,
+and the canonical isometric projectors give 1), so it does not fix
+K_perp/K_parallel (App DPS §DPS.2-§DPS.3). Only the integer D = 18 is Tier 2
+(H3 invariant-degree sum); the stiffness map K_perp/K_parallel = phi^-18 is the
+Tier 3 P3b hypothesis (O.15(b)), registered outside the count (Parameter
+Ledger §0.1). The JSON key names are kept for compatibility.
 """
 
 import numpy as np
@@ -44,7 +52,8 @@ def main():
         "eig_perp_mean": float(val_g_perp),
         "eigenvalue_ratio": float(ratio),
         "target_eta_0": float(target),
-        "stiffness_ratio": float(ratio)
+        "stiffness_ratio": float(ratio),
+        "scope": "raw-frame Gram-eigenvalue identity (frame-dependent; canonical projectors give 1); not a stiffness derivation. D = 18 Tier 2; phi^-18 map Tier 3 P3b (O.15(b))."
     }
 
     out_path = get_output_path("protocol_stiffness_invariant_results.json")

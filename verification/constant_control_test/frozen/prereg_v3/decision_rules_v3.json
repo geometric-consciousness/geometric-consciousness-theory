@@ -1,0 +1,51 @@
+{
+ "version": "3.0",
+ "source": "PREREG_V3_FROZEN.md §V3.1-§V3.2b. v2 rules with the v3 hit definition and the v3.1 rank design. Mechanical transcription; the document wins.",
+ "primary": "p0 = (1 + #{control-2 bases b with p_self(b) <= p_self(phi)}) / 301; p_self of phi and of every null base with M = 200, M' = 999, w = 0.10, v3 hit; ties against phi",
+ "alpha": 0.01,
+ "non_confirmatory": "v2 is a re-analysis of public data (statistic chosen after v1 results were public); any POSITIVE must carry that sentence",
+ "labels": {
+  "POSITIVE": {
+   "condition": "p0 <= 0.01 AND at least 2 of [V4, V8_1e-3, w003] give p <= 0.05 (each p = phi rank among 100 random bases scored identically under the variant) AND all validity controls pass",
+   "sub_label": {
+    "ROBUST": "self-calibrated p_F (S_F) <= 0.10",
+    "TAILORED": "otherwise"
+   }
+  },
+  "NEGATIVE": {
+   "condition": "p0 > 0.10",
+   "sub_label": {
+    "ROBUST": "V2 and V6 both give p > 0.10",
+    "FRAGILE": "otherwise"
+   },
+   "mandatory_scope": "excludes, at power >= 0.8, an effect in which phi hits at least 6 of the 8 informative rows through a real effect; weaker effects are not excluded"
+  },
+  "INCONCLUSIVE": {
+   "condition": "every other case"
+  }
+ },
+ "INVALID_if_any": [
+  "v1 or v3 bundle hash mismatch",
+  "any rule, seed, dither law or size changed after freeze",
+  "control 3(b) paired: two-sample KS between phi randomised p_self on 100 scrambles and a random base on each same scramble (same dithers) <= 0.01",
+  "reference regression fails (D1 one-unit rule)",
+  "dual implementation disagrees",
+  "determinism (fresh pool) not bit-identical",
+  "any evaluation of any base on the real targets before freeze"
+ ],
+ "UNDERPOWERED_if": "fraction of 50 k = 6 plants whose p_self ranks <= 0.01 against the 300 control-2 p_self values < 0.8",
+ "UNDERPOWERED_effect": "POSITIVE may still be reported; NEGATIVE and INCONCLUSIVE may not relabel any row to Tier 4",
+ "NEGATIVE_consequence": "even a valid, powered NEGATIVE supports only 'not distinguishable from numerology for strong effects' (Pablo decides any Tier 4 relabel)",
+ "report_only": [
+  "control 2 one-sample KS (reference set, not a gate)",
+  "phi one-sample KS on scrambles",
+  "phi p_self with M = 1000 / M' = 9999",
+  "plant p_self <= 0.01 power",
+  "Z_S and p for S (21 rows)",
+  "Z_SF and p for S_F",
+  "ladder powers (rank) lambda 0.75/0.5/0.25, k = 3..5",
+  "w05 variant",
+  "V2/V6 outside NEGATIVE",
+  "the v2 hit flag H_T2 for every unit"
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "version": "3.0",
+ "source": "PREREG_V3_FROZEN.md (Pablo approved v3 2026-10-20: \"Ok, lets run v3 please\"). Same as prereg_v2/config_v2.json except hit_definition, plant_draw, primary_statistic (rank), ctrl3_pair and the variant nulls (M_var, Mp_var, n_var_bases). Mechanical transcription; the document wins.",
+ "w": 0.1,
+ "M_phi": 1000,
+ "Mp_phi": 9999,
+ "M_ctrl": 200,
+ "Mp_ctrl": 999,
+ "n_plants": 50,
+ "n_ctrl2": 300,
+ "n_ctrl3": 100,
+ "ladder": [
+  [
+   "lam",
+   0.75
+  ],
+  [
+   "lam",
+   0.25
+  ],
+  [
+   "lam",
+   0.5
+  ],
+  [
+   "k",
+   3
+  ],
+  [
+   "k",
+   4
+  ],
+  [
+   "k",
+   5
+  ]
+ ],
+ "variants": [
+  "V2",
+  "V4",
+  "V8_1e-3"
+ ],
+ "variants_dither_width": {
+  "w003": 0.03,
+  "w05": 0.5
+ },
+ "S_report": true,
+ "null_base_range": [
+  1.3,
+  2.0
+ ],
+ "informative_rows": [
+  "m_u",
+  "m_d",
+  "m_t",
+  "m_H",
+  "sin2thW",
+  "s23",
+  "s13",
+  "th13"
+ ],
+ "V6_drop": [
+  "m_t",
+  "alphas_inv",
+  "sin2thW",
+  "s12"
+ ],
+ "seed_rule": "master = int(sha256(prereg_v3/SHA256SUMS)[:16], 16); SeedSequence(master).spawn(29) in the order of main_v3.STREAMS",
+ "engine": "v1 engine src/cct unchanged; v3 hit test in src/cct/evaluate_v3.py (new file); unit = score_base_v3 (H) or score_base do_s (S)",
+ "level0": [
+  "k",
+  6
+ ],
+ "power_control": "k = 6: per plant, 6 rows chosen uniformly without replacement among the 8 informative rows that b* misses on y0; if b* misses fewer than 6, all its missed informative rows are planted (so after planting at least 6 of the 8 informative rows are T2 hits). Fixed after the scrambled-target pilot (Pablo 'B', 2026-10-20).",
+ "alpha": 0.01,
+ "hit_definition": "T2 hit under L <= L_i^GCT counted only if achieved by a formula whose exponent contains the base: integer N != 0, offset exponent N + s*b^-k (any N), or self-power s*b (cct/evaluate_v3.py). The v2 definition (any formula) is recorded as H_T2 and reported only.",
+ "plant_draw": "power-control and ladder plants draw uniformly among formulas with L <= L_i^GCT whose exponent contains the base (same rule as hit_definition)",
+ "n_shared": 0,
+ "ctrl3_pair": true,
+ "M_var": 100,
+ "Mp_var": 399,
+ "n_var_bases": 100,
+ "primary_statistic": "v3.1: p0 = (1 + #{control-2 bases with p_self <= p_self(phi)}) / (300 + 1); p_self(phi) computed exactly like the null bases (M_ctrl = 200, M' = 999, v3 hit); ties against phi"
+}

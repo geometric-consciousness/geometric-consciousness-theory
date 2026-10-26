@@ -77,7 +77,7 @@ def compute_discrete_vacuum_polarization_30face():
     #       = 1 + 0.4 * 0.12
     #       = 1.048  ... this is a heuristic lower bound
 
-    # C_ico from icosahedral symmetry: the (5E)/(4D) ratio in the A_5
+    # C_ico from icosahedral symmetry: the dim(H)/dim(G) ratio in A_5
     # representation gives C_ico ~ 1.12, formed below from the 30-face
     # geometric factor. A tighter value follows from the exact eigenvalue-gap
     # ratio of the 30-face adjacency matrix.
@@ -178,7 +178,7 @@ def run_alpha_1loop():
         "agreement_with_target":     bool(abs(C_ico_best - expected_C_ico) < 0.05),
         "topology_pathway_identified": True,
         "correction_sign":           "anti-screening (bosonic phason loop)",
-        "computational_status":      "QLQCD-1L sign/topology check: 30-face summation reproduces 96% of icosahedral target C_ico, but 1-loop magnitude closure is incomplete (residual ~4.3% > 0.34% bare gap; full QLQCD-1L closure remains Open Problem per App Z). C_ico_final=1.0720 is reported as a Tier 3 numerical-control value, not a Tier 2 magnitude closure.",
+        "computational_status":      "QLQCD-1L sign/topology check: 30-face summation reproduces 96% of icosahedral target C_ico, but 1-loop magnitude closure is incomplete (residual ~4.3% > 0.34% bare gap; full QLQCD-1L closure remains Open Problem per App QLA). C_ico_final=1.0720 is reported as a Tier 3 numerical-control value, not a Tier 2 magnitude closure.",
         "tier_topology":             2,
         "tier_C_ico_value":          3,
         "C_ico_final_tier_disposition": "Tier 3 numerical-control value pending QLQCD-1L magnitude closure",

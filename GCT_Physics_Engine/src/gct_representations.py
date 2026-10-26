@@ -2,7 +2,8 @@
 """
 gct_representations.py — Fermion Representation Classifier
 ===========================================================
-Classifies lattice defects into gauge representations of SU(3).
+Classifies lattice defects into candidate SU(3) representation labels (open Tier 3
+identification: quarks as triplets and leptons as singlets are candidates, not derived).
 
 Physical Identification:
 - Vertex Defects (at icosahedral vertices of the RT)  => Singlet (1) => Leptons
@@ -11,12 +12,13 @@ Physical Identification:
 The classification is purely topological:
 - A vertex defect sits at a CORNER of the acceptance window.
   It is invariant under the Z3 rotation that permutes the 3 faces meeting there.
-  => It transforms as the IDENTITY (singlet) under SU(3) => no color charge.
+  => Candidate SU(3) singlet label (Tier 3; Z3 invariance alone does not fix an SU(3) rep).
 
 - A face defect sits at the CENTER of one of the 30 rhombic faces.
   The face center is NOT on any symmetry axis.
-  The 3-fold axis (SU(3) generator) rotates it into the centers of the
-  two ADJACENT faces => it spans a 3D orbit => color triplet.
+  The 3-fold axis (a Z3 rotation, not an SU(3) generator) rotates it into the
+  centers of the two ADJACENT faces => it spans a 3-point orbit => candidate
+  color triplet (Tier 3; a complex three-component rep is not derived).
 """
 
 import numpy as np
@@ -67,21 +69,21 @@ class RepresentationAnalyzer:
                 "representation": "1",
                 "dimension": 1,
                 "su3_charge": 0,
-                "name": "Lepton (SU(3) Singlet)",
-                "note": "Vertex is on the 3-fold axis. Z3-invariant => no color charge."
+                "name": "Lepton (SU(3) singlet candidate)",
+                "note": "Vertex is on the 3-fold axis. Z3-invariant => candidate color-singlet label (Tier 3)."
             }
 
         elif defect_type == "face":
             # The center of a rhombic face is NOT on any rotation axis.
             # A Z3 rotation (120°) around an adjacent vertex maps this face
             # center to a neighbouring face center, rotating through 3 distinct
-            # positions => 3-dimensional orbit => color triplet.
+            # positions => 3-point orbit => candidate color triplet (Tier 3).
             return {
                 "representation": "3",
                 "dimension": 3,
                 "su3_charge": 1,
-                "name": "Quark (SU(3) Triplet)",
-                "note": "Face-center orbit under Z3 has 3 images => color triplet."
+                "name": "Quark (SU(3) triplet candidate)",
+                "note": "Face-center orbit under Z3 has 3 images => candidate color triplet (Tier 3)."
             }
         else:
             raise ValueError(f"Unknown defect_type '{defect_type}'. Use 'vertex' or 'face'.")

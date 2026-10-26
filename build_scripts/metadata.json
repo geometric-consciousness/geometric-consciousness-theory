@@ -7,11 +7,44 @@
   "doi_concept": "10.5281/zenodo.20647445",
   "repo_url": "https://github.com/geometric-consciousness/geometric-consciousness-theory",
   "website": "https://geometric-consciousness.com",
-  "date": "June 17, 2026",
-  "version": "publication baseline",
+  "date": "October 26, 2026",
+  "version": "1.3.0",
   "output_filename_md": "Geometric_Consciousness_Theory.md",
   "output_filename_tex": "Geometric_Consciousness_Theory.tex",
   "output_filename_pdf": "Geometric_Consciousness_Theory.pdf",
+  "publication_summary": {
+    "expected_protocol_count": 62,
+    "scientific_closure": {
+      "confirmed": 7,
+      "open": 31,
+      "conditional": 12,
+      "tension": 12
+    },
+    "calibrated_discrete_coefficient_handles": [
+      "1440",
+      "12",
+      "360",
+      "2",
+      "10phi^2",
+      "1/5"
+    ],
+    "calibrated_discrete_coefficient_handle_notes": {
+      "1440": "Higgs VEV saturation; App ORQ O.20",
+      "12": "12-fold neutrino mass-sum geometric weight",
+      "360": "fine-structure $\\alpha$ 360 multiplier",
+      "2": "bilayer factor in the $1/(2N)$ $\\alpha$ correction; App ORQ O.5",
+      "10phi^2": "bare strong-coupling inverse handle; App ORQ O.42 / QLQCD-2",
+      "1/5": "muon $g-2$ equal-weight vertex coefficient; App ORQ O.26/O.5"
+    },
+    "calibrated_discrete_coefficient_subset_scope": "named precision/gauge comparison subset and are not a manuscript-wide handle total",
+    "de_multichannel": {
+      "biogenic_terrestrial_w0": -1.0038,
+      "biogenic_terrestrial_wa": 0.0136,
+      "best_fit_diagonal_diagnostic_score": 4.861,
+      "omega_lambda_diagnostic_spread": 0.0446,
+      "physical_behavior": "continuous phantom phase with no literal phantom-divide crossing"
+    }
+  },
   "ordered_sections": [
     "00_Global_Frontmatter",
     "01_Volume_1_Operating_System",
@@ -19,5 +52,10 @@
     "03_Volume_3_Matter_Spectrum",
     "98_Global_Appendices",
     "99_Global_Backmatter"
+  ],
+  "appendix_order": [
+    "MTI", "TAS", "CCD", "BRC", "FTH", "NSP", "FSM", "TCD", "ORQ", "TIB",
+    "CXL", "DPS", "TPS", "ULA", "TPF", "NSM", "MFD", "QCT", "GPE", "PSC",
+    "IVH", "CVC", "TAT", "TPR", "USS", "PRG", "SNE", "BEB", "PUP", "QLA", "GRF"
   ]
 }

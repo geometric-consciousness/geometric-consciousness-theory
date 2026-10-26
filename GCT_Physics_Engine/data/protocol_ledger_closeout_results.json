@@ -19,5 +19,6 @@
     "falsification_condition": "If the consolidated HVP synthesis remains lattice-dominant with a sub-1\u03c3 SM-experiment gap, the muon g-2 channel is not load-bearing evidence for GCT. A restored >3\u03c3 gap near \u0394a_\u03bc = 250.65 \u00d7 10\u207b\u00b9\u00b9 is required for validation.",
     "status": "CLOSED \u2014 WP2025 tension stance recorded; arbitration condition explicit."
   },
-  "pass": true
+  "verdict": "BOOKKEEPING_ONLY_STATUS_DECLARATIONS_NO_COMPUTATION",
+  "pass": false
 }

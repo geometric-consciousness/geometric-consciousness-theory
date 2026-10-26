@@ -71,9 +71,11 @@
       "n_positive_evals": 291,
       "n_negative_evals": 283,
       "n_zero_evals": 0,
-      "eta_scalar": 8,
-      "bulk_required_for_n_minus_107": -108.0,
-      "bulk_is_integer": true,
+      "scalar_adjacency_sign_sum": 8,
+      "scalar_adjacency_per_spinor_dimension_diagnostic": 1.0,
+      "aps_operator_domain_specified": false,
+      "aps_eta_evaluated": false,
+      "aps_index_evaluated": false,
       "close_orbit_pairs": [
         [
           0,
@@ -164,10 +166,10 @@
       "n_duplicate_groups": 0,
       "n_extra_rows_from_duplicates": 0,
       "largest_duplicate_groups": [],
-      "abs_eta_over_sqrt_N": 0.3339135484518729,
+      "abs_scalar_sign_sum_over_sqrt_N": 0.3339135484518729,
       "is_duplicate_artifact": false,
       "is_statistical_coincidence": true,
-      "is_genuine_candidate": false
+      "is_nonartifact_sign_pattern": false
     },
     {
       "label": "N=754",
@@ -244,9 +246,11 @@
       "n_positive_evals": 365,
       "n_negative_evals": 389,
       "n_zero_evals": 0,
-      "eta_scalar": -24,
-      "bulk_required_for_n_minus_107": -104.0,
-      "bulk_is_integer": true,
+      "scalar_adjacency_sign_sum": -24,
+      "scalar_adjacency_per_spinor_dimension_diagnostic": -3.0,
+      "aps_operator_domain_specified": false,
+      "aps_eta_evaluated": false,
+      "aps_index_evaluated": false,
       "close_orbit_pairs": [
         [
           0,
@@ -362,10 +366,10 @@
       "n_duplicate_groups": 0,
       "n_extra_rows_from_duplicates": 0,
       "largest_duplicate_groups": [],
-      "abs_eta_over_sqrt_N": 0.8740284488750757,
+      "abs_scalar_sign_sum_over_sqrt_N": 0.8740284488750757,
       "is_duplicate_artifact": false,
       "is_statistical_coincidence": true,
-      "is_genuine_candidate": false
+      "is_nonartifact_sign_pattern": false
     }
   ],
   "n132_already_classified_as_duplicate_artifact": true,

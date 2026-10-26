@@ -11,10 +11,16 @@ Theory:
 3. Cavity Correction (+1): phi^{-108} -> phi^{-107}  (removing 1 DOF for the defect)
 4. Back-Reaction:          (1 - 5 * alpha)  [Universal 5-channel phason drag]
 
-Success Criterion: Error < 1000 ppm (0.1%) vs CODATA m_e = 0.5109989 MeV.
+Registered rule (App FSM P.16; falsifiability_registry.json P.16): G is the
+electron Planck-link row inverted (G proportional to m_e^-2), so it inherits
+the P.1c LOCKED 1000 ppm electron rule as 2001 ppm on G. The model-
+authoritative alpha_GCT branch misses it at 2273.725 ppm; P.16 is reported as
+OUTSIDE_REGISTERED_BAND (FAIL of the inherited rule) and is not counted as a
+pass while P.1c fails.
 
 ================================================================================
-DERIVATION STATUS (Tier 2 — Discrete Lattice Argument)
+DERIVATION STATUS (Tier 2 thermodynamic mechanism + Tier 4 Planck-link
+conjecture inheriting O.14 + Tier 3 dimensional anchor; App FSM P.16)
 ================================================================================
 The 8π factor in the Reduced Planck Mass M_red = sqrt(ħc / 8πG_N) arises from
 continuous spherical solid-angle integration over the compactified internal
@@ -41,13 +47,15 @@ Consequently, the bare quantum of lattice bond-energy is:
 
     M_std = sqrt(ħc / G_N)  [Standard Planck Mass]
 
-This is a TIER 2 Geometric Derivation. The 8π suppression of M_red is a
-continuum approximation artifact, absent by construction in the discrete
-GCT vacuum. M_std is the unique, axiom-derived Planck anchor.
+Within this lattice argument the 8π suppression of M_red is read as a
+continuum approximation artifact; the choice of M_std as the Planck anchor
+is part of the Tier 4 Planck-link conjecture (inherits O.14), not an
+axiom-derived result.
 
-Epistemic Tier: m_e derivation = Tier 2 (fully geometric)
-  - Exponent φ^{-107}:  Tier 2 (rigorous 6D vacancy counting)
-  - Planck scale anchor: Tier 2 (M_std from discrete RT lattice, no 8π)
+Epistemic Tier (App FSM P.16): Tier 2 thermodynamic mechanism + Tier 4
+Planck-link conjecture (inherits O.14) + Tier 3 dimensional anchor.
+  - Exponent φ^{-107}:  vacancy-counting arithmetic; physical link O.14 open
+  - Planck scale anchor: Tier 4 Planck-link conjecture (M_std, no 8π)
 ================================================================================
 """
 
@@ -59,7 +67,8 @@ from pathlib import Path
 from gct_utils import C, get_output_path
 
 PHI = float(C.PHI)
-HBAR_SI = float(C.HBAR_SI)
+H_PLANCK_SI = float(C.H_PLANCK_SI)
+HBAR_SI = H_PLANCK_SI / (2.0 * math.pi)
 C_SPEED = float(C.C) # Renamed to avoid partial conflict if C is imported as C
 G_SI = float(C.G_SI)
 EV_TO_J = float(C.EV_TO_J)
@@ -98,7 +107,8 @@ def derive_newton_g_from_jacobson() -> dict:
     from gct_utils import C, get_output_path
 
     PHI = float(C.PHI)
-    HBAR_SI = float(C.HBAR_SI)
+    H_PLANCK_SI = float(C.H_PLANCK_SI)
+    HBAR_SI = H_PLANCK_SI / (2.0 * math.pi)
     C_SPEED = float(C.C) 
     ALPHA_INV_GCT = float(C.ALPHA_INV_GCT)
     m_e_mev = float(C.M_E_OBS)
@@ -112,9 +122,9 @@ def derive_newton_g_from_jacobson() -> dict:
     # -----------------------------------------------------------------------
     print("\nStep 1: Physical Anchor [Electron Mass]")
     
-    # 0.5109989 MeV -> Joules -> kg
-    m_e_j = m_e_mev * 1e6 * EV_TO_J
-    m_e_kg = m_e_j / (C_SPEED**2)
+    # Newton-G uses the CODATA-2022 SI mass at its published precision. The
+    # rounded MeV display anchor remains a presentation value for the mass row.
+    m_e_kg = float(C.M_E_CODATA_KG)
     
     print(f"  m_e (CODATA)           = {m_e_mev:.7f} MeV")
     print(f"  m_e_kg                 = {m_e_kg:.5e} kg")
@@ -140,6 +150,9 @@ def derive_newton_g_from_jacobson() -> dict:
     print(f"  Lattice Spacing (a_6)  = {a_6:.6e} m")
     
     results["m_e_kg"] = m_e_kg
+    results["h_planck_exact_J_s"] = H_PLANCK_SI
+    results["hbar_derived_J_s"] = HBAR_SI
+    results["alpha_branch"] = "MODEL_AUTHORITATIVE_ALPHA_GCT_PHI2_OVER_360"
     results["a_6_meters"] = a_6
 
     # -----------------------------------------------------------------------
@@ -170,26 +183,41 @@ def derive_newton_g_from_jacobson() -> dict:
     print(f"  Abs Error              = {diff:.4e}")
     print(f"  Precision              = {ppm:.2f} ppm  ({percent:.4f}%)")
     
-    verdict = "PASS" if ppm < 5000 else "FAIL"
-    
+    # Registered rule (App FSM P.16): the P.1c LOCKED 1000 ppm electron rule
+    # carried through G proportional to m_e^-2, i.e. 2001 ppm on G. The former
+    # 5000 ppm tolerance was not a registered rule and is withdrawn.
+    INHERITED_RULE_PPM = 2001.0
+    inside_rule = bool(ppm < INHERITED_RULE_PPM)
+    verdict = ("INSIDE_INHERITED_P1C_2001PPM_RULE" if inside_rule
+               else "FAIL_INHERITED_P1C_2001PPM_RULE__UPSTREAM_CASCADED")
+
     results["G_CODATA"]   = G_CODATA
     results["diff_G"]     = diff
     results["ppm_error"]  = ppm
+    results["registered_rule"] = (
+        "App FSM P.16: inherits the P.1c LOCKED 1000 ppm electron rule = 2001 ppm on G "
+        "(G proportional to m_e^-2)")
+    results["registered_rule_ppm"] = INHERITED_RULE_PPM
+    results["band_status"] = ("INSIDE_REGISTERED_BAND" if inside_rule
+                              else "OUTSIDE_REGISTERED_BAND")
+    results["inherited_rule_pass"] = inside_rule
+    results["tier"] = ("Tier 2 thermodynamic mechanism + Tier 4 Planck-link conjecture "
+                       "(inherits O.14) + Tier 3 dimensional anchor")
     results["verdict"]    = verdict
-    results["pass"]       = bool(verdict == "PASS")
+    # P.16 is derived from P.1c, not independent, and is not counted as a
+    # pass while P.1c fails the LOCKED rule.
+    results["pass"]       = inside_rule
 
     # -----------------------------------------------------------------------
     # Summary
     # -----------------------------------------------------------------------
     print("\n" + "=" * 60)
-    if verdict == "PASS":
-        print("SUCCESS: Newton's G is postdicted by the Jacobson chain within the registered tolerance.")
-        print(f"  1. Anchor: m_e")
-        print(f"  2. Lattice spacing: a_6 = {a_6:.3e} m")
-        print(f"  3. G_pred: {G_predicted:.4e} (Error: {ppm:.1f} ppm)")
-        print("  Epistemic Tier: Tier 2 thermodynamic mechanism + Tier 4 O.14 Planck-link + Tier 3 dimensional anchor")
-    else:
-        print("FAIL: Scale drift exceeds 5000 ppm threshold.")
+    print(f"  1. Anchor: m_e")
+    print(f"  2. Lattice spacing: a_6 = {a_6:.3e} m")
+    print(f"  3. G_pred: {G_predicted:.4e} (Error: {ppm:.1f} ppm)")
+    print(f"  Inherited P.1c rule on G: {INHERITED_RULE_PPM:.0f} ppm -> {results['band_status']}")
+    print(f"  VERDICT: {verdict}")
+    print("  Epistemic Tier: Tier 2 thermodynamic mechanism + Tier 4 O.14 Planck-link + Tier 3 dimensional anchor")
     print("=" * 60)
 
     # Save

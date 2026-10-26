@@ -8,7 +8,7 @@
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
     <dc:title>Figure V3.9.1</dc:title>
-    <dc:description>Neutrino mass-sum interval plot with DESI/Planck bounds, registered P.4 gates, and joint P.4/P.6 decision matrix.</dc:description>
+    <dc:description>Neutrino mass-sum interval plot with DESI/Planck bounds and independently adjudicated P.4/P.6 template coordinates.</dc:description>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -468,7 +468,7 @@ z
 " clip-path="url(#pee2ad64297)" style="fill: #f4f4f4; stroke: #666666; stroke-linejoin: miter"/>
    </g>
    <g id="text_21">
-    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="458.150652" y="54.864857" transform="rotate(-0 458.150652 54.864857)">Joint P.4 / P.6 gate</text>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="458.150652" y="54.864857" transform="rotate(-0 458.150652 54.864857)">P.4 / P.6 model comparison</text>
    </g>
    <g id="text_22">
     <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: start" x="472.7338" y="92.003488" transform="rotate(-0 472.7338 92.003488)">Mass channel</text>

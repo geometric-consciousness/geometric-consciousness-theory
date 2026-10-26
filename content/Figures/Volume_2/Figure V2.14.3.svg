@@ -12807,7 +12807,7 @@ L 375.571817 223.382415
     <text style="font-size: 8.45px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="497.105342" y="106.990133" transform="rotate(-0 497.105342 106.990133)">DES target: (-0.8030, -0.7200)</text>
    </g>
    <g id="text_29">
-    <text style="font-size: 8.45px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="497.105342" y="125.735477" transform="rotate(-0 497.105342 125.735477)">GCT single: (-1.0038, +0.0136)</text>
+    <text style="font-size: 8.45px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="497.105342" y="125.735477" transform="rotate(-0 497.105342 125.735477)">Logistic ref: (-1.0038, +0.0136)</text>
    </g>
    <g id="text_30">
     <text style="font-size: 8.45px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="497.105342" y="144.480821" transform="rotate(-0 497.105342 144.480821)">Sweep w0: [-1.009, -0.991]</text>

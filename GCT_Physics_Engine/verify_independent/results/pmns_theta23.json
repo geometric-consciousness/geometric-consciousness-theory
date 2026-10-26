@@ -1,24 +1,41 @@
 {
   "name": "pmns_theta23",
-  "app_r_label": "PMNS theta23",
-  "formula": "theta_23 = 45 deg (bare prediction; Tier 3 due to tension)",
-  "tier": "Tier 3 (Tension)",
+  "app_psc_label": "PMNS theta23",
+  "formula": "theta_23 = 45 deg (bare prediction; Tier 3, octant unresolved)",
+  "tier": "Tier 3 (octant unresolved)",
   "predicted": 45.0,
-  "observed": 49.5,
+  "observed": 43.3,
+  "reference_class": "EMPIRICAL_ANCHOR",
+  "band_outcome": "NO_NUMERIC_VERIFIER_BAND",
+  "derivational_closure": "OPEN_CONDITIONAL",
   "unit": "degrees",
-  "app_r_predicted": 45.0,
-  "app_r_precision_str": "4.5 deg (>4 sigma tension)",
-  "app_r_precision_ppm": null,
-  "independent_precision_ppm": 90909.09090909091,
-  "status": "TENSION",
+  "app_psc_predicted": 45.0,
+  "app_psc_precision_str": "inside both NuFIT 6.0 3-sigma ranges; Delta chi^2(45 deg) = 2.0 with SK / 4.2 without; octant unresolved",
+  "app_psc_precision_ppm": null,
+  "independent_precision_ppm": 39260.969976905384,
+  "status": "OPEN_CONDITIONAL",
   "tolerance_ppm": null,
   "discrepancy_notes": [],
   "extra": {
-    "percent_error": 9.090909090909092,
-    "gap_deg": 4.5,
-    "pdg_tolerance_deg": 1.1,
-    "sigma_vs_pdg_tolerance": 4.090909090909091,
-    "status_rule": "PASS if within 1 sigma PDG/NuFit-scale tolerance; otherwise TENSION; delta_CP is downgraded to OPEN_CONDITIONAL because the phase mechanism is Tier 2 but PMNS-sector magnitude/disposition remains Tier 3 pending O.7 and theta_23 tension resolution",
-    "note": "Bare prediction 45 deg is in >4 sigma tension with the 49.5 deg +/- 1.1 deg anchor. App R Sec R.4 downgrades to Tier 3 pending geometric derivation of the deviation."
+    "percent_error": 3.9260969976905384,
+    "gap_deg": 1.7000000000000028,
+    "comparator_source": "NuFIT 6.0 (arXiv:2410.05380) Table 1, normal ordering, IC24 with SK atmospheric data",
+    "best_fit_with_sk_deg": 43.3,
+    "best_fit_without_sk_deg": 48.5,
+    "three_sigma_with_sk_deg": [
+      41.3,
+      49.9
+    ],
+    "three_sigma_without_sk_deg": [
+      41.0,
+      50.5
+    ],
+    "dchi2_at_45_with_sk": 2.02,
+    "dchi2_at_45_without_sk": 4.2,
+    "equivalent_sigma_with_sk": 1.4212670403551895,
+    "equivalent_sigma_without_sk": 2.04939015319192,
+    "inside_both_3sigma_ranges": true,
+    "status_rule": "OPEN_CONDITIONAL while 45 deg lies inside both NuFIT 6.0 3-sigma ranges and the octant is unresolved (DUNE / Hyper-K decisive); TENSION otherwise",
+    "note": "The bare 45 deg prediction lies inside the NuFIT 6.0 3-sigma ranges with and without SK atmospheric data. The earlier 4.09-sigma figure, a one-octant Gaussian on 49.5 +/- 1.1 deg, is withdrawn: 45 deg is not in >3-sigma tension and the octant is unresolved."
   }
 }

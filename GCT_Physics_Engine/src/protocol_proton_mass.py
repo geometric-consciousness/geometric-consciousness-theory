@@ -6,8 +6,9 @@ Filename: protocol_proton_mass.py
 All constants imported from SSOT (gct_constants).
        Constants are taken from the SSOT.
 
-As specified in V3 Chapter 10, the proton mass is the fundamental acoustic
-resonance of the 6D lattice, derived from holonomic additivity.
+As specified in V3 Chapter 10, the proton mass formula models the fundamental acoustic
+resonance of the 6D lattice via holonomic additivity (Tier 2 mechanism +
+Tier 3 sheet/exponent handle).
 """
 
 import json
@@ -55,7 +56,7 @@ def main():
     # Observed value from SSOT
     OBS_PROTON = C.M_P_OBS   # 938.272088 MeV
 
-    report.section("Geometric Derivation")
+    report.section("Formula Evaluation (Tier 2 mechanism + Tier 3 exponent handle)")
     report.log_value("Strong Winding (N)",          n_strong)
     report.log_value("Weak Berry Phase (1/phi)",     n_weak)
     report.log_value("Total Resonance Exponent",     total_exponent)
@@ -78,7 +79,7 @@ def main():
     passed_abs   = abs_err_ppm < 1200.0
     overall_pass = passed_ratio and passed_abs
 
-    report.verdict(overall_pass, f"Proton mass derived successfully. Ratio Err: {ratio_err_ppm:.2f} ppm, Absolute: {abs_err_ppm:.2f} ppm.")
+    report.verdict(overall_pass, f"Proton mass formula evaluated (Tier 2 mechanism + Tier 3 sheet/exponent handle). Ratio Err: {ratio_err_ppm:.2f} ppm, Absolute: {abs_err_ppm:.2f} ppm.")
 
     # Output JSON for verifier
     results = {

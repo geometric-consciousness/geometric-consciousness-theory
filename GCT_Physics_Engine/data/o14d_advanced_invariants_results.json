@@ -1,4 +1,63 @@
 {
+  "permutation_character_object": "I action on the 144 cage nodes",
+  "permutation_character_profile": {
+    "A": 4,
+    "T1": 8,
+    "T2": 8,
+    "G": 8,
+    "H": 12
+  },
+  "permutation_character_profile_match_count": 21,
+  "adjacency_spectral_object": "eigenvalue multiplicities of the golden-weighted threshold adjacency matrix",
+  "resolved_adjacency_spectral_profile": {
+    "A": 4,
+    "T_lumped": 16,
+    "G": 8,
+    "H": 12,
+    "composite_multiplicities": []
+  },
+  "n_resolved_adjacency_spectral_pairings": 20,
+  "adjacency_spectral_collisions": [
+    {
+      "pair": [
+        3,
+        5
+      ],
+      "profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 6,
+        "H": 12,
+        "composite_multiplicities": [
+          8
+        ]
+      }
+    }
+  ],
+  "profile_reconciliation": "All 21 weighted adjacencies are I-equivariant. Twenty display the resolved (4,16,8,12) degeneracy profile; [3,5] displays (4,16,6,12) plus one multiplicity-eight eigenspace because two G sectors collide at one eigenvalue. The permutation character remains (4,8,8,8,12) for all 21 cages.",
+  "invariant_distinct_value_counts": {
+    "n_edges": 16,
+    "n_triangles": 21,
+    "n_4cycles": 21,
+    "tr_A2": 21,
+    "tr_A3": 21,
+    "tr_A4": 21,
+    "tr_A5": 21,
+    "tr_A6": 21,
+    "det_A": 21
+  },
+  "winner_value_match_counts": {
+    "n_edges": 1,
+    "n_triangles": 1,
+    "n_4cycles": 1,
+    "tr_A2": 1,
+    "tr_A3": 1,
+    "tr_A4": 1,
+    "tr_A5": 1,
+    "tr_A6": 1,
+    "det_A": 1
+  },
+  "invariant_uniqueness_disposition": "n_edges takes 16 distinct values; each of the other eight invariants takes 21. The winner's value is unique for all nine, but no invariant supplies a first-principles selection rule.",
   "winner_pair": [
     8,
     13
@@ -50,6 +109,15 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 6,
+        "H": 12,
+        "composite_multiplicities": [
+          8
+        ]
+      },
       "topo": {
         "n_edges": 1620,
         "n_triangles": 1340,
@@ -90,6 +158,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 1560,
         "n_triangles": 1460,
@@ -130,6 +205,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 1440,
         "n_triangles": 1080,
@@ -167,6 +249,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 1860,
         "n_triangles": 3540,
@@ -207,6 +296,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 2040,
         "n_triangles": 4480,
@@ -247,6 +343,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 1980,
         "n_triangles": 5060,
@@ -287,6 +390,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 1380,
         "n_triangles": 1000,
@@ -327,6 +437,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 1380,
         "n_triangles": 1040,
@@ -366,6 +483,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 1740,
         "n_triangles": 3440,
@@ -406,6 +530,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 1740,
         "n_triangles": 3120,
@@ -445,6 +576,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 2220,
         "n_triangles": 7000,
@@ -484,6 +622,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 1500,
         "n_triangles": 1520,
@@ -524,6 +669,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 2040,
         "n_triangles": 4640,
@@ -564,6 +716,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 1980,
         "n_triangles": 4140,
@@ -604,6 +763,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 2460,
         "n_triangles": 8560,
@@ -643,6 +809,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 2400,
         "n_triangles": 5640,
@@ -683,6 +856,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 2520,
         "n_triangles": 6820,
@@ -723,6 +903,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 2760,
         "n_triangles": 9800,
@@ -763,6 +950,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 2820,
         "n_triangles": 10900,
@@ -803,6 +997,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 2940,
         "n_triangles": 13280,
@@ -843,6 +1044,13 @@
         0.0,
         0.0
       ],
+      "adjacency_spectral_profile": {
+        "A": 4,
+        "T_lumped": 16,
+        "G": 8,
+        "H": 12,
+        "composite_multiplicities": []
+      },
       "topo": {
         "n_edges": 2520,
         "n_triangles": 7920,

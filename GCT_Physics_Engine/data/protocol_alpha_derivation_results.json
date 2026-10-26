@@ -1,14 +1,22 @@
 {
   "alpha_bare_inv": 137.50776405003785,
-  "alpha_obs_inv": 137.035999,
-  "ppm_error": 3442.635902102231,
+  "alpha_obs_inv": 137.035999177,
+  "ppm_error": 3442.634606024181,
   "derivation": "Tree-Level Bare Geometric Impedance (360 * phi^-2)",
   "residual_target": "Phason Anti-Screening (0.34%)",
   "status": "OPEN_CONDITIONAL",
+  "external_comparison_scope": "CODATA 2022 alpha^-1 empirical comparison",
+  "external_comparison_tolerance_ppm": 5000,
+  "external_comparison_pass": true,
+  "external_target_provenance": "Mohr, Newell, Taylor & Tiesinga (2025), CODATA Recommended Values of the Fundamental Physical Constants: 2022, Rev. Mod. Phys. 97, 025002, DOI 10.1103/RevModPhys.97.025002",
+  "formula_expected_inv": 137.50776405003785,
+  "formula_regression_rel_tolerance": 1e-12,
+  "formula_regression_pass": true,
+  "formula_regression_scope": "Internal implementation regression only; not external validation",
   "tree_level_within_0p5pct_band": true,
   "precision_validation_pass": false,
-  "status_note": "Tree-level residual 3442.6 ppm; Tier 3 numerical residual pending O.5 (1/(2N) integer-factor closure) and O.19 (phason 1-loop magnitude closure). Within 0.5% tolerance band but NOT a precision validation.",
+  "status_note": "Tree-level residual 3442.6 ppm against independent CODATA 2022; Tier 3 numerical residual pending O.5 (1/(2N) integer-factor closure) and O.19 (phason 1-loop magnitude closure). The registered 5000 ppm comparison is a broad tree-level band, not precision validation. Internal 360*phi^-2 formula regression: True.",
   "verdict": "OPEN_CONDITIONAL",
   "pass": false,
-  "pass_interpretation": "False by design: the bare 360*phi^-2 alpha result is within the tree-level 0.5% band but remains OPEN_CONDITIONAL until the phason anti-screening magnitude closes."
+  "pass_interpretation": "False by design: reproducing 360*phi^-2 is an internal regression, while agreement with CODATA is only within the broad tree-level band; the claim remains OPEN_CONDITIONAL pending O.5/O.19."
 }

@@ -31,8 +31,11 @@
   "n_positive_evals": 45,
   "n_negative_evals": 45,
   "n_zero_evals": 42,
-  "eta_scalar": 0,
-  "eta_eff": 0.0,
+  "scalar_adjacency_sign_sum": 0,
+  "scalar_adjacency_per_spinor_dimension_diagnostic": 0.0,
+  "aps_operator_domain_specified": false,
+  "aps_eta_evaluated": false,
+  "aps_index_evaluated": false,
   "irrep_decomp": {
     "deferred": true
   },

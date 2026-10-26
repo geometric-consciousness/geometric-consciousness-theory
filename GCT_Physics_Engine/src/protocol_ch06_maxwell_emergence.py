@@ -3,8 +3,8 @@
 protocol_ch06_maxwell_emergence.py — Maxwell-form consistency check for
 the phason-sector hydrodynamics of the vacuum supersolid.
 
-Checks the Maxwell/Feynman-gauge action form used in Ch06 §6.1.2 and App M
-§M.4 by making the downstream consistency conditions machine-checkable:
+Checks the Maxwell/Feynman-gauge action form used in Ch06 §6.1.2 and App ULA
+§ULA.4 by making the downstream consistency conditions machine-checkable:
 
     (I)  Euler-Lagrange residuals from the assumed Feynman-gauge phason
          Lagrangian for the four-potential.
@@ -20,9 +20,9 @@ Checks the Maxwell/Feynman-gauge action form used in Ch06 §6.1.2 and App M
     (V)  Lorentz invariance of the action S = integral d4x L with
          emergent speed c^2 = K_perp / rho_eff, the same geometric ratio
          that fixes the dimensionless lattice speed of light c_hat =
-         phi^-9 in Ch06 §6.2.2 and App M §M.5.
+         phi^-9 in Ch06 §6.2.2 and App ULA §ULA.5.
 
-Field identifications (Ch06 §6.1.3, App M §M.4)
+Field identifications (Ch06 §6.1.3, App ULA §ULA.4)
 ------------------------------------------------
     A_0(x,t) := theta(x,t)              (superfluid phase = scalar potential)
     A_i(x,t) := (u_perp)_i(x,t)         (transverse phason displacement = vector potential)
@@ -31,7 +31,7 @@ Field identifications (Ch06 §6.1.3, App M §M.4)
     F_munu   := d_mu A_nu - d_nu A_mu   (field strength tensor)
 
 Phason-sector Lagrangian (in lattice units; the SI mapping fixes
-c^2 = K_perp/rho_eff per App M §M.6)
+c^2 = K_perp/rho_eff per App ULA §ULA.6)
 --------------------------------------------------------------------
     L_phason = (rho_eff/2) sum_mu (d_t A_mu)^2
              - (K_perp/2)  sum_{mu, i} (d_i A_mu)^2
@@ -43,9 +43,9 @@ equations source the four-potential with positive J_mu on the RHS:
 
 The kinetic terms are diagonal in the four-potential A_mu because the
 phason field is a vector under the residual O(3) symmetry of the
-icosahedral projection (App K §K.4) and the superfluid phase theta
+icosahedral projection (App DPS §DPS.4) and the superfluid phase theta
 transforms as the temporal component under the U(1) Berry connection
-identification (App M §M.4). The relative sign between time and spatial
+identification (App ULA §ULA.4). The relative sign between time and spatial
 gradient terms is fixed by hyperbolicity (causal propagation requires a
 Lorentzian signature on the configuration manifold).
 
@@ -54,7 +54,7 @@ K_perp/rho_eff, the Lagrangian rewrites as
     L_phason = -(K_perp/2) eta^{mu nu} (d_mu A^rho)(d_nu A_rho) - J^mu A_mu
 which is the standard Feynman-gauge form of the Maxwell action up to
 the overall stiffness normalization K_perp. The overall normalization
-is absorbed into the SI mapping (App M §M.6) and does not enter the
+is absorbed into the SI mapping (App ULA §ULA.6) and does not enter the
 field equations.
 
 Sensitivity sweep
@@ -63,7 +63,7 @@ The four-ingredient closure is structural and does not depend on the
 numerical values of (K_perp, rho_eff) individually; only their ratio
 c^2 enters the field equations after rescaling. The sensitivity sweep
 varies K_perp/K_parallel across the defensible range bracketing the
-canonical phi^-18 value (App K §K.4) and confirms that the Maxwell limit
+canonical phi^-18 value (App DPS §DPS.4) and confirms that the Maxwell limit
 is recovered at every point in the sweep (the four checks pass at every
 ratio).
 
@@ -349,7 +349,7 @@ def check_ingredient_III_inhomogeneous() -> dict[str, Any]:
     With the field identifications and c^2 = K_perp / rho_eff, the
     Euler-Lagrange equations from Ingredient I give exactly these,
     with rho and J read off from J_0 and J_i and epsilon_0 absorbed
-    into the K_perp normalization (see App M §M.6 for the SI mapping).
+    into the K_perp normalization (see App ULA §ULA.6 for the SI mapping).
 
     Explicitly, the EOM for A_0 is:
         rho_eff d_t^2 A_0 - K_perp nabla^2 A_0 = J_0
@@ -421,7 +421,7 @@ def check_ingredient_III_inhomogeneous() -> dict[str, Any]:
         "identification": {
             "rho_EM": "J_0 / K_perp     (charge density from temporal current component, normalized by phason stiffness)",
             "J_EM_i": "J_i / K_perp     (spatial current density)",
-            "epsilon_0_equivalent": "K_perp     (vacuum permittivity = phason stiffness in lattice units; SI anchor in App M §M.6)",
+            "epsilon_0_equivalent": "K_perp     (vacuum permittivity = phason stiffness in lattice units; SI anchor in App ULA §ULA.6)",
         },
         "pass": all_zero,
     }
@@ -604,8 +604,8 @@ def check_u1_gauge_invariance() -> dict[str, Any]:
 def sensitivity_sweep() -> dict[str, Any]:
     """
     Vary the dimensionless phason-stiffness ratio K_perp/K_parallel across
-    the defensible range bracketing the canonical phi^-18 value (App K
-    §K.4, Open Problem O.15) and confirm that the four-ingredient closure
+    the defensible range bracketing the canonical phi^-18 value (App DPS
+    §DPS.4, Open Problem O.15) and confirm that the four-ingredient closure
     is recovered at every point — i.e., the structural derivation does
     not depend on the specific stiffness ratio.
 
@@ -616,8 +616,10 @@ def sensitivity_sweep() -> dict[str, Any]:
     boundary points.
     """
     phi = float(PHI)
-    # Defensible range for the phason stiffness exponent D (App K §K.4,
-    # uniqueness of D = 18 is Open Problem O.15). We sample D from 14
+    # Sensitivity range for the phason stiffness exponent D (App DPS §DPS.4).
+    # The H3 degree-sum identification is conditional on the irreducible
+    # icosahedral premise; the RG-map link remains open under O.15(b).
+    # We sample D from 14
     # to 22 in steps of 2 to bracket the canonical D = 18.
     sweep_points = []
     for D in (14, 16, 18, 20, 22):
@@ -627,12 +629,12 @@ def sensitivity_sweep() -> dict[str, Any]:
             "K_perp_over_K_parallel": phi ** (-D),
             "c_hat_lattice": c_hat,
             "ingredients_pass": True,  # structural; independent of D
-            "note": f"Canonical value D = 18 (Ch06 §6.2.2 + App K §K.4) gives c_hat = phi^-9 ≈ {phi**-9:.6f}.",
+            "note": f"Canonical value D = 18 (Ch06 §6.2.2 + App DPS §DPS.4) gives c_hat = phi^-9 ≈ {phi**-9:.6f}.",
         })
     return {
         "sweep": "K_perp / K_parallel = phi^-D across defensible range of D",
         "points": sweep_points,
-        "structural_conclusion": "The four-ingredient Maxwell-from-supersolid closure is structural in the phason-sector Lagrangian and does not depend on the numerical value of the stiffness ratio. The ratio enters only as the squared emergent speed c^2 = K_perp/rho_eff, fixed empirically by the SI anchor of App M §M.6.",
+        "structural_conclusion": "The four-ingredient Maxwell-from-supersolid closure is structural in the phason-sector Lagrangian and does not depend on the numerical value of the stiffness ratio. The ratio enters only as the squared emergent speed c^2 = K_perp/rho_eff, fixed empirically by the SI anchor of App ULA §ULA.6.",
         "pass": True,
     }
 
@@ -665,7 +667,7 @@ def run_protocol() -> dict[str, Any]:
 
     return {
         "protocol": "Ch06 §6.1.2 Maxwell-from-supersolid four-ingredient derivation",
-        "tier": "Tier 3 consistency check pending O.15 tile-dynamics closure",
+        "tier": "Tier 3 declared open programme (V2 Ch06 §6.1); consistency check pending O.15 tile-dynamics closure",
         "ingredient_I": ingredient_I,
         "ingredient_II": ingredient_II,
         "ingredient_III_homogeneous": ingredient_III_hom,

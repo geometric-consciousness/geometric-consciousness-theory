@@ -41,23 +41,31 @@ py -3.13 reproduce_standard_model.py
 py -3.13 build_falsifiability_matrix.py
 ```
 
-The independence contract for `verify_independent/`: each fully independent
-`verify_*.py` script re-derives its target observable from CODATA / PDG inputs
-alone and never imports anything from `src/`. Self-consistency checks that DO
-import engine code live in `verify_independent/self_consistency/`. **Two scripts
-in this top-level directory are explicitly NOT fully independent** and carry an
-in-file `INDEPENDENCE SCOPE` note to that effect: `verify_stiffness_ratio.py`
-imports `gct_projections` for the icosahedral projection matrices, and
-`verify_g2_muon.py` imports `gct_utils.C` for the geometric constants. Because
-these two import engine internals, their agreement is a CONSISTENCY CHECK against
-the engine, not an independent corroboration of the stiffness-ratio or muon-g-2
-results; the independence claim is carried by the CODATA/PDG-anchored scripts
-only.
+The `verify_independent/` directory contains three explicitly separated
+reference classes; the directory name is historical and is not a blanket claim
+about every script in it:
+
+- `EMPIRICAL_ANCHOR` checks re-compute a prediction and compare it with an
+  external CODATA/PDG/experimental reference.
+- `MANUSCRIPT_STATED` checks reproduce manuscript-scenario arithmetic. They are
+  internal checks, not empirical corroboration.
+- `PURE_MATHEMATICAL` checks reproduce an identity or theorem-level calculation;
+  they are not independent measurements.
+
+In addition, **four top-level scripts are engine-dependent consistency checks**
+and carry an in-file `INDEPENDENCE SCOPE` note: `verify_stiffness_ratio.py`
+imports `gct_projections`; `verify_g2_muon.py` imports `gct_utils.C`;
+`verify_p13c_nmr_polarity.py` imports `nmr_polarity_power`; and
+`verify_protocol_d_mc_systematics.py` reads the engine-produced Protocol-D MC
+artifact. `verify_independent/self_consistency/` contains checks excluded from
+the master scorecard. Thus independence is established by source and reference
+provenance, not merely by the absence of a Python import from `src/`.
 
 **Reproducibility scope.** `make parity-check` byte-verifies the GENERATED data
 artifacts (`data/`, `verify_independent/results/`, `config/`, `outputs/`,
-`falsifiability_registry.json`). The manuscript scorecard appendices
-(`App_FM_Falsifiability_Matrix.md`, `App_R_Precision_Scorecard.md`) are **not**
+`falsifiability_registry.json`) and fails on modified, deleted, or untracked
+artifacts in those roots. The manuscript scorecard appendices
+(`App_FSM_Falsifiability_Matrix.md`, `App_PSC_Precision_Scorecard.md`) are **not**
 held to byte-equality with a fresh `build_*` run — deliberately so: they are
 generator-seeded from the registry, then editorially enriched with content the
 bare generator does not emit (figure embeds, scope-disclosure paragraphs,
@@ -68,7 +76,7 @@ The single-source-of-truth contract is therefore **field consistency**, not
 byte-equality, enforced by `make registry-appendix-check`
 (`src/check_registry_appendix_consistency.py`): the falsifiability registry is the
 SSOT for every prediction's epistemic `tier` and falsification band, and each
-App_FM matrix row's tier + band cell must match the registry (LaTeX-vs-ASCII
+App_FSM matrix row's tier + band cell must match the registry (LaTeX-vs-ASCII
 rendering normalized). This gate catches the hand-edit drift class — tier flips,
 gate-value drift between registry and appendix — that byte-parity-exclusion left
 unguarded. The appendices may add prose beyond the registry; they may not
@@ -76,14 +84,23 @@ unguarded. The appendices may add prose beyond the registry; they may not
 (LaTeX rendering of math cells, scorecard-sourced observed columns that can lag a
 verifier rerun) are disclosed and non-load-bearing.
 
+Permanent identifier lifecycle is a separate contract. Every machine-registry
+entry carries `lifecycle_status` and nullable `closed_in`; App FSM mirrors both,
+while App PRG is a curated ordered subset. Numeric gaps are permitted, but IDs
+cannot be duplicated, reordered, reused, or removed.
+`make permanent-register-fixtures` exercises the adversarial register cases.
+`make permanent-register-check REGISTER_BASELINE_REF=<local-ref>` compares the
+governed registers with an explicit local Git baseline; omission of that
+baseline fails closed.
+
 ## Documentation
 
 The engine's role in the monograph, its protocol catalogue, the manuscript ↔ engine cross-reference, and the convention statement for output files are documented in:
 
-- `../content/98_Global_Appendices/App_Q_Physics_Engine.md` — engine architecture, protocol list, output conventions
-- `../content/98_Global_Appendices/App_R_Precision_Scorecard.md` — per-claim precision scorecard
-- `../content/98_Global_Appendices/App_R2_Independent_Verification.md` — Newton-G consistency-relation derivation chain
+- `../content/98_Global_Appendices/App_GPE_Physics_Engine.md` — engine architecture, protocol list, output conventions
+- `../content/98_Global_Appendices/App_PSC_Precision_Scorecard.md` — per-claim precision scorecard
+- `../content/98_Global_Appendices/App_IVH_Independent_Verification.md` — Newton-G consistency-relation derivation chain
 
 ## Convention
 
-All output JSON files conform to RFC 8259 (non-finite floats are emitted as `null` rather than as NaN literals). Tier labels appear inline at every quantitative claim; see App R for the four-tier epistemic system used by the monograph.
+All output JSON files conform to RFC 8259 (non-finite floats are emitted as `null` rather than as NaN literals). Tier labels appear inline at every quantitative claim; see the Global Front Matter Epistemic Tier System for the exclusive Tier 0 datum and Tiers 1, 1/2, 2, 3 and 4.

@@ -1,18 +1,22 @@
 """
-run_all.py — Master harness for the independent App R verification stack.
+run_all.py — Master harness for the independent App PSC verification stack.
 
 Runs every verify_*.py in this directory, aggregates the per-claim JSON
 results, and writes a master scorecard at results/scorecard.json plus a
 human-readable summary to stdout.
 
 Discrepancy reporting:
-    Any discrepancy between App R and the engine outputs is reported, not
+    Any discrepancy between App PSC and the engine outputs is reported, not
     suppressed.
 
 PASS criteria:
-    - Independent re-derivation produces a value within the per-script
-      tolerance band of the empirical anchor (CODATA / PDG).
-    - When App R quotes a precision, the independent precision is within
+    - EMPIRICAL_ANCHOR: independent re-derivation lies inside the declared
+      empirical gate.
+    - MANUSCRIPT_STATED: arithmetic reproduces the printed manuscript value
+      and is reported separately as INTERNAL_ARITHMETIC_PASS.
+    - PURE_MATHEMATICAL: the identity is reported separately as TIER1_EXACT
+      or INTERNAL_ARITHMETIC_PASS.
+    - When App PSC quotes a precision, the independent precision is within
       10% of it (otherwise a discrepancy note is auto-attached).
 
 Exit code: 0 if all PASS / TIER1_EXACT / TENSION / OPEN_CONDITIONAL /
@@ -26,6 +30,8 @@ import io
 import json
 import importlib.util
 import math
+import os
+import tempfile
 from pathlib import Path
 
 # Force UTF-8 on Windows stdout so box-drawing/Greek/math symbols don't crash.
@@ -82,7 +88,7 @@ SCRIPTS = [
     # independent-re-derivation contract of this harness. Run it separately
     # via: python GCT_Physics_Engine/verify_independent/self_consistency/check_imp01_pipeline.py
     "verify_anti_zeno_upper_crossover",
-    "verify_pta_l6_anisotropy",
+    "verify_pta_l6_invariant",
     "verify_epsilon_y",
     "verify_ch20_liv_and_rm",
     "verify_alpha_bilayer",
@@ -99,17 +105,6 @@ def run_script(name: str) -> list:
     if isinstance(out, list):
         return out
     return [out]
-
-
-def aggregate() -> dict:
-    """Read every results/*.json (excluding scorecard.json)."""
-    items = []
-    for p in sorted(RESULTS_DIR.glob("*.json")):
-        if p.name in ("scorecard.json",):
-            continue
-        with open(p, encoding="utf-8") as f:
-            items.append(json.load(f))
-    return {"items": items}
 
 
 def status_bucket(status: str) -> str:
@@ -165,46 +160,98 @@ def _json_safe(value):
 
 def main():
     print("\n" + "#" * 72)
-    print("# GCT App R - INDEPENDENT VERIFICATION HARNESS")
-    print("# Re-derives every App R numerical claim from the published")
-    print("# formula using only CODATA 2022 + PDG 2024 anchors.")
+    print("# GCT App PSC - INDEPENDENT VERIFICATION HARNESS")
+    print("# Separates external-anchor comparisons, manuscript-stated")
+    print("# arithmetic checks, and pure mathematical identities.")
     print("#" * 72 + "\n")
 
-    for name in SCRIPTS:
-        print(f"\n-- Running {name} --")
-        try:
-            run_script(name)
-        except Exception as e:
-            print(f"  [ERROR] {name} raised: {type(e).__name__}: {e}")
-            err_path = RESULTS_DIR / f"{name}_ERROR.json"
-            with open(err_path, "w", encoding="utf-8") as f:
-                json.dump(
+    # Verifiers write into a new isolated directory. Aggregation consumes only
+    # objects returned by this invocation, so stale/excluded JSON files in the
+    # committed results directory cannot enter the scorecard.
+    returned_items: list[dict] = []
+    with tempfile.TemporaryDirectory(prefix="gct-independent-") as isolated:
+        os.environ["GCT_VERIFY_RESULTS_DIR"] = isolated
+        for name in SCRIPTS:
+            print(f"\n-- Running {name} --")
+            try:
+                run_script(name)
+            except Exception as e:
+                print(f"  [ERROR] {name} raised: {type(e).__name__}: {e}")
+                returned_items.append(
                     {
                         "name": name,
                         "status": "FAIL",
+                        "reference_class": "UNCLASSIFIED",
+                        "band_outcome": "NOT_EVALUATED",
+                        "derivational_closure": "NOT_EVALUATED",
                         "error": str(e),
                         "error_type": type(e).__name__,
-                    },
-                    f,
-                    indent=2,
+                    }
                 )
+        for path in sorted(Path(isolated).glob("*.json")):
+            with path.open(encoding="utf-8") as f:
+                returned_items.append(json.load(f))
 
-    agg = aggregate()
-    items = agg["items"]
+    by_name: dict[str, dict] = {}
+    for item in returned_items:
+        name = item.get("name")
+        if not name:
+            raise ValueError("verifier returned an item without a name")
+        if name in by_name:
+            raise ValueError(f"duplicate verifier result name: {name}")
+        by_name[name] = item
+    items = [by_name[name] for name in sorted(by_name)]
+    if len(items) != 54:
+        raise ValueError(f"expected 54 verifier results from this run; got {len(items)}")
+    unclassified = [it["name"] for it in items if it.get("reference_class") == "UNCLASSIFIED"]
+    if unclassified:
+        raise ValueError(f"unclassified verifier results: {unclassified}")
+
+    # Publish only the 54 fresh canonical results. Excluded artifacts may
+    # remain on disk for their own self-consistency harness, but are never
+    # globbed into this scorecard.
+    for item in items:
+        with open(RESULTS_DIR / f"{item['name']}.json", "w", encoding="utf-8") as f:
+            json.dump(_json_safe(item), f, indent=2, allow_nan=False)
 
     ok = [it for it in items if status_bucket(it["status"]) == "ok"]
-    tension = [it for it in items if status_bucket(it["status"]) == "tension"]
+    not_yet_closed = [it for it in items if status_bucket(it["status"]) == "tension"]
+    tensions = [it for it in items if it["status"] == "TENSION"]
+    open_conditional = [it for it in items if it["status"] == "OPEN_CONDITIONAL"]
+    open_research = [it for it in items if it["status"] == "OPEN_RESEARCH"]
+    pending_alpha = [it for it in items if it["status"] == "PENDING-α-RESOLUTION"]
     fail = [it for it in items if status_bucket(it["status"]) == "fail"]
     expected_fail_names = _expected_registered_fail_names()
     unexpected_fail = [it for it in fail if it.get("name") not in expected_fail_names]
     discrepancies = [it for it in items if it.get("discrepancy_notes")]
+    reference_counts = {
+        key: sum(1 for it in items if it.get("reference_class") == key)
+        for key in ("EMPIRICAL_ANCHOR", "MANUSCRIPT_STATED", "PURE_MATHEMATICAL")
+    }
+    pass_empirical = sum(
+        1 for it in items
+        if it.get("reference_class") == "EMPIRICAL_ANCHOR"
+        and it.get("status") == "PASS"
+    )
+    pass_internal_arithmetic = sum(
+        1 for it in items if it.get("status") == "INTERNAL_ARITHMETIC_PASS"
+    )
+    pass_pure_mathematical = sum(
+        1 for it in items if it.get("status") == "TIER1_EXACT"
+    )
 
     print("\n" + "=" * 72)
     print("  MASTER SCORECARD - INDEPENDENT VERIFICATION RESULTS")
     print("=" * 72)
     print(f"  Total claims verified : {len(items)}")
-    print(f"  PASS / Tier-1 exact   : {len(ok)}")
-    print(f"  TENSION (Tier 3)      : {len(tension)}")
+    print(f"  Empirical-anchor PASS : {pass_empirical}")
+    print(f"  Internal arithmetic   : {pass_internal_arithmetic}")
+    print(f"  Tier-1 exact          : {pass_pure_mathematical}")
+    print(f"  TENSION               : {len(tensions)}")
+    print(f"  OPEN_CONDITIONAL      : {len(open_conditional)}")
+    print(f"  OPEN_RESEARCH         : {len(open_research)}")
+    print(f"  PENDING-alpha         : {len(pending_alpha)}")
+    print(f"  Not yet closed (sum)  : {len(not_yet_closed)}")
     print(f"  FAIL                  : {len(fail)}")
     print(f"  Registered FAIL       : {len(fail) - len(unexpected_fail)}")
     print(f"  Unexpected FAIL       : {len(unexpected_fail)}")
@@ -214,18 +261,18 @@ def main():
     print("\nPER-CLAIM TABLE:")
     print(
         f"  {'Name':<24}{'Independent':>14}{'Observed':>14}{'ppm':>10}"
-        f"{'App R ppm':>12}  Status"
+        f"{'App PSC ppm':>12}  Status"
     )
     print("  " + "-" * 86)
     for it in items:
         ind_ppm = it.get("independent_precision_ppm")
-        app_r_ppm = it.get("app_r_precision_ppm")
+        app_psc_ppm = it.get("app_psc_precision_ppm")
         pred = it.get("predicted")
         obs = it.get("observed")
         line = (
             f"  {it['name']:<24}"
             f"{_fmt(pred, 14)}{_fmt(obs, 14)}"
-            f"{_fmt(ind_ppm, 10)}{_fmt(app_r_ppm, 12)}  {it['status']}"
+            f"{_fmt(ind_ppm, 10)}{_fmt(app_psc_ppm, 12)}  {it['status']}"
         )
         print(line)
 
@@ -242,7 +289,15 @@ def main():
         "summary": {
             "total": len(items),
             "pass_or_tier1": len(ok),
-            "tension": len(tension),
+            "pass_empirical": pass_empirical,
+            "pass_internal_arithmetic": pass_internal_arithmetic,
+            "pass_pure_mathematical": pass_pure_mathematical,
+            "reference_class_counts": reference_counts,
+            "not_yet_closed": len(not_yet_closed),
+            "tension": len(tensions),
+            "open_conditional": len(open_conditional),
+            "open_research": len(open_research),
+            "pending_alpha_resolution": len(pending_alpha),
             "fail": len(fail),
             "registered_fail": len(fail) - len(unexpected_fail),
             "unexpected_fail": len(unexpected_fail),

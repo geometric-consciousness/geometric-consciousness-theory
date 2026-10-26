@@ -3,16 +3,17 @@ verify_jarlskog.py — Independent verification reference for the GCT
 Jarlskog invariant (CKM J) prediction status.
 
 V3 Ch09 §9.4.3 (CP Violation Phase) currently holds the Jarlskog
-invariant under OPEN RESEARCH (Open Problem O.7, App H §H.5). A
+invariant under OPEN RESEARCH (Open Problem O.7, App ORQ §ORQ.5). A
 candidate φ⁻²² ansatz is catalogued under O.7:
  - Literal formula evaluation: φ⁻²² = 2.525 × 10⁻⁵
  - PDG 2024 reference: |J_CKM| ≈ 3.12 × 10⁻⁵
  - The literal formula sits about 4.6σ from PDG with a 19% gap.
 
 The Jarlskog invariant is not a load-bearing Tier 2 prediction in the
-current framework; the eEDM derivation in Ch09 §9.6.3 is explicitly
-decoupled from any specific J ansatz via the bounded Tier 2 envelope
-|d_e^GCT| ≲ 1.1 × 10⁻²⁹ e·cm (J-independent unitarity bound).
+current framework; the eEDM estimate in Ch09 §9.6.3 is a Tier 3 quark-sector
+scaling linear in J_CKM with an underived prefactor; the reference figure
+|d_e^GCT| ≈ 1.1 × 10⁻²⁹ e·cm at J = 10⁻³ is the ACME II limit used as a scale,
+not an independent bound.
 
 This verifier:
  1. Computes the literal formula φ⁻²² as a candidate ansatz reference.
@@ -21,12 +22,12 @@ This verifier:
  4. Records the residual gap as a property of the candidate ansatz.
  5. Registers J under OPEN RESEARCH disposition (Open Problem O.7).
 
-The Jarlskog invariant is held as Open Problem O.7 (App H §H.5): the
+The Jarlskog invariant is held as Open Problem O.7 (App ORQ §ORQ.5): the
 GCT framework does not currently supply a closed Tier 2 prediction for
 |J_CKM|. The φ⁻²² ansatz is one of multiple candidate forms catalogued
 under O.7 and is not load-bearing on any other observable in this
-verifier suite (the eEDM scope-restriction in Ch09 §9.6.3 explicitly
-decouples from the J magnitude). Independent closure routes under O.7:
+verifier suite (the eEDM statement in Ch09 §9.6.3 is a Tier 3 scaling whose
+magnitude needs J_GCT and an underived prefactor). Independent closure routes under O.7:
  (a) a φ-power ansatz with a corrected exponent or O(1) icosahedral
      prefactor that evaluates to the PDG value within tolerance;
  (b) a non-φ-power derivation tied to the harmonic-ladder structure
@@ -40,7 +41,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from constants import CODATA, MATH
-from report import make_result, write_result, print_summary
+from report import make_result, write_result, print_summary, status_from_open_problem
 
 # PDG 2024 reference value
 J_CKM_PDG = 3.12e-5
@@ -65,21 +66,23 @@ def main():
 
  res = make_result(
  name="ckm_jarlskog",
- app_r_label="CKM Jarlskog invariant |J|",
+ app_psc_label="CKM Jarlskog invariant |J|",
  formula="|J_GCT| = φ⁻²² (V3 Ch09 §9.4.3, '22-step volumetric displacement')",
  predicted=j_gct_literal,
  observed=J_CKM_PDG,
  unit="(dimensionless)",
- app_r_predicted=j_gct_literal,
- app_r_precision_str=(
+ app_psc_predicted=j_gct_literal,
+ app_psc_precision_str=(
  f"literal φ⁻²² = {j_gct_literal*1e5:.3f}×10⁻⁵ → "
  f"{gap_literal_vs_pdg*100:+.1f}% vs PDG ({gap_literal_sigmas:.1f}σ); "
  f"manuscript-stated value {J_GCT_MANUSCRIPT_STATED*1e5:.2f}×10⁻⁵ would give "
  f"{gap_stated_vs_pdg*100:+.1f}% ({gap_stated_sigmas:.1f}σ); it differs from the literal formula value by {manuscript_vs_formula_pct:.1f}%"
  ),
- app_r_precision_ppm=None,
+ app_psc_precision_ppm=None,
  tier="OPEN RESEARCH (O.7) — awaiting first-principles closure",
- status="OPEN_RESEARCH",
+ status=status_from_open_problem(
+  True, open_status="OPEN_RESEARCH", closed_status="TENSION"
+ ),
  tolerance_ppm=None,
  extra={
  "j_gct_literal_phi_minus_22": j_gct_literal,
@@ -97,8 +100,8 @@ def main():
  "Wolfenstein-form alternative A²λ⁶η ≈ 3.24×10⁻⁵ sits closer to "
  "PDG (+5%) but is not a φ-power form. The Jarlskog invariant is "
  "held under OPEN RESEARCH (O.7) with no current Tier 2 GCT "
- "prediction; the eEDM derivation in Ch09 §9.6.3 is explicitly "
- "decoupled via the J-independent Tier 2 bounded form."
+ "prediction; the eEDM estimate in Ch09 §9.6.3 is a Tier 3 "
+ "quark-sector scaling that needs J_CKM and a derived prefactor for any magnitude."
  ),
  },
  )

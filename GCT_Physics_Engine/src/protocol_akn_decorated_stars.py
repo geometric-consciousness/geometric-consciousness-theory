@@ -2,7 +2,7 @@
 """
 protocol_akn_decorated_stars.py - W3: decorated vertex-star count V_AKN
 =======================================================================
-App Z S Z.3 enumerates 9 bare edge-incidence vertex-star types under I_h
+App QLA S Z.3 enumerates 9 bare edge-incidence vertex-star types under I_h
 (confirmed by protocol_akn_vertex_stars.py). It then leaves open the
 "decorated-star count" V_AKN: with matching-rule decorations enforcing
 aperiodicity the count is larger, "the precise decorated-count ... remains a
@@ -156,14 +156,14 @@ def run():
     print(f"  |V_AKN| (radius-2 decorated, I_h-reduced): {final['decorated']}")
     print(f"  Saturated under grid refinement: {saturated} "
           f"(last two: {rows[-2]['decorated']} -> {rows[-1]['decorated']})")
-    print(f"  Cited expectation (App Z Z.3): Penrose-style ~30-40")
+    print(f"  Cited expectation (App QLA Z.3): Penrose-style ~30-40")
 
     verdict = (
         f"V_AKN closed: |V_AKN| = {final['decorated']} radius-2 decorated stars "
         f"under I_h (bare-9 cross-check OK), saturated under grid refinement. "
         f"This EXCEEDS the cited Penrose-style ~30-40: the 6D-AKN radius-2 "
         f"I_h-reduced acceptance set is larger than the 2D-Penrose figure. It is "
-        f"the nearest-neighbour Metropolis acceptance-set size for the App Z "
+        f"the nearest-neighbour Metropolis acceptance-set size for the App QLA "
         f"Z.3.1 viability check (the QLQCD-1L update locality); larger-radius "
         f"decorations refine it further."
         if (saturated and bare_ok) else
@@ -181,7 +181,7 @@ def run():
         "bare_crosscheck_ok": bool(bare_ok),
         "V_AKN_radius2_Ih": final["decorated"],
         "saturated_under_refinement": bool(saturated),
-        "cited_penrose_figure": "~30-40 (App Z Z.3)",
+        "cited_penrose_figure": "~30-40 (App QLA Z.3)",
         "verdict": verdict,
     }
     out = get_output_path("protocol_akn_decorated_stars_results.json")

@@ -4,7 +4,7 @@ protocol_o22_newton_g_dimensional.py
 =====================================
 
 Dimensional bookkeeping for the three-route Newton-G equivalence
-(App K §K.7). Closure of Open Problem O.22.
+(App DPS §DPS.7). Closure of Open Problem O.22.
 
 ROUTE 1 (Jacobson primary, closes cleanly):
     G_1 = c^3 a_6^2 / (4 hbar)
@@ -44,7 +44,7 @@ The bare Route 2 formula is dimensionally consistent in icosahedral
 lattice units; the SI-unit reduction is exact AT TREE LEVEL with the
 phi^(-18)/(16pi) prefactor identified as the lattice-to-SI conversion.
 
-CONSEQUENCE FOR THE 2274 ppm CODATA AGREEMENT
+CONSEQUENCE FOR THE 2273.725 ppm MODEL-BRANCH COMPARISON
 The Route 1 closure to G = hbar c / M_P^2 is unaffected by the
 Route 2/3 residual: Route 1 closes cleanly to the standard Planck
 identity (independent of phi^(-9) soft-mode scaling), and the CODATA
@@ -183,7 +183,7 @@ def main():
     print(f"  identity with explicit ell_P bookkeeping; it is NOT a tautological")
     print(f"  Planck-mass-redefinition identity (which is what Route 1 alone provides).")
     print(f"")
-    print(f"  The 2274 ppm CODATA agreement of G derives from Route 1 alone and")
+    print(f"  The 2273.725 ppm model-authoritative alpha_GCT comparison derives from Route 1 alone and")
     print(f"  is unaffected by this dimensional analysis.")
     print("=" * 76)
 
@@ -210,7 +210,7 @@ def main():
             "the phason-elasticity 3D lattice volume (Route 2's K_perp formula) and the "
             "Jacobson area-law 2D horizon (Route 1's basis). The three-route algebraic "
             "identity is a tree-level identity with explicit ell_P bookkeeping; the "
-            "2274 ppm CODATA agreement derives from Route 1 alone and is unaffected. "
+            "2273.725 ppm model-authoritative alpha_GCT comparison derives from Route 1 alone and is unaffected. "
             "Closure direction (b): Routes 2/3 reduce to Route 1 only in the specific "
             "limit identified."
         ),

@@ -7,12 +7,12 @@
 * **Wheeler, J. A.** (1968). "Superspace and the Nature of Quantum Geometrodynamics." *Battelle Rencontres*.
 
 #### **Topology & Number Theory**
-* **Atiyah, M. F., Patodi, V. K., & Singer, I. M.** (1975). "Spectral asymmetry and Riemannian geometry. I." *Mathematical Proceedings of the Cambridge Philosophical Society*, 77(1), 43–69. [Foundational reference for the APS Index Theorem; basis for the K-theoretic gap label $n = -107$ in the electron mass derivation.]
+* **Atiyah, M. F., Patodi, V. K., & Singer, I. M.** (1975). "Spectral asymmetry and Riemannian geometry. I." *Mathematical Proceedings of the Cambridge Philosophical Society*, 77(1), 43–69. [Foundational reference for the APS index theorem on manifolds with boundary. GCT's separate $n=-107$ mass label is not derived by this paper.]
 * **Berry, M. V.** (1984). "Quantal Phase Factors Accompanying Adiabatic Changes." *Proceedings of the Royal Society A*.
-* **Connes, A.** (1994). *Noncommutative Geometry*. Academic Press. [Foundation of the K-theoretic and spectral triple framework used in GCT's gauge sector and lepton mass derivations.]
+* **Connes, A.** (1994). *Noncommutative Geometry*. Academic Press. [Foundation of the K-theoretic and spectral triple framework drawn on by GCT's gauge-sector and lepton-mass constructions; it does not itself derive them.]
 * **Connes, A., & Moscovici, H.** (1995). "The Local Index Formula in Noncommutative Geometry." *Geometric and Functional Analysis*, 5(2), 174–243.
-* **Cuntz, J., & Krieger, W.** (1980). "A class of C*-algebras and topological Markov chains." *Inventiones Mathematicae*, 56(3), 251–268. [Cuntz-Krieger algebra; basis for the Adelic Solenoid inverse-limit construction and KMS states.]
-* **Hurwitz, A.** (1891). "Über die genäherte Darstellung der Irrationalzahlen durch rationale Brüche." *Mathematische Annalen*. [The basis for the Icosahedral Selection Theorem].
+* **Cuntz, J., & Krieger, W.** (1980). "A class of C\*-algebras and topological Markov chains." *Inventiones Mathematicae*, 56(3), 251–268. [Cuntz-Krieger algebras and KMS states; begins with a specified transition matrix/topological Markov chain. Cited as a scope contrast and toy-model background, not as a derivation of the Adelic Solenoid inverse-limit construction.]
+* **Hurwitz, A.** (1891). "Über die genäherte Darstellung der Irrationalzahlen durch rationale Brüche." *Mathematische Annalen*. [Diophantine extremality motivating $\phi$ as GCT's primary slope candidate; not a point-group uniqueness or global physical-selection theorem.]
 * **Koide, Y.** (1983). "A Fermion-Boson Composite Model of Quarks and Leptons." *Physics Letters B*, 120(1–3), 161–165. [The Koide lepton mass relation; benchmark for V3 lepton mass derivations.]
 * **Pontryagin, L. S.** (1966). *Topological Groups*. Gordon and Breach.
 
@@ -23,11 +23,14 @@
 
 #### **Information & Thermodynamics**
 * **Bekenstein, J. D.** (1973). "Black Holes and Entropy." *Physical Review D*.
+* **Busch, P.** (2003). "Quantum states and generalized observables: a simple proof of Gleason's theorem." *Physical Review Letters*, 91(12), 120403.
 * **Gleason, A. M.** (1957). "Measures on the Closed Subspaces of a Hilbert Space." *Journal of Mathematics and Mechanics*.
+* **Gisin, N.** (1990). "Weinberg's non-linear quantum mechanics and supraluminal communications." *Physics Letters A*, 143(1–2), 1–2.
 * **Hawking, S. W.** (1974). "Black Hole Explosions?" *Nature*.
-* **Jacobson, T.** (1995). "Thermodynamics of Spacetime: The Einstein Equation of State." *Physical Review Letters*, 75(7), 1260. [Primary reference for the entropic gravity derivation of $G$.]
+* **Jacobson, T.** (1995). "Thermodynamics of Spacetime: The Einstein Equation of State." *Physical Review Letters*, 75(7), 1260. [Primary reference for the thermodynamic derivation of the Einstein equation used in V2 Ch09; $G$ enters through the entropy density.]
 * **Landauer, R.** (1961). "Irreversibility and Heat Generation in the Computing Process." *IBM Journal of Research and Development*.
-* **Ryu, S., & Takayanagi, T.** (2006). "Holographic Derivation of Entanglement Entropy from the anti–de Sitter Space/Conformal Field Theory Correspondence." *Physical Review Letters*, 96(18), 181602. [Basis for the holographic $\Lambda$ derivation in V2 Ch14.]
+* **Polchinski, J.** (1991). "Weinberg's nonlinear quantum mechanics and the Einstein-Podolsky-Rosen paradox." *Physical Review Letters*, 66(4), 397–400.
+* **Ryu, S., & Takayanagi, T.** (2006). "Holographic Derivation of Entanglement Entropy from the anti–de Sitter Space/Conformal Field Theory Correspondence." *Physical Review Letters*, 96(18), 181602. [Holographic-entropy background for the Tier 3 dark-energy correlation model in V2 Ch14; not a derivation of $\Lambda$.]
 * **Shannon, C. E.** (1948). "A Mathematical Theory of Communication." *Bell System Technical Journal*.
 * **Solomonoff, R. J.** (1964). "A Formal Theory of Inductive Inference." *Information and Control*.
 
@@ -39,15 +42,17 @@
 * **Signorelli, C. M., Szczotka, J., & Prentner, R.** (2021). "Explanatory profiles of models of consciousness — towards a systematic classification." *Neuroscience of Consciousness*, 2021(2), niab021. [Cited at V1 Ch17 §17.5 Table 17.5 for honeybee invertebrate-ganglia $\Phi$ estimates in the GCT-vs-IIT comparison row.]
 
 #### **Philosophy of Mind — Phenomenal Consciousness, Hard Problem, Russellian Monism**
-* **Balaguer, M.** (2009). *Free Will as an Open Scientific Problem*. MIT Press. [Event-causal-libertarian post-deliberative agent-determined-option-set architecture cited in V1 Ch16 §16.2.8e.]
 * **Baars, B. J.** (1988). *A Cognitive Theory of Consciousness*. Cambridge University Press. [Global Workspace Theory monograph cited in V1 Ch17 §17.5.1.]
+* **Balaguer, M.** (2009). *Free Will as an Open Scientific Problem*. MIT Press. [Event-causal-libertarian post-deliberative agent-determined-option-set architecture cited in V1 Ch16 §16.2.8e.]
 * **Bechara, A., Damasio, H., Tranel, D., & Damasio, A. R.** (2005). "The Iowa Gambling Task and the somatic marker hypothesis: some questions and answers." *Trends in Cognitive Sciences*, 9(4), 159–162. [Somatic-marker reference cited in V1 Ch16 §16.2.8d.]
-* **Block, N.** (1995). "On a confusion about a function of consciousness." *Behavioral and Brain Sciences*, 18(2), 227–247. [Original P/A consciousness distinction; cited in V1 Ch16 §16.1.4b + §16.2.8d as the spine of the Level I/IIA/IIB three-tier framework.]
+* **Block, N.** (1995). "On a confusion about a function of consciousness." *Behavioral and Brain Sciences*, 18(2), 227–247. [Original P/A consciousness distinction; cited in V1 Ch16 §16.1.4b + §16.2.8d as the spine of the Level I/IIA/IIB three-level framework.]
 * **Block, N.** (2007). "Consciousness, accessibility, and the mesh between psychology and neuroscience." *Behavioral and Brain Sciences*, 30(5–6), 481–499. [Refined P/A treatment with the iconic-memory overflow case as P-without-A.]
 * **Block, N.** (2011a). "Perceptual consciousness overflows cognitive access." *Trends in Cognitive Sciences*, 15(12), 567–575. [Overflow argument for phenomenal-without-access consciousness; cited in V1 Ch16 §16.2.8d.]
 * **Block, N.** (2011b). "The higher order approach to consciousness is defunct." *Analysis*, 71(3), 419–431. [Transitivity-gap critique of HOT cited in V1 Ch16 §16.1.4b.]
 * **Block, N., & Stalnaker, R.** (1999). "Conceptual analysis, dualism, and the explanatory gap." *Philosophical Review*, 108(1), 1–46. [Conceivability-vs-metaphysical-possibility reply cited in V1 Ch16 §16.2.8a.]
+* **Brown, R., Lau, H., & LeDoux, J. E.** (2019). "Understanding the higher-order approach to consciousness." *Trends in Cognitive Sciences*, 23(9), 754–768.
 * **Carruthers, P.** (2000). *Phenomenal Consciousness: A Naturalistic Theory*. Cambridge University Press. [HOT engagement reference cited in V1 Ch16 §16.1.4b.]
+* **Chalmers, D. J.** (1996). *The Conscious Mind: In Search of a Fundamental Theory*. Oxford University Press. [Cited in V1 Ch03 §3.1.1.]
 * **Chalmers, D. J.** (2010). *The Character of Consciousness*. Oxford University Press. [Ch.10, "Phenomenal Concepts and the Explanatory Gap," cited in V1 Ch16 §16.2.8a.]
 * **Chalmers, D. J.** (2017). "The combination problem for panpsychism." In G. Brüntrup & L. Jaskolla (eds.), *Panpsychism: Contemporary Perspectives*, Oxford University Press, 179–214. [Combination Problem statement cited in V1 Ch16 §16.2.7.]
 * **Dennett, D. C.** (1991). *Consciousness Explained*. Little, Brown. [Cartesian-Theater critique cited in V1 Ch16 §16.2.7c + §16.2.8c.]
@@ -63,13 +68,14 @@
 * **Kripke, S. A.** (1980). *Naming and Necessity*. Harvard University Press. [A-posteriori-necessity framework cited in V1 Ch16 §16.2.8a.]
 * **Lamme, V. A. F.** (2006). "Towards a true neural stance on consciousness." *Trends in Cognitive Sciences*, 10(11), 494–501. [Phenomenal-without-access neural-correlates work cited in V1 Ch17 Table 17.5.]
 * **Lau, H.** (2008). "A higher-order Bayesian decision theory of consciousness." *Progress in Brain Research*, 168, 35–48.
-* **Brown, R., Lau, H., & LeDoux, J. E.** (2019). "Understanding the higher-order approach to consciousness." *Trends in Cognitive Sciences*, 23(9), 754–768.
 * **Maniscalco, B., & Lau, H.** (2012). "A signal detection theoretic approach for estimating metacognitive sensitivity from confidence ratings." *Consciousness and Cognition*, 21(1), 422–430.
 * **Mele, A. R.** (2006). *Free Will and Luck*. Oxford University Press. [Modest-libertarianism architecture + contrastive-luck residual cited in V1 Ch16 §16.2.8e.]
+* **Oizumi, M., Albantakis, L., & Tononi, G.** (2014). "From the phenomenology to the mechanisms of consciousness: Integrated Information Theory 3.0." *PLoS Computational Biology*, 10(5), e1003588. [Cited in V1 Ch03 §3.4.3.]
 * **Pinto, Y., Neville, D. A., Otten, M., Corballis, P. M., Lamme, V. A. F., de Haan, E. H. F., Foschi, N., & Fabri, M.** (2017). "Split brain: divided perception but undivided consciousness." *Brain*, 140(5), 1231–1237. [Polaron-unity test case cited in V1 Ch17 Table 17.5.]
 * **Rosenthal, D. M.** (1997). "A theory of consciousness." In N. Block, O. Flanagan, & G. Güzeldere (eds.), *The Nature of Consciousness: Philosophical Debates*. MIT Press, pp. 729–753. [HOT-foundational reference cited in V1 Ch16 §16.1.4b.]
 * **Rosenthal, D. M.** (2005). *Consciousness and Mind*. Oxford University Press. [HOT-foundational reference cited in V1 Ch16 §16.1.4b.]
 * **Rosenthal, D. M.** (2012). "Higher-order awareness, misrepresentation and function." *Philosophical Transactions of the Royal Society B*, 367, 1424–1438. DOI: 10.1098/rstb.2011.0353. [HOT refinement cited in V1 Ch16 §16.1.4b.]
+* **Russell, B.** (1921). *The Analysis of Mind*. London: George Allen & Unwin. [Five-minute hypothesis, V1 Ch01 §1.2.1.]
 * **Searle, J. R.** (1980). "Minds, brains, and programs." *Behavioral and Brain Sciences*, 3(3), 417–457. [Chinese Room argument cited in V1 Ch17 §17.6.4.]
 * **Searle, J. R.** (1992). *The Rediscovery of the Mind*. MIT Press.
 * **Seager, W.** (1995). "Consciousness, information and panpsychism." *Journal of Consciousness Studies*, 2(3), 272–288. [Combination Problem precursor cited in V1 Ch16 §16.2.7.]
@@ -79,3 +85,32 @@
 * **Tegmark, M.** (2008). "The Mathematical Universe." *Foundations of Physics*, 38(2), 101–150. [Mathematical Universe Hypothesis canonical reference; cited in V1 Ch06 §6.4.5 parsimony comparison.]
 * **Volz, L. J., & Gazzaniga, M. S.** (2017). "Interaction in isolation: 50 years of insights from split-brain research." *Brain*, 140(7), 2051–2060. [Camp-2 reply to Pinto et al. 2017 cited in V1 Ch17 Table 17.5.]
 * **Yablo, S.** (1993). "Is conceivability a guide to possibility?" *Philosophy and Phenomenological Research*, 53(1), 1–42. [Conceivability-vs-possibility analysis cited in V1 Ch16 §16.2.8a.]
+
+#### **Biophysics, Neuroscience and Cognition (V1 Ch17)**
+* **Cowan, N.** (2001). "The magical number 4 in short-term memory: A reconsideration of mental storage capacity." *Behavioral and Brain Sciences*, 24(1), 87–114. [Current working-memory capacity estimate cited in V1 Ch17 §17.9.]
+* **Fedorov, R., Schlichting, I., Hartmann, E., Domratcheva, T., Fuhrmann, M., & Hegemann, P.** (2003). "Crystal structures and molecular mechanism of a light-induced signaling switch: the Phot-LOV1 domain from *Chlamydomonas reinhardtii*." *Biophysical Journal*, 84(4), 2474–2482.
+* **Foster, H. E., Ventura Santos, C., & Carter, A. P.** (2022). "A cryo-ET survey of microtubules and intracellular compartments in mammalian axons." *Journal of Cell Biology*, 221(2), e202103154.
+* **Fried, S. D., Bagchi, S., & Boxer, S. G.** (2014). "Extreme electric fields power catalysis in the active site of ketosteroid isomerase." *Science*, 346(6216), 1510–1514.
+* **Harris, J. J., Jolivet, R., & Attwell, D.** (2012). "Synaptic energy use and supply." *Neuron*, 75(5), 762–777.
+* **Li, N., Lu, D., Yang, L., Tao, H., Xu, Y., Wang, C., Fu, L., Liu, H., Chummum, Y., & Zhang, S.** (2018). "Nuclear spin attenuates the anesthetic potency of xenon isotopes in mice: implications for the mechanisms of anesthesia and consciousness." *Anesthesiology*, 129(2), 271–277.
+* **McKemmish, L. K., Reimers, J. R., McKenzie, R. H., Mark, A. E., & Hush, N. S.** (2009). "Penrose-Hameroff orchestrated objective-reduction proposal for human consciousness is not biologically feasible." *Physical Review E*, 80(2), 021912.
+* **Webster, D. R., & Borisy, G. G.** (1989). "Microtubules are acetylated in domains that turn over slowly." *Journal of Cell Science*, 92(1), 57–65.
+* **Zhang, R., LaFrance, B., & Nogales, E.** (2018). "Separating the effects of nucleotide and EB binding on microtubule structure." *PNAS*, 115(27), E6191–E6200.
+
+#### **Part VI — Philosophy of Science, Causation, Self-Reference, Aesthetics and Society**
+* **Chakravartty, A.** (2007). *A Metaphysics for Scientific Realism: Knowing the Unobservable*. Cambridge University Press.
+* **Gödel, K.** (1931). "Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I." *Monatshefte für Mathematik und Physik*, 38, 173–198.
+* **Green, C. D.** (1995). "All that glitters: a review of psychological research on the aesthetics of the golden section." *Perception*, 24(8), 937–968.
+* **Hofstadter, D. R.** (1979). *Gödel, Escher, Bach: An Eternal Golden Braid*. Basic Books.
+* **Hofstadter, D. R.** (2007). *I Am a Strange Loop*. Basic Books.
+* **James, W.** (1890). *The Principles of Psychology*. Henry Holt. [Early statement of the combination problem cited in V1 Ch11 §11.12.]
+* **Kitcher, P.** (1993). *The Advancement of Science: Science without Legend, Objectivity without Illusions*. Oxford University Press.
+* **Lewis, D.** (1973). "Causation." *Journal of Philosophy*, 70(17), 556–567.
+* **McManus, I. C.** (1980). "The aesthetics of simple figures." *British Journal of Psychology*, 71(4), 505–524.
+* **Mumford, S., & Anjum, R. L.** (2011). *Getting Causes from Powers*. Oxford University Press.
+* **Pearl, J.** (2009). *Causality: Models, Reasoning, and Inference* (2nd ed.). Cambridge University Press.
+* **Psillos, S.** (1999). *Scientific Realism: How Science Tracks Truth*. Routledge.
+* **Searle, J. R.** (1995). *The Construction of Social Reality*. Free Press.
+* **van Fraassen, B. C.** (1980). *The Scientific Image*. Oxford University Press.
+* **Wigner, E. P.** (1960). "The unreasonable effectiveness of mathematics in the natural sciences." *Communications on Pure and Applied Mathematics*, 13(1), 1–14.
+* **Worrall, J.** (1989). "Structural realism: The best of both worlds?" *Dialectica*, 43(1–2), 99–124.

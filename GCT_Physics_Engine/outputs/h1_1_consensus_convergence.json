@@ -1,0 +1,247 @@
+{
+  "theorem": "For an N-Agent consensus network with strictly positive coupling kappa_ij = kappa_0 exp(-lambda_c d_H) > 0, the row-stochastic matrix W has simple leading eigenvalue 1, all other eigenvalues |lambda_k| < 1, and the iteration Phi^(t+1) = W Phi^(t) converges geometrically to the unique fixed point at rate |lambda_2|^t.",
+  "tier": "Tier 1 (Perron-Frobenius for strictly positive matrices)",
+  "instances": {
+    "p=2_depth=2_lambda_c=0.5": {
+      "N": 4,
+      "strict_positivity_W_ij_gt_0": true,
+      "spectral": {
+        "lambda_1_real": 0.9999999999999997,
+        "lambda_1_imag": 0.0,
+        "lambda_1_magnitude": 0.9999999999999997,
+        "lambda_2_real": 0.18909276038291842,
+        "lambda_2_imag": 0.0,
+        "lambda_2_magnitude": 0.18909276038291842,
+        "spectral_gap": 0.8109072396170816,
+        "lambda_1_is_simple_one": true,
+        "all_other_eigs_strictly_less_than_1": true
+      },
+      "convergence": {
+        "num_iterations": 19,
+        "final_residual": 6.858953443338355e-13,
+        "converged": true,
+        "early_residuals": [
+          2.141609839699398,
+          0.9481247373881138,
+          0.23858460246772276,
+          0.04797139192860403,
+          0.009167736726667144
+        ],
+        "late_residuals": [
+          5.365268136770641e-10,
+          1.0145340833129316e-10,
+          1.918409621513683e-11,
+          3.6274631977183893e-12,
+          6.858953443338355e-13
+        ]
+      },
+      "fixed_point_self_consistent": {
+        "max_abs_error": 5.551115123125783e-16,
+        "self_consistent": true
+      },
+      "all_four_theorem_points_satisfied": true
+    },
+    "p=2_depth=3_lambda_c=0.5": {
+      "N": 8,
+      "strict_positivity_W_ij_gt_0": true,
+      "spectral": {
+        "lambda_1_real": 0.9999999999999998,
+        "lambda_1_imag": 0.0,
+        "lambda_1_magnitude": 0.9999999999999998,
+        "lambda_2_real": 0.1728499167150425,
+        "lambda_2_imag": 0.0,
+        "lambda_2_magnitude": 0.1728499167150425,
+        "spectral_gap": 0.8271500832849575,
+        "lambda_1_is_simple_one": true,
+        "all_other_eigs_strictly_less_than_1": true
+      },
+      "convergence": {
+        "num_iterations": 18,
+        "final_residual": 6.983303619169393e-13,
+        "converged": true,
+        "early_residuals": [
+          2.7034186290976283,
+          1.0304387707949971,
+          0.19593213392836023,
+          0.033448714399518124,
+          0.005724805191909553
+        ],
+        "late_residuals": [
+          7.835153637006038e-10,
+          1.354298895254945e-10,
+          2.340860838738108e-11,
+          4.045208626235944e-12,
+          6.983303619169393e-13
+        ]
+      },
+      "fixed_point_self_consistent": {
+        "max_abs_error": 3.3306690738754696e-16,
+        "self_consistent": true
+      },
+      "all_four_theorem_points_satisfied": true
+    },
+    "p=2_depth=4_lambda_c=0.5": {
+      "N": 16,
+      "strict_positivity_W_ij_gt_0": true,
+      "spectral": {
+        "lambda_1_real": 1.0000000000000007,
+        "lambda_1_imag": 0.0,
+        "lambda_1_magnitude": 1.0000000000000007,
+        "lambda_2_real": 0.16855629852441908,
+        "lambda_2_imag": 0.0,
+        "lambda_2_magnitude": 0.16855629852441908,
+        "spectral_gap": 0.8314437014755809,
+        "lambda_1_is_simple_one": true,
+        "all_other_eigs_strictly_less_than_1": true
+      },
+      "convergence": {
+        "num_iterations": 18,
+        "final_residual": 2.116551024414422e-13,
+        "converged": true,
+        "early_residuals": [
+          4.281043070050831,
+          0.855276265670279,
+          0.09360028498204143,
+          0.014671868523956147,
+          0.0024346530620994707
+        ],
+        "late_residuals": [
+          2.6574568508113266e-10,
+          4.479065563612645e-11,
+          7.548062665505877e-12,
+          1.2698918482769206e-12,
+          2.116551024414422e-13
+        ]
+      },
+      "fixed_point_self_consistent": {
+        "max_abs_error": 8.881784197001252e-16,
+        "self_consistent": true
+      },
+      "all_four_theorem_points_satisfied": true
+    },
+    "p=3_depth=2_lambda_c=0.7": {
+      "N": 9,
+      "strict_positivity_W_ij_gt_0": true,
+      "spectral": {
+        "lambda_1_real": 1.000000000000001,
+        "lambda_1_imag": 0.0,
+        "lambda_1_magnitude": 1.000000000000001,
+        "lambda_2_real": 0.1966503693705059,
+        "lambda_2_imag": 0.0,
+        "lambda_2_magnitude": 0.1966503693705059,
+        "spectral_gap": 0.803349630629494,
+        "lambda_1_is_simple_one": true,
+        "all_other_eigs_strictly_less_than_1": true
+      },
+      "convergence": {
+        "num_iterations": 20,
+        "final_residual": 3.3562429490101606e-13,
+        "converged": true,
+        "early_residuals": [
+          2.825881820578975,
+          1.3274704320618418,
+          0.324884015237563,
+          0.06657918079363354,
+          0.013199024348184001
+        ],
+        "late_residuals": [
+          2.249354409484376e-10,
+          4.423277205559818e-11,
+          8.69803174039891e-12,
+          1.709456758439756e-12,
+          3.3562429490101606e-13
+        ]
+      },
+      "fixed_point_self_consistent": {
+        "max_abs_error": 4.440892098500626e-16,
+        "self_consistent": true
+      },
+      "all_four_theorem_points_satisfied": true
+    },
+    "p=2_depth=4_lambda_c=2.0": {
+      "N": 16,
+      "strict_positivity_W_ij_gt_0": true,
+      "spectral": {
+        "lambda_1_real": 1.0,
+        "lambda_1_imag": 0.0,
+        "lambda_1_magnitude": 1.0,
+        "lambda_2_real": 0.6095672064558918,
+        "lambda_2_imag": 0.0,
+        "lambda_2_magnitude": 0.6095672064558918,
+        "spectral_gap": 0.3904327935441082,
+        "lambda_1_is_simple_one": true,
+        "all_other_eigs_strictly_less_than_1": true
+      },
+      "convergence": {
+        "num_iterations": 61,
+        "final_residual": 7.549009439724976e-13,
+        "converged": true,
+        "early_residuals": [
+          4.160677384537142,
+          2.9671167900833235,
+          1.9013174679920621,
+          1.2058995065776337,
+          0.7590370989813926
+        ],
+        "late_residuals": [
+          5.482134896191829e-12,
+          3.3408428295136533e-12,
+          2.035468045105232e-12,
+          1.2400593220627231e-12,
+          7.549009439724976e-13
+        ]
+      },
+      "fixed_point_self_consistent": {
+        "max_abs_error": 5.551115123125783e-16,
+        "self_consistent": true
+      },
+      "all_four_theorem_points_satisfied": true
+    },
+    "p=2_depth=4_lambda_c=0.1": {
+      "N": 16,
+      "strict_positivity_W_ij_gt_0": true,
+      "spectral": {
+        "lambda_1_real": 1.0,
+        "lambda_1_imag": 0.0,
+        "lambda_1_magnitude": 1.0,
+        "lambda_2_real": 0.03366855013779737,
+        "lambda_2_imag": 0.0,
+        "lambda_2_magnitude": 0.03366855013779737,
+        "spectral_gap": 0.9663314498622027,
+        "lambda_1_is_simple_one": true,
+        "all_other_eigs_strictly_less_than_1": true
+      },
+      "convergence": {
+        "num_iterations": 11,
+        "final_residual": 2.241707446309761e-13,
+        "converged": true,
+        "early_residuals": [
+          4.4057081550020545,
+          2.4201645721126663,
+          0.1348587497491098,
+          0.004610158163649602,
+          0.0001551306526709569
+        ],
+        "late_residuals": [
+          1.757915992618215e-07,
+          5.918533318350044e-09,
+          1.9926557599963488e-10,
+          6.70739575771692e-12,
+          2.241707446309761e-13
+        ]
+      },
+      "fixed_point_self_consistent": {
+        "max_abs_error": 9.992007221626409e-16,
+        "self_consistent": true
+      },
+      "all_four_theorem_points_satisfied": true
+    }
+  },
+  "all_instances_pass_theorem": true,
+  "closure_status": {
+    "tier": "Tier 1",
+    "status": "CLOSED",
+    "claim": "H.1.1 closed: the Ch11 Sec 11.3.2 N-Agent consensus protocol always converges to a singular, self-consistent lattice history via Perron-Frobenius for strictly positive matrices. Convergence rate is |lambda_2|^t where lambda_2 is the second-largest eigenvalue of the row-stochastic consensus matrix W.",
+    "scope_caveats": "Theorem assumes finite-N, finite-lambda_c, finite-depth p-adic addresses (kappa_ij > 0 strictly). Continuum N -> infinity or lambda_c -> infinity limits may require additional regularity. Periodic-orbit branches (multiple eigenvalues at |lambda| = 1) are excluded by strict positivity; they would only arise if some kappa_ij = 0 exactly (graph disconnected) or in singular limits."
+  }
+}

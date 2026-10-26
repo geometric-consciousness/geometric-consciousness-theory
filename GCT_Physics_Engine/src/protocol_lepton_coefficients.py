@@ -22,7 +22,7 @@ Two Acceptance Tests
       Tier status: Tier 2 mechanism + Tier 2 integer-pair (D=18, N=5)
       + Tier 3 combination rule c = -D/N pending O.26b; headline
       coefficient is Tier 3.
-      TAU_SCREEN_COEFF = -3.6  # = -18/5; see Ch08 §[tau derivation] and App T
+      TAU_SCREEN_COEFF = -3.6  # = -18/5; see Ch08 §[tau derivation] and App TAT
 
 Output
 ------
@@ -356,19 +356,23 @@ def main():
     print(f"  Pentagonal symmetry N       : {d2_info['N_symmetry']}")
     print(f"  Screening coeff -D/N        : -{d2_info['D_total']}/{d2_info['N_symmetry']} = {d2_info['screening_coefficient_exact']} = {d2_info['screening_coefficient_float']:.1f}")
     print(f"  Tau drag coeff              : -3.6 * alpha = {d2_info['tau_drag_coefficient'] * ALPHA:.6f}")
-    print(f"  D2 target: -18/5 = -3.6    : {'[PASS]' if d2_pass else '[FAIL]'}")
+    print(f"  D2 -18/5 = -3.6             : INPUT (typed integers; not a computed check)")
 
     # -----------------------------------------------------------------------
     # Final verdict
     # -----------------------------------------------------------------------
-    all_pass  = d1_pass and d2_pass
+    # D2 types D = 6+6+6 and N = 5 and then checks -18/5
+    # against Fraction(-18, 5), which cannot fail; the c = -D/N rule is Tier 3
+    # pending O.26b. D2 is therefore recorded as an INPUT and no longer gates
+    # the PASS. Only D1 (the A5 character decomposition) is computed.
+    all_pass  = bool(d1_pass)
     final_tag = "PASS" if all_pass else "FAIL"
 
     print("\n" + "=" * 70)
     print("  FINAL VERDICT")
     print("=" * 70)
     print(f"  [{'PASS' if d1_pass else 'FAIL'}] D1  Perm rep A5 = 1A + 1H  -> 5 free channels -> 5*alpha")
-    print(f"  [{'PASS' if d2_pass else 'FAIL'}] D2  -D/N = -18/5 = -3.6    -> Tau screening -3.6*alpha")
+    print(f"  [INPUT] D2  -D/N = -18/5 = -3.6 typed (Tier 3 rule, O.26b) -> Tau screening -3.6*alpha; not gating")
     print()
     if all_pass:
         print("  VERDICT: PASS")
@@ -393,6 +397,7 @@ def main():
             "tau_screening_ratio": d2_info["screening_coefficient_exact"],
             "tau_screening_float": d2_info["screening_coefficient_float"],
         },
+        "D2_status": "INPUT: D = 6+6+6 and N = 5 are typed; c = -D/N is a Tier 3 rule pending O.26b; excluded from pass",
         "pass": all_pass,
         "verdict": final_tag,
     }

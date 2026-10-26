@@ -2,7 +2,7 @@
 verify_dm_line_centroid_postdiction_check.py — Independent centroid check for 3.55 keV DM line
 
 Manuscript: E_vac = m_e c² / 144 = m_e (in eV) / 144
-gct_constants.yaml derived value: 3.5486 keV
+Conditional evaluation at the Tier 3 O.38 posit N_cage=144: 3.5486 keV
 Observed (Bulbul et al. 2014, Perseus): 3.55 ± 0.03 keV
 """
 
@@ -25,19 +25,22 @@ def main():
  sigma_dist = diff / sig_keV
  ppm = diff / observed_keV * 1e6
 
+ # Context only (registry P.3-centroid-context): the 3.55 keV line has not been
+ # confirmed by the blinded W_int and morphology gates, so a centroid agreement
+ # is never counted as a PASS. The 1000 ppm figure is a display band only.
  tolerance_ppm = 1000.0
- status = "PASS" if ppm <= tolerance_ppm else ("TENSION" if sigma_dist <= 2.0 else "FAIL")
+ status = "OPEN_CONDITIONAL" if ppm <= tolerance_ppm else ("TENSION" if sigma_dist <= 2.0 else "FAIL")
 
  res = make_result(
  name="dm_line_3p55keV",
- app_r_label="3.55 keV X-ray line (E_vac)",
- formula="E_vac = m_e · c² / 144 (N=144 cage saturation)",
+ app_psc_label="3.55 keV X-ray line (E_vac)",
+ formula="E_vac = m_e · c² / 144 (conditional on the Tier 3 O.38 N_cage posit)",
  predicted=E_vac_keV,
  observed=observed_keV,
  unit="keV",
- app_r_predicted=3.5486,
- app_r_precision_str=f"{ppm:.0f} ppm (within {sigma_dist:.2f}σ of observed line centroid)",
- app_r_precision_ppm=ppm,
+ app_psc_predicted=3.5486,
+ app_psc_precision_str=f"{ppm:.0f} ppm (within {sigma_dist:.2f}σ of the reported centroid of an unconfirmed line); context only, not a PASS",
+ app_psc_precision_ppm=ppm,
  tier="Tier 3 postdiction-context centroid; operative P.3 falsifier is dm_line_width_morphology",
  status=status,
  tolerance_ppm=tolerance_ppm,
@@ -46,7 +49,7 @@ def main():
  "sigma_distance_from_centroid": sigma_dist,
  "xrism_status_note": (
  "XRISM (3.75 Ms on 10 clusters) has not yet resolved the line. "
- "Upper limit 5× weaker than required to confirm/refute. App R "
+ "Upper limit 5× weaker than required to confirm/refute. App PSC "
  "lists status as Under Test — Data Inconclusive."
  ),
  },

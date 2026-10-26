@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 """
 protocol_aps_candidates_final.py - Apply the resolution-artifact test
-to the remaining APS-recovery candidates N=574 and N=754.
+to two finite-cage scalar-adjacency sign-count cases, N=574 and N=754.
 
-The C2-nullspace investigation showed that N=132's integer-arithmetic
-APS recovery is a resolution artifact of the golden-bond rule: 42
+The C2-nullspace investigation showed that N=132's divisible-by-eight
+scalar sign count is a resolution artifact of the golden-bond rule: 42
 vertices in two close-perp-radius orbits (0.167 and 0.176) had
-identical adjacency rows, producing a 42-dim nullspace and eta = 0.
+identical adjacency rows, producing a 42-dimensional nullspace and sign sum zero.
 
-This protocol asks the same question of N=574 (eta_scalar = +8,
-bulk_required = -108) and N=754 (eta_scalar = -24, bulk_required =
--104): are their integer-APS-arithmetic results similarly
+This protocol asks the same question of N=574 (scalar sign sum = +8)
+and N=754 (scalar sign sum = -24): are their arithmetic patterns similarly
 artifacts of close-perp-radius orbit pairs and duplicate adjacency
 rows, or do they have genuine structural origin?
 
@@ -19,12 +18,11 @@ For each cage size, the protocol reports:
   - Adjacency edge count
   - Number of duplicate-adjacency-row groups (resolution artifact)
   - Nullspace dimension (deeper structural redundancy indicator)
-  - eta_scalar verification against the C2 search
+  - scalar-adjacency sign-sum verification against the C2 search
 
-Closure: if N=574 and N=754 are also resolution artifacts, then NO
-I_h-closed cage in the searched range has a non-artifact integer-APS
-recovery -- a clean strong-negative result that closes the C2
-cage-search investigation.
+These scalar weighted-adjacency calculations are finite diagnostics, not
+Dirac eta-invariants or APS evidence. No qualifying operator/domain, bulk
+pairing, kernel term, regularised eta, or complete index is evaluated.
 """
 
 from __future__ import annotations
@@ -174,11 +172,11 @@ def analyze_cage(N_target: int, k_orbits: int, group_ih: list[np.ndarray], label
     evals = np.linalg.eigvalsh(A)
     nz = evals[np.abs(evals) > 1e-9]
     n_zero = int(N - len(nz))
-    eta_scalar = int(round(float(np.sum(np.sign(nz)))))
+    scalar_sign_sum = int(round(float(np.sum(np.sign(nz)))))
     n_pos = int(np.sum(nz > 0))
     n_neg = int(np.sum(nz < 0))
     print(f"  Spectrum: {n_pos} positive, {n_neg} negative, {n_zero} zero")
-    print(f"  eta_scalar = {eta_scalar:+d}")
+    print(f"  scalar adjacency sign sum = {scalar_sign_sum:+d}")
 
     print(f"  Searching for close-perp-radius orbit pairs (threshold 0.05)...")
     close_pairs = find_close_orbit_pairs(orbits, threshold=0.05)
@@ -200,36 +198,31 @@ def analyze_cage(N_target: int, k_orbits: int, group_ih: list[np.ndarray], label
     else:
         print(f"  No duplicate-row groups (no resolution-artifact mechanism).")
 
-    bulk_required = -107 - eta_scalar / 8.0
-    bulk_int = abs(bulk_required - round(bulk_required)) < 1e-9
-
-    # Two mechanisms can make eta a multiple of 8:
-    #   (A) Large duplicate-row count gives many zero eigenvalues, eta = 0
+    # Two mechanisms can make a scalar sign sum a multiple of 8:
+    #   (A) Large duplicate-row count gives many zero eigenvalues and sign sum zero
     #       trivially. This is the N=132 mechanism.
     #   (B) The non-zero spectrum happens to have an excess of positive (or
     #       negative) signs that is a multiple of 8 by approximate chance.
-    #       For a generic spectrum, |eta| scales as ~sqrt(N) (CLT); a
+    #       For a generic spectrum, the sign-count imbalance scales as ~sqrt(N) (CLT); a
     #       multiple-of-8 within 1*sqrt(N) is statistically unremarkable.
     sqrt_N_estimate = float(np.sqrt(N))
     is_duplicate_artifact = (n_extra >= max(n_zero - 1, 1))   # N=132-style
-    abs_eta_vs_sqrt_N = abs(eta_scalar) / sqrt_N_estimate
+    abs_sign_sum_vs_sqrt_N = abs(scalar_sign_sum) / sqrt_N_estimate
     is_statistical_coincidence = (
         not is_duplicate_artifact
-        and abs_eta_vs_sqrt_N < 2.0   # within ~2 sigma of zero
-        and eta_scalar % 8 == 0
+        and abs_sign_sum_vs_sqrt_N < 2.0   # within ~2 sigma of zero
+        and scalar_sign_sum % 8 == 0
     )
 
-    print(f"  bulk_required for n=-107 = {bulk_required:+.4f} (integer? {bulk_int})")
+    print(f"  scalar sign sum / 8 arithmetic diagnostic = {scalar_sign_sum / 8.0:+.4f}")
     print(f"  Resolution-artifact diagnostics:")
     print(f"    duplicate-mechanism (N=132 style): {is_duplicate_artifact}")
     print(f"      (n_extra={n_extra} vs n_zero-1={n_zero - 1})")
-    print(f"    statistical-coincidence (eta within 2*sqrt(N) of 0): {is_statistical_coincidence}")
-    print(f"      (|eta|/sqrt(N) = {abs_eta_vs_sqrt_N:.3f})")
+    print(f"    statistical-coincidence (sign sum within 2*sqrt(N) of 0): {is_statistical_coincidence}")
+    print(f"      (|sign sum|/sqrt(N) = {abs_sign_sum_vs_sqrt_N:.3f})")
 
-    is_genuine = bool(
-        bulk_int
-        and not is_duplicate_artifact
-        and not is_statistical_coincidence
+    is_nonartifact_sign_pattern = bool(
+        not is_duplicate_artifact and not is_statistical_coincidence
     )
 
     return {
@@ -242,17 +235,19 @@ def analyze_cage(N_target: int, k_orbits: int, group_ih: list[np.ndarray], label
         "n_positive_evals": n_pos,
         "n_negative_evals": n_neg,
         "n_zero_evals": n_zero,
-        "eta_scalar": eta_scalar,
-        "bulk_required_for_n_minus_107": bulk_required,
-        "bulk_is_integer": bool(bulk_int),
+        "scalar_adjacency_sign_sum": scalar_sign_sum,
+        "scalar_adjacency_per_spinor_dimension_diagnostic": scalar_sign_sum / 8.0,
+        "aps_operator_domain_specified": False,
+        "aps_eta_evaluated": False,
+        "aps_index_evaluated": False,
         "close_orbit_pairs": [(i, j, d) for i, j, d in close_pairs],
         "n_duplicate_groups": len(dup_groups),
         "n_extra_rows_from_duplicates": int(n_extra),
         "largest_duplicate_groups": sorted([len(g) for g in dup_groups], reverse=True)[:10],
-        "abs_eta_over_sqrt_N": abs_eta_vs_sqrt_N,
+        "abs_scalar_sign_sum_over_sqrt_N": abs_sign_sum_vs_sqrt_N,
         "is_duplicate_artifact": bool(is_duplicate_artifact),
         "is_statistical_coincidence": bool(is_statistical_coincidence),
-        "is_genuine_candidate": is_genuine,
+        "is_nonartifact_sign_pattern": is_nonartifact_sign_pattern,
     }
 
 
@@ -271,18 +266,18 @@ def main():
     print("\n" + "=" * 76)
     print("SUMMARY")
     print("=" * 76)
-    print(f"  {'label':>8}  {'N':>5}  {'eta':>5}  {'|eta|/sqrt(N)':>14}  {'bulk':>7}  {'dup_arti':>9}  {'stat_coin':>10}  {'genuine':>8}")
+    print(f"  {'label':>8}  {'N':>5}  {'sign':>5}  {'|sign|/sqrt(N)':>16}  {'sign/8':>8}  {'dup_arti':>9}  {'stat_coin':>10}  {'nonart':>8}")
     for r in results:
-        print(f"  {r['label']:>8}  {r['N_built']:>5}  {r['eta_scalar']:>+5d}  "
-              f"{r['abs_eta_over_sqrt_N']:>14.3f}  "
-              f"{r['bulk_required_for_n_minus_107']:>+7.3f}  "
+        print(f"  {r['label']:>8}  {r['N_built']:>5}  {r['scalar_adjacency_sign_sum']:>+5d}  "
+              f"{r['abs_scalar_sign_sum_over_sqrt_N']:>14.3f}  "
+              f"{r['scalar_adjacency_per_spinor_dimension_diagnostic']:>+8.3f}  "
               f"{str(r['is_duplicate_artifact']):>9}  "
               f"{str(r['is_statistical_coincidence']):>10}  "
-              f"{str(r['is_genuine_candidate']):>8}")
+              f"{str(r['is_nonartifact_sign_pattern']):>8}")
 
     n_dup_artifact = sum(1 for r in results if r["is_duplicate_artifact"])
     n_stat_coincidence = sum(1 for r in results if r["is_statistical_coincidence"])
-    n_genuine = sum(1 for r in results if r["is_genuine_candidate"])
+    n_genuine = sum(1 for r in results if r["is_nonartifact_sign_pattern"])
     print()
     print(f"  Duplicate-row artifacts:    {n_dup_artifact} / {len(results)}")
     print(f"  Statistical coincidences:   {n_stat_coincidence} / {len(results)}")
@@ -292,34 +287,30 @@ def main():
     if n_genuine == 0:
         print("STRONG NEGATIVE CLOSURE.")
         print("Combined with the N=132 (duplicate-row artifact) result, the three")
-        print("non-trivial APS-recovery candidates (N=132, 574, 754) found by the")
+        print("non-trivial divisible-by-eight scalar sign counts found by the")
         print("C2 cage search are EXPLAINED:")
         print("  - N=132: duplicate-row artifact (orbits 0 + 1 are too close in")
         print("    perp-radius for the golden-bond rule to distinguish them).")
-        print("  - N=574 and N=754: statistical coincidence (|eta| within ~2*sqrt(N)")
+        print("  - N=574 and N=754: statistical coincidence (|sign sum| within ~2*sqrt(N)")
         print("    of zero AND happens to be a multiple of 8).")
         print()
         print("No I_h-closed cage in the searched range exhibits a STRUCTURALLY")
-        print("forced integer-arithmetic APS recovery of n = -107. The cage-")
-        print("uniqueness investigation (E + I + H + G + M + C2 + C2-cont +")
-        print("C2-nullspace + C2-final) is now COMPLETE as a coherent unit:")
-        print("  - The discrete APS sum does NOT recover n = -107 at structurally-")
-        print("    forced integer arithmetic on any examined I_h-closed cage")
+        print("forced non-artifact scalar sign-count pattern. The cage-")
+        print("search yields the following mathematical disposition:")
+        print("  - These scalar-adjacency diagnostics do not evaluate an APS eta")
+        print("    or complete index on any examined I_h-closed cage")
         print("    under the golden-bond rule.")
         print("  - The empirical anchor (mass-formula CODATA match) carries the")
         print("    determination of n = -107 alone.")
-        print("  - O.14c closure via the discrete-APS-on-I_h-closed-cage pathway")
-        print("    is structurally blocked at the searched scale; alternative")
-        print("    pathways (smooth Connes-Moscovici via O.14b, or richer index-")
-        print("    theoretic frameworks) become the only remaining routes to a")
-        print("    theoretical derivation.")
+        print("  - O.14b/c remain open for a qualifying bulk/boundary operator pair,")
+        print("    exact domains, kernel term, regularised eta, and complete index.")
     else:
         print(f"FOUND {n_genuine} GENUINE NON-ARTIFACT CANDIDATE(S):")
         for r in results:
-            if r["is_genuine_candidate"]:
-                print(f"  -> {r['label']}: N={r['N_built']}, eta={r['eta_scalar']:+d}, "
-                      f"|eta|/sqrt(N)={r['abs_eta_over_sqrt_N']:.3f}, "
-                      f"bulk={r['bulk_required_for_n_minus_107']:+.0f}")
+            if r["is_nonartifact_sign_pattern"]:
+                print(f"  -> {r['label']}: N={r['N_built']}, scalar sign={r['scalar_adjacency_sign_sum']:+d}, "
+                      f"|sign sum|/sqrt(N)={r['abs_scalar_sign_sum_over_sqrt_N']:.3f}, "
+                      f"scalar/8={r['scalar_adjacency_per_spinor_dimension_diagnostic']:+.3f}")
         print("  These warrant further investigation to determine whether they")
         print("  admit independent physical motivation as canonical electron-defect")
         print("  cages.")

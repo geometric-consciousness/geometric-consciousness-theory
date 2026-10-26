@@ -3,36 +3,36 @@
 protocol_o19_phason_alpha_magnitude.py
 ======================================
 
-Sign-validation diagnostic for Open Problem O.19 (App H §H.5; magnitude
+Sign-validation diagnostic for Open Problem O.19 (App ORQ §ORQ.5; magnitude
 not closed, see verdict framework below): given the sign-validated
-NAGT-style phason anti-screening mechanism (App M §M.7.1, verified by
+NAGT-style phason anti-screening mechanism (App ULA §ULA.7.1, verified by
 protocol_phason_oneloop_AKN.py), test whether the candidate icosahedral
 group-theory structure supplies the alpha-closure shift.
 
 OPERATIVE TARGET VS BARE RESIDUAL
 
 Two residuals appear in this closure problem and they must not be
-conflated (App M §M.7.1; App H O.19):
+conflated (App ULA §ULA.7.1; App ORQ O.19):
 
-  - The BARE residual is +3442 ppm: the GCT tree-level
-    alpha^(-1) = 360 phi^(-2) = 137.508 sits 3442 ppm above the observed
-    137.036.
-  - The OPERATIVE O.19 target is the +41.6 ppm POST-BILAYER residual:
-    the bilayer handle 1/(2N) = 1/288 reduces the bare 3442 ppm mismatch
-    to a 41.6 ppm remainder, and that 41.6 ppm remainder is the
-    magnitude the discrete AKN bubble integral must derive. App M §M.7.1
-    and App H O.19 both state this verbatim: the loop calculation targets
-    the 41.6 ppm residual only, NOT the full +3442 ppm bare residual.
+  - The BARE residual is +3443 ppm: the GCT tree-level
+    alpha^(-1) = 360 phi^(-2) = 137.508 sits 3443 ppm above the observed
+    137.035999177 (display 137.036).
+  - The OPERATIVE O.19 target is the +41.5 ppm POST-BILAYER residual:
+    the bilayer handle 1/(2N) = 1/288 reduces the bare 3443 ppm mismatch
+    to a 41.5 ppm remainder, and that 41.5 ppm remainder is the
+    magnitude the discrete AKN bubble integral must derive. App ULA §ULA.7.1
+    and App ORQ O.19 both state this verbatim: the loop calculation targets
+    the 41.5 ppm residual only, NOT the full +3443 ppm bare residual.
 
 This protocol evaluates the continuous-gauge NAGT running formula against
-the BARE +3442 ppm residual as an order-of-magnitude diagnostic of the
+the BARE +3443 ppm residual as an order-of-magnitude diagnostic of the
 gauge-theory template; the back-solved coefficient it reports is a
-diagnostic of that template, not a closure of the operative 41.6 ppm
+diagnostic of that template, not a closure of the operative 41.5 ppm
 target. The verdict therefore stops at "sign-validated only" for both
 framings (see VERDICT FRAMEWORK below). Sign validation already
 established that the GCT direction alpha^(-1)_bare > alpha^(-1)_obs is
 sign-consistent with NAGT-style bosonic anti-screening; the magnitude
-(whether for the bare 3442 ppm template or the operative 41.6 ppm target)
+(whether for the bare 3443 ppm template or the operative 41.5 ppm target)
 remains OPEN.
 
 ONE-LOOP RUNNING FORMULA
@@ -46,7 +46,7 @@ Standard non-abelian gauge theory (Peskin & Schroeder Ch. 16):
 For the GCT phason-photon system, the icosahedral lattice acts as the
 "gauge group" of the phason gauge field. The one-loop running between
 the icosahedral UV reference (alpha^(-1)_bare = 360 phi^(-2)) and the
-IR observed scale (alpha^(-1)_obs = 137.036) takes the form:
+IR observed scale (alpha^(-1)_obs = 137.035999177) takes the form:
 
   Delta alpha^(-1) = alpha^(-1)_bare - alpha^(-1)_obs
                    = (b_phason / (2*pi)) ln(Lambda_UV / Lambda_IR)
@@ -84,25 +84,25 @@ character-orthogonality projection, not a Lie-Casimir eigenvalue.
 
 NUMERICAL ANCHORS
 
-  alpha^(-1)_bare = 360 * phi^(-2) = 137.508  (Tier 2 mechanism + Tier 3 multiplier)
-  alpha^(-1)_obs  = 137.036                  (CODATA 2022)
-  Delta alpha^(-1)_bare = 0.472              (~ 3442 ppm fractional; diagnostic
+  alpha^(-1)_bare = 360 * phi^(-2) = 137.508  (Tier 3 numerical relation; mechanism open)
+  alpha^(-1)_obs  = 137.035999177            (CODATA 2022 A3)
+  Delta alpha^(-1)_bare = 0.472              (~ 3443 ppm fractional; diagnostic
                                               anchor for the gauge-theory template)
-  Operative O.19 target = 41.6 ppm           (post-bilayer residual after the
+  Operative O.19 target = 41.5 ppm           (post-bilayer residual after the
                                               1/(2N)=1/288 handle removes
-                                              3442 -> 41.6 ppm)
+                                              3443 -> 41.5 ppm)
 
   M_Planck = 1.22e19 GeV
   m_e      = 5.11e-4 GeV
   ln(M_P / m_e) ~ 51.5
 
-  Required b_phason for the BARE +3442 ppm diagnostic template:
+  Required b_phason for the BARE +3443 ppm diagnostic template:
     b_phason = 2 * pi * Delta alpha^(-1)_bare / ln(M_P / m_e)
              = 2 * pi * 0.472 / 51.5
              ~ 0.0576
-  (For the operative 41.6 ppm target the same template back-solves to
+  (For the operative 41.5 ppm target the same template back-solves to
   b_phason of order 7e-4 and a class-sum coefficient of order 2e-4, which
-  sits below the icosahedral bracket; see App M §M.7.1. Either way the
+  sits below the icosahedral bracket; see App ULA §ULA.7.1. Either way the
   magnitude is OPEN.)
 
 VERDICT FRAMEWORK (sign-validated only)
@@ -118,17 +118,17 @@ to a magnitude-closure of O.19:
 
   (b) The assumed class_sum_eff bracket [~0.013, ~2.0] spans two orders of
       magnitude and is therefore wide enough to be re-tuned for any
-      output near the bare +3442 ppm diagnostic template. Falling inside
+      output near the bare +3443 ppm diagnostic template. Falling inside
       this wide bracket is a posterior-bracketing observation, not a
       structural derivation of the magnitude. Moreover, for the operative
-      41.6 ppm post-bilayer target the back-solved coefficient (~2e-4)
+      41.5 ppm post-bilayer target the back-solved coefficient (~2e-4)
       falls BELOW the icosahedral bracket entirely, so even the wide
       bracket does not absorb the operative target -- the group theory
       under-produces the needed coefficient by ~2 orders of magnitude.
 
 The verdict logic of this protocol consequently stops at "sign-
 validated only" regardless of where the required class_sum_eff value lands
-in the bracket. App M §M.7.1 magnitude-closure of O.19 remains OPEN
+in the bracket. App ULA §ULA.7.1 magnitude-closure of O.19 remains OPEN
 under two paths: (i) a discrete-lattice analogue of continuous-gauge
 running (Kotani-Sunada operator algebra on AKN, or a finite-group
 Bost-Connes analysis); (ii) a first-principles derivation of class_sum_eff
@@ -150,7 +150,7 @@ except ImportError:
 # Constants
 PHI = float(C.PHI)
 ALPHA_INV_BARE = 360.0 * PHI ** (-2)  # 137.508
-ALPHA_INV_OBS = 137.036
+ALPHA_INV_OBS = float(C.ALPHA_INV_OBS)
 DELTA_ALPHA_INV = ALPHA_INV_BARE - ALPHA_INV_OBS
 
 # Energy scales
@@ -283,10 +283,10 @@ def run_sign_diagnostic():
             "delta_ppm": float(delta_ppm),
         })
 
-    # Identify the class-sum value that gives the observed 3442 ppm
+    # Identify the class-sum value that gives the observed 3443 ppm
     delta_ppm_arr = np.array([s["delta_ppm"] for s in sweep])
     c2_arr = np.array([s["class_sum_eff"] for s in sweep])
-    target_ppm = DELTA_ALPHA_INV / ALPHA_INV_OBS * 1e6  # ~ 3445 ppm
+    target_ppm = DELTA_ALPHA_INV / ALPHA_INV_OBS * 1e6  # ~ 3443 ppm
     if delta_ppm_arr.min() <= target_ppm <= delta_ppm_arr.max():
         # log-log interp
         # Interpolated diagnostic value — NOT a derived match (see verdict framing).
@@ -300,9 +300,9 @@ def run_sign_diagnostic():
 
     # Verdict — sign-validated only.
     # This diagnostic back-solves the class-sum coefficient against the bare
-    # +3442 ppm residual as an order-of-magnitude test of the continuous-gauge
-    # template; the operative O.19 closure target is the 41.6 ppm post-bilayer
-    # residual (App M §M.7.1; App H O.19), for which the back-solved coefficient
+    # +3443 ppm residual as an order-of-magnitude test of the continuous-gauge
+    # template; the operative O.19 closure target is the 41.5 ppm post-bilayer
+    # residual (App ULA §ULA.7.1; App ORQ O.19), for which the back-solved coefficient
     # (~2e-4) falls below the icosahedral bracket.
     # The NAGT (11/3) C_2 beta function presupposes a continuous propagating
     # gauge boson + ghost cancellation; the icosahedral I_h symmetry of the
@@ -310,7 +310,7 @@ def run_sign_diagnostic():
     # quadratic Casimir in the standard Lie-algebraic sense. The
     # class_sum_eff range [~0.013, ~2.0] spans two orders of magnitude and is
     # therefore wide enough to be re-tuned for any output near the bare
-    # +3442 ppm template. Falling inside this wide range is NOT a structural
+    # +3443 ppm template. Falling inside this wide range is NOT a structural
     # derivation of the magnitude; it is a posterior-bracketing observation.
     # The required value is reported, the wide-bracket-membership is reported,
     # and the verdict explicitly stops at "sign-validated only" regardless
@@ -321,12 +321,12 @@ def run_sign_diagnostic():
 
     direction = (
         "Sign-validated only. NAGT-style continuous-gauge running framework "
-        "reproduces the +3442 ppm shift direction with bosonic-anti-screening "
+        "reproduces the +3443 ppm shift direction with bosonic-anti-screening "
         "convention. The magnitude is NOT structurally derived: the "
         "icosahedral I_h symmetry is a discrete reflection group without a "
         "quadratic Casimir in the Lie-algebraic sense, and the assumed "
         "class_sum_eff bracket spans two orders of magnitude -- wide enough to "
-        "be re-tuned for any output near the +3442 ppm target."
+        "be re-tuned for any output near the +3443 ppm target."
     )
     bracket_membership = "INSIDE bracket" if consistent_with_range else (
         "BELOW bracket" if class_sum_required < ico["class_sum_eff_lower_bound"] else "ABOVE bracket"
@@ -335,7 +335,7 @@ def run_sign_diagnostic():
         f"Required class_sum_eff = {class_sum_required:.4f}; assumed icosahedral bracket "
         f"[{ico['class_sum_eff_lower_bound']:.4f}, {ico['class_sum_eff_upper_bound']:.4f}] "
         f"(two orders of magnitude wide). Required value is {bracket_membership}. "
-        f"App M §M.7.1 status: sign-validated mechanism only; magnitude closure "
+        f"App ULA §ULA.7.1 status: sign-validated mechanism only; magnitude closure "
         f"remains open under O.19 with two closure paths — (a) a discrete-"
         f"lattice analogue of the continuous-gauge running (Kotani-Sunada "
         f"operator algebra on AKN, or finite-group Bost-Connes), or (b) a "
@@ -357,7 +357,7 @@ def run_sign_diagnostic():
         "icosahedral_estimates": ico,
         "class_sum_eff_sweep": sweep,
         "class_sum_eff_backsolved_interp_to_target_ppm__diagnostic_only": c2_match,
-        "class_sum_eff_backsolved_interp_to_target_ppm__diagnostic_note": "Interpolation-on-log-grid diagnostic; not a derived match -- the protocol's verdict is sign-validated-only, the class_sum_eff value here is for inspection of where the target ppm sits in the swept range and should NOT be treated as the magnitude derivation. Magnitude derivation closure is registered under App H O.19; the sweep here gives only the order-of-magnitude bracket.",
+        "class_sum_eff_backsolved_interp_to_target_ppm__diagnostic_note": "Interpolation-on-log-grid diagnostic; not a derived match -- the protocol's verdict is sign-validated-only, the class_sum_eff value here is for inspection of where the target ppm sits in the swept range and should NOT be treated as the magnitude derivation. Magnitude derivation closure is registered under App ORQ O.19; the sweep here gives only the order-of-magnitude bracket.",
         "backsolved_value_falls_inside_wide_retunable_bracket__not_validation": bool(consistent_with_range),
         "registry_claim_scope": "Sign-validation only; not a closed magnitude derivation from the current postulate set.",
         "verdict": direction,
@@ -367,7 +367,7 @@ def run_sign_diagnostic():
 
 def main():
     print("=" * 76)
-    print("O.19 Phason α Sign Validation (Diagnostic, NOT closure). Magnitude remains Open per App H O.19 / App M §M.7.1.")
+    print("O.19 Phason α Sign Validation (Diagnostic, NOT closure). Magnitude remains Open per App ORQ O.19 / App ULA §ULA.7.1.")
     print("=" * 76)
 
     out = run_sign_diagnostic()
@@ -405,7 +405,7 @@ def main():
     print("=" * 76)
     print(f"  Direction: {out['verdict']}")
     print(f"")
-    print(f"  class_sum_eff backsolved for +3442 ppm : {out['class_sum_eff_backsolved_required__diagnostic_only']:.4f}")
+    print(f"  class_sum_eff backsolved for +3443 ppm : {out['class_sum_eff_backsolved_required__diagnostic_only']:.4f}")
     print(f"  backsolved interpolation diagnostic    : {out['class_sum_eff_backsolved_interp_to_target_ppm__diagnostic_only']:.4f}")
     print(f"  Falls inside wide retunable bracket    : "
           f"{'YES' if out['backsolved_value_falls_inside_wide_retunable_bracket__not_validation'] else 'NO'}")

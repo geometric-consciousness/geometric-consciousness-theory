@@ -9,8 +9,10 @@ Physical Interpretation:
     The phason displacement u_perp of a site lives in E_perp (3D internal space).
     A local SU(3) rotation mixes the three "color components" of u_perp at a 
     single site without changing the physical energy.
-    This is EXACTLY the definition of a local gauge symmetry.
-    => Gluons are the "gauge bosons" of these local phason rearrangements.
+    This is the invariance condition a local gauge symmetry would require; a local
+    gauge field is not derived here.
+    => Gluons as "gauge bosons" of these local phason rearrangements are a Tier 3
+       candidate identification (O.39 open).
 """
 
 import numpy as np

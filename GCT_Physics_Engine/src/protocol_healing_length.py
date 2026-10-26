@@ -5,11 +5,11 @@ protocol_healing_length.py
 Evaluate the polaron healing-length formula xi = hbar c / (alpha^2 m_e c^2)
 = a_0 / alpha at two alpha inputs (CODATA and GCT-bare).
 
-Scope. This script evaluates a SINGLE formula — the standard
-Gross-Pitaevskii / Bohr-scaling expression (Tier 1 textbook Bohr-Compton
-physics; App K §K.5) — at two values of alpha and reports the alpha-input
+Scope. This script evaluates a SINGLE formula — xi = a_0/alpha [Tier 1
+arithmetic; its identification as the vacuum/polaron healing length is
+Tier 3; App DPS §DPS.5] — at two values of alpha and reports the alpha-input
 sensitivity:
-  - CODATA alpha (1/137.036) yields xi = 7.25 nm
+  - CODATA A3 alpha (1/137.035999177) yields xi = 7.25 nm
   - GCT bare alpha (1/(360 phi^-2) = 1/137.508) yields xi = 7.30 nm
 The two values agree to within ~0.7% because the two alpha values differ
 by ~0.35% and the difference enters xi as a square. This is an
@@ -17,17 +17,17 @@ alpha-input sensitivity check on ONE formula, NOT a comparison between
 two independent derivations. The GCT-internal "Route 2" phason-elastic
 derivation considered in this section (substituting K_perp = phi^-18
 K_par, a_6 = 2 ell_P, m_e = M_P phi^-107 (1-5alpha) into
-E_elastic ~ E_EM) was carried out explicitly in App K §K.5 and yields
+E_elastic ~ E_EM) was carried out explicitly in App DPS §DPS.5 and yields
 xi^Route2 = (1/2) phi^9 sqrt(alpha) ell_P ~ 5e-35 m, off the Tier 1
 target by ~10^26. The substitution chain cannot reproduce the 1/alpha^2
-Coulomb-bound-state enhancement that gives a_0/alpha its nm scale (App H
+Coulomb-bound-state enhancement that gives a_0/alpha its nm scale (App ORQ
 Open Problem O.25 closes negatively). The "two-route convergence"
 framing is not used here; only the Tier 1 Bohr-Compton formula is evaluated
 here, with alpha as the input variable.
 """
 
 import json
-from gct_utils import C, get_output_path
+from gct_utils import C, get_output_path, resolve_a3
 
 # CODATA SI primitives
 HBAR_SI  = 1.054571817e-34   # J s
@@ -35,10 +35,13 @@ C_SPEED  = 299792458.0       # m/s
 M_E_KG   = 9.1093837015e-31  # kg
 
 # CODATA alpha as reference; GCT bare alpha used if available
-ALPHA_CODATA = 1.0 / 137.035999084
+ALPHA_CODATA, _ = resolve_a3(C)
 ALPHA_GCT = 1.0 / float(C.ALPHA_INV_GCT) if hasattr(C, 'ALPHA_INV_GCT') else ALPHA_CODATA
 
-# Target on CODATA alpha (single canonical reference value)
+# Reference value: 7.25 nm is a_0/alpha itself (the formula's own output),
+# so comparing xi with it tests nothing. The former PASS on
+# that self-comparison is retired; no GCT computation of xi exists (the
+# Route 2 phason-elastic derivation closes negatively, O.25).
 TARGET_NM_CODATA = 7.25
 
 
@@ -58,7 +61,9 @@ def run_healing_length_derivation():
     error_codata_pct = abs(xi_codata_nm - TARGET_NM_CODATA) / TARGET_NM_CODATA * 100.0
     alpha_branch_spread_pct = abs(xi_gct_nm - xi_codata_nm) / xi_codata_nm * 100.0
 
-    passed = error_codata_pct < 1.0 and alpha_branch_spread_pct < 1.0
+    formula_arithmetic_consistent = bool(error_codata_pct < 1.0 and alpha_branch_spread_pct < 1.0)
+    passed = False
+    verdict = "STANDARD_PHYSICS_ARITHMETIC_GCT_ROUTE2_CLOSES_NEGATIVELY_O25"
 
     results = {
         "xi_codata_nm":         xi_codata_nm,
@@ -68,7 +73,9 @@ def run_healing_length_derivation():
         "alpha_branch_spread_pct": alpha_branch_spread_pct,
         "alpha_codata_used":    ALPHA_CODATA,
         "alpha_gct_bare_used":  ALPHA_GCT,
-        "formula":              "xi = hbar c / (alpha^2 m_e c^2) = a_0/alpha  [Tier 1 textbook Bohr-Compton formula; Tier 3 lumen-scale match, App K §K.5]",
+        "formula":              "xi = hbar c / (alpha^2 m_e c^2) = a_0/alpha  [Tier 1 arithmetic; its identification as the vacuum/polaron healing length is Tier 3; Tier 3 lumen-scale match, App DPS §DPS.5]",
+        "formula_arithmetic_consistent": formula_arithmetic_consistent,
+        "verdict":              verdict,
         "pass":                 passed,
     }
 
@@ -82,7 +89,7 @@ def run_healing_length_derivation():
     print(f"   Alpha branch spread:  {alpha_branch_spread_pct:.3f}%")
     print()
     print("=" * 60)
-    print("PASS" if passed else "FAIL")
+    print(f"Verdict: {verdict} (Tier 1 a_0/alpha arithmetic; healing-length identification Tier 3; no GCT derivation of xi)")
     print("=" * 60)
 
     return results

@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 """
-protocol_p_evolve_stage_hierarchy.py - Astrobiology-anchored stage-hierarchy
-derivation of P_evolve(t) for the biogenic dark-energy pipeline.
+protocol_p_evolve_stage_hierarchy.py - Earth-template stage-hierarchy
+sensitivity reference for P_evolve(t) in the biogenic dark-energy pipeline.
 
 Background: the broad reference |Delta w(z=0.28)| ~ 6e-4 (see
 protocol_p_evolve_first_principles.py) is sensitive to the P_evolve functional
 form (cross-variant spread 2.7e-3 across 5 candidates). The operative
 Class-2 envelope is [2,5]e-5 at z=0.28 pending O.13 closure.
-This protocol drills into the most physically-motivated candidate (the
-stage-hierarchy model) with astrobiology-anchored parameters and an explicit
-cosmological-time convolution treating each biosphere's emergence as an
-independent event with a per-biosphere complexity trajectory C(tau).
+This protocol evaluates a manually assigned Tier-4 Earth-template alternative
+with an explicit cosmological-time convolution. It is a conditional model
+reference only and supplies no empirical source allocation.
 
-Astrobiology stage anchors (Earth template):
+Earth-template stage-time assumptions:
   Stage 0: pre-life delay        ~ 0.5 Gyr post-formation (LUCA ~3.8-4.0 Gya;
                                    Earth formed ~4.54 Gya -> tau_0 ~ 0.5-0.7 Gyr)
   Stage 1: bacterial             ~ 0.5-2.4 Gyr post-formation
@@ -27,8 +26,8 @@ Relative information densities (rough order-of-magnitude per-stage):
   w_3 (multicellular w/ brains)  ~ 10^5  (body-plan + neural complexity)
   w_4 (intelligent / symbolic)   ~ 10^8  (symbolic / technological)
 
-These are Tier 4 (order-of-magnitude) per-stage; the ratios are robust to
-factor-of-10 changes (the biogenic DE CPL output is logarithmically sensitive).
+These manually assigned weights are Tier 4 order-of-magnitude alternatives.
+Their output is a sensitivity reference only.
 
 Two computations:
 
@@ -37,12 +36,13 @@ Two computations:
       (SFR peak at z = 2, cosmic time ~3.3 Gyr). Compares stage-hierarchy
       step function vs the V1 sigmoid x exp ansatz.
 
-  (B) Full convolution. The "true" cosmological P_evolve(t') is the
+  (B) Conditional convolution. The alternative model reference is the
       SFR-weighted average per-biosphere complexity at cosmic time t':
           P_evolve(t') = integral SFR(t_form) * C(t' - t_form) dt_form
                           / integral SFR(t_form) dt_form
-      This gives a SMOOTH function rather than discrete steps, anchored
-      to actual SFR + Earth stage hierarchy. Compares smooth-convolved
+      This gives a SMOOTH function rather than discrete steps, conditional
+      on the SFR input and assigned Earth-template hierarchy. It compares
+      the smooth-convolved
       P_evolve to V1 ansatz.
 """
 
@@ -65,15 +65,17 @@ from protocol_imp01_pipeline import (
 )
 
 
-# Astrobiology stage anchors (Earth template; in Gyr post-formation)
+# Manually assigned Tier-4 Earth-template stage times and weights.
 STAGE_TIMES_GYR = (0.5, 2.4, 3.7, 4.5)
 STAGE_WEIGHTS_LOG10 = (0.0, 2.0, 5.0, 8.0)  # log10 of relative info density
 STAGE_WEIGHTS = tuple(10.0 ** w for w in STAGE_WEIGHTS_LOG10)
 
 
 def per_biosphere_C(tau_gyr: np.ndarray) -> np.ndarray:
-    """Per-biosphere complexity trajectory C(tau) using Earth-template stage
-    anchors. tau is biosphere age post-formation."""
+    """Assigned Earth-template complexity trajectory C(tau).
+
+    This is a Tier-4 model reference; tau is biosphere age post-formation.
+    """
     tau = np.atleast_1d(tau_gyr).astype(np.float64)
     pe = np.zeros_like(tau)
     for i, t in enumerate(tau):
@@ -206,16 +208,47 @@ def run_one_pe(label: str, pe_fn) -> dict:
     }
 
 
+def classify_stage_sensitivity(spread_w028: float) -> tuple[str, str]:
+    """Classify agreement among manually assigned model references."""
+    if spread_w028 < 5e-4:
+        verdict = "EARTH_TEMPLATE_ROBUST"
+        verdict_text = (
+            f"The manually assigned Earth-template variants (V2A, V2B) agree "
+            f"with the V1 ansatz on w(z=0.28) to within {spread_w028:.1e}, "
+            f"below the joint-bin observational threshold. This is model-internal "
+            f"agreement among alternative references only; it supplies no "
+            f"empirical source allocation."
+        )
+    elif spread_w028 < 5e-3:
+        verdict = "PARTIAL_AGREEMENT"
+        verdict_text = (
+            f"The manually assigned Earth-template P_evolve references differ "
+            f"from V1 at z=0.28 by {spread_w028:.1e}, above the Roman Year-10 / "
+            f"Stage-V sub-5e-5 target. V1, V2A, and V2B remain alternative "
+            f"conditional sensitivity templates; the operative Class-2 envelope "
+            f"is [2,5]e-5 at z=0.28."
+        )
+    else:
+        verdict = "DISAGREEMENT"
+        verdict_text = (
+            f"The manually assigned Earth-template P_evolve references differ "
+            f"from V1 at z=0.28 by {spread_w028:.1e}, exceeding the Roman "
+            f"Year-10 / Stage-V target precision. The variants remain manually "
+            f"assigned Tier-4 model references with no empirical source allocation."
+        )
+    return verdict, verdict_text
+
+
 def main():
     print("=" * 76)
-    print("O.13 deep-dive: astrobiology-anchored stage-hierarchy P_evolve")
+    print("O.13 sensitivity reference: assigned Earth-template stage hierarchy")
     print("=" * 76)
 
-    print(f"\nAstrobiology anchors (Earth template):")
+    print(f"\nAssigned Tier-4 Earth-template inputs:")
     print(f"  Stage emergence times (post-formation): {STAGE_TIMES_GYR} Gyr")
     print(f"  Per-stage info-density weights (log10): {STAGE_WEIGHTS_LOG10}")
     print(f"    -> weights: {STAGE_WEIGHTS}")
-    print(f"  SFR-peak cosmic-time anchor (z=2 ~ 3.3 Gyr post-BB)")
+    print(f"  SFR-peak cosmic-time reference (z=2 ~ 3.3 Gyr post-BB)")
 
     print("\n--- Compute per-biosphere complexity trajectory C(tau) ---")
     tau_grid = np.linspace(0.0, 8.0, 17)
@@ -241,9 +274,9 @@ def main():
 
     # Run pipeline for both
     print("\n--- Pipeline runs ---")
-    r_A = run_one_pe("V2A astrobiology step (t_anchor=3.3 Gyr)",
+    r_A = run_one_pe("V2A assigned Earth-template step (t_ref=3.3 Gyr)",
                        lambda t: p_evolve_A_step(t, t_anchor_gyr=3.3))
-    r_B = run_one_pe("V2B astrobiology convolved", pe_B_fn)
+    r_B = run_one_pe("V2B assigned Earth-template convolution", pe_B_fn)
 
     # Comparison to V1 ansatz
     from protocol_p_evolve_first_principles import p_evolve_V1_sigmoid_exp
@@ -268,55 +301,24 @@ def main():
     print("\n" + "=" * 76)
     print("INTERPRETATION")
     print("=" * 76)
-    if spread_w028 < 5e-4:
-        verdict = "ASTROBIOLOGY_ROBUST"
-        verdict_text = (
-            f"The astrobiology-anchored variants (V2A, V2B) agree with the V1 ansatz "
-            f"on w(z=0.28) to within {spread_w028:.1e}, below the joint-bin "
-            f"observational threshold. The current ansatz V1 sigmoid x exp is "
-            f"effectively a smooth approximation to the astrobiology-derived "
-            f"stage-hierarchy convolution. The biogenic-DE prediction remains Tier 3, "
-            f"with the independent astrobiological derivation as a consistency check; "
-            f"its closure target is O.13."
-        )
-    elif spread_w028 < 5e-3:
-        verdict = "PARTIAL_AGREEMENT"
-        verdict_text = (
-            f"Astrobiology-anchored P_evolve gives w(z=0.28) differing from the V1 "
-            f"ansatz by {spread_w028:.1e}, above the Roman Year-10 / Stage-V "
-            f"sub-5e-5 target. The V1 ansatz is only a broad reference; the "
-            f"operative Class-2 envelope is [2,5]e-5 at z=0.28. Closure of O.13 "
-            f"should select between V1, V2A, V2B based on additional physical "
-            f"arguments (saturation bound, peak alignment with SFR + complexity "
-            f"hierarchy)."
-        )
-    else:
-        verdict = "DISAGREEMENT"
-        verdict_text = (
-            f"Astrobiology-anchored P_evolve gives w(z=0.28) differing from the V1 "
-            f"ansatz by {spread_w028:.1e}, exceeding the Roman Year-10 / Stage-V "
-            f"target precision. The current V1 ansatz is NOT a good approximation "
-            f"to the astrobiology-derived expectation. The manuscript's operative "
-            f"biogenic DE prediction is the Class-2 envelope; the Tier 3 label "
-            f"remains until O.13 selects the canonical P_evolve variant."
-        )
+    verdict, verdict_text = classify_stage_sensitivity(spread_w028)
 
     print(f"  Sensitivity verdict: {verdict}")
     print(f"  {verdict_text}")
     print("=" * 76)
 
     summary = {
-        "astrobiology_anchors": {
+        "earth_template_assumptions": {
             "stage_times_gyr": list(STAGE_TIMES_GYR),
             "stage_weights_log10": list(STAGE_WEIGHTS_LOG10),
             "stage_weights": list(STAGE_WEIGHTS),
             "t_anchor_cosmic_gyr": 3.3,
-            "anchor_rationale": "SFR peak at z=2 corresponds to cosmic time ~3.3 Gyr post-Big-Bang.",
+            "reference_time_rationale": "SFR peak at z=2 corresponds to cosmic time ~3.3 Gyr post-Big-Bang; this does not define a physical biosphere history.",
         },
         "pipeline_runs": {
             "V1_current_ansatz": r_V1,
-            "V2A_astrobiology_step": r_A,
-            "V2B_astrobiology_convolved": r_B,
+            "V2A_earth_template_step": r_A,
+            "V2B_earth_template_convolved": r_B,
         },
         "spread_w028_across_V1_V2A_V2B": float(spread_w028),
         "sensitivity_verdict": verdict,

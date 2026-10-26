@@ -602,10 +602,10 @@ z
     <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #1f1f1f" x="607.470961" y="156.407183" transform="rotate(-0 607.470961 156.407183)">1006 ppm vs CODATA</text>
    </g>
    <g id="text_34">
-    <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="459.446939" y="190.584592" transform="rotate(-0 459.446939 190.584592)">Score band</text>
+    <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="459.446939" y="190.584592" transform="rotate(-0 459.446939 190.584592)">LOCKED rule</text>
    </g>
    <g id="text_35">
-    <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #1f1f1f" x="607.470961" y="190.446623" transform="rotate(-0 607.470961 190.446623)">threshold 1100 ppm</text>
+    <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #1f1f1f" x="607.470961" y="190.446623" transform="rotate(-0 607.470961 190.446623)">1000 ppm (missed)</text>
    </g>
    <g id="text_36">
     <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="459.446939" y="224.592" transform="rotate(-0 459.446939 224.592)">Physical link</text>
@@ -614,10 +614,10 @@ z
     <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #c0392b" x="607.470961" y="224.486063" transform="rotate(-0 607.470961 224.486063)">O.14 remains open</text>
    </g>
    <g id="text_38">
-    <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; fill: #666666" transform="translate(453.84603 258.937614)">Reading: the arithmetic ladder passes the</text>
-    <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; fill: #666666" transform="translate(453.84603 267.559929)">displayed comparison band, but the 6D AKN</text>
-    <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; fill: #666666" transform="translate(453.84603 276.182245)">K0 / Dixmier-residue physical link is not</text>
-    <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; fill: #666666" transform="translate(453.84603 284.804561)">closed.</text>
+    <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; fill: #666666" transform="translate(453.84603 258.937614)">Reading: the ladder misses the LOCKED</text>
+    <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; fill: #666666" transform="translate(453.84603 267.559929)">1000 ppm threshold (1006 ppm); the 6D</text>
+    <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; fill: #666666" transform="translate(453.84603 276.182245)">AKN K0 / Dixmier-residue physical link</text>
+    <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; fill: #666666" transform="translate(453.84603 284.804561)">is also not closed.</text>
    </g>
   </g>
   <g id="text_39">

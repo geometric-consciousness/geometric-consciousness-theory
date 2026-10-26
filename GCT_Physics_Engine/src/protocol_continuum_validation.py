@@ -26,9 +26,11 @@ from gct_lorentz import DispersionAnalyzer
 from gct_utils import get_output_path, C
 
 # ── Lattice-resolution toggle ──────────────────────────────────────────────────────────
-# FULL_LATTICE_MODE=True uses R>=10 lattice to achieve the infinite-volume limit where
-# c_phason converges to Phi^-9 = 0.01314 within 10%. Analytic mode (False)
-# verifies the convergence bound analytically with an explanatory status note.
+# FULL_LATTICE_MODE=True uses an R>=10 lattice; the claim is that c_phason
+# converges to Phi^-9 = 0.01316 within 10%. The default R=1 mode applies the
+# SAME 10% tolerance (the former 2500% R=1 tolerance, which
+# passed an 18x miss and the c_meas=0 failure path, is retired). No R>=10 run
+# is registered, so the default result is open.
 FULL_LATTICE_MODE = os.environ.get("GCT_CONTINUUM_FULL", "0") == "1"
 
 def run_continuum_validation():
@@ -43,7 +45,7 @@ def run_continuum_validation():
         print("[Fast Verification Mode] Running low-resolution convergence certificate (R=1).")
         print("NOTE: Desktop gate uses the finite-size convergence certificate; set GCT_CONTINUUM_FULL=1 for the expensive R>=10 scan.")
         R_val = 1
-        tolerance = 25.0
+        tolerance = 0.10
     else:
         print(f"[Full Scan Mode] R>=10 lattice: c_phason converges to Phi^-9 = {c_hat_val:.6f}")
         R_val = 10
@@ -84,15 +86,21 @@ def run_continuum_validation():
     deviation = abs(c_meas - c_hat_val) / c_hat_val if c_meas > 0 else 1.0
     print(f"Deviation: {deviation*100:.2f}%")
     
-    passed = bool(deviation <= tolerance)
+    passed = bool(c_meas > 0 and deviation <= tolerance)
+    verdict = (
+        "PHASON_SPEED_WITHIN_10PCT_OF_PHI_M9" if passed
+        else f"R{R_val}_PHASON_SPEED_NOT_CONVERGED_TO_PHI_M9"
+    )
     
     # 5. Save Report
     report = {
         "c_measured": c_meas,
         "c_theory": c_hat_val,
         "deviation_percent": deviation * 100,
+        "tolerance_relative": tolerance,
         "pass": passed,
-        "proxy_status": "finite-size convergence certificate; expensive R>=10 scan available via GCT_CONTINUUM_FULL=1" if not FULL_LATTICE_MODE else None,
+        "verdict": verdict,
+        "proxy_status": "R=1 under-resolved run with the 10% tolerance; the R>=10 scan (GCT_CONTINUUM_FULL=1) is not registered" if not FULL_LATTICE_MODE else None,
         "large_matrix_mode": FULL_LATTICE_MODE,
         "full_lattice_mode": FULL_LATTICE_MODE,
         "status": "Passed" if passed else "Failed",
@@ -110,7 +118,7 @@ def run_continuum_validation():
     if passed:
         print("[SUCCESS] Relativistic Phason speed confirmed!")
     else:
-        print("[NOTE] Calibration required or lattice too small.")
+        print(f"[OPEN] {verdict}: c_meas misses Phi^-9 by more than 10% at R={R_val}.")
         
     return report
 

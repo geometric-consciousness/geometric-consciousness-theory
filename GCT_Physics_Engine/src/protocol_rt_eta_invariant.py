@@ -2,11 +2,10 @@
 """
 protocol_rt_eta_invariant.py
 =============================
-Computational scaffold: compute the APS η-invariant of a discrete
-Dirac operator on the Rhombic Triacontahedron (RT) boundary, and test whether
-it can account for the 41.6 ppm post-bilayer α⁻¹ residual.
-
-GCT Ch07 §7.2.3 identifies the residual with η(D|_∂M_RT)/2.
+Finite-matrix diagnostic: compute the sign count of a 90x90 doubled-incidence
+matrix built from the Rhombic Triacontahedron (RT) face graph. This matrix is
+not a qualifying APS boundary operator, and its sign count is independent of
+the separate undefined eta-alpha coupling ansatz.
 
 Setup:
   - RT face adjacency = icosidodecahedron edge graph (the dual polyhedron)
@@ -15,21 +14,11 @@ Setup:
     the 30 icosahedron edges; edges of the icosidodecahedron connect midpoints
     of icosahedron edges that share an icosahedron face.
 
-Key structural observation:
-  - For ANY integer-weighted self-adjoint Dirac operator on this graph,
-    eigenvalues are algebraic numbers; η = Σ sign(λ) is an INTEGER.
-  - Target value (post-bilayer): η = 2 × (137.036 - 137.030) = +0.012
-  - Target value (pre-bilayer):  η = 2 × (137.036 - 137.508) = -0.944
-  - **NEITHER target is an integer.** An integer η can NEVER match either.
-
-Therefore the APS-η identification, as stated in Ch07 §7.2.3 with a discrete
-Dirac on the RT boundary, *structurally fails* to absorb the α residual:
-the residual is non-integer (in η-units), but η is integer-valued.
-
-The identification would only hold if the GCT framework supplied a non-integer
-coupling (φ-weighted edges, fractional-Laplacian Dirac, or a connection on
-a non-trivial bundle yielding fractional η). The manuscript does not specify
-such a coupling.
+For every finite self-adjoint matrix the nonzero-eigenvalue sign count is an
+integer, regardless of whether its entries are integer, golden-weighted, or
+otherwise real/complex. That elementary fact neither constrains a regularised
+APS eta-invariant nor rules on eta-alpha. The open outcome is the absence of a
+specified operator/domain/comparison map.
 """
 
 import math
@@ -124,18 +113,18 @@ def discrete_dirac_chiral(A):
     return D, edges
 
 
-def compute_eta(D, eps=1e-9):
-    """η = Σ sign(λ) for non-zero eigenvalues of self-adjoint D."""
+def compute_sign_count(D, eps=1e-9):
+    """Return Σ sign(λ) for the non-zero eigenvalues of finite matrix D."""
     eigs = np.linalg.eigvalsh(D)
     nonzero = eigs[np.abs(eigs) > eps]
-    eta = float(np.sum(np.sign(nonzero)))
+    sign_count = float(np.sum(np.sign(nonzero)))
     n_kernel = int(len(eigs) - len(nonzero))
-    return eta, n_kernel, eigs
+    return sign_count, n_kernel, eigs
 
 
 def main():
     print("=" * 72)
-    print("APS η-invariant on RT boundary")
+    print("Finite 90x90 RT doubled-incidence sign-count diagnostic")
     print("=" * 72)
 
     # Step 1: Build the icosidodecahedron face graph (= RT face adjacency)
@@ -155,8 +144,8 @@ def main():
     D, dirac_edges = discrete_dirac_chiral(A)
     print(f"\nDiscrete Dirac operator: {D.shape} (30 face vertices + 60 edges = 90 dim)")
 
-    # Step 3: Spectrum and η
-    eta, n_kernel, eigs = compute_eta(D)
+    # Step 3: finite spectrum and sign count
+    sign_count, n_kernel, eigs = compute_sign_count(D)
     n_pos = int((eigs > 1e-9).sum())
     n_neg = int((eigs < -1e-9).sum())
     print(f"\nSpectrum of D:")
@@ -165,40 +154,33 @@ def main():
     print(f"  Positive: {n_pos}")
     print(f"  Negative: {n_neg}")
     print(f"  Spectral range: [{eigs.min():.4f}, {eigs.max():.4f}]")
-    print(f"\n  η = Σ sign(λ) = n_pos - n_neg = {n_pos - n_neg} = {eta:+.6f}")
+    print(f"\n  sign count = Σ sign(λ) = n_pos - n_neg = {n_pos - n_neg} = {sign_count:+.6f}")
 
     # Step 4: Compare to target
     alpha_inv_CODATA  = 137.035999177
     alpha_inv_tree    = 360.0 * PHI ** (-2)
     alpha_inv_bilayer = alpha_inv_tree * (1.0 - 1.0 / 288.0)
-    target_eta_pre   = 2.0 * (alpha_inv_CODATA - alpha_inv_tree)
-    target_eta_post  = 2.0 * (alpha_inv_CODATA - alpha_inv_bilayer)
+    twice_residual_pre   = 2.0 * (alpha_inv_CODATA - alpha_inv_tree)
+    twice_residual_post  = 2.0 * (alpha_inv_CODATA - alpha_inv_bilayer)
 
-    print(f"\nManuscript identification targets:")
-    print(f"  Pre-bilayer (close 3442 ppm):  η = {target_eta_pre:+.6f}")
-    print(f"  Post-bilayer (close 41.6 ppm): η = {target_eta_post:+.6f}")
+    print(f"\nNumerical non-identification comparison only:")
+    print(f"  Twice the pre-bilayer residual:  {twice_residual_pre:+.6f}")
+    print(f"  Twice the post-bilayer residual: {twice_residual_post:+.6f}")
 
-    matches_pre  = abs(eta - target_eta_pre) < 0.05
-    matches_post = abs(eta - target_eta_post) < 0.005
+    matches_pre  = abs(sign_count - twice_residual_pre) < 0.05
+    matches_post = abs(sign_count - twice_residual_post) < 0.005
 
     print(f"\nResult:")
     print(f"  Pre-bilayer closure: {'PASS' if matches_pre else 'FAIL'}")
     print(f"  Post-bilayer closure: {'PASS' if matches_post else 'FAIL'}")
 
-    # Structural observation
-    print(f"\n--- STRUCTURAL FAILURE ANALYSIS ---")
-    eta_is_integer = abs(eta - round(eta)) < 1e-6
-    print(f"  η is integer-valued? {eta_is_integer}")
-    print(f"  Target η_pre  is integer? {abs(target_eta_pre - round(target_eta_pre)) < 1e-6}")
-    print(f"  Target η_post is integer? {abs(target_eta_post - round(target_eta_post)) < 1e-6}")
-    print(f"\n  For ANY integer-weighted self-adjoint Dirac on a finite graph,")
-    print(f"  η is always integer-valued. The α residual targets are non-integer.")
-    print(f"  Therefore the APS-η identification *structurally cannot* close the")
-    print(f"  α residual with the manuscript's stated framework (integer-weighted")
-    print(f"  Dirac on the RT face graph). Closing it would require:")
-    print(f"    (a) a non-integer-weighted Dirac (φ-coupled edges), OR")
-    print(f"    (b) a fractional-Laplacian / spinor-bundle structure with non-integer η,")
-    print(f"  neither of which the manuscript currently specifies.")
+    # Object/domain observation
+    print(f"\n--- OBJECT/DOMAIN STATUS ---")
+    sign_count_is_integer = abs(sign_count - round(sign_count)) < 1e-6
+    print(f"  Finite sign count is integer-valued? {sign_count_is_integer}")
+    print(f"  This is true for any finite self-adjoint matrix, independent of weights.")
+    print(f"  No qualifying APS operator/domain/index or graph-to-smooth comparison is supplied.")
+    print(f"  Therefore this diagnostic neither evaluates APS eta nor constrains eta-alpha.")
 
     out = {
         "rt_face_graph": {
@@ -221,21 +203,21 @@ def main():
             "eigenvalue_min": float(eigs.min()),
             "eigenvalue_max": float(eigs.max()),
         },
-        "eta_computed": eta,
-        "eta_is_integer": bool(eta_is_integer),
+        "finite_matrix_sign_count": sign_count,
+        "sign_count_is_integer": bool(sign_count_is_integer),
         "alpha_inv_CODATA": alpha_inv_CODATA,
         "alpha_inv_tree": alpha_inv_tree,
         "alpha_inv_bilayer": alpha_inv_bilayer,
-        "target_eta_pre_bilayer": target_eta_pre,
-        "target_eta_post_bilayer": target_eta_post,
+        "twice_residual_pre_bilayer": twice_residual_pre,
+        "twice_residual_post_bilayer": twice_residual_post,
         "pre_bilayer_pass": bool(matches_pre),
         "post_bilayer_pass": bool(matches_post),
-        "structural_failure_reason": (
-            "η is integer-valued for integer-weighted Dirac; the α residual "
-            "targets are non-integer (0.012 post-bilayer, -0.944 pre-bilayer). "
-            "Integer η cannot match non-integer target."
+        "object_status": (
+            "Finite 90x90 doubled-incidence sign count only; integer-valued for any "
+            "finite self-adjoint matrix regardless of weights. No qualifying APS "
+            "operator/domain/index or comparison to eta-alpha is supplied."
         ),
-        "test_outcome": "FAIL — η integer-valued; non-integer target unreachable without manuscript-unspecified couplings",
+        "test_outcome": "OPEN_CONDITIONAL — finite sign-count diagnostic only; APS operator/domain/comparison absent",
     }
     out_path = Path(__file__).parent.parent / "data" / "protocol_rt_eta_invariant_results.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)

@@ -113,8 +113,16 @@
       "chirality": "-1 (Left-chiral)"
     }
   ],
-  "gct_verified": true,
-  "pass": true,
-  "gct_implication": "6D\u21923D quasicrystal projection creates a chiral domain wall. One zero mode is physical \u2192 net Chirality = 1. Guaranteed by Atiyah-Singer Index Theorem.",
+  "legacy_sign_labels_note": "N_L/N_R above label modes by the sign of <C>, which is noise for |<C>| ~ 1e-14; not used for the verdict.",
+  "fibonacci_chiral_zero_modes": 1,
+  "random_control_n_chains": 200,
+  "random_control_counts_histogram": {
+    "1": 200
+  },
+  "random_control_same_count_fraction": 1.0,
+  "gct_verified": false,
+  "verdict": "CHIRAL_ZERO_MODE_GENERIC_NOT_FIBONACCI_SPECIFIC",
+  "pass": false,
+  "gct_implication": "Odd-length bipartite chains carry a sublattice-polarised zero mode whatever the bond sequence; this chain does not by itself establish a Fibonacci-specific chirality mechanism.",
   "plot_path": "GCT_Physics_Engine/output/chirality_spectrum.png"
 }

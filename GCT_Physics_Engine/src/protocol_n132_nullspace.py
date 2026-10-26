@@ -4,7 +4,7 @@ protocol_n132_nullspace.py - Structural investigation of the 42-dim
 nullspace of the N=132 cage's golden-weighted adjacency matrix.
 
 Background (protocol_n132_investigation.py): the N=132 I_h-closed cage
-that admits integer-APS recovery of n=-107 has a striking spectrum:
+has a striking finite weighted-adjacency spectrum:
 45 positive + 45 negative + 42 zero eigenvalues. The 42-dim nullspace
 is too large for a generic graph of this size (~1/3 of the spectrum).
 This protocol asks: does the nullspace have a representation-theoretic
@@ -330,7 +330,7 @@ def main():
     else:
         print(f"  ker(A) is NOT I-invariant (max violation {max_violation:.3e}).")
         print(f"  -> The nullspace is not a clean union of I-irrep blocks.")
-        print(f"  -> The eta_scalar = 0 result is not from representation-theoretic cancellation.")
+        print(f"  -> The adjacency sign sum = 0 is not from representation-theoretic cancellation.")
 
     if n_dups > 0:
         print(f"  Graph redundancy is present: {n_dups} extra rows from {len(duplicate_groups)} duplicate groups.")

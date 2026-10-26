@@ -1,0 +1,87 @@
+{
+  "constants": {
+    "ell_P_m": 1.616255e-35,
+    "a6_m": 3.23251e-35,
+    "c_m_s": 299792458.0,
+    "H0_per_s": 2.197e-18,
+    "L_Hubble_m": 1.3645537460172963e+26,
+    "N_cage": 144,
+    "N_Trp_biology": 1625000000.0,
+    "N_cells_Hubble_3D": 7.52232870196684e+181
+  },
+  "mathematical_depth": "infinite (profinite Z_p^hat)",
+  "physical_depths": {
+    "p=2": {
+      "polaron_internal_depth": 7.169925001442313,
+      "biological_substrate_depth": 30.597792572127354,
+      "Hubble_volume_depth": 604.1801645235774
+    },
+    "p=3": {
+      "polaron_internal_depth": 4.523719014285829,
+      "biological_substrate_depth": 19.30505772736288,
+      "Hubble_volume_depth": 381.19524231562326
+    },
+    "p=5": {
+      "polaron_internal_depth": 3.087918621265543,
+      "biological_substrate_depth": 13.177751989607442,
+      "Hubble_volume_depth": 260.20623371323063
+    }
+  },
+  "monotonicity_check": {
+    "polaron_internal_depth": {
+      "depths_by_p_2_3_5": [
+        7.169925001442313,
+        4.523719014285829,
+        3.087918621265543
+      ],
+      "monotone_decreasing": true
+    },
+    "biological_substrate_depth": {
+      "depths_by_p_2_3_5": [
+        30.597792572127354,
+        19.30505772736288,
+        13.177751989607442
+      ],
+      "monotone_decreasing": true
+    },
+    "Hubble_volume_depth": {
+      "depths_by_p_2_3_5": [
+        604.1801645235774,
+        381.19524231562326,
+        260.20623371323063
+      ],
+      "monotone_decreasing": true
+    }
+  },
+  "hierarchy_check": {
+    "p=2": {
+      "polaron_le_biology_le_hubble": true,
+      "values": [
+        7.169925001442313,
+        30.597792572127354,
+        604.1801645235774
+      ]
+    },
+    "p=3": {
+      "polaron_le_biology_le_hubble": true,
+      "values": [
+        4.523719014285829,
+        19.30505772736288,
+        381.19524231562326
+      ]
+    },
+    "p=5": {
+      "polaron_le_biology_le_hubble": true,
+      "values": [
+        3.087918621265543,
+        13.177751989607442,
+        260.20623371323063
+      ]
+    }
+  },
+  "closure_status": {
+    "tier": "Tier 2 finite-count arithmetic conditional on the Tier 3 O.38 N_cage = 144 posit",
+    "claim": "Physical p-adic tree depth is finite and bounded by log_p(N_cells) where N_cells is the count of lattice cells comprising the substrate. The infinite-fractalization reading is excluded by lattice discretization.",
+    "remaining_open": "O.38 must select N_cage by full lattice minimization. The logarithmic value reported for the polaron is conditional on the adopted N_cage = 144 input."
+  }
+}

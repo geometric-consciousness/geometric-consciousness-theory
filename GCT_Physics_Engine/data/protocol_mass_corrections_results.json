@@ -1,22 +1,29 @@
 {
   "muon": {
-    "verdict": "ANALYTIC_PASS",
+    "verdict": "NOT_MET",
     "degeneracy": 1,
+    "criterion": "4 <= count <= 6",
     "harmonic": 11
   },
   "tau": {
-    "verdict": "ANALYTIC_PASS",
-    "chi_imag": -2.14531944221452e-06,
+    "verdict": "NOT_MET",
+    "chi_real": 0.7652778116863799,
+    "chi_imag_diagnostic_always_negative": -2.145319444770843e-06,
+    "criterion": "Re chi(omega_17) < 0",
+    "omega_17": 3571.000280033584,
+    "spectrum_max": 602.2161915901927,
     "harmonic": 17
   },
   "proton": {
-    "verdict": "ANALYTIC_PASS",
+    "verdict": "INPUT_NOT_TESTED",
     "base_winding": 15,
     "geometric_correction": 0.6180339887498948,
     "total": 15.618033988749895
   },
   "full_lattice_mode": false,
-  "status": "Analytic verification (R=1 Hessian): [ANALYTIC_PASS]. Set FULL_LATTICE_MODE=True for full R>=2 Hessian verification of 5-fold degeneracy and negative susceptibility from first principles.",
-  "pass": true,
-  "verification_mode": "Tier 2 Analytic (R=1)"
+  "status": "R=1 Hessian check: [R1_CRITERIA_NOT_MET]. The R>=2 full-lattice diagonalization is the unregistered numerical target.",
+  "verdict": "R1_MUON_DEGENERACY_OR_TAU_SCREENING_NOT_REPRODUCED",
+  "pass": false,
+  "verification_mode": "R=1 Hessian (under-resolved)",
+  "retired_hardcoded_checks": "Literal muon_pass=True, cannot-fail Im(chi)<0 tau test and proton self-comparison retired."
 }

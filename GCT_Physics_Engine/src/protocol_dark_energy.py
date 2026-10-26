@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 """
-GCT Dark Energy Protocol: Holographic Entanglement Entropy & Biogenic Drive
+GCT Dark Energy Protocol: Holographic Entanglement Entropy & Biogenic Correlation
 Filename: protocol_dark_energy.py
 
 Two independent computations:
   1. Holographic Entanglement Entropy consistency check for Lambda
      (Tier 2 area-law mechanism + Tier 3 absolute magnitude):
      rho_Lambda = (3 * Omega_Lambda / (8 * pi)) * hbar * H0^2 / (c * l_P^2)
-     The Ryu-Takayanagi formula applied to the cosmic event horizon boundary
-     of the 6D -> 3D projection supplies the area-law mechanism. The absolute
+     The area law evaluated on the exact-de-Sitter static-patch horizon proxy
+     R_H = c/H_0 supplies the geometric mechanism. The absolute
      magnitude imports H0/Omega_Lambda and remains Tier 3 pending O.1/O.4
      RG-running / condensate-normalisation closure.
 
-  2. Biogenic Drive w(z) model (diagnostic Tier 3 shape proxy):
+  2. Biogenic-correlation w(z) model (diagnostic Tier 3 shape proxy):
      Checks the phantom-directed single-channel shape and delegates the
      DESI/Euclid state-level arbitration to protocol_imp01_pipeline.py and
      protocol_de_multichannel.py. No covariance-aware cosmological likelihood
@@ -59,7 +59,7 @@ class DarkEnergyAudit:
     # Tier 3 calibrated anchor [Ledger C-sector]: biogenic-DE kernel timescales.
     BIO_DELAY_GYR       = C.TAU_BIO_DELAY
     TECH_SCALE_TIMESCALE = C.TAU_TECH
-    # LAMBDA_BIO is the GCT-predicted biogenic-DE coupling, sourced from YAML
+    # LAMBDA_BIO is a registered Tier-3 conditional model coordinate, sourced from YAML
     # SSOT (config/gct_constants.yaml LAMBDA_BIO.value = 0.007). The
     # 1/ALPHA_INV_GCT computation gives 0.00727; the two agree to within YAML
     # rounding. The SSOT YAML value is authoritative.
@@ -98,8 +98,8 @@ class DarkEnergyAudit:
         """
         Tier 2 area-law mechanism + Tier 3 absolute magnitude for rho_Lambda.
 
-        The Ryu-Takayanagi formula applied to the cosmic event horizon boundary
-        of the 6D -> 3D projection gives:
+        The area law evaluated on the exact-de-Sitter static-patch horizon
+        proxy R_H = c/H_0 gives:
             S_ent = A_H / (4 * l_P^2)
         The vacuum energy density from this boundary entanglement:
             rho_Lambda = (3 * Omega_Lambda / (8 * pi)) * hbar * H0^2 / (c * l_P^2)
@@ -127,10 +127,10 @@ class DarkEnergyAudit:
             3.0 * Omega_Lambda * hbar * H0_si**2
         ) / (8.0 * math.pi * c_si * l_P**2)
 
-        # Verification target / external empirical prior: observed dark-energy
-        # density sourced from YAML SSOT (RHO_DE_OBS), derived from rho_crit *
-        # Omega_Lambda at H0_PLANCK.
-        rho_observed = float(C.RHO_DE_OBS)
+        # Identity-based parity reference sourced from the YAML SSOT. It is
+        # derived from the same Planck H0 and Omega_Lambda inputs and therefore
+        # is not an independent observation or empirical test.
+        rho_planck_reference = float(C.RHO_DE_OBS)
 
         # Planck energy density
         rho_planck = hbar * c_si / l_P**4
@@ -143,17 +143,17 @@ class DarkEnergyAudit:
         A_H = 4.0 * math.pi * R_H**2
         chi = A_H / (4.0 * l_P**2)
 
-        ratio_to_observed = rho_holographic / rho_observed
+        ratio_to_reference = rho_holographic / rho_planck_reference
 
         return {
             "rho_holographic_J_m3":   rho_holographic,
-            "rho_observed_J_m3":      rho_observed,
-            "ratio_holographic_to_observed": ratio_to_observed,
+            "rho_planck_parameter_reference_J_m3": rho_planck_reference,
+            "ratio_holographic_to_planck_parameter_reference": ratio_to_reference,
             "suppression_vs_planck":  suppression,
             "chi_horizon_area_ratio": chi,
             "l_P_m":                  l_P,
             "R_H_m":                  R_H,
-            "derivation":             "Ryu-Takayanagi on cosmic event horizon of 6D->3D projection",
+            "derivation":             "Area law on exact-de-Sitter static-patch horizon proxy R_H=c/H_0",
             "tier":                   2,
         }
 
@@ -167,7 +167,7 @@ class DarkEnergyAudit:
         This is a *consistency check* over two independent YAML constants,
         not a first-principles derivation. The saddle-point closure proper
         (GCT action -> lambda_bio = alpha from variational principle) is
-        the analytical content of V3 Ch1 / App M; this script verifies the
+        the analytical content of V3 Ch1 / App ULA; this script verifies the
         two numerical constants agree post-derivation.
         """
         alpha = 1.0 / float(C.ALPHA_INV_GCT)
@@ -179,16 +179,16 @@ class DarkEnergyAudit:
             "equals_alpha_within_5pct": abs(lambda_bio - alpha) / alpha < 5e-2,
             "relative_difference_pct": abs(lambda_bio - alpha) / alpha * 100.0,
             "key_assumption": "Phi_0 = hbar/e (phason condensate VEV normalization)",
-            "assumption_verified_by": "App_M Berry connection definition (V3 Ch1)",
+            "assumption_verified_by": "App_ULA Berry connection definition (V3 Ch1)",
             "tier_if_assumption_holds": "Tier 2",
             "tier_if_assumption_fails": "Tier 3",
             "check_type": "YAML-constants consistency, not first-principles derivation",
-            "derivation_reference": "V3 Ch1 / App M (GCT action saddle-point, analytical)",
+            "derivation_reference": "V3 Ch1 / App ULA (GCT action saddle-point, analytical)",
             "physical_interpretation": (
-                "The biological information coupling to the metric equals the "
-                "fine-structure constant because information processing requires "
-                "electromagnetic bond formation (EM coupling alpha), and the phason "
-                "field mediating both EM and biological coupling is the same field."
+                "Conditional Tier-3 shared-field/correlation ansatz only: lambda_bio "
+                "is set near alpha as a registered model coordinate. Equality of the "
+                "two YAML constants does not derive an information-to-metric coupling, "
+                "a causal mechanism, or a physical shared-field interaction."
             )
         }
 
@@ -476,9 +476,8 @@ class DarkEnergyAudit:
         # Assess whether 0.007 is observationally significant:
         # -1.005 vs -1.000.
         # Observational error on w is ~0.03. 
-        # A prediction of -1.005 is observationally indistinguishable from LambdaCDM (-1).
-        # A prediction of -1.08 is distinguishable.
-        # If GCT claims "Phantom Energy", 0.007 might be too weak to claim visible effect.
+        # The conditional -1.005 scenario is observationally indistinguishable from
+        # LambdaCDM (-1); the -1.08 branch is only a sensitivity illustration.
         
         strength_msg = "Weak Effect (w ~ -1.005)" if res_ssot_diagnostic['min_w'] > -1.01 else "Strong Effect"
         report.log_value("Signal Strength", strength_msg)
@@ -497,6 +496,11 @@ class DarkEnergyAudit:
             isinstance(res_ssot.get("crossing_z"), float)
             and np.isnan(res_ssot.get("crossing_z"))
         )
+        # Scope: this pass is read from IMP-01, which is
+        # registered conditional, and min_w < -1 follows from the ansatz
+        # w = -1 - lambda*(normalised acceleration) once the acceleration is
+        # positive anywhere. It is a conditional consistency flag, observationally
+        # indistinguishable from LambdaCDM at lambda_bio = 0.007, not a confirmation.
         passed = bool((res_ssot['min_w'] < -1.0) and physical_no_crossing)
 
         # Convert numpy types for JSON
@@ -512,8 +516,8 @@ class DarkEnergyAudit:
 
         report.section("Tier 2: Holographic Entanglement Entropy Lambda")
         report.log_value("rho_Lambda (holographic) [J/m^3]", holographic["rho_holographic_J_m3"])
-        report.log_value("rho_Lambda (observed)    [J/m^3]", holographic["rho_observed_J_m3"])
-        report.log_value("Ratio holographic/observed",       holographic["ratio_holographic_to_observed"])
+        report.log_value("rho_Lambda (Planck-parameter reference) [J/m^3]", holographic["rho_planck_parameter_reference_J_m3"])
+        report.log_value("Identity-parity ratio", holographic["ratio_holographic_to_planck_parameter_reference"])
         report.log_value("Suppression vs Planck density",    holographic["suppression_vs_planck"])
         report.log_value("chi = A_H / (4 l_P^2)",           holographic["chi_horizon_area_ratio"])
 
@@ -531,7 +535,8 @@ class DarkEnergyAudit:
                         "registered DESI-facing state-level menu arbitration "
                         "lives in protocol_de_multichannel.py; no covariance-"
                         "aware likelihood or physical multi-fluid density "
-                        "evolution is claimed by this protocol."
+                        "evolution, information-to-metric causal coupling, or physical "
+                        "shared-field mechanism is claimed by this protocol."
                     ),
                     "canonical_branch": "ssot",
                     "ssot":         {k: convert(v) for k, v in res_ssot.items()},
@@ -555,6 +560,7 @@ class DarkEnergyAudit:
                     },
                 },
                 "pass": passed,
+                "pass_scope": "CONDITIONAL: inherits IMP-01 (conditional); min_w < -1 is forced by the ansatz; indistinguishable from LambdaCDM at lambda_bio = 0.007",
                 "physical_no_crossing": bool(physical_no_crossing),
                 "m_phason_ev": m_phason_ev,
                 "lambda_bio_derivation": lambda_derivation,

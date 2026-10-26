@@ -88,7 +88,7 @@ def run_connes_isomorphism_protocol():
 
     # ── 3. The Internal Space Color -> M_3(C) ──
     print("\n  ─── Mapping 3: Internal Manifold (E_perpendicular) ───")
-    print("  Geometric Origin: The SU(3) symmetry reduction of the 10 three-fold RT axes.")
+    print("  Geometric Origin (Tier 3 candidate, O.39 open): proposed SU(3) reduction of the 10 three-fold RT axes.")
     target_m3c_dim = 18
     actual_m3c_dim = 3 * 3 * 2  # 3x3 complex matrices = 9 complex entries = 18 real degrees of freedom
     

@@ -2,16 +2,17 @@
 """
 gct_gauge.py — Gauge Generator Engine
 =====================================
-Derives Lie Algebra symmetries directly from the geometry of the
-acceptance window (Rhombic Triacontahedron).
+Builds a matrix Lie algebra from the three-fold axes of the acceptance
+window (Rhombic Triacontahedron). The closure is Tier 1 matrix algebra; its
+identification with SU(3) is an open Tier 3 candidate (App ORQ O.39).
 
 Logic:
 1. Identify "3-fold" symmetry axes from the polytope vertices.
 2. Seed a Lie Algebra with traceless operators constructed from these axes.
 3. Compute the closure of the algebra under commutation.
-4. Measure the dimension of the resulting algebra (Target: 8 for SU(3)).
+4. Measure the dimension of the resulting algebra (Target: closure dimension 8; Tier 1 matrix algebra, not a derivation of SU(3)).
 
-This provides the "Geometric Uniqueness Proof" for the Standard Model gauge group.
+This is a Tier 1 matrix-closure check within the construction, not a uniqueness proof: the SU(3) identification is an open Tier 3 candidate (generic ten-axis sets also close; O.39 open).
 """
 
 import numpy as np

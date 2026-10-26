@@ -4,21 +4,22 @@
 reproduce_standard_model.py — Anchored-Mode Reproducer
 
 Re-verifies the registered set of Tier-2 mechanisms + Tier-3 calibrated
-anchors per Parameter Ledger §0.1 (5 postulates + A1/A2/A3 anchor set).
+continuous anchors per Parameter Ledger §0.1 (5 postulates + A1-A6 anchor set).
 Default mode uses A3 CODATA α(0) as registered Tier-3 empirical input;
 NuFit oscillation gaps and M_red are explicit Tier-3 imports per Ledger
 §0.1.
 
 Modes:
-  --mode anchored (default): re-runs every Tier-2 prediction against
-    PDG/CODATA targets under the registered A1/A2/A3 anchor set.
+  --mode anchored (default): re-runs every banded prediction row (Tier 2
+    mechanisms and Tier 3 identifications such as H-EW and Cabibbo) against
+    PDG/CODATA targets under the registered A1-A6 continuous-anchor set.
     Verifies that all Tier-2 mechanism + Tier-3 anchor combinations
     land inside their registered falsification bands.
 
   --mode bare: re-runs without A3 (bare-α from 360·φ⁻²), exposing the
-    bare-α residual structure. The 3442 ppm bare-α residual is the
-    QLQCD-1L phason anti-screening debt (App H O.5/O.19); tightening
-    below 3442 ppm requires QLQCD-1L closure.
+    bare-α residual structure. The 3443 ppm bare-α residual is the
+    QLQCD-1L phason anti-screening debt (App ORQ O.5/O.19); tightening
+    below 3443 ppm requires QLQCD-1L closure.
 
 From-zero reduction to the 1-parameter limit (P1 + m_e) is the published
 target per Ledger §0.1 ambition note, pending closure of O.5 (QLQCD-1L),
@@ -33,6 +34,8 @@ import sys
 from dataclasses import dataclass, field
 from typing import Optional
 
+from verify_independent.constants import CODATA as OBSERVED
+
 # Force UTF-8 stdout/stderr on Windows so the print statements in this script
 # (which contain unicode chars like phi, alpha, sigma) do not crash with
 # UnicodeEncodeError under default cp1252 console encoding.
@@ -43,7 +46,7 @@ except (AttributeError, ValueError):
     pass
 
 # ════════════════════════════════════════════════════════════════════════════
-# MATHEMATICAL PRIMITIVES (Tier 0 — pure math, no empirical input)
+# MATHEMATICAL PRIMITIVES (pure math, no empirical input)
 # ════════════════════════════════════════════════════════════════════════════
 
 PHI = (1.0 + math.sqrt(5.0)) / 2.0       # Golden ratio, exact
@@ -59,39 +62,41 @@ PI = math.pi
 # scaffolding (oscillation gaps, M_red) entered explicitly so the reader
 # sees what is and isn't being derived from the icosahedral geometry alone.
 
-M_E_MEV = 0.51099895069                  # CODATA 2022, primary anchor [Tier 0 input]
+M_E_MEV = 0.51099895069                  # CODATA 2022, primary dimensional anchor A1
 ALPHA_CODATA_INV = 137.035999177         # CODATA 2022 — used only in --mode anchored
 DELTA_M2_21_EV2 = 7.42e-5                # NuFit 5.3 (oscillation gap)
 DELTA_M2_31_EV2 = 2.51e-3                # NuFit 5.3 (oscillation gap)
-HBAR_J_S = 1.054571817e-34               # CODATA 2022 (for G derivation)
+H_PLANCK_J_S = 6.62607015e-34            # Exact SI definition
+HBAR_J_S = H_PLANCK_J_S / (2.0 * math.pi) # Derived reduced Planck constant
 C_M_S = 299792458.0                      # Exact SI definition
 EV_TO_J = 1.602176634e-19                # Exact SI definition since 2019
 
 
 # ════════════════════════════════════════════════════════════════════════════
-# OBSERVATIONAL ANCHORS (PDG 2024 / CODATA 2022 — only for comparison)
+# OBSERVATIONAL ANCHORS (verify_independent/constants.py — single source of truth)
 # ════════════════════════════════════════════════════════════════════════════
+# That module is the sole PDG 2024/CODATA 2022 source for comparison values.
 # These are the experimentally measured values the predictions are compared
 # against. They never enter any GCT prediction (except as the empirical
 # anchor itself, namely m_e).
 
 OBS = {
-    "alpha_inv":      ("α⁻¹",                        ALPHA_CODATA_INV,                "dimensionless"),
-    "sin2_theta_w_bare":("sin²θ_W (bare, geometric)", 0.23122,                         "dimensionless"),  # Z-pole observed
-    "m_mu":           ("m_μ",                         105.6583755,                     "MeV"),
-    "m_tau":          ("m_τ",                         1776.93,                         "MeV"),
-    "m_p":            ("m_p (proton)",                938.27208816,                    "MeV"),
-    "m_u":            ("m_u (up)",                    2.16,                            "MeV"),
-    "m_d":            ("m_d (down)",                  4.67,                            "MeV"),
-    "m_s":            ("m_s (strange)",               93.4,                            "MeV"),
-    "m_c":            ("m_c (charm)",                 1.27e3,                          "MeV"),
-    "m_b":            ("m_b (bottom)",                4.18e3,                          "MeV"),
-    "m_t":            ("m_t (top)",                   172.69e3,                        "MeV"),
-    "v_higgs":        ("v (Higgs VEV)",               246.21965,                       "GeV"),
-    "delta_cp":       ("δ_CP",                        232.0,                           "deg (PMNS)"),
+    "alpha_inv":      ("α⁻¹",                        OBSERVED.ALPHA_INV,              "dimensionless"),
+    "sin2_theta_w_bare":("sin²θ_W (bare, H-EW T3)", OBSERVED.SIN2_THETA_W_Z,         "dimensionless"),  # Z-pole observed
+    "m_mu":           ("m_μ",                         OBSERVED.M_MU_MEV,               "MeV"),
+    "m_tau":          ("m_τ",                         OBSERVED.M_TAU_MEV,              "MeV"),
+    "m_p":            ("m_p (proton)",                OBSERVED.M_P_MEV,                "MeV"),
+    "m_u":            ("m_u (up)",                    OBSERVED.M_U_MEV,                "MeV"),
+    "m_d":            ("m_d (down)",                  OBSERVED.M_D_MEV,                "MeV"),
+    "m_s":            ("m_s (strange)",               OBSERVED.M_S_MEV,                "MeV"),
+    "m_c":            ("m_c (charm)",                 OBSERVED.M_C_GEV * 1.0e3,        "MeV"),
+    "m_b":            ("m_b (bottom)",                OBSERVED.M_B_GEV * 1.0e3,        "MeV"),
+    "m_t":            ("m_t (top)",                   OBSERVED.M_T_GEV * 1.0e3,        "MeV"),
+    "v_higgs":        ("v (Higgs VEV)",               OBSERVED.V_HIGGS_GEV,            "GeV"),
+    "delta_cp":       ("δ_CP",                        OBSERVED.DELTA_CP_DEG,           "deg (PMNS)"),
     "sigma_mnu":      ("Σm_ν",                        None,                            "eV (upper bound only)"),
-    "theta_c":        ("θ_C (Cabibbo)",               13.04,                           "deg"),
-    "G_newton":       ("G (Newton)",                  6.67430e-11,                     "m³/(kg·s²)"),
+    "theta_c":        ("θ_C (Cabibbo)",               OBSERVED.THETA_C_DEG,            "deg"),
+    "G_newton":       ("G (Newton)",                  OBSERVED.G_SI,                   "m³/(kg·s²)"),
     "M_GUT":          ("M_GUT",                       3.2e16,                          "GeV"),
     "M_planck_red":   ("M_red (reduced Planck)",      2.435e18,                        "GeV"),
 }
@@ -106,7 +111,7 @@ OBS = {
 #                       not Tier 2 falsifications).
 
 BANDS = {
-    "alpha_inv":            5000.0,           # 3442 ppm residual is QLQCD-1L debt, not falsification
+    "alpha_inv":            5000.0,           # 3443 ppm residual is QLQCD-1L debt, not falsification
     "sin2_theta_w_bare":    50000.0,          # 5% band; 2.1% currently
     "m_mu":                 100.0,            # 21 ppm currently
     "m_tau":                60.0,             # 51 ppm currently against PDG 2024 (m_tau = 1776.93 ± 0.09 MeV)
@@ -117,11 +122,11 @@ BANDS = {
     "m_c":                  None,             # Tier 3 ansatz
     "m_b":                  25000.0,          # 5/4 representation, 5σ band
     "m_t":                  None,             # PDG envelope wide
-    "v_higgs":              5000.0,           # 181 ppm (engine residual_error_ppm = 180.95)
-    "delta_cp":             None,             # Tier 2, PMNS uncertainty wide
+    "v_higgs":              5000.0,           # 179 ppm against v=246.21965 GeV
+    "delta_cp":             None,             # Tier 3 phase ansatz, PMNS uncertainty wide
     "sigma_mnu":            None,             # Upper bound test, not equality
     "theta_c":              50000.0,          # 5%
-    "G_newton":             5000.0,           # 2274 ppm currently; cascades from m_e
+    "G_newton":             5000.0,           # bare/model branch 2273.725 ppm; anchored sensitivity 2013.345 ppm
     "M_GUT":                None,             # Order-of-magnitude only
     "M_planck_red":         None,             # Implicit anchor; not a prediction per se
 }
@@ -140,7 +145,7 @@ def derive_alpha_bare() -> float:
 
 
 def predict_all(alpha: float) -> dict[str, float]:
-    """Compute every Tier-2 GCT observable from m_e + α + φ + structural
+    """Compute every banded GCT observable (Tier 2 and Tier 3 rows) from m_e + α + φ + structural
     integers. Returns a dict keyed identically to OBS."""
 
     m_e = M_E_MEV
@@ -152,51 +157,51 @@ def predict_all(alpha: float) -> dict[str, float]:
     # α⁻¹ from 360·φ⁻²  [V3 Ch04 §4.5.5]
     p["alpha_inv"] = 1.0 / alpha
 
-    # sin²θ_W bare (geometric BC, pre-RGE) = φ⁻³  [V3 Ch04 §4.5; App R §R.2]
+    # sin²θ_W bare = φ⁻³: Tier 3 hypothesis H-EW, not a derived boundary  [V3 Ch04 §4.3; App PSC §PSC.2]
     p["sin2_theta_w_bare"] = phi ** (-3)
 
     # ── Charged lepton sector ───────────────────────────────────────────
-    # m_μ = m_e · φ^11 · (1 + 5α + φ^8·α²)  [V3 Ch08 §8.4; App R §R.1]
+    # m_μ = m_e · φ^11 · (1 + 5α + φ^8·α²)  [V3 Ch08 §8.4; App PSC §PSC.1]
     p["m_mu"] = m_e * phi**11 * (1.0 + 5.0*alpha + phi**8 * alpha**2)
 
-    # m_τ = m_e · φ^17 · (1 + (-3.6)·α)  [V3 Ch08 §8.4; App R §R.1]
+    # m_τ = m_e · φ^17 · (1 + (-3.6)·α)  [V3 Ch08 §8.4; App PSC §PSC.1]
     p["m_tau"] = m_e * phi**17 * (1.0 - 3.6*alpha)
 
     # ── Hadron sector ───────────────────────────────────────────────────
-    # m_p = m_e · φ^(15 + φ⁻¹)  [V3 Ch11 / Protocol F; App R §R.3]
+    # m_p = m_e · φ^(15 + φ⁻¹)  [V3 Ch10 §10.3; V3 Ch18 Protocol F; App PSC §PSC.3]
     p["m_p"] = m_e * phi**(15.0 + 1.0/phi)
 
-    # Quark mass anchor (up): m_u = m_e · φ³  [V3 Ch10; App R §R.3]
+    # Quark mass anchor (up): m_u = m_e · φ³  [V3 Ch10; App PSC §PSC.3]
     p["m_u"] = m_e * phi**3
 
-    # Down quark via FK-determinant infinite-volume-limit branch [App TP §TP-B]
+    # Down quark via FK-determinant infinite-volume-limit branch [App TPR §TP-B]
     # Primary output: m_d = m_u · φ^φ = 4.716 MeV, conditional on O.5.
     p["m_d"] = p["m_u"] * phi**phi
 
-    # Strange: m_s = m_u · φ^8 · (1 - 12α)  [V3 Ch10; App R §R.3]
+    # Strange: m_s = m_u · φ^8 · (1 - 12α)  [V3 Ch10; App PSC §PSC.3]
     p["m_s"] = p["m_u"] * phi**8 * (1.0 - 12.0*alpha)
 
-    # Charm Tier-3 ansatz: m_c = m_u · φ^(13 + φ⁻³)  [V3 Ch10; App R §R.3]
+    # Charm Tier-3 ansatz: m_c = m_u · φ^(13 + φ⁻³)  [V3 Ch10; App PSC §PSC.3]
     p["m_c"] = p["m_u"] * phi**(13.0 + phi**(-3))
 
     # Bottom: m_b = m_c · φ² · (5/4)  [A₅ rep-theorem 5/4, V3 Ch10]
     p["m_b"] = p["m_c"] * phi**2 * 1.25
 
-    # Top quark: m_t = (v / 2) · √2  in GeV  [V3 Ch10; App R §R.3]
+    # Top quark: m_t = (v / 2) · √2  in GeV  [V3 Ch10; App PSC §PSC.3]
     # Uses the predicted Higgs VEV (filled below).
 
     # ── Higgs sector ────────────────────────────────────────────────────
     # v = m_μ · 1440 · φ  [V3 Ch05; geometric lattice sum]
     p["v_higgs"] = (p["m_mu"] * 1440.0 * phi) / 1000.0      # MeV → GeV
 
-    # Top quark: m_t = (v / 2) · √2  in GeV  [V3 Ch10; App R §R.3]
+    # Top quark: m_t = (v / 2) · √2  in GeV  [V3 Ch10; App PSC §PSC.3]
     p["m_t"] = (p["v_higgs"] / 2.0 * math.sqrt(2.0)) * 1000.0   # GeV → MeV (table is in MeV)
 
     # ── CKM / PMNS ──────────────────────────────────────────────────────
-    # Cabibbo angle: θ_C = arcsin(φ⁻³)  [V3 Ch10; face-tunneling]
-    p["theta_c"] = math.degrees(math.asin(phi**(-3)))
+    # Cabibbo angle: θ_C = arcsin[φ⁻³(1-5α)] — Tier 3 bare identification + Tier 3 (1-5α) transfer correction  [V3 Ch10 §10.6]
+    p["theta_c"] = math.degrees(math.asin(phi**(-3) * (1.0 - 5.0*alpha)))
 
-    # δ_CP = 360° · φ⁻¹  [V3 Ch09 §9.4.3]
+    # δ_CP = 360° · φ⁻¹  [V3 Ch09 §9.4.3; Tier 3 phase ansatz]
     p["delta_cp"] = 360.0 * (1.0/phi)
 
     # ── Neutrino sector ─────────────────────────────────────────────────
@@ -207,10 +212,12 @@ def predict_all(alpha: float) -> dict[str, float]:
     p["sigma_mnu"] = m_1_eV + m_2_eV + m_3_eV
 
     # ── Gravity / scale ────────────────────────────────────────────────
-    # M_GUT = M_red · φ⁻⁹  [V3 Ch04 §4.3.2]
+    # M_GUT = M_red · φ⁻⁹  [V3 Ch04 §4.3.3; Tier 3 scale assignment, conditional on O.15]
     # M_red ≈ 2.435 × 10¹⁸ GeV from sqrt(ℏc/(8πG)); we use the OBSERVED
     # M_red as input, since deriving M_red from m_e via φ^107 is the cascade
-    # bound in App TP §TP-D (the 2274 ppm G residual lives here).
+    # bound in App TPR §TP-D. The bare/model-authoritative alpha_GCT branch
+    # gives 2273.725 ppm; the anchored/CODATA-alpha sensitivity branch gives
+    # 2013.345 ppm. Same-branch electron residuals must not be mixed.
     M_red_GeV = OBS["M_planck_red"][1]
     p["M_GUT"] = M_red_GeV * phi**(-9)
 
@@ -317,7 +324,9 @@ def _status_badge(s: str) -> str:
 
 def print_report(rr: RunResult) -> None:
     print("─" * 100)
-    print(f"  GCT anchored-mode reproducer — mode = {rr.mode}    α⁻¹ used = {1.0/rr.alpha_used:.6f}")
+    branch = ("MODEL_AUTHORITATIVE_ALPHA_GCT" if rr.mode in ("bare", "pure")
+              else "CODATA_ALPHA_SENSITIVITY")
+    print(f"  GCT reproducer — mode = {rr.mode}    branch = {branch}    α⁻¹ used = {1.0/rr.alpha_used:.6f}")
     print("─" * 100)
     header = (
         f"  {'Observable':<26}"
@@ -338,7 +347,7 @@ def print_report(rr: RunResult) -> None:
         )
         print(line)
     print("  " + "-" * 96)
-    print(f"  Tier-2 PASS: {rr.n_pass}    FAIL: {rr.n_fail}    Info-only (Tier 3 or qualitative): {rr.n_info}")
+    print(f"  Band PASS (Tier 2 and Tier 3 rows): {rr.n_pass}    FAIL: {rr.n_fail}    Info-only (Tier 3 or qualitative): {rr.n_info}")
     print("─" * 100)
 
 
@@ -353,7 +362,7 @@ def main() -> int:
     print("=" * 96)
     print(f"  Empirical anchor : m_e = {M_E_MEV} MeV (CODATA 2022)")
     print(f"  Scaffolding      : Δm²_21 = {DELTA_M2_21_EV2:.2e} eV²,  Δm²_31 = {DELTA_M2_31_EV2:.2e} eV² (NuFit 5.3)")
-    print(f"                     M_red imported for G/M_GUT (cascade-bound by App TP §TP-D)")
+    print(f"                     M_red imported for G/M_GUT (cascade-bound by App TPR §TP-D)")
     print(f"  Mathematical     : φ = (1+√5)/2 = {PHI:.10f},  π = {PI:.10f}")
     print("=" * 96)
 
@@ -370,16 +379,16 @@ def main() -> int:
 
     print()
     # The verdict logic: only the ANCHORED mode is a falsification test.
-    # Bare-mode failures are expected to track the 3442 ppm α-debt; they
+    # Bare-mode failures are expected to track the 3443 ppm α-debt; they
     # surface in the lepton sector by construction and are the QLQCD-1L
     # research debt itself, not a new falsification event.
     if anchored_fail == 0:
-        print("✓ All Tier-2 predictions inside their falsification bands (anchored mode).")
+        print("✓ All banded rows (Tier 2 and Tier 3) inside their falsification bands (anchored mode).")
         if bare_fail > 0:
-            print(f"  Bare-mode shows {bare_fail} lepton-sector miss(es) — these track the 3442 ppm")
-            print("  α-residual (QLQCD-1L research debt, see App_TP §TP-A / Ch04 §4.5.5).")
+            print(f"  Bare-mode shows {bare_fail} lepton-sector miss(es) — these track the 3443 ppm")
+            print("  α-residual (QLQCD-1L research debt, see App_TPR §TP-A / Ch04 §4.5.5).")
             print("  They are expected by construction, not a falsification event.")
-        print("  See content/98_Global_Appendices/App_FM_Falsifiability_Matrix.md for the")
+        print("  See content/98_Global_Appendices/App_FSM_Falsifiability_Matrix.md for the")
         print("  full per-claim threshold map.")
         return 0
     print(f"✗ {anchored_fail} prediction(s) outside band in ANCHORED mode — real falsification event.")

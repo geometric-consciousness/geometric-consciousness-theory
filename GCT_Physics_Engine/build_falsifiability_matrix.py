@@ -4,7 +4,7 @@ from two inputs:
 
   1. `falsifiability_registry.json` — explicit "falsified if X" metadata per
      claim (predicted, threshold, mechanism, experiment, timeframe). Sourced
-     by hand from App V Prediction Registry + Ch22 binary gates + Protocol
+     by hand from App PRG Prediction Registry + Ch22 binary gates + Protocol
      chapters Ch13–21.
 
   2. `verify_independent/results/scorecard.json` — the numerical scorecard
@@ -13,7 +13,7 @@ from two inputs:
 
 Output:
 
-  - `<repo>/content/98_Global_Appendices/App_FM_Falsifiability_Matrix.md`
+  - `<repo>/content/98_Global_Appendices/App_FSM_Falsifiability_Matrix.md`
     A single-source-of-truth markdown asset embedded in the manuscript.
 
 Run:
@@ -33,6 +33,7 @@ registry marks it as a disclosed `registered_terminal_closure_state`.
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -40,7 +41,10 @@ ENGINE_ROOT = Path(__file__).resolve().parent
 MANUSCRIPT_ROOT = ENGINE_ROOT.parent
 REGISTRY_PATH = ENGINE_ROOT / "falsifiability_registry.json"
 SCORECARD_PATH = ENGINE_ROOT / "verify_independent" / "results" / "scorecard.json"
-OUTPUT_PATH = MANUSCRIPT_ROOT / "content" / "98_Global_Appendices" / "App_FM_Falsifiability_Matrix.md"
+OUTPUT_PATH = MANUSCRIPT_ROOT / "content" / "98_Global_Appendices" / "App_FSM_Falsifiability_Matrix.md"
+
+sys.path.insert(0, str(ENGINE_ROOT / "src"))
+from check_permanent_registers import permanent_id_key  # noqa: E402
 
 
 def _load_json(path: Path) -> dict:
@@ -48,6 +52,11 @@ def _load_json(path: Path) -> dict:
         raise FileNotFoundError(f"required input not found: {path}")
     with path.open(encoding="utf-8") as f:
         return json.load(f)
+
+
+def _prediction_id_sort_key(entry: dict) -> tuple[int, int, int, str]:
+    """Emit the permanent P-series registry in natural identifier order."""
+    return permanent_id_key(str(entry.get("id", "")))
 
 
 def _band_violation_scope_disclosure(registry: dict, failed_count: int) -> str:
@@ -67,7 +76,7 @@ def _band_violation_scope_disclosure(registry: dict, failed_count: int) -> str:
         "without this scope is the load-bearing risk; the disclosure below is the load-bearing reading discipline.",
         "",
     ]
-    for entry in registry["entries"]:
+    for entry in sorted(registry["entries"], key=_prediction_id_sort_key):
         disclosure = entry.get("band_violation_disclosure")
         if not disclosure:
             continue
@@ -84,7 +93,7 @@ def _band_violation_scope_disclosure(registry: dict, failed_count: int) -> str:
     lines.append(
         "These rows do not by themselves falsify the underlying Tier 2 mechanisms, but terminal current-source "
         "FAIL rows count as adverse evidence until their registered source-promotion or closure path lands. "
-        "Their closure paths are documented in App H and the engine docstrings."
+        "Their closure paths are documented in App ORQ and the engine docstrings."
     )
     return "\n".join(lines)
 
@@ -94,20 +103,20 @@ def _status_pill(status: str, has_verifier: bool, entry: dict | None = None, ite
     Status pill with empirical-vs-algebraic granularity:
       ○ PENDING-VERIFIER  — no verifier script bound
       ○ OPEN-RESEARCH     — registry marks open_research: true (claim catalogued under an Open Problem)
-      ✓ DETECTED-TIGHT    — App V Prediction row with landed empirical test at tight precision
-      ✓ DETECTED-MARGINAL — App V Prediction row with landed empirical test at marginal precision
+      ✓ DETECTED-TIGHT    — App PRG Prediction row with landed empirical test at tight precision
+      ✓ DETECTED-MARGINAL — App PRG Prediction row with landed empirical test at marginal precision
       ✓ POSTDICTION-CONSISTENT — settled-data alignment check; does not count as in-favor evidence
       ✓ CONSISTENT        — engine-internal algebraic agreement against the registered empirical anchor
       ✓ ALGEBRAIC         — algebraic identity, no empirical detection target
       ✓ TIER-1 EXACT      — Tier 1 algebraic identity verified at machine precision
-      ⚠ PROTECTED-SUBSPACE-REQUIRED — bare-vs-renormalized frequency row whose PASS depends on O.23 protected-subspace renormalization
+      ⚠ PROTECTED-SUBSPACE-REQUIRED — row needing O.23 protected-subspace renormalization (conditional-PASS frequency channel, or the P.44 declared-open-programme marker with no gate)
       ⚠ TENSION           — within tolerance but at 2σ-class disagreement with current data
       ⚠ PENDING-α-RESOLUTION — input-contingent; does not count as in-favor evidence
       ⚠ AT-GATE TENSION   — tension marker only; does not count as in-favor evidence
       △ CURRENT-DATA-TENSION — adverse current-data flag; does not count as in-favor evidence
       ✗ FAIL              — outside the registered falsification band or verifier-level failure; counts against GCT
 
-    A row is DETECTED iff it is explicitly labeled as an App V Prediction row,
+    A row is DETECTED iff it is explicitly labeled as an App PRG Prediction row,
     marked `counts_as_empirical_detection: true`, has a landed empirical test,
     and falls within the band. Settled-data Postdiction/anchor rows use
     POSTDICTION-CONSISTENT instead. A row is ALGEBRAIC iff the verifier checks
@@ -119,6 +128,8 @@ def _status_pill(status: str, has_verifier: bool, entry: dict | None = None, ite
     claim is catalogued under an Open Problem and the verifier output is a
     candidate-ansatz reference rather than a live prediction.
     """
+    if entry is not None and entry.get("registered_branch_falsified") is True:
+        return "✗ FAIL"
     if _registry_band_failed(entry, item):
         if (
             entry is not None
@@ -156,8 +167,8 @@ def _status_pill(status: str, has_verifier: bool, entry: dict | None = None, ite
         return "○ OPEN-CONDITIONAL"
     if status == "INTERNAL_ARITHMETIC_PASS":
         return "✓ ALGEBRAIC"
-    if entry is not None and entry.get("postdiction_check") is True and status == "TENSION":
-        return "✓ POSTDICTION-CONSISTENT"
+    # A settled-data row whose verifier reports TENSION stays a TENSION: one
+    # observable cannot be postdiction-consistent and in tension at once.
     if status == "TENSION":
         # Distinguish ordinary TENSION (2σ-class disagreement) from the
         # WP2025 muon-g-2 arbitration state. The registry tier string is
@@ -201,16 +212,16 @@ def _status_pill(status: str, has_verifier: bool, entry: dict | None = None, ite
             is_forward = any(label in timeframe for label in ("near-term", "long-horizon", "long horizon", "future", "horizon", "n/a", "ska", "roman", "euclid", "dune", "hyper-k"))
             is_algebraic_identity = "n/a" in experiment or "algebraic identity" in experiment or "machine precision" in experiment
             is_inconclusive = "inconclusive" in experiment or "under test" in experiment
-            app_v_type = (entry.get("app_v_type") or "").strip().lower()
+            app_prg_type = (entry.get("app_prg_type") or "").strip().lower()
             counts_detection = bool(entry.get("counts_as_empirical_detection", False))
-            # DETECTED is firewall-protected: only App V Prediction rows that
+            # DETECTED is firewall-protected: only App PRG Prediction rows that
             # explicitly opt into landed empirical-detection accounting may
             # enter the in-favor evidence count. Settled postdictions and
             # anchor-normalized rows remain alignment checks.
             is_settled = ("settled" in experiment or "codata" in experiment or "pdg" in experiment or "lhc" in experiment or "lep" in experiment)
             is_immediate = "immediate" in timeframe
             if is_settled and is_immediate and not is_algebraic_identity and not is_inconclusive:
-                if app_v_type == "prediction" and counts_detection:
+                if app_prg_type == "prediction" and counts_detection:
                     # Split DETECTED into TIGHT (band <= 1000 ppm) and MARGINAL
                     # (band > 1000 ppm but within band). Rows with band == None
                     # get MARGINAL by default (no quantitative band -> cannot be TIGHT).
@@ -259,6 +270,7 @@ def _value_str(it: dict, entry: dict | None = None) -> str:
         return "—"
     pred = it.get("predicted")
     obs = it.get("observed")
+    reference_class = it.get("reference_class", "EMPIRICAL_ANCHOR")
     if pred is None:
         return "—"
     parts = []
@@ -267,10 +279,15 @@ def _value_str(it: dict, entry: dict | None = None) -> str:
     else:
         parts.append(f"pred = {pred}")
     if obs is not None:
+        reference_label = {
+            "EMPIRICAL_ANCHOR": "obs",
+            "MANUSCRIPT_STATED": "manuscript",
+            "PURE_MATHEMATICAL": "identity",
+        }.get(reference_class, "ref")
         if isinstance(obs, float):
-            parts.append(f"obs = {obs:.6g}")
+            parts.append(f"{reference_label} = {obs:.6g}")
         else:
-            parts.append(f"obs = {obs}")
+            parts.append(f"{reference_label} = {obs}")
     unit = it.get("unit")
     if unit and unit != "(dimensionless)":
         parts.append(f"[{unit}]")
@@ -326,6 +343,124 @@ def _mechanism_str(entry: dict) -> str:
     return text
 
 
+def _reference_class(item: dict | None) -> str:
+    if item is None:
+        return "NOT_EVALUATED"
+    return str(item.get("reference_class") or "UNCLASSIFIED")
+
+
+def _registered_band_outcome(entry: dict, item: dict | None) -> str:
+    """Empirical-band result, kept independent of derivational closure."""
+    if item is None:
+        return "NOT_EVALUATED"
+    if _reference_class(item) != "EMPIRICAL_ANCHOR":
+        return "NOT_APPLICABLE"
+    ppm = item.get("independent_precision_ppm")
+    if ppm is None:
+        return "NON_PPM_OR_UNEVALUATED"
+    ppm = abs(float(ppm))
+    tau_gate = entry.get("tau_tri_state_gate_ppm")
+    if tau_gate is not None:
+        if ppm < tau_gate["pass_lt"]:
+            return "INSIDE_PASS_BAND"
+        if ppm < tau_gate["at_gate_tension_lt"]:
+            return "AT_GATE_TENSION_BAND"
+        return "OUTSIDE_FAIL_BAND"
+    band = entry.get("falsification_band_ppm")
+    if band is None:
+        return "OPERATIONAL_OR_NON_PPM_GATE"
+    return "INSIDE_REGISTERED_BAND" if ppm <= float(band) else "OUTSIDE_REGISTERED_BAND"
+
+
+def _derivational_closure(entry: dict, item: dict | None) -> str:
+    if entry.get("open_research") is True:
+        return "OPEN_RESEARCH"
+    if item is None:
+        return "NOT_EVALUATED"
+    item_state = str(item.get("derivational_closure") or "UNCLASSIFIED")
+    if item_state != "NO_DERIVATIONAL_CLOSURE_FLAG":
+        return item_state
+    registry_text = " ".join(
+        str(entry.get(key) or "")
+        for key in ("tier", "disposition_text", "falsification", "notes")
+    ).lower()
+    open_markers = (
+        "pending o.",
+        "conditional on o.",
+        "open problem",
+        "closure pending",
+        "pending qlqcd",
+    )
+    if any(marker in registry_text for marker in open_markers):
+        return "OPEN_REGISTERED_CONDITION"
+    return item_state
+
+
+def _prove_same_class_band_monotonicity(registry: dict, score_by_name: dict[str, dict]) -> dict:
+    """Prove the registered ppm band outcome is monotone in absolute residual.
+
+    The proof domain is each group sharing EMPIRICAL_ANCHOR and the exact same
+    numeric registered band. Derivational closure and the displayed status pill
+    are deliberately excluded from this ordering.
+    """
+    groups: dict[float, list[tuple[str, float, str]]] = {}
+    for entry in registry["entries"]:
+        band = entry.get("falsification_band_ppm")
+        if band is None:
+            continue
+        item = None
+        for key in _scorecard_lookup_keys(entry.get("verifier_name")):
+            item = score_by_name.get(key)
+            if item is not None:
+                break
+        if item is None or _reference_class(item) != "EMPIRICAL_ANCHOR":
+            continue
+        ppm = item.get("independent_precision_ppm")
+        if ppm is None:
+            continue
+        groups.setdefault(float(band), []).append(
+            (entry["id"], abs(float(ppm)), _registered_band_outcome(entry, item))
+        )
+
+    compared_rows = 0
+    comparable_groups = 0
+    proof_groups: list[dict] = []
+    for band, rows in groups.items():
+        if len(rows) < 2:
+            continue
+        comparable_groups += 1
+        compared_rows += len(rows)
+        ranked = sorted(rows, key=lambda row: row[1])
+        seen_outside = False
+        for row_id, residual, outcome in ranked:
+            expected = "INSIDE_REGISTERED_BAND" if residual <= band else "OUTSIDE_REGISTERED_BAND"
+            if outcome != expected:
+                raise ValueError(
+                    f"band outcome mismatch for {row_id}: residual={residual}, "
+                    f"band={band}, outcome={outcome}, expected={expected}"
+                )
+            if outcome == "OUTSIDE_REGISTERED_BAND":
+                seen_outside = True
+            elif seen_outside:
+                raise ValueError(
+                    f"non-monotone same-class/same-band ordering at {row_id} for {band} ppm"
+                )
+        proof_groups.append(
+            {
+                "band_ppm": band,
+                "rows": [
+                    {"id": row_id, "residual_ppm": residual, "outcome": outcome}
+                    for row_id, residual, outcome in ranked
+                ],
+            }
+        )
+    return {
+        "comparable_groups": comparable_groups,
+        "compared_rows": compared_rows,
+        "groups": proof_groups,
+    }
+
+
 def _scorecard_lookup_keys(verifier_name: str | None) -> list[str]:
     """Return scorecard-name candidates for a registry verifier binding.
 
@@ -374,6 +509,7 @@ def build_matrix() -> tuple[str, int, dict]:
         name = it.get("name")
         if name:
             score_by_name[name] = it
+    monotonicity_proof = _prove_same_class_band_monotonicity(registry, score_by_name)
 
     rows: list[str] = []
     failed = 0
@@ -396,7 +532,7 @@ def build_matrix() -> tuple[str, int, dict]:
     tier1_exact = 0
     summary: dict = {"by_tier": {}, "by_timeframe": {}}
 
-    for entry in registry["entries"]:
+    for entry in sorted(registry["entries"], key=_prediction_id_sort_key):
         verifier = entry.get("verifier_name")
         sc = None
         for lookup_key in _scorecard_lookup_keys(verifier):
@@ -432,7 +568,7 @@ def build_matrix() -> tuple[str, int, dict]:
             tier1_exact += 1
         elif "EVALUATED-CLOSURE-FAILURE" in status_disp:
             evaluated_closure_failure += 1
-        elif status_raw in ("PASS", "OPEN_CONDITIONAL"):
+        elif status_raw in ("PASS", "OPEN_CONDITIONAL", "INTERNAL_ARITHMETIC_PASS"):
             # Classify into detected-tight/detected-marginal/consistent/algebraic/tension
             # using the same logic as the pill.
             if "TENSION" in status_disp:
@@ -459,12 +595,17 @@ def build_matrix() -> tuple[str, int, dict]:
             f"| **{_cell(entry['id'])}** "
             f"| {_cell(entry['manuscript_ref'])} "
             f"| {_cell(entry['tier'])} "
+            f"| {_cell(_reference_class(sc))} "
             f"| {_cell(_value_str(sc, entry))} "
             f"| {_cell(_ppm_str(sc, entry))} "
             f"| {_cell(_band_str(entry))} "
+            f"| {_cell(_registered_band_outcome(entry, sc))} "
+            f"| {_cell(_derivational_closure(entry, sc))} "
             f"| {_cell(_mechanism_str(entry))} "
             f"| {_cell(entry['experiment'])} "
             f"| {_cell(entry['timeframe'])} "
+            f"| {_cell(entry['lifecycle_status'])} "
+            f"| {_cell(entry.get('closed_in') or '—')} "
             f"| {_cell(status_disp)} |"
         )
         rows.append(row)
@@ -472,8 +613,16 @@ def build_matrix() -> tuple[str, int, dict]:
     detected_total = detected_tight + detected_marginal
     passing = detected_total + postdiction_consistent + consistent + algebraic + tier1_exact
     total = passing + tension + at_gate_tension + current_data_tension + pending_alpha_resolution + wp2025_tension + protected_subspace_required + failed + pending_verifier + open_research + open_conditional + evaluated_closure_failure
+    monotonicity_rows_md = "\n".join(
+        f"- **{group['band_ppm']:g} ppm class:** "
+        + "; ".join(
+            f"{row['id']} = {row['residual_ppm']:.6g} ppm → {row['outcome']}"
+            for row in group["rows"]
+        )
+        for group in monotonicity_proof["groups"]
+    )
 
-    header = f"""# Appendix FM: Falsifiability Matrix
+    header = f"""# Appendix FSM: Falsifiability Matrix
 
 > Compiled from `falsifiability_registry.json` +
 > `verify_independent/results/scorecard.json`.
@@ -482,14 +631,40 @@ def build_matrix() -> tuple[str, int, dict]:
 
 This appendix consolidates every quantitative GCT claim that carries an
 explicit falsification threshold into a single machine-readable matrix. It
-extends App V (Prediction Registry) by row-by-row tying each prediction to
+extends App PRG (Prediction Registry) by row-by-row tying each prediction to
 (a) the verifier script that re-derives it from the engine, (b) the explicit
 threshold beyond which the claim is falsified, and (c) the scorecard status
 from the independent-verification suite.
 
+**Reference-class, empirical-band, and closure policy.** Every verifier result declares one of
+three comparison classes. `EMPIRICAL_ANCHOR` compares a theory value with an
+external measurement; `MANUSCRIPT_STATED` checks a recomputation against a
+printed manuscript value; `PURE_MATHEMATICAL` checks a theorem or identity.
+Only the first class may carry raw `PASS`. The latter two use
+`INTERNAL_ARITHMETIC_PASS` or `TIER1_EXACT` and render as algebraic status, not
+as empirical agreement. `Band Outcome` reports only whether an empirical row
+lies inside its registered App FSM band. `Derivational Closure` independently
+reports whether the formula or physical bridge remains open. The status pill
+may summarize both dimensions, but it is not used as the empirical-band
+ordering variable. Within every shared `EMPIRICAL_ANCHOR` + numeric-band class,
+Band Outcome is monotone in absolute residual; the generator proves this for
+{monotonicity_proof['compared_rows']} rows across
+{monotonicity_proof['comparable_groups']} comparable band groups. Rows with
+different units, uncertainty models, or operational gates are explicitly
+class-conditional and must not be ranked by raw ppm alone.
+
+**Same-class/same-band row proof:**
+
+{monotonicity_rows_md}
+
 The matrix is the manuscript's single source of truth for "is GCT still
 empirically consistent?" — a TENSION or FAIL row is a real signal, not a
-qualitative footnote.
+qualitative footnote. It is not a rule that promotes every proxy-model null or positive response into a verdict on GCT.
+Rows that test an ordinary material proxy (the Protocol A and Protocol D rows P.8, P.8b, P.10,
+P.13, P.13c and P.38; P.8c is a declared open programme and not a gate) test only the declared material
+scenario: a preregistered null rejects the registered biophysical branch as registered, and neither
+outcome supports a phason, Selection-Operator or Level-II inference (V1 Ch17 §17.1.3). Material-proxy
+rows are never DETECTED rows. Each row's disposition text sets its inference ceiling.
 
 ## FM.2 Summary
 
@@ -497,8 +672,8 @@ Aggregated by status pill (see FM.3 below for pill semantics):
 
 | Pill | Count | Reading |
 | :--- | ---: | :--- |
-| ✓ DETECTED-TIGHT | {detected_tight} | App V Prediction row whose decisive empirical test has landed inside a tight band (band ≤ 1000 ppm) — strongest empirical evidence for GCT |
-| ✓ DETECTED-MARGINAL | {detected_marginal} | App V Prediction row whose decisive empirical test has landed inside a marginal band (band > 1000 ppm) — confirmatory but at lower-resolution |
+| ✓ DETECTED-TIGHT | {detected_tight} | App PRG Prediction row whose decisive empirical test has landed inside a tight band (band ≤ 1000 ppm) — strongest empirical evidence for GCT |
+| ✓ DETECTED-MARGINAL | {detected_marginal} | App PRG Prediction row whose decisive empirical test has landed inside a marginal band (band > 1000 ppm) — confirmatory but at lower-resolution |
 | ✓ POSTDICTION-CONSISTENT | {postdiction_consistent} | Settled-data postdictive alignment check; internal consistency only, not prospective detection evidence |
 | ✓ CONSISTENT | {consistent} | Engine-internal agreement with a settled empirical anchor |
 | ✓ ALGEBRAIC | {algebraic} | Internal algebraic identity verified; empirical detection forward-looking or inconclusive |
@@ -509,14 +684,14 @@ Aggregated by status pill (see FM.3 below for pill semantics):
 | ⚠ PENDING-α-RESOLUTION | {pending_alpha_resolution} | Detection requires resolution of α-input ambiguity between Cs-α and Rb-α determinations; outcome locked when external α discord resolves. Does **not** count as detection evidence. |
 | ⚠ TENSION UNDER WP2025 | {wp2025_tension} | The verifier reports the muon g-2 channel under the WP2025 lattice-dominant HVP synthesis: Tier 2 mechanism + Tier 3 1/5 coefficient + A3 + Tier 4 calibration-survival conjecture; Tension under WP2025; falsification conditional on long-term HVP-synthesis arbitration. The row is not "within tolerance" and is not load-bearing empirical evidence under the consolidated synthesis. |
 | ⚠ EVALUATED-CLOSURE-FAILURE | {evaluated_closure_failure} | Closed-form scan completed and the registered closure menu fails; this is distinct from observational TENSION. |
-| ⚠ PROTECTED-SUBSPACE-REQUIRED | {protected_subspace_required} | Bare-vs-renormalized frequency row where the verifier PASS is conditional on O.23 protected-subspace renormalization rather than direct bare-frequency agreement. |
+| ⚠ PROTECTED-SUBSPACE-REQUIRED | {protected_subspace_required} | Row needing O.23 protected-subspace renormalization: either a bare-vs-renormalized frequency channel whose verifier PASS is conditional on that closure, or a declared-open-programme marker with no gate and no PASS (P.44); never direct bare-frequency agreement. |
 | ✗ FAIL | {failed} | Outside the registered falsification band or verifier-level failure against the engine-internal enforcement contract |
 | ○ OPEN-RESEARCH | {open_research} | Claim catalogued under an Open Problem; verifier output is a candidate-ansatz reference rather than a live prediction |
 | ○ OPEN-CONDITIONAL | {open_conditional} | Executable verifier/preregistration exists, but decisive external data have not landed |
 | ○ PENDING-VERIFIER | {pending_verifier} | No verifier script bound |
 | **TOTAL** | **{total}** | |
 
-**Reading-discipline note:** POSTDICTION-CONSISTENT + CONSISTENT + ALGEBRAIC + TIER-1 EXACT pills indicate the manuscript is *internally self-consistent* on the row; they are not empirical confirmations of GCT. **DETECTED-TIGHT / DETECTED-MARGINAL pills count as empirical evidence in favour of GCT only for rows labeled Prediction in App V whose decisive empirical test has landed. Postdiction rows use POSTDICTION-CONSISTENT and constitute alignment-check evidence, not prospective falsification-surviving detections.** PENDING-α-RESOLUTION, AT-GATE TENSION, CURRENT-DATA-TENSION, OPEN-CONDITIONAL, PENDING-VERIFIER, and OPEN-RESEARCH do **not** count as in-favor detection evidence. FAIL counts against the framework. Currently the DETECTED total is {detected_total} ({detected_tight} TIGHT + {detected_marginal} MARGINAL) out of {total} rows, reflecting that most of the GCT prediction set has its empirical-detection moment in long-horizon observational programmes. The POSTDICTION-CONSISTENT + CONSISTENT + ALGEBRAIC pills together quantify the manuscript's *internal coherence*, not its *empirical confirmation*.
+**Reading-discipline note:** POSTDICTION-CONSISTENT + CONSISTENT + ALGEBRAIC + TIER-1 EXACT pills indicate the manuscript is *internally self-consistent* on the row; they are not empirical confirmations of GCT. **DETECTED-TIGHT / DETECTED-MARGINAL pills count as empirical evidence in favour of GCT only for rows labeled Prediction in App PRG whose decisive empirical test has landed. Postdiction rows use POSTDICTION-CONSISTENT and constitute alignment-check evidence, not prospective falsification-surviving detections.** PENDING-α-RESOLUTION, AT-GATE TENSION, CURRENT-DATA-TENSION, OPEN-CONDITIONAL, PENDING-VERIFIER, and OPEN-RESEARCH do **not** count as in-favor detection evidence. FAIL counts against the framework. Currently the DETECTED total is {detected_total} ({detected_tight} TIGHT + {detected_marginal} MARGINAL) out of {total} rows, reflecting that most of the GCT prediction set has its empirical-detection moment in long-horizon observational programmes. The POSTDICTION-CONSISTENT + CONSISTENT + ALGEBRAIC pills together quantify the manuscript's *internal coherence*, not its *empirical confirmation*.
 
 **Verifier status from the scorecard:**
 {"✓ No verifier-level falsification events." if failed == 0 else f"✗ {failed} falsification-band failure row(s) detected; see the scope disclosure that follows."}
@@ -525,12 +700,12 @@ Aggregated by status pill (see FM.3 below for pill semantics):
 
 ## FM.3 Status Pill Legend
 
-To distinguish empirical detection from algebraic-internal consistency, the Status column uses the following pills. The Evidence Credibility column is normative for all App FM uses:
+To distinguish empirical detection from algebraic-internal consistency, the Status column uses the following pills. The Evidence Credibility column is normative for all App FSM uses:
 
 | Pill | Meaning | Evidence Credibility |
 | :--- | :--- | :--- |
-| **✓ DETECTED-TIGHT** | App V row labeled Prediction; empirical experiment has run, returned data, and the prediction falls within a tight falsification band (≤1000 ppm). | Counts as in-favor empirical evidence for GCT. |
-| **✓ DETECTED-MARGINAL** | App V row labeled Prediction; empirical experiment has run, returned data, and the prediction falls within a marginal falsification band (>1000 ppm). | Counts as in-favor empirical evidence with an explicit lower-resolution caveat. |
+| **✓ DETECTED-TIGHT** | App PRG row labeled Prediction; empirical experiment has run, returned data, and the prediction falls within a tight falsification band (≤1000 ppm). | Counts as in-favor empirical evidence for GCT. |
+| **✓ DETECTED-MARGINAL** | App PRG row labeled Prediction; empirical experiment has run, returned data, and the prediction falls within a marginal falsification band (>1000 ppm). | Counts as in-favor empirical evidence with an explicit lower-resolution caveat. |
 | **✓ POSTDICTION-CONSISTENT** | Settled-data row used as a postdictive alignment check or dimensional-anchor closure audit. | Does **not** count as in-favor evidence; firewall-protected alignment only. |
 | **✓ CONSISTENT** | Engine-internal algebraic agreement against the registered empirical anchor; the verifier reproduces the manuscript value within tolerance. | Does **not** count as empirical evidence in favor; internal consistency only. |
 | **✓ ALGEBRAIC** | Algebraic identity verified at machine precision *or* a forward-looking prediction whose internal-consistency is checked but whose empirical detection target is not yet reached. | Does **not** count as empirical evidence in favor; internal consistency only. |
@@ -541,18 +716,18 @@ To distinguish empirical detection from algebraic-internal consistency, the Stat
 | **⚠ PENDING-α-RESOLUTION** | Detection requires resolution of α-input ambiguity between Cs-α and Rb-α determinations; outcome locked when external α discord resolves. | Does **not** count as in-favor evidence; input-contingent. |
 | **⚠ TENSION UNDER WP2025** | Muon g-2 arbitration row under the WP2025 lattice-dominant HVP synthesis: Tier 2 mechanism + Tier 3 1/5 coefficient + A3 + Tier 4 calibration-survival conjecture; Tension under WP2025; falsification conditional on long-term HVP-synthesis arbitration. | Does **not** count as in-favor evidence; live tension. |
 | **⚠ EVALUATED-CLOSURE-FAILURE** | Closed-form scan completed and the registered closure menu fails; reported separately from observational TENSION. | Does **not** count as in-favor evidence; failed closure menu. |
-| **⚠ PROTECTED-SUBSPACE-REQUIRED** | Bare-vs-renormalized frequency row whose engine PASS is conditional on the O.23 protected-subspace renormalization closure, not direct agreement between the bare and observed frequency channels. | Does **not** count as in-favor evidence until O.23 closes and the empirical gate is rerun. |
+| **⚠ PROTECTED-SUBSPACE-REQUIRED** | Row needing O.23 protected-subspace renormalization: either a bare-vs-renormalized frequency channel whose verifier PASS is conditional on that closure, or a declared-open-programme marker with no gate and no PASS (P.44); never direct bare-frequency agreement. | Does **not** count as in-favor evidence until O.23 closes and the empirical gate is rerun. |
 | **✗ FAIL** | Outside the falsification band — a real falsification event. | Counts as against-GCT evidence. |
-| **○ OPEN-RESEARCH** | The registry marks the row with `open_research: true` because the claim is catalogued under an Open Problem (App H §H.5). The verifier output is a candidate-ansatz reference (e.g. literal φ⁻²² evaluation for the Jarlskog invariant) rather than a live Tier 2 prediction. | Does **not** count as in-favor evidence; future-research target. |
+| **○ OPEN-RESEARCH** | The registry marks the row with `open_research: true` because the claim is catalogued under an Open Problem (App ORQ §ORQ.5). The verifier output is a candidate-ansatz reference (e.g. literal φ⁻²² evaluation for the Jarlskog invariant) rather than a live Tier 2 prediction. | Does **not** count as in-favor evidence; future-research target. |
 | **○ OPEN-CONDITIONAL** | Verifier/preregistration is executable, but the decisive empirical dataset has not landed. | Does **not** count as in-favor evidence; externally undecided. |
 | **○ PENDING-VERIFIER** | No verifier script bound to this row; verifier scaffold not yet implemented. | Does **not** count as in-favor evidence; no measurement/verifier yet. |
 
-A row tagged POSTDICTION-CONSISTENT, CONSISTENT, ALGEBRAIC, or OPEN-CONDITIONAL is **not** an empirical confirmation — it is internal-consistency-checked, postdictively aligned, or executable-but-awaiting-data. Readers comparing the matrix's status pills should treat DETECTED-TIGHT and DETECTED-MARGINAL as the only in-favor empirical-evidence pills, and only for App V Prediction rows; PENDING-α-RESOLUTION and all tension/open/verifier-pending pills are non-evidential or adverse as specified above.
+A row tagged POSTDICTION-CONSISTENT, CONSISTENT, ALGEBRAIC, or OPEN-CONDITIONAL is **not** an empirical confirmation — it is internal-consistency-checked, postdictively aligned, or executable-but-awaiting-data. Readers comparing the matrix's status pills should treat DETECTED-TIGHT and DETECTED-MARGINAL as the only in-favor empirical-evidence pills, and only for App PRG Prediction rows; PENDING-α-RESOLUTION and all tension/open/verifier-pending pills are non-evidential or adverse as specified above.
 
 ## FM.4 The Matrix
 
-| ID | Manuscript Reference | Tier | Current Value | Precision (ppm) | Falsification Band | Disposition | Experiment | Timeframe | Status |
-| :--- | :--- | :--- | :--- | ---: | :--- | :--- | :--- | :--- | :--- |
+| ID | Manuscript Reference | Tier | Reference Class | Current Value | Precision (ppm) | Falsification Band | Band Outcome | Derivational Closure | Disposition | Experiment | Timeframe | Lifecycle Status | Closed In | Status |
+| :--- | :--- | :--- | :--- | :--- | ---: | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 """
 
     body = "\n".join(rows)
@@ -561,17 +736,20 @@ A row tagged POSTDICTION-CONSISTENT, CONSISTENT, ALGEBRAIC, or OPEN-CONDITIONAL 
 
 ## FM.5 Cross-references
 
-- **App V** — Prediction Registry (the user-facing P.X registration of
+- **App PRG** — Prediction Registry (the user-facing P.X registration of
   pre-registered predictions; this matrix is its machine-readable companion).
-- **App R** — Precision Scorecard (the engine-output precision report; this
+- **App PSC** — Precision Scorecard (the engine-output precision report; this
   matrix consumes its `scorecard.json` artefact).
-- **App TP** — Tier Promotion Roadmap (the candidates that, if closed,
+- **App TPR** — Tier Promotion Roadmap (the candidates that, if closed,
   would change the Tier column of one or more rows in this matrix).
-- **Ch22 §22.1** — Binary Gates (the four near-term falsification events
-  that anchor the experimental programme).
+- **V3 Ch22 §22.1** — Facility-Ready and Prerequisite-Gated Decision Points
+  (physics-sector decision rules for the neutrino-mass band, the 3.55 keV line
+  shape and the dark-energy phantom phase; the THz and isotope rows are
+  material proxies with no decisive GCT or consciousness gate).
 """
 
     summary["fatal_failed_rows"] = fatal_failed
+    summary["monotonicity_proof"] = monotonicity_proof
     return header + body + footer, failed, summary
 
 
@@ -591,6 +769,7 @@ def main() -> int:
     print(f"  by_tier: {json.dumps(summary['by_tier'], ensure_ascii=False, sort_keys=True)}")
     print(f"  failed_rows: {failed}")
     print(f"  fatal_failed_rows: {summary['fatal_failed_rows']}")
+    print(f"  monotonicity_proof: {json.dumps(summary['monotonicity_proof'], sort_keys=True)}")
     return 0 if summary["fatal_failed_rows"] == 0 else 1
 
 

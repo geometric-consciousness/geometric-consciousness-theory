@@ -1419,7 +1419,7 @@ L 711.602219 58.212
    <text style="font-weight: 700; font-size: 13.1px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="56.402219" y="31.553953" transform="rotate(-0 56.402219 31.553953)">Charged-lepton harmonic ladder with correction-stage and Protocol B gates</text>
   </g>
   <g id="text_38">
-   <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #666666" x="24.002219" y="403.514775" transform="rotate(-0 24.002219 403.514775)">Sources: Ch08 Fractal Resonance Leptons; protocol_lepton_spectrum_results.json; App R/App FM gate wording.</text>
+   <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #666666" x="24.002219" y="403.514775" transform="rotate(-0 24.002219 403.514775)">Sources: Ch08 Fractal Resonance Leptons; protocol_lepton_spectrum_results.json; App PSC/App FSM gate wording.</text>
   </g>
   <g id="axes_3">
    <g id="patch_20">

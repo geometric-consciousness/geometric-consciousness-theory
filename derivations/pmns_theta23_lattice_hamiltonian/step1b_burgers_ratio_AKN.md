@@ -20,7 +20,7 @@ Physical projection of a primitive Z⁶ Burgers vector **b** ∈ Z⁶ is:
 
 $$\mathbf{b}_\parallel = M_\parallel^{raw}\,\mathbf{b}, \qquad \mathbf{b}_\perp = M_\perp^{raw}\,\mathbf{b}$$
 
-The raw matrices are used (not the normalized isometries) because **b** ∈ Z⁶ is a primitive lattice vector; normalizing would rescale it artificially and destroy the intrinsic scale difference between the two subspaces — the very difference that encodes the φ⁻¹⁸ stiffness hierarchy (App_K §K.4).
+The raw matrices are used (not the normalized isometries) because **b** ∈ Z⁶ is a primitive lattice vector; normalizing would rescale it artificially and destroy the intrinsic scale difference between the two subspaces — the very difference that encodes the φ⁻¹⁸ stiffness hierarchy (App_DPS §DPS.4).
 
 ## 1b.2 Analytic Computation for a Primitive Axial Burgers Vector
 
@@ -52,7 +52,7 @@ and taking the square root:
 
 $$\boxed{\;\frac{|\mathbf{b}_\perp|}{|\mathbf{b}_\parallel|} = \frac{1}{\varphi} = \varphi^{-1}\;} \quad [\text{Tier 1}]$$
 
-This is the **Burgers-ratio invariant** of the canonical AKN projection for a primitive axial dislocation. It is the linear analogue of the Gram-determinant invariant det(G⊥)/det(G∥) = φ⁻⁶ (App_K §K.2) and the stiffness invariant K⊥/K∥ = φ⁻¹⁸ (App_K §K.4).
+This is the **Burgers-ratio invariant** of the canonical AKN projection for a primitive axial dislocation. It is the linear analogue of the Gram-determinant invariant det(G⊥)/det(G∥) = φ⁻⁶ (App_DPS §DPS.2) and the stiffness invariant K⊥/K∥ = φ⁻¹⁸ (App_DPS §DPS.4).
 
 ## 1b.3 Numerical Verification
 
@@ -93,7 +93,7 @@ $$|\mathbf{b}_\perp|_{\text{primitive}} = \frac{|\mathbf{b}_\parallel|_{\text{pr
 
 ## 1b.5 Dimensional Assembly
 
-In App_M / App_K conventions, the 6D lattice spacing is a₆ = 2ℏ/(M_P c) = 2 ℓ_P (using ℓ_P = ℏ/(M_P c); see App_K §K.7 algebraic identity).
+In App_ULA / App_DPS conventions, the 6D lattice spacing is a₆ = 2ℏ/(M_P c) = 2 ℓ_P (using ℓ_P = ℏ/(M_P c); see App_DPS §DPS.7 algebraic identity).
 
 Writing **b** with length dimensions in SI:
 
@@ -115,7 +115,7 @@ where F⊥ is the effective point-force exerted by the pinned-defect core on the
 
 $$\mathcal{F}_\perp = K_\perp\, a_6^2\, \sqrt{3 - \varphi} \quad [\text{Tier 1}]$$
 
-**Cross-sector ratio (for bookkeeping).** Using |**b**⊥|/|**b**∥| = φ⁻¹ (§1b.2) and K⊥/K∥ = φ⁻¹⁸ (App_K §K.4), the phason-to-phonon point-force ratio for one primitive pinned defect is:
+**Cross-sector ratio (for bookkeeping).** Using |**b**⊥|/|**b**∥| = φ⁻¹ (§1b.2) and K⊥/K∥ = φ⁻¹⁸ (App_DPS §DPS.4), the phason-to-phonon point-force ratio for one primitive pinned defect is:
 
 $$\frac{\mathcal{F}_\perp}{\mathcal{F}_\parallel} = \frac{K_\perp}{K_\parallel}\cdot\frac{|\mathbf{b}_\perp|}{|\mathbf{b}_\parallel|} = \varphi^{-18}\cdot \varphi^{-1} = \varphi^{-19} \quad [\text{Tier 2}]$$
 

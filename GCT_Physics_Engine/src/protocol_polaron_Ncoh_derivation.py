@@ -2,9 +2,9 @@
 """
 protocol_polaron_Ncoh_derivation.py
 ====================================
-Formula audit for Open Problem O.16 (App H §H.5):
+Formula audit for Open Problem O.16 (App ORQ §ORQ.5):
 evaluate the Polaron coherence robustness reference N_coh from the N=144 cage
-geometry + phason stiffness ratio K_perp/K_par = phi^-18 (V3 App K) + the
+geometry + phason stiffness ratio K_perp/K_par = phi^-18 (V3 App DPS) + the
 Tavis-Cummings cooperativity criterion (V3 Ch13 §13.5).
 
 DERIVATION CHAIN
@@ -17,16 +17,14 @@ where:
   g_single^eff = effective per-spin Rashba-phason coupling (V3 §13.1.2)
   N_bio = number of cooperatively phase-locked dipoles
   kappa = cavity decay rate (V3 §13.5.4)
-  eta_F = Floquet open-system efficiency (V3 §13.4.4)
+  eta_F = Floquet open-system efficiency (V3 §13.4.6)
 
-Across a DMC-positive substrate branch, eta_Zeno is the robustness margin
-reported by the Tavis-Cummings chain. The DMC gate is necessary for Level II,
-but sufficiency also requires the O.21 cooperative radical-pair/Polaron
-witness, the O.23 protected-subspace coherence demonstration, and the O.34
-ATP-Trp redox-regeneration condition.
+The eta_Zeno and N_coh values reported by the Tavis-Cummings chain are
+conditional external-rate scenarios. DMC legs are candidate controls, not a
+necessary-or-sufficient Level-II gate. O.21/O.23/O.34, the typed normalized
+measured coupling, and the independent phenomenal bridge remain open.
 
-The Polaron loses its cooperativity margin below the reference N_coh given by
-eta_Zeno = 1:
+The legacy external-rate scenario crosses the reporting reference eta_Zeno = 1 at:
 
   N_coh = (kappa / (g_single^eff * eta_F))^2
 
@@ -35,16 +33,17 @@ Substituting V3 §13.5.4 geometric kappa = phi^-18 * omega_d / N_cage:
   N_coh = (phi^-18 * omega_d / (N_cage * g_single^eff * eta_F))^2
 
 For tubulin substrate at the V3 §13.5.7 canonical parameters:
-  g_single^eff = 3.8e7 Hz pre-overlap anchor (V3 §13.1.2, Tier 3 calibrated;
+  g_single^eff = 3.8334654305841066e7 Hz pre-overlap anchor (V3 §13.1.2, Tier 3 calibrated;
                  range 10-100 MHz per best-effort transparent disclosure)
-  f_overlap = 0.01 engine-current operational branch, giving 3.8e5 Hz
-  N_cage = 144 (Tier 2 — icosahedral dodecahedral cage from V3 Ch07 §7.1)
+  f_overlap = 0.01 engine-current operational branch, giving 383346.543 Hz
+  N_cage = 144 (Tier 3 cage posit pending O.38; inherited from V3 Ch07 §7.1)
   omega_d = 2*pi*112 MHz primary branch (Tier 2 mechanism / Tier 3 specific value, O.12)
   kappa^geom = 120 Hz (V3 §13.5.4, derived from phi^-18 + N_cage = 144)
-  eta_F ~ 1 on resonance (V3 §13.4.4)
+  eta_F ~ 1 on resonance (V3 §13.4.6)
 
 This evaluates the N_coh formula within the manuscript framework; the
-formula structure is Tier 2, while g_single^eff and omega_d remain Tier 3.
+formula has Tier 2 algebraic form, while g_single^eff and omega_d remain Tier 3
+(calibrated) inputs, so every evaluated N_coh is a conditional scenario.
 
 RESULT
 ======
@@ -53,13 +52,12 @@ phi^-18 stiffness plus declared substrate inputs, the formula evaluation
 passes as a diagnostic. It is not an independent Level-II population
 threshold or a closure of the substrate-sufficiency question.
 
-Prediction: N_coh will be very small (<<1) even on the conservative
-beta-Trp n_rp=1 sensitivity branch. Ch13:633 makes the operative central
+Scenario result: N_coh is very small (<<1) on the declared
+beta-Trp n_rp=1 sensitivity branch. Ch13 Sec 13.5.3 makes the operative central
 cooperative branch n_rp=0 pending O.21; hydration-shell OH/proton dipoles
 are bath/environment and are not counted in the cooperative oscillator basis.
-The suppression-margin diagnostic in V1 Ch17 §17.1.4b therefore requires
-*parameter changes* (anaesthesia, hypothermia, death) that drop g_single^eff
-or boost kappa — these are quantifiable interventions.
+The suppression-margin calculation only reports parameter sensitivity. It does not
+predict anaesthesia, death, Polaron loss, or a Level-II transition.
 """
 
 import math
@@ -69,6 +67,19 @@ from pathlib import Path
 from gct_utils import C
 
 PHI = float(C.PHI)
+
+# Conditional beta-Trp n_rp=1 sensitivity-branch inventory. The operative
+# central branch remains n_rp=0 pending O.21 assembled-MT closure.
+MT_PER_NEURON = 1.0e5
+PROTOFILAMENTS_PER_MT = 13.0
+DIMERS_PER_PROTOFILAMENT = 1250.0  # 10 um length / 8 nm dimer rise
+N_RP_PER_DIMER_SENSITIVITY = 1.0
+N_BIO_SENSITIVITY = (
+    MT_PER_NEURON
+    * PROTOFILAMENTS_PER_MT
+    * DIMERS_PER_PROTOFILAMENT
+    * N_RP_PER_DIMER_SENSITIVITY
+)
 
 
 def derive_N_coh_from_cooperativity(
@@ -103,16 +114,18 @@ def main():
     print("=" * 76)
 
     # ── Tubulin substrate (V3 §13.5.7 canonical parameters) ──────────────
-    g_single_eff_tubulin = 3.8e7  # Hz pre-overlap (V3 §13.1.2, Tier 3 calibrated)
+    # Exact pre-overlap anchor whose 0.01 operational branch matches
+    # protocol_eta_zeno.py: g_single = 383346.54305841064 Hz.
+    g_single_eff_tubulin = 38_334_654.305841066  # Hz (Tier 3 calibrated)
     f_overlap_tubulin = 0.01      # engine-current operational overlap branch
     g_single_eff_tubulin_operational = g_single_eff_tubulin * f_overlap_tubulin
-    N_cage = 144                   # Tier 2 (icosahedral cage)
+    N_cage = 144                   # Tier 3 cage posit pending O.38
     omega_d_tubulin = 112e6  # Hz; primary branch convention aligned with protocol_eta_zeno.py
     kappa_geom_tubulin = derive_kappa_geometric(omega_d_tubulin, N_cage)
     eta_F_tubulin = 1.0  # on-resonance
     N_bio_tubulin_central = 0.0  # n_rp=0 operative central branch pending O.21
-    N_bio_tubulin = 1.25e8       # beta-Trp n_rp=1 sensitivity branch per Ch13:633
-    N_bio_range_tubulin = (0.0, 1.25e8)
+    N_bio_tubulin = N_BIO_SENSITIVITY  # beta-Trp n_rp=1 sensitivity branch per Ch13 Sec 13.5.3
+    N_bio_range_tubulin = (N_bio_tubulin_central, N_bio_tubulin)
 
     N_coh_tubulin = derive_N_coh_from_cooperativity(
         g_single_eff_tubulin, kappa_geom_tubulin, eta_F_tubulin
@@ -162,7 +175,7 @@ def main():
 
     # ── Anaesthesia parameter scan ──────────────────────────────────────
     print("\n--- Anaesthesia parameter scan (g_single^eff suppression) ---")
-    print("  Anaesthetics disrupt the Trp-pocket binding -> reduces g_single^eff")
+    print("  Scenario (Tier 3): anaesthetics disrupt Trp-pocket binding -> reduce g_single^eff")
     print("  How much suppression drops below the eta_Zeno = 1 robustness line?\n")
     print("  Suppression factor F | g_single^eff_reduced | eta_Zeno | Robustness status")
     print("  " + "-" * 70)
@@ -177,18 +190,18 @@ def main():
             "suppression_factor": F,
             "g_eff_reduced_Hz": g_reduced,
             "eta_Zeno_reduced": eta_reduced,
-            "polaron_intact": bool(eta_reduced > 1.0),
+            "scenario_above_reporting_reference": bool(eta_reduced > 1.0),
         })
 
     # Find critical suppression factor for crossing the robustness line.
     F_critical_pre_overlap = eta_Zeno_tubulin  # eta_Zeno scales as 1/F linearly through g_single
     F_critical = eta_Zeno_tubulin_operational
     print(f"\n  Critical suppression factor F_crit = {F_critical:.4e}")
-    print(f"  Biology requires g_single^eff to drop by ~{math.log10(F_critical):.1f} orders of magnitude")
-    print(f"  before the sensitivity branch crosses the cooperativity robustness line.")
+    print(f"  Scenario crosses the arithmetic reference after a ~{math.log10(F_critical):.1f}-order rate reduction")
+    print(f"  (no biological or Level-II transition is inferred).")
 
     # ── Geometric factor analysis ────────────────────────────────────────
-    print("\n--- Geometric closure check: does N=144 + phi^-18 force N_coh? ---")
+    print("\n--- Formula identity check conditional on N=144 + phi^-18 inputs ---")
     # N_coh = (kappa/g)^2 = (phi^-18 * omega_d / (N_cage * g))^2
     # Independent of N_bio; pure geometric + per-spin coupling
     N_coh_pure_geometric = (PHI ** (-18) * omega_d_tubulin / (N_cage * g_single_eff_tubulin_operational)) ** 2
@@ -200,15 +213,14 @@ def main():
     # ── Verdict ──────────────────────────────────────────────────────────
     result_status = "FORMULA EVALUATION PASS"
     interp = (
-        "N_coh IS derivable from N=144 + phi^-18 + g_single^eff + omega_d via the "
+        "N_coh is algebraically evaluable from N=144 + phi^-18 + externally supplied g_single^eff + omega_d via the "
         "cooperativity criterion. The formula reduces to: "
         f"N_coh = (phi^-18 * omega_d / (N_cage * g_single^eff))^2. For canonical "
         f"tubulin parameters N_coh = {N_coh_tubulin_operational:.2e} after overlap propagation "
         f"(pre-overlap audit value {N_coh_tubulin:.2e}); the operative central cooperative branch remains "
-        f"n_rp=0 pending O.21, while the beta-Trp n_rp=1 sensitivity branch N_bio = 1.25e8 exceeds the robustness reference by "
-        f"{math.log10(N_bio_tubulin / N_coh_tubulin_operational):.1f} orders of magnitude. This shows that the sensitivity branch "
-        "would be highly robust if the O.21 witness is established; it is not a central biological sufficiency result. Anaesthesia and "
-        "related interventions are reported as suppression-margin diagnostics by reducing g_single^eff "
+        f"n_rp=0 pending O.21, while the beta-Trp n_rp=1 sensitivity branch N_bio = {N_bio_tubulin:.3e} exceeds the robustness reference by "
+        f"{math.log10(N_bio_tubulin / N_coh_tubulin_operational):.1f} orders of magnitude. This is conditional arithmetic, not evidence "
+        "for biological robustness, an Identity Polaron, or Level II. Interventions are represented only as rate-sensitivity scenarios reducing g_single^eff "
         f"by a factor of {F_critical:.2e} on the sensitivity branch, in the same range "
         "as the eta_Zeno robustness margin for Trp-pocket binding."
     )
@@ -216,7 +228,7 @@ def main():
     verdict = {
         "test_target": (
             "Evaluate the N_coh robustness reference from N=144 cage geometry + "
-            "phi^-18 phason stiffness for the Polaron Persistence audit (App H O.16)."
+            "phi^-18 phason stiffness for the Polaron Persistence audit (App ORQ O.16)."
         ),
         "tubulin_substrate": {
             "g_single_eff_pre_overlap_Hz": g_single_eff_tubulin,
@@ -228,7 +240,7 @@ def main():
             "eta_F": eta_F_tubulin,
             "N_bio_central": N_bio_tubulin_central,
             "N_bio_typical": N_bio_tubulin,
-            "N_bio_basis": "beta-Trp n_rp=1 sensitivity branch; central n_rp=0 pending O.21; hydration shell is bath/environment per Ch13:633",
+            "N_bio_basis": "beta-Trp n_rp=1 sensitivity branch; central n_rp=0 pending O.21; hydration shell is bath/environment per Ch13 Sec 13.5.3",
             "N_bio_range": list(N_bio_range_tubulin),
             "N_coh_reference_pre_overlap": N_coh_tubulin,
             "N_coh_reference_operational": N_coh_tubulin_operational,
@@ -267,13 +279,14 @@ def main():
             "EC50 scaling with Trp-pocket-binding strength."
         ),
         "remaining_open": (
-            "Two parameters in the formula remain Tier 3: g_single^eff (calibrated "
-            "to ~38.3 MHz pre-overlap, overlap-propagated in the operational branch) and omega_d "
-            "(~112 MHz primary branch, pending O.12 frequency-scale renormalization). Closure "
-            "of these two would elevate the entire N_coh derivation to Tier 2. "
+            "The physical adoption remains open: g_single^eff is externally calibrated "
+            "to ~38.3 MHz pre-overlap (overlap-propagated in the operational branch) and omega_d "
+            "(~112 MHz primary branch, pending O.12 frequency-scale renormalization). "
+            "omega_d is a Tier-3 specific value; neither establishes a substrate verdict. "
             "Closure of g_single^eff requires the cavity-polariton avoided-"
             "crossing mechanism (bundled with B3); closure of omega_d requires "
-            "O.12. The N_coh formula structure itself is now Tier 2."
+            "O.12. The N_coh formula has Tier 2 algebraic form; its evaluated values are "
+            "conditional scenarios on Tier 3 calibrated inputs."
         ),
     }
 

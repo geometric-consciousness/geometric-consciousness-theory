@@ -4,7 +4,7 @@ H.2.3 Itinerant Phason Defect Eigenvalue phi^(-36) Verification
 
 Tests the V3 Ch09 Theorem 9.1 prediction m_nu = m_e * phi^(-36) by
 direct numerical eigenvalue computation on an icosahedrally-reduced
-lattice sector. The full 6D lattice simulation (Protocol G, App H
+lattice sector. The full 6D lattice simulation (Protocol G, App ORQ
 H.2.3) is HPC-flavored, but the icosahedral symmetry of the GCT
 construction permits restriction to a small (N = 12 vertex) sector
 in the totally-symmetric A_g irrep of H_3, where the lowest itinerant-
@@ -13,15 +13,19 @@ phason eigenvalue is tractable on a workstation.
 Theory recap (V3 Ch09 Sec 9.2.2):
   m_nu/m_e ~ (K_perp/K_parallel)^2 = (phi^(-18))^2 = phi^(-36)
   where K_perp/K_parallel = phi^(-18) is the phason stiffness ratio
-  (V2 App K Sec K.3). The interpretation is "double-projection
+  (V2 App DPS Sec DPS.3). The interpretation is "double-projection
   suppression": E_parallel -> E_perp -> E_parallel via two
   consecutive K_perp/K_parallel factors.
 
 Equivalent See-Saw formulation (V3 Ch09 Sec 9.2.3, Theorem 9.2):
   m_nu_active = m_Dirac^2 / M_R
-  where m_Dirac = m_e * phi^(-18) and M_R = M_E_6 = M_P * phi^(-9).
-  Numerical reconciliation with Theorem 9.1 sets the "reduced Planck"
-  scale M_red such that M_red = m_e * phi^9 (V3 Ch09 Sec 9.3.4).
+  where m_Dirac = m_e * phi^(-18) and M_R = M_E_6 = M_red * phi^(-9)
+  (M_red = reduced Planck mass; M_E_6 ~ 3.2e16 GeV, Tier 3, conditional on O.15).
+  With that GUT scale the See-Saw term is ~20 orders of magnitude below
+  Theorem 9.1. Reproducing Theorem 9.1 with the See-Saw form requires an
+  effective scale M_R^eff = m_e (V3 Ch09 Theorem 9.3), which is chosen to
+  match; the 2x2 agreement below is therefore an algebraic identity, not an
+  independent verification.
 
 Numerical strategy:
   1. Build a 2x2 See-Saw matrix at the symbolic level with the
@@ -55,7 +59,7 @@ What this protocol DOES NOT close (research-level open):
 
 Cross-reference: V3 Ch09 Sec 9.2.2 (Geometric See-Saw),
 Sec 9.2.3 (E_6 form), Sec 9.3.1 (Theorem 9.1 phi^(-36));
-V2 App K Sec K.3 (phason stiffness phi^(-18)); App H H.2.3.
+V2 App DPS Sec DPS.3 (phason stiffness phi^(-18)); App ORQ H.2.3.
 """
 
 from __future__ import annotations
@@ -80,7 +84,8 @@ PHI_NEG_27 = PHI ** (-27)
 
 # CODATA / PDG anchors
 M_E_MEV = 0.51099895069
-M_PLANCK_MEV = 1.220890e22  # reduced Planck mass in MeV
+M_PLANCK_MEV = 1.220890e22  # full Planck mass in MeV (sqrt(hbar c / G))
+M_RED_PLANCK_MEV = 2.435323e21  # reduced Planck mass M_P / sqrt(8 pi) in MeV
 M_NU_TARGET_MEV = M_E_MEV * PHI_NEG_36  # Theorem 9.1 prediction
 
 
@@ -182,18 +187,19 @@ def itinerant_seesaw_eigenvalues(m_Dirac: float, M_R: float,
 
 def compute() -> dict:
     # Two reconciliations of M_R per V3 Ch09 prose:
-    #   (a) GUT See-Saw form (Sec 9.2.3 Theorem 9.2): M_R = M_P * phi^(-9).
-    #       Gives m_nu = m_e^2 * phi^(-27) / M_P -- much smaller than
-    #       Theorem 9.1.
-    #   (b) Double-projection form (Sec 9.2.2 Theorem 9.1):
-    #       requires M_R at the m_e * phi^9 ~ 39 MeV scale to make
-    #       m_nu = m_Dirac^2 / M_R = m_e * phi^(-36).
-    # The phi^(-36) eigenvalue law is the load-bearing physical claim
-    # of Theorem 9.1; we verify it via the aligned M_R (b).
+    #   (a) GUT See-Saw form (Sec 9.2.3 Theorem 9.2): M_R = M_red * phi^(-9)
+    #       ~ 3.2e16 GeV. Gives m_nu = m_e^2 * phi^(-27) / M_red -- about 20
+    #       orders of magnitude smaller than Theorem 9.1.
+    #   (b) Double-projection form (Sec 9.2.2 Theorem 9.1): with the chosen
+    #       effective scale M_R^eff = m_e, m_nu = m_Dirac^2 / M_R^eff
+    #       = m_e * phi^(-36) holds identically.
+    # The phi^(-36) eigenvalue law is the load-bearing physical claim of
+    # Theorem 9.1; (b) is consistency arithmetic with a chosen effective
+    # scale, not a verification of it.
     m_Dirac_GCT = M_E_MEV * PHI_NEG_18
 
     # GUT See-Saw scales (Theorem 9.2 form)
-    M_R_GUT = M_PLANCK_MEV * PHI_NEG_9
+    M_R_GUT = M_RED_PLANCK_MEV * PHI_NEG_9
     seesaw_GUT = seesaw_2x2_eigenvalues(m_Dirac_GCT, M_R_GUT)
 
     # Aligned scales (Theorem 9.1 form):
@@ -228,6 +234,7 @@ def compute() -> dict:
         "constants": {
             "m_e_MeV": M_E_MEV,
             "M_Planck_MeV": M_PLANCK_MEV,
+            "M_red_Planck_MeV": M_RED_PLANCK_MEV,
             "phi_neg_18": PHI_NEG_18,
             "phi_neg_27": PHI_NEG_27,
             "phi_neg_36": PHI_NEG_36,
@@ -236,11 +243,11 @@ def compute() -> dict:
             "M_R_GUT_MeV": M_R_GUT,
             "M_R_RECON_MeV": M_R_RECON,
             "M_R_RECON_interpretation": (
-                "M_E_6 = m_e: the load-bearing See-Saw matrix entry. "
-                "Theorem 9.2 form (E_6 See-Saw) with M_red = m_e * phi^9 "
-                "gives M_E_6 = M_red * phi^(-9) = m_e, which is the "
-                "actual numerical reconciliation with Theorem 9.1's "
-                "phi^(-36) law."),
+                "M_R^eff = m_e is an effective See-Saw scale chosen so that "
+                "m_Dirac^2 / M_R^eff reproduces Theorem 9.1's phi^(-36) law; "
+                "it is distinct from the E_6 GUT scale M_E_6 = M_red * phi^(-9) "
+                "~ 3.2e16 GeV (Tier 3, conditional on O.15). The 2x2 agreement "
+                "is an algebraic identity given that choice."),
             "m_nu_T91_target_MeV": m_light_T91,
             "m_nu_T92_GUT_MeV": m_light_T92,
             "T92_GUT_to_T91_ratio": m_light_T92 / m_light_T91,
@@ -266,15 +273,15 @@ def compute() -> dict:
                 itinerant["light_eigenvalue_abs"] / M_E_MEV / PHI_NEG_36),
         },
         "closure_status": {
-            "tier": "Tier 2 icosahedrally-reduced verification",
+            "tier": "Tier 3: consistency arithmetic with a chosen effective scale (M_R^eff = m_e); not an independent verification",
             "claim": (
-                "The V3 Ch09 Theorem 9.1 prediction m_nu = m_e * phi^(-36) "
-                "is reproduced by the See-Saw structure at the 2x2 "
-                "symbolic level and survives icosahedrally-reduced "
-                "itinerant-hopping on a 12-vertex (A_g sector of H_3) "
-                "lattice. Theorem 9.2 (See-Saw form) and Theorem 9.1 "
-                "(geometric form) differ by a fixed reduced-mass "
-                "calibration factor consistent with Sec 9.3.4."),
+                "With M_R^eff = m_e chosen to match, the 2x2 See-Saw light "
+                "eigenvalue equals m_e * phi^(-36) identically, and it "
+                "survives a subdominant itinerant hopping (t = m_e * phi^(-42), "
+                "chosen below the See-Saw eigenvalue) on a 12-vertex (A_g "
+                "sector of H_3) lattice. With the E_6 GUT scale (Theorem 9.2) "
+                "the See-Saw term is ~20 orders of magnitude smaller. The "
+                "effective scale is not derived from the lattice."),
             "what_is_NOT_closed": (
                 "Full 6D non-perturbative lattice simulation with all "
                 "H_3 irreps (Protocol G full HPC). The icosahedrally-"
@@ -283,11 +290,11 @@ def compute() -> dict:
                 "(T_1u, T_2u, etc) and oscillation parameter (PMNS) "
                 "extraction require the full HPC calculation."),
             "scope_note": (
-                "H.2.3 is partially closed: the phi^(-36) eigenvalue "
-                "scaling is verified in the symmetry-reduced sector; "
-                "full HPC closure (with all icosahedral irreps + "
-                "thermal disorder + oscillation parameters) remains "
-                "research-level."),
+                "H.2.3 is open: the reduced-sector checks are consistency "
+                "arithmetic given the chosen effective scale; a lattice "
+                "derivation of that scale and full HPC closure (all "
+                "icosahedral irreps + thermal disorder + oscillation "
+                "parameters) remain research-level."),
         },
     }
 
@@ -310,19 +317,19 @@ def main():
     print(f"GCT scales:")
     print(f"  m_e             = {c['m_e_MeV']:.6e} MeV")
     print(f"  m_Dirac          = m_e * phi^(-18) = {c['m_Dirac_GCT_MeV']:.6e} MeV")
-    print(f"  M_R_GUT          = M_P * phi^(-9)  = {c['M_R_GUT_MeV']:.6e} MeV")
+    print(f"  M_R_GUT          = M_red * phi^(-9) = {c['M_R_GUT_MeV']:.6e} MeV")
     print(f"  M_R_RECON        = M_E_6 = m_e     = {c['M_R_RECON_MeV']:.6e} MeV (T91-aligned)")
     print(f"  phi^(-36)        = {c['phi_neg_36']:.6e}")
     print()
     print(f"T91 prediction (geometric):           m_nu = m_e * phi^(-36) = "
-          f"{c['m_nu_T91_target_MeV']*1e6:.4f} meV")
+          f"{c['m_nu_T91_target_MeV']*1e6:.4f} eV")
     print(f"T92 (GUT See-Saw form, M_R=GUT):       m_nu = "
-          f"{c['m_nu_T92_GUT_MeV']*1e6:.4e} meV "
-          f"(={c['T92_GUT_to_T91_ratio']:.3e} x T91; off by 21 orders)")
-    print(f"Aligned See-Saw (M_R = m_e*phi^9):  -> phase 1 below")
+          f"{c['m_nu_T92_GUT_MeV']*1e6:.4e} eV "
+          f"(={c['T92_GUT_to_T91_ratio']:.3e} x T91; ~20 orders below)")
+    print(f"Aligned See-Saw (chosen M_R^eff = m_e):  -> phase 1 below")
     print()
     print(f"baseline (2x2 See-Saw):")
-    print(f"  light eigenvalue = {p1['light_eigenvalue_MeV']*1e6:.4f} meV")
+    print(f"  light eigenvalue = {p1['light_eigenvalue_MeV']*1e6:.4f} eV")
     print(f"  light / m_e       = {p1['ratio_to_m_e']:.4e}")
     print(f"  light / (m_e * phi^(-36)) = {p1['ratio_to_phi_neg_36']:.4e}")
     print(f"  leading PT matches full: "
@@ -331,7 +338,7 @@ def main():
     print(f"extended-context (12-vertex icosahedron + itinerant hop):")
     print(f"  icosahedron edges = {p2['edge_count_verified']} "
           f"(expected 30: {p2['expected_30']})")
-    print(f"  lightest eigenvalue = {p2['lightest_eigenvalue_abs_MeV']*1e6:.4e} meV")
+    print(f"  lightest eigenvalue = {p2['lightest_eigenvalue_abs_MeV']*1e6:.4e} eV")
     print(f"  lightest / m_e       = {p2['ratio_to_m_e']:.4e}")
     print(f"  lightest / (m_e * phi^(-36)) = {p2['ratio_to_phi_neg_36']:.4e}")
     print()

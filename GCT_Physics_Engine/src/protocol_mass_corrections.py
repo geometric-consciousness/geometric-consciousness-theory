@@ -23,13 +23,13 @@ Targets:
 > formulas as stand-ins for the underlying 6D geometric operations. The
 > closed-form expressions are mathematically faithful to the intended derivations
 > at the analytical level; full non-perturbative lattice diagonalization
-> (App Z; QLQCD-1L Open Problem O.5) is the elevation path to Tier 1.
+> (App QLA; QLQCD-1L Open Problem O.5) is the elevation path to Tier 1.
 
 """
-# EPISTEMIC STATUS: FULL_LATTICE_MODE = False applies analytic Tier 2 verification.
-# The 5-fold degeneracy at n=11 and negative susceptibility at n=17
-# are ANALYTICALLY derived from discrete icosahedral geometry (Tier 2).
-# Set FULL_LATTICE_MODE = True and run on R>=2 lattice to complete full numerical closure.
+# EPISTEMIC STATUS: FULL_LATTICE_MODE = False runs an R=1 Hessian check of the
+# stated criteria (4..6 modes near phi^11; Re chi(phi^17) < 0). At R=1 both
+# criteria fail, so the result is open. The 5-fold degeneracy and the screening
+# sign are claims, not results, until an R>=2 run reproduces them.
 
 import json
 import numpy as np
@@ -45,10 +45,9 @@ PHI = float(C.PHI)
 # ── Lattice-resolution toggle ──────────────────────────────────────────────────────────
 # FULL_LATTICE_MODE=True runs full Hessian diagonalization at R>=2 to physically resolve
 # the 5-fold muon degeneracy at n=11 and tau diamagnetic screening at n=17.
-# FULL_LATTICE_MODE=False uses an analytic proxy: the derivation is correct by construction
-# (the exponents 11 and 17 are fixed geometrically, not fit to data).
+# FULL_LATTICE_MODE=False applies the same criteria to the R=1 Hessian, which
+# under-resolves the spectrum (omega_17 lies far above the R=1 spectrum maximum).
 FULL_LATTICE_MODE = False  # Full R>=2 Hessian diagonalization is the numerical target.
-                  # Analytic verification (R=1) is geometrically exact for Tier 2.
 
 # ── Epistemic Status Note ──────────────────────────────────────────────────
 # FULL_LATTICE_MODE=False verifies the mass spectrum analytically (Tier 2):
@@ -80,45 +79,50 @@ def run_mass_corrections_audit():
         H_matrix = relaxer.compute_hessian(lattice, H_obj)
         evals, _ = np.linalg.eigh(H_matrix)
         
-        # MUON (Analytic Verification)
+        # MUON: the stated criterion is a 5-fold (4..6) cluster at n=11,
+        # the same window the full-lattice branch uses.
+        # (The former literal `muon_pass = True` is retired.)
         muon_count = np.sum((evals >= PHI**10.5) & (evals <= PHI**11.5))
-        # Exponent n=11 is fixed by A5 icosahedral group theory.
-        muon_pass = True
-        
-        # TAU (Analytic Verification)
+        muon_pass = bool(4 <= int(muon_count) <= 6)
+
+        # TAU: the stated criterion is screening, Re[chi(omega_17)] < 0.
+        # Im[chi] < 0 holds for every eps > 0 and cannot fail, so it is
+        # recorded only as a diagnostic.
         omega_tau = PHI**17
         eps = 0.01
         chi = np.sum(1.0 / (omega_tau - evals + 1j * eps))
-        tau_pass = bool(chi.imag < 0)
-        
-        # PROTON (Analytic Verification)
+        tau_pass = bool(chi.real < 0)
+
+        # PROTON: 15 + phi^-1 is an input formula, not a computed check
+        # (the former comparison against its own decimal expansion is retired).
         proton_exponent = 15.0 + PHI**-1
-        proton_calc = 15.6180339887
-        proton_pass = bool(abs(proton_exponent - proton_calc) < 1e-6)
-        
-        all_pass = muon_pass and tau_pass and proton_pass
-        status_str = "ANALYTIC_PASS" if all_pass else "INCONCLUSIVE"
-        
-        print(f"  Muon degeneracy count: {muon_count} -> {'PASS' if muon_pass else 'FAIL'}")
-        print(f"  Tau Im(chi): {chi.imag:.4e} -> {'PASS' if tau_pass else 'FAIL'}")
-        print(f"  Proton exponent precision: {abs(proton_exponent - proton_calc):.4e} -> {'PASS' if proton_pass else 'FAIL'}")
-        print(f"  Analytic verification (R=1 Hessian): [{status_str}]. Set FULL_LATTICE_MODE=True for full R>=2 Hessian verification of 5-fold degeneracy and negative susceptibility from first principles.")
-        
+
+        all_pass = bool(muon_pass and tau_pass)
+        status_str = "R1_CRITERIA_MET" if all_pass else "R1_CRITERIA_NOT_MET"
+        verdict = (
+            "R1_MUON_DEGENERACY_AND_TAU_SCREENING_MET" if all_pass
+            else "R1_MUON_DEGENERACY_OR_TAU_SCREENING_NOT_REPRODUCED"
+        )
+
+        print(f"  Muon n=11 cluster count: {muon_count} (criterion 4..6) -> {'MET' if muon_pass else 'NOT MET'}")
+        print(f"  Tau Re(chi): {chi.real:.4e} (criterion < 0) -> {'MET' if tau_pass else 'NOT MET'}; omega_17 = {omega_tau:.1f}, spectrum max = {float(np.max(evals)):.1f}")
+        print(f"  Proton exponent 15 + phi^-1 = {proton_exponent:.10f} (input formula, not tested)")
+        print(f"  R=1 Hessian check: [{status_str}] -> {verdict}. The R>=2 full-lattice run is not registered.")
+
         results = {
-            "muon":   {"verdict": "ANALYTIC_PASS" if muon_pass else "INCONCLUSIVE", "degeneracy": int(muon_count), "harmonic": 11},
-            "tau":    {"verdict": "ANALYTIC_PASS" if tau_pass else "INCONCLUSIVE", "chi_imag": float(chi.imag), "harmonic": 17},
-            "proton": {"verdict": "ANALYTIC_PASS" if proton_pass else "INCONCLUSIVE", "base_winding": 15,
+            "muon":   {"verdict": "MET" if muon_pass else "NOT_MET", "degeneracy": int(muon_count), "criterion": "4 <= count <= 6", "harmonic": 11},
+            "tau":    {"verdict": "MET" if tau_pass else "NOT_MET", "chi_real": float(chi.real), "chi_imag_diagnostic_always_negative": float(chi.imag),
+                       "criterion": "Re chi(omega_17) < 0", "omega_17": float(omega_tau), "spectrum_max": float(np.max(evals)), "harmonic": 17},
+            "proton": {"verdict": "INPUT_NOT_TESTED", "base_winding": 15,
                        "geometric_correction": float(PHI**-1),
                        "total": float(proton_exponent)},
             "full_lattice_mode": False,
-            "status": f"Analytic verification (R=1 Hessian): [{status_str}]. Set FULL_LATTICE_MODE=True for full R>=2 Hessian verification of 5-fold degeneracy and negative susceptibility from first principles.",
+            "status": f"R=1 Hessian check: [{status_str}]. The R>=2 full-lattice diagonalization is the unregistered numerical target.",
+            "verdict": verdict,
             "pass": all_pass,
-            "verification_mode": "Tier 2 Analytic (R=1)"
+            "verification_mode": "R=1 Hessian (under-resolved)",
+            "retired_hardcoded_checks": "Literal muon_pass=True, cannot-fail Im(chi)<0 tau test and proton self-comparison retired.",
         }
-        
-        # NEVER write 'pass: True' if INCONCLUSIVE.
-        if status_str == "INCONCLUSIVE":
-            results["pass"] = False
             
         out_path = get_output_path("protocol_mass_corrections_results.json")
         with open(out_path, "w") as f:
@@ -214,8 +218,8 @@ def run_mass_corrections_audit():
     print("\n3. Proton Exponent: Baryon Winding Number...")
     # Simulation: 
     # Base winding of SO(3) is 2 (spinor). 
-    # Baryon is SU(3) triplet.
-    # Total invariant winding for "stable" baryon:
+    # Baryon: three quarks, each read as an SU(3) triplet (Tier 3 candidate).
+    # Total winding for "stable" baryon (Z3 x Z5 template Tier 2; selecting 15 as the base exponent is Tier 3):
     # 3 quarks * 5 (fundamental icosahedral index).
     # 15 is the winding number N_w.
     
@@ -231,7 +235,7 @@ def run_mass_corrections_audit():
     # Proton mass formula in Ch18:
     # ln(m_p / m_e) approx Spectrum...
     # The "Proton Exponent" specifically refers to the
-    # Topological Winding Number 15.618...
+    # exponent 15.618... (Tier 2 mechanism + Tier 3 sheet/exponent handle).
     
     results["proton"] = {
         "base_winding": 15,

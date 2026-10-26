@@ -51,20 +51,21 @@ def main():
 
  res = make_result(
  name="chi_holographic_susceptibility",
- app_r_label="Critical susceptibility χ = π(c/H_0 ℓ_P)² (holographic de Sitter entropy)",
+ app_psc_label="Critical susceptibility χ = π(c/H_0 ℓ_P)² (holographic de Sitter entropy)",
  formula="χ ≡ S_ent = π · (c / (H_0 · ℓ_P))²",
  predicted=chi_computed,
  observed=chi_stated,
+ reference_class="MANUSCRIPT_STATED",
  unit="(dimensionless area ratio)",
- app_r_predicted=2.27e122,
- app_r_precision_str=(
+ app_psc_predicted=2.27e122,
+ app_psc_precision_str=(
  f"H_0 = 67.4 km/s/Mpc → H_0/s = {H_0_per_s:.4e}; "
  f"ℓ_P = {l_P:.4e} m; "
  f"χ = {chi_computed:.3e} vs stated 2.27e122 ({relative_error_pct:+.3f}%)"
  ),
- app_r_precision_ppm=relative_error * 1e6,
+ app_psc_precision_ppm=relative_error * 1e6,
  tier="Tier 2 (de Sitter Bekenstein-Hawking entropy; no fitted Friedmann-expression parameter after observational cosmology anchors are supplied)",
- status="PASS" if matches else "TENSION",
+ status="INTERNAL_ARITHMETIC_PASS" if matches else "TENSION",
  tolerance_ppm=None,
  extra={
  "c_m_per_s": c,

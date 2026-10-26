@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" width="100%" height="100%">
   <title>Phason healing length and lumen scale</title>
-  <metadata>Volume 1 Chapter 7 / Appendix K phason profile schematic.</metadata>
+  <metadata>Volume 1 Chapter 7 / Appendix DPS phason profile schematic.</metadata>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#2c5d8a"/>
@@ -58,7 +58,7 @@
   <line x1="293.974" y1="608.000" x2="526.026" y2="608.000" stroke="#2c5d8a" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
   <text x="410.000" y="599.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:14px;fill:#2c5d8a;font-weight:bold;">2 xi = 14.50 nm</text>
   <line x1="290.000" y1="642.000" x2="530.000" y2="642.000" stroke="#475569" stroke-width="2" marker-start="url(#arrowMuted)" marker-end="url(#arrowMuted)"/>
-  <text x="410.000" y="663.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#475569;">microtubule lumen ID approx 15 nm</text>
+  <text x="410.000" y="663.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#475569;">microtubule lumen ID approx 15-17 nm</text>
   <text x="293.974" y="488.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#2c5d8a;">-xi</text>
   <text x="526.026" y="488.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#2c5d8a;">+xi</text>
   <text x="293.974" y="512.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">-7.25 nm</text>
@@ -80,6 +80,6 @@
   <rect x="785.000" y="482.000" width="135.676" height="18.000" fill="#2c5d8a"/>
   <text x="785.000" y="518.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">polaron diameter 14.50 nm</text>
   <rect x="785.000" y="530.000" width="140.323" height="18.000" fill="#94a3b8"/>
-  <text x="785.000" y="562.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">lumen diameter approx 15 nm</text>
+  <text x="785.000" y="562.000" text-anchor="start" style="font-family:Arial, Helvetica, sans-serif;font-size:12px;fill:#475569;">lumen diameter approx 15-17 nm</text>
   <text x="500.000" y="700.000" text-anchor="middle" style="font-family:Arial, Helvetica, sans-serif;font-size:13px;fill:#475569;">Interpretation: quantitative boundary-condition correlation only; not a first-principles derivation of the lumen geometry.</text>
 </svg>

@@ -2,9 +2,9 @@
 """
 protocol_phason_oneloop_AKN.py
 ================================
-Computational closure for Open Problem O.19 (App H §H.5):
+Computational closure for Open Problem O.19 (App ORQ §ORQ.5):
 compute the SIGN of the one-loop phason self-energy on a small AKN patch and
-test whether it produces the +3442 ppm anti-screening shift in alpha^{-1}
+test whether it produces the +3443 ppm anti-screening shift in alpha^{-1}
 required to close the V3 Ch07 §7.2.4 electromagnetic-sector residual.
 
 CAREFUL SIGN CONVENTION REVIEW
@@ -30,7 +30,7 @@ GCT framing of "bare" vs "observed":
 - "bare" = tree-level geometric value at the icosahedral / Planck reference scale
   alpha^{-1}_bare = 360 * phi^{-2} ~ 137.508
 - "observed" = low-energy QED Thomson-limit measurement
-  alpha^{-1}_obs = 137.036 (CODATA 2022)
+  alpha^{-1}_obs = 137.035999177 (CODATA 2022 A3)
 - Direction: alpha^{-1}_bare > alpha^{-1}_obs
   Equivalently: alpha^{-1}(UV reference) > alpha^{-1}(IR observed)
 
@@ -41,10 +41,11 @@ Matching to QFT conventions:
   Fermion-loop QED screening: alpha^{-1}(UV) < alpha^{-1}(IR)  ← OPPOSITE
   Bosonic-loop NAGT anti-screening: alpha^{-1}(UV) > alpha^{-1}(IR)  ← MATCHES
 
-CONCLUSION: GCT's bare > observed direction MATCHES standard bosonic-loop
-anti-screening (asymptotic-freedom direction). The App M §M.7.1 claim that
-phason bosonic loops generate the +3442 ppm shift is SIGN-CONSISTENT with
-standard QFT conventions.
+CONCLUSION: under the declared bare = UV reference convention, GCT's
+bare > observed direction is compatible with the bosonic-loop anti-screening
+template. App ORQ O.19 records this as template-direction compatibility
+only: the 'anti-screening' label is tied to an undeclared choice of
+reference scale, and neither the sign nor the magnitude is source-derived.
 
 A sign-convention check on the lambda_phi normalisation is required to keep
 the bubble integral consistent with the gauge-coupling renormalisation
@@ -52,7 +53,7 @@ convention used elsewhere. Under the convention adopted here, the bubble
 integral is SIGN-CONSISTENT: bosonic phason loops give the correct
 (anti-screening) direction.
 
-MAGNITUDE QUESTION (separate from sign): the +3442 ppm magnitude requires
+MAGNITUDE QUESTION (separate from sign): the +3443 ppm magnitude requires
 a specific coupling strength + propagator structure on the AKN lattice.
 Even if the sign is correct, the MAGNITUDE may not match without specific
 parameter fits. The numerical bubble computation below establishes:
@@ -61,7 +62,7 @@ parameter fits. The numerical bubble computation below establishes:
 
 For sign-only closure of O.19: PASS.
 For magnitude closure of O.19: STILL OPEN (requires fixed-coupling computation
-matching the +3442 ppm to within the bare phason-loop precision).
+matching the +3443 ppm to within the bare phason-loop precision).
 """
 
 import math
@@ -117,10 +118,11 @@ def phason_bubble_at_zero_momentum(N_grid=8, m_phason_sq=0.001):
     which inserts |k|^2 momentum factors and reproduces the anti-screening
     direction characteristic of non-abelian gauge bosons.
 
-    The App M §M.4 identification of the photon A_mu as the Berry connection
-    of icosahedral phason rotations forces the derivative-coupling form (App M
-    §M.4 + the non-trivial topology of E_perp / I_h). The flat bubble computed
-    here is retained as a baseline for the bubble-ratio test in main().
+    The derivative-coupling form is an assumed NAGT-class template: the App ULA
+    §ULA.4 Berry-connection reading does not force it, because a finite
+    point-group quotient does not force Berry curvature (App ORQ O.19). The
+    flat bubble computed here is retained as a baseline for the bubble-ratio
+    test in main().
     """
     K_perp = PHI ** (-18)
 
@@ -151,25 +153,25 @@ def phason_bubble_derivative_coupling(N_grid=8, m_phason_sq=0.001):
     level, and a net |k|^2 scalar weight inside the bubble integral at zero
     external momentum.
 
-    Structural justification: the App M §M.4 identification of A_mu as the
-    Berry connection of icosahedral phason rotations places the phason-photon
-    coupling in the NAGT class -- the gauge connection structure forces
-    F_munu^2 kinetic terms with (partial A)^2 vertices, not Yukawa-style
-    multiplicative scalar couplings. The non-trivial topology of the icosahedral
-    quotient E_perp / I_h ensures the Berry curvature is non-flat, which is
-    the geometric source of the NAGT-style self-interaction.
+    Template status: this bubble ASSUMES the NAGT-class template (F_munu^2
+    kinetic terms with (partial A)^2 vertices). The App ULA §ULA.4
+    Berry-connection reading does not force that template: a finite
+    point-group quotient does not force Berry curvature, and I_h admits no
+    quadratic Casimir in the standard Lie-algebraic sense (App ORQ O.19;
+    App ULA).
 
-    Consequence for alpha closure: the derivative-coupling bubble gives Pi(0)
-    in the anti-screening (asymptotic-freedom) direction, consistent with the
-    GCT direction alpha^{-1}_bare > alpha^{-1}_obs and with the App M §M.7.1
-    phason anti-screening claim.
+    Consequence: under the template, the derivative-coupling bubble gives
+    Pi(0) in the anti-screening direction, compatible with the GCT direction
+    alpha^{-1}_bare > alpha^{-1}_obs under the declared reference-scale
+    convention. Template-direction compatibility only; neither the sign nor
+    the magnitude is source-derived.
 
     The ratio B_deriv / B_flat is a structural-magnitude indicator: it is the
     average <k^2> weighted by the bubble integrand on the present periodic
     momentum grid. The absolute magnitude of B_deriv depends on the AKN
     momentum-space measure (currently approximated by the periodic grid;
-    proper AKN replacement requires the 32-vertex-star enumeration of App Z
-    §Z.3, currently bookmarked as a separate engine deliverable).
+    proper AKN replacement requires the 32-vertex-star enumeration of App QLA
+    §QLA.3, currently bookmarked as a separate engine deliverable).
     """
     K_perp = PHI ** (-18)
 
@@ -193,7 +195,7 @@ def phason_bubble_derivative_coupling(N_grid=8, m_phason_sq=0.001):
 def coupling_structure_analysis():
     """Structural identification of the phason-photon coupling type.
 
-    App M §M.4 identifies A_mu as the U(1) Berry connection of the icosahedral
+    App ULA §ULA.4 identifies A_mu as the U(1) Berry connection of the icosahedral
     phason rotational field. The Berry-connection construction places the
     coupling in one of two classes determined by the topology of the order-
     parameter manifold:
@@ -208,36 +210,47 @@ def coupling_structure_analysis():
         sign is anti-screening (asymptotic-freedom direction).
 
     The GCT phason field lives in E_perp (isomorphic to R^3) at each lattice node, but
-    the icosahedral locking potential V_lock (App M §M.2) quotients by I_h
+    the icosahedral locking potential V_lock (App ULA §ULA.2) quotients by I_h
     (point group of order 120). The configuration manifold is therefore
     E_perp / I_h, which is non-trivially topologized by the 12 rhombic-
     triacontahedral vertices acted on transitively by I_h. The Berry
     connection on this quotient has non-flat curvature whose leading non-
     trivial component scales with the icosahedral cell structure of E_perp / I_h.
 
-    This places the GCT phason-photon coupling in the NAGT class and yields
-    the anti-screening sign for Pi(0), consistent with the GCT direction
-    alpha^{-1}_bare > alpha^{-1}_obs and with the App M §M.7.1 claim.
+    The NAGT-class reading above is a TEMPLATE, not a derivation (App ORQ
+    O.19; App ULA): a finite point-group quotient does not force Berry
+    curvature (for an Abelian U(1) connection A wedge A = 0, and a non-Abelian
+    commutator requires a derived degenerate multiplet), and I_h is a
+    discrete reflection group with no quadratic Casimir in the standard
+    Lie-algebraic sense. The check below is template-direction compatibility
+    only; neither the sign nor the magnitude is source-derived.
     """
     return {
         "configuration_manifold": "E_perp / I_h  (R^3 quotient by icosahedral point group, |I_h| = 120)",
-        "berry_connection_class": "NAGT-like (non-flat Berry curvature from non-abelian quotient)",
-        "supports_F_munu_squared_kinetic_term": True,
-        "implies_derivative_coupling_bubble": True,
-        "consistent_with_M_7_1_anti_screening_claim": True,
+        "berry_connection_class": (
+            "NAGT-like TEMPLATE (assumed, not derived; a finite I_h quotient does not "
+            "force Berry curvature - App ORQ O.19)"
+        ),
+        "nagt_class_forced_by_quotient": False,
+        "assumes_F_munu_squared_kinetic_term": True,
+        "assumes_derivative_coupling_bubble": True,
+        "template_direction_compatible_with_M_7_1_anti_screening": True,
+        "sign_source_derived": False,
         "note": (
-            "The non-trivial topology of the I_h orbit on the 12 RT vertices in E_perp "
-            "ensures the Berry curvature is non-flat at leading non-trivial order in "
-            "|Phi_perp|. This forces the phason-photon coupling into the NAGT class, "
-            "yielding anti-screening sign for the one-loop vacuum polarization, "
-            "consistent with the GCT bare-versus-observed direction."
+            "If the phason-photon coupling is modelled by the NAGT-class template "
+            "(non-flat Berry curvature on E_perp / I_h), the one-loop vacuum "
+            "polarization has the anti-screening sign, compatible with the GCT "
+            "bare-versus-observed direction. The template is not forced by the "
+            "quotient: a finite point-group quotient does not force Berry curvature, "
+            "and I_h admits no quadratic Casimir in the standard Lie-algebraic sense "
+            "(App ORQ O.19; App ULA). Template-direction compatibility only."
         ),
     }
 
 
 def main():
     print("=" * 76)
-    print("Phason one-loop self-energy on the AKN lattice (App M §M.7.1; O.19)")
+    print("Phason one-loop self-energy on the AKN lattice (App ULA §ULA.7.1; O.19)")
     print("=" * 76)
 
     sign = sign_convention_analysis()
@@ -265,13 +278,13 @@ def main():
     print("  (Average squared momentum weighted by the bubble integrand on the")
     print("   present periodic 8^3 grid. Proper AKN momentum-space replacement")
     print("   is a separate engine deliverable, prerequisite: 32-vertex-star")
-    print("   enumeration per App Z §Z.3.)")
+    print("   enumeration per App QLA §QLA.3.)")
 
     verdict = {
         "target": (
-            "Phason one-loop self-energy on the AKN lattice produces the +3442 ppm "
-            "anti-screening shift required by App M §M.7.1 (which closes ~3400 ppm "
-            "via the bilayer 1/(2N) correction; the remaining 41.6 ppm is the O.19 "
+            "Phason one-loop self-energy on the AKN lattice produces the +3443 ppm "
+            "anti-screening shift required by App ULA §ULA.7.1 (which closes ~3400 ppm "
+            "via the bilayer 1/(2N) correction; the remaining 41.5 ppm is the O.19 "
             "magnitude target)."
         ),
         "sign_analysis": sign,
@@ -279,17 +292,22 @@ def main():
         "bubble_flat": bubble_flat,
         "bubble_derivative": bubble_deriv,
         "bubble_ratio_deriv_over_flat": bubble_ratio,
-        "status_sign": "CONFIRMED — GCT direction matches bosonic anti-screening / asymptotic-freedom sign convention",
+        "status_sign": (
+            "TEMPLATE-DIRECTION COMPATIBILITY ONLY — the GCT bare-versus-observed direction "
+            "is compatible with the bosonic anti-screening template under the declared "
+            "reference-scale convention; sign and magnitude not source-derived (App ORQ O.19)"
+        ),
         "status_coupling_class": (
-            "CONFIRMED structurally — App M §M.4 Berry-connection identification on "
-            "E_perp / I_h forces NAGT-class coupling (non-flat Berry curvature from "
-            "non-abelian icosahedral quotient). The App M §M.7.1 anti-screening claim "
-            "is structurally implied, not just sign-consistent."
+            "TEMPLATE ONLY — the NAGT-class coupling is an assumed template, not forced by "
+            "the E_perp / I_h quotient (a finite point-group quotient does not force Berry "
+            "curvature; I_h has no quadratic Casimir in the standard Lie-algebraic sense). "
+            "Template-direction compatibility only; sign and magnitude not source-derived "
+            "(App ORQ O.19; App ULA)."
         ),
         "status_magnitude": (
             "OPEN — explicit computation of the Berry curvature 2-form on E_perp / I_h "
             "at quadratic order in |Phi_perp| remains, together with the AKN momentum-"
-            "space replacement of the periodic grid. The +41.6 ppm magnitude is the "
+            "space replacement of the periodic grid. The +41.5 ppm magnitude is the "
             "ultimate target."
         ),
     }

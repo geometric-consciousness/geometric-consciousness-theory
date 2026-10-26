@@ -132,9 +132,10 @@ class SpectrumAnalyzer:
 
         - Downstream use of this matrix in `protocol_connes_isomorphism.py`
           relies on the F_12 = 144 = 12^2 Fibonacci-perfect-square structural
-          commitment of Ch07 §7.1.3 (Gauss-Bonnet uniqueness sub-proof). The
+          commitment of Ch07 §7.1.3 (Tier 3 cage posit; Gauss--Bonnet supplies
+          only an exact polyhedral boundary check). The
           I_h-symmetry arguments downstream (H_3 character-orthogonality
-          projections for $C_2^{\rm eff}$ in App M §M.7.1; sum-of-squared-
+          projections for $C_2^{\rm eff}$ in App ULA §ULA.7.1; sum-of-squared-
           Coxeter-exponents identification |n| = 107) are invariance arguments
           on the parent H_3 group structure of the 6D lattice rather than on
           this specific perp-truncated cage; they apply to the truncation as
@@ -337,8 +338,8 @@ class SpectrumAnalyzer:
 
     def compute_a5_spectral_ratio(self, D_F: np.ndarray) -> float:
         """
-        Extracts the spectral dimensionality ratio of the 5-degenerate (5E) 
-        and 4-degenerate (4D) channels directly from the graph eigenspectrum.
+        Extracts the spectral dimensionality ratio of the 5-degenerate H
+        and 4-degenerate G channels directly from the graph eigenspectrum.
         Used to eliminate algebraic shortcuts in the Bottom Quark mass derivation.
         
         Parameters
@@ -360,16 +361,16 @@ class SpectrumAnalyzer:
         # 3. Locate the A5 representation channels by their dimensionality
         # The defect cage possesses strict icosahedral A5 symmetry, which mandates
         # irreducible representations of dimension 1, 3, 4, and 5.
-        has_5E = 5 in counts
-        has_4D = 4 in counts
-        
-        if not (has_5E and has_4D):
-            raise ValueError(f"Cage eigenspectrum lacks requisite A5 5E or 4D degenerate channels. Spectrum counts found: {counts}")
+        has_H = 5 in counts
+        has_G = 4 in counts
+
+        if not (has_H and has_G):
+            raise ValueError(f"Cage eigenspectrum lacks requisite A5 H or G degenerate channels. Spectrum counts found: {counts}")
             
-        dim_5E = 5.0
-        dim_4D = 4.0
+        dim_H = 5.0
+        dim_G = 4.0
         
-        return dim_5E / dim_4D
+        return dim_H / dim_G
 
     def compute_fuglede_kadison_determinant(self, D_F: np.ndarray) -> Dict:
         """

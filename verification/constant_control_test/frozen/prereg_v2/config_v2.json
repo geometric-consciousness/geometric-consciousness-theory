@@ -1,0 +1,76 @@
+{
+ "version": "2.0",
+ "source": "PREREG_V2_FROZEN.md §2, §3, §5, §10 (approved by Pablo 2026-10-20 ~11:40 CDMX). Mechanical transcription; the document wins on disagreement.",
+ "w": 0.1,
+ "M_phi": 1000,
+ "Mp_phi": 9999,
+ "M_ctrl": 200,
+ "Mp_ctrl": 999,
+ "n_plants": 50,
+ "n_ctrl2": 300,
+ "n_ctrl3": 100,
+ "ladder": [
+  [
+   "lam",
+   0.75
+  ],
+  [
+   "lam",
+   0.25
+  ],
+  [
+   "lam",
+   0.5
+  ],
+  [
+   "k",
+   3
+  ],
+  [
+   "k",
+   4
+  ],
+  [
+   "k",
+   5
+  ]
+ ],
+ "variants": [
+  "V2",
+  "V4",
+  "V8_1e-3"
+ ],
+ "variants_dither_width": {
+  "w003": 0.03,
+  "w05": 0.5
+ },
+ "S_report": true,
+ "null_base_range": [
+  1.3,
+  2.0
+ ],
+ "informative_rows": [
+  "m_u",
+  "m_d",
+  "m_t",
+  "m_H",
+  "sin2thW",
+  "s23",
+  "s13",
+  "th13"
+ ],
+ "V6_drop": [
+  "m_t",
+  "alphas_inv",
+  "sin2thW",
+  "s12"
+ ],
+ "seed_rule": "master = int(sha256(prereg_v2/SHA256SUMS)[:16], 16); SeedSequence(master).spawn(19) in the order of main_v2.STREAMS",
+ "engine": "v1 engine src/cct (unchanged since v1 run, D2 fix included); unit = score_base(b, cfg, y) T2 hits under L_i^GCT (H) or g_i (S)",
+ "level0": [
+  "k",
+  6
+ ],
+ "power_control": "k = 6: per plant, 6 rows chosen uniformly without replacement among the 8 informative rows that b* misses on y0; if b* misses fewer than 6, all its missed informative rows are planted (so after planting at least 6 of the 8 informative rows are T2 hits). Fixed after the scrambled-target pilot (Pablo 'B', 2026-10-20).",
+ "alpha": 0.01
+}

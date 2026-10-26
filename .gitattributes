@@ -1,0 +1,14 @@
+*.pdf binary
+
+# Generated files whose generators write LF and whose --check compares bytes.
+# Pin LF so core.autocrlf=true checkouts do not make the checks fail.
+content/99_Global_Backmatter/03_Master_Index.md text eol=lf
+content/98_Global_Appendices/App_PSC_Precision_Scorecard.md text eol=lf
+content/Figures/GCT_Figures_Catalog_DETAILED.md text eol=lf
+output/GCT_Figures_Catalog_DETAILED.md text eol=lf
+output/figures_manifest.json text eol=lf
+CODEBASE_STRUCTURE.md text eol=lf
+
+# Byte-exact frozen test inputs and outputs: SHA-256 manifests hash the committed bytes.
+verification/*/frozen/** -text
+verification/*/results/** -text

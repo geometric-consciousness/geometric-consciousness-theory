@@ -1,14 +1,17 @@
 {
   "name": "dm_line_width_morphology",
-  "app_r_label": "3.55 keV line width + morphology gate (P.3)",
+  "app_psc_label": "3.55 keV line width + morphology gate (P.3)",
   "formula": "P.3 decisive gate: terminal no-line Gamma<=2.0e-28 s^-1 in >=94 Ms equivalent (XRISM 3.75 Ms stack Gamma<=1.0e-27 scaled by sqrt(3.75/94)); 26 Ms/Gamma<=3.8e-28 is a morphology-linewidth milestone; W_int>20 eV; morphology Delta chi^2>=9 vs smooth rho and smooth rho^2 with D_sep>=0.25. Background-limited Gamma<=1.2e-30 is theoretical, not operative.",
-  "tier": "Tier 2 linewidth/morphology mechanism",
+  "tier": "Tier 3 morphology template + open linewidth (Ch11 \u00a711.2.3)",
   "predicted": 20.0,
   "observed": null,
+  "reference_class": "EMPIRICAL_ANCHOR",
+  "band_outcome": "NO_NUMERIC_VERIFIER_BAND",
+  "derivational_closure": "OPEN_CONDITIONAL",
   "unit": "eV",
-  "app_r_predicted": 20.0,
-  "app_r_precision_str": "OPEN_CONDITIONAL (awaiting decisive Gamma/exposure + W_int + Delta chi^2 morphology)",
-  "app_r_precision_ppm": null,
+  "app_psc_predicted": 20.0,
+  "app_psc_precision_str": "OPEN_CONDITIONAL (awaiting decisive Gamma/exposure + W_int + Delta chi^2 morphology)",
+  "app_psc_precision_ppm": null,
   "independent_precision_ppm": null,
   "status": "OPEN_CONDITIONAL",
   "tolerance_ppm": null,
@@ -35,6 +38,6 @@
     "frozen_target_cells": "Bullet bow-shock/Mach shell; Coma merger/radio-relic shells; A2142 cold-front/merger shell; A3667/A2256/A2319 shock or merger shells; off-core Perseus/A2029/A1795 annuli only where pre-line P_proxy >= 0.53 keV cm^-3; relaxed cool cores excluded unless their pre-line maps exceed the cut.",
     "morphology_background_counts_26Ms": 343.0,
     "morphology_source_counts_3sigma_26Ms": 55.6,
-    "decision_rule": "Protocol C operative aperture is mass-weighted stress-gated regions with pre-line P_proxy >= sigma_crit = 0.53 keV cm^-3 in the XRISM stacked-cluster sample. GCT is falsified at terminal no-line sensitivity if no 3.55 keV line is detected at Gamma<=2.0e-28 s^-1 in >=94 Ms equivalent, or if a detected line has W_int>20 eV, or if a smooth rho or smooth rho^2 template beats the stress-gated rho_above_sigma_crit^2 template by Delta chi^2 >=9 after pre-line template separation D_sep>=0.25 is established. If the stress template does not beat both smooth templates by Delta chi^2>=9 but neither smooth template wins decisively, the morphology branch remains OPEN_CONDITIONAL, not FAIL. The background-limited F_3sigma~=1.1e-8 ph/cm^2/s (Gamma<=1.2e-30 s^-1) is theoretical, not operative. At 26 Ms, B~=343 and 3sqrt(B)~=55.6 counts power Delta chi^2>=9 for the registered morphology degree of freedom when the pre-line stress template is separated from both smooth templates. Centroid agreement is postdiction context."
+    "decision_rule": "Protocol C operative aperture is mass-weighted stress-gated regions with pre-line P_proxy >= sigma_crit = 0.53 keV cm^-3 in the XRISM stacked-cluster sample. The registered Protocol C branch is falsified at terminal no-line sensitivity if no 3.55 keV line is detected at Gamma<=2.0e-28 s^-1 in >=94 Ms equivalent, or if a detected line has W_int>20 eV, or if a smooth rho or smooth rho^2 template beats the stress-gated rho_above_sigma_crit^2 template by Delta chi^2 >=9 after pre-line template separation D_sep>=0.25 is established. If the stress template does not beat both smooth templates by Delta chi^2>=9 but neither smooth template wins decisively, the morphology branch remains OPEN_CONDITIONAL, not FAIL. The background-limited F_3sigma~=1.1e-8 ph/cm^2/s (Gamma<=1.2e-30 s^-1) is theoretical, not operative. At 26 Ms, B~=343 and 3sqrt(B)~=55.6 counts power Delta chi^2>=9 for the registered morphology degree of freedom when the pre-line stress template is separated from both smooth templates. Centroid agreement is postdiction context."
   }
 }

@@ -6,7 +6,7 @@ from gct_utils import C, get_output_path
 def run_protocol():
     """
     Diagnostic extraction of the coefficient that would map the bare
-    3442 ppm alpha residual onto a one-loop boundary-vacuum-polarization form.
+    3443 ppm alpha residual onto a one-loop boundary-vacuum-polarization form.
     The CODATA value is an empirical comparison target, not a derivation input.
     """
     print("Executing: protocol_cft_boundary.py")
@@ -18,8 +18,8 @@ def run_protocol():
     
     # Verification target (CODATA): empirical alpha^-1 used only to measure
     # the residual and back-solve the diagnostic C_ico coefficient.
-    alpha_obs_inv = float(getattr(C, "ALPHA_INV_OBS", 137.035999084))
-    alpha_obs = 1.0 / alpha_obs_inv
+    from gct_utils import resolve_a3
+    alpha_obs, alpha_obs_inv = resolve_a3(C)
     
     # 2. Fractional shift required
     # delta_alpha / alpha_obs
@@ -44,8 +44,11 @@ def run_protocol():
         "residual_ppm": float(delta_alpha_over_alpha * 1e6),
         "log_span": float(log_span),
         "C_ico_extracted": float(c_ico),
-        "verdict": "DIAGNOSTIC_EXTRACTION",
-        "pass": True,
+        # The former literal pass=True is retired. C_ico is
+        # back-solved so that the bare alpha reproduces CODATA; the agreement
+        # is a fit by construction and tests nothing.
+        "verdict": "FIT_BY_CONSTRUCTION_DIAGNOSTIC_EXTRACTION",
+        "pass": False,
         "classification": (
             "Verification target (CODATA) plus diagnostic back-solved "
             "coefficient; not a core parameter anchor"
@@ -53,7 +56,7 @@ def run_protocol():
     }
 
     print(f"  Residual Gap: {results['residual_ppm']:.4f} ppm")
-    print(f"  Extracted C_ico: {results['C_ico_extracted']:.10f}")
+    print(f"  Extracted C_ico: {results['C_ico_extracted']:.10f} (back-solved from CODATA; fit by construction)")
     
     # Save results
     output_path = get_output_path("protocol_cft_boundary_results.json")

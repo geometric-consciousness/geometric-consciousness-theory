@@ -2,8 +2,8 @@
 """
 protocol_anomaly_check.py — Anomaly Audit 
 ======================================================
-Verifies that the GCT-derived particle spectrum constitutes a consistent,
-anomaly-free quantum field theory.
+Verifies that the registered GCT candidate spectrum (Tier 3 charge assignment) has
+anomaly-free traces (Tier 1 given the assignment).
 
 Checks:
 1. U(1)-Gravitational Anomaly (Sum Y)
@@ -76,7 +76,11 @@ def run_anomaly_audit():
     print("="*60)
     
     results["overall_verdict"] = "PASS" if all_pass else "FAIL"
-    results["pass"] = bool(all_pass)
+    # The charges are the typed Standard Model
+    # hypercharges, so cancellation is a textbook SM identity with no GCT input.
+    results["identity_holds"] = bool(all_pass)
+    results["verdict"] = "SM_HYPERCHARGE_ANOMALY_IDENTITY_NO_GCT_INPUT" if all_pass else "FAIL"
+    results["pass"] = False
     
     # Save
     out_path = get_output_path("protocol_anomaly_check_results.json")

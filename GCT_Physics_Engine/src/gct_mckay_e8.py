@@ -3,9 +3,12 @@
 gct_mckay_e8.py — McKay Correspondence & E8 Root System
 =====================================================================
 Verifies the canonical McKay correspondence for the binary icosahedral
-group 2I.  The load-bearing Tier 1 claim is not a 600-cell shell-count:
-it is the equivalence between irreducible 2I representations, fusion by
-the defining SU(2) representation, and the affine E8 Dynkin graph.
+group 2I.  The load-bearing Tier 1 mathematical check is not a 600-cell
+shell-count: it is the equivalence between irreducible 2I representations,
+fusion by the defining SU(2) representation, and the affine E8 Dynkin graph.
+Its use in the GCT architecture chain is Tier 1/2, conditional on the
+adopted H3 / maximal-Platonic premise package (App USS Lemma III); it does
+not derive the 6D parent lattice.
 """
 
 import numpy as np
@@ -16,6 +19,11 @@ from gct_utils import C, get_output_path
 
 PHI = float(C.PHI)
 PHI_INV = 1.0 / PHI
+
+# Report tier (App USS Lemma III; App TAT "Icosahedral Projection" row).
+MCKAY_REPORT_TIER = (
+    "Tier 1/2 (conditional on the adopted H3 / maximal-Platonic premise package)"
+)
 
 # ── 1. Binary Icosahedral Group (2I) ─────────────────────────────────────────
 
@@ -112,61 +120,79 @@ def build_600cell_from_2I(q2I: np.ndarray, scale: float = 1.0) -> np.ndarray:
     """
     return q2I * scale
 
-def embed_600cell_in_8d(q2I: np.ndarray, scale: float, offset: int = 0) -> np.ndarray:
+def elser_sloane_basis() -> np.ndarray:
+    """Published Elser-Sloane orthogonal basis matrix Phi (paper Sec. 2)."""
+    sigma = (1.0 - np.sqrt(5.0)) / 2.0
+    tau = PHI
+    c = (4.0 + 2.0 * sigma) ** -0.5
+    c_tilde = (4.0 + 2.0 * tau) ** -0.5
+    identity = np.eye(4)
+    hadamard = 0.5 * np.array([
+        [-1.0, -1.0, -1.0, -1.0],
+        [1.0, -1.0, -1.0, 1.0],
+        [1.0, 1.0, -1.0, -1.0],
+        [1.0, -1.0, 1.0, -1.0],
+    ])
+    return np.block([
+        [c * (identity + sigma * hadamard), c_tilde * (identity + tau * hadamard)],
+        [c * (identity - sigma * hadamard), c_tilde * (identity - tau * hadamard)],
+    ])
+
+
+def pairwise_distance_fingerprint(points: np.ndarray) -> np.ndarray:
+    """Rotation-invariant fingerprint of a finite spherical point set."""
+    distances = np.linalg.norm(points[:, None, :] - points[None, :, :], axis=2)
+    upper = distances[np.triu_indices(len(points), k=1)]
+    return np.sort(np.round(upper, 10))
+
+
+# ── 4. Elser-Sloane E8 -> two H4 shells certificate ─────────────────────────
+
+def verify_e8_as_two_h4_shells(e8_roots: np.ndarray, q2I: np.ndarray) -> dict:
     """
-    Embed 4D quaternion vertices into 8D at coordinates [offset:offset+4].
+    Reproduce the published orthogonal projection of all 240 E8 roots.
+
+    The first four columns of Phi span the invariant physical space X.
+    The projected roots must split into two 120-point shells, each congruent
+    to the unit-icosian 600-cell, with radius ratio phi.
     """
-    verts = np.zeros((len(q2I), 8))
-    verts[:, offset:offset+4] = q2I * scale
-    return verts
+    phi_basis = elser_sloane_basis()
+    orthogonality_error = float(np.max(np.abs(phi_basis.T @ phi_basis - np.eye(8))))
+    projected = e8_roots @ phi_basis[:, :4]
+    projected_radii = np.linalg.norm(projected, axis=1)
+    shell_radii = np.unique(np.round(projected_radii, 10))
+    shell_counts = [int(np.sum(np.isclose(projected_radii, radius))) for radius in shell_radii]
+    radius_ratio = float(max(shell_radii) / min(shell_radii))
 
-# ── 4. E8 = 2×H4 Verification ────────────────────────────────────────────────
+    reference_fingerprint = pairwise_distance_fingerprint(q2I)
+    shell_fingerprint_errors = []
+    for radius in shell_radii:
+        shell = projected[np.isclose(projected_radii, radius)] / radius
+        fingerprint = pairwise_distance_fingerprint(shell)
+        error = float(np.max(np.abs(fingerprint - reference_fingerprint)))
+        shell_fingerprint_errors.append(error)
 
-def verify_e8_as_two_h4_shells(e8_roots: np.ndarray, q2I: np.ndarray) -> tuple:
-    """
-    H4 shell-count audit.
-
-    This check confirms that two embedded copies of the 2I quaternion set
-    carry 120 vertices each. It is retained as a geometric sanity check
-    only; it does not establish the McKay equivalence. The Tier 1 McKay
-    predicate is verify_binary_icosahedral_mckay(), below.
-
-    Returns (shell_a_count, shell_b_count, pass_bool)
-    """
-    norms = np.linalg.norm(e8_roots, axis=1)
-    unique_norms = np.unique(np.round(norms, 6))
-    print(f"    Unique E8 root norms: {unique_norms}")
-
-    # E8 roots are conventionally normalised so that the shortest roots have |r|^2 = 2
-    # Both root types (integer and half-int) have the same norm:
-    # Integer: sqrt(1^2+1^2) = sqrt(2)
-    # Half-int: sqrt(8*(0.5)^2) = sqrt(2)
-    # So all E8 roots have norm sqrt(2): one single shell!
-    
-    all_same_norm = (len(unique_norms) == 1)
-    shell_norm = unique_norms[0]
-    print(f"    E8 root norm (expected sqrt(2) ≈ {np.sqrt(2):.6f}): {shell_norm:.6f}")
-    
-    # Since all 240 E8 roots have the same norm, the split into 2×600-cell
-    # happens in DIRECTION SPACE, not norm space:
-    # The 120 quaternions of 2I, embedded in R^8 as (q, 0, 0, 0, 0) at scale sqrt(2),
-    # are the first 600-cell. The other 120 roots fill the second 4D hyperplane.
-    
-    # The D4⊕D4 decomposition: embed 2I into 4D×4D
-    # Shell A: 2I embedded in first 4 coords × 0 in last 4 coords, norm=sqrt(2)
-    # Shell B: 2I embedded in last 4 coords × 0 in first 4 coords, norm=sqrt(2)
-    shell_a = embed_600cell_in_8d(q2I, scale=np.sqrt(2), offset=0)
-    shell_b = embed_600cell_in_8d(q2I, scale=np.sqrt(2), offset=4)
-
-    shell_a_count = len(set(map(tuple, np.round(shell_a, 6))))
-    shell_b_count = len(set(map(tuple, np.round(shell_b, 6))))
-
-    print(f"    Shell A (first 4D block, 2I×√2): {len(shell_a)} verts, {shell_a_count} unique")
-    print(f"    Shell B (second 4D block, 2I×√2): {len(shell_b)} verts, {shell_b_count} unique")
-    print(f"    Total vertices across 2 shells: {shell_a_count + shell_b_count} (expected 240)")
-
-    h4_shell_count_pass = (shell_a_count == 120) and (shell_b_count == 120)
-    return shell_a_count, shell_b_count, h4_shell_count_pass
+    pass_bool = bool(
+        orthogonality_error < 1e-12
+        and shell_counts == [120, 120]
+        and np.isclose(radius_ratio, PHI, atol=1e-10)
+        and all(error < 2e-10 for error in shell_fingerprint_errors)
+    )
+    print(f"    Phi orthogonality max error: {orthogonality_error:.3e}")
+    print(f"    Projected shell radii: {shell_radii.tolist()}")
+    print(f"    Projected shell counts: {shell_counts}")
+    print(f"    Radius ratio: {radius_ratio:.15f} (phi={PHI:.15f})")
+    print(f"    600-cell fingerprint errors: {shell_fingerprint_errors}")
+    return {
+        "pass": pass_bool,
+        "phi_orthogonality_max_error": orthogonality_error,
+        "projected_shell_radii": shell_radii.tolist(),
+        "projected_shell_counts": shell_counts,
+        "projected_shell_radius_ratio": radius_ratio,
+        "expected_radius_ratio_phi": PHI,
+        "shell_600cell_fingerprint_max_errors": shell_fingerprint_errors,
+        "method": "Elser-Sloane Phi; project all 240 E8 roots to X; compare normalized shell distance multisets with unit icosians",
+    }
 
 # ── 5. McKay correspondence: 2I irreps -> affine E8 ──────────────────────────
 
@@ -418,20 +444,46 @@ def explore_e6_e7_dark_sectors() -> dict:
     return {
         "dark_sector_candidates": [
             {"E6_rep": 78, "SU3_rep": 1, "description": "E6 Adjoint (Sterile Gauge Bosons / Dark Matter)"},
-            {"E6_rep": 1, "SU3_rep": 8, "description": "SU(3) Color Octet (Gluons)"},
+            {"E6_rep": 1, "SU3_rep": 8, "description": "Adjoint of the commuting SU(3) (colour reading is a Tier 3 assignment; colour sits inside E6 in the standard embedding)"},
             {"E6_rep": 27, "SU3_rep": 3, "description": "SM Fermion generation"},
         ],
-        "conclusion": "E6(78) sub-algebra shelters the Dark Sector in the GCT E8 branching."
+        "conclusion": "Tier 3 proposal: the E6(78) sub-algebra is a candidate dark-sector host in the GCT E8 branching."
     }
 
 def assess_cyclic_dihedral_quasicrystals() -> dict:
-    return {"status": "Cyclic/Dihedral groups excluded by spin-structure cohomology (see App_U §U.6)."}
+    # App USS §USS.6.2: every finite rotation subgroup has a canonical Spin(3)
+    # preimage (D_n -> Dic_n), so no spin-lift or H^2 obstruction eliminates
+    # the cyclic/dihedral branches; they are set aside architecturally.
+    return {
+        "status": (
+            "Cyclic/dihedral branches are NOT excluded by spin structure: every finite "
+            "rotation subgroup has a canonical Spin(3) preimage (D_n -> Dic_n), and no "
+            "spin-lift or H^2 obstruction eliminates them (App USS §USS.6.2). They are "
+            "set aside architecturally because they do not reproduce the adopted "
+            "three-dimensional H3 RT-window / invariant / 2I->E8->H4->H3 package."
+        ),
+        "excluded_by_spin_obstruction": False,
+        "set_aside_by": "adopted architectural premise package (Tier 1/2)",
+    }
 
 def prove_lemma_iii():
+    # App USS Lemma III: Tier 1/2 (Architectural Postulate + Conditional
+    # Mathematics); a conditional comparison inside the registered
+    # architectural class, not an exhaustive uniqueness proof.
     return {
-        "lemma_iii_proven": True,
-        "unique_group": "2I (Binary Icosahedral)",
-        "method": "McKay correspondence + H^2 spin obstruction theorem"
+        "lemma_iii_conditional_comparison": True,
+        "exhaustive_uniqueness_proof": False,
+        "surviving_branch": "2I (Binary Icosahedral), within the registered projection families",
+        "tier": "Tier 1/2 (Architectural Postulate + Conditional Mathematics)",
+        "conditional_on": (
+            "adopted full three-dimensional H3 RT-window/invariant package and "
+            "maximal-Platonic-symmetry criterion (App USS Lemma III)"
+        ),
+        "method": (
+            "Tier 1 group facts (Schur cover A5 -> 2I; 2I McKay correspondence; "
+            "polyhedral-group taxonomy) + conditional comparison under the adopted "
+            "premise package; no spin-lift obstruction is used"
+        ),
     }
 
 def verify_h4_coxeter_phi():
@@ -489,10 +541,10 @@ def run_mckay_e8_audit():
 
     # Step 4: Geometric 2I/H4 sanity check retained outside the McKay predicate
     print("\n  Step 4: H4 600-cell shell-count sanity check...")
-    sa, sb, h4_shell_pass = verify_e8_as_two_h4_shells(roots, q2I)
-    print(f"    Two embedded 2I shells = 120 vertices each: {'PASS ✓' if h4_shell_pass else 'FAIL ✗'}")
+    h4_projection = verify_e8_as_two_h4_shells(roots, q2I)
+    print(f"    Two projected 600-cell shells = 120 vertices each: {'PASS ✓' if h4_projection['pass'] else 'FAIL ✗'}")
 
-    all_pass = step1_pass and step2_pass and mckay["pass"] and h4_shell_pass
+    all_pass = step1_pass and step2_pass and mckay["pass"] and h4_projection["pass"]
     print(f"\n{'='*65}")
     print(f"  McKay Correspondence Audit: {'PASS ✓' if all_pass else 'FAIL ✗'}")
     print(f"{'='*65}\n")
@@ -500,14 +552,21 @@ def run_mckay_e8_audit():
     results = {
         "pass": bool(all_pass),
         "verdict": "PASS" if all_pass else "FAIL",
-        "tier": "Tier 1 (Derived Necessity)",
+        "tier": MCKAY_REPORT_TIER,
+        "tier_note": (
+            "The 2I character-fusion / affine-E8 McKay correspondence checked here is a "
+            "closed Tier 1 mathematical result within its hypotheses; its physical "
+            "composition into the architecture chain is a Tier 1/2 structural postulate "
+            "(App TAT; App USS Lemma III) and does not derive the 6D parent lattice."
+        ),
         "theorem": "T-McKay",
         "h4_coxeter": verify_h4_coxeter_phi(),
         "n_2I": int(n_2I),
         "n_e8": int(n_e8),
-        "h4_shell_a_vertices": int(sa),
-        "h4_shell_b_vertices": int(sb),
+        "h4_shell_a_vertices": int(h4_projection["projected_shell_counts"][0]),
+        "h4_shell_b_vertices": int(h4_projection["projected_shell_counts"][1]),
         "h4_expected_per_shell": 120,
+        "elser_sloane_projection_certificate": h4_projection,
         "mckay_equivalence_verified": bool(mckay["pass"]),
         "mckay_correspondence": mckay,
         "dark_sector": explore_e6_e7_dark_sectors(),

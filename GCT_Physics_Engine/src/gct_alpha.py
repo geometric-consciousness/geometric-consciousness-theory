@@ -7,7 +7,7 @@ geometric impedance of the Rhombic Triacontahedron.
 
 Theory:
 1. Bare Coupling: alpha_bare^-1 = 360 * phi^-2 (Geometric Impedance of RT).
-2. The 0.34% (3442 ppm) discrepancy to CODATA sets the sign-consistent
+2. The 0.34% (3443 ppm) discrepancy to CODATA sets the sign-consistent
    O.19 phason anti-screening magnitude target; magnitude closure remains open.
 """
 

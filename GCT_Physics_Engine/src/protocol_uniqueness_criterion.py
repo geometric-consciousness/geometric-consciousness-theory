@@ -19,7 +19,7 @@ Specifically:
   3. For each criterion, check whether subset #17 is UNIQUE (lowest /
      highest / smallest count).
   4. If a single criterion uniquely picks subset #17 → that's the
-     uniqueness argument we need for Tier 1.
+     finite uniqueness diagnostic; it supplies no Tier-1 inference.
 """
 
 from __future__ import annotations
@@ -154,7 +154,7 @@ def compute_eta_and_metrics(orbit_indices: list[int], orbits: list[dict]) -> dic
         "orbit_indices": orbit_indices,
         "orbit_sizes_used": orbit_sizes_used,
         "orbit_min_norms_used": orbit_norms_used,
-        "eta_scalar": eta,
+        "adjacency_sign_sum": eta,
         "n_orbits_used": n_orbits_used,
         "total_perp_norm": total_perp,
         "max_perp_norm": max_perp,
@@ -192,7 +192,7 @@ def main() -> int:
         all_results.append(m)
 
     # Find the unique winner with η = -8
-    winners = [r for r in all_results if abs(r["eta_scalar"] - (-8)) < 0.5]
+    winners = [r for r in all_results if abs(r["adjacency_sign_sum"] - (-8)) < 0.5]
     print(f"  ✓ Found {len(winners)} cages with η = -8: {[w['subset_idx'] for w in winners]}")
     if not winners:
         print("  No winners found (shouldn't happen if setup matches enumerator settings)!")
@@ -283,7 +283,8 @@ def main() -> int:
         print("  Any of these criteria, by itself, uniquely picks the [12,60,12,60]")
         print("  cage out of all 42 I-symmetric 144-cages. The most natural one")
         print("  (e.g., 'minimum total perp-energy', 'smallest enclosing radius')")
-        print("  can be used as the canonical uniqueness argument for Tier 1 closure.")
+        print("  is a finite weighted-adjacency uniqueness diagnostic only.")
+        print("  No APS operator/domain/index or Tier-1 inference follows.")
     else:
         print("  NO single-criterion uniqueness found among candidates tested.")
         print("  The winner [12, 60, 12, 60] is one of several cages tied on each")

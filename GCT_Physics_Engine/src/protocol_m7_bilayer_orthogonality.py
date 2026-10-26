@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-protocol_m7_bilayer_orthogonality.py - App M S M.7 finite-N trace claims
+protocol_m7_bilayer_orthogonality.py - App ULA S M.7 finite-N trace claims
 ==================================================================================
-App M S M.7 grounds the alpha^-1 finite-N correction 1/(2N) = 1/288 in three
+App ULA S M.7 grounds the alpha^-1 finite-N correction 1/(2N) = 1/288 in three
 stacked claims:
 
   (C1) Single-shell decomposition Pi(0)|_N = sum_i G_ii^2 + sum_{i!=j} G_ij^2

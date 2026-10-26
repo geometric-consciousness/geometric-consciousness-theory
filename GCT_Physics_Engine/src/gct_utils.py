@@ -9,6 +9,7 @@ Failure policy: sys.exit(1) if YAML cannot be loaded.
 """
 
 import sys
+import math
 import yaml
 from pathlib import Path
 from types import SimpleNamespace
@@ -134,6 +135,25 @@ def _coerce_scalar(text: str):
 
 # -- module-level singleton ---------------------------------------------------
 C = _load_constants()
+
+A3_ALPHA_INV_FALLBACK = 137.035999177
+
+
+def resolve_a3(constants=None) -> tuple[float, float]:
+    """Return ``(alpha, alpha_inverse)`` from SSOT or exact A3 fallback."""
+    namespace = C if constants is None else constants
+    alpha_inv = float(getattr(namespace, "ALPHA_INV_OBS", A3_ALPHA_INV_FALLBACK))
+    alpha = float(getattr(namespace, "ALPHA_OBS", 1.0 / alpha_inv))
+    if not math.isclose(alpha, 1.0 / alpha_inv, rel_tol=2.0e-16, abs_tol=0.0):
+        raise RuntimeError(
+            "A3 SSOT mismatch: ALPHA_OBS must equal 1 / ALPHA_INV_OBS "
+            "to machine precision"
+        )
+    return alpha, alpha_inv
+
+
+# Fail closed at import time if the two canonical YAML fields drift.
+resolve_a3(C)
 
 
 # -- Utility Functions --------------------------------------------------------

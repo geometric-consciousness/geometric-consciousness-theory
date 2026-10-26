@@ -4,7 +4,7 @@ protocol_dixmier_trace_scaling.py — AKN Gap-Label Scaling Type Check
 ====================================================================
 Reports the topological spectral measure tau = phi^(-107) as the scaling
 factor assigned from the assumed gap-labeling exponent n = -107
-(Tier 3 anchor; uniqueness pending App H Open Problem O.14).
+(Tier 3 anchor; uniqueness pending App ORQ Open Problem O.14).
 
 **Scope of this script:** the function name
 `run_gap_label_scaling_typecheck` constructs the gamma matrices and the Dirac
@@ -22,13 +22,13 @@ mass-ratio derivations (V3 Ch07 m_e ratio). What it does NOT verify:
 the first-principles uniqueness of n = -107 from the AF-core dimension
 group / trace image of the AKN substitution algebra, which is Z[φ]; the
 full Cuntz-Krieger K_0(O_A) for A=[[1,1],[1,0]] is trivial since
-coker(I-A^T) is trivial. See App Y §Y.3 for the canonical AF-core-vs-full-O_A
+coker(I-A^T) is trivial. See App PUP §PUP.6.3a for the canonical AF-core-vs-full-O_A
 distinction. Nor does it verify the explicit Dixmier-trace computation from
-the cage Dirac spectrum (Open Problem candidate; see App H).
+the cage Dirac spectrum (Open Problem candidate; see App ORQ).
 
 For the canonical Connes-Moscovici Dixmier-trace machinery on
 substitution-tiling C*-algebras, see Connes-Moscovici 1995 GAFA + the
-Bellissard-Herrmann-Zarrouati gap-labeling references in App H O.14.
+Bellissard-Herrmann-Zarrouati gap-labeling references in App ORQ O.14.
 """
 
 import numpy as np
@@ -143,7 +143,7 @@ def run_gap_label_scaling_typecheck():
     # n = -107 is the gap-label integer downstream protocols rely on;
     # the canonical identification |n| = 107 = sum m_i^2(H_3) is
     # established at Tier 2 via the Coxeter-exponent uniqueness derivation
-    # of `protocol_o14_coxeter_exponent_squares.py` (App H O.14 path (l)
+    # of `protocol_o14_coxeter_exponent_squares.py` (App ORQ O.14 path (l)
     # closure on the integer-identification side).
     #
     # **What this script does NOT derive:** the residue
@@ -155,7 +155,7 @@ def run_gap_label_scaling_typecheck():
     # computed here has no continuum spectral dimension) and (b) the
     # Pimsner-Voiculescu six-term sequence on the AKN crossed product to
     # identify the trace image. The full numerical residue computation is
-    # registered as the residual Tier 4 physical-link conjecture of App H
+    # registered as the residual Tier 4 physical-link conjecture of App ORQ
     # Open Problem O.14 (the structural-link chain V -> AF-core dimension group / trace image).
     #
     # The current script therefore evaluates the assumed gap-label
@@ -181,7 +181,7 @@ def run_gap_label_scaling_typecheck():
         f"the I_h-closed cage; assumed gap-label scaling factor "
         f"\u03C4 = \u03A6^{n_gap} asserted for downstream protocols. "
         f"First-principles Connes-Moscovici residue derivation of \u03C4 from "
-        f"the cage Dirac spectrum is registered as App H Open Problem O.14 "
+        f"the cage Dirac spectrum is registered as App ORQ Open Problem O.14 "
         f"(K-theoretic-action structural-link chain V -> AF-core dimension group / trace image)."
     )
     reporter.verdict(type_check_pass and dixmier_trace_pass, reason)

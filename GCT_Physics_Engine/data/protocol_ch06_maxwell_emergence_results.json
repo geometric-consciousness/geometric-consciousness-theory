@@ -1,6 +1,6 @@
 {
   "protocol": "Ch06 \u00a76.1.2 Maxwell-from-supersolid four-ingredient derivation",
-  "tier": "Tier 3 consistency check pending O.15 tile-dynamics closure",
+  "tier": "Tier 3 declared open programme (V2 Ch06 \u00a76.1); consistency check pending O.15 tile-dynamics closure",
   "ingredient_I": {
     "ingredient": "I \u2014 Euler-Lagrange residuals from supersolid Lagrangian",
     "residuals": {
@@ -47,7 +47,7 @@
     "identification": {
       "rho_EM": "J_0 / K_perp     (charge density from temporal current component, normalized by phason stiffness)",
       "J_EM_i": "J_i / K_perp     (spatial current density)",
-      "epsilon_0_equivalent": "K_perp     (vacuum permittivity = phason stiffness in lattice units; SI anchor in App M \u00a7M.6)"
+      "epsilon_0_equivalent": "K_perp     (vacuum permittivity = phason stiffness in lattice units; SI anchor in App ULA \u00a7ULA.6)"
     },
     "pass": true
   },
@@ -89,38 +89,38 @@
         "K_perp_over_K_parallel": 0.0011862412896422262,
         "c_hat_lattice": 0.03444185374863302,
         "ingredients_pass": true,
-        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App K \u00a7K.4) gives c_hat = phi^-9 \u2248 0.013156."
+        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App DPS \u00a7DPS.4) gives c_hat = phi^-9 \u2248 0.013156."
       },
       {
         "D_exponent": 16,
         "K_perp_over_K_parallel": 0.0004531038537848218,
         "c_hat_lattice": 0.02128623625220818,
         "ingredients_pass": true,
-        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App K \u00a7K.4) gives c_hat = phi^-9 \u2248 0.013156."
+        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App DPS \u00a7DPS.4) gives c_hat = phi^-9 \u2248 0.013156."
       },
       {
         "D_exponent": 18,
         "K_perp_over_K_parallel": 0.00017307027171223924,
         "c_hat_lattice": 0.013155617496424835,
         "ingredients_pass": true,
-        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App K \u00a7K.4) gives c_hat = phi^-9 \u2248 0.013156."
+        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App DPS \u00a7DPS.4) gives c_hat = phi^-9 \u2248 0.013156."
       },
       {
         "D_exponent": 20,
         "K_perp_over_K_parallel": 6.610696135189592e-05,
         "c_hat_lattice": 0.008130618755783347,
         "ingredients_pass": true,
-        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App K \u00a7K.4) gives c_hat = phi^-9 \u2248 0.013156."
+        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App DPS \u00a7DPS.4) gives c_hat = phi^-9 \u2248 0.013156."
       },
       {
         "D_exponent": 22,
         "K_perp_over_K_parallel": 2.5250612343448544e-05,
         "c_hat_lattice": 0.005024998740641488,
         "ingredients_pass": true,
-        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App K \u00a7K.4) gives c_hat = phi^-9 \u2248 0.013156."
+        "note": "Canonical value D = 18 (Ch06 \u00a76.2.2 + App DPS \u00a7DPS.4) gives c_hat = phi^-9 \u2248 0.013156."
       }
     ],
-    "structural_conclusion": "The four-ingredient Maxwell-from-supersolid closure is structural in the phason-sector Lagrangian and does not depend on the numerical value of the stiffness ratio. The ratio enters only as the squared emergent speed c^2 = K_perp/rho_eff, fixed empirically by the SI anchor of App M \u00a7M.6.",
+    "structural_conclusion": "The four-ingredient Maxwell-from-supersolid closure is structural in the phason-sector Lagrangian and does not depend on the numerical value of the stiffness ratio. The ratio enters only as the squared emergent speed c^2 = K_perp/rho_eff, fixed empirically by the SI anchor of App ULA \u00a7ULA.6.",
     "pass": true
   },
   "all_checks_pass": true

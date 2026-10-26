@@ -1,20 +1,20 @@
 # PMNS θ₂₃ Lattice-Hamiltonian Resolution — Step 1
 
-**Goal:** Derive, from the App_M microscopic 6D lattice Hamiltonian, the equation governing the phason field Φ⊥(**r**) sourced by a single pinned phonon-sector defect (e.g., an electron) at the origin. Solve it in closed form.
+**Goal:** Derive, from the App_ULA microscopic 6D lattice Hamiltonian, the equation governing the phason field Φ⊥(**r**) sourced by a single pinned phonon-sector defect (e.g., an electron) at the origin. Solve it in closed form.
 
 **Motivation:** This is the first step of the pre-registered lattice-Hamiltonian discriminant (Ch09 §9.4.2) for the 4.09σ PMNS θ₂₃ tension. Matter-averaging (Step 2) requires the single-defect Yukawa profile established here.
 
-**Status:** Closed-form [Tier 1], conditional on App_M §M.2 and App_K §K.3–K.5. One geometric scalar (|b⊥|) still to be pinned in Step 1b.
+**Status:** Closed-form [Tier 1], conditional on App_ULA §ULA.2 and App_DPS §DPS.3–DPS.5. One geometric scalar (|b⊥|) still to be pinned in Step 1b.
 
 ---
 
 ## 1.1 Starting Point — Bare Vacuum Action
 
-From App_M §M.2, the 6D microscopic Hamiltonian
+From App_ULA §ULA.2, the 6D microscopic Hamiltonian
 
 $$H = \sum_{n \in \mathbb{Z}^6} \frac{\mathbf{p}_n^2}{2M} + \frac{\kappa}{2} \sum_{\langle n,m \rangle} (\mathbf{u}_n - \mathbf{u}_m)^2 + V_{lock}(\mathcal{P}_\perp \mathbf{u}_n)$$
 
-admits a continuum limit (App_M §M.3) with decomposition **u** = **u**∥ + **u**⊥, **u**∥ ∈ E∥, **u**⊥ ∈ E⊥. The quadratic action is
+admits a continuum limit (App_ULA §ULA.3) with decomposition **u** = **u**∥ + **u**⊥, **u**∥ ∈ E∥, **u**⊥ ∈ E⊥. The quadratic action is
 
 $$S_{vac}[\mathbf{u}_\parallel, \mathbf{u}_\perp] = \int d^3x\, \left[ \frac{K_\parallel}{2} (\nabla \mathbf{u}_\parallel)^2 + \frac{K_\perp}{2} (\nabla \mathbf{u}_\perp)^2 + V_{lock}(\mathbf{u}_\perp) \right]$$
 
@@ -30,19 +30,19 @@ This is the only coefficient of the confining potential that enters the linear r
 
 ## 1.2 Identification of m_lock via the Healing Length
 
-App_K §K.5 defines the healing length ξ by balancing elastic and locking energies at scale ξ:
+App_DPS §DPS.5 defines the healing length ξ by balancing elastic and locking energies at scale ξ:
 
 $$K_\perp / \xi^2 \sim V''_{lock}(0) = m_{lock}^2 \quad \Longleftrightarrow \quad \boxed{\xi^2 = K_\perp / m_{lock}^2}$$
 
-**Consequence:** m_lock is not a free parameter. It is fixed by K⊥ (App_K §K.4) and ξ (App_K §K.5, two-route derivation to machine precision, ξ ≈ 8.5 nm).
+**Consequence:** m_lock is not a free parameter. It is fixed by K⊥ (App_DPS §DPS.4) and ξ (App_DPS §DPS.5, two-route derivation to machine precision, ξ ≈ 8.5 nm).
 
 $$m_{lock}^2 = K_\perp / \xi^2 \quad [\text{Tier 1/2, inherited}]$$
 
 ## 1.3 Linearized Equation of Motion
 
-Euler-Lagrange of the static action yields one equation per component of **u**⊥. Components decouple under the isotropy guaranteed by App_K §K.2 (the Gram matrix G⊥ is proportional to the identity on E⊥ for canonical AKN). Writing Φ⊥ for any one component:
+Euler-Lagrange of the static action yields one equation per component of **u**⊥. Components decouple under the isotropy guaranteed by App_DPS §DPS.2 (the Gram matrix G⊥ is proportional to the identity on E⊥ for canonical AKN). Writing Φ⊥ for any one component:
 
-$$-K_\perp \nabla^2 \Phi_\perp(\mathbf{r}) + m_{lock}^2\, \Phi_\perp(\mathbf{r}) = 0 \quad (\text{bare vacuum}) \quad [\text{Tier 1, direct linearization of App_M §M.2}]$$
+$$-K_\perp \nabla^2 \Phi_\perp(\mathbf{r}) + m_{lock}^2\, \Phi_\perp(\mathbf{r}) = 0 \quad (\text{bare vacuum}) \quad [\text{Tier 1, direct linearization of App_ULA §ULA.2}]$$
 
 ## 1.4 Sourcing by a Pinned Phonon Defect
 
@@ -91,23 +91,23 @@ This is the quantity that enters Step 2: matter density n (electrons per cm³) �
 
 | Symbol | Value / Source | Tier |
 |---|---|---|
-| K⊥ | (E_P / ℓ_P³) · φ⁻¹⁸ | 1/2 (App_K §K.4) |
-| ξ | 8.5 nm (two-route, 0 ppm convergence) | 2 (App_K §K.5) |
+| K⊥ | (E_P / ℓ_P³) · φ⁻¹⁸ | 1/2 (App_DPS §DPS.4) |
+| ξ | 8.5 nm (two-route, 0 ppm convergence) | 2 (App_DPS §DPS.5) |
 | m_lock² | K⊥ / ξ² | 1 (§1.2) |
 | b⊥ | \|P⊥ b\|, b ∈ Z⁶ primitive knot winding | pending Step 1b |
 
-**No phenomenological coupling has been introduced.** The only quantity not yet given a numerical value is |b⊥|, which is a mechanical computation from the canonical AKN projection matrices (App_K §K.2). That computation is Step 1b and does not require new physics — only the already-defined Gram matrices G∥, G⊥ and the primitive Z⁶ unit vectors.
+**No phenomenological coupling has been introduced.** The only quantity not yet given a numerical value is |b⊥|, which is a mechanical computation from the canonical AKN projection matrices (App_DPS §DPS.2). That computation is Step 1b and does not require new physics — only the already-defined Gram matrices G∥, G⊥ and the primitive Z⁶ unit vectors.
 
 ## 1.8 What This Step Establishes
 
 1. A single pinned defect creates a Yukawa-screened phason field extending over the healing length ξ.
-2. The equation is forced by App_M's Hamiltonian + 6D Burgers vector geometry — no coupling constants inserted.
+2. The equation is forced by App_ULA's Hamiltonian + 6D Burgers vector geometry — no coupling constants inserted.
 3. The integrated strain charge Q⊥ = b⊥ ξ² / K⊥ is the bridge to Step 2 (matter-averaged background).
 
 ## 1.9 Falsification Gates Already Active
 
 - If Step 1b yields |b⊥| = 0 for the electron (i.e., the minimal knot has no phason component), the entire mechanism dies — there is no matter-induced phason background, and the 45° prediction must either survive on its own or be falsified.
-- If ξ derived from App_K §K.5 were not the same as the ξ appearing in the Yukawa profile, the whole framework is internally inconsistent. (Check: they are identical by construction in §1.2.)
+- If ξ derived from App_DPS §DPS.5 were not the same as the ξ appearing in the Yukawa profile, the whole framework is internally inconsistent. (Check: they are identical by construction in §1.2.)
 
 ## 1.10 Dependencies for Step 2
 

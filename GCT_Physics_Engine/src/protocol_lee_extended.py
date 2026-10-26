@@ -4,7 +4,14 @@ protocol_lee_extended.py — Extended Look-Elsewhere Effect
 ==================================================================
 Calculates the true global significance of the GCT geometric mass spectrum
 by generating a vast combinatorial space of competitor formulas and assessing
-trial-factor penalties. 
+trial-factor penalties.
+
+The p_global figure depends only on the size of the formula space; it is a
+valid significance only if GCT itself lands within the 20 ppm window for both
+mu and tau. The former literal pass=True is retired; the
+protocol now computes the GCT mu and tau ratios with the engine formulas
+(protocol_lepton_spectrum analytic limit) and passes only if both are within
+20 ppm.
 """
 
 import json
@@ -78,6 +85,17 @@ def run_extended_lee():
     
     print(f"[*] Muon matches (<= 20 ppm): {muon_hits}")
     print(f"[*] Tau matches (<= 20 ppm): {tau_hits}")
+
+    # GCT's own hits, with the engine's analytic-limit lepton formulas
+    # (same as protocol_lepton_spectrum.py; A3 measured alpha).
+    alpha_obs = float(C.ALPHA_OBS)
+    gct_mu = phi**11 * (1 + float(C.N_PHASON_CHANNELS) * alpha_obs + phi**8 * alpha_obs**2)
+    gct_tau = phi**17 * (1 + float(C.TAU_SCREEN_COEFF) * alpha_obs)
+    gct_mu_ppm = (gct_mu - muon_ratio) / muon_ratio * 1e6
+    gct_tau_ppm = (gct_tau - tau_ratio) / tau_ratio * 1e6
+    gct_both_within_20ppm = bool(abs(gct_mu_ppm) <= 20.0 and abs(gct_tau_ppm) <= 20.0)
+    print(f"[*] GCT muon ratio residual: {gct_mu_ppm:+.2f} ppm; tau: {gct_tau_ppm:+.2f} ppm "
+          f"-> both within 20 ppm: {gct_both_within_20ppm}")
     
     # 3. Compute True Significance
     # Expected volume of the window in log space or directly as a fraction
@@ -106,10 +124,20 @@ def run_extended_lee():
     print(f"[*] Search Pair Trials (T): {trials:,.0f}")
     print(f"[*] Local Pair p-value: {p_pair:.2e}")
     print(f"[*] Global Penalized p-value: {p_global:.4f} (~ {math.ceil(p_global*100)}%)")
-    print(f"[*] True Significance: {sigma:.2f} sigma")
+    print(f"[*] Significance IF GCT hit both 20 ppm windows: {sigma:.2f} sigma")
     
+    verdict = (
+        "GCT_MU_TAU_WITHIN_20PPM_LEE_APPLIES" if gct_both_within_20ppm
+        else f"GCT_OUTSIDE_20PPM_WINDOW_LEE_PREMISE_FAILS_mu={gct_mu_ppm:+.1f}ppm_tau={gct_tau_ppm:+.1f}ppm"
+    )
+    print(f"[*] Verdict: {verdict}")
     out_data = {
-        "pass": True,
+        "pass": gct_both_within_20ppm,
+        "verdict": verdict,
+        "gct_muon_ratio_residual_ppm": float(gct_mu_ppm),
+        "gct_tau_ratio_residual_ppm": float(gct_tau_ppm),
+        "gct_both_within_20ppm": gct_both_within_20ppm,
+        "global_p_value_interpretation": "conditional on GCT landing within 20 ppm for both mu and tau; not a significance when that premise fails",
         "space_size": space_size,
         "search_pair_trials": trials,
         "muon_20ppm_hits": muon_hits,

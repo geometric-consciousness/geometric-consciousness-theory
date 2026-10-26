@@ -259,7 +259,7 @@ def main() -> int:
     print("  a framework-Tier-1 +")
     print("  integer-Postulate split: the K-theoretic skeleton is Tier 1 algebraic, the")
     print("  specific exponent -107 is a Tier 3 integer anchor registered as Open")
-    print("  Problem O.14 (see App H §H.5 and App U §U.7.6.7).")
+    print("  Problem O.14 (see App ORQ §ORQ.5 and App USS §USS.7.6.7).")
     print("=" * 90)
 
     DATA_PATH.parent.mkdir(parents=True, exist_ok=True)

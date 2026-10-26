@@ -1,5 +1,5 @@
 {
-  "jacobi_max_violation": 2.7755575615628914e-16,
+  "jacobi_max_violation": 5.551115123125783e-16,
   "jacobi_pass": true,
   "cartan_matrix": [
     [
@@ -23,14 +23,14 @@
   ],
   "cartan_pass": true,
   "killing_eigenvalues": [
-    -6.000000000000005,
+    -6.0000000000000036,
+    -6.000000000000003,
     -6.000000000000003,
     -6.000000000000002,
     -6.000000000000002,
-    -6.000000000000002,
     -6.000000000000001,
-    -5.999999999999999,
-    -5.99999999999999
+    -6.0,
+    -5.999999999999995
   ],
   "killing_all_negative": true,
   "csa_info": {
@@ -49,7 +49,7 @@
       ],
       [
         0.816497,
-        -0.0
+        0.0
       ]
     ],
     "n_positive_roots": 3,
@@ -59,13 +59,13 @@
       1.4142135623730951
     ],
     "simple_root_2": [
-      1.224744871391589,
+      1.2247448713915894,
       -0.7071067811865476
     ]
   },
   "basis_dimension": 8,
   "gram_max_off_diag": 2.220446049250313e-16,
-  "identification_status": "Tier 2 generator inventory plus Tier 3 A2/su(3) candidate identification pending O.39 gauge-uniqueness theorem",
+  "identification_status": "Tier 1 matrix closure in the chosen Hermitian real form plus open Tier 3 A2/su(3) color-candidate identification; RT specificity not established; identification pending O.39 gauge-uniqueness theorem",
   "verdict": "su3_candidate_identified",
   "pass": true
 }

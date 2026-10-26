@@ -150,7 +150,7 @@ def compute_anomalous_moment(lepton_type: str) -> dict:
         # applies. Under the assumption that the 5-channel A_5 averaging is
         # universal across above-threshold leptons (Tier 3 assumption; a
         # generation-dependent channel count would be a candidate sub-problem
-        # of App H O.26), the form-factor is the same as the muon:
+        # of App ORQ O.26), the form-factor is the same as the muon:
         gct_part = (1.0 / N_LEPTON_CHANNELS) * alpha_pi**3
 
         # SM tau g-2 prediction is not currently catalogued at the same

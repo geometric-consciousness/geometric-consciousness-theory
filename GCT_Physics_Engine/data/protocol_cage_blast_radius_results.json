@@ -91,6 +91,6 @@
     "par_norm_mean": 1.3678009438583827
   },
   "scorecard_impact": "NONE -- verify_independent verifiers re-derive each claim from CODATA inputs and do not import any cage-using protocol.",
-  "manuscript_impact": "SMALL -- prose claims citing cage-spectrum intermediates (App U, Ch07, App M Sec M.7, App R Sec R.9) reference the I_h-closed 152 cage; numerical deltas between variants are at the single-digit-percent scale.",
+  "manuscript_impact": "SMALL -- prose claims citing cage-spectrum intermediates (App USS, Ch07, App ULA Sec ULA.7, App PSC Sec PSC.9) reference the I_h-closed 152 cage; numerical deltas between variants are at the single-digit-percent scale.",
   "engineering_impact": "MODEST -- 9 cage-using engine protocols ingest the I_h-closed 152 cage as their geometric source; the asymmetric 144 variant is retained only for the structural comparison computed here."
 }

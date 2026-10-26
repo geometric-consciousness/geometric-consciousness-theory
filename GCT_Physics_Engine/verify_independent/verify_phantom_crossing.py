@@ -79,7 +79,7 @@ def main():
 
     res = make_result(
         name="w_z_phantom_crossing_z028",
-        app_r_label=(
+        app_psc_label=(
             "Biogenic dark energy CPL parameterisation (V2 Ch14 §14.5 / "
             "§14.6.3): CPL extrapolation z_cross^CPL ≈ 0.39 from precise pipeline fit (artifact; rounding sensitive); "
             "operative Class-2 envelope |Delta w(0.28)| in [2,5]e-5 "
@@ -88,9 +88,10 @@ def main():
         formula="w(a) = w_0 + w_a(1-a); CPL extrapolation crosses w=-1 at z_cross^CPL = 1/[1 + (1+w_0)/w_a] − 1",
         predicted=z_cross_CPL_computed,
         observed=z_cross_CPL_stated,
+        reference_class="MANUSCRIPT_STATED",
         unit="(redshift z)",
-        app_r_predicted=z_cross_CPL_stated,
-        app_r_precision_str=(
+        app_psc_predicted=z_cross_CPL_stated,
+        app_psc_precision_str=(
             f"CPL params (w_0={w_0_CPL}, w_a={w_a_CPL}) give linear-extrapolation "
             f"z_cross^CPL = {z_cross_CPL_computed:.4f} (matches manuscript "
             f"{z_cross_CPL_stated} to {z_cross_CPL_disagreement_pct:+.2f}%). "
@@ -102,7 +103,7 @@ def main():
             f"CPL intercept w_0 = {w_0_CPL} disagree by {w_0_disagreement:.4f}, within "
             f"the {w_0_tolerance} non-linearity tolerance of §14.5.3."
         ),
-        app_r_precision_ppm=None,
+        app_psc_precision_ppm=None,
         tier="Tier 3 (biogenic model, calibrated; CPL extrapolation = linear-fit artifact, not physical crossing)",
         status="INTERNAL_ARITHMETIC_PASS" if pass_status else "TENSION",
         tolerance_ppm=None,

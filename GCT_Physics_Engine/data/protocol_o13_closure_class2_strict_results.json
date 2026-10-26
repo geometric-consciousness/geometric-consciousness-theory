@@ -16,7 +16,7 @@
       "w_min": -1.0049666323940671
     },
     {
-      "label": "V2 stage-hierarchy (pre-Class 2 weighted -- VIOLATES Sec 14.5.2)",
+      "label": "V2 stage-hierarchy (outside registered Class-2 allocation)",
       "w_at_z_0": -1.0049893312892684,
       "w_at_z_015": -1.0034167698008947,
       "w_at_z_028": -1.0022397473883555,
@@ -28,7 +28,7 @@
       "w_min": -1.0049893312892684
     },
     {
-      "label": "V6 Class-2-strict step (PRINCIPLED Tier 2)",
+      "label": "V6 Class-2 allocation step (Tier 3 premise)",
       "w_at_z_0": -1.0049893312890894,
       "w_at_z_015": -1.003416769775476,
       "w_at_z_028": -1.0022397473460989,
@@ -40,7 +40,7 @@
       "w_min": -1.0049893312890894
     },
     {
-      "label": "V6r Class-2 + SFR-age convolution (RIGOROUS)",
+      "label": "V6r Class-2 allocation + SFR-age convolution",
       "w_at_z_0": -1.0049505577169116,
       "w_at_z_015": -1.0006814816503764,
       "w_at_z_028": -1.000035387541067,
@@ -69,11 +69,12 @@
     "max": 5e-05,
     "geometric_mean": 3.1622776601683795e-05,
     "source": "protocol_o13_intra_class2_dynamics.py",
-    "status": "registered load-bearing O.13 envelope; V1/V6/V6r envelope is diagnostic only"
+    "status": "registered conditional O.13 template envelope; V1/V6/V6r envelope is diagnostic only",
+    "disclosure": "Declared band, kept as registered (not re-registered after seeing runs). Current runs do not reproduce its edges: V6r gives 3.54e-05 and the intra-Class-2 Kardashev-band V7' runs give [1.47e-5, 2.48e-5] (protocol_o13_intra_class2_dynamics.py)."
   },
   "V2_relative_to_class2_envelope": {
     "V2_over_geometric_mean": 6.77240616699342,
     "V2_over_V6": 1.0000000188667006
   },
-  "tier_2_closure": "Sec 14.5.2 Class-2-only axiom excludes V2 stage-hierarchy as principled Tier 2 selection. The V1/V6/V6r span is retained as a diagnostic broad-reference envelope only. The registered load-bearing Class-2 + intra-Class-2 O.13 envelope is delegated to protocol_o13_intra_class2_dynamics.py and is |Delta w(z=0.28)| in [2.00e-05, 5.00e-05]. V2's 2e-3 value over-estimates that registered envelope by two orders of magnitude."
+  "conditional_scope": "No Tier-2 closure is claimed. Sec 14.5.2 defines a Tier-3 Class-2 allocation; zero pre-Class-2 weight is bookkeeping, not an Identity-Polaron, Level-II, or physical-coupling verdict. The DMC/eta_Zeno gate is action-open. The V1/V6/V6r span is retained as a diagnostic broad-reference envelope only. The registered conditional Class-2 + intra-Class-2 O.13 template envelope is delegated to protocol_o13_intra_class2_dynamics.py and is |Delta w(z=0.28)| in [2.00e-05, 5.00e-05] conditional on the allocation. V2 remains an alternative reference outside it."
 }

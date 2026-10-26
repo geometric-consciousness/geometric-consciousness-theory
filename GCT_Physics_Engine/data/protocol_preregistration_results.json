@@ -1,5 +1,39 @@
 {
   "locked": true,
   "pass": true,
-  "n_predictions": 12
+  "pass_scope": "BOOKKEEPING: pass means the registry file was written; no prediction is tested here (closure label open, not confirmed)",
+  "n_predictions": 12,
+  "protocol_a_prime_scan_budget": {
+    "grid_interval_MHz": "[32, 200)",
+    "grid_endpoint_convention": "half-open; 200 MHz excluded",
+    "baseline_step_kHz": 5.0,
+    "frequency_bins_per_cell": 33600,
+    "experimental_design_premise": "3 substrate states x 2 acquisition states",
+    "primary_cells": [
+      "L-chiral / RF frequency scan",
+      "L-chiral / matched sham-no-drive",
+      "R-chiral / RF frequency scan",
+      "R-chiral / matched sham-no-drive",
+      "achiral-racemic / RF frequency scan",
+      "achiral-racemic / matched sham-no-drive"
+    ],
+    "cell_count": 6,
+    "auxiliary_calibration_outside_multiplier": "bare diamond",
+    "look_elsewhere_bin_cells": 201600,
+    "raw_shots_per_bin_cell": 5012.64,
+    "executable_shots_per_bin_cell_ceiling": 5013,
+    "raw_total_shots": 1010548224,
+    "executable_total_shots": 1010620800,
+    "raw_runtime_hours_at_1kHz": 280.70784,
+    "executable_runtime_hours_at_1kHz": 280.728,
+    "cell_count_sensitivity": "all bin-cell, shot-total, and runtime budgets scale linearly with cell_count",
+    "adaptive_resolution_rule": {
+      "effective_linewidth_Hz": "delta_nu = 1/(2*pi*T2_eff)",
+      "maximum_step_Hz": "Delta_nu <= 1/(4*pi*T2_eff)",
+      "baseline_5kHz_valid_through_T2_eff_us": 15.915494309189533,
+      "action_above_threshold": "tighten the grid and recompute bins, multiplicity, shots, and runtime before unblinding"
+    },
+    "branch_window_role": "pre-registered hypothesis regions inside the full scan; not substitute scan bands",
+    "control_point_150MHz_role": "sign-unfixed diagnostic only; excluded from F1 and Holm primary decisions"
+  }
 }

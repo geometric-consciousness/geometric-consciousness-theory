@@ -236,20 +236,20 @@ z
 " clip-path="url(#p181614a926)" style="fill: #eaf1f7; stroke: #2c5d8a; stroke-width: 1.25; stroke-linejoin: miter"/>
    </g>
    <g id="text_3">
-    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="245.293953" y="46.873216" transform="rotate(-0 245.293953 46.873216)">2. Gram-image reduction</text>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="245.293953" y="46.873216" transform="rotate(-0 245.293953 46.873216)">2. Seeds, Gram rank, closure</text>
    </g>
    <g id="text_4">
-    <text style="font-weight: 700; font-size: 8.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1f1f1f" x="330.48" y="92.348581" transform="rotate(-0 330.48 92.348581)">10D seed space</text>
+    <text style="font-weight: 700; font-size: 8.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1f1f1f" x="330.48" y="92.348581" transform="rotate(-0 330.48 92.348581)">Gram rank(G) = 6 (Sym² bound)</text>
    </g>
    <g id="text_5">
-    <text style="font-size: 8.1px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(284.890922 133.353991)">minus two icosahedral</text>
-    <text style="font-size: 8.1px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(289.460461 142.424219)">linear dependencies</text>
+    <text style="font-size: 8.1px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(284.890922 133.353991)">traceless seed span 5</text>
+    <text style="font-size: 8.1px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(289.460461 142.424219)">+ 3 commutator generators</text>
    </g>
    <g id="text_6">
-    <text style="font-weight: 700; font-size: 8.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1f1f1f" x="330.48" y="183.760754" transform="rotate(-0 330.48 183.760754)">rank(G) = 10 - 2 = 8</text>
+    <text style="font-weight: 700; font-size: 8.7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1f1f1f" x="330.48" y="183.760754" transform="rotate(-0 330.48 183.760754)">closure dim 5 + 3 = 8</text>
    </g>
    <g id="text_7">
-    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #c0392b" x="330.48" y="209.895012" transform="rotate(-0 330.48 209.895012)">Matrix/image rank 8 is not the Lie rank of su(3).</text>
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #c0392b" x="330.48" y="209.895012" transform="rotate(-0 330.48 209.895012)">Closure dim 8 is not the Lie rank of su(3).</text>
    </g>
   </g>
   <g id="axes_3">
@@ -407,19 +407,19 @@ z
    </g>
    <g id="text_11">
     <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(88.114398 293.119213)">RT witness</text>
-    <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(81.031008 302.301419)">10 axes -&gt; 8D</text>
+    <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(81.031008 302.301419)">10 axes, closure 8D</text>
     <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(91.243211 311.483625)">A2 match</text>
    </g>
    <g id="text_12">
     <text style="font-weight: 700; font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(239.136967 289.651097)">Controls</text>
     <text style="font-weight: 700; font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(218.405404 297.937479)">Cube / octahedron</text>
     <text style="font-weight: 700; font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(222.725154 306.22386)">/ cuboctahedron</text>
-    <text style="font-weight: 700; font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(226.098514 314.510241)">no full witness</text>
+    <text style="font-weight: 700; font-size: 7.4px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(226.098514 314.510241)">not RT-specific</text>
    </g>
    <g id="text_13">
-    <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(363.559911 293.087182)">Random control</text>
-    <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(348.285489 302.269388)">0 / 1000 full witnesses</text>
-    <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(385.124629 311.451594)">fragile</text>
+    <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(363.559911 293.087182)">Matched 10-axis control</text>
+    <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(348.285489 302.269388)">200 / 200 reach 8D + A2</text>
+    <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(385.124629 311.451594)">not RT-specific</text>
    </g>
    <g id="text_14">
     <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(515.456495 293.119213)">Proof status</text>
@@ -427,11 +427,11 @@ z
     <text style="font-weight: 700; font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #1f1f1f" transform="translate(520.278479 311.483625)">O.39 open</text>
    </g>
    <g id="text_15">
-    <text style="font-size: 8.1px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #666666" x="49.1616" y="335.596181" transform="rotate(-0 49.1616 335.596181)">Caption discipline: this is a finite RT/A2 candidate witness. It does not claim theorem-grade uniqueness over all compact Lie alternatives.</text>
+    <text style="font-size: 8.1px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #666666" x="49.1616" y="335.596181" transform="rotate(-0 49.1616 335.596181)">The closure and A2 fingerprint are not specific to the RT axes; the color identification is an open Tier 3 candidate (O.39).</text>
    </g>
   </g>
   <g id="text_16">
-   <text style="font-weight: 700; font-size: 13.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="37.44" y="31.629937" transform="rotate(-0 37.44 31.629937)">RT three-fold axes produce the registered A2 / su(3) candidate witness</text>
+   <text style="font-weight: 700; font-size: 13.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="37.44" y="31.629937" transform="rotate(-0 37.44 31.629937)">RT three-fold axes: an open A2 / su(3) candidate</text>
   </g>
   <g id="text_17">
    <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #666666" x="21.6" y="379.751175" transform="rotate(-0 21.6 379.751175)">Sources: Ch03 Color Force SU(3); protocol_gauge_uniqueness_results.json; protocol_su3_proof_complete_results.json.</text>

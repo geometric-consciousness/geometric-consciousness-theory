@@ -16,7 +16,7 @@
 * **Electroweak Unification:** 4.1.1, 4.3.2
 * **Gluon String:** 10.1.3, 18.2.1
 * **Hierarchy Problem:** 9.2.2, 5.4.2
-* **HBT Photon Bunching ($g^{(2)}(0)=2$):** 11.4.5
+* **HBT Photon-Correlation Target (detector-level threshold open):** 11.4.5
 * **HFGW Cross-Correlation:** 11.4.7
 * **Higgs Mechanism:** 5.1.1, 10.2.2
 * **Identity Polaron:** 7.1.3, 8.2.1, 9.2.2 [see also: Identity Tether, Polaron, Healing Length]

@@ -2,16 +2,20 @@
   "pass": false,
   "ckm": {
     "predictions": {
-      "s12": 0.22745462118910195,
+      "s12": 0.22745462119496657,
       "s23": 0.04139164566553407,
       "s13": 0.003732282361359376,
       "J": 2.5250612343448544e-05
     },
     "targets": {
-      "s12": 0.225,
+      "s12": 0.22501,
       "s23": 0.0418,
-      "s13": 0.00369
-    }
+      "s13": 0.003732
+    },
+    "s12_pdg_sigma": 0.00068,
+    "s12_tension_sigma": 3.5950311690684975,
+    "expected_outcome_note": "Expected outcome re-registered after the theta23 comparator correction; the registered tension is now carried by CKM s12.",
+    "s12_status": "TENSION"
   },
   "pmns": {
     "predictions": {
@@ -21,25 +25,40 @@
       "delta_cp": 222.49223594996212
     },
     "targets": {
-      "theta12": 33.4,
-      "theta23": 49.5,
-      "theta13": 8.58,
-      "delta_cp": 232.0
+      "theta12": 33.68,
+      "theta23": 43.3,
+      "theta13": 8.56,
+      "delta_cp": 212.0
     },
-    "theta23_tension_sigma": 4.090909090909091,
-    "theta23_status": "TENSION_GT_4SIGMA",
-    "theta23_tier": "Tier 3 (Tension)",
-    "resolution_path": "Lattice-Hamiltonian derivation of neutrino propagation through discrete icosahedral vacuum (Ch09 \u00a79.4.2 pre-registered discriminant)"
+    "targets_source": "NuFIT 6.0 (arXiv:2410.05380) Table 1, normal ordering, IC24 with SK atmospheric data",
+    "theta23_best_fit_without_sk_deg": 48.5,
+    "theta23_3sigma_with_sk_deg": [
+      41.3,
+      49.9
+    ],
+    "theta23_3sigma_without_sk_deg": [
+      41.0,
+      50.5
+    ],
+    "theta23_dchi2_at_45_with_sk": 2.02,
+    "theta23_dchi2_at_45_without_sk": 4.2,
+    "theta23_equiv_sigma_with_sk": 1.4212670403551895,
+    "theta23_equiv_sigma_without_sk": 2.04939015319192,
+    "theta23_inside_both_3sigma_ranges": true,
+    "theta23_status": "WITHIN_3SIGMA_OCTANT_UNRESOLVED",
+    "theta23_tier": "Tier 3 (octant unresolved)",
+    "theta23_note": "The earlier 4.09-sigma figure, a one-octant Gaussian on 49.5 +/- 1.1 deg, is withdrawn.",
+    "resolution_path": "DUNE / Hyper-K octant data; lattice-Hamiltonian derivation of neutrino propagation through discrete icosahedral vacuum (Ch09 \u00a79.4.2 pre-registered discriminant)"
   },
   "cp_violation_derivation": {
-    "s12": 0.22745462118910195,
+    "s12": 0.22745462119496657,
     "s23": 0.04139164566553407,
     "s13": 0.003732282361359376,
     "J_gct_phi_22": 2.5250612343448544e-05,
-    "sin_delta_cp": 197.88965884692809,
-    "delta_cp_deg_derived": null,
-    "delta_cp_manuscript_claim": 222.49223594996215,
-    "status": "UNPHYSICAL - sin(delta) > 1",
-    "match_precision_pct": null
+    "sin_delta_cp": 0.7385903717051865,
+    "delta_cp_deg_derived": 132.38852508951882,
+    "pmns_delta_cp_ansatz_deg_not_comparable": 222.49223594996215,
+    "status": "PHYSICAL",
+    "note": "CKM phase from the Tier 3 J ansatz (phi^-22; O.7 open); not comparable with the PMNS delta_CP = 360/phi, so no match precision is reported. A CKM comparator would be the PDG unitarity-triangle angle gamma."
   }
 }

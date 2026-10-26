@@ -41,7 +41,7 @@ field-theoretic identification.
 
 Cross-reference: V3 Ch06 §6.5.2 (CCM identification, Tier 2 mechanism +
 Open Problem pending Seeley-DeWitt implementation per the engine-level
-status); App H Open Problem O.5 (QLQCD-1L closure of the spectral-triple
+status); App ORQ Open Problem O.5 (QLQCD-1L closure of the spectral-triple
 decomposition).
 """
 
@@ -141,7 +141,7 @@ def run_spectral_action():
             "ratio_M2_M4_pre_AF_decomposition": ratio_M2_M4,
             "ratio_status": "Tier 3 reference value; CCM a_2/a_4 field-theoretic identification requires A_F spectral-triple decomposition (Open Problem O.5)",
             "ccm_higgs_formula": "m_H^2 ∝ (a_2/a_4) * Lambda_GUT^2 (Connes-Chamseddine-Marcolli 2007 Adv. Theor. Math. Phys. 11:991)",
-            "open_problem_O5_status": "field-theoretic decomposition of M_n into gauge/Higgs/fermion subspaces of A_F pending; bundle with QLQCD-1L per App H O.5",
+            "open_problem_O5_status": "field-theoretic decomposition of M_n into gauge/Higgs/fermion subspaces of A_F pending; bundle with QLQCD-1L per App ORQ O.5",
         },
         "heat_kernel_sanity_check": {
             "t_test": t_test,
@@ -149,8 +149,14 @@ def run_spectral_action():
             "hk_taylor_truncated_at_M6": hk_taylor4,
             "relative_residual": hk_taylor_residual,
             "interpretation": "small-t Taylor sum truncated at M_6 vs direct heat-kernel evaluation; residual should be O(t^4 * Tr(D^8)/24) for small enough t",
+            "numerics_check_pass": bool(hk_taylor_residual < 1e-4),
         },
-        "pass": True,
+        # The former literal pass=True is retired. The moment
+        # ladder is bookkeeping; the CCM a_2/a_4 identification that would make
+        # it physics is Open Problem O.5 and is not implemented. The only
+        # checkable number is the numerics residual above.
+        "verdict": "BOOKKEEPING_MOMENTS_ONLY_CCM_IDENTIFICATION_OPEN_O5",
+        "pass": False,
     }
 
     kernel_path = get_output_path("spectral_rge_kernel.json")

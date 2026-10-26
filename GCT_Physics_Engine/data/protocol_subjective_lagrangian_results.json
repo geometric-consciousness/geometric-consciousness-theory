@@ -28,7 +28,7 @@
     "work_per_cycle_J": 4.1411126980616496e-21,
     "atp_per_cycle_per_spin": 0.04970537016022399,
     "power_per_spin_W": 4.638046221829048e-13,
-    "power_total_neuron_nW": 57975.5777728631,
+    "power_total_neuron_nW": 753682.5110472202,
     "label": "State B \u2014 Flow (Learning / Negative Entropy)",
     "experience": "High C-gradient, low friction; efficient information compression."
   },
@@ -44,7 +44,7 @@
     "work_per_cycle_J": 1.656961087883396e-18,
     "atp_per_cycle_per_spin": 19.888341665485754,
     "power_per_spin_W": 1.8557964184294033e-10,
-    "power_total_neuron_nW": 23197455.23036754,
+    "power_total_neuron_nW": 301566917.99477804,
     "label": "State C \u2014 Willpower (Habit Override / Maximum Torque)",
     "experience": "Maximum topological torque against crystallised attractor; pure volitional effort."
   },
@@ -53,7 +53,7 @@
     "power_per_spin_W": 1.8557964184294033e-10,
     "atp_per_cycle_per_spin": 19.888341665485754,
     "n_active_spins_max": 5.388522092559698,
-    "fraction_of_N_bio": 4.310817674047758e-08,
+    "fraction_of_N_bio": 3.3160135954213526e-09,
     "atp_per_second_willpower": 12002902066.270699,
     "baseline_atp_per_second": 2.0073333333333336e+16,
     "surplus_ratio": 5.979526104087029e-07,
@@ -80,7 +80,9 @@
     "polariton_power_w": 9.331076716416e-12,
     "steering_efficiency": 0.000112,
     "kappa_atp_to_ci_channel": 0.10408672797287422,
-    "physical_outcome": "ATP energy (0.52 eV) steered via VSE+CI into chiral phonon-polaritons at 112 MHz. Stark shift: 1.041 meV. ATP-to-CI-channel coupling kappa (transition_probability): 0.104 (matches manuscript Ch17 \u00a717.1.3b range 0.1-0.3). Landau-Zener steering efficiency (capped by Zeno-vs-electronic-timescale ratio): 0.0001."
+    "kappa_stark_ci_scale_ratio": 0.10408672797287422,
+    "kappa_semantics": "dimensionless Stark-to-CI energy-scale ratio (V1 Ch17 \u00a717.1.3b); not a transition probability or efficiency; not clipped; Tier 3 propagated envelope [0.006, 1.5]",
+    "physical_outcome": "Conditional Tier 3 material-scenario arithmetic: Stark shift 1.041 meV against a 10 meV CI seam gap gives the dimensionless scale ratio kappa = 0.104 (central input; V1 Ch17 \u00a717.1.3b envelope 0.006-1.5). No ATP-to-channel efficiency, steering fraction or phason coupling follows. The heuristic 'steering_efficiency' field (0.0001) is a timescale-ratio diagnostic, not a derived efficiency."
   },
   "wgm_resonance": {
     "radius_m": 7.5e-09,
@@ -95,10 +97,10 @@
   "constants": {
     "K_perp_N_m": 1.1428256945284461e-05,
     "K_parallel_N_m": 0.06603246665196212,
-    "omega_Zeno_Hz": 112000000.0,
-    "N_bio": 125000000.0,
+    "nu_Zeno_Hz": 112000000.0,
+    "N_bio": 1625000000.0,
     "N_bio_central": 0.0,
-    "N_bio_basis": "conditional beta-Trp n_rp=1 sensitivity branch; central n_rp=0 pending O.21; hydration shell is bath/environment per Ch13:633",
+    "N_bio_basis": "conditional beta-Trp n_rp=1 sensitivity branch; central n_rp=0 pending O.21; hydration shell is bath/environment per Ch13 Sec 13.5.3",
     "P_neuron_max_W": 1e-09,
     "eps_ATP_eV": 0.52,
     "J_screening": 1e-78,
@@ -107,5 +109,8 @@
     "Mu_Trp_Debye": 5.0,
     "Delta_ST_eV": 1.2408e-07
   },
-  "pass": true
+  "state_c_total_power_W": 0.301566917994778,
+  "state_c_total_power_over_ceiling": 301566917.99477804,
+  "verdict": "STATE_C_EXCEEDS_1NW_NEURON_BUDGET",
+  "pass": false
 }

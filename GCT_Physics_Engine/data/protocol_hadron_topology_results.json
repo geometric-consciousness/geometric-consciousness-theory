@@ -1,8 +1,8 @@
 {
   "protocol": "protocol_hadron_topology",
-  "tier": 2,
-  "pass": true,
-  "verdict": "PASS",
+  "tier": "Tier 1 lattice counts; Tier 2 12-alpha drag mechanism conditional on the Tier 3 face-defect assignment; Tier 3 CKM phi^-1 exponents and CP phase",
+  "pass": false,
+  "verdict": "CKM_S23_EXPONENT_OUTSIDE_0P5PCT_GATE_s23=0.98pct_s13=0.0076pct",
   "theorem_I_z6_coordination": {
     "lattice": "Z\u2076 hypercubic bulk",
     "dimension": 6,
@@ -28,22 +28,31 @@
     "s23_predicted": 0.04139164566553407,
     "s23_target_PDG": 0.0418,
     "s23_error_pct": 0.9769242451337963,
+    "s23_target_PDG_unrounded": 0.04183,
+    "s23_error_pct_vs_unrounded": 1.0479424682427183,
+    "s23_sigma_from_PDG": 0.6352961369071436,
     "s13_predicted": 0.003732282361359376,
-    "s13_target_PDG": 0.00369,
-    "s13_error_pct": 1.1458634514736,
-    "PASS": true
+    "s13_target_PDG": 0.003732,
+    "s13_error_pct": 0.007565952823577233,
+    "s13_error_ppm": 75.65952823577233,
+    "phi_correction_status": "INPUT: R_projection = 2*phi^-1 is typed, so N_weak*R = phi^-1 holds by construction",
+    "ckm_band_pct": 0.5,
+    "s23_within_band": false,
+    "s13_within_band": true,
+    "PASS": false
   },
   "theorem_III_strange_drag": {
     "Z6_coordination_number": 12,
     "icosahedral_channels_muon": 5,
     "drag_channel_ratio": 2.4,
     "drag_channel_ratio_formula": "Z_bulk / Z_icosahedral = 12 / 5 = 2.4",
-    "alpha": 0.0072973525693,
-    "12_alpha_value": 0.08756823083160001,
-    "5_alpha_value": 0.0364867628465,
-    "suppression_strange_quark": 0.9124317691684,
-    "suppression_muon_lepton": 0.9635132371535,
+    "alpha": 0.007297352564331425,
+    "12_alpha_value": 0.0875682307719771,
+    "5_alpha_value": 0.03648676282165712,
+    "suppression_strange_quark": 0.9124317692280229,
+    "suppression_muon_lepton": 0.9635132371783429,
     "coord_number_exact_12": true,
+    "repeat_of_check_I": true,
     "PASS": true
   },
   "theorem_IV_cp_phase": {
@@ -57,8 +66,9 @@
     "delta_cp_PDG_range_high_deg": 404.0,
     "within_PDG_1sigma_range": true,
     "error_from_PDG_central_pct": 0.22172790538834336,
-    "jackiw_rebbi_mechanism": "Full dodecahedral boundary winding (2\u03c0) \u00d7 \u03c6\u207b\u00b9 holonomy (Theorem II SU(2) projection ratio) = \u03b4_CP",
+    "jackiw_rebbi_mechanism": "Tier 3 ansatz: full dodecahedral boundary winding (2\u03c0) \u00d7 \u03c6\u207b\u00b9 holonomy (Check II SU(2) projection ratio) = \u03b4_CP",
     "radian_degree_consistent": true,
+    "window_note": "The 108-404 degree window spans 296 degrees; most random phases fall inside it, so this check is weak.",
     "PASS": true
   },
   "auxiliary_projection_check": {
@@ -79,13 +89,13 @@
   "summary": {
     "z6_coordination_number": 12,
     "phi_inv_holonomy": 0.6180339887498948,
-    "12_alpha_value": 0.08756823083160001,
-    "5_alpha_value": 0.0364867628465,
+    "12_alpha_value": 0.0875682307719771,
+    "5_alpha_value": 0.03648676282165712,
     "drag_ratio_12_over_5": 2.4,
     "delta_cp_rad": 3.8832220774509327,
     "delta_cp_deg": 222.49223594996212,
     "ckm_s23_exponent": 6.618033988749895,
     "ckm_s13_exponent": 11.618033988749895,
-    "all_theorems_pass": true
+    "all_theorems_pass": false
   }
 }

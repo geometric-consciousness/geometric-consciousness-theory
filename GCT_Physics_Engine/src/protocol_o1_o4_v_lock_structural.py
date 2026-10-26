@@ -7,7 +7,7 @@ Structural identification of the icosahedral lock potential V_lock as
 a polynomial in the H_3 fundamental Coxeter invariants. Partial closure
 of Open Problem O.1/O.4.
 
-CONTEXT (App H O.1, O.4; V2 Ch14 Sec 14.2)
+CONTEXT (App ORQ O.1, O.4; V2 Ch14 Sec 14.2)
 
 O.1: Derive the operative phason mass gap m_phason_operative from the non-linear dynamics
      of the icosahedral locking potential V_lock without numerical
@@ -67,7 +67,7 @@ PARTIAL CLOSURE STATUS
 
 V_lock has canonical Chevalley-Shephard-Todd form as a polynomial in the
 H_3 fundamental invariants {I_2, I_6, I_10} of degrees {2, 6, 10}. This is
-a Tier 2 STRUCTURAL identification. (App H O.1 leaves V_lock as an
+a Tier 2 STRUCTURAL identification. (App ORQ O.1 leaves V_lock as an
 unspecified non-linear icosahedral potential and m_phason undetermined.)
 
 Remaining open: the specific coupling constants (mu^2, g_6, g_10) are
@@ -193,8 +193,8 @@ def main():
     print(f"  STRUCTURAL CLOSURE (Tier 2):")
     print(f"    V_lock is the canonical polynomial in H_3 fundamental invariants")
     print(f"    {{I_2, I_6, I_10}} of degrees {{2, 6, 10}} per Chevalley-Shephard-Todd.")
-    print(f"    The sum of degrees (18) is the same Coxeter invariant that fixes")
-    print(f"    K_perp/K_parallel = phi^(-18) per O.15(a).")
+    print(f"    The sum of degrees (18) is the same Coxeter invariant conditionally linked")
+    print(f"    to K_perp/K_parallel = phi^(-18) (Tier 3 physical map, pending O.15(b)).")
     print(f"")
     print(f"  EMPIRICAL ANCHOR (Tier 3 numerical):")
     print(f"    Weinberg coincidence gives m_Weinberg ~ {m_weinberg_meV:.1f} meV")

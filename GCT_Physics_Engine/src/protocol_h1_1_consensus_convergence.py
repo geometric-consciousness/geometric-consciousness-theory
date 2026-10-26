@@ -52,7 +52,7 @@ Engine outputs:
   - Verify Phi^* satisfies the weighted-mean fixed-point equation.
 
 Cross-reference: V1 Ch11 Sec 11.3.2 (Consensus Action functional); Ch07
-(p-adic identity tree); App H H.1.1.
+(p-adic identity tree); App ORQ H.1.1.
 """
 
 from __future__ import annotations

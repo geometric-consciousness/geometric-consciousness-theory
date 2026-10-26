@@ -1,0 +1,172 @@
+[
+  {
+    "command": "py -3.13 -X utf8 build_scripts/manage_publication_metadata.py --check",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\manage_publication_metadata.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 build_scripts/manage_codebase_structure.py --check",
+    "log": "_publish_prep/tier0_checks/manage_codebase_structure_final.log",
+    "initial_exit_code": 1,
+    "initial_failure": "Ran during output reset; canonical PDF temporarily absent. Final inventory check follows completed build.",
+    "final_status": "passed",
+    "exit_code": 0,
+    "initial_log": "_publish_prep\\tier0_checks\\manage_codebase_structure.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 build_scripts/manage_figures.py --check",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\manage_figures.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 build_scripts/generate_index.py --check",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\generate_index.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 build_scripts\\check_codebase_structure_fixtures.py",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\check_codebase_structure_fixtures.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 build_scripts\\check_compile_latex_fixtures.py",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\check_compile_latex_fixtures.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 build_scripts\\check_generate_index_fixtures.py",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\check_generate_index_fixtures.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 build_scripts\\check_publication_metadata_fixtures.py",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\check_publication_metadata_fixtures.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 build_scripts\\check_table_export_fixtures.py",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\check_table_export_fixtures.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 GCT_Physics_Engine/src/check_expected_outcomes.py",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\check_expected_outcomes.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 GCT_Physics_Engine/src/check_data_json_producers.py --strict",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\check_data_json_producers.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 GCT_Physics_Engine/verify_independent/check_verifier_status_contract.py",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\check_verifier_status_contract.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 GCT_Physics_Engine/src/check_registry_ids.py --strict",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\check_registry_ids.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 GCT_Physics_Engine/src/check_registry_appendix_consistency.py --strict",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\check_registry_appendix_consistency.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 GCT_Physics_Engine/scripts/check_phi_ssot.py",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\check_phi_ssot.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 GCT_Physics_Engine/verify_independent/self_consistency/check_permanent_registers_fixtures.py",
+    "exit_code": 0,
+    "log": "_publish_prep\\tier0_checks\\check_permanent_registers_fixtures.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 GCT_Physics_Engine/src/verify_engine.py",
+    "exit_code": 0,
+    "expected_results": "62/62",
+    "drift_failures": 0,
+    "failed_enforced_comparisons": 0,
+    "scientific_closure": {
+      "confirmed": 12,
+      "open": 32,
+      "conditional": 9,
+      "tension": 9
+    },
+    "pyphi_mode": "direct_pyphi",
+    "log": "_publish_prep/tier0_checks/verify_engine.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 build_scripts/compile_manuscript.py",
+    "exit_code": 0,
+    "log": "_publish_prep/tier0_checks/compile_manuscript.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 build_scripts/compile_latex.py",
+    "exit_code": 0,
+    "scope": "Full figure conversion and three XeLaTeX passes; before final prose QA refinements",
+    "log": "_publish_prep/tier0_checks/compile_latex.log"
+  },
+  {
+    "command": "Final text rebuild using canonical compiler and 40 validated SVG/PDF pairs",
+    "log": "_publish_prep/tier0_checks/compile_latex_final.log",
+    "exit_code": 0
+  },
+  {
+    "command": "py -3.13 -X utf8 _publish_prep/verify_tier0.py",
+    "exit_code": 0,
+    "scope": "204-file bracket-label census; exact removed-label assertion; added-line and added-word Law 8 scans"
+  },
+  {
+    "command": "py -3.13 -X utf8 build_scripts/manage_release_package.py --verify-only",
+    "exit_code": 0,
+    "page_count": 1091,
+    "pdf_sha256": "b563d9f95fcf203cd517910dc28cae749ae186bc97f07f6ef300d434639b02ed",
+    "tier0_pdf_pages": [
+      26,
+      28,
+      29,
+      31,
+      32,
+      36,
+      37,
+      73,
+      78,
+      82,
+      83,
+      88,
+      90,
+      91,
+      95,
+      101,
+      118,
+      122,
+      149,
+      213,
+      308,
+      314,
+      334,
+      335,
+      459,
+      769,
+      937,
+      1046,
+      1050
+    ],
+    "visual_qa": "23 initial affected pages plus final refinements and additions, including page 335; both figure PDF pairs and SVG PNG inspected",
+    "pagination_lock_change": "1093 -> 1091"
+  },
+  {
+    "command": "py -3.13 -X utf8 build_scripts/manage_release_package.py --write --build-input-commit a9a71451fa7c2a796c2a2d267b056f875066f20c",
+    "exit_code": 0,
+    "log": "_publish_prep/tier0_checks/release_manifest_write.log"
+  },
+  {
+    "command": "py -3.13 -X utf8 build_scripts/manage_release_package.py --check",
+    "exit_code": 0,
+    "log": "_publish_prep/tier0_checks/release_manifest_check.log",
+    "pdf_sha256": "b563d9f95fcf203cd517910dc28cae749ae186bc97f07f6ef300d434639b02ed"
+  }
+]

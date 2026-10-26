@@ -2,7 +2,7 @@
   "upload_type": "publication",
   "publication_type": "preprint",
   "title": "Geometric Consciousness Theory: A 6D-to-3D Projective Framework",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "language": "eng",
   "access_right": "open",
   "license": "CC-BY-4.0",
@@ -13,7 +13,7 @@
       "orcid": "0009-0006-6613-3721"
     }
   ],
-  "description": "A consciousness-first theoretical framework deriving physical reality from a 6D icosahedral cut-and-project quasicrystalline lattice. The Standard Model gauge structure, charged-lepton mass hierarchy, and selected cosmological predictions follow from five postulates plus three anchors with the electron mass as the sole dimensional input. Includes an accompanying open-source Python verification engine (62/62 protocols PASS) and pre-registered falsifiable experimental protocols.",
+  "description": "Geometric Consciousness Theory (GCT) is an observer-first research framework starting from the sole Tier 0 first-person datum that experience is occurring, neither postulated nor derived. Axiom 1 generalises it by stipulation to universal Level I presence in all Field configurations (Tier 1); objective idealism remains a Tier 3 parsimony choice, and Level II substrate verdicts remain open (Tier 3). No other claim belongs to Tier 0. The Tier 1 ontological axioms are Presence and Intelligibility (Experience is structured). It adopts a 6D-to-3D icosahedral cut-and-project architecture as a Tier 1/2 structural postulate. Within this ansatz, the lepton hierarchies combine conditional Tier 2 mathematics with disclosed Tier 3 calibrations and sector-specific physical-identification obligations. A preregistered, non-confirmatory constant control test (v3, NEGATIVE-FRAGILE: 58 of 300 random bases did at least as well as phi, p0 = 0.196) places every phi-based mass and constant formula at Tier 4 as evidence that phi or icosahedral structure is special; the numbers remain descriptive arithmetic, and earlier global-significance figures are withdrawn. The gauge sector is an open Tier 3 candidate: the eight-dimensional SU(3) closure built from the window's three-fold axes is exact matrix algebra but is not specific to that geometry, and the bare electroweak angle sin^2(theta_W) = phi^-3 is the Tier 3 hypothesis H-EW, which renormalization-group running to the Z pole does not reproduce. Selected cosmological models include Tier 3 phenomenological assumptions. Mathematical model statements do not by themselves establish physical adoption. The declared core accounting lists five postulates and six continuous anchors, with the electron mass as the sole dimensional input; 6 calibrated Tier-3 discrete coefficient handles (1440, 12, 360, 2, 10phi^2, and 1/5) form a named precision/gauge comparison subset and are not a manuscript-wide handle total, while the O.38 N=144 cage posit is disclosed separately. The electroweak hypothesis H-EW and the Cabibbo identification are Tier 3 hypotheses registered outside that count; across the full theoretical scope the Parameter Ledger records 24 numbered inputs. Includes an accompanying open-source Python verification engine with 62/62 expected results for suite integrity and a scientific-closure breakdown of 7 confirmed, 31 open, 12 conditional, and 12 tension protocols. These are software expectations and reported protocol statuses, not independent experimental confirmation or a fresh validation run. The framework's stated methodological commitments include falsifiability and explicit epistemic classification.",
   "keywords": [
     "consciousness",
     "geometric consciousness theory",
@@ -29,7 +29,7 @@
     "microtubule",
     "dark matter",
     "dark energy",
-    "phantom crossing",
+    "continuous phantom phase",
     "panpsychism",
     "integrated information theory",
     "noncommutative geometry"

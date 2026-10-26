@@ -38,21 +38,22 @@ def main():
 
  res = make_result(
  name="yield_strain_epsilon_y",
- app_r_label="Yield strain ε_y = φ⁻⁵ (Tier 2, Ch11 §11.1.3 AKN tiling-flip derivation)",
+ app_psc_label="Yield strain ε_y = φ⁻⁵ (Tier 2, Ch11 §11.1.3 AKN tiling-flip derivation)",
  formula="ε_y = Δu_⊥ / ξ = (φ⁻¹ a_⊥) / (φ⁴ a_⊥) = φ⁻⁵",
  predicted=epsilon_y_derived,
  observed=epsilon_y_stated_Ch11,
+ reference_class="MANUSCRIPT_STATED",
  unit="(dimensionless)",
- app_r_predicted=epsilon_y_stated_Ch11,
- app_r_precision_str=(
+ app_psc_predicted=epsilon_y_stated_Ch11,
+ app_psc_precision_str=(
  f"ε_y = φ⁻⁵ = {epsilon_y_derived:.6f}; "
  f"Ch11 §11.1.3 cites 0.0902 ({err_vs_Ch11_pct:.3f}% match); "
  f"Parameter Ledger reports the Tier 2 candidate φ⁻⁵ ≈ 0.0902 and the "
-	 f"Tier 3 registered stress-gate value 0.1 ({err_vs_Ledger_pct:.1f}% offset)."
+ f"Tier 3 registered stress-gate value 0.1 ({err_vs_Ledger_pct:.1f}% offset)."
  ),
- app_r_precision_ppm=err_vs_Ch11_pct * 1e4,
+ app_psc_precision_ppm=err_vs_Ch11_pct * 1e4,
  tier="Tier 2 candidate derivation + Tier 3 registered stress-gate prior",
- status="PASS" if pass_status else "TENSION",
+ status="INTERNAL_ARITHMETIC_PASS" if pass_status else "TENSION",
  tolerance_ppm=None,
  extra={
  "phi": phi,
@@ -64,10 +65,10 @@ def main():
  "matches_Ch11_derivation": matches_Ch11,
  "matches_Ledger_rounded_value": matches_Ledger,
  "note": (
-	 "Ch11 §11.1.3 derives ε_y = φ⁻⁵ ≈ 0.0902 from the AKN tiling-flip "
-	 "condition with no fitted local parameter. The engine stress gate currently "
-	 "uses 0.1 as a Tier 3 alloy-like prior pending AKN-action/phason-elastic "
-	 "closure or direct Protocol C stress-threshold calibration."
+ "Ch11 §11.1.3 derives ε_y = φ⁻⁵ ≈ 0.0902 from the AKN tiling-flip "
+ "condition with no fitted local parameter. The engine stress gate currently "
+ "uses 0.1 as a Tier 3 alloy-like prior pending AKN-action/phason-elastic "
+ "closure or direct Protocol C stress-threshold calibration."
 ),
  },
  )

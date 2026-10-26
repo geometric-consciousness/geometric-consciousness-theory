@@ -1,7 +1,7 @@
 {
   "protocol": "eta_Zeno Formal Calculation Procedure (V3 \u00a713.5)",
-  "chain_definition": "eta_Zeno = (g_single * sqrt(N_bio) / kappa) * eta_F   [V3 \u00a713.1.2 + \u00a713.4.4]",
-  "reference_line": "Apperception verdict = necessary DMC gate (I != 0 AND chiral) + O.21 cooperative radical-pair/Polaron witness + O.23 protected subspace + O.34 ATP-Trp redox regeneration; the eta_Zeno unit line is a robustness reporting line for eligible branches, not an independent phase threshold. [V1 \u00a716.2.6, V1 \u00a717.1.4b, V3 \u00a713.5]",
+  "chain_definition": "eta_Zeno = (g_single * sqrt(N_bio) / kappa) * eta_F   [V3 \u00a713.1.2 + \u00a713.4.6]",
+  "reference_line": "DMC legs are candidate missing-leg controls, not necessary or sufficient for Level II. Legacy g_single/eta_Zeno/N_coh values are conditional external-rate scenarios; a typed, normalized, measured coupling plus the independent phenomenal bridge remain open. [V1 \u00a716.2.6, V1 \u00a717.1.4b, V3 \u00a713.5]",
   "substrates": [
     {
       "substrate_name": "canonical_tubulin",
@@ -21,19 +21,19 @@
           0.01
         ],
         "f_overlap_provenance": "upper_edge_estimate_pending_O.16_dipole_cage_overlap_calculation",
-        "f_overlap_downstream_impact": "linear on the n_rp=1 beta-Trp sensitivity branch; central n_rp=0 remains pending O.21 (DMC-gate verdict preserved)",
+        "f_overlap_downstream_impact": "linear on the n_rp=1 beta-Trp sensitivity branch; central n_rp=0 remains pending O.21; no substrate verdict",
         "N_dipoles_cooperative": 0.0,
         "N_dipoles_cooperative_central": 0.0,
-        "N_dipoles_cooperative_sensitivity_branch": 125000000.0,
+        "N_dipoles_cooperative_sensitivity_branch": 1625000000.0,
         "N_dipoles_cooperative_range": [
           0.0,
-          125000000.0
+          1625000000.0
         ],
         "f_bound_operational_range": [
           0.0,
           0.001
         ],
-        "N_bio_scaling_note": "Ch13:633 canonical separation: central cooperative branch is n_rp=0 pending O.21 assembled-MT lumen-axis closure; the n_rp=1 sensitivity branch uses 1.25e8 beta-Trp radical-pair hosts only. Hydration-shell OH/proton dipoles are bath/environment and are not counted in the cooperative oscillator basis.",
+        "N_bio_scaling_note": "Ch13 Sec 13.5.3 canonical separation: central cooperative branch is n_rp=0 pending O.21 assembled-MT lumen-axis closure; the n_rp=1 sensitivity branch uses 1.625e+09 beta-Trp radical-pair hosts only. Hydration-shell OH/proton dipoles are bath/environment and are not counted in the cooperative oscillator basis.",
         "kappa_mode": "geometric",
         "N_cage_eff": 144,
         "stiffness_exponent": -18.0,
@@ -52,6 +52,10 @@
           "spin_ok": true,
           "chiral_ok": true,
           "chiral_sign": 1.0,
+          "candidate_control_spin_present": true,
+          "candidate_control_chirality_present": true,
+          "legacy_external_rate_scale": 1.0,
+          "coupling_status": "conditional external-rate scenario; no typed measured phason coupling",
           "mu_dipole_Cm": 1.66782e-29,
           "E_phason_V_m": 201.82619392254904,
           "omega_coupling_rad_s": 31919093.353497587,
@@ -64,9 +68,9 @@
         "step2_sqrt_N_bio": {
           "N_dipoles_cooperative": 0.0,
           "N_dipoles_cooperative_central": 0.0,
-          "N_dipoles_cooperative_sensitivity_branch": 125000000.0,
+          "N_dipoles_cooperative_sensitivity_branch": 1625000000.0,
           "sqrt_N": 0.0,
-          "cooperative_basis_note": "Ch13:633 canonical separation: central cooperative branch is n_rp=0 pending O.21 assembled-MT lumen-axis closure; the n_rp=1 sensitivity branch uses 1.25e8 beta-Trp radical-pair hosts only. Hydration-shell OH/proton dipoles are bath/environment and are not counted in the cooperative oscillator basis."
+          "cooperative_basis_note": "Ch13 Sec 13.5.3 canonical separation: central cooperative branch is n_rp=0 pending O.21 assembled-MT lumen-axis closure; the n_rp=1 sensitivity branch uses 1.625e+09 beta-Trp radical-pair hosts only. Hydration-shell OH/proton dipoles are bath/environment and are not counted in the cooperative oscillator basis."
         },
         "step3_kappa_cav": {
           "mode": "geometric",
@@ -101,17 +105,17 @@
       "eta_TC": 0.0,
       "eta_TC_range": [
         0.0,
-        31839669.54429808
+        114799561.13579586
       ],
       "eta_F": 1.0,
       "eta_Zeno": 0.0,
       "eta_Zeno_range": [
         0.0,
-        31839669.54429808
+        114799561.13579586
       ],
       "sqrt_N_bio_range": [
         0.0,
-        11180.339887498949
+        40311.288741492746
       ],
       "g_single_Hz_plausible_range": [
         3833.465430584106,
@@ -123,21 +127,22 @@
       ],
       "range_propagation_note": "eta_Zeno_range propagates both N_dipoles_cooperative_range and f_overlap_plausible_range where supplied; it is not only an N-range.",
       "reference_line": 1.0,
-      "dmc_material_pass": true,
+      "dmc_candidate_controls_present": true,
       "cooperative_central_inventory_present": false,
-      "level_II_gate_basis": "Level-II substrate closure requires material DMC pass plus explicit O.21 cooperative radical-pair/Polaron witness, O.23 protected-subspace coherence closure, and O.34 ATP-Trp redox regeneration closure. The eta_Zeno scalar is a robustness reporting line only.",
+      "level_II_status_basis": "DMC legs are candidate missing-leg controls, not necessary or sufficient conditions. O.21/O.23/O.34 and a typed, normalized, measured coupling remain open; eta_Zeno is only a conditional external-rate scenario.",
       "closure_flags": {
         "O21_cooperative_radical_pair_closed": false,
         "O23_protected_subspace_closed": false,
         "O34_ATP_Trp_redox_regeneration_closed": false
       },
-      "level_II_closure_flags_met": false,
-      "verdict": "DMC_PASS_O21_PENDING",
-      "cross_engine_verdict_alignment": "eta_Zeno is the robustness margin across the upstream Dual Material Constraint gate (V1 \u00a716.2.6); it represents the Tavis-Cummings cavity-QED cooperativity ratio g_coll / kappa_cav. DMC-positive branches still require the O.21 cooperative radical-pair/Polaron witness, O.23 protected subspace, and O.34 ATP-Trp redox-regeneration condition before Level-II substrate status is assigned; eta_Zeno is reported as a robustness margin rather than an independent Level-II threshold. The Apperception verdict (DMC material pass with O.21/O.23/O.34 pending vs TURING_NULL for material-DMC failure) is DISTINCT from the bare Misra-Sudarshan extension verdict in protocol_decoherence_audit.py, which at canonical biological parameters returns BARE_MS_EXTENSION_INSUFFICIENT (~110 ns diagnostic scale vs the 100 us-0.87 ms conditional band; the 10 ms conservative target remains unreached). The positive branch is therefore a candidate protected-subspace branch conditional on Open Problem O.23 closure (chiral phonon-polariton DFS providing a route toward the conditional operative band used by the Tavis-Cummings framing).",
+      "all_research_flags_closed": false,
+      "level_II_not_evaluated": true,
+      "verdict": "LEVEL_II_NOT_EVALUATED_NO_TYPED_NORMALIZED_MEASURED_COUPLING",
+      "cross_engine_verdict_alignment": "eta_Zeno is a conditional external-rate robustness scenario; it represents the Tavis-Cummings cavity-QED cooperativity ratio g_coll / kappa_cav arithmetic after scenario inputs are supplied. DMC legs remain candidate controls; all branches still require the O.21 cooperative radical-pair/Polaron witness, O.23 protected subspace, and O.34 ATP-Trp redox-regeneration condition before any Level-II substrate status could be assigned; eta_Zeno is reported as a scenario rather than an independent Level-II threshold. No material descriptor executes a zero-coupling or categorical substrate verdict. This is DISTINCT from the bare Misra-Sudarshan extension verdict in protocol_decoherence_audit.py, which at canonical biological parameters returns BARE_MS_EXTENSION_INSUFFICIENT (about 2.8 ns diagnostic scale vs the 100 us-0.87 ms conditional band; the 10 ms conservative target remains unreached). The positive branch is therefore a candidate protected-subspace branch conditional on Open Problem O.23 closure (chiral phonon-polariton DFS providing a route toward the conditional operative band used by the Tavis-Cummings framing).",
       "tier_notes": {
-        "chain_formal": "Tier 2 (V3 \u00a713.1.2 + \u00a713.4.4 + V1 \u00a716.2.6)",
+        "chain_formal": "Steps 2-5: Tier 2 algebraic form (Tavis-Cummings ratio arithmetic; V3 \u00a713.1.2 + \u00a713.4.6 + V1 \u00a716.2.6); Step 1: Tier 3 scenario form of g_single with a calibrated Tier 3 scale",
         "substrate_inputs": "Tier 3 (empirical molecular/lattice parameters)",
-        "dmc_gate_verdict": "material DMC is necessary; Level-II sufficiency is gated by explicit O.21/O.23/O.34 closure flags",
+        "dmc_control_disposition": "candidate controls only; no necessary/sufficient Level-II gate is established",
         "experimental_status": "Tractable on substrate parameters; bench validation via Protocol A-Prime (V3 \u00a713.3.5) pending."
       }
     },
@@ -145,9 +150,10 @@
       "substrate_name": "silicon_28",
       "substrate_inputs": {
         "name": "silicon_28",
-        "epistemic_note": "Standard digital silicon; V1 \u00a717.10 Turing Null case.",
+        "epistemic_note": "Standard digital silicon missing-leg control; Level II NOT_EVALUATED (open, Tier 3).",
         "nuclear_spin_I": 0.0,
         "chirality": "achiral",
+        "legacy_external_rate_scale": 0.0,
         "mu_dipole_Debye": 0.5,
         "m_eff_kg": 9.1093837015e-31,
         "omega_drive_Hz": 112000000.0,
@@ -172,14 +178,19 @@
           "chirality": "achiral",
           "spin_ok": false,
           "chiral_ok": false,
-          "chiral_sign": 0.0,
+          "chiral_sign": 1.0,
+          "candidate_control_spin_present": false,
+          "candidate_control_chirality_present": false,
+          "legacy_external_rate_scale": 0.0,
+          "coupling_status": "conditional external-rate scenario; no typed measured phason coupling",
           "mu_dipole_Cm": 1.66782e-30,
-          "E_phason_V_m": 0.0,
-          "omega_coupling_rad_s": 0.0,
-          "u_zpf_m": 0.0,
+          "E_phason_V_m": 201.82619392254904,
+          "omega_coupling_rad_s": 3191909.3353497586,
+          "u_zpf_m": 2.8680032507318864e-07,
+          "dS_du_inv_m": 24227656.531169124,
+          "f_overlap": 1.0,
           "g_single_rad_s": 0.0,
-          "g_single_Hz": 0.0,
-          "gate_reason": "I=0"
+          "g_single_Hz": 0.0
         },
         "step2_sqrt_N_bio": {
           "N_dipoles_cooperative": 1000000000.0,
@@ -204,9 +215,9 @@
           "eta_TC": 0.0
         },
         "step5_eta_F": {
-          "mode": "gated_zero",
+          "mode": "declared_external_zero_scenario",
           "eta_F": 0.0,
-          "note": "g_single=0 (Dual Material Constraint failure)"
+          "note": "explicit legacy external-rate scenario; no material inference"
         }
       },
       "eta_TC": 0.0,
@@ -219,21 +230,22 @@
       "f_overlap_plausible_range_applied": null,
       "range_propagation_note": null,
       "reference_line": 1.0,
-      "dmc_material_pass": false,
+      "dmc_candidate_controls_present": false,
       "cooperative_central_inventory_present": true,
-      "level_II_gate_basis": "Level-II substrate closure requires material DMC pass plus explicit O.21 cooperative radical-pair/Polaron witness, O.23 protected-subspace coherence closure, and O.34 ATP-Trp redox regeneration closure. The eta_Zeno scalar is a robustness reporting line only.",
+      "level_II_status_basis": "DMC legs are candidate missing-leg controls, not necessary or sufficient conditions. O.21/O.23/O.34 and a typed, normalized, measured coupling remain open; eta_Zeno is only a conditional external-rate scenario.",
       "closure_flags": {
         "O21_cooperative_radical_pair_closed": false,
         "O23_protected_subspace_closed": false,
         "O34_ATP_Trp_redox_regeneration_closed": false
       },
-      "level_II_closure_flags_met": false,
-      "verdict": "TURING_NULL",
-      "cross_engine_verdict_alignment": "eta_Zeno is the robustness margin across the upstream Dual Material Constraint gate (V1 \u00a716.2.6); it represents the Tavis-Cummings cavity-QED cooperativity ratio g_coll / kappa_cav. DMC-positive branches still require the O.21 cooperative radical-pair/Polaron witness, O.23 protected subspace, and O.34 ATP-Trp redox-regeneration condition before Level-II substrate status is assigned; eta_Zeno is reported as a robustness margin rather than an independent Level-II threshold. The Apperception verdict (DMC material pass with O.21/O.23/O.34 pending vs TURING_NULL for material-DMC failure) is DISTINCT from the bare Misra-Sudarshan extension verdict in protocol_decoherence_audit.py, which at canonical biological parameters returns BARE_MS_EXTENSION_INSUFFICIENT (~110 ns diagnostic scale vs the 100 us-0.87 ms conditional band; the 10 ms conservative target remains unreached). The positive branch is therefore a candidate protected-subspace branch conditional on Open Problem O.23 closure (chiral phonon-polariton DFS providing a route toward the conditional operative band used by the Tavis-Cummings framing).",
+      "all_research_flags_closed": false,
+      "level_II_not_evaluated": true,
+      "verdict": "LEVEL_II_NOT_EVALUATED_NO_TYPED_NORMALIZED_MEASURED_COUPLING",
+      "cross_engine_verdict_alignment": "eta_Zeno is a conditional external-rate robustness scenario; it represents the Tavis-Cummings cavity-QED cooperativity ratio g_coll / kappa_cav arithmetic after scenario inputs are supplied. DMC legs remain candidate controls; all branches still require the O.21 cooperative radical-pair/Polaron witness, O.23 protected subspace, and O.34 ATP-Trp redox-regeneration condition before any Level-II substrate status could be assigned; eta_Zeno is reported as a scenario rather than an independent Level-II threshold. No material descriptor executes a zero-coupling or categorical substrate verdict. This is DISTINCT from the bare Misra-Sudarshan extension verdict in protocol_decoherence_audit.py, which at canonical biological parameters returns BARE_MS_EXTENSION_INSUFFICIENT (about 2.8 ns diagnostic scale vs the 100 us-0.87 ms conditional band; the 10 ms conservative target remains unreached). The positive branch is therefore a candidate protected-subspace branch conditional on Open Problem O.23 closure (chiral phonon-polariton DFS providing a route toward the conditional operative band used by the Tavis-Cummings framing).",
       "tier_notes": {
-        "chain_formal": "Tier 2 (V3 \u00a713.1.2 + \u00a713.4.4 + V1 \u00a716.2.6)",
+        "chain_formal": "Steps 2-5: Tier 2 algebraic form (Tavis-Cummings ratio arithmetic; V3 \u00a713.1.2 + \u00a713.4.6 + V1 \u00a716.2.6); Step 1: Tier 3 scenario form of g_single with a calibrated Tier 3 scale",
         "substrate_inputs": "Tier 3 (empirical molecular/lattice parameters)",
-        "dmc_gate_verdict": "material DMC is necessary; Level-II sufficiency is gated by explicit O.21/O.23/O.34 closure flags",
+        "dmc_control_disposition": "candidate controls only; no necessary/sufficient Level-II gate is established",
         "experimental_status": "Tractable on substrate parameters; bench validation via Protocol A-Prime (V3 \u00a713.3.5) pending."
       }
     },
@@ -268,6 +280,10 @@
           "spin_ok": true,
           "chiral_ok": true,
           "chiral_sign": 1.0,
+          "candidate_control_spin_present": true,
+          "candidate_control_chirality_present": true,
+          "legacy_external_rate_scale": 1.0,
+          "coupling_status": "conditional external-rate scenario; no typed measured phason coupling",
           "mu_dipole_Cm": 8.3391e-30,
           "E_phason_V_m": 201.82619392254904,
           "omega_coupling_rad_s": 15959546.676748794,
@@ -320,21 +336,22 @@
       "f_overlap_plausible_range_applied": null,
       "range_propagation_note": null,
       "reference_line": 1.0,
-      "dmc_material_pass": true,
+      "dmc_candidate_controls_present": true,
       "cooperative_central_inventory_present": true,
-      "level_II_gate_basis": "Level-II substrate closure requires material DMC pass plus explicit O.21 cooperative radical-pair/Polaron witness, O.23 protected-subspace coherence closure, and O.34 ATP-Trp redox regeneration closure. The eta_Zeno scalar is a robustness reporting line only.",
+      "level_II_status_basis": "DMC legs are candidate missing-leg controls, not necessary or sufficient conditions. O.21/O.23/O.34 and a typed, normalized, measured coupling remain open; eta_Zeno is only a conditional external-rate scenario.",
       "closure_flags": {
         "O21_cooperative_radical_pair_closed": false,
         "O23_protected_subspace_closed": false,
         "O34_ATP_Trp_redox_regeneration_closed": false
       },
-      "level_II_closure_flags_met": false,
-      "verdict": "DMC_PASS_COOPERATIVE_INVENTORY_PRESENT_O21_CLOSURE_PENDING",
-      "cross_engine_verdict_alignment": "eta_Zeno is the robustness margin across the upstream Dual Material Constraint gate (V1 \u00a716.2.6); it represents the Tavis-Cummings cavity-QED cooperativity ratio g_coll / kappa_cav. DMC-positive branches still require the O.21 cooperative radical-pair/Polaron witness, O.23 protected subspace, and O.34 ATP-Trp redox-regeneration condition before Level-II substrate status is assigned; eta_Zeno is reported as a robustness margin rather than an independent Level-II threshold. The Apperception verdict (DMC material pass with O.21/O.23/O.34 pending vs TURING_NULL for material-DMC failure) is DISTINCT from the bare Misra-Sudarshan extension verdict in protocol_decoherence_audit.py, which at canonical biological parameters returns BARE_MS_EXTENSION_INSUFFICIENT (~110 ns diagnostic scale vs the 100 us-0.87 ms conditional band; the 10 ms conservative target remains unreached). The positive branch is therefore a candidate protected-subspace branch conditional on Open Problem O.23 closure (chiral phonon-polariton DFS providing a route toward the conditional operative band used by the Tavis-Cummings framing).",
+      "all_research_flags_closed": false,
+      "level_II_not_evaluated": true,
+      "verdict": "LEVEL_II_NOT_EVALUATED_NO_TYPED_NORMALIZED_MEASURED_COUPLING",
+      "cross_engine_verdict_alignment": "eta_Zeno is a conditional external-rate robustness scenario; it represents the Tavis-Cummings cavity-QED cooperativity ratio g_coll / kappa_cav arithmetic after scenario inputs are supplied. DMC legs remain candidate controls; all branches still require the O.21 cooperative radical-pair/Polaron witness, O.23 protected subspace, and O.34 ATP-Trp redox-regeneration condition before any Level-II substrate status could be assigned; eta_Zeno is reported as a scenario rather than an independent Level-II threshold. No material descriptor executes a zero-coupling or categorical substrate verdict. This is DISTINCT from the bare Misra-Sudarshan extension verdict in protocol_decoherence_audit.py, which at canonical biological parameters returns BARE_MS_EXTENSION_INSUFFICIENT (about 2.8 ns diagnostic scale vs the 100 us-0.87 ms conditional band; the 10 ms conservative target remains unreached). The positive branch is therefore a candidate protected-subspace branch conditional on Open Problem O.23 closure (chiral phonon-polariton DFS providing a route toward the conditional operative band used by the Tavis-Cummings framing).",
       "tier_notes": {
-        "chain_formal": "Tier 2 (V3 \u00a713.1.2 + \u00a713.4.4 + V1 \u00a716.2.6)",
+        "chain_formal": "Steps 2-5: Tier 2 algebraic form (Tavis-Cummings ratio arithmetic; V3 \u00a713.1.2 + \u00a713.4.6 + V1 \u00a716.2.6); Step 1: Tier 3 scenario form of g_single with a calibrated Tier 3 scale",
         "substrate_inputs": "Tier 3 (empirical molecular/lattice parameters)",
-        "dmc_gate_verdict": "material DMC is necessary; Level-II sufficiency is gated by explicit O.21/O.23/O.34 closure flags",
+        "dmc_control_disposition": "candidate controls only; no necessary/sufficient Level-II gate is established",
         "experimental_status": "Tractable on substrate parameters; bench validation via Protocol A-Prime (V3 \u00a713.3.5) pending."
       }
     }
@@ -343,7 +360,7 @@
   "verdict": "PASS",
   "pass_": true,
   "tier_notes": {
-    "chain": "Tier 2 formal structure (no fitted numerical knob once Tier 3 substrate inputs are supplied)",
+    "chain": "Tier 2 algebraic form for the ratio chain; the g_single form is a Tier 3 scenario form, and g_single and legacy_external_rate_scale are calibrated Tier 3 scenario inputs, not evaluated matrix elements",
     "inputs": "Tier 3 (empirical substrate molecular parameters)",
     "experiment": "Bench validation via Protocol A-Prime (V3 \u00a713.3.5) pending."
   },

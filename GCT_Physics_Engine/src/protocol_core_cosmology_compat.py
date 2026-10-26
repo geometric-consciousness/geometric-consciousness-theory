@@ -5,7 +5,10 @@ Filename: protocol_core_cosmology_compat.py
 
 All constants are imported from the SSOT (gct_constants).
 
-Verification of GCT derived constants (G, c, Lambda) Scaling.
+Large-number arithmetic: log10(t_H / t_P) from observed G, hbar, c and
+H0 = 70 km/s/Mpc. No GCT input enters, so the check cannot test GCT.
+The former PASS on 60 < log10 < 62 is retired; the ratio is
+kept as a named diagnostic field.
 """
 import json
 import sys
@@ -18,8 +21,8 @@ from gct_utils import C
 def test_h0_conditional_chain():
     return {
         "o1_o4_equivalence_proven": False,
-        "section_14A3_uses_ssot_formula": True,
-        "kz_self_consistency": "xi_KZ -> R_H confirmed via epsilon_lock = H0/omega_P",
+        "section_14A3_uses_ssot_formula": "ASSERTED_NOT_CHECKED_HERE",
+        "kz_self_consistency": "xi_KZ -> R_H via epsilon_lock = H0/omega_P is asserted in Sec 14A.3; not computed here",
         "message": (
             "O.1 (derive V_lock curvature and m_phason_operative) and O.4 "
             "(derive H0/dark-energy density scale) are coupled cosmology "
@@ -59,8 +62,10 @@ def main():
     report.log_value("LNH Ratio (log10)", lnh_log10)
 
     # Verdict: PASS if Log10(LNH) is 60-62 (Standard SM scaling)
-    passed = 60.0 < lnh_log10 < 62.0
-    report.verdict(passed, f"LNH Ratio 10^{lnh_log10:.2f} aligns with Standard Model Scaling.")
+    lnh_in_60_62 = bool(60.0 < lnh_log10 < 62.0)
+    passed = False
+    verdict = "STANDARD_PHYSICS_ARITHMETIC_NO_GCT_INPUT"
+    print(f"VERDICT: {verdict} (LNH ratio 10^{lnh_log10:.2f} from observed G, hbar, H0; not a GCT test)")
 
     h0_chain_result = test_h0_conditional_chain()
 
@@ -69,6 +74,8 @@ def main():
         "hubble_time_gyr": t_Hubble / (3.154e7 * 1e9),
         "lnh_log10":      lnh_log10,
         "h0_conditional_chain": h0_chain_result,
+        "lnh_log10_in_60_62": lnh_in_60_62,
+        "verdict":        verdict,
         "pass":           bool(passed)
     }
 

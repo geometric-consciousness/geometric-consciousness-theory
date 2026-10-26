@@ -19,15 +19,15 @@
     "eigenvalue_min": -2.449489742783181,
     "eigenvalue_max": 2.449489742783181
   },
-  "eta_computed": 0.0,
-  "eta_is_integer": true,
+  "finite_matrix_sign_count": 0.0,
+  "sign_count_is_integer": true,
   "alpha_inv_CODATA": 137.035999177,
   "alpha_inv_tree": 137.50776405003785,
   "alpha_inv_bilayer": 137.03030653597523,
-  "target_eta_pre_bilayer": -0.9435297460756829,
-  "target_eta_post_bilayer": 0.011385282049559464,
+  "twice_residual_pre_bilayer": -0.9435297460756829,
+  "twice_residual_post_bilayer": 0.011385282049559464,
   "pre_bilayer_pass": false,
   "post_bilayer_pass": false,
-  "structural_failure_reason": "\u03b7 is integer-valued for integer-weighted Dirac; the \u03b1 residual targets are non-integer (0.012 post-bilayer, -0.944 pre-bilayer). Integer \u03b7 cannot match non-integer target.",
-  "test_outcome": "FAIL \u2014 \u03b7 integer-valued; non-integer target unreachable without manuscript-unspecified couplings"
+  "object_status": "Finite 90x90 doubled-incidence sign count only; integer-valued for any finite self-adjoint matrix regardless of weights. No qualifying APS operator/domain/index or comparison to eta-alpha is supplied.",
+  "test_outcome": "OPEN_CONDITIONAL \u2014 finite sign-count diagnostic only; APS operator/domain/comparison absent"
 }

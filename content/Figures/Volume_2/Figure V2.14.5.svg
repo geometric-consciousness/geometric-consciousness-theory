@@ -210,7 +210,7 @@ L 218.780556 142.915059
     <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #c0392b" transform="translate(259.049331 139.654871)">and points the wrong way</text>
    </g>
    <g id="text_12">
-    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="372.79075" y="30.718125" transform="rotate(-0 372.79075 30.718125)">Hubble tension non-closure: measurement landscape</text>
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="372.79075" y="30.718125" transform="rotate(-0 372.79075 30.718125)">Hubble tension non-closure: Planck-SH0ES comparison</text>
    </g>
    <g id="line2d_14">
     <path d="M 212.969639 145.410931 
@@ -284,7 +284,7 @@ z
      </g>
     </g>
     <g id="text_13">
-     <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: start" x="502.226828" y="52.101797" transform="rotate(-0 502.226828 52.101797)">GCT biogenic upper bound</text>
+     <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: start" x="502.226828" y="52.101797" transform="rotate(-0 502.226828 52.101797)">excluded logistic marker</text>
     </g>
     <g id="LineCollection_3">
      <path d="M 482.676828 61.603203 
@@ -383,8 +383,8 @@ z
    </g>
    <g id="patch_10">
     <path d="M 533.06275 244.119708 
-L 510.843425 244.119708 
-L 510.843425 231.517327 
+L 501.959164 244.119708
+L 501.959164 231.517327
 L 533.06275 231.517327 
 z
 " clip-path="url(#pf570a3cee4)" style="fill: #666666; opacity: 0.65; stroke: #666666; stroke-linejoin: miter"/>
@@ -399,8 +399,8 @@ z
    </g>
    <g id="patch_12">
     <path d="M 533.06275 300.130289 
-L 166.576981 300.130289 
-L 166.576981 287.527908 
+L -48.903134 300.130289
+L -48.903134 287.527908
 L 533.06275 287.527908 
 z
 " clip-path="url(#pf570a3cee4)" style="fill: #c0392b; opacity: 0.25; stroke: #c0392b; stroke-linejoin: miter"/>
@@ -549,8 +549,8 @@ L 590.30275 214.01402
     <g id="ytick_4">
      <g id="line2d_47"/>
      <g id="text_26">
-      <text style="font-size: 8.8px; font-family: 'DejaVu Sans'" transform="translate(34.399875 236.903455)">local cosmography</text>
-      <text style="font-size: 8.8px; font-family: 'DejaVu Sans'" transform="translate(21.6 246.75753)">(realistic overdensity)</text>
+      <text style="font-size: 8.8px; font-family: 'DejaVu Sans'" transform="translate(34.399875 236.903455)">kinematic max</text>
+      <text style="font-size: 8.8px; font-family: 'DejaVu Sans'" transform="translate(21.6 246.75753)">(delta_bio = 3.5)</text>
      </g>
     </g>
     <g id="ytick_5">
@@ -562,8 +562,8 @@ L 590.30275 214.01402
     <g id="ytick_6">
      <g id="line2d_49"/>
      <g id="text_28">
-      <text style="font-size: 8.8px; font-family: 'DejaVu Sans'" transform="translate(33.398875 292.914036)">combined absolute</text>
-      <text style="font-size: 8.8px; font-family: 'DejaVu Sans'" transform="translate(61.143625 302.768111)">upper bound</text>
+      <text style="font-size: 8.8px; font-family: 'DejaVu Sans'" transform="translate(33.398875 292.914036)">linear-max</text>
+      <text style="font-size: 8.8px; font-family: 'DejaVu Sans'" transform="translate(61.143625 302.768111)">plus Planck</text>
      </g>
     </g>
    </g>
@@ -593,13 +593,13 @@ L 624.64675 214.01402
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_29">
-    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #1f1f1f" x="497.105825" y="240.081205" transform="rotate(-0 497.105825 240.081205)">-0.010%</text>
+    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #1f1f1f" x="497.105825" y="240.081205" transform="rotate(-0 497.105825 240.081205)">-0.0136%</text>
    </g>
    <g id="text_30">
     <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #1f1f1f" x="219.441381" y="268.086495" transform="rotate(-0 219.441381 268.086495)">-0.131%</text>
    </g>
    <g id="text_31">
-    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #1f1f1f" x="152.839381" y="296.091786" transform="rotate(-0 152.839381 296.091786)">-0.160%</text>
+    <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="134.67235" y="296.091786" transform="rotate(-0 134.67235 296.091786)">-0.254% (off scale)</text>
    </g>
    <g id="patch_16">
     <path d="M 372.462174 313.992908 
@@ -617,7 +617,7 @@ L 606.798741 315.632908
     <text style="font-weight: 700; font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #c0392b" x="134.67235" y="224.70067" transform="rotate(-0 134.67235 224.70067)">wrong sign</text>
    </g>
    <g id="text_34">
-    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="372.79075" y="208.01402" transform="rotate(-0 372.79075 208.01402)">Current GCT biogenic-driving contribution</text>
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="372.79075" y="208.01402" transform="rotate(-0 372.79075 208.01402)">Excluded broad-logistic comparison branch</text>
    </g>
    <g id="LineCollection_5">
     <path d="M 501.959164 237.818517 
@@ -641,8 +641,8 @@ L 0 -3
    </g>
   </g>
   <g id="text_35">
-   <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #666666" transform="translate(79.75075 371.484575)">Figure V2.14.5. The Planck-SH0ES H0 gap is about 8.4 percent; the current GCT biogenic-driving action shifts the inference in the</text>
-   <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #666666" transform="translate(79.75075 380.666781)">opposite direction and supplies at most about 0.16 percent of the observed tension.</text>
+   <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #666666" transform="translate(79.75075 371.484575)">Figure V2.14.5. Planck-SH0ES comparison only; balanced TRGB/JAGB anchors are tabulated in Ch14. The excluded broad-logistic</text>
+   <text style="font-size: 8.2px; font-family: 'DejaVu Sans'; fill: #666666" transform="translate(79.75075 380.666781)">branch has the wrong sign; linear-max plus Planck reaches 0.254314 percent of the observed tension (combined bar is off scale).</text>
   </g>
  </g>
  <defs>

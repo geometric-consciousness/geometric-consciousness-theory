@@ -5,16 +5,16 @@ engine 144-node cage.
 
 Diagnostic: the cage constructed by `protocol_aps_index_proof.py` via the
 GCTLattice(R=2, perp_cutoff=2.0) + top-144-by-perp-norm-excluding-origin
-pipeline is supposed to realise the App M Sec M.7 'bilayer of two
+pipeline is supposed to realise the App ULA Sec ULA.7 'bilayer of two
 dodecahedral shells of 72 nodes each'. This protocol partitions the actual
 cage nodes into I_h orbits and reports:
 
   - The 3D-perp-space radius of each I_h orbit intersecting the cage.
   - The full size of each such I_h orbit.
   - Whether the cage is closed under I_h (a strict requirement for the
-    Sec M.7 orthogonality-theorem argument that gives the 1/(2N) finite-N
+    Sec ULA.7 orthogonality-theorem argument that gives the 1/(2N) finite-N
     correction).
-  - Whether any subset of orbits sums to 72 (the App M Sec M.7 shell size).
+  - Whether any subset of orbits sums to 72 (the App ULA Sec ULA.7 shell size).
 
 The protocol does not attempt to repair the cage; it reports the structural
 state for the cage-construction audit.
@@ -70,7 +70,7 @@ def full_Ih_orbit(seed: tuple[int, ...], group: list[np.ndarray]) -> set[tuple[i
 
 def main():
     print("=" * 76)
-    print("Cage orbit-structure audit (engine 144-node cage vs App M Sec M.7)")
+    print("Cage orbit-structure audit (engine 144-node cage vs App ULA Sec ULA.7)")
     print("=" * 76)
 
     lattice = GCTLattice(R=2, perp_cutoff=2.0)
@@ -148,7 +148,7 @@ def main():
         print(f"    (i)  perp_cutoff=2.0 + top-144 selection truncates an outermost")
         print(f"         I_h orbit asymmetrically, or")
         print(f"    (ii) the top-144 selection is not the canonical cage construction")
-        print(f"         that App M Sec M.7 has in mind.")
+        print(f"         that App ULA Sec ULA.7 has in mind.")
 
     # Search for (72, 72) bilayer composition
     print(f"\nSubsets of full-orbit sizes summing to 72:")
@@ -166,7 +166,7 @@ def main():
 
     if not found_72:
         print(f"  NO subset of the cage's intersecting full-orbits sums to 72.")
-        print(f"  The App M Sec M.7 'shell of 72' is therefore NOT realisable as")
+        print(f"  The App ULA Sec ULA.7 'shell of 72' is therefore NOT realisable as")
         print(f"  any sub-union of the cage's I_h orbits at this perp_cutoff.")
     else:
         print(f"  Found {len(found_72)} subsets summing to 72:")
@@ -181,17 +181,17 @@ def main():
         print("OK: cage is I_h-symmetric and a 72-vertex shell exists.")
     elif cage_is_Ih_symmetric:
         print("PARTIAL: cage is I_h-symmetric, but no (72, 72) bilayer composition exists.")
-        print("App M Sec M.7's '72 per shell' is not realisable from the present orbit set.")
+        print("App ULA Sec ULA.7's '72 per shell' is not realisable from the present orbit set.")
     else:
         print("STRUCTURAL ISSUE:")
         print(f"  (1) Cage is NOT closed under I_h ({total_full - total_in_cage} missing vertices).")
         if not found_72:
             print(f"  (2) Even with full I_h closure, no subset sums to 72.")
-        print(f"  -> App M Sec M.7 'bilayer of two 72-vertex shells' is not realisable")
+        print(f"  -> App ULA Sec ULA.7 'bilayer of two 72-vertex shells' is not realisable")
         print(f"     as a closed I_h-orbit composition of the engine cage geometry at")
-        print(f"     this perp_cutoff. The eta_analytic = 1 - 1/(2N) prediction matching")
-        print(f"     alpha^-1 to 41.6 ppm DESPITE this is noted as a separate open question;")
-        print(f"     either the App M Sec M.7 derivation is robust under generalisations")
+        print(f"     this perp_cutoff. The bilayer_factor = 1 - 1/(2N) prediction matching")
+        print(f"     alpha^-1 to 41.5 ppm DESPITE this is noted as a separate open question;")
+        print(f"     either the App ULA Sec ULA.7 derivation is robust under generalisations")
         print(f"     of the bilayer assumption, or the engine cage construction differs")
         print(f"     from the manuscript's.")
     print("=" * 76)
@@ -214,7 +214,7 @@ def main():
         "missing_vertices_for_Ih_closure": total_full - total_in_cage,
         "subsets_summing_to_72_count": len(found_72),
         "subsets_summing_to_72": found_72,
-        "App_M_M7_bilayer_realisable": cage_is_Ih_symmetric and len(found_72) >= 2,
+        "App_ULA_M7_bilayer_realisable": cage_is_Ih_symmetric and len(found_72) >= 2,
         "tier": "Tier 3 structural audit of cage geometry.",
     }
     out_path = ENGINE_ROOT / "data" / "protocol_cage_orbit_structure_results.json"

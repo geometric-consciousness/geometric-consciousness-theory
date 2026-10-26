@@ -3,78 +3,41 @@
 protocol_o15_phason_stiffness_chemical_correction.py
 ====================================================
 
-Quantitative Penrose-Toner chemical-bonding correction to the bare GCT
-phason stiffness prediction K_perp/K_parallel = phi^(-18). Closure of
-Open Problem O.15 path (b): demonstrate that the apparent 100-1000x
-tension between the bare GCT prediction and i-AlPdMn metallic-alloy
-measurements (de Boissieu 1995; Francoual 2006) is explained by the
-Penrose-Toner phason-locking contribution from chemical bonding, NOT
-a falsification of phi^(-18).
+QUARANTINED dimensional-sweep audit. This script is NOT evidence for the
+Tier 3 P3b stiffness map K_perp/K_parallel = phi^(-18), does NOT close Open
+Problem O.15 path (b), and always reports pass = false.
 
-PHYSICAL FRAMEWORK
+History. Earlier editions used this sweep to claim that a Penrose-Toner
+"chemical-bonding floor" quantitatively explained a 100-1000x gap between
+phi^(-18) and i-AlPdMn measurements. That claim is withdrawn
+(App DPS §DPS.4b; App ORQ O.15, O.41) for three reasons:
 
-In the cut-and-project framework (Lubensky-Ramaswamy-Toner 1985), the
-phason elastic free energy is
+  (i)   K_PT ~ E_flip / V_atom has the dimensions of an energy density, but an
+        equilibrium phason elastic constant is a second derivative of the
+        free-energy density with respect to phason strain, while an activation
+        barrier controls kinetics. Converting one into the other needs a
+        specified microscopic Hamiltonian or partition function, flip density,
+        strain increment, degeneracies, temperature and relaxation prescription;
+        none is supplied, and the unit coefficient was implicit.
+  (ii)  The DFT source formerly cited for the 100-700 meV Al-Pd swap energies
+        ("Phys. Rev. B 88:144102", 2013) is wrong: DOI
+        10.1103/PhysRevB.88.144102 is Xiao, Cheng, Zhou, Goodenough and
+        Henkelman (2013), "Mechanism of the CaIrO3 post-perovskite phase
+        transition under pressure", unrelated to quasicrystals. The swap-energy
+        band is therefore an unsourced input.
+  (iii) The former "observational anchors" are not the registered ratio
+        (the cited papers have not been re-read against this specific
+        claim):
+        de Boissieu et al. (1995) infer the phason elastic anisotropy K_2/K_1
+        and Francoual et al. (2006) report phason relaxation kinetics. Neither
+        observable is K_perp/K_parallel, so the former 1e-2 .. 1e-1 "band"
+        compared unlike quantities.
 
-  F_perp = (1/2) K_perp |grad_perp Phi|^2 + V_lock(Phi)
-
-In an ideal (chemically clean) icosahedral quasicrystal, V_lock = 0 and
-K_perp = K_perp^bare follows from pure lattice geometry. The GCT prediction
-is K_perp^bare / K_parallel = phi^(-18) = 1.5485e-4 (App K Sec K.4).
-
-In a metallic-alloy quasicrystal (i-AlPdMn, i-AlCuFe), Penrose-Toner
-phason locking from chemical bonding introduces an additional restoring
-force for atomic flips. The standard derivation (Kalugin-Katz 2008;
-Trambly de Laissardiere-Mihalkovic 2013) gives the long-wavelength
-phason stiffness as
-
-  K_phason^observed ~ K_perp^bare + K_PT
-
-where K_PT is the Penrose-Toner contribution scaling with the atomic-
-flip activation energy E_flip and the per-atom volume V_atom:
-
-  K_PT ~ E_flip / V_atom
-
-(with dimensions of energy/volume = pressure, matching phason stiffness).
-
-For i-AlPdMn:
-  E_flip (Al-Pd swap energy): 100-700 meV per atom (DFT estimates,
-    Trambly+ 2013 Phys. Rev. B 88:144102; the engine sweep uses the full
-    100-700 meV band, see E_FLIP_RANGE_MEV constant below)
-  V_atom (atomic volume in i-AlPdMn): 12-20 cubic angstroms
-  K_phonon (longitudinal phonon stiffness): rho * c_L^2
-    rho_iAlPdMn ~ 5100 kg/m^3 (de Boissieu 1995)
-    c_L_iAlPdMn ~ 4100 m/s (longitudinal sound speed, Wang+ 1998)
-    K_phonon ~ 8.6e10 Pa = 0.54 eV/A^3
-
-OBSERVATIONAL ANCHORS
-
-  de Boissieu 1995 (PRL 75:89):  K_phason/K_phonon ~ 1e-2  (K_2/(lambda+2mu))
-  Francoual 2006 (Phil Mag 86:1029):  K_phason/K_phonon ~ 1e-1  (K_1/mu)
-    -- two conventions; ratio depends on which phason elastic constant
-       is quoted in the Socolar-Lubensky-Steinhardt two-constant scheme.
-
-  Combined range: K_phason/K_phonon in [0.01, 0.1] for i-AlPdMn.
-
-VERDICT FRAMEWORK
-
-Closure of O.15 path (b) has two possible outcomes:
-
-  (i)  If sweep of (E_flip, V_atom) over realistic atomic-physics
-       literature ranges REPRODUCES K_phason/K_phonon in [0.01, 0.1] -->
-       the Penrose-Toner contribution dominates i-AlPdMn measurements;
-       bare GCT phi^(-18) sits ~100-1000x below the chemical-bonding
-       floor and is not in tension with i-AlPdMn data. Direct test of
-       bare phi^(-18) requires chemically clean analog systems
-       (photonic quasicrystals, atomic-physics simulators).
-
-  (ii) If Penrose-Toner contribution CANNOT reach K_phason/K_phonon in
-       [0.01, 0.1] with realistic parameters --> the 100-1000x gap is
-       genuinely unexplained, and bare phi^(-18) faces a real challenge.
-       Closure direction would shift to either: (a) deriving a different
-       phason-stiffness ratio from the cut-and-project geometry, or
-       (b) identifying additional contamination sources beyond
-       Penrose-Toner locking.
+What remains is arithmetic: the script sweeps E_flip / V_atom over the
+historical input box and reports the resulting dimensionless numbers, so the
+retired claim stays reproducible and auditable. Only the integer D = 18 is
+Tier 2; the phi^(-18) map is the Tier 3 P3b hypothesis, registered outside the
+count (Parameter Ledger §0.1).
 """
 
 import json
@@ -90,7 +53,7 @@ except ImportError:
 
 # Golden ratio and bare GCT prediction
 PHI = float(C.PHI)
-PHI_NEG_18 = PHI ** (-18)  # = 1.5485e-4
+PHI_NEG_18 = PHI ** (-18)  # = 1.7307e-4
 
 # i-AlPdMn material parameters (Tier 3 literature anchors)
 RHO_IAPDMN = 5100.0       # kg/m^3 (de Boissieu+ 1995)
@@ -102,14 +65,12 @@ PA_TO_EV_PER_A3 = 6.241509e-12
 
 K_PHONON_IAPDMN_EV_PER_A3 = K_PHONON_IAPDMN_PA * PA_TO_EV_PER_A3
 
-# Observational anchors
+# Withdrawn comparison values (not K_perp/K_parallel; see docstring (iii)).
 K_PHASON_OVER_PHONON_DE_BOISSIEU_1995 = 1e-2
 K_PHASON_OVER_PHONON_FRANCOUAL_2006 = 1e-1
 
-# Tier 3 atomic-physics anchors for Penrose-Toner
-# E_flip range covers the spread of Al-Pd swap energies across i-AlPdMn
-# configurations: low end ~100-150 meV (Trambly+ 2013 low-barrier flips),
-# high end ~700 meV (high-coordination-shell swaps).
+# Historical, unsourced input box (see docstring (ii)); kept only so the
+# retired sweep remains reproducible.
 E_FLIP_RANGE_MEV = (100.0, 700.0)
 V_ATOM_RANGE_A3 = (12.0, 20.0)       # per-atom volume in i-AlPdMn
 
@@ -174,33 +135,28 @@ def verdict(rows):
     covers_francoual = pt_min <= obs_hi <= pt_max
     covers_full_obs_range = pt_min <= obs_lo and pt_max >= obs_hi
 
-    if covers_full_obs_range:
-        direction = "(i) CLOSURE: Penrose-Toner dominates i-AlPdMn measurements; bare phi^(-18) below chemical-bonding floor"
-    elif covers_de_boissieu or covers_francoual:
-        direction = "(i-partial) Penrose-Toner reproduces part of observed range; bare phi^(-18) below chemical-bonding floor"
-    else:
-        direction = "(ii) Penrose-Toner UNDER-shoots observed range; 100-1000x gap not fully explained"
+    # Quarantined: the coverage booleans are arithmetic on a withdrawn
+    # comparison and carry no evidential weight in either direction.
+    direction = (
+        "QUARANTINED: dimensional sweep only. No O.15(b) closure and no "
+        "chemical-bonding floor are claimed (App DPS §DPS.4b)."
+    )
 
     framing = (
-        f"Bare GCT prediction K_perp/K_phonon = phi^(-18) = {PHI_NEG_18:.3e}. "
-        f"Penrose-Toner correction sweep over E_flip in [{E_FLIP_RANGE_MEV[0]}, "
-        f"{E_FLIP_RANGE_MEV[1]}] meV (Trambly+ 2013 DFT for i-AlPdMn Al-Pd swap) "
-        f"and V_atom in [{V_ATOM_RANGE_A3[0]}, {V_ATOM_RANGE_A3[1]}] A^3 yields "
-        f"K_PT/K_phonon in [{pt_min:.3e}, {pt_max:.3e}] -- covering the "
-        f"de Boissieu 1995 value {obs_lo:.1e} "
-        + ("(IN range) " if covers_de_boissieu else "(BELOW range) ")
-        + f"and approaching the Francoual 2006 value {obs_hi:.1e} "
-        + ("(IN range)." if covers_francoual else "(BELOW range).")
-        + f" Bare phi^(-18) is {obs_lo / PHI_NEG_18:.0f}x below de Boissieu and "
-        f"{obs_hi / PHI_NEG_18:.0f}x below Francoual -- below the "
-        f"chemical-bonding floor by 2-3 orders of magnitude. i-AlPdMn "
-        f"measurements cannot in principle resolve the bare phi^(-18) prediction "
-        f"below this floor; direct test requires chemically clean analog systems "
-        f"(synthetic photonic quasicrystals, charge-density-wave systems, or "
-        f"atomic-physics simulators where E_flip -> 0)."
+        f"Quarantined arithmetic: E_flip/V_atom over the historical, unsourced "
+        f"box E_flip in [{E_FLIP_RANGE_MEV[0]}, {E_FLIP_RANGE_MEV[1]}] meV and "
+        f"V_atom in [{V_ATOM_RANGE_A3[0]}, {V_ATOM_RANGE_A3[1]}] A^3 gives "
+        f"dimensionless numbers in [{pt_min:.3e}, {pt_max:.3e}]. The quotient is "
+        f"not a phason elastic constant, the formerly cited DFT source (DOI "
+        f"10.1103/PhysRevB.88.144102) is a CaIrO3 study, and the de Boissieu 1995 "
+        f"/ Francoual 2006 values are K_2/K_1 anisotropy and relaxation kinetics, "
+        f"not K_perp/K_parallel. Nothing here supports or tests the Tier 3 P3b "
+        f"map phi^(-18) = {PHI_NEG_18:.3e}; reconciliation with alloy data "
+        f"first needs the O.41 observable map."
     )
 
     return {
+        "status": "QUARANTINED_NOT_EVIDENCE",
         "direction": direction,
         "framing": framing,
         "K_PT_over_K_phonon_range": [pt_min, pt_max],
@@ -217,12 +173,11 @@ def verdict(rows):
 
 def main():
     print("=" * 76)
-    print("O.15 PROTOCOL: Penrose-Toner chemical-bonding correction to phi^(-18)")
+    print("O.15 QUARANTINED AUDIT: retired Penrose-Toner 'chemical floor' sweep (not evidence)")
     print("=" * 76)
 
-    print(f"\nBare GCT prediction:")
+    print(f"\nTier 3 P3b map value (not derived; registered hypothesis):")
     print(f"  phi^(-18)                                 : {PHI_NEG_18:.4e}")
-    print(f"  Bare K_perp/K_phonon                      : {PHI_NEG_18:.4e}")
 
     print(f"\ni-AlPdMn material parameters:")
     print(f"  rho                                       : {RHO_IAPDMN} kg/m^3")
@@ -232,7 +187,7 @@ def main():
     print(f"  K_perp_bare = phi^(-18) * K_phonon        : {k_perp_bare_ev_per_a3():.3e} eV/A^3")
 
     print(f"\nPenrose-Toner sweep:")
-    print(f"  E_flip range (Trambly+ 2013)              : [{E_FLIP_RANGE_MEV[0]}, "
+    print(f"  E_flip range (historical, unsourced)      : [{E_FLIP_RANGE_MEV[0]}, "
           f"{E_FLIP_RANGE_MEV[1]}] meV")
     print(f"  V_atom range (i-AlPdMn)                   : [{V_ATOM_RANGE_A3[0]}, "
           f"{V_ATOM_RANGE_A3[1]}] A^3")
@@ -247,28 +202,30 @@ def main():
 
     v = verdict(rows)
     print(f"\n" + "=" * 76)
-    print("VERDICT FOR O.15 PATH (b)")
+    print("QUARANTINED: NO VERDICT FOR O.15 PATH (b)")
     print("=" * 76)
     print(f"  Direction: {v['direction']}")
     print(f"")
-    print(f"  Predicted K_PT/K_phonon range            : "
+    print(f"  E_flip/V_atom quotient range (arithmetic) : "
           f"[{v['K_PT_over_K_phonon_range'][0]:.3e}, "
           f"{v['K_PT_over_K_phonon_range'][1]:.3e}]")
-    print(f"  de Boissieu 1995 observation             : {v['observation_de_boissieu_1995']:.1e} "
-          + ("(IN range)" if v['covers_de_boissieu'] else "(BELOW range)"))
-    print(f"  Francoual 2006 observation               : {v['observation_francoual_2006']:.1e} "
-          + ("(IN range)" if v['covers_francoual'] else "(BELOW range)"))
-    print(f"  Covers full observed range [1e-2, 1e-1]  : "
-          + ("YES" if v['covers_full_observed_range'] else "NO"))
-    print(f"  Bare phi^(-18) below de Boissieu by      : "
-          f"{1.0/v['bare_phi_18_over_de_boissieu']:.0f}x")
-    print(f"  Bare phi^(-18) below Francoual by        : "
-          f"{1.0/v['bare_phi_18_over_francoual']:.0f}x")
+    print("  Comparison with the de Boissieu 1995 / Francoual 2006 values is withdrawn:")
+    print("  they are not K_perp/K_parallel (docstring (iii)); no coverage verdict is drawn.")
     print(f"")
     print(f"  Framing: {v['framing']}")
     print("=" * 76)
 
     output = {
+        "protocol": "protocol_o15_phason_stiffness_chemical_correction.py",
+        "pass": False,
+        "quarantined": True,
+        "status": "QUARANTINED_NOT_EVIDENCE",
+        "quarantine_reason": (
+            "Dimensional sweep only: E_flip/V_atom is not a phason elastic constant; "
+            "the cited DFT DOI 10.1103/PhysRevB.88.144102 is Xiao et al. 2013 (CaIrO3); "
+            "the i-AlPdMn values are K_2/K_1 anisotropy and relaxation kinetics, not "
+            "K_perp/K_parallel. No O.15(b) closure, no chemical floor (App DPS §DPS.4b)."
+        ),
         "bare_gct_phi_neg_18": PHI_NEG_18,
         "K_phonon_iAlPdMn_Pa": K_PHONON_IAPDMN_PA,
         "K_phonon_iAlPdMn_eV_per_A3": K_PHONON_IAPDMN_EV_PER_A3,

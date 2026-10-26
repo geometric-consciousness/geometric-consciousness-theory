@@ -3,21 +3,23 @@
     "representation": "1",
     "dimension": 1,
     "su3_charge": 0,
-    "name": "Lepton (SU(3) Singlet)",
-    "note": "Vertex is on the 3-fold axis. Z3-invariant => no color charge.",
+    "name": "Lepton (SU(3) singlet candidate)",
+    "note": "Vertex is on the 3-fold axis. Z3-invariant => candidate color-singlet label (Tier 3).",
     "berry_phase_pi": 0.0,
     "su3_coupling": 0,
-    "verdict": "Lepton Confirmed"
+    "computed_z3_orbit_size": 1,
+    "verdict": "Lepton Candidate Consistent"
   },
   "quark": {
     "representation": "3",
     "dimension": 3,
     "su3_charge": 1,
-    "name": "Quark (SU(3) Triplet)",
-    "note": "Face-center orbit under Z3 has 3 images => color triplet.",
+    "name": "Quark (SU(3) triplet candidate)",
+    "note": "Face-center orbit under Z3 has 3 images => candidate color triplet (Tier 3).",
     "berry_phase_pi": 0.6648148148148146,
     "su3_coupling": 1,
-    "verdict": "Quark Confirmed"
+    "computed_z3_orbit_size": 3,
+    "verdict": "Quark Candidate Consistent"
   },
   "gauge_invariance": {
     "n_sites_tested": 5,
@@ -25,14 +27,23 @@
     "max_delta_E": 0.0,
     "mean_delta_E": 0.0,
     "all_invariant": true,
-    "verdict": "Gluon Redundancy Confirmed"
+    "verdict": "Gluon Redundancy Candidate Consistent"
   },
   "spin_statistics": {
     "berry_phase_lepton": 0.9999999999999927,
     "expected_fermion_phase": 1.0,
     "is_fermion": true,
     "note": "ID-Tether (Spinor Argument): Phase = \u03c0 under 2\u03c0 rotation => Fermionic.",
-    "verdict": "Fermion Confirmed"
+    "status": "POSTULATE_NOT_COMPUTED: the phase loop sums pi/n n times and cannot fail; Fermi statistics of the defect is assumed",
+    "verdict": "POSTULATE"
   },
-  "pass": true
+  "z3_orbit_computation": {
+    "vertex_orbit_size": 1,
+    "face_centre_orbit_size": 3,
+    "rotation_is_order_3": true
+  },
+  "checks_consistent": true,
+  "closure_status": "OPEN: the vertex orbit is 1 by construction (axis through the vertex), any off-axis point has orbit 3 under an order-3 rotation, and the gauge scan rotates a zero displacement field (max |u| = 0), so delta_E = 0 for any generator; none of the checks can fail",
+  "verdict": "OPEN_INVENTORY_CHECKS_HOLD_BY_CONSTRUCTION",
+  "pass": false
 }

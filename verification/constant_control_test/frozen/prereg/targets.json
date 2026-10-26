@@ -1,0 +1,259 @@
+{
+ "convention": "Comparators verified 2026-10-19 (COMPARATORS.md). Units MeV for masses. Asymmetric errors: mean of upper and lower. sigma_hat = sigma/|y|.",
+ "alpha_dressing": {
+  "alpha_inv": 137.035999177,
+  "source": "CODATA 2022 alpha(0) (A3)"
+ },
+ "references_MeV": {
+  "m_e": 0.51099895069,
+  "M_P": 1.22089e+22,
+  "m_u": 2.16,
+  "m_mu": 105.6583755,
+  "m_c": 1273.0,
+  "v": 246219.64024
+ },
+ "rows": [
+  {
+   "i": 1,
+   "id": "m_e",
+   "sector": "lepton",
+   "kind": "mass",
+   "y": 0.51099895069,
+   "sigma": 1.6e-10,
+   "own_ref": "m_e"
+  },
+  {
+   "i": 2,
+   "id": "m_mu",
+   "sector": "lepton",
+   "kind": "mass",
+   "y": 105.6583755,
+   "sigma": 2.3e-06,
+   "own_ref": "m_mu"
+  },
+  {
+   "i": 3,
+   "id": "m_tau",
+   "sector": "lepton",
+   "kind": "mass",
+   "y": 1776.93,
+   "sigma": 0.09,
+   "own_ref": null
+  },
+  {
+   "i": 4,
+   "id": "m_p",
+   "sector": "hadron",
+   "kind": "mass",
+   "y": 938.27208943,
+   "sigma": 2.9e-07,
+   "own_ref": null
+  },
+  {
+   "i": 5,
+   "id": "m_u",
+   "sector": "hadron",
+   "kind": "mass",
+   "y": 2.16,
+   "sigma": 0.07,
+   "own_ref": "m_u"
+  },
+  {
+   "i": 6,
+   "id": "m_d",
+   "sector": "hadron",
+   "kind": "mass",
+   "y": 4.7,
+   "sigma": 0.07,
+   "own_ref": null
+  },
+  {
+   "i": 7,
+   "id": "m_s",
+   "sector": "hadron",
+   "kind": "mass",
+   "y": 93.5,
+   "sigma": 0.8,
+   "own_ref": null
+  },
+  {
+   "i": 8,
+   "id": "m_c",
+   "sector": "hadron",
+   "kind": "mass",
+   "y": 1273.0,
+   "sigma": 4.6,
+   "own_ref": "m_c"
+  },
+  {
+   "i": 9,
+   "id": "m_b",
+   "sector": "hadron",
+   "kind": "mass",
+   "y": 4183.0,
+   "sigma": 7.0,
+   "own_ref": null
+  },
+  {
+   "i": 10,
+   "id": "m_t",
+   "sector": "hadron",
+   "kind": "mass",
+   "y": 172570.0,
+   "sigma": 290.0,
+   "own_ref": null
+  },
+  {
+   "i": 11,
+   "id": "v",
+   "sector": "ewc",
+   "kind": "mass",
+   "y": 246219.64024,
+   "sigma": 0.06333,
+   "own_ref": "v"
+  },
+  {
+   "i": 12,
+   "id": "m_H",
+   "sector": "ewc",
+   "kind": "mass",
+   "y": 125200.0,
+   "sigma": 110.0,
+   "own_ref": null
+  },
+  {
+   "i": 13,
+   "id": "alpha_inv",
+   "sector": "ewc",
+   "kind": "dimless",
+   "y": 137.035999177,
+   "sigma": 2.1e-08
+  },
+  {
+   "i": 14,
+   "id": "sin2thW",
+   "sector": "ewc",
+   "kind": "dimless",
+   "y": 0.23129,
+   "sigma": 4e-05
+  },
+  {
+   "i": 15,
+   "id": "alphas_inv",
+   "sector": "ewc",
+   "kind": "dimless",
+   "y": 8.474576271186441,
+   "sigma": 0.06463659867854066
+  },
+  {
+   "i": 16,
+   "id": "s12",
+   "sector": "mixing",
+   "kind": "angle",
+   "angle_obs": "sin",
+   "y": 0.22501,
+   "sigma": 0.00068
+  },
+  {
+   "i": 17,
+   "id": "s23",
+   "sector": "mixing",
+   "kind": "angle",
+   "angle_obs": "sin",
+   "y": 0.04183,
+   "sigma": 0.00074
+  },
+  {
+   "i": 18,
+   "id": "s13",
+   "sector": "mixing",
+   "kind": "angle",
+   "angle_obs": "sin",
+   "y": 0.003732,
+   "sigma": 8.75e-05
+  },
+  {
+   "i": 19,
+   "id": "th12",
+   "sector": "mixing",
+   "kind": "angle",
+   "angle_obs": "deg",
+   "y": 33.68,
+   "sigma": 0.715
+  },
+  {
+   "i": 20,
+   "id": "th13",
+   "sector": "mixing",
+   "kind": "angle",
+   "angle_obs": "deg",
+   "y": 8.52,
+   "sigma": 0.11
+  },
+  {
+   "i": 21,
+   "id": "dcp",
+   "sector": "mixing",
+   "kind": "angle",
+   "angle_obs": "deg",
+   "y": 177.0,
+   "sigma": 19.5
+  }
+ ],
+ "theta_ref_deg": {
+  "theta13": 8.52,
+  "theta_C": 13.003466199369875
+ },
+ "fresh_F": [
+  {
+   "id": "M_W",
+   "y": 80369.2,
+   "sigma": 13.3
+  },
+  {
+   "id": "M_Z",
+   "y": 91188.0,
+   "sigma": 2.0
+  },
+  {
+   "id": "m_pi_pm",
+   "y": 139.57039,
+   "sigma": 0.00018
+  },
+  {
+   "id": "m_pi0",
+   "y": 134.9768,
+   "sigma": 0.0005
+  },
+  {
+   "id": "m_K_pm",
+   "y": 493.677,
+   "sigma": 0.015
+  },
+  {
+   "id": "m_eta",
+   "y": 547.862,
+   "sigma": 0.017
+  },
+  {
+   "id": "m_Jpsi",
+   "y": 3096.9,
+   "sigma": 0.006
+  },
+  {
+   "id": "m_n_minus_m_p",
+   "y": 1.2933324,
+   "sigma": 5e-07
+  }
+ ],
+ "variant_comparators": {
+  "theta13_IC24_withSK": [
+   8.56,
+   0.11
+  ],
+  "dcp_IC24_withSK": [
+   212.0,
+   33.5
+  ]
+ }
+}

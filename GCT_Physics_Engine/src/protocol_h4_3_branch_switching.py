@@ -16,28 +16,29 @@ Two contributions to the branch-switching barrier:
       For N_levels =~ log_p(N_Trp), this is negligible against thermal
       k_B T at biological temperature.
 
-  (ii) Topological-charge reconfiguration (Tier 2 dominant). The
+  (ii) Topological-charge reconfiguration (dominant; Tier 2 topological form, Tier 3 magnitude conditional on a candidate neuronal Polaron). The
        Polaron is a stable knot defect (V1 Ch15 - Ch17) whose winding
        number cannot change without un-knotting the entire defect.
        The un-knotting cost is the binding energy of the polaron at
-       its N_Trp ~ 1e8 anchor sites per typical pyramidal neuron
+       its N_Trp ~ 1.6e9 anchor sites per typical pyramidal neuron
        (V1 Ch17 Sec 17.1.4 under the conditional O.21 sensitivity branch n_rp = 1;
        operative central n_rp = 0 until O.21 closes);
        with per-Trp binding ~ 1 eV (V1 Ch17 Sec 17.1.2 microtubule
-       lumen pocket isolation), total barrier E_topo ~ 1e8 eV = 1.6e-11 J.
+       lumen pocket isolation), total barrier E_topo ~ 1.6e9 eV = 2.6e-10 J.
 
 WKB tunneling probability at biological thermal energy:
 
   P_tunnel ~ exp(-E_barrier / k_B T)
 
-For E_barrier ~ 1.6e-11 J and k_B T at 310 K, P_tunnel < 10^(-10^9) —
+For E_barrier ~ 2.6e-10 J and k_B T at 310 K, P_tunnel < 10^(-10^10) —
 operationally zero. Identity path is therefore strictly continuous
 within homotopy class at all biological energy scales; distal-branch
 jumps require excitations vastly above any in-vivo channel.
 
 Engine outputs:
   - Per-level Zeeman cost (Tier 2 lower bound).
-  - Topological-charge barrier (Tier 2 dominant).
+  - Topological-charge barrier (dominant; Tier 2 topological form, Tier 3 magnitude
+    conditional on a candidate neuronal Polaron).
   - WKB tunneling probability at biological T.
   - Comparison of barrier to thermal, ATP, and electronic energy scales.
 """
@@ -59,9 +60,17 @@ PLANCK_ENERGY_J = 1.956082e9  # E_P = M_P c^2
 
 # Biological Trp population per typical pyramidal neuron under the O.21
 # conditional O.21 sensitivity branch n_rp = 1 disposition (V1 Ch17 Sec
-# 17.1.4 audit: ~ 1e5 MTs/neuron x 1,250 dimers/MT x 1 Trp candidate per
-# dimer ~= 1.3e8). Operative central remains n_rp = 0 until O.21 closes.
-N_TRP_BIOLOGY = 1.0e8
+# 17.1.4). Operative central remains n_rp = 0 until O.21 closes.
+MT_PER_NEURON = 1.0e5
+PROTOFILAMENTS_PER_MT = 13.0
+DIMERS_PER_PROTOFILAMENT = 1250.0  # 10 um length / 8 nm dimer rise
+N_RP_PER_DIMER_SENSITIVITY = 1.0
+N_TRP_BIOLOGY = (
+    MT_PER_NEURON
+    * PROTOFILAMENTS_PER_MT
+    * DIMERS_PER_PROTOFILAMENT
+    * N_RP_PER_DIMER_SENSITIVITY
+)
 BINDING_ENERGY_PER_TRP_EV = 1.0  # hydrophobic-pocket binding scale
 try:
     from gct_utils import C
@@ -173,13 +182,13 @@ def compute() -> dict:
                                 "probability is operationally zero."),
         },
         "closure_status": {
-            "tier": "Tier 2 structural",
+            "tier": "Tier 2 structural (homotopy continuity); Tier 3 conditional barrier magnitude (O.21 branch; no Level-II verdict)",
             "claim": ("Identity path is strictly continuous within "
                        "homotopy class. Distal-branch jumps require "
-                       "E ~ 1e8 eV per polaron un-knotting event, "
+                       f"E ~ {N_TRP_BIOLOGY:.2e} eV per polaron un-knotting event, "
                        "exceeding all biological energy channels by "
-                       "more than 8 orders of magnitude. Tunneling "
-                       "probability < 10^(-N) with N exceeding 10^10."),
+                       "more than 9 orders of magnitude. Tunneling "
+                       "probability at thermal < 10^(-N) with N exceeding 10^10."),
             "remaining_open_research_level": (
                 "Exact functional form of the un-knotting saddle-point "
                 "trajectory in phason field space; the binding-energy "

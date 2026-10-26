@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-protocol_p_evolve_first_principles.py - First-principles candidates for
+protocol_p_evolve_first_principles.py - Conditional candidate forms for
 P_evolve(t) in the biogenic dark-energy pipeline (Open Problem O.13).
 
 Background: V2 Ch14 Sec 14.5.2 / Sec 14.6.3 frames the biogenic information
@@ -8,10 +8,10 @@ rate as
     \\dot{\\mathcal{I}}(t) \\propto \\int_0^t SFR(t' - \\tau_{bio}) \\cdot P_{evolve}(t') dt'
 with P_evolve labelled "Hypothesis" in the Sec 14.5.1 firewall metadata.
 The current `protocol_imp01_pipeline.p_evolve` uses a sigmoid x exponential
-ansatz (t_origin = 9 Gyr, tau_evolve = 2 Gyr). Open Problem O.13 asks for
-a first-principles derivation.
+ansatz (t_origin = 9 Gyr, tau_evolve = 2 Gyr). Open Problem O.13 records the
+missing physical derivation; this protocol does not supply it.
 
-This protocol implements four physically-motivated P_evolve variants and
+This protocol implements five stipulated P_evolve variants and
 runs the biogenic DE pipeline for each, comparing the resulting CPL triple
 (w_0, w_a, z_cross^CPL) and the headline w(z=0) deviation:
 
@@ -29,8 +29,11 @@ runs the biogenic DE pipeline for each, comparing the resulting CPL triple
 
 For each variant, the engine reports w_0, w_a, z_cross^CPL and the
 w(z=0) deviation, plus the variant-to-variant spread. The deliverable
-question: is the CPL triple SENSITIVE to the P_evolve form (= Tier 3
-ansatz-dependent), or ROBUST (= tier-promotion candidate)?
+question: is the CPL triple SENSITIVE to the P_evolve form or ROBUST
+across this stipulated variant family? This is a model-internal sensitivity
+test only. Robustness cannot change the Tier 3 physical disposition without
+a typed coupling, normalized source, physical source allocation, and causal
+bridge.
 """
 
 from __future__ import annotations
@@ -83,7 +86,7 @@ def p_evolve_V2_stage_hierarchy(t_gyr: np.ndarray,
     complexity at evaluation time). Approximating: P_evolve(t') = C(t' - t_anchor)
     where t_anchor is the cosmic-time anchor for "biospheres of age 0."
     Use t_anchor = 0 (start of integration) for simplicity; the qualitative
-    shape (step-up stages) is the load-bearing feature.
+    shape (step-up stages) is the sensitivity feature.
     """
     t = np.atleast_1d(t_gyr).astype(np.float64)
     pe = np.zeros_like(t)
@@ -226,9 +229,52 @@ def run_variant(label: str, p_evolve_fn) -> dict:
     }
 
 
+def classify_sensitivity(spread_w028: float) -> tuple[str, str]:
+    """Classify model-internal P_evolve sensitivity without changing tier."""
+    if spread_w028 < 5e-4:
+        verdict = "ROBUST"
+        verdict_text = (
+            "Cross-variant spread of w(z=0.28) is {:.1e}, below the joint-bin "
+            "observational threshold. The biogenic DE mid-z prediction is essentially "
+            "INSENSITIVE to the stipulated P_evolve variant family. This is "
+            "model-internal robustness/sensitivity evidence only."
+        ).format(spread_w028)
+    elif spread_w028 < 5e-3:
+        verdict = "PARTIALLY_SENSITIVE"
+        verdict_text = (
+            "Cross-variant spread of w(z=0.28) is {:.1e}, ABOVE the joint-bin "
+            "(~3-5e-4) Year-5 threshold and well above the Roman Year-10 / "
+            "Stage-V sub-5e-5 target. The biogenic DE mid-z prediction is "
+            "PARTIALLY sensitive to the P_evolve form: the broad V1 ansatz "
+            "amplitude is noncanonical, while the operative Class-2 envelope "
+            "is |Delta w(z=0.28)| in [2,5]e-5. Different stipulated "
+            "P_evolve choices give |Delta w(z=0.28)| ranging from ~4e-5 "
+            "(power-law) to ~3e-3 (stage-hierarchy). The Tier 3 "
+            "(ansatz-dependent) status is therefore well-calibrated; closure "
+            "of O.13 (further conditional-model selection) is "
+            "observationally relevant for the Roman Year-10 / Stage-V window."
+        ).format(spread_w028)
+    else:
+        verdict = "SENSITIVE"
+        verdict_text = (
+            "Cross-variant spread of w(z=0.28) is {:.1e}, exceeding the "
+            "Roman Year-10 / Stage-V target precision. The CPL prediction is "
+            "SENSITIVE to the P_evolve functional form -- the current "
+            "Tier 3 status is well-calibrated; sharpening requires a "
+            "further conditional-model selection among the declared variants."
+        ).format(spread_w028)
+
+    verdict_text += (
+        " No ROBUST, PARTIALLY_SENSITIVE, or SENSITIVE outcome changes the "
+        "Tier 3 physical disposition: a typed coupling, normalized source, "
+        "physical source allocation, and causal bridge remain required."
+    )
+    return verdict, verdict_text
+
+
 def main():
     print("=" * 76)
-    print("O.13: P_evolve(t) first-principles candidate comparison")
+    print("O.13: P_evolve(t) conditional variant comparison")
     print("=" * 76)
 
     variants = [
@@ -283,7 +329,7 @@ def main():
     print(f"    The w(z=0) value is determined by construction, not P_evolve.")
     spread_w028 = abs(w028_arr.max() - w028_arr.min())
     print(f"  w(z=0.28) spread = {spread_w028:.5f}; operative Class-2 envelope target is [2,5] x 10^-5")
-    print(f"    THIS IS THE LOAD-BEARING SENSITIVITY (z=0.28 is the manuscript-cited")
+    print(f"    THIS IS THE REPORTED MODEL SENSITIVITY (z=0.28 is the manuscript-cited")
     print(f"    falsifiability marker).")
     print(f"  z_cross^CPL spread = {(zcross_arr.max() - zcross_arr.min()):.4f}")
     print("  Roman Year-10 / Stage-V target precision: <5 x 10^-5")
@@ -291,38 +337,7 @@ def main():
 
     # Use w(z=0.28) as the meaningful sensitivity metric, since w(z=0) is
     # locked by the pipeline normalization.
-    if spread_w028 < 5e-4:
-        verdict = "ROBUST"
-        verdict_text = (
-            "Cross-variant spread of w(z=0.28) is {:.1e}, below the joint-bin "
-            "observational threshold. The biogenic DE mid-z prediction is essentially "
-            "INSENSITIVE to the P_evolve functional form -- candidate for tier "
-            "promotion from Tier 3 (ansatz-dependent) to Tier 2."
-        ).format(spread_w028)
-    elif spread_w028 < 5e-3:
-        verdict = "PARTIALLY_SENSITIVE"
-        verdict_text = (
-            "Cross-variant spread of w(z=0.28) is {:.1e}, ABOVE the joint-bin "
-            "(~3-5e-4) Year-5 threshold and well above the Roman Year-10 / "
-            "Stage-V sub-5e-5 target. The biogenic DE mid-z prediction is "
-            "PARTIALLY sensitive to the P_evolve form: the broad V1 ansatz "
-            "amplitude is noncanonical, while the operative Class-2 envelope "
-            "is |Delta w(z=0.28)| in [2,5]e-5. Different physically motivated "
-            "P_evolve choices give |Delta w(z=0.28)| ranging from ~4e-5 "
-            "(power-law) to ~3e-3 (stage-hierarchy). The Tier 3 "
-            "(ansatz-dependent) status is therefore well-calibrated; closure "
-            "of O.13 (first-principles selection of one variant) is "
-            "observationally relevant for the Roman Year-10 / Stage-V window."
-        ).format(spread_w028)
-    else:
-        verdict = "HIGHLY_SENSITIVE"
-        verdict_text = (
-            "Cross-variant spread of w(z=0.28) is {:.1e}, exceeding the "
-            "Roman Year-10 / Stage-V target precision. The CPL prediction is "
-            "HIGHLY sensitive to the P_evolve functional form -- the current "
-            "Tier 3 status is well-calibrated; sharpening requires a "
-            "first-principles selection of the canonical variant."
-        ).format(spread_w028)
+    verdict, verdict_text = classify_sensitivity(spread_w028)
 
     print(f"\n  Sensitivity verdict: {verdict}")
     print(f"  {verdict_text}")

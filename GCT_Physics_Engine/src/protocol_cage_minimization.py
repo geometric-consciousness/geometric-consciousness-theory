@@ -24,9 +24,17 @@ import time
 from pathlib import Path
 
 # ── ANALYTIC VERIFICATION ─────────────────────────────────────────
-# Sub-Proof A: Gauss-Bonnet — outer shell (12 faces) × inner shell (12 sub-nodes)
+# Exact Gauss--Bonnet checks for the adopted icosahedral/dodecahedral boundary.
 import math
-assert 12 * 12 == 144, "Gauss-Bonnet outer×inner closure fails"
+_ico_defect = 2 * math.pi - 5 * (math.pi / 3)
+_dodeca_defect = 2 * math.pi - 3 * (3 * math.pi / 5)
+assert math.isclose(_ico_defect, math.pi / 3)
+assert math.isclose(12 * _ico_defect, 4 * math.pi)
+assert math.isclose(_dodeca_defect, math.pi / 5)
+assert math.isclose(20 * _dodeca_defect, 4 * math.pi)
+# The two-shell 12 x 12 count is an adopted Tier-3 cage posit, not a
+# consequence of Gauss--Bonnet or of the Z=12 coordination number.
+assert 12 * 12 == 144
 # Sub-Proof B: Fibonacci resonance (F_12 = 144 = 12^2)
 _fib = [1, 1]
 while _fib[-1] < 250:
@@ -34,7 +42,7 @@ while _fib[-1] < 250:
 assert 144 in _fib, "144 not in Fibonacci sequence"
 assert math.isqrt(144)**2 == 144, "144 is not a perfect square"
 assert _fib.index(144) == 11, "144 is not F_12 (index 11 in 0-based)"
-print("[ANALYTIC] N=144 consistency checks passed: Gauss-Bonnet + Fibonacci convergence.")
+print("[ANALYTIC] Polyhedral Gauss--Bonnet totals and conditional N=144 Fibonacci-square checks passed; N=144 remains the O.38 structural posit.")
 
 # ── Lattice-resolution toggle ──────────────────────────────────────────────────────────
 # Set FULL_LATTICE_MODE = True on a machine with >=64 GB RAM to run the full
@@ -97,12 +105,12 @@ def run_cage_scan():
     
     print("\nComputing Bulk Energy Reference...")
     bulk_cluster = GCTLattice(R=2, perp_cutoff=2.5) # Approximate 60-100 node cluster.
-    # Try to get ~200 nodes
+    # Target cluster size for the bulk reference
     # R=2, cut=2.8 provides a larger local cluster.
     # DefectBuilder extracts a ball of N=200 from the base lattice.
     
     # Copy base lattice physics to a cluster
-    bulk_cluster = GCTLattice(R=3, perp_cutoff=4.0) # Temp
+    bulk_cluster = GCTLattice(R=3, perp_cutoff=4.0)  # bulk reference cluster
     bulk_H = GCTHamiltonian(bulk_cluster)
     DefectBuilder.build_cage(bulk_cluster, N_target=200, hamiltonian=bulk_H)
     # Note: build_cage REMOVES the origin! It creates a vacancy.
@@ -129,10 +137,10 @@ def run_cage_scan():
         # Optimization: Init once, then filter.
         
         # We will use the 'base_lattice' as source data but NOT modify it.
-        # We'll create a new lattice object manually or copy arrays.
+        # Build the comparison lattice from the same arrays.
         
         # Fast Copy
-        test_lattice = GCTLattice(R=0) # Dummy
+        test_lattice = GCTLattice(R=0)  # empty shell, populated below
         test_lattice.x_equilibrium = base_lattice.x_equilibrium.copy()
         test_lattice.u_displacement = np.zeros_like(test_lattice.x_equilibrium)
         test_lattice.velocities = np.zeros_like(test_lattice.x_equilibrium)

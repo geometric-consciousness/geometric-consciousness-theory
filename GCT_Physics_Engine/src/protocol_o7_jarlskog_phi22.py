@@ -9,55 +9,53 @@ Open Problem O.7 (open); this protocol evaluates the candidate ansatz.
 CONTEXT (V3 Ch09 §9.4.3)
 
 The Jarlskog invariant J is the CKM CP-violation measure (Jarlskog 1985
-PRL 55:1039). It is rephasing-invariant and topology-fixed:
-    J_obs = (3.18 +/- 0.15) x 10^-5  (PDG 2024)
+PRL 55:1039). It is rephasing-invariant:
+    J_obs = (3.12 +/- 0.13) x 10^-5  (PDG 2024)
 
-GCT prediction (Tier 2 candidate):
+GCT candidate (Tier 3 ansatz):
     J_GCT = c_0 * phi^(-22)
 where the phi^(-22) suppression follows from the two-loop muon-harmonic
 CP-violation amplitude scaling. The leading prefactor c_0 is a
 geometric / group-theoretic O(1) factor to be derived.
 
-DERIVATION OF THE phi^(-22) EXPONENT
+MOTIVATION FOR THE phi^(-22) EXPONENT (Tier 3 ansatz, O.7 open)
 
-The CKM CP violation appears at order O(alpha^2 * (mu/e)^2 * ...) in the
+Under the Tier 3 ansatz, CKM CP violation appears at order O(alpha^2 * (mu/e)^2 * ...) in the
 two-loop expansion of the icosahedral electroweak sector. The muon-
 electron mass ratio is m_mu/m_e ~ 207, and the GCT mass hierarchy gives:
     m_mu / m_e = phi^11 * (1 + small)  -- per V3 Ch08 (Lepton ladder)
     (m_mu / m_e)^2 ~ phi^22
 
 This (m_mu/m_e)^2 suppression at two-loop order gives the J ~ phi^(-22)
-factor structure. The leading prefactor follows from icosahedral group-
+factor structure. The leading prefactor would follow from icosahedral group-
 theoretic CP-violation amplitudes; for an O(1) coefficient identified
 with a small-icosahedral-group invariant.
 
 PREFACTOR CANDIDATES (none derived from first principles)
 
-J_obs / phi^(-22) = 3.18e-5 / 2.524e-5 = 1.260
+J_obs / phi^(-22) = 3.12e-5 / 2.525e-5 = 1.236
 
-Candidate O(1) prefactors from icosahedral group theory:
-    4/pi              ~ 1.273  (icosahedral solid-angle ratio)
-    pi/(4-1/phi)      ~ 0.924  (rejected)
+Candidate O(1) prefactors (the seven entries of PREFACTOR_CANDIDATES):
+    1                 = 1.000  (bare phi^-22)
     sqrt(phi)         ~ 1.272  (golden-ratio square root)
+    4/pi              ~ 1.273  (icosahedral solid-angle ratio)
+    Coxeter h_3 / 8   = 1.250  (10/8)
     phi^(1/3)         ~ 1.174  (golden-ratio cube root)
-    Coxeter h_3 / 8   ~ 1.250  (10/8)
-    phi - 1/phi^2     ~ 1.235  (mid-range golden)
+    phi - 1/phi^2     ~ 1.236  (= sqrt(5) - 1)
+    phi/(phi+1/phi)   ~ 0.724  (= phi^2/(phi^2+1))
 
-The closest O(1) match is sqrt(phi) ~ 1.272 (within 1.0% of the
-observed prefactor), or 4/pi ~ 1.273 (within 1.0%). Both are
-icosahedral-natural prefactors:
-    sqrt(phi): the golden-ratio half-power, natural for two-loop
-               quadratic mass-ratio scaling
-    4/pi:      icosahedral solid-angle integral 1/(2*pi) * 2*pi*sin(theta)
-               = 4/pi for the dodecahedral-face solid-angle weighting
+The best-matching candidate is chosen post hoc from this list of seven
+and is reported by the protocol as best_prefactor_name; with several O(1)
+candidates spanning 0.72-1.27, a match at the percent level carries little
+evidential weight (look-elsewhere effect). No candidate is derived.
 
-CANDIDATE FORM (Tier 3 phenomenological)
+ILLUSTRATIVE FORM (Tier 3 phenomenological)
 
-    J_GCT = sqrt(phi) * phi^(-22) = phi^(-43/2) ~ 2.62e-5
+    J_GCT = sqrt(phi) * phi^(-22) = phi^(-43/2) ~ 3.21e-5
 
-Matches J_obs = 3.18e-5 within ~17% (Tier 3 phenomenological).
+lies ~3% above J_obs = 3.12e-5; the prefactor is selected post hoc.
 
-For full Tier 2 closure, the prefactor sqrt(phi) (or 4/pi) requires
+For full Tier 2 closure, any O(1) prefactor requires
 derivation from icosahedral group-theoretic CP amplitudes; this is the
 residual piece bundled with O.5 (QLQCD-1L closure of quark-mass spectrum).
 """
@@ -73,8 +71,8 @@ except ImportError:
     OUTPUT_DIR_AVAILABLE = False
 
 PHI = float(C.PHI)
-J_OBS = 3.18e-5
-J_OBS_UNCERT = 0.15e-5
+J_OBS = 3.12e-5
+J_OBS_UNCERT = 0.13e-5
 
 # GCT prediction
 J_PHI_NEG_22 = PHI ** (-22)
@@ -106,7 +104,7 @@ def main():
     print(f"  J_obs / phi^(-22)                          : {J_OBS / J_PHI_NEG_22:.4f}")
 
     print(f"\nPrefactor candidates (J = c0 * phi^(-22)):")
-    print(f"  {'candidate':>25}  {'c0':>10}  {'J_predicted':>14}  {'agreement %':>14}")
+    print(f"  {'candidate':>25}  {'c0':>10}  {'J_candidate':>14}  {'agreement %':>14}")
     best_name = None
     best_agreement = float("inf")
     for name, c0 in PREFACTOR_CANDIDATES.items():
@@ -131,16 +129,16 @@ def main():
     print(f"  Best O(1) prefactor candidate          : {best_name}")
     print(f"  Best agreement (% from J_obs)          : {best_agreement:.2f}%")
     print(f"")
-    print(f"  CLOSURE: The phi^(-22) suppression structure is derived from")
+    print(f"  CANDIDATE: The phi^(-22) suppression structure is a Tier 3 ansatz from")
     print(f"  the two-loop muon-harmonic CP-violation amplitude scaling")
     print(f"  (m_mu/m_e)^2 ~ phi^22 in the icosahedral electroweak sector.")
-    print(f"  The leading prefactor c_0 ~ 1.27 sits within 1% of two")
-    print(f"  natural icosahedral-group invariants (sqrt(phi) and 4/pi).")
-    print(f"  J_GCT(sqrt(phi)*phi^-22) = J_GCT(phi^-21.5) = {J_GCT_SQRT_PHI:.3e}")
-    print(f"  matches J_obs = {J_OBS:.3e} within 17% (Tier 3 phenomenological).")
+    print(f"  The required prefactor c_0 = {J_OBS / J_PHI_NEG_22:.3f} is matched post hoc by")
+    print(f"  '{best_name}' among seven O(1) candidates (look-elsewhere; none derived).")
+    print(f"  Illustrative J_GCT(sqrt(phi)*phi^-22) = {J_GCT_SQRT_PHI:.3e} vs J_obs = {J_OBS:.3e}")
+    print(f"  ({abs(J_GCT_SQRT_PHI / J_OBS - 1) * 100:.1f}% off; Tier 3 phenomenological).")
     print(f"")
-    print(f"  Status: Tier 2 structure (phi^(-22)) + Tier 3 prefactor; full")
-    print(f"  Tier 2 closure (sqrt(phi) derivation from icosahedral CP amplitudes)")
+    print(f"  Status: Tier 3 structure ansatz (phi^(-22)) + Tier 3 prefactor; full")
+    print(f"  Tier 2 closure (prefactor derivation from icosahedral CP amplitudes)")
     print(f"  is bundled with O.5 (QLQCD-1L) per the existing manuscript framing.")
     print("=" * 76)
 

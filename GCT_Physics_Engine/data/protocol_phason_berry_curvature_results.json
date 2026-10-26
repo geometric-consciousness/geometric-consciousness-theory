@@ -58,16 +58,16 @@
     "k_2_fold_flux_quanta": 0.25,
     "principal_estimate_5_fold": 0.1,
     "derivation": "theta_k = pi / k from chiral half-rotation per k-fold-axis loop; flux_quanta = theta_k / (2 pi) = 1/(2k). The 5-fold axis is the principal AKN-defining rotation; k=5 gives flux_quanta = 0.10.",
-    "tier": "Tier 3 (geometric heuristic; full derivation requires the explicit chirality -> Peierls phase map on RT plaquettes from the GCT action App M Sec M.5)."
+    "tier": "Tier 3 (geometric heuristic; full derivation requires the explicit chirality -> Peierls phase map on RT plaquettes from the GCT action App ULA Sec ULA.5)."
   },
   "alpha_residual_estimate_at_principal_5fold": {
     "F_Frob_squared": 1.996946356994138e-05,
     "normalization_factor": 1.0,
     "estimated_delta_alpha_inv_absolute": 1.5891194190248488e-06,
-    "estimated_delta_alpha_inv_ppm": 0.011596364597805312,
-    "target_ppm_O19_residual": 41.6,
-    "ratio_estimate_over_target": 0.00027875876437032,
+    "estimated_delta_alpha_inv_ppm": 0.011596364667449845,
+    "target_ppm_O19_residual": 41.5,
+    "ratio_estimate_over_target": 0.0002794304739144541,
     "tier": "Tier 3 (order-of-magnitude estimate; full bubble integration with explicit gauge-coupling normalisation is the remaining O.19 magnitude work)."
   },
-  "status": "Berry curvature NON-ZERO at I_h-symmetric reference under TRB element. Chirality-induced |F|^2 at the principal 5-fold flux setting yields a delta(alpha^-1) estimate ~ 0.01 ppm at the 12-site toy level, 2-3 decades below the 41.6 ppm O.19 residual target. The gap admits three possible readings (12-site->N=144 scaling, App M Sec M.3.1 shape-factor decomposition of the 41.6 ppm, gauge-coupling normalisation); sign and structural class are confirmed; full magnitude closure remains O.19 open."
+  "status": "Berry curvature NON-ZERO at I_h-symmetric reference under TRB element. Chirality-induced |F|^2 at the principal 5-fold flux setting yields a delta(alpha^-1) estimate ~ 0.01 ppm at the 12-site toy level, 2-3 decades below the 41.5 ppm O.19 residual target. The gap admits three possible readings (12-site->N=144 scaling, App ULA Sec ULA.3.1 shape-factor decomposition of the 41.5 ppm, gauge-coupling normalisation); sign and structural class are confirmed; full magnitude closure remains O.19 open."
 }

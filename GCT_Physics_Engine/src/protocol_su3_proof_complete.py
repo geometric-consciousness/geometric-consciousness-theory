@@ -10,8 +10,17 @@ The protocol separates two claims:
   2. That span has the A2 fingerprint expected of su(3): 2 Cartan
      generators + 6 roots, with the canonical A2 Cartan matrix.
 
-This is a Tier 3 representation-theoretic candidate identification until
-the O.39 gauge-uniqueness theorem excludes all compact-Lie alternatives.
+Both are Tier 1 matrix-algebra facts about the chosen construction: the
+seeds are made Hermitian and closed under i[A, B], which selects the compact
+real form su(3); ordinary real commutators of the same seeds give sl(3,R).
+Neither the real-form choice nor the 8-dimensional closure is specific to the
+RT inventory (generic ten-axis sets close the same way; see
+protocol_gauge_uniqueness.py).  The physical color identification is an open
+Tier 3 candidate; O.39 carries the uniqueness question.
+
+The quadrupole Gram matrix G_ij = (a_i . a_j)^2 is the Frobenius Gram matrix
+of the symmetric tensors a_i a_i^T in Sym^2(R^3), so rank(G) <= 6 for any ten
+real axes; for the RT inventory rank(G) = 6 and the null space has dimension 4.
 
 [PASS] A1. Structure constants & Jacobi identity verification
 [PASS] A2. Cartan matrix computation (target: [[2,-1],[-1,2]])
@@ -54,43 +63,36 @@ class _NumpyEncoder(json.JSONEncoder):
 # ============================================================================
 # SECTION 1: RT Geometry — 10 three-fold axes
 # ============================================================================
-# The Rhombic Triacontahedron has 20 vertices, grouped into 10 antipodal
-# pairs. Each vertex is a meeting point of exactly 3 rhombic faces, making
-# it a 3-fold symmetry axis.
-#
-# We enumerate them using the golden ratio φ = (1+√5)/2.
-# The 20 vertices of the RT fall into two shells:
-#   Type A (12 vertices): permutations of (±1, ±φ, 0) / ||
-#   Type B ( 8 vertices): (±1, ±1, ±1)  scaled by φ / (√5)  (approx)
-#
-# However, the most direct way (matching gct_gauge.py's identify_3fold_axes)
-# is to hard-code the 10 canonical axis directions used throughout the GCT
-# codebase — these are the icosahedral 3-fold axes normalised to unit length.
+# The 20 three-fold vertices of the Rhombic Triacontahedron (where exactly
+# three rhombic faces meet) lie along the 20 dodecahedron-vertex directions,
+# i.e. the three-fold axes of the icosahedral group.  As 10 antipodal pairs:
+#   (i)  4 body diagonals            (+-1, +-1, +-1)/sqrt(3)
+#   (ii) 6 golden directions          cyclic permutations of (0, +-1/phi, +-phi)
+# These are the three-fold axes of the icosahedral group whose five-fold
+# axes are the cyclic permutations of (0, +-phi, +-1).
 # ---------------------------------------------------------------------------
 
 def _build_rt_axes() -> list[np.ndarray]:
     """
-    Return the 10 unique 3-fold axis directions of the Rhombic Triacontahedron.
+    Return the 10 unoriented 3-fold axis directions of the Rhombic Triacontahedron.
 
-    The RT is dual to the icosidodecahedron. Its 3-fold axes coincide with the
-    20 vertex directions of the regular icosahedron (10 antipodal pairs).
-
-    Icosahedron vertex coordinates (un-normalised):
-        (0, ±1, ±φ),  (±1, ±φ, 0),  (±φ, 0, ±1)   with φ = (1+√5)/2
+    Body diagonals (+-1, +-1, +-1) and cyclic permutations of (0, +-1/phi, +-phi),
+    one representative per antipodal pair, normalised to unit length.
     """
     phi = (1.0 + np.sqrt(5.0)) / 2.0
+    ip = 1.0 / phi
 
     raw = [
-        [0,  1,  phi],
-        [0,  1, -phi],
-        [0, -1,  phi],
-        [1,  phi, 0],
-        [1, -phi, 0],
-        [-1,  phi, 0],
-        [phi, 0,  1],
-        [phi, 0, -1],
-        [-phi, 0,  1],
-        [0, -1, -phi],
+        [1, 1, 1],
+        [1, 1, -1],
+        [1, -1, 1],
+        [-1, 1, 1],
+        [0, ip, phi],
+        [phi, 0, ip],
+        [ip, phi, 0],
+        [0, ip, -phi],
+        [-phi, 0, ip],
+        [ip, -phi, 0],
     ]
 
     axes = []
@@ -261,7 +263,9 @@ def compute_cartan_matrix(
     # --- 4b. Simultaneously diagonalize H1 and H2 in C^3 --------------------
     # H1 and H2 are 3x3 Hermitian matrices. Diagonalize H1 first, then use
     # the same eigenvectors for H2 (valid since [H1,H2] = 0).
-    eps = 1.0 / np.sqrt(137.036)   # irrational for lifting degeneracies
+    # Arbitrary low-resolution irrational used only to lift degeneracies;
+    # this coefficient is not the empirical A3 coupling.
+    eps = 1.0 / np.sqrt(137.036)
     M3 = H1 + eps * H2
 
     evals3, evecs3 = np.linalg.eigh(M3)  # H1+eps*H2 is still Hermitian
@@ -463,10 +467,10 @@ def main():
     if all_pass:
         print("  [PASS] A1 (Jacobi Identity)  : PASS")
         print("  [PASS] A2 (Cartan Matrix)    : PASS  -> [[2,-1],[-1,2]] matches su(3) A2")
-        print("  [PASS] A3 (Killing Form)     : PASS  -> compact real algebra confirmed")
+        print("  [PASS] A3 (Killing Form)     : PASS  -> compact form in the chosen Hermitian construction")
         print()
         print("  VERDICT: su3_candidate_identified")
-        print("  The RT acceptance window generates the registered su(3) candidate.")
+        print("  The RT 3-fold axes reproduce the registered su(3) candidate (not RT-specific).")
         print("  Theorem-grade uniqueness remains O.39.")
     else:
         print(f"  A1: {'PASS' if jacobi_pass else 'FAIL'}  "
@@ -489,7 +493,9 @@ def main():
         "basis_dimension": len(basis),
         "gram_max_off_diag": float(max_off_diag),
         "identification_status": (
-            "Tier 2 generator inventory plus Tier 3 A2/su(3) candidate "
+            "Tier 1 matrix closure in the chosen Hermitian real form plus open "
+            "Tier 3 A2/su(3) color-candidate identification; RT specificity not "
+            "established; "
             "identification pending O.39 gauge-uniqueness theorem"
         ),
         "verdict": verdict,

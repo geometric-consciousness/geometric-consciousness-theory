@@ -1,5 +1,5 @@
 """
-App W Sec W.4 No-Signalling Theorem — H_3 character-theoretic selection rules
+App SNE Sec SNE.4 No-Signalling Theorem — H_3 character-theoretic selection rules
 =============================================================================
 
 Computes the two selection rules that govern phonon–phason couplings in the
@@ -26,25 +26,30 @@ The two selection rules answer DIFFERENT physical questions: (i) bans a
 mass-like algebraic mixing of phonon and phason amplitudes; (ii) governs the
 standard SLS / LRT strain-strain coupling K_3 of icosahedral quasicrystal
 elasticity (Socolar, Lubensky & Steinhardt 1986; Lubensky, Ramaswamy & Toner
-1985), which is the same C^{mix}_ijkl term that appears in App M Sec M.4.
+1985), which is the same C^{mix}_ijkl term that appears in App ULA Sec ULA.4.
 
 This protocol computes both multiplicities, identifies which sub-product of
 the rank-4 decomposition carries the strain-strain invariant, and reports the
-explicit selection-rule structure that the no-signalling argument in App W Sec
-W.4 rests on. The closure of Theorem W.1 then proceeds:
+explicit selection-rule structure that the no-signalling argument in App SNE Sec
+SNE.4 rests on. The closure of Theorem SNE.1 then proceeds:
 
   - Step 1: only the strain-strain K_3 coupling survives; the displacement-
             level coupling is forbidden by the displacement-level selection
             rule  n_A(T_1 (x) T_2) = 0.
   - Step 2: a phason source drives the phonon equation through the K_3 term;
-            the resulting signal in E_|| propagates at phonon speed v <= c
-            (Lorentz invariance of the long-wavelength effective theory).
+            the resulting signal in E_|| propagates no faster than the phonon
+            speed v_phonon. It is subluminal only on the additional Tier 3
+            premise v_phonon <= c (a Lorentz-invariant long-wavelength phonon
+            sector), which GCT's own speed hierarchy does not supply and which
+            fails under P3b (v_phonon ~ c_P = phi^9 c > c; App ORQ O.48(b)).
   - Step 3: p-adic proximity is not E_|| proximity (Realization Operator).
 
-Theorem W.1 (No Superluminal Signalling via p-adic Proximity) therefore
-operates at Tier 2: Step 1 is Tier 1 (group-theoretic), Step 2 is Tier 2
-(standard relativistic field-theory fact), Step 3 is Tier 1 (cut-and-project).
-The load-bearing physical input is Step 2's subluminal phonon propagation.
+Theorem SNE.1 is therefore a CONDITIONAL readout bound (App SNE §SNE.4;
+V1 Ch09): Step 1 is Tier 1 (group-theoretic), Step 2 is a Tier 2
+propagation bound within the declared linear model plus a Tier 3
+subluminality premise, Step 3 is Tier 1 (cut-and-project). The
+load-bearing physical input is the Tier 3 premise v_phonon <= c; under P3b
+the K_3 channel would be superluminal inside the model (open, O.48(b)).
 
 Character table of I (Hamermesh 1962 Table III.1):
 
@@ -63,8 +68,8 @@ Standard decompositions (consistency-checked numerically below):
   (T_1 (x) T_1) (x) (T_1 (x) T_2) contains A with multiplicity 1
                                 (from the H (x) H sub-product --> K_3 allowed)
 
-Cross-reference: App W Sec W.4 (No-Signalling Theorem);
-App M Sec M.4 (phonon-phason coupling structure); App E Sec E.4
+Cross-reference: App SNE Sec SNE.4 (No-Signalling Theorem);
+App ULA Sec ULA.4 (phonon-phason coupling structure); App FTH Sec FTH.4
 (no-signalling proposition at the foundational-theorems level).
 """
 
@@ -184,12 +189,13 @@ def compute():
                 "This is the standard Socolar-Lubensky-Steinhardt / "
                 "Lubensky-Ramaswamy-Toner K_3 coupling of icosahedral "
                 "quasicrystal elasticity, identical to the C^{mix}_ijkl "
-                "term of App M Sec M.4."),
+                "term of App ULA Sec ULA.4."),
             "interpretation": (
                 "Exactly one H_3-invariant strain-strain coupling exists. "
                 "A phason source drives the phonon equation through "
                 "this K_3 term; the induced disturbance propagates at "
-                "phonon speed and is therefore subluminal."),
+                "phonon speed; subluminal only if v_phonon <= c (Tier 3 "
+                "premise; fails under P3b, App ORQ O.48(b))."),
         },
 
         "self_coupling_consistency_checks": {
@@ -212,20 +218,27 @@ def compute():
         },
 
         "no_signalling_closure": {
-            "tier": "Tier 2",
+            "tier": ("Conditional (Tier 1 selection rule; Tier 3 "
+                     "subluminality premise) - not a Tier 2 closure"),
+            "closure_status": "CONDITIONAL_ON_TIER3_PREMISE_V_PHONON_LE_C",
             "step_1_tier": "Tier 1 (group-theoretic; both selection rules above)",
             "step_2_tier": (
-                "Tier 2 (standard relativistic field-theory fact: phonon "
-                "sound speed is bounded above by c via Lorentz invariance "
-                "of the long-wavelength effective theory)"),
+                "Tier 2 propagation bound within the declared linear model "
+                "(the K_3-induced disturbance travels no faster than "
+                "v_phonon) + Tier 3 premise v_phonon <= c (Lorentz-invariant "
+                "long-wavelength phonon sector), not derived here; it fails "
+                "under P3b, where v_phonon ~ c_P = phi^9 c > c (App SNE "
+                "§SNE.4 Step 2; App ORQ O.48(b))"),
             "step_3_tier": "Tier 1 (Realization Operator projection)",
             "load_bearing_step": (
-                "Step 2 (subluminality of the phonon sector). Step 1 "
+                "Step 2's Tier 3 premise v_phonon <= c. Step 1 "
                 "establishes the selection-rule structure of the coupling "
                 "and identifies the K_3 strain-strain term as the unique "
                 "channel through which a phason source can drive E_||; "
-                "Step 2 then closes the no-signalling argument by bounding "
-                "the propagation speed of that channel."),
+                "Step 2 bounds the propagation speed of that channel by "
+                "v_phonon, and the readout is subluminal only if "
+                "v_phonon <= c. Under P3b the channel would be superluminal "
+                "inside the model; this tension is open (App ORQ O.48(b))."),
         },
     }
 
@@ -242,7 +255,7 @@ def main():
     strain = results["strain_level_selection_rule"]
     closure = results["no_signalling_closure"]
 
-    print("App W Sec W.4 H_3 selection rules for phonon-phason couplings")
+    print("App SNE Sec SNE.4 H_3 selection rules for phonon-phason couplings")
     print("=" * 65)
     print(f"Group: {results['group']}")
     print(f"phi = {results['phi_value']:.10f}")
@@ -262,7 +275,7 @@ def main():
     print()
     print(f"No-signalling theorem tier: {closure['tier']}")
     print(f"  Step 1 (selection rules)       : {closure['step_1_tier']}")
-    print(f"  Step 2 (subluminal propagation): {closure['step_2_tier']}")
+    print(f"  Step 2 (phonon-speed bound)    : {closure['step_2_tier']}")
     print(f"  Step 3 (R-Operator projection) : {closure['step_3_tier']}")
     print()
     print(f"Wrote {out_path}")

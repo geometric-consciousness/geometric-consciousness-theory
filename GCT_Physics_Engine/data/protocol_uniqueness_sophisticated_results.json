@@ -1,7 +1,7 @@
 {
   "winner_subset_idx": 17,
   "winner_metrics_summary": {
-    "eta_scalar": -8.0,
+    "adjacency_sign_sum": -8.0,
     "deg_min": 28,
     "deg_max": 48,
     "is_regular": false,
@@ -69,7 +69,7 @@
         60,
         60
       ],
-      "eta_scalar": 6.0,
+      "adjacency_sign_sum": 6.0,
       "deg_min": 5,
       "deg_max": 27,
       "is_regular": false,
@@ -126,7 +126,7 @@
         60,
         60
       ],
-      "eta_scalar": 4.0,
+      "adjacency_sign_sum": 4.0,
       "deg_min": 10,
       "deg_max": 24,
       "is_regular": false,
@@ -183,7 +183,7 @@
         60,
         60
       ],
-      "eta_scalar": 0.0,
+      "adjacency_sign_sum": 0.0,
       "deg_min": 20,
       "deg_max": 20,
       "is_regular": true,
@@ -240,7 +240,7 @@
         60,
         60
       ],
-      "eta_scalar": -10.0,
+      "adjacency_sign_sum": -10.0,
       "deg_min": 15,
       "deg_max": 32,
       "is_regular": false,
@@ -297,7 +297,7 @@
         60,
         60
       ],
-      "eta_scalar": 2.0,
+      "adjacency_sign_sum": 2.0,
       "deg_min": 15,
       "deg_max": 37,
       "is_regular": false,
@@ -354,7 +354,7 @@
         60,
         60
       ],
-      "eta_scalar": 6.0,
+      "adjacency_sign_sum": 6.0,
       "deg_min": 18,
       "deg_max": 38,
       "is_regular": false,
@@ -411,7 +411,7 @@
         60,
         60
       ],
-      "eta_scalar": 0.0,
+      "adjacency_sign_sum": 0.0,
       "deg_min": 10,
       "deg_max": 25,
       "is_regular": false,
@@ -468,7 +468,7 @@
         60,
         60
       ],
-      "eta_scalar": -10.0,
+      "adjacency_sign_sum": -10.0,
       "deg_min": 17,
       "deg_max": 25,
       "is_regular": false,
@@ -525,7 +525,7 @@
         60,
         60
       ],
-      "eta_scalar": -22.0,
+      "adjacency_sign_sum": -22.0,
       "deg_min": 15,
       "deg_max": 31,
       "is_regular": false,
@@ -582,7 +582,7 @@
         60,
         60
       ],
-      "eta_scalar": 24.0,
+      "adjacency_sign_sum": 24.0,
       "deg_min": 17,
       "deg_max": 33,
       "is_regular": false,
@@ -639,7 +639,7 @@
         60,
         60
       ],
-      "eta_scalar": -14.0,
+      "adjacency_sign_sum": -14.0,
       "deg_min": 20,
       "deg_max": 43,
       "is_regular": false,
@@ -696,7 +696,7 @@
         60,
         60
       ],
-      "eta_scalar": -12.0,
+      "adjacency_sign_sum": -12.0,
       "deg_min": 18,
       "deg_max": 35,
       "is_regular": false,
@@ -753,7 +753,7 @@
         60,
         60
       ],
-      "eta_scalar": -14.0,
+      "adjacency_sign_sum": -14.0,
       "deg_min": 20,
       "deg_max": 40,
       "is_regular": false,
@@ -810,7 +810,7 @@
         60,
         60
       ],
-      "eta_scalar": -6.0,
+      "adjacency_sign_sum": -6.0,
       "deg_min": 20,
       "deg_max": 35,
       "is_regular": false,
@@ -867,7 +867,7 @@
         60,
         60
       ],
-      "eta_scalar": -10.0,
+      "adjacency_sign_sum": -10.0,
       "deg_min": 23,
       "deg_max": 45,
       "is_regular": false,
@@ -924,7 +924,7 @@
         60,
         60
       ],
-      "eta_scalar": -16.0,
+      "adjacency_sign_sum": -16.0,
       "deg_min": 28,
       "deg_max": 40,
       "is_regular": false,
@@ -981,7 +981,7 @@
         60,
         60
       ],
-      "eta_scalar": 2.0,
+      "adjacency_sign_sum": 2.0,
       "deg_min": 29,
       "deg_max": 42,
       "is_regular": false,
@@ -1038,7 +1038,7 @@
         60,
         60
       ],
-      "eta_scalar": -8.0,
+      "adjacency_sign_sum": -8.0,
       "deg_min": 28,
       "deg_max": 48,
       "is_regular": false,
@@ -1095,7 +1095,7 @@
         60,
         60
       ],
-      "eta_scalar": -10.0,
+      "adjacency_sign_sum": -10.0,
       "deg_min": 30,
       "deg_max": 42,
       "is_regular": false,
@@ -1152,7 +1152,7 @@
         60,
         60
       ],
-      "eta_scalar": -6.0,
+      "adjacency_sign_sum": -6.0,
       "deg_min": 30,
       "deg_max": 50,
       "is_regular": false,
@@ -1209,7 +1209,7 @@
         60,
         60
       ],
-      "eta_scalar": 0.0,
+      "adjacency_sign_sum": 0.0,
       "deg_min": 31,
       "deg_max": 40,
       "is_regular": false,
@@ -1267,7 +1267,7 @@
         30,
         60
       ],
-      "eta_scalar": 0.0,
+      "adjacency_sign_sum": 0.0,
       "deg_min": 2,
       "deg_max": 20,
       "is_regular": false,
@@ -1343,7 +1343,7 @@
         30,
         60
       ],
-      "eta_scalar": -10.0,
+      "adjacency_sign_sum": -10.0,
       "deg_min": 2,
       "deg_max": 25,
       "is_regular": false,
@@ -1419,7 +1419,7 @@
         30,
         60
       ],
-      "eta_scalar": -1.0,
+      "adjacency_sign_sum": -1.0,
       "deg_min": 10,
       "deg_max": 35,
       "is_regular": false,
@@ -1495,7 +1495,7 @@
         30,
         60
       ],
-      "eta_scalar": -1.0,
+      "adjacency_sign_sum": -1.0,
       "deg_min": 16,
       "deg_max": 35,
       "is_regular": false,
@@ -1571,7 +1571,7 @@
         30,
         60
       ],
-      "eta_scalar": 0.0,
+      "adjacency_sign_sum": 0.0,
       "deg_min": 12,
       "deg_max": 40,
       "is_regular": false,
@@ -1647,7 +1647,7 @@
         30,
         60
       ],
-      "eta_scalar": 8.0,
+      "adjacency_sign_sum": 8.0,
       "deg_min": 16,
       "deg_max": 40,
       "is_regular": false,
@@ -1723,7 +1723,7 @@
         30,
         60
       ],
-      "eta_scalar": 0.0,
+      "adjacency_sign_sum": 0.0,
       "deg_min": 20,
       "deg_max": 50,
       "is_regular": false,
@@ -1799,7 +1799,7 @@
         30,
         60
       ],
-      "eta_scalar": 6.0,
+      "adjacency_sign_sum": 6.0,
       "deg_min": 7,
       "deg_max": 23,
       "is_regular": false,
@@ -1875,7 +1875,7 @@
         30,
         60
       ],
-      "eta_scalar": 6.0,
+      "adjacency_sign_sum": 6.0,
       "deg_min": 7,
       "deg_max": 21,
       "is_regular": false,
@@ -1951,7 +1951,7 @@
         30,
         60
       ],
-      "eta_scalar": -2.0,
+      "adjacency_sign_sum": -2.0,
       "deg_min": 15,
       "deg_max": 30,
       "is_regular": false,
@@ -2027,7 +2027,7 @@
         30,
         60
       ],
-      "eta_scalar": -16.0,
+      "adjacency_sign_sum": -16.0,
       "deg_min": 17,
       "deg_max": 30,
       "is_regular": false,
@@ -2103,7 +2103,7 @@
         30,
         60
       ],
-      "eta_scalar": -12.0,
+      "adjacency_sign_sum": -12.0,
       "deg_min": 20,
       "deg_max": 38,
       "is_regular": false,
@@ -2179,7 +2179,7 @@
         30,
         60
       ],
-      "eta_scalar": 4.0,
+      "adjacency_sign_sum": 4.0,
       "deg_min": 21,
       "deg_max": 38,
       "is_regular": false,
@@ -2255,7 +2255,7 @@
         30,
         60
       ],
-      "eta_scalar": -12.0,
+      "adjacency_sign_sum": -12.0,
       "deg_min": 23,
       "deg_max": 47,
       "is_regular": false,
@@ -2331,7 +2331,7 @@
         30,
         60
       ],
-      "eta_scalar": 2.0,
+      "adjacency_sign_sum": 2.0,
       "deg_min": 10,
       "deg_max": 26,
       "is_regular": false,
@@ -2407,7 +2407,7 @@
         30,
         60
       ],
-      "eta_scalar": -6.0,
+      "adjacency_sign_sum": -6.0,
       "deg_min": 10,
       "deg_max": 25,
       "is_regular": false,
@@ -2483,7 +2483,7 @@
         30,
         60
       ],
-      "eta_scalar": -16.0,
+      "adjacency_sign_sum": -16.0,
       "deg_min": 15,
       "deg_max": 35,
       "is_regular": false,
@@ -2559,7 +2559,7 @@
         30,
         60
       ],
-      "eta_scalar": -18.0,
+      "adjacency_sign_sum": -18.0,
       "deg_min": 20,
       "deg_max": 35,
       "is_regular": false,
@@ -2635,7 +2635,7 @@
         30,
         60
       ],
-      "eta_scalar": -4.0,
+      "adjacency_sign_sum": -4.0,
       "deg_min": 20,
       "deg_max": 40,
       "is_regular": false,
@@ -2711,7 +2711,7 @@
         30,
         60
       ],
-      "eta_scalar": 10.0,
+      "adjacency_sign_sum": 10.0,
       "deg_min": 24,
       "deg_max": 35,
       "is_regular": false,
@@ -2787,7 +2787,7 @@
         30,
         60
       ],
-      "eta_scalar": -10.0,
+      "adjacency_sign_sum": -10.0,
       "deg_min": 25,
       "deg_max": 45,
       "is_regular": false,

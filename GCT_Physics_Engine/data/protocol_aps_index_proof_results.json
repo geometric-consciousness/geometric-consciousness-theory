@@ -1,17 +1,23 @@
 {
     "N_nodes": 152,
     "cage_construction": "I_h-closed 5-orbit (12+30+20+30+60)",
-    "eta_scalar": -14.0,
-    "eta_eff": -1.75,
-    "bulk_index_status": "pending_O14c",
-    "bulk_index_required_for_n107": 108.75,
-    "bulk_required_is_integer": false,
-    "total_index_status": "partial_pending_bulk_derivation",
+    "scalar_adjacency_operator": "A on C^N (finite weighted adjacency matrix)",
+    "scalar_adjacency_sign_sum": -14.0,
+    "spinor_dimension": 8,
+    "scalar_adjacency_per_spinor_dimension_diagnostic": -1.75,
+    "discrete_dirac_operator": "D on C^N tensor C^8 (finite Hermitian matrix)",
+    "discrete_dirac_sign_sum": 0.0,
+    "aps_boundary_operator_specified": false,
+    "aps_boundary_operator_domain_specified": false,
+    "aps_kernel_term_computed": false,
+    "aps_eta_evaluated": false,
+    "aps_index_evaluated": false,
+    "object_domain_status": "separate_finite_graph_diagnostics_only",
     "scalar_eigenvalues_summary": {
         "min": -17.457356156876937,
         "max": 37.15487519493043,
         "mean_abs": 6.031441090736007
     },
     "pass": false,
-    "tier_status": "PARTIAL \u2014 cage observables computed, bulk Pontryagin pending O.14c"
+    "tier_status": "DIAGNOSTIC_ONLY \u2014 finite scalar-adjacency and discrete-Dirac sign sums computed; qualifying APS operator/domain absent"
 }

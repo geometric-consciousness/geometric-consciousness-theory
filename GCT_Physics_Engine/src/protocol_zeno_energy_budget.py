@@ -2,15 +2,13 @@
 """
 protocol_zeno_energy_budget.py -- Zeno Drive Energy Budget: Tavis-Cummings Cooperative Pumping
 =================================================================
-Tavis-Cummings cooperative pumping model for the Zeno Drive.
-
-Conditional sensitivity calculation for whether N nuclear spins (fueled by
-ATP) can cooperatively pump energy into the phason field to nucleate the
-3.55 keV Identity Polaron without thermal decoherence destroying the process.
+Conditional Tavis-Cummings arithmetic for declared external-rate scenarios.
+It does not derive a phason coupling, nucleate an Identity Polaron, or assign
+a Level-II substrate verdict.
 
 Three Acceptance Tests
 ----------------------
-  B1. Derive the single-spin coupling g_single to the phason mode.
+  B1. Evaluate the declared Tier 3 single-spin coupling g_single to the phason mode (not derived).
   B2. Compute N_crit and N_bio; verify cooperativity N_crit <= N_bio.
   B3. Phonon cascade / Landauer energy-entropy accounting.
 
@@ -56,7 +54,8 @@ class _NumpyEncoder(json.JSONEncoder):
 # External empirical prior: CODATA/SI constants and unit conversions.
 # ============================================================================
 
-HBAR    = 1.054571817e-34   # J·s   (reduced Planck constant)
+PLANCK  = 6.62607015e-34    # J·s   (exact SI Planck constant)
+HBAR    = PLANCK / (2.0 * math.pi)  # J·s; enforces h*nu = hbar*(2*pi*nu)
 KB      = 1.380649e-23      # J/K   (Boltzmann constant)
 EV      = 1.602176634e-19   # J     (electron-volt)
 NA      = 6.02214076e23     # mol^-1 (Avogadro)
@@ -119,7 +118,7 @@ M_EFF_PHASON = 9.1093837e-31  # kg (Electron mass)
 
 # Verification target / diagnostic display: reference polaron radius used only
 # for volume reporting in this protocol. The operative healing-length entry is
-# disclosed in Parameter Ledger xi / App K §K.5.
+# disclosed in Parameter Ledger xi / App DPS §DPS.5.
 XI_HEALING_M = 7.25e-9  # m   (7.25 nm -- Tier 1 a_0/alpha; Tier 3 MT-lumen scale match)
 
 
@@ -143,7 +142,7 @@ XI_HEALING_M = 7.25e-9  # m   (7.25 nm -- Tier 1 a_0/alpha; Tier 3 MT-lumen scal
 
 def compute_g_single():
     """
-    Compute the single-spin coupling to the phason mode.
+    Compute the Tier 3 scenario single-spin coupling to the phason mode.
 
     The tryptophan radical chain in beta-tubulin is the chromophore.
     E_phason_field is not calibrated; it is the kinematic zero-point
@@ -203,10 +202,10 @@ def compute_cooperativity(g_single: float):
 
     Physical interpretation of N_bio
     ----------------------------------
-    N_bio in the load-bearing verdict is the central beta-tubulin branch:
+    N_bio in the declared central inventory scenario is the beta-tubulin branch:
     n_rp = 0 until O.21 identifies an assembled-microtubule lumen-axis
     radical-pair oscillator. The n_rp = 1 beta-Trp count is retained as a
-    separate sensitivity branch, not as live arithmetic for the central verdict.
+    separate sensitivity branch, not as physical or phenomenal evidence.
     The Posner 31P pathway is reported separately as a secondary comparison,
     not used for the load-bearing verdict.
 
@@ -241,16 +240,18 @@ def compute_cooperativity(g_single: float):
     # ---- Biological spin pool: central branch + separate sensitivity branch -
     # Ch13 §13.1.2 / V1 Ch17 §17.1.4b use:
     #   central branch n_rp=0 pending O.21;
-    #   sensitivity branch ~10^5 MTs/neuron x 1250 dimers/MT x n_rp=1
-    #   viable beta-Trp host = 1.25e8 participating radical-pair dipoles.
+    #   sensitivity branch ~10^5 MTs/neuron x 13 protofilaments x 1250
+    #   dimers/protofilament x n_rp=1 participating radical-pair dipoles.
     # The Posner 31P path is kept as a secondary comparison only.
     R_CELL_NM     = 15e3                          # nm  (= 15 um)
     V_CELL_NM3    = (4.0/3.0) * math.pi * R_CELL_NM**3   # nm^3
     V_CELL_L      = V_CELL_NM3 * 1e-24            # liters
 
-    # Geometric-cage-derived branch per App F §F.4 + O.33: beta-Trp sensitivity substrate count.
+    # Geometric-cage-derived branch per App NSP §NSP.4 + O.33: beta-Trp sensitivity substrate count.
     MT_PER_NEURON = 1.0e5
-    DIMERS_PER_MT = 1250.0
+    PROTOFILAMENTS_PER_MT = 13.0        # canonical microtubule cross-section
+    DIMERS_PER_PROTOFILAMENT = 1250.0   # 10 um length / 8 nm dimer rise
+    DIMERS_PER_MT = PROTOFILAMENTS_PER_MT * DIMERS_PER_PROTOFILAMENT
     N_RP_PER_DIMER_CENTRAL = 0.0
     N_RP_PER_DIMER_SENSITIVITY = 1.0
     N_BIO = MT_PER_NEURON * DIMERS_PER_MT * N_RP_PER_DIMER_CENTRAL
@@ -312,7 +313,7 @@ def compute_cooperativity(g_single: float):
 
 def compute_energy_budget(N_bio: float):
     """
-    Verify that the ATP-driven energy cascade can nucleate the Identity Polaron.
+    Evaluate a conditional ATP energy-accounting scenario.
 
     Checks:
     1. Does N_bio contain enough spins to process E_vac worth of ATP energy?
@@ -321,8 +322,10 @@ def compute_energy_budget(N_bio: float):
     Verdict: PASS if both close within a factor of 2.
     """
     # ---- Polaron energy target ---------------------------------------------
-    # Load-bearing GCT prediction: 3.55 keV Identity Polaron energy.
-    E_VAC_EV    = 3548.6                     # eV  (3.55 keV Identity Polaron)
+    # Conditional energy target: the division m_e/144 is exact after supplying
+    # the Tier 3 O.38 N_cage=144 posit. The 3.5486 keV absolute value is Tier 3;
+    # the fracture-mechanism form is Tier 3 (rests on the Tier 3 glass model).
+    E_VAC_EV    = 3548.6                     # eV (O.38-conditional absolute value)
     E_VAC_J     = E_VAC_EV * EV              # J
 
     # ---- ATP energy budget -------------------------------------------------
@@ -361,6 +364,9 @@ def compute_energy_budget(N_bio: float):
     return verdict_b3, {
         "E_vac_eV": E_VAC_EV,
         "E_vac_J": E_VAC_J,
+        "E_vac_tier": "Tier 3 absolute value conditional on O.38 N_cage=144",
+        "E_vac_arithmetic": "Exact division m_e/144 once the Tier 3 cage posit is supplied",
+        "mechanism_tier": "Tier 3 fracture mechanism (rests on the Tier 3 Topological Glass model; conditional on the adopted architecture)",
         "eps_ATP_eV": EPS_ATP_EV,
         "N_ATP_raw": N_ATP_RAW,
         "E_per_spin_eV": E_PER_SPIN_EV,
@@ -377,22 +383,22 @@ def compute_energy_budget(N_bio: float):
 
 
 # ============================================================================
-# TEST B4: Anti-Zeno Crossover
+# TEST B4: Conditional Spectral-Shape Diagnostic
 # ============================================================================
 
 def compute_antizeno_crossover():
     """
-    Computes the operational signature of the protected-subspace Zeno
-    enhancement: a frequency-dependent effective T_2 with peak at the
-    chiral phonon-polariton resonance (~112 MHz) and decay off-resonance
-    (anti-Zeno regime). The current peak T_2 value is synchronized to
+    Computes one conditional Lorentzian protected-subspace branch: a
+    frequency-dependent effective T_2 with a peak near 112 MHz and a lower
+    synthetic value at 150 MHz.  The 150 MHz sign is not a prediction; it is
+    an O.23/O.24 diagnostic outside F1 and Holm primary decisions.  The
+    current peak T_2 value is synchronized to
     protocol_o23_dfs_collective_dressing.py: O.23 shows the qualitative
     direction but remains short of the 10 ms Protocol A-Prime target.
 
-    Bare single-pair Misra-Sudarshan extension (Facchi-Pascazio 2008 eq.
-    16 applied to the Trp hyperfine Hamiltonian) uses the cyclic-frequency
-    convention tau_Z = 1/f_hf. At the engine midpoint f_hf ~ 30 MHz and
-    tau_meas ~ 10 ns, tau_eff^{bare MS} ~ (33 ns)^2 / 10 ns ~ 110 ns;
+    Bare single-pair Misra-Sudarshan extension uses the uniquely defined
+    tau_Z = hbar/sigma_H. At the engine midpoint sigma_H/h ~ 30 MHz and
+    tau_meas ~ 10 ns, tau_Z ~ 5.3 ns and tau_eff^{bare MS} ~ 2.8 ns;
     the 10 ms target requires a protected-subspace effective coupling
     Omega_DFS ~ 10^5 rad/s; current O.23 collective dressing reaches
     a sub-ms best case rather than the target.
@@ -411,19 +417,19 @@ def compute_antizeno_crossover():
     
     # Lorentzian DOS (Sharp geometric resonance)
     # Verification target: operational resonance-width sentinel for A-Prime
-    # scan design. This anti-Zeno subcheck is diagnostic, not a physical
-    # crossover calculation; the physical crossover requires solving the
+    # scan design. This conditional shape is not a physical crossover
+    # calculation and does not fix the 150 MHz sign; the physical crossover requires solving the
     # bath spectral density far-tail integral against the Misra-Sudarshan
     # kernel (pending O.23).
     gamma = 1.5e6  # 1.5 MHz width
     L = (gamma**2) / ((freqs - f_res)**2 + gamma**2)
     
-    # T2_eff profile: Peaks at peak_T2, decays below T2_raw at high frequencies (Anti-Zeno)
-    # We assign an Anti-Zeno floor of say 0.01 * T2_raw for extreme off-resonance fast driving
+    # Conditional Lorentzian sentinel profile. Its low off-resonance floor is
+    # a model input, not an operational sign prediction at 150 MHz.
     anti_zeno_floor = T2_raw * 0.01 
     T2_eff = anti_zeno_floor + (peak_T2 - anti_zeno_floor) * L
     
-    # Find crossover where T2_eff drops back below T2_raw (transition to Anti-Zeno)
+    # Locate the model-internal crossing; this is not a physical sign gate.
     crossover_idx = np.where(T2_eff < T2_raw)[0]
     if len(crossover_idx) > 0:
         f_cross = freqs[crossover_idx[0]]
@@ -437,7 +443,7 @@ def compute_antizeno_crossover():
     T2_112 = T2_eff[idx_112]
     T2_150 = T2_eff[idx_150]
     
-    diagnostic_shape_pass = bool(T2_112 > T2_raw and T2_150 < T2_raw)
+    matches_assumed_lorentzian_shape = bool(T2_112 > T2_raw and T2_150 < T2_raw)
     physical_crossover_verdict = False
     
     return physical_crossover_verdict, {
@@ -451,8 +457,9 @@ def compute_antizeno_crossover():
         "crossover_f_MHz": f_cross / 1e6,
         "T2_at_112MHz_ms": T2_112 * 1000.0,
         "T2_at_150MHz_ms": T2_150 * 1000.0,
+        "T2_at_150MHz_scope": "conditional Lorentzian-model output; operational sign unfixed and excluded from F1/Holm",
         "T2_raw_ms": T2_raw * 1000.0,
-        "diagnostic_shape_pass": diagnostic_shape_pass,
+        "matches_assumed_lorentzian_shape": matches_assumed_lorentzian_shape,
         "physical_crossover_verdict": physical_crossover_verdict,
         "verdict": physical_crossover_verdict
     }
@@ -466,11 +473,11 @@ def compute_chiral_phonon_polariton_dfs():
     Computes candidate OAM-DFS isolation and the Berry Phase steering condition.
     
     Verifies that the Zeno Drive does NOT supply the energy.
-    Instead, it couples Trp radical pairs to Chiral Phonon-Polaritons in the alpha-helix.
+    In the Tier 3 model, it couples Trp radical pairs to Chiral Phonon-Polaritons in the alpha-helix.
     Because these polaritons carry Orbital Angular Momentum (OAM), they are a
     candidate DFS-protection channel pending O.23, not a closed immunity claim.
     The topological mismatch Gamma_OAM_loss << gamma_0 acts as the filter.
-    The 112 MHz primary-branch drive imparts a geometric Berry Phase that breaks spatial symmetry,
+    The 112 MHz primary-branch drive would impart a geometric Berry Phase that breaks spatial symmetry,
     steering the ambient ATP energy (0.52 eV) into the correct conformational change.
     Current O.23 collective dressing reaches the 100 us operative floor but remains
     below the 1 ms and 10 ms targets; this is not a closed DFS pass.
@@ -516,7 +523,7 @@ def compute_chiral_phonon_polariton_dfs():
 
 def compute_relativistic_zeno_decoherence(g_single: float, N_bio_rest: float):
     """
-    Computes the maximum conscious velocity (v_max) by calculating the critical
+    Computes a conditional-scenario velocity bound (v_max; no Level-II verdict follows) by calculating the critical
     Lorentz factor (gamma_crit) where time-dilated ATP flux drops below the
     Tavis-Cummings threshold (N_crit).
     """
@@ -596,7 +603,7 @@ def main():
 
     b1_pass = b1_info['g_single_Hz'] > 0
 
-    print(f"  B1 status                 : {'[PASS] g_single > 0' if b1_pass else '[FAIL]'}")
+    print(f"  B1 arithmetic status      : {'[PASS] supplied scenario rate > 0' if b1_pass else '[FAIL]'}")
 
     # -----------------------------------------------------------------------
     # B2: Cooperativity
@@ -674,8 +681,8 @@ def main():
     print(f"  N_bio (rest frame spins)  : {b6_info['N_bio_rest']:.4e}")
     print(f"  gamma_crit (Decoherence)  : {b6_info['gamma_crit']:.4f}")
     if verdict_b6:
-        print(f"  v_max (Conscious Limit)   : {b6_info['v_max_m_s']:.2f} m/s  ({b6_info['v_max_c']:.6f} c)")
-    print(f"  B6 verdict                : {'[PASS] Agent liquefies before c' if verdict_b6 else '[FAIL] Cannot safely compute limits'}")
+        print(f"  v_max (scenario bound)   : {b6_info['v_max_m_s']:.2f} m/s  ({b6_info['v_max_c']:.6f} c)")
+    print(f"  B6 verdict                : {'[PASS] scenario bound below c' if verdict_b6 else '[FAIL] Cannot safely compute limits'}")
 
     # -----------------------------------------------------------------------
     # Final verdict
@@ -710,11 +717,11 @@ def main():
         "FAIL"
     )
     disposition_text = (
-        "Operative biological central branch uses n_rp=0 pending O.21, so B2 "
+        "Declared central inventory scenario uses n_rp=0 pending O.21, so B2 "
         "cooperativity and downstream B3/B6 energy-delivery checks do not close "
         "as live arithmetic. The n_rp=1 beta-Trp count is reported only as a "
         "sensitivity branch; it preserves the arithmetic cooperativity ratio but "
-        "does not become the central verdict until O.21 closes. Current O.23 DFS "
+        "does not become physical evidence even if O.21 closes; the typed measured coupling and phenomenal bridge remain open. Current O.23 DFS "
         "collective dressing reaches the 100 us floor but remains below the 10 ms "
         "Selection target. Posner concentration is reported only as a secondary "
         "comparison, not as load-bearing closure."
@@ -724,14 +731,14 @@ def main():
     print("  FINAL VERDICT")
     print("=" * 70)
     if all_pass:
-        print("  [PASS] B1 (g_single)         : PASS  -- coupling is real and positive")
+        print("  [PASS] B1 (g_single)         : PASS  -- supplied scenario rate is positive")
         print("  [PASS] B2 (Cooperativity)    : PASS  -- N_crit <= N_bio achieved")
         print("  [PASS] B3 (Energy Balance)   : PASS  -- Landauer budget closes")
         print("  [PASS] B5 (Chiral Phonon DFS): PASS  -- OAM isolation and ATP steering")
         print("  [PASS] B6 (Relativistic Lim) : PASS  -- gamma_crit correctly bounds velocity")
         print()
         print("  VERDICT: PASS")
-        print("  ATP-driven cooperative pumping satisfies this arithmetic budget under the stated closure assumptions.")
+        print("  Conditional arithmetic budget closes under stated inputs; no physical coupling or Level-II verdict follows.")
     else:
         print(f"  B1: {'PASS' if b1_pass else 'FAIL'}   "
               f"B2: {'PASS' if verdict_b2 else 'FAIL'}   "
@@ -747,46 +754,45 @@ def main():
     # -----------------------------------------------------------------------
     def zeno_coherence_time(tau_Z_seconds, tau_zeno_seconds):
         """
-        Misra-Sudarshan Zeno formula (Misra & Sudarshan 1977 J. Math. Phys. 18:756;
-        Facchi & Pascazio 2008 J. Phys. A 41:493001 eq. 16).
+        Short-time Misra-Sudarshan Zeno diagnostic (Misra & Sudarshan 1977;
+        reviewed in Facchi & Pascazio 2008 Sec. 2.1).
 
             tau_eff = tau_Z^2 / tau_zeno
 
-        Valid in the quadratic-decay regime tau_zeno < tau* = tau_Z^2 / T_2;
-        for tau_zeno > tau* the system is in the inverse-Zeno regime and the
-        formula is an extrapolated diagnostic rather than a universal lower
-        bound or guaranteed enhancement (Facchi-Pascazio 2008 §2.2.5). tau_Z is reported in the cyclic-frequency convention
-        (DeltaE/h, Hz) for consistency with protocol_decoherence_audit.py:
+        The manuscript's nominal tau* = tau_Z^2/T_2 boundary identifies a
+        golden-rule population-decay rate with 1/T_2 and is therefore a Tier 3
+        channel-matching diagnostic, not Facchi-Pascazio 2008 eq. 19. tau_Z is
+        fixed by the survival-probability curvature:
 
-            tau_Z^{-2} = <psi_0 | H_int^2 | psi_0> - <psi_0 | H_int | psi_0>^2
+            tau_Z^{-2} = sigma_H^2 / hbar^2
 
         For the Trp radical-pair singlet driven by the canonical hyperfine
-        singlet-triplet variance Delta_ST/h = 30 MHz, tau_Z ~ 33 ns.
+        sigma_H/h = 30 MHz, tau_Z = 1/[2*pi*(30 MHz)] ~ 5.3 ns.
         """
         return tau_Z_seconds**2 / tau_zeno_seconds
 
-    # Trp radical-pair Zeno time: variance of hyperfine Hamiltonian in singlet
-    # state, using the canonical Delta_ST/h = 30 MHz cyclic-frequency value.
+    # Trp radical-pair Zeno time from the hyperfine Hamiltonian variance.
+    # The variance is quoted as sigma_H/h = 30 MHz.
     f_hf_Hz = 30e6                         # canonical bare S-T variance, cyclic Hz
-    tau_Z_s = 1.0 / f_hf_Hz                # ~ 33 ns
+    tau_Z_s = 1.0 / (2.0 * np.pi * f_hf_Hz)  # ~ 5.3 ns
     tau_zeno_s = 1.0 / OMEGA_PHASON_HZ     # ~8.9 ns (112 MHz primary drive)
     tau_eff = zeno_coherence_time(tau_Z_s, tau_zeno_s)
 
     # Bare single-pair Misra-Sudarshan extension for the Trp radical-pair channel
     # is sub-microsecond and does NOT close the ~10^3 shielding gap to the 10 ms Selection
     # target alone. The closure mechanism (chiral phonon-polariton DFS, V1
-    # §17.1.3c) is registered as App H Open Problem O.23; this protocol reports
+    # §17.1.3c) is registered as App ORQ Open Problem O.23; this protocol reports
     # the bare radical-pair channel only.
     
-    print("\n[B4] Computing Anti-Zeno Crossover...")
+    print("\n[B4] Computing Conditional Spectral-Shape Diagnostic...")
     verdict_b4, b4_info = compute_antizeno_crossover()
     print(f"  T2 at 112 MHz (Resonance) : {b4_info['T2_at_112MHz_ms']:.3f} ms")
-    print(f"  T2 at 150 MHz (Off-Res)   : {b4_info['T2_at_150MHz_ms']:.3f} ms")
+    print(f"  T2 at 150 MHz (model only): {b4_info['T2_at_150MHz_ms']:.3f} ms")
     print(f"  Crossover Frequency       : {b4_info['crossover_f_MHz']:.1f} MHz")
     print(
         "  B4 status                 : "
         f"{b4_info['status']} "
-        f"(diagnostic shape pass={b4_info['diagnostic_shape_pass']})"
+        f"(matches assumed Lorentzian={b4_info['matches_assumed_lorentzian_shape']})"
     )
 
     # -----------------------------------------------------------------------
@@ -806,8 +812,8 @@ def main():
         "B3_energy_balance": b3_info,
         "B4_antizeno_crossover": b4_info,
         "anti_zeno_subcheck_scope": (
-            "Lorentzian width parameter gamma=1.5e6 is a DIAGNOSTIC sentinel, "
-            "not a physical crossover. Physical anti-Zeno crossover requires "
+            "Lorentzian width parameter gamma=1.5e6 defines a conditional diagnostic sentinel, "
+            "not a physical crossover or a 150 MHz sign prediction. A physical anti-Zeno branch requires "
             "solving the bath spectral density far-tail integral against the "
             "Misra-Sudarshan kernel; pending O.23."
         ),

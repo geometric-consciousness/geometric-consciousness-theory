@@ -68,7 +68,7 @@ GCT Prediction Status:
 
 Registration Status:
   XRISM test is logged as 'Under Test (Data Inconclusive, Analysis Ongoing)'
-  in App_V, App_R, Ch11 sec.11.4.4, Ch15 sec.15.5, and
+  in App_PRG, App_PSC, Ch11 sec.11.4.4, Ch15 sec.15.5, and
   04_Prediction_Postdiction_Firewall.
 """
 
@@ -339,8 +339,12 @@ def generate_forward_model():
         "fwhm_difference_cdm_minus_gct_ev": float(diff_ev),
         # Decision-rule scalar matching the line-shape separation above.
         "discrimination_delta_ev": float(diff_ev),
-        "verdict": "DISTINGUISHABLE" if diff_ev > 5.0 else "AMBIGUOUS",
-        "pass": bool(diff_ev > 5.0),
+        # Both widths come from typed velocities
+        # (1300 vs 300 km/s); this is a design-feasibility check, not a test.
+        "design_distinguishable": bool(diff_ev > 5.0),
+        "verdict": ("DESIGN_DISTINGUISHABLE_TYPED_VELOCITIES_NO_DATA" if diff_ev > 5.0
+                    else "AMBIGUOUS"),
+        "pass": False,
         "expected_fwhm_ev": float(fwhm_gct)
     }
     

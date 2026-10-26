@@ -121,5 +121,5 @@
     ]
   },
   "verdict_text": "(positive direction) 107 is reached via 16 icosahedral combinatorial expression(s). However, REACHABILITY does not establish UNIQUENESS; many integers in [1, 250] are reachable from the icosahedral primitives. The empirical anchor at n=-107 needs additional structural justification to be uniquely distinguished from other reachable integers by a first-principles argument.",
-  "status": "COMPLEMENTARY -- not a new closure; supports App H O.14 'uniqueness open' status"
+  "status": "COMPLEMENTARY -- not a new closure; supports App ORQ O.14 'uniqueness open' status"
 }

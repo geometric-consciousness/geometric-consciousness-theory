@@ -1300,7 +1300,7 @@ z
     <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="507.548369" y="374.954326" transform="rotate(-0 507.548369 374.954326)">1.15%</text>
    </g>
    <g id="text_46">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #2c5d8a" x="484.943969" y="360.037768" transform="rotate(-0 484.943969 360.037768)">gate 2%</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #2c5d8a" x="484.943969" y="360.037768" transform="rotate(-0 484.943969 360.037768)">P.23 ±5σ: FAIL (6.9σ)</text>
    </g>
    <g id="text_47">
     <g id="patch_26">
@@ -1316,10 +1316,10 @@ Q 600.963369 377.325686 601.733369 377.325686
 z
 " style="fill: #ffffff; opacity: 0.82"/>
     </g>
-    <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="601.733369" y="374.954326" transform="rotate(-0 601.733369 374.954326)">0.89%</text>
+    <text style="font-size: 7.7px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="601.733369" y="374.954326" transform="rotate(-0 601.733369 374.954326)">0.87%</text>
    </g>
    <g id="text_48">
-    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #2c5d8a" x="579.128969" y="364.164381" transform="rotate(-0 579.128969 364.164381)">gate 1%</text>
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #2c5d8a" x="579.128969" y="364.164381" transform="rotate(-0 579.128969 364.164381)">P.24 ±5σ: FAIL (5.18σ)</text>
    </g>
    <g id="text_49">
     <g id="patch_27">
@@ -1361,20 +1361,20 @@ L -7.745967 -0
    </g>
    <g id="PathCollection_10">
     <g clip-path="url(#p2a921d0023)">
-     <use xlink:href="#m18dae762d3" x="484.943969" y="369.746775" style="fill: #2c5d8a; stroke: #2c5d8a; stroke-width: 2.2"/>
+
     </g>
    </g>
    <g id="PathCollection_11">
     <g clip-path="url(#p2a921d0023)">
-     <use xlink:href="#m18dae762d3" x="579.128969" y="373.873387" style="fill: #2c5d8a; stroke: #2c5d8a; stroke-width: 2.2"/>
+
     </g>
    </g>
   </g>
   <g id="text_50">
-   <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="56.402219" y="31.477969" transform="rotate(-0 56.402219 31.477969)">Quark mass spectrum audit: all gated rows inside registered PDG bands</text>
+   <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #1f1f1f" x="56.402219" y="31.477969" transform="rotate(-0 56.402219 31.477969)">Quark mass audit: bottom (P.23) and top (P.24) FAIL PDG ±5σ rules</text>
   </g>
   <g id="text_51">
-   <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #666666" x="26.594219" y="427.278375" transform="rotate(-0 26.594219 427.278375)">Sources: Ch10 §10.4; App FM P.20; protocol_quark_mismatch_results.json. Top mass plotted in MeV.</text>
+   <text style="font-size: 7.2px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #666666" x="26.594219" y="427.278375" transform="rotate(-0 26.594219 427.278375)">Sources: Ch10 §10.4; App FSM P.20; protocol_quark_mismatch_results.json. Top mass plotted in MeV.</text>
   </g>
  </g>
  <defs>

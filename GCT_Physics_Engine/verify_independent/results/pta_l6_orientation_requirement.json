@@ -1,0 +1,24 @@
+{
+  "name": "pta_l6_orientation_requirement",
+  "app_psc_label": "Icosahedral \\ell=6 orientation requirement",
+  "formula": "A_6(R n) with R in SO(3)/I; a separation-only zonal P_6(cos zeta) is not the oriented invariant",
+  "tier": "Tier 1 exact symmetry statement",
+  "predicted": 1.0,
+  "observed": 1.0,
+  "reference_class": "PURE_MATHEMATICAL",
+  "band_outcome": "NOT_APPLICABLE",
+  "derivational_closure": "NO_DERIVATIONAL_CLOSURE_FLAG",
+  "unit": "boolean exact statement",
+  "app_psc_predicted": null,
+  "app_psc_precision_str": null,
+  "app_psc_precision_ppm": null,
+  "independent_precision_ppm": 0.0,
+  "status": "TIER1_EXACT",
+  "tolerance_ppm": null,
+  "discrepancy_notes": [],
+  "extra": {
+    "orientation_space": "SO(3)/I",
+    "separation_only_zonal_template_is_derived": false,
+    "finite_angle_mask_is_derived": false
+  }
+}

@@ -1,10 +1,31 @@
 {
-  "protocol": "GCT-Native RG Flow (App ZN)",
+  "protocol": "GCT-Native RG Flow (App GRF)",
+  "pass": false,
+  "status": "FAILED_CHECK__H_EW_HYPOTHESIS_OPEN",
+  "branch_falsification_status": "FAILED_CHECK",
+  "h_ew_hypothesis_status": "OPEN_TIER3_HYPOTHESIS",
+  "branch_falsification_note": "App GRF branch-level falsification status: FAILED check. The H-EW + A2 + calibrated-Z_i activation branch fails as an autonomous electroweak flow model (26.7% below sin^2 theta_W(M_Z) = 0.23122), and the pre-registered gauge-running check of App GRF section GRF.4.3 is FAILED. H-EW itself remains a Tier 3 hypothesis at an unspecified scale.",
+  "flow_consistency_pass": false,
+  "physical_gauge_boundary_derived": false,
+  "physical_endpoint_predicted_autonomously": false,
+  "rge_convention": {
+    "name": "PHYSICAL_HYPERCHARGE_ALPHA_Y",
+    "sin2_definition": "alpha_Y / (alpha_Y + alpha_2)",
+    "b_Y_full_sm": 6.833333333333333,
+    "b_2_full_sm": -3.1666666666666665,
+    "full_sm_above_mz_approximation": true,
+    "sm_coefficient_audit_pass": true,
+    "su5_normalized_alpha1_used": false
+  },
   "substrate": {
     "phi": 1.618033988749895,
-    "K_perp_over_K_par": 0.00017307027171223924,
-    "E_par_sq": 0.7236067977499789,
-    "E_perp_sq": 0.276393202250021,
+    "K_perp_over_K_par_conditional": 0.00017307027171223924,
+    "K_perp_over_K_par_status": "OPEN_CONDITIONAL_P3B_O15",
+    "E_par_sq": 0.5,
+    "E_perp_sq": 0.5,
+    "canonical_projector_split": "1/2 + 1/2",
+    "raw_galois_squared_ratio_diagnostic": 0.38196601125010515,
+    "raw_ratio_coordinate_invariant": false,
     "icosahedral_irreps": {
       "A_g": {
         "dim": 1,
@@ -50,9 +71,13 @@
     "sum_dim_sq_total": 120,
     "sum_dim_sq_gerade": 60,
     "sum_dim_sq_ungerade": 60,
-    "Z_1_icosahedral_norm": 0.20602693547048012,
-    "Z_2_icosahedral_norm": 0.2431236501273333,
-    "Z_3_icosahedral_norm": 0.7
+    "Z_1_icosahedral_norm": 0.11388888888888889,
+    "Z_2_icosahedral_norm": 0.35185185185185186,
+    "Z_3_icosahedral_norm": 0.7,
+    "z_i_calibrated_to_sm_targets": true,
+    "z_i_independently_derived": false,
+    "beta_signs_are_model_inputs": true,
+    "activation_schedule_status": "TIER3_IRREP_DIMENSION_ANSATZ"
   },
   "scales": {
     "M_Z_GeV": 91.1876,
@@ -61,12 +86,14 @@
   },
   "beta_coefficients_saturated": {
     "b1_GCT_at_T_GUT": 6.833333333333333,
-    "b2_GCT_at_T_GUT": -3.1666666666666665,
+    "b2_GCT_at_T_GUT": -3.166666666666667,
     "b3_GCT_at_T_GUT": -7.0,
     "b1_SM_full_content": 6.833333333333333,
     "b2_SM_full_content": -3.1666666666666665,
     "b3_SM_full_content": -7.0,
-    "note": "GCT saturated values match SM by Z_i calibration. Tier-2 *shape* of flow comes from icosahedral irrep activation schedule; Z_i absorbs the substrate-to-PDG absolute normalization (one anchor per coupling)."
+    "note": "GCT saturated values match SM by Z_i calibration. The signs and activation schedule are model inputs; the equality is not an independent prediction.",
+    "z_i_calibration_identity": true,
+    "independent_derivation": false
   },
   "alpha": {
     "low_energy_CODATA": 137.035999,
@@ -76,39 +103,66 @@
     "err_GCT_vs_PDG_pct": 6.938272529856782,
     "err_SM_vs_PDG_pct": -0.9770217493831892,
     "err_GCT_vs_SM_pct": 7.993391452241709,
-    "tier": "Tier 3 (open)"
+    "tier": "Tier 3 calibrated/postdictive flow"
   },
   "sin2_theta_W": {
-    "M_GUT_BC_phi_minus_2": 0.38196601125010515,
-    "M_Z_GCT_native": 0.27428874901997896,
-    "M_Z_SM_1loop": 0.17352909384178233,
+    "M_GUT_BC_phi_minus_3_conditional": 0.23606797749978967,
+    "boundary_status": "OPEN_CONDITIONAL_GAUGE_KINETIC_HYPOTHESIS",
+    "derived_from_canonical_projector_geometry": false,
+    "M_Z_GCT_native": 0.16956889242992607,
+    "M_Z_SM_1loop": 0.05874010873529955,
+    "SM_comparator_status": "CORRECT_FULL_SM_COEFFICIENTS_WITH_SAME_IMPORTED_A2; NOT_A_FIT_TO_THE_MEASURED_ENDPOINT",
+    "SM_same_A2_alpha_Y_inv_MZ": 114.09101356356813,
+    "SM_same_A2_alpha_2_inv_MZ": 7.119944878815488,
     "M_Z_PDG": 0.23122,
-    "err_GCT_vs_PDG_pct": 18.62674034252182,
-    "err_SM_vs_PDG_pct": -24.950655721052538,
-    "err_GCT_vs_SM_pct": 58.064992415661266,
-    "tier": "Tier 3 (open)"
+    "err_GCT_vs_PDG_pct": -26.66339744402471,
+    "err_SM_vs_PDG_pct": -74.59557618921393,
+    "err_GCT_vs_SM_pct": 188.6765041482202,
+    "tier": "Tier 3 conditional gauge-kinetic + calibrated/postdictive flow",
+    "native_kernel_delta_alpha_Y_inv_GUT_to_MZ": 6.800274821252728,
+    "native_kernel_delta_alpha_2_inv_GUT_to_MZ": -6.752584716977843,
+    "A2_imported": 24.0,
+    "A2_required_for_measured_alpha_2_MZ": 36.33487151697784,
+    "A2_absolute_mismatch": 12.334871516977842,
+    "A2_is_endpoint_calibration_for_this_kernel": false,
+    "alpha_Y_inv_GUT_required_for_measured_alpha_Y_MZ": 91.55743837874728,
+    "UV_sin2_implied_by_both_measured_couplings": 0.28410520966118197,
+    "H_EW_and_native_kernel_match_both_low_energy_couplings": false,
+    "A2_required_to_match_sin2_only_with_H_EW": 329.3480872133949,
+    "alpha_em_inv_MZ_implied_by_sin2_only_fit": 1395.1885757997447
+  },
+  "activation_schedule_audit": {
+    "formula": "t_rho = T_GUT * d_rho / 5",
+    "status": "TIER3_ANSATZ_WITH_ZERO_MEASURE_D5_DEFECT",
+    "d5_activation_depth": 33.49279399635455,
+    "d5_active_log_interval_within_0_TGUT": 0.0,
+    "d5_zero_measure_activation_defect": true,
+    "d5_included_in_saturation_calibration": true,
+    "d5_sampled_at_uv_endpoint_by_rk4": true,
+    "rk4_endpoint_sampling_leakage_is_physical": false,
+    "schedule_physically_derived": false
   },
   "alpha_s": {
     "bare_inv_10_phi2": 26.18033988749895,
     "M_Z_GCT_native": 0.05204482909211381,
     "M_Z_PDG": 0.118,
     "err_GCT_vs_PDG_pct": -55.89421263380186,
-    "tier": "Tier 3 (bare 10 phi^2 calibrated handle) + Tier 3 (RGE running) \u2014 QLQCD-2 closure required (App Z.7)",
-    "note": "Bare value 10 phi^2 is a Tier 3 calibrated handle pending O.42 / QLQCD-2. Running uses Z_3-calibrated b_3 coefficient. The flow does not reproduce PDG alpha_s(M_Z) because the bare GUT-scale value (0.038) is too small to sustain 33.5 e-folds of asymptotic-free running \u2014 the documented 67.6% gap of Ch04 \u00a74.5.5. QLQCD-2 closure (App Z.7) is the canonical path; non-perturbative confinement corrections to the bare value are required."
+    "tier": "Tier 3 (bare 10 phi^2 calibrated handle) + Tier 3 (RGE running) \u2014 QLQCD-2 closure required (App QLA.7)",
+    "note": "Bare value 10 phi^2 is a Tier 3 calibrated handle pending O.42 / QLQCD-2. Running uses Z_3-calibrated b_3 coefficient. The flow does not reproduce PDG alpha_s(M_Z) because the bare GUT-scale value (0.038) is too small to sustain 33.5 e-folds of asymptotic-free running (endpoint gap: err_GCT_vs_PDG_pct; Ch04 \u00a74.5.5). QLQCD-2 closure (App QLA.7) is the canonical path; non-perturbative confinement corrections to the bare value are required."
   },
   "uv_fixed_point_analysis": {
     "verdict": "no non-trivial UV fixed point",
-    "comment": "GCT-native b_i(t) saturate at t = T_GUT once all 10 irreps of I_h are active. Beyond M_GUT the coefficients are constant. This is structurally distinct from Asymptotic Safety: GCT has a combinatorial UV cutoff set by the finite content of the icosahedral group, NOT a Weinberg-Reuter non-Gaussian fixed point. The substrate IS the UV completion; no further scaling solution required."
+    "comment": "GCT-native b_i(t) saturate at t = T_GUT once all 10 irreps of I_h are active. Beyond M_GUT the coefficients are constant. Within the Tier 3 activation ansatz this is distinct from Asymptotic Safety: the ansatz has a combinatorial UV cutoff set by the finite content of the icosahedral group, NOT a Weinberg-Reuter non-Gaussian fixed point. Whether the substrate supplies a UV completion is not settled by this ansatz."
   },
   "closure_summary": {
-    "alpha": "Tier 3 (open)",
-    "sin2_W": "Tier 3 (open)",
+    "alpha": "Tier 3 calibrated/postdictive",
+    "sin2_W": "OPEN_CONDITIONAL_GAUGE_KINETIC_HYPOTHESIS",
     "alpha_s": "Tier 3 (bare calibrated handle) / Tier 3 (running, QLQCD-2 pending)",
-    "overall_status": "Partial structural closure. The shape of alpha, sin^2(theta_W) running is now derived from icosahedral I_h irrep activation + Gram weights with no fitted shape parameter; one Z_i anchor per coupling absorbs absolute normalization, and Parameter Ledger A2 alpha_2^-1(M_GUT)=24.0 anchors the sin^2(theta_W) endpoint/magnitude. alpha_s remains an open problem pending QLQCD-2 (App Z.7)."
+    "overall_status": "Calibrated/postdictive structural model. The I_h activation schedule and beta signs are Tier-3 model inputs; one Z_i calibration per coupling imposes the saturated SM coefficients. Imported A2=24 does not reproduce the measured alpha_2 or sin^2 endpoint, and the d=5 modes have zero running measure. alpha_s remains an open problem pending QLQCD-2 (App QLA.7)."
   },
   "open_research_debt_v3_section_22_8": {
     "baseline_dependency": "SM RGE coefficients remain the Tier 3 comparison target",
-    "current_status": "Tier 2 shape for U(1)/SU(2), Tier 3 magnitude anchors including A2 alpha_2^-1(M_GUT); Tier 3 bare handle for SU(3), Tier 3 running",
+    "current_status": "Tier 3 calibrated U(1)/SU(2) ansatz with conditional phi^-3 boundary, mismatched A2 alpha_2^-1(M_GUT) import, and zero-measure d=5 activation defect; Tier 3 bare handle for SU(3), Tier 3 running",
     "what_was_replaced": "Free-Gaussian phason kernel of Ch04 \u00a74.5.3",
     "what_remains_open": "QLQCD-2 non-perturbative SU(3) closure"
   }

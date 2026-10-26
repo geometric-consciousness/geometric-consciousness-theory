@@ -18,72 +18,77 @@
     "match": true,
     "gram_null_vectors": [
       [
-        -0.6650566346758371,
-        -0.2006656813854016,
-        0.200665681385402,
-        9.712213478052553e-17,
-        -0.13203392362488836,
-        0.13203392362488844,
-        2.0794301837546018e-17,
-        5.607704999022332e-17,
-        2.8321474374594405e-17,
-        0.665056634675837
+        0.3753872529236326,
+        -0.2655808871022193,
+        -0.0028466446395409013,
+        -0.35908109270490784,
+        -0.1003466173930783,
+        -0.45658106545843574,
+        -0.19384682299575182,
+        0.1843870745674188,
+        0.5406215226327797,
+        0.2778872801701025
       ],
       [
-        0.20397041186400608,
-        -0.2664819583662468,
-        0.2664819583662468,
-        -5.727071871420034e-17,
-        -0.6224013471621971,
-        0.6224013471621971,
-        -1.75956748294252e-18,
-        1.9201905005220996e-16,
-        -3.002555487282134e-17,
-        -0.20397041186400616
+        -0.030454372291075983,
+        -0.2890634753309884,
+        0.4695673541776784,
+        0.2060131161540127,
+        -0.056871202959727515,
+        -0.32042544098339354,
+        0.438205388525273,
+        -0.061816337943481264,
+        0.20173790008018458,
+        -0.556892929428482
       ],
       [
-        -0.12686900235155196,
-        0.6234746588109434,
-        -0.6234746588109437,
-        -1.4556083794437378e-17,
-        -0.3085184047393273,
-        0.3085184047393272,
-        6.871064305244937e-17,
-        9.723969402906946e-17,
-        -1.8031606212721967e-16,
-        0.12686900235155218
+        0.4083895860039601,
+        0.019025399575959043,
+        -0.10326192632508183,
+        0.47611444339335446,
+        -0.617748195181251,
+        -0.03837182546281454,
+        -0.16065915136385517,
+        0.35099236096518716,
+        -0.22838400875324943,
+        -0.1060966828522086
       ],
       [
-        -0.0,
-        -1.1964139315916964e-16,
-        1.84173475295708e-16,
-        6.3530850043334904e-18,
-        1.4917242620572577e-16,
-        -1.4940929683440914e-16,
-        6.2108038909532014e-18,
-        0.7071067811865476,
-        -0.7071067811865476,
-        1.3257689427789717e-17
+        0.30228279407587666,
+        0.4955271272155977,
+        0.4108958153553089,
+        0.04398183291544048,
+        0.0712978961960905,
+        -0.2956160862437778,
+        -0.38024739810406644,
+        -0.4888604193834984,
+        -0.12194643694363003,
+        -0.03731512508334149
       ]
     ],
-    "rank_reduction_explicit": "PASS"
+    "gram_rank": 6,
+    "gram_rank_upper_bound_any_ten_axes": 6,
+    "gram_nullity_check": "PASS",
+    "cartan_A2_within_tolerance": true
   },
   "Cuboctahedron": {
     "axes": 4,
     "dimension": 8,
     "match": true,
     "cartan_A2_match": false,
-    "note": "Rejected as a full RT witness: lacks the 10-axis RT orbit and rank-reduction structure."
+    "note": "Rejected as a full RT witness: lacks the 10-axis RT orbit and its Gram-nullity check."
   },
   "PerturbedRT": {
     "axes": 10,
     "dimension": 8,
     "match": true,
-    "note": "Failed to produce the correct integer Cartan Matrix (filled with floating-point noise)."
+    "cartan_A2_within_tolerance": true,
+    "note": "Exact float equality of the Cartan matrix is not a discriminating test; the tolerance-based comparison is recorded separately."
   },
   "MonteCarlo_Control": {
     "n_trials": 1000,
-    "n_alternatives_tested": 1000,
+    "n_alternatives_tested": 0,
+    "n_polyhedra_sampled": 1000,
     "sampling": "random spherical points -> ConvexHull -> 3-fold-axis extraction",
     "n_points_per_polyhedron": 32,
     "n_trials_with_10_threefold_axes": 0,
@@ -92,12 +97,25 @@
     "n_trials_with_full_rt_witness": 0,
     "n_alternatives_with_full_rt_witness": 0,
     "monte_carlo_success_rate": 0.0,
-    "success_criterion": "n_trials > 0 and n_success == 0",
-    "edge_case_policy": "n_trials=0 is reported FAIL/unevaluated, not PASS by vacuous truth",
-    "pass": true,
-    "verdict": "PASS"
+    "success_criterion": "n_trials_with_10_threefold_axes > 0 and n_trials_with_full_rt_witness == 0",
+    "edge_case_policy": "If no trial reaches the algebra test (no ten-axis hull), the control is NOT_EVALUATED with pass false, not PASS by vacuous truth",
+    "pass": false,
+    "verdict": "NOT_EVALUATED",
+    "reached_algebra_test": 0,
+    "discriminating": false
   },
-  "pass": true,
-  "verdict": "PASS_NUMERICAL_CONTROL",
-  "framing": "PASS (numerical control): RT-icosahedral substrate generates SU(3) candidate gauge group; full theorem-grade uniqueness over the Cartan-Killing classification remains O.39."
+  "MatchedAxis_Control": {
+    "n_trials": 200,
+    "seed": 1,
+    "axes_per_trial": 10,
+    "n_dim8_closure": 200,
+    "n_A2_within_tolerance": 200,
+    "a2_tolerance_atol": 1e-06,
+    "discriminates_rt": false
+  },
+  "rt_candidate_witness": true,
+  "specificity_established": false,
+  "pass": false,
+  "verdict": "OPEN_CANDIDATE_SPECIFICITY_NOT_ESTABLISHED",
+  "framing": "OPEN: the RT inventory closes to an 8-dimensional algebra with an A2 Cartan matrix, but generic matched ten-axis sets do the same and no random polyhedron reached the algebra test. RT specificity is not established; the color identification is an open Tier 3 candidate (O.39)."
 }

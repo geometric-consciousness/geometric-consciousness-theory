@@ -1,13 +1,15 @@
 """
-verify_strong_cp.py — Strong CP / theta-bar prediction registration.
+verify_strong_cp.py — Strong CP / theta-bar candidate-sketch record (no prediction).
 
 V3 Ch22 §22.3.1 states aspirationally: "QLQCD will resolve the Strong
 CP Problem through geometric matching rules." No mechanism is currently
 specified in the manuscript prose.
 
-This verifier registers a Tier 3 mechanism statement (the icosahedral
-chirality-preservation argument) as a candidate explanation, pending
-the full Tier 1 derivation via QLQCD-1L closure.
+theta-bar = 0 is NOT a GCT prediction: the Strong CP problem is open in
+GCT (V3 Ch18 §18.5), and the present action derives no symmetry or dynamics
+that suppresses theta. This verifier records an icosahedral
+chirality-preservation argument only as a Tier 3 candidate sketch, and the
+scorecard row is OPEN_CONDITIONAL; respecting the nEDM bound is not a PASS.
 
 The Tier 3 mechanism:
  The QCD θ-term enters the Lagrangian as
@@ -19,8 +21,9 @@ The Tier 3 mechanism:
  the physical manifold preserves this discrete closure, forcing the
  integrated topological charge of any consistent gauge configuration
  to be an integer multiple of 2π. Modulo 2π, the physical θ-angle
- is therefore in the trivial topological class:
+ is claimed to lie in the trivial topological class:
  θ̄ ≡ 0 (mod 2π) → θ̄_physical = 0
+ (Integer topological charge makes θ 2π-periodic; it does not select θ̄.)
 
  Why this is Tier 3 (not Tier 1):
  The mechanism is sketched but not rigorously derived. A Tier 1
@@ -40,12 +43,14 @@ Experimental anchor (falsification target):
  Current best bound on neutron EDM: |d_n| < 1.8 × 10⁻²⁶ e·cm (2020).
  Translates to |θ̄| < 10⁻¹⁰ (using standard hadronic-matrix-element
  estimates).
- GCT mechanism predicts: θ̄ = exactly 0.
+ Candidate sketch output (not a GCT prediction): θ̄ = 0.
  Next-gen experiments (SNS nEDM, n2EDM at PSI) targeting |d_n| ~
  10⁻²⁸ → |θ̄| ~ 10⁻¹². Still consistent with θ̄ = 0.
 
-This verifier confirms the mechanism's consistency with current data
-and registers the prediction in App R / falsifiability matrix.
+This verifier records a candidate sketch; it registers no prediction.
+Note on the sketch: integer topological charge is what makes θ 2π-periodic;
+it does not by itself select θ̄ = 0, so the sketch is a non sequitur until
+an independent selection argument is supplied.
 """
 
 import sys
@@ -53,7 +58,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from constants import CODATA, MATH
-from report import make_result, write_result, print_summary
+from report import make_result, write_result, print_summary, status_from_upper_bound
 
 
 # Experimental anchor: neutron EDM bound translates to θ̄ bound
@@ -63,38 +68,44 @@ THETA_BAR_BOUND = 1.0e-10 # Implied bound on θ̄ (standard estimate)
 
 
 def main():
- # GCT prediction: θ̄ = exactly 0 (kinematic-topological null,
- # mirrors the structure of B.1 Δa_e = 0 from N=0 threshold)
+ # Candidate-sketch value θ̄ = 0 (not a GCT prediction; Strong CP open,
+ # V3 Ch18 §18.5).
  theta_bar_gct = 0.0
 
- # Consistency check: GCT predicts 0; compare against the experimental bound.
- consistent = abs(theta_bar_gct) < THETA_BAR_BOUND
+ # This is a one-sided upper-limit compatibility check, not a measurement of
+ # zero and not theorem closure.  Equality is outside the strict bound.
+ status = status_from_upper_bound(
+  theta_bar_gct, THETA_BAR_BOUND, derivation_open=True
+ )
 
  res = make_result(
  name="strong_cp_theta_bar",
- app_r_label="Strong CP / θ̄ (icosahedral matching-rule null)",
+ app_psc_label="Strong CP / θ̄ (open; candidate matching-rule sketch only)",
  formula="θ̄ ≡ 0 (mod 2π) → θ̄_physical = 0 from chirality-preserving icosahedral cycle closure",
  predicted=theta_bar_gct,
  observed=0.0, # Consistent with 0 within bounds
  unit="(rad)",
- app_r_predicted=0.0,
-        app_r_precision_str=f"|θ̄|^GCT = 0 exactly; nEDM bound |θ̄| < 10⁻¹⁰ (consistent); theorem-grade promotion path = QLQCD-1L closure",
- app_r_precision_ppm=None,
-        tier="Tier 3 (mechanism-stated; theorem-grade promotion bundled with QLQCD-1L)",
- status="PASS" if consistent else "FAIL",
+ app_psc_predicted=0.0,
+        app_psc_precision_str=f"Strong CP open in GCT (V3 Ch18 §18.5); θ̄ = 0 is a Tier 3 candidate sketch, not a prediction; nEDM bound |θ̄| < 10⁻¹⁰; OPEN_CONDITIONAL",
+ app_psc_precision_ppm=None,
+        tier="Open problem (Tier 3 candidate mechanism only; no derivation)",
+ status=status,
  tolerance_ppm=None,
  extra={
- "theta_bar_gct_prediction": theta_bar_gct,
+ "theta_bar_candidate_sketch": theta_bar_gct,
  "neutron_edm_bound_e_cm": D_N_BOUND_E_CM,
  "theta_bar_bound_implied": THETA_BAR_BOUND,
+ "upper_bound_rule": "OPEN_CONDITIONAL iff |theta_bar| < bound while QLQCD-1L remains open; equality or excess is FAIL",
  "mechanism": (
  "On the AKN icosahedral lattice, all chirality-preserving "
  "cycles (5-fold, 3-fold, 2-fold rotations of I_h) close at "
  "multiples of 2π exactly. The cut-and-project from Z⁶ "
  "preserves this discrete closure, forcing the topological "
  "charge of any consistent gauge configuration to integer "
- "multiples of 2π. Modulo 2π, the physical θ̄ angle is in "
- "the trivial topological class: θ̄ = 0."
+ "multiples of 2π. The sketch then places θ̄ in the trivial "
+ "topological class (θ̄ = 0). Integer topological charge makes "
+ "θ 2π-periodic but does not by itself select θ̄ = 0; Tier 3 "
+ "candidate sketch only, not a prediction."
  ),
  "tier_1_promotion_path": (
  "QLQCD-1L closure (Open Problem O.5). Requires showing "
@@ -106,10 +117,10 @@ def main():
  ),
  "falsifier": (
  "Next-gen nEDM measurements (SNS, n2EDM) reaching "
- "|d_n| < 10⁻²⁸ e·cm → |θ̄| < 10⁻¹² without detection: "
- "consistent with GCT mechanism. A POSITIVE detection of "
- "|θ̄| > 10⁻¹⁰ at >3σ would falsify the icosahedral "
- "matching-rule mechanism."
+ "|d_n| < 10⁻²⁸ e·cm → |θ̄| < 10⁻¹² without detection "
+ "would not support GCT, since θ̄ = 0 is not a GCT prediction. "
+ "A robust non-zero θ̄ (an nEDM detection at >3σ) would rule out "
+ "the candidate sketch."
  ),
  },
  )

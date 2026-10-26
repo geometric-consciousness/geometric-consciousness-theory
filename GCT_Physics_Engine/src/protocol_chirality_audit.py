@@ -2,8 +2,15 @@
 """
 protocol_chirality_audit.py — Chirality Audit 
 ==========================================================
-Verifies that zero modes of the Fibonacci quasicrystal projection
-are chiral (N_L != N_R OR both > 0, guaranteed by Index Theorem).
+Tests whether the Fibonacci quasicrystal chain has a chiral zero-mode
+structure that a generic chain does not.
+
+The former pass (modes found and N_L != N_R or both > 0, with
+L/R assigned by the SIGN of <C> even when |<C>| ~ 1e-14) could not fail. The
+protocol now counts genuine chiral zero modes (|E| < 1e-8 and |<C>| > 0.5) and
+compares the Fibonacci count with a seeded random-bond control on the same
+chain length. An odd-length bipartite chain always carries one sublattice-
+polarised zero mode, so the count is expected to be generic.
 
 Steps
 -----
@@ -69,21 +76,31 @@ def run_chirality_audit():
     # GCT verdict: even N_L = N_R = 1 is physically meaningful.
     # In the 6D projection only ONE boundary is accessible from 3D space.
     # The Index Theorem guarantees the remaining zero mode is chiral.
-    net_ok  = result['net_chirality'] > 0
-    both_ok = result['N_L'] > 0 and result['N_R'] > 0
-    gct_verified = modes_found and (net_ok or both_ok)
+    def chiral_zero_count(H):
+        e, v = np.linalg.eigh(H)
+        c = np.array([1.0 if i % 2 == 0 else -1.0 for i in range(H.shape[0])])
+        return int(sum(1 for k in range(len(e))
+                       if abs(e[k]) < 1e-8 and abs(float((v[:, k] ** 2) @ c)) > 0.5))
+
+    H_fib, _ = cp.build_hamiltonian()
+    fib_count = chiral_zero_count(H_fib)
+    rng = np.random.default_rng(11938)
+    n_control = 200
+    control_counts = []
+    for _ in range(n_control):
+        t = np.where(rng.random(cp.N - 1) < 0.5, cp.t_L, cp.t_S)
+        H_rand = np.diag(-t, 1) + np.diag(-t, -1)
+        control_counts.append(chiral_zero_count(H_rand))
+    control_same_fraction = float(np.mean([c == fib_count for c in control_counts]))
+    gct_verified = bool(fib_count > 0 and control_same_fraction < 0.05)
+    verdict = ("FIBONACCI_SPECIFIC_CHIRAL_ZERO_MODES" if gct_verified
+               else "CHIRAL_ZERO_MODE_GENERIC_NOT_FIBONACCI_SPECIFIC")
 
     print("\n" + "=" * 60)
-    if gct_verified:
-        print("SUCCESS: Chiral zero modes confirmed.")
-        if net_ok:
-            print(f"  Direct net chirality N_L - N_R = {result['net_chirality']}.")
-        else:
-            print("  N_L = N_R = 1: symmetric double-boundary (finite chain).")
-            print("  GCT 6D→3D projects ONE boundary → physical net chirality = 1.")
-        print("  Atiyah-Singer Index Theorem guarantees this extends to 6D→3D.")
-    else:
-        print("INCOMPLETE: No midgap modes found. Adjust threshold or parameters.")
+    print(f"Genuine chiral zero modes (|E|<1e-8, |<C>|>0.5): Fibonacci = {fib_count}")
+    print(f"Random-bond control ({n_control} chains, N={cp.N}): same count in "
+          f"{100*control_same_fraction:.1f}% of trials")
+    print(f"Verdict: {verdict}")
     print("=" * 60)
 
     # ---------------------------------------------------------------
@@ -103,12 +120,18 @@ def run_chirality_audit():
         "N_R":              result["N_R"],
         "net_chirality":    result["net_chirality"],
         "zero_modes":       result["zero_modes"],
+        "legacy_sign_labels_note": "N_L/N_R above label modes by the sign of <C>, which is noise for |<C>| ~ 1e-14; not used for the verdict.",
+        "fibonacci_chiral_zero_modes": fib_count,
+        "random_control_n_chains": n_control,
+        "random_control_counts_histogram": {str(k): control_counts.count(k) for k in sorted(set(control_counts))},
+        "random_control_same_count_fraction": control_same_fraction,
         "gct_verified":     gct_verified,
+        "verdict":          verdict,
         "pass":             bool(gct_verified),
         "gct_implication": (
-            "6D→3D quasicrystal projection creates a chiral domain wall."
-            " One zero mode is physical → net Chirality = 1."
-            " Guaranteed by Atiyah-Singer Index Theorem."
+            "Odd-length bipartite chains carry a sublattice-polarised zero mode"
+            " whatever the bond sequence; this chain does not by itself"
+            " establish a Fibonacci-specific chirality mechanism."
         ),
         "plot_path":        "GCT_Physics_Engine/output/chirality_spectrum.png",
     }

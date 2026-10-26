@@ -77,16 +77,38 @@ HBAR = 1.0545718e-34
 K_B = 1.380649e-23
 TUBULIN_ELASTIC_MODULUS_PA = 1.5e9  # ~1-2 GPa typical
 
-# Selection-relevant target band per App X §X.2b: operative band ~100 µs–1 ms
+# Selection-relevant target band per App BEB §BEB.2b: operative band ~100 µs–1 ms
 # (covers the 1–10 ms neural firing window via action-potential coincidence
 # detection). The TAU_TARGET_S constant is set at the structurally conservative
 # 10 ms upper bound so that `reaches_target` semantics remain monotone with
 # the conservative threshold; the protocol additionally emits
-# `reaches_operative_target_*` flags below against the App X §X.2b 100 µs
+# `reaches_operative_target_*` flags below against the App BEB §BEB.2b 100 µs
 # lower edge for cross-validation.
-TAU_TARGET_S = 1.0e-2  # 10 ms structurally conservative pass-gate (App X §X.2b operative band: 100 µs–1 ms)
+TAU_TARGET_S = 1.0e-2  # 10 ms structurally conservative pass-gate (App BEB §BEB.2b operative band: 100 µs–1 ms)
 TAU_TARGET_OPERATIVE_LO_S = 1.0e-4  # 100 µs operative-band lower edge
 TAU_TARGET_OPERATIVE_HI_S = 1.0e-3  # 1 ms operative-band upper edge
+
+ROBUST_BARE_LO = 250.0
+ROBUST_BARE_HI = 1000.0
+ROBUST_COLL_LO = 1000.0
+ROBUST_COLL_HI = 5000.0
+
+
+def within_inclusive_envelope(value: float, lower: float, upper: float) -> bool:
+    """Return membership in a declared inclusive robustness envelope."""
+    if lower > upper:
+        raise ValueError("robustness-envelope lower bound exceeds upper bound")
+    return lower <= value <= upper
+
+
+def _force_test_robustness_envelopes() -> None:
+    """Exercise outside and inclusive-boundary cases for both envelopes."""
+    assert not within_inclusive_envelope(100.0, ROBUST_BARE_LO, ROBUST_BARE_HI)
+    assert within_inclusive_envelope(ROBUST_BARE_LO, ROBUST_BARE_LO, ROBUST_BARE_HI)
+    assert within_inclusive_envelope(ROBUST_BARE_HI, ROBUST_BARE_LO, ROBUST_BARE_HI)
+    assert not within_inclusive_envelope(500.0, ROBUST_COLL_LO, ROBUST_COLL_HI)
+    assert within_inclusive_envelope(ROBUST_COLL_LO, ROBUST_COLL_LO, ROBUST_COLL_HI)
+    assert within_inclusive_envelope(ROBUST_COLL_HI, ROBUST_COLL_LO, ROBUST_COLL_HI)
 
 
 def epsilon_thermal() -> float:
@@ -213,10 +235,10 @@ def evaluate_regime(name: str, L_MT_m: float, d_defect_m: float) -> dict:
 def acetylation_differential_ratio(regimes: list) -> dict:
     """T_2 enhancement ratio between long-acetylated and dynamic MT
     under both bare and collectively-dressed scenarios; the
-    pre-registered Protocol A-Prime acetylation-differential test.
+    post-hoc canonical-regime robustness diagnostic.
 
-    The pre-registered band [PRE_BAND_LO, PRE_BAND_HI] for the
-    bare-3-channel ratio is calibrated against the explicit
+    The factor-2 envelope for the bare-3-channel ratio is centred on the
+    canonical-regime output from the explicit
     epsilon_endpoint + epsilon_defect OAM-leakage channels: under the
     canonical regime definitions (dynamic_100nm L=100nm/d=100nm vs
     long_acetylated_50um L=50um/d=5um), the bare-3-channel acetylation
@@ -224,10 +246,8 @@ def acetylation_differential_ratio(regimes: list) -> dict:
     two regimes -- a structural prediction of the explicit-channel
     framework, not a free parameter. The collective-dressing band sits
     one factor of sqrt(N_long) / sqrt(N_dyn) above the bare band.
-    Engine output that falls inside the pre-registered band is the
-    structurally-consistent disposition; output outside the band is
-    flagged as a structural inconsistency requiring recalibration of
-    either the regime parameters or the epsilon-channel constants.
+    This is a sensitivity/robustness window constructed after defining the
+    canonical regime, not an independent preregistration and not a model test.
     """
     dyn = next(r for r in regimes if r["regime"] == "dynamic_100nm")
     long_acet = next(r for r in regimes if r["regime"] == "long_acetylated_50um")
@@ -236,44 +256,34 @@ def acetylation_differential_ratio(regimes: list) -> dict:
     # Invert to read as long/dynamic (the more useful directional ratio)
     T2_ratio_bare = 1.0 / ratio_bare
     T2_ratio_collective = 1.0 / ratio_collective
-    # Pre-registered Protocol A-Prime acetylation-differential band,
-    # recalibrated against the explicit-OAM-channel arithmetic. The
-    # bare-3-channel band [PRE_BAND_BARE_LO, PRE_BAND_BARE_HI] brackets
-    # the canonical-regime structural prediction with a +/- factor 2
+    # Post-hoc robustness envelopes around the explicit-OAM-channel arithmetic.
+    # The bare-3-channel envelope brackets the canonical-regime output with a factor-2
     # tolerance for parameter uncertainty in epsilon_endpoint and
     # epsilon_defect calibration. The collective-dressing band is the
     # bare band scaled by sqrt(N_long / N_dyn) for the Tavis-Cummings
     # collective sqrt(N) enhancement.
-    PRE_BAND_BARE_LO = 250.0    # bracket below the canonical-regime engine result with factor-2 tolerance
-    PRE_BAND_BARE_HI = 1000.0   # bracket above with factor-2 tolerance
-    PRE_BAND_COLL_LO = 1000.0   # bracket below the collective engine result
-    PRE_BAND_COLL_HI = 5000.0   # bracket above
-    in_band_bare = PRE_BAND_BARE_LO <= T2_ratio_bare <= PRE_BAND_BARE_HI
-    in_band_collective = PRE_BAND_COLL_LO <= T2_ratio_collective <= PRE_BAND_COLL_HI
+    in_band_bare = within_inclusive_envelope(T2_ratio_bare, ROBUST_BARE_LO, ROBUST_BARE_HI)
+    in_band_collective = within_inclusive_envelope(T2_ratio_collective, ROBUST_COLL_LO, ROBUST_COLL_HI)
     return {
         "T2_ratio_acet_over_dyn_bare": T2_ratio_bare,
         "T2_ratio_acet_over_dyn_collective": T2_ratio_collective,
-        "pre_registered_band_bare": [PRE_BAND_BARE_LO, PRE_BAND_BARE_HI],
-        "pre_registered_band_collective": [PRE_BAND_COLL_LO, PRE_BAND_COLL_HI],
+        "post_hoc_robustness_envelope_bare": [ROBUST_BARE_LO, ROBUST_BARE_HI],
+        "post_hoc_robustness_envelope_collective": [ROBUST_COLL_LO, ROBUST_COLL_HI],
         "in_band_bare": in_band_bare,
         "in_band_collective": in_band_collective,
-        "band_violation_disclosure": (
-            None if (in_band_bare and in_band_collective) else
-            "Engine acetylation-differential ratio outside the "
-            "structurally-predicted band; recalibrate either the "
-            "canonical-regime parameters (L_MT_m, d_defect_m) or the "
-            "epsilon_endpoint / epsilon_defect constants. The pre-"
-            "registered Protocol A-Prime falsification gate (Ch13 "
-            "§13.3.5) inherits whichever band the engine produces; the "
-            "manuscript band must be updated to match this engine "
-            "output for cross-consistency."
+        "robustness_envelope_status": (
+            "WITHIN_POST_HOC_ENVELOPE" if (in_band_bare and in_band_collective)
+            else "OUTSIDE_POST_HOC_ENVELOPE"
         ),
-        # Bare-band field matching the load-bearing pre-registration.
-        "pre_registered_band": [PRE_BAND_BARE_LO, PRE_BAND_BARE_HI],
+        "robustness_envelope_provenance": (
+            "Factor-2 sensitivity envelope centred on canonical-regime engine outputs; "
+            "not independently preregistered and not a model-validation gate. See App ORQ O.23."
+        ),
     }
 
 
 def run() -> dict:
+    _force_test_robustness_envelopes()
     regimes = [
         evaluate_regime("dynamic_100nm",         L_MT_m=1.0e-7,  d_defect_m=1.0e-7),
         evaluate_regime("acetylated_5um",        L_MT_m=5.0e-6,  d_defect_m=2.0e-6),
@@ -381,7 +391,6 @@ if __name__ == "__main__":
     diff_data = r['acetylation_differential_ratio']
     print(f"  bare:        {diff_data['T2_ratio_acet_over_dyn_bare']:.2f}")
     print(f"  collective:  {diff_data['T2_ratio_acet_over_dyn_collective']:.2f}")
-    print(f"  pre-registered band (bare):       {diff_data['pre_registered_band_bare']}; in-band = {diff_data['in_band_bare']}")
-    print(f"  pre-registered band (collective): {diff_data['pre_registered_band_collective']}; in-band = {diff_data['in_band_collective']}")
-    if diff_data['band_violation_disclosure']:
-        print(f"  BAND VIOLATION: {diff_data['band_violation_disclosure']}")
+    print(f"  post-hoc robustness envelope (bare):       {diff_data['post_hoc_robustness_envelope_bare']}; inside = {diff_data['in_band_bare']}")
+    print(f"  post-hoc robustness envelope (collective): {diff_data['post_hoc_robustness_envelope_collective']}; inside = {diff_data['in_band_collective']}")
+    print(f"  robustness status: {diff_data['robustness_envelope_status']}")

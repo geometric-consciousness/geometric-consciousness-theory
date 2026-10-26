@@ -1,5 +1,5 @@
 {
-  "pass": true,
+  "pass": false,
   "a5_ratio": 1.25,
   "b_quark_coefficient_tier": 2,
   "b_quark_coefficient_deployment_tier": 3,
@@ -7,19 +7,45 @@
   "pdg_tolerance_gates_percent": {
     "d": 11.0,
     "s": 10.0,
-    "c": 5.0,
-    "b": 2.0,
-    "t": 1.0
+    "c": 3.0
+  },
+  "registered_sigma_gates": {
+    "b": {
+      "rule": "P.23: m_b outside PDG +/- 5 sigma of the geometric prediction (the P.24 rule)",
+      "gate_sigma": 5.0,
+      "pdg_sigma_mev": 7.0,
+      "comparator": "PDG 2024 m_b(m_b) = 4183 +/- 7 MeV (MS-bar)",
+      "sigma_distance": 6.901648077305383,
+      "status": "FAIL"
+    },
+    "t": {
+      "rule": "P.24: m_t outside PDG +/- 5 sigma of the geometric prediction (registered since v1.2.0)",
+      "gate_sigma": 5.0,
+      "pdg_sigma_mev": 290.0,
+      "comparator": "PDG 2024 direct-measurement mass 172.57 +/- 0.29 GeV (not a pole mass)",
+      "sigma_distance": 5.180669242647328,
+      "status": "FAIL"
+    }
+  },
+  "sigma_distance": {
+    "b": 6.901648077305383,
+    "t": 5.180669242647328
   },
   "per_quark_status": {
     "u": "DIAGNOSTIC_NO_REGISTERED_GATE",
     "d": "PASS",
     "s": "PASS",
     "c": "PASS",
-    "b": "PASS",
-    "t": "PASS"
+    "b": "FAIL",
+    "t": "FAIL"
   },
-  "verdict": "PASS",
+  "failed_registered_gates": [
+    "b",
+    "t"
+  ],
+  "d_gate_pass": true,
+  "verdict": "REGISTERED_GATE_FAIL_B_T__D_FK_GATE_PASS",
+  "verdict_note": "Top (P.24) and bottom (P.23) rows are FAILs of the registered PDG +/- 5 sigma rule; the residuals stay Tier 3 state-level residuals conditional on O.5, and a pole/MS-bar uncertainty model would be a new pre-registered band, not a retroactive rescue. The down-quark P.20 row is postdiction-consistent inside its 11% shell-resonance band, conditional on O.5.",
   "down_quark_canonical_tuple": {
     "m_d_MeV": 4.715546058820198,
     "error_percent": 0.3307672089403852,
@@ -29,10 +55,15 @@
   "predictions_mev": {
     "u": 2.1646260768276173,
     "d": 4.715546058820198,
-    "s": 92.78641735750661,
+    "s": 92.78641736356975,
     "c": 1263.4483681193663,
     "b": 4134.688463458862,
-    "t": 174103.54882103927
+    "t": 174072.39408036773
+  },
+  "top_quark_vev_provenance": {
+    "vev_GeV": 246.17554054321008,
+    "source": "absolute GCT Higgs-VEV pipeline used by protocol_higgs_vev.py",
+    "formula": "v_GCT = m_e phi^11 (1 + 5 alpha + phi^8 alpha^2) * 1440 * phi"
   },
   "targets_mev": {
     "u": 2.16,
@@ -45,10 +76,10 @@
   "errors_percent": {
     "u": 0.21417022350079515,
     "d": 0.3307672089403852,
-    "s": 0.7631899919715427,
+    "s": 0.7631899854868941,
     "c": 0.7503245782116064,
     "b": 1.1549494750451275,
-    "t": 0.8886531964068292
+    "t": 0.8705998031915889
   },
   "down_quark_fk_info": {
     "status": "POSTDICTION_CONSISTENT_CONDITIONAL",
@@ -72,14 +103,14 @@
     },
     "single_cage_behavior": "single-cage values oscillate within the 11% shell-resonance band; the m_d match is the central tendency of the sequence",
     "convergence_caveat": "empirical decaying envelope toward phi^phi; rigorous infinite-volume proof open, bundles with O.5",
-    "derived_mass_scorecard_inclusion": "Included with Tier 3 conditional note: postdiction-consistent under the phi^phi infinite-volume-limit identification conditional on O.5.",
-    "tier": "Tier 2 FK-determinant mechanism + Tier 3 phi^phi infinite-volume-limit identification conditional on O.5"
+    "derived_mass_scorecard_inclusion": "Included with Tier 3 conditional note: postdiction-consistent under the phi^phi identification of the shell median (infinite-volume limit open, O.5).",
+    "tier": "Tier 2 FK-determinant mechanism + Tier 3 phi^phi identification of the shell median (infinite-volume limit open, O.5)"
   },
   "down_quark_primary_protocol_role": "primary FK-determinant source value for the down-quark numerical gate",
   "strange_quark_geometry": {
     "n_channels_dodecahedral": 12,
-    "correction_12alpha": 0.08756823083160001,
+    "correction_12alpha": 0.0875682307719771,
     "geometric_argument": "Strange quark (face defect) couples to 12 surrounding dodecahedral channels. Analogous to muon's 5alpha from A5 H-representation.",
-    "tier": "Tier 2 mechanism + Tier 3 specific coefficient (12) pending O.43 closure"
+    "tier": "Tier 2 mechanism (conditional on the Tier 3 face-defect quark assignment) + Tier 3 specific coefficient (12) pending O.43 closure"
   }
 }

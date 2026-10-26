@@ -1,11 +1,13 @@
 {
-  "xi_codata_nm": 7.251632774451052,
+  "xi_codata_nm": 7.251632784293748,
   "xi_gct_bare_nm": 7.301648172652302,
   "target_nm_codata": 7.25,
-  "error_vs_target_pct": 0.022521026911056393,
-  "alpha_branch_spread_pct": 0.6897122311193832,
-  "alpha_codata_used": 0.0072973525692838015,
+  "error_vs_target_pct": 0.02252116267238654,
+  "alpha_branch_spread_pct": 0.6897120944524696,
+  "alpha_codata_used": 0.007297352564331425,
   "alpha_gct_bare_used": 0.007272316635418377,
-  "formula": "xi = hbar c / (alpha^2 m_e c^2) = a_0/alpha  [Tier 1 textbook Bohr-Compton formula; Tier 3 lumen-scale match, App K \u00a7K.5]",
-  "pass": true
+  "formula": "xi = hbar c / (alpha^2 m_e c^2) = a_0/alpha  [Tier 1 arithmetic; its identification as the vacuum/polaron healing length is Tier 3; Tier 3 lumen-scale match, App DPS \u00a7DPS.5]",
+  "formula_arithmetic_consistent": true,
+  "verdict": "STANDARD_PHYSICS_ARITHMETIC_GCT_ROUTE2_CLOSES_NEGATIVELY_O25",
+  "pass": false
 }

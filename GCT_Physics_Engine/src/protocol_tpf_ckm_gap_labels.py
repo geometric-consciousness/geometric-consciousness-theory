@@ -2,17 +2,17 @@
 """
 protocol_tpf_ckm_gap_labels.py - W2: TP-F CKM s23/s13 gap-label enumeration
 ============================================================================
-App TP S TP-F audit handle (verbatim intent): "enumerate which K-theoretic gap
-labels in the E8 -> Z^6 projection (App U S U.7.3) are consistent with the
+App TPR S TP-F audit handle (verbatim intent): "enumerate which K-theoretic gap
+labels in the E8 -> Z^6 projection (App USS S U.7.3) are consistent with the
 observed s_23, s_13 values, then test whether the constraints are satisfiable."
 
-Gap-label framework (App U S U.7.6, Bellissard gap-labeling, validated on the
+Gap-label framework (App USS S U.7.6, Bellissard gap-labeling, validated on the
 1D Fibonacci chain): a spectral-gap label is an IDOS value of the form
     L(p,q) = (p * phi^{-1} + q)  mod 1 ,   p, q in Z,
 i.e. an element of the Z[phi] trace image of K_0. The 1D validation reached
 max |p| = 7 at lattice size F_15 = 610; larger |p| requires astronomically
 larger lattice scale (the same scaling that makes the electron's |n| = 107
-label inaccessible at small N, App U U.7.6 / O.14a).
+label inaccessible at small N, App USS U.7.6 / O.14a).
 
 Current Ch10 S10.6 ansaetze (Tier 3, irrational exponents flagged in-text):
     s_23 = phi^{-(6 + phi^{-1})},  exponent 6.618...
@@ -55,7 +55,7 @@ except ImportError:
 PHI = float(C.PHI)
 PHI_INV = 1.0 / PHI
 
-# Observed CKM magnitudes (PDG 2024, registered in App FM P.26/P.27).
+# Observed CKM magnitudes (PDG 2024, registered in App FSM P.26/P.27).
 # Errors set generously (>= PDG) so the "required |p|" bound is conservative.
 TARGETS = {
     "s_23": {"obs": 0.0418, "abs_err": 0.0008},     # ~|V_cb|, ~2%
@@ -65,7 +65,7 @@ ANSATZ = {
     "s_23": 6 + PHI_INV,    # phi^{-(6 + phi^-1)}
     "s_13": 11 + PHI_INV,   # phi^{-(11 + phi^-1)}
 }
-FIBONACCI_VALIDATED_MAX_P = 7   # App U U.7.6, F_15 = 610
+FIBONACCI_VALIDATED_MAX_P = 7   # App USS U.7.6, F_15 = 610
 
 
 def integer_power_bracket(target):
@@ -110,7 +110,7 @@ def run():
     print("GCT Protocol W2 / TP-F - CKM s23, s13 K-theoretic gap-label audit")
     print("=" * 74)
     print(f"\n  Gap-label set: L(p,q) = (p/phi + q) mod 1, p,q in Z  (Z[phi] trace image)")
-    print(f"  1D-validated accessible |p| <= {FIBONACCI_VALIDATED_MAX_P} (App U U.7.6)\n")
+    print(f"  1D-validated accessible |p| <= {FIBONACCI_VALIDATED_MAX_P} (App USS U.7.6)\n")
 
     results = {"gap_label_form": "(p*phi^-1 + q) mod 1", "targets": {}}
 
