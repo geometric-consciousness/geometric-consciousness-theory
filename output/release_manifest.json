@@ -1,6 +1,6 @@
 {
   "artifact": "output/Geometric_Consciousness_Theory.pdf",
-  "build_input_commit": "b351cd1a618a67c74d66ff3a2adfa0c2a640a6ea",
+  "build_input_commit": "f8b90835001ab526f96ed6351c2202abe95f8bb6",
   "build_inputs": {
     "count": 170,
     "files": {
@@ -104,7 +104,7 @@
       "content/98_Global_Appendices/App_CVC_Engine_Reports.md": "4cf7cc8a3f9bdcca8852f73fc9fae7883437140beb5e717093c60eb7ba63208e",
       "content/98_Global_Appendices/App_CXL_Crystallography.md": "ffddf5358cd6b92293e517fffc86c5668d4a46967213a4dbe0dcffa49f756458",
       "content/98_Global_Appendices/App_DPS_Phason_Stiffness.md": "89c685e9b8054cab32fd441bc248891f173895409eadabd458dd88539ef60343",
-      "content/98_Global_Appendices/App_FSM_Falsifiability_Matrix.md": "78e02279c8bb20b64f01af97e1f299e3e9d03789d0ec176b3a3875f8a56692e9",
+      "content/98_Global_Appendices/App_FSM_Falsifiability_Matrix.md": "8c88e4b654a5e4b1b519a3fb3cb205fc06c06e62db74ccd4286573a035d2f298",
       "content/98_Global_Appendices/App_FTH_Foundational_Theorems.md": "f9502d7db32cbeccf96cc942e26aa587a312b1ee4461149d7bd46d05b25fccac",
       "content/98_Global_Appendices/App_GPE_Physics_Engine.md": "2320fb30fd58e332913caaae1142f3f40625168f1e7e302e8de828865c7be609",
       "content/98_Global_Appendices/App_GRF_Native_RG_Flow.md": "796cf47d90d1c1e1c8099bdbf2734e549c2768f5c293bffd3dd6e0384612646f",
@@ -114,7 +114,7 @@
       "content/98_Global_Appendices/App_NSM_Neutrino_Sum_Contingency.md": "92707247cf5c50c378bdd0b64f992c73094dee1b909c10b0b6583f4c65e64650",
       "content/98_Global_Appendices/App_NSP_Nuclear_Spin.md": "c37cdc8b874076779ca9b2343fbc3a1a1acb2bd317250969e56e0f5a2a371592",
       "content/98_Global_Appendices/App_ORQ_Research_Questions.md": "668c2139ba6ec863af2c2250f5d09a682a4afddec5d502c5837adc9c1731f9d2",
-      "content/98_Global_Appendices/App_PRG_Prediction_Registry.md": "40a0dd4a6d92b8979e25fe55b0cab914c37abcfba8adada50752d1b334d5a91f",
+      "content/98_Global_Appendices/App_PRG_Prediction_Registry.md": "ca1f32ccd4eef6d5c082c7e163d0af39cc0929f8b561501f4f65d7e4a82b81cb",
       "content/98_Global_Appendices/App_PSC_Precision_Scorecard.md": "7d5d3368e55651fbc55543a06818133c45e821de6a371eaafeb4391f5375cc24",
       "content/98_Global_Appendices/App_PUP_Polaron_Unity_Status.md": "0a54cc86285893438ea28d910a5e15f89defe48c6ebf8602b550abd097b93626",
       "content/98_Global_Appendices/App_QCT_Quasicrystal_Theory.md": "c082aafe8b9f03d9ab28b3c2772cf7eed612403e47bb1036f03b71e059517fa1",
@@ -134,11 +134,11 @@
       "content/99_Global_Backmatter/03_Master_Index.md": "99449c66e1e61b3862c7bdf0d590a8f039cf4b3c2e8fede961fd5310ff23fe7a",
       "content/99_Global_Backmatter/04_Acknowledgments.md": "8761e00dfa8e47a60f9680a0eee0a7fd7715e21b5f73365b50523301e9e87869",
       "content/99_Global_Backmatter/05_Colophon.md": "c9e26a09aedbcc62c8622fc65e450b1cb7bb9a43035590077013417f45381e9f",
-      "content/Figures/Appendices/Figure App.FSM.1.svg": "56f55cf20ee4a5d0c0e95f1d44237bee303a019ff10d19c2b45e9312f1405cb1",
+      "content/Figures/Appendices/Figure App.FSM.1.svg": "edba13a7b794a896ee2074fbc71238db74531fd3872d7d080315ec6d84133128",
       "content/Figures/Frontmatter/Figure GF.1.1.svg": "2e31e8000cceb235a72479989356f65eecc0ffc6c82c7d85cd6735bd9c57dfa6",
       "content/Figures/Frontmatter/Figure GF.2.1.svg": "c334ee799a193a2bc3c01645381bad6b11867616d511fc94eb016a1a48a7be48",
       "content/Figures/Frontmatter/Figure GF.3.1.svg": "faa4313e37da6f31fe156a1dc5bc91d4bf0f9cc4bb94d34bfcb49b4e66ef459d",
-      "content/Figures/Frontmatter/Figure GF.4.1.svg": "0f4da893ddef4cf8ef64965035076ba1cb1fa0ecf4088ada8b812c4de1bed36f",
+      "content/Figures/Frontmatter/Figure GF.4.1.svg": "1e807b451110823dd29b3bf863547a38a6c69183064a4eee5601533fe0bc29e7",
       "content/Figures/Volume_1/Figure V1.1.1.svg": "693ddebbc008d3127ad5e2ef460c71be71c65c02da7f558918da902258dbee0b",
       "content/Figures/Volume_1/Figure V1.12.1.svg": "bd14b7cd0ddf23108fad8004cededa7c395213815e783ce27894a0ed5cb511d1",
       "content/Figures/Volume_1/Figure V1.16.1.svg": "decc3093ba573604798006f9cca3a40ae1b0d54c5e3a00425a4ce9ce8e0c72f4",
@@ -148,34 +148,34 @@
       "content/Figures/Volume_1/Figure V1.5.1.svg": "0e5cc45f26f0d59865144bda8d34e1cc8a6a8d022c4a1d48a05c1931e6135fa3",
       "content/Figures/Volume_1/Figure V1.5.2.svg": "353fbf1024d93ad4d05ecfd217796b767162ae4cbc9011c8714b16be52843854",
       "content/Figures/Volume_1/Figure V1.7.1.svg": "7d8d4cbd2d9733a0bd7f538404b9142067b28e9a4191b3b561adad310417cd8e",
-      "content/Figures/Volume_1/Figure V1.7.3.svg": "cc7d5bd7eb6c80aa35faee27caf918f8f1b50ca34ba344e9620d657bd0c89628",
+      "content/Figures/Volume_1/Figure V1.7.3.svg": "d7bcf78c6b00cf957af5e0993b68c00f2ed3ed65e6b1ff8b61909101bbc7f2a8",
       "content/Figures/Volume_1/Figure V1.8.1.svg": "2ce131df5bee9e86aab78674dd51e7fdc45ad0dd868db1a86f1d58a6e1db9604",
       "content/Figures/Volume_2/Figure V2.1.1.svg": "5059fd6bbd8d6e9307f3faa34fd38ea5a294e2c5158a2b3b4a1ff1d7bcd24420",
       "content/Figures/Volume_2/Figure V2.1.2.svg": "0776fc0e36cd643427e3460d4136258ff5d66e2135aed0401b04abf37a3832e4",
       "content/Figures/Volume_2/Figure V2.12.1.svg": "abca0759667e7c32954d1ebf5a694e7775f488d0888945af2272e232c287617a",
       "content/Figures/Volume_2/Figure V2.14.1.svg": "c0b4308a58f58dc4df716421b102f7bd12deb0279935b7b1abee8a1e32bfb0a9",
-      "content/Figures/Volume_2/Figure V2.14.3.svg": "f3a977abaa3a7422fe3d20a52007d912d58a4d25391b65a4b5607e3da9e703bf",
+      "content/Figures/Volume_2/Figure V2.14.3.svg": "e45d693b7bacf15b86d28fc345cfce76e000f5db305e6d6f5bacfeb82f4b7ab8",
       "content/Figures/Volume_2/Figure V2.14.5.svg": "fbac3ba033b4bafbf170147620f55a8bfa68b6d4b3b8524b4e68681aab17db65",
       "content/Figures/Volume_2/Figure V2.8.1.svg": "1034b9770d7e729df9889bab030a695cbe4c5f64dad80e9a37aa5c4336501310",
       "content/Figures/Volume_3/Figure V3.1.1.svg": "dbfa6a0e542b1733b71fff38ab2a8776c07382a7cc5d7fdde6ff943d2fe7356c",
       "content/Figures/Volume_3/Figure V3.1.2.svg": "acc2bd4c31466c37435e7c0f94439ab2a2cba129d092a1b1eb4fe04f5515f0b9",
-      "content/Figures/Volume_3/Figure V3.10.1.svg": "7ca6ac69ac3ba068ce1d521b16110f8228d44a52759c5c8f9259465b2c7919d0",
+      "content/Figures/Volume_3/Figure V3.10.1.svg": "f73ca01c15f1bcae27390adf91e4bf84606433654d911301ceff7bc65e5e9a44",
       "content/Figures/Volume_3/Figure V3.11.1.svg": "2133e06a297405957665075980db340781e2a4cbf25b4d0e91c3b49b3c98e691",
       "content/Figures/Volume_3/Figure V3.13.1.svg": "db90caa5c33299c0f2eaff1f7fb6f219d38784ae393e87d6926b5e942d42e904",
       "content/Figures/Volume_3/Figure V3.13.4.svg": "5bbd2ae68ac08d5455e414faeedb64b30dbaddd633c52d17a10c13416a6be5c2",
-      "content/Figures/Volume_3/Figure V3.16.1.svg": "dd79a0cbc76128bb7edafa1a6c1a51994e86c5f1cb65daa1d23dd9493ca45bca",
+      "content/Figures/Volume_3/Figure V3.16.1.svg": "b3a565f6288b5bb4c2cdaa133cbf69e734fa298762b35af4bb29562bc3d61215",
       "content/Figures/Volume_3/Figure V3.2.1.svg": "61719af1517e5aeaf352e24420f625fa8528e1fef5b9b01d9f967ce5fc3e74f6",
       "content/Figures/Volume_3/Figure V3.21.1.svg": "4920fe5f23d3114deb616a48bf5950f9df86bc8af23ce02ef89cdd847df037e8",
       "content/Figures/Volume_3/Figure V3.22.1.svg": "cdb5f2bd4cef14b55cc24d80e164fe115ddda7cd96a5f6e100935a37e32fa8b5",
       "content/Figures/Volume_3/Figure V3.3.1.svg": "287735501943ab34de332029a0ee1b03c2b875d1d2da03bdcc9cd2ddc0bdcf40",
       "content/Figures/Volume_3/Figure V3.4.1.svg": "61742ce246d37131af547514f3b4e8ec0b8075610b2afe236d74beb8b0b3f221",
       "content/Figures/Volume_3/Figure V3.5.1.svg": "6498e828941c374987f2d84aebf14537e1fe4b68da6ab6260b6e27962ce07f32",
-      "content/Figures/Volume_3/Figure V3.7.1.svg": "ca25b948a1695a10e79e52974b8a33250156fd2044013247991616e0a5c48c1d",
+      "content/Figures/Volume_3/Figure V3.7.1.svg": "f9074220c50f99495ddef68bb24ca6c8b75ffd7228472a6929e9902cbd102a1d",
       "content/Figures/Volume_3/Figure V3.8.1.svg": "6435c283a4baf1bd14142b8f5e7ad9c3464707ce88792aa055408a6a3c4505f4",
       "content/Figures/Volume_3/Figure V3.8.2.svg": "e9a870a7f6dc5588dab11db535d7f8a6fe47a0533c4508d44e4f12c4a90408a1",
       "content/Figures/Volume_3/Figure V3.9.1.svg": "7e50370775a5b143771b8abfa5cd83329315e603ba3c3781f3307deaf982a623"
     },
-    "set_sha256": "aae0b59086dd24e7cf46d85bb9c7b1b19cf57a888e53b914dec9ee1715408962"
+    "set_sha256": "67469eb79801b7bf2c2901dd520c4afd00b54e90305f7245dbf076249e57937b"
   },
   "pdf": {
     "bytes": 8214193,
@@ -183,7 +183,7 @@
       "content/Figures/Appendices/Figure App.FSM.1.svg": {
         "pdf": "content/Figures/Appendices/Figure App.FSM.1.pdf",
         "pdf_sha256": "908aa85900489e291f48dfd22f2817d6a2789ac2433d686c1e18a750152b0739",
-        "svg_sha256": "56f55cf20ee4a5d0c0e95f1d44237bee303a019ff10d19c2b45e9312f1405cb1"
+        "svg_sha256": "edba13a7b794a896ee2074fbc71238db74531fd3872d7d080315ec6d84133128"
       },
       "content/Figures/Frontmatter/Figure GF.1.1.svg": {
         "pdf": "content/Figures/Frontmatter/Figure GF.1.1.pdf",
@@ -203,7 +203,7 @@
       "content/Figures/Frontmatter/Figure GF.4.1.svg": {
         "pdf": "content/Figures/Frontmatter/Figure GF.4.1.pdf",
         "pdf_sha256": "278e60114f2fedcfc6c60dc675ebfb230574c4906f458d40f9e81c6356a26332",
-        "svg_sha256": "0f4da893ddef4cf8ef64965035076ba1cb1fa0ecf4088ada8b812c4de1bed36f"
+        "svg_sha256": "1e807b451110823dd29b3bf863547a38a6c69183064a4eee5601533fe0bc29e7"
       },
       "content/Figures/Volume_1/Figure V1.1.1.svg": {
         "pdf": "content/Figures/Volume_1/Figure V1.1.1.pdf",
@@ -253,7 +253,7 @@
       "content/Figures/Volume_1/Figure V1.7.3.svg": {
         "pdf": "content/Figures/Volume_1/Figure V1.7.3.pdf",
         "pdf_sha256": "7879d5749a80f38d6160e5dfb6f8dcecf3961c7c3e2fd259017986d83434cd5f",
-        "svg_sha256": "cc7d5bd7eb6c80aa35faee27caf918f8f1b50ca34ba344e9620d657bd0c89628"
+        "svg_sha256": "d7bcf78c6b00cf957af5e0993b68c00f2ed3ed65e6b1ff8b61909101bbc7f2a8"
       },
       "content/Figures/Volume_1/Figure V1.8.1.svg": {
         "pdf": "content/Figures/Volume_1/Figure V1.8.1.pdf",
@@ -283,7 +283,7 @@
       "content/Figures/Volume_2/Figure V2.14.3.svg": {
         "pdf": "content/Figures/Volume_2/Figure V2.14.3.pdf",
         "pdf_sha256": "eec0efb090e25ca60bc4f04f50622383e485118a76d9173f39476d44ff880f8f",
-        "svg_sha256": "f3a977abaa3a7422fe3d20a52007d912d58a4d25391b65a4b5607e3da9e703bf"
+        "svg_sha256": "e45d693b7bacf15b86d28fc345cfce76e000f5db305e6d6f5bacfeb82f4b7ab8"
       },
       "content/Figures/Volume_2/Figure V2.14.5.svg": {
         "pdf": "content/Figures/Volume_2/Figure V2.14.5.pdf",
@@ -308,7 +308,7 @@
       "content/Figures/Volume_3/Figure V3.10.1.svg": {
         "pdf": "content/Figures/Volume_3/Figure V3.10.1.pdf",
         "pdf_sha256": "91c43156aca13c0a54b37c90968296dd48cf1dce282af4c572561a3e3e2067c1",
-        "svg_sha256": "7ca6ac69ac3ba068ce1d521b16110f8228d44a52759c5c8f9259465b2c7919d0"
+        "svg_sha256": "f73ca01c15f1bcae27390adf91e4bf84606433654d911301ceff7bc65e5e9a44"
       },
       "content/Figures/Volume_3/Figure V3.11.1.svg": {
         "pdf": "content/Figures/Volume_3/Figure V3.11.1.pdf",
@@ -328,7 +328,7 @@
       "content/Figures/Volume_3/Figure V3.16.1.svg": {
         "pdf": "content/Figures/Volume_3/Figure V3.16.1.pdf",
         "pdf_sha256": "418abd3d22dcd8a6fc9af5faf089735475c5a577c3ce0935a6fc2927597f7557",
-        "svg_sha256": "dd79a0cbc76128bb7edafa1a6c1a51994e86c5f1cb65daa1d23dd9493ca45bca"
+        "svg_sha256": "b3a565f6288b5bb4c2cdaa133cbf69e734fa298762b35af4bb29562bc3d61215"
       },
       "content/Figures/Volume_3/Figure V3.2.1.svg": {
         "pdf": "content/Figures/Volume_3/Figure V3.2.1.pdf",
@@ -363,7 +363,7 @@
       "content/Figures/Volume_3/Figure V3.7.1.svg": {
         "pdf": "content/Figures/Volume_3/Figure V3.7.1.pdf",
         "pdf_sha256": "6a5414cf497b5540691f9245062f98e7ffb0a5c8e48d6091f847173038ac02b5",
-        "svg_sha256": "ca25b948a1695a10e79e52974b8a33250156fd2044013247991616e0a5c48c1d"
+        "svg_sha256": "f9074220c50f99495ddef68bb24ca6c8b75ffd7228472a6929e9902cbd102a1d"
       },
       "content/Figures/Volume_3/Figure V3.8.1.svg": {
         "pdf": "content/Figures/Volume_3/Figure V3.8.1.pdf",
